@@ -1,9 +1,208 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html" class="activo"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <div class="encabezado-contenido">
+            <div class="saludo">
+                <h1>Hola, Ana Milena</h1>
+                <p>Así van tus finanzas hoy</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                    <span class="punto-notificacion"></span>
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </div>
+        <section class="tarjeta-patrimonio">
+            <div class="patrimonio-header">
+                <span class="etiqueta-patrimonio">PATRIMONIO TOTAL</span>
+                <div class="valor-patrimonio">
+                    <h2>$28.450.000</h2>
+                    <span class="moneda">COP</span>
+                </div>
+                <span class="badge-positivo">▲ +2.4% hoy</span>
+            </div>
+            <div class="grafico-barras">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra activa"></span>
+                <span class="barra"></span>
+                <span class="barra alta"></span>
+                <span class="barra"></span>
+                <span class="barra alta"></span>
+            </div>
+            <hr class="divisor-patrimonio">
+            <div class="estadisticas-patrimonio">
+                <div class="estadistica">
+                    <span class="etiqueta">Ingresos</span>
+                    <strong class="positivo">+$4.2M</strong>
+                </div>
+                <div class="estadistica">
+                    <span class="etiqueta">Gastos</span>
+                    <strong class="negativo">-$2.8M</strong>
+                </div>
+                <div class="estadistica">
+                    <span class="etiqueta">Ahorro</span>
+                    <strong class="info">$1.4M</strong>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-accesos">
+            <h3>Accesos rápidos</h3>
+            <div class="grid-accesos">
+                <a href="../flujo-caja/flujo-caja.html" class="tarjeta-acceso">
+                    <div class="icono-acceso icono-flujo"><span>💵</span></div>
+                    <h4>Flujo de caja</h4>
+                    <p>Ingresos y egresos</p>
+                </a>
+                <a href="../balance-financiero/balance-financiero.html" class="tarjeta-acceso">
+                    <div class="icono-acceso icono-balance"><span>📊</span></div>
+                    <h4>Balance</h4>
+                    <p>Ver resumen</p>
+                </a>
+                <a href="../metas/mis-metas.html" class="tarjeta-acceso">
+                    <div class="icono-acceso icono-metas"><span>🎯</span></div>
+                    <h4>Metas</h4>
+                    <p>Tus objetivos</p>
+                </a>
+                <a href="../reportes/generar-reporte.html" class="tarjeta-acceso">
+                    <div class="icono-acceso icono-reportes"><span>📋</span></div>
+                    <h4>Reportes</h4>
+                    <p>Historial</p>
+                </a>
+            </div>
+        </section>
+        <section class="seccion-resumen">
+            <h3>Resumen financiero</h3>
+            <div class="grid-resumen">
+                <div class="tarjeta-resumen">
+                    <span class="etiqueta">Ingresos del mes</span>
+                    <div class="valor-resumen">
+                        <strong>$4.200.000</strong>
+                        <span class="badge badge-positivo">+12%</span>
+                    </div>
+                    <div class="barra-progreso">
+                        <span class="relleno ingresos" style="width: 90px;"></span>
+                    </div>
+                </div>
+                <div class="tarjeta-resumen">
+                    <span class="etiqueta">Gastos del mes</span>
+                    <div class="valor-resumen">
+                        <strong>$2.800.000</strong>
+                        <span class="badge badge-negativo">+5%</span>
+                    </div>
+                    <div class="barra-progreso">
+                        <span class="relleno gastos" style="width: 58px;"></span>
+                    </div>
+                </div>
+                <div class="tarjeta-resumen">
+                    <span class="etiqueta">Deuda activa</span>
+                    <div class="valor-resumen">
+                        <strong>$1.200.000</strong>
+                        <span class="badge badge-advertencia">31%</span>
+                    </div>
+                    <div class="barra-progreso">
+                        <span class="relleno deuda" style="width: 40px;"></span>
+                    </div>
+                </div>
+                <div class="tarjeta-resumen">
+                    <span class="etiqueta">Ahorro neto</span>
+                    <div class="valor-resumen">
+                        <strong>$1.400.000</strong>
+                        <span class="badge badge-info">+8%</span>
+                    </div>
+                    <div class="barra-progreso">
+                        <span class="relleno ahorro" style="width: 70px;"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-movimientos">
+            <h3>Movimientos recientes</h3>
+            <article class="item-movimiento">
+                <div class="icono-movimiento icono-gasto"><span>🛒</span></div>
+                <div class="detalle-movimiento">
+                    <h4>D1</h4>
+                    <p>Hoy, 10:30 am</p>
+                </div>
+                <div class="valor-movimiento">
+                    <strong class="negativo">-$85.000</strong>
+                    <p>Mercado</p>
+                </div>
+            </article>
+            <article class="item-movimiento">
+                <div class="icono-movimiento icono-ingreso"><span>💰</span></div>
+                <div class="detalle-movimiento">
+                    <h4>CDT Bancolombia</h4>
+                    <p>07 mayo 2025</p>
+                </div>
+                <div class="valor-movimiento">
+                    <strong class="positivo">+$280.000</strong>
+                    <p>Rendimiento</p>
+                </div>
+            </article>
+            <article class="item-movimiento">
+                <div class="icono-movimiento icono-alerta"><span>🚗</span></div>
+                <div class="detalle-movimiento">
+                    <h4>Pago Seguro</h4>
+                    <p>06 mayo 2025</p>
+                </div>
+                <div class="valor-movimiento">
+                    <strong class="advertencia">-$120.000</strong>
+                    <p>Seguros</p>
+                </div>
+            </article>
+        </section>
+        <aside class="alerta-endeudamiento">
+            <div class="icono-alerta"><span>⚠️</span></div>
+            <div class="contenido-alerta">
+                <h4>Alerta de endeudamiento</h4>
+                <p>Tu índice es 31.4%, cerca del umbral de riesgo (35%).</p>
+                <button type="button" class="boton-texto">Ver análisis completo</button>
+            </div>
+        </aside>
+        <button type="button" class="fab-asistente">💬</button>
+    </main>  </body>
 </html>

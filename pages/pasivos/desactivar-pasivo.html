@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Pasivo | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html" class="activo"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <dialog class="modal-desactivar-meta" open>
+        <article class="contenedor-modal">
+            <header class="encabezado-modal">
+                <div class="informacion-meta">
+                    <div class="icono-meta"><img src="" alt="Pasivo"></div>
+                    <div class="detalle-meta">
+                        <h2>Tarjeta de Crédito · Banco ABC · -$2,500,000</h2>
+                    </div>
+                </div>
+            </header>
+            <section class="contenido-modal">
+                <div class="icono-advertencia"><img src="" alt="Advertencia"></div>
+                <h3>¿Eliminar pasivo?</h3>
+                <p>Esta acción eliminará esta deuda de tu lista de pasivos.</p>
+            </section>
+            <section class="mensaje-advertencia">
+                <p>Esta acción no se puede deshacer. El pasivo dejará de aparecer en tu lista.</p>
+            </section>
+            <footer class="acciones">
+                <button type="button" class="boton-primario">Cancelar</button>
+                <button type="button" class="boton-peligro">Eliminar</button>
+            </footer>
+        </article>
+    </dialog>
+</body>
+</html>

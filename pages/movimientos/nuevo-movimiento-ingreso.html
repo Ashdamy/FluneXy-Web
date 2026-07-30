@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Movimiento | Ingreso | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html" class="activo"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Nuevo Movimiento</h1>
+                <p>Registra un ingreso o gasto</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </header>
+        <div class="contenido-dos-columnas">
+            <section class="formulario-meta">
+                <div class="grupo-formulario">
+                    <label>TIPO DE MOVIMIENTO</label>
+                    <div class="alternador-tipo">
+                        <button type="button" class="opcion-alternador activo" onclick="location.href='nuevo-movimiento-ingreso.html'">↑ Ingreso</button>
+                        <button type="button" class="opcion-alternador" onclick="location.href='nuevo-movimiento-gasto.html'">↓ Gasto</button>
+                    </div>
+                </div>
+                <div class="grupo-formulario">
+                    <label>MONTO</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" placeholder="0">
+                        <span class="badge-tipo badge-ingreso">Ingreso</span>
+                    </div>
+                </div>
+                <div class="grupo-formulario">
+                    <label>FECHA</label>
+                    <div class="campo-fecha">
+                        <input type="text" value="03 Jun 2025">
+                        <span class="icono-calendario">📅</span>
+                    </div>
+                </div>
+                <div class="grupo-formulario">
+                    <label>CATEGORÍA</label>
+                    <div class="grid-categorias">
+                        <button type="button" class="item-categoria activo">Salario</button>
+                        <button type="button" class="item-categoria">Freelance</button>
+                        <button type="button" class="item-categoria">Inversiones</button>
+                        <button type="button" class="item-categoria">Ventas</button>
+                        <button type="button" class="item-categoria">Intereses</button>
+                        <button type="button" class="item-categoria">Otro</button>
+                    </div>
+                </div>
+                <div class="grupo-formulario">
+                    <label>FONDO ASOCIADO</label>
+                    <select>
+                        <option>Bancolombia ($2.450.000)</option>
+                        <option>Nequi ($380.000)</option>
+                        <option>Efectivo ($150.000)</option>
+                    </select>
+                </div>
+            </section>
+            <aside class="vista-previa">
+                <header class="encabezado-seccion">
+                    <h3>Resumen</h3>
+                </header>
+                <div class="resumen-meta">
+                    <p>Tipo</p>
+                    <strong>Ingreso</strong>
+                    <p>Monto</p>
+                    <strong>$0</strong>
+                    <p>Categoría</p>
+                    <strong>Salario</strong>
+                    <p>Fecha</p>
+                    <strong>03 Jun 2025</strong>
+                    <p>Fondo</p>
+                    <strong>Bancolombia</strong>
+                </div>
+            </aside>
+        </div>
+        <section class="acciones">
+            <button type="button" class="boton-secundario" onclick="location.href='mis-movimientos.html'">Cancelar</button>
+            <button type="button" class="boton-primario">Guardar Movimiento</button>
+        </section>
+    </main>  </body>
+</html>

@@ -1,9 +1,118 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Pago | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html" class="activo"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Registrar Pago</h1>
+                <p>Ingresa un nuevo pago realizado</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">
+                    <img src="" alt="Foto de perfil">
+                </button>
+            </div>
+        </header>
+        <section class="formulario-pago">
+            <div class="grupo-formulario">
+                <label for="nombre-pago">NOMBRE DEL PAGO</label>
+                <input type="text" id="nombre-pago" placeholder="Ej: Cuota préstamo">
+            </div>
+            <div class="grupo-formulario">
+                <label for="monto-pago">MONTO</label>
+                <div class="campo-con-prefijo">
+                    <span class="prefijo-monto">$</span>
+                    <input type="text" id="monto-pago" placeholder="0">
+                </div>
+            </div>
+            <div class="grupo-formulario">
+                <label for="categoria-pago">CATEGORÍA</label>
+                <select id="categoria-pago">
+                    <option>Selecciona una categoría</option>
+                    <option>Préstamo</option>
+                    <option>Servicio</option>
+                    <option>Seguro</option>
+                    <option>Tarjeta de crédito</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="cuota-asociada">CUOTA ASOCIADA</label>
+                <select id="cuota-asociada">
+                    <option>Selecciona una cuota</option>
+                    <option>Cuota 7 - Crédito Moto NKD</option>
+                    <option>Cuota 3 - Préstamo Personal</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="fecha-pago">FECHA</label>
+                <div class="campo-con-icono">
+                    <span class="icono-calendario">📅</span>
+                    <input type="text" id="fecha-pago" placeholder="DD/MM/AAAA">
+                </div>
+            </div>
+            <div class="grupo-formulario">
+                <label for="metodo-pago">MÉTODO DE PAGO</label>
+                <select id="metodo-pago">
+                    <option>Selecciona un método</option>
+                    <option>Transferencia</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta débito</option>
+                    <option>Tarjeta crédito</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="notas-pago">NOTAS</label>
+                <textarea id="notas-pago" placeholder="Notas adicionales..."></textarea>
+            </div>
+        </section>
+        <section class="acciones">
+            <button type="button" class="boton-secundario">Cancelar</button>
+            <button type="button" class="boton-primario">Guardar Pago</button>
+        </section>
+    </main>  </body>
 </html>

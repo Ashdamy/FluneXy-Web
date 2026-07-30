@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Flujo de Caja | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../detalle-flujo-caja/detalle-flujo-caja.html" class="activo"><span class="icono-nav">📋</span> Detalle Flujo</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Detalle del Flujo de Caja</h1>
+                <p>Origen y composición de cada componente</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </header>
+        <div class="selector-periodo">
+            <button type="button" class="boton-navegacion-mes" aria-label="Mes anterior">&#9664;</button>
+            <span>Junio 2025</span>
+            <button type="button" class="boton-navegacion-mes" aria-label="Mes siguiente">&#9654;</button>
+        </div>
+        <section class="tarjeta-resumen">
+            <div class="informacion-resumen">
+                <p>Balance del periodo</p>
+                <h2 class="positivo">+$1,400,000</h2>
+                <small>Ingresos - Egresos</small>
+            </div>
+            <div class="estadisticas-resumen">
+                <div class="estadistica">
+                    <p>Ingresos</p>
+                    <strong>$4,200,000</strong>
+                </div>
+                <div class="estadistica">
+                    <p>Egresos</p>
+                    <strong>$2,800,000</strong>
+                </div>
+            </div>
+        </section>
+        <section class="lista-plantillas">
+            <header class="encabezado-seccion">
+                <h3>Ingresos del periodo</h3>
+            </header>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Salario"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Salario</h3>
+                        <p>01 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong class="positivo">+$2,500,000</strong>
+                    <p>Ingreso</p>
+                </div>
+            </a>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Freelance"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Freelance</h3>
+                        <p>05 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong class="positivo">+$1,700,000</strong>
+                    <p>Ingreso</p>
+                </div>
+            </a>
+        </section>
+        <section class="lista-plantillas">
+            <header class="encabezado-seccion">
+                <h3>Egresos del periodo</h3>
+            </header>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Arriendo"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Arriendo</h3>
+                        <p>01 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong>-$1,200,000</strong>
+                    <p>Egreso</p>
+                </div>
+            </a>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Supermercado"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Supermercado</h3>
+                        <p>03 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong>-$320,000</strong>
+                    <p>Egreso</p>
+                </div>
+            </a>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Internet ETB"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Internet ETB</h3>
+                        <p>07 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong>-$95,000</strong>
+                    <p>Egreso</p>
+                </div>
+            </a>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Netflix"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Netflix</h3>
+                        <p>10 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong>-$45,000</strong>
+                    <p>Egreso</p>
+                </div>
+            </a>
+            <a href="detalle-flujo.html" class="item-movimiento">
+                <div class="informacion-plantilla">
+                    <div class="icono-plantilla"><img src="" alt="Transporte"></div>
+                    <div class="detalle-plantilla">
+                        <h3>Transporte</h3>
+                        <p>12 Jun 2025</p>
+                    </div>
+                </div>
+                <div class="valor-plantilla">
+                    <strong>-$180,000</strong>
+                    <p>Egreso</p>
+                </div>
+            </a>
+        </section>
+    </main>
+</body>
+</html>

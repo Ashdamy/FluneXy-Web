@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva contraseña</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <main class="contenedor-autenticacion">
+        <div class="volver">
+            <a href="#">← Volver</a>
+        </div>
+        <section class="tarjeta-formulario">
+            <div class="icono-formulario">
+                <img src="" alt="icono nueva contraseña">
+            </div>
+            <header class="encabezado-autenticacion">
+                <h1>Nueva contraseña</h1>
+                <p>
+                    Crea una contraseña segura para proteger tu cuenta.
+                </p>
+            </header>
+             <form 
+             class="formulario-nueva-contrasena" 
+             action=""
+             method="post">
+             <div class="grupo-formulario">
+                 <label for="contrasena">Nueva contraseña</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        required>
+                        <p class="mensaje-fortaleza">
+                            Fortaleza: excelente
+                        </p>
+                        <div class="requisito-contrasena">
+                            <p>
+                                ✓ Mínimo 8 caracteres, una mayúscula y un número.
+                            </p>
+                        </div>
+             </div>
+             <div class="grupo-formulario">
+                        <label for="confirmar-contrasena">Confirmar contraseña</label>
+                    <input
+                        type="password"
+                        id="confirmar-contrasena"
+                        name="confirmar-contrasena"
+                        required>
+                        </div>
+             <button
+             type="submit"
+             class="boton-primario">
+             Guardar nueva contraseña
+             </button>
+             </form>
+        </section>
+    </main>  </body>
+</html>

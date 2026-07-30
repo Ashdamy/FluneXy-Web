@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Meta</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html" class="activo"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Nueva Meta</h1>
+                <p>Define un nuevo objetivo de ahorro</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">
+                    <img src="" alt="Foto de perfil">
+                </button>
+            </div>
+        </header>
+        <section class="formulario-meta">
+            <div class="grupo-formulario">
+                <label for="nombre-meta">NOMBRE DE LA META</label>
+                <input type="text" id="nombre-meta" placeholder="Ej: Moto Nueva">
+            </div>
+            <div class="grupo-formulario">
+                <label for="monto-meta">MONTO OBJETIVO</label>
+                <div class="campo-con-prefijo">
+                    <span class="prefijo-monto">$</span>
+                    <input type="text" id="monto-meta" placeholder="0">
+                </div>
+            </div>
+            <div class="grupo-formulario">
+                <label for="categoria-meta">CATEGORÍA</label>
+                <select id="categoria-meta">
+                    <option>Selecciona una categoría</option>
+                    <option>Viajes</option>
+                    <option>Emergencia</option>
+                    <option>Tecnología</option>
+                    <option>Vivienda</option>
+                    <option>Educación</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="fondo-asociado">FONDO ASOCIADO</label>
+                <select id="fondo-asociado">
+                    <option>Selecciona un fondo</option>
+                    <option>Fondo de Ahorro Principal</option>
+                    <option>Fondo de Emergencia</option>
+                    <option>Fondo de Viajes</option>
+                </select>
+            </div>
+            <div class="grupo-formulario">
+                <label for="fecha-meta">FECHA LÍMITE</label>
+                <div class="campo-con-icono">
+                    <span class="icono-calendario">📅</span>
+                    <input type="text" id="fecha-meta" placeholder="DD/MM/AAAA">
+                </div>
+            </div>
+            <div class="grupo-formulario">
+                <label for="aporte-periodico">APORTE PERIÓDICO</label>
+                <div class="campo-con-prefijo">
+                    <span class="prefijo-monto">$</span>
+                    <input type="text" id="aporte-periodico" placeholder="0">
+                </div>
+            </div>
+        </section>
+        <section class="acciones">
+            <button type="button" class="boton-secundario">Cancelar</button>
+            <button type="button" class="boton-primario">Guardar Meta</button>
+        </section>
+    </main>  </body>
+</html>

@@ -1,0 +1,96 @@
+:root {
+  /* ==========================
+     COLORES
+     ========================== */
+
+  --bg-dark: #070920;
+  --bg-light: #F8F9FF;
+  --bg-card: #0C0F40;
+
+  --indigo: #818CF8;
+  --violet: #A78BFA;
+  --sky: #38BDF8;
+  --green: #34D399;
+  --red: #F87171;
+  --amber: #FBBF24;
+
+  --slate-700: #334155;
+  --slate-500: #64748B;
+  --slate-400: #94A3B8;
+  --slate-300: #CBD5E1;
+  --slate-50: #F1F5F9;
+
+  --white: #FFFFFF;
+
+  /* ==========================
+     TIPOGRAFÍA
+     ========================== */
+
+  --font-heading: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Desktop */
+  --desktop-h1: 40px;
+  --desktop-h2: 28px;
+  --desktop-h3: 22px;
+  --desktop-body: 16px;
+  --desktop-caption: 13px;
+  --desktop-small: 12px;
+
+  /* Mobile */
+  --mobile-h1: 32px;
+  --mobile-h2: 24px;
+  --mobile-h3: 20px;
+  --mobile-body: 16px;
+
+  /* ==========================
+     ICONOGRAFÍA
+     ========================== */
+
+  --icon-small: 16px;
+  --icon-standard: 20px;
+  --icon-main: 24px;
+  --icon-large: 32px;
+
+  /* ==========================
+     AVATARES
+     ========================== */
+
+  --avatar-mobile-sm: 32px;
+  --avatar-mobile-md: 40px;
+  --avatar-mobile-lg: 48px;
+
+  --avatar-desktop-sm: 40px;
+  --avatar-desktop-md: 48px;
+  --avatar-desktop-lg: 56px;
+
+  /* ==========================
+     IMÁGENES MOBILE
+     ========================== */
+
+  --hero-mobile-width: 240px;
+  --hero-mobile-height: 320px;
+
+  --banner-mobile-width: 360px;
+  --banner-mobile-height: 160px;
+
+  --card-mobile-width: 72px;
+  --card-mobile-height: 96px;
+
+  --thumbnail-mobile: 48px;
+
+  /* ==========================
+     IMÁGENES DESKTOP
+     ========================== */
+
+  --hero-desktop-width: 360px;
+  --hero-desktop-height: 480px;
+
+  --banner-desktop-width: 720px;
+  --banner-desktop-height: 320px;
+
+  --card-desktop-width: 108px;
+  --card-desktop-height: 144px;
+
+  --thumbnail-desktop: 64px;
+}

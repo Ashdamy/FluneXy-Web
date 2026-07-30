@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <main class="contenedor-autenticacion">
+        <div class="volver">
+            <a href="login.html">← Volver</a>
+        </div>
+        <section class="tarjeta-formulario">
+            <header class="encabezado-autenticacion">
+                <h1>Crea tu cuenta</h1>
+                <p>Empieza gratis. Sin tarjeta de crédito.</p>
+            </header>
+            <form class="formulario-registro" action="" method="post">
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        required>
+                    <p class="mensaje-ayuda">
+                        Usaremos este correo para verificar tu cuenta.
+                    </p>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="contrasena">Contraseña</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        required>
+                    <p class="mensaje-fortaleza">
+                        Fortaleza: media - añade símbolos para mejorarla.
+                    </p>
+                    <div class="barra-fortaleza">
+                        <div class="nivel-fortaleza"></div>
+                    </div>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="confirmar-contrasena">
+                        Confirmar contraseña
+                    </label>
+                    <input
+                        type="password"
+                        id="confirmar-contrasena"
+                        name="confirmar-contrasena"
+                        required>
+                </div>
+                <button
+                    type="submit"
+                    class="boton-primario">
+                    Crear cuenta gratis
+                </button>
+                <div class="enlace-secundario">
+                    <a href="login.html">
+                        ¿Ya tienes cuenta? Inicia sesión
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Plantilla</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html" class="activo"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Nueva Plantilla</h1>
+                <p>Configura un movimiento automático recurrente</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">
+                    <img src="" alt="Foto de perfil">
+                </button>
+            </div>
+        </header>
+        <section class="formulario-plantilla">
+            <section class="datos-principales">
+                <div class="tipo-monto">
+                    <h3>Tipo y monto</h3>
+                    <div class="tipo-transaccion">
+                        <button type="button" class="boton-secundario">
+                            Ingreso
+                        </button>
+                        <button type="button" class="boton-primario">
+                            Gasto
+                        </button>
+                    </div>
+                    <div class="monto">
+                        <strong>$1,200,000</strong>
+                        <small>Gasto</small>
+                    </div>
+                </div>
+                <div class="categorias">
+                    <h3>Categoría</h3>
+                    <div class="lista-categorias">
+                        <div class="categoria">
+                            <h4>Transporte</h4>
+                            <small>Gasto</small>
+                        </div>
+                        <div class="categoria">
+                            <h4>Servicios</h4>
+                            <small>Gasto</small>
+                        </div>
+                        <div class="categoria">
+                            <h4>Entretenimiento</h4>
+                            <small>Gasto</small>
+                        </div>
+                        <div class="categoria">
+                            <h4>Alimentación</h4>
+                            <small>Gasto</small>
+                        </div>
+                        <div class="categoria">
+                            <h4>Otro</h4>
+                            <small>Gasto</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="recurrencia">
+                    <h3>Recurrencia</h3>
+                    <div class="opciones-recurrencia">
+                        <button type="button">Mensual</button>
+                        <button type="button">Quincenal</button>
+                        <button type="button">Semanal</button>
+                    </div>
+                </div>
+            </section>
+            <section class="configuracion">
+                <div class="dia-ejecucion">
+                    <h3>Día de ejecución</h3>
+                    <div class="selector-dia">
+                        <p>Ejecutar el día</p>
+                        <button type="button">-</button>
+                        <strong>5</strong>
+                        <button type="button">+</button>
+                    </div>
+                    <small>de cada mes · La ejecución se programa automáticamente</small>
+                </div>
+                <div class="vigencia">
+                    <h3>Periodo de vigencia</h3>
+                    <div class="fechas">
+                        <div>
+                            <p>Fecha inicio</p>
+                            <strong>2025-06-01</strong>
+                        </div>
+                        <div>
+                            <p>Fecha fin</p>
+                            <strong>2025-12-31</strong>
+                        </div>
+                    </div>
+                    <small>7 meses de vigencia · 7 ejecuciones programadas</small>
+                </div>
+                <div class="fondo-asociado">
+                    <h3>Fondo asociado</h3>
+                    <div class="fondo">
+                        <h4>Bancolombia</h4>
+                        <small>$2,450,000</small>
+                    </div>
+                    <div class="fondo">
+                        <h4>Nequi</h4>
+                        <small>$380,000</small>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="acciones">
+            <button type="button" class="boton-secundario">
+                Cancelar
+            </button>
+            <button type="button" class="boton-primario">
+                Guardar Plantilla
+            </button>
+        </footer>
+    </main>
+</body>
+</html>

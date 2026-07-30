@@ -1,9 +1,164 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Fondos | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html" class="activo"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Fondos</h1>
+                <p>Administra tus cuentas y saldos disponibles</p>
+            </div>
+            <div class="acciones-usuario">
+                <span class="saludo-usuario">Hola, Ana Milena</span>
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </header>
+        <section class="tarjeta-resumen">
+            <div class="informacion-resumen">
+                <p>Balance Total</p>
+                <h2>$2.980.000</h2>
+            </div>
+            <div class="estadisticas-resumen">
+                <div class="estadistica">
+                    <p>Fondos activos</p>
+                    <strong>3</strong>
+                </div>
+                <div class="estadistica">
+                    <p></p>
+                    <strong></strong>
+                </div>
+            </div>
+        </section>
+        <section class="barra-herramientas">
+            <div class="filtros">
+                <button type="button" class="filtro-activo">Todos</button>
+                <button type="button" class="filtro">Activos</button>
+                <button type="button" class="filtro">Inactivos</button>
+            </div>
+            <div class="busqueda">
+                <input type="search" placeholder="Buscar fondo por nombre...">
+            </div>
+            <button type="button" class="boton-primario" onclick="location.href='crear-fondo.html'">
+                + Agregar Fondo
+            </button>
+        </section>
+        <section class="lista-activos">
+            <h3>CUENTAS REGISTRADAS</h3>
+            <article class="tarjeta-activo">
+                <header class="encabezado-activo">
+                    <span class="icono"></span>
+                    <small>BANCO</small>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Bancolombia</h3>
+                    <p>BANCO</p>
+                </div>
+                <div class="valor-activo">
+                    <small>Saldo</small>
+                    <strong>$2.450.000</strong>
+                </div>
+                <footer class="pie-activo">
+                    <button type="button" onclick="location.href='detalle-fondo.html'"><span class="icono"></span></button>
+                    <button type="button" onclick="location.href='editar-fondo.html'"><span class="icono"></span></button>
+                </footer>
+            </article>
+            <article class="tarjeta-activo">
+                <header class="encabezado-activo">
+                    <span class="icono"></span>
+                    <small>BILLETERA DIGITAL</small>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Nequi</h3>
+                    <p>BILLETERA DIGITAL</p>
+                </div>
+                <div class="valor-activo">
+                    <small>Saldo</small>
+                    <strong>$380.000</strong>
+                </div>
+                <footer class="pie-activo">
+                    <button type="button" onclick="location.href='detalle-fondo.html'"><span class="icono"></span></button>
+                    <button type="button" onclick="location.href='editar-fondo.html'"><span class="icono"></span></button>
+                </footer>
+            </article>
+            <article class="tarjeta-activo">
+                <header class="encabezado-activo">
+                    <span class="icono"></span>
+                    <small>EFECTIVO</small>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Efectivo</h3>
+                    <p>EFECTIVO</p>
+                </div>
+                <div class="valor-activo">
+                    <small>Saldo</small>
+                    <strong>$150.000</strong>
+                </div>
+                <footer class="pie-activo">
+                    <button type="button" onclick="location.href='detalle-fondo.html'"><span class="icono"></span></button>
+                    <button type="button" onclick="location.href='editar-fondo.html'"><span class="icono"></span></button>
+                </footer>
+            </article>
+            <article class="tarjeta-activo inactivo">
+                <header class="encabezado-activo">
+                    <span class="icono"></span>
+                    <small>BILLETERA DIGITAL</small>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Daviplata</h3>
+                    <p>BILLETERA DIGITAL</p>
+                </div>
+                <div class="valor-activo">
+                    <small>Saldo</small>
+                    <strong>$0</strong>
+                </div>
+                <footer class="pie-activo">
+                    <span class="estado-inactivo">Inactivo</span>
+                    <button type="button" onclick="location.href='detalle-fondo.html'"><span class="icono"></span></button>
+                    <button type="button" onclick="location.href='editar-fondo.html'"><span class="icono"></span></button>
+                </footer>
+            </article>
+        </section>
+    </main>  </body>
 </html>

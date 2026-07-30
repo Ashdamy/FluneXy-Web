@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Cambiar Contraseña</h1>
+                <p>Protege el acceso a tu cuenta</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </header>
+        <div class="contenedor-dos-columnas">
+            <div class="columna-formulario">
+                <section class="informacion-alerta">
+                    <header class="encabezado-seccion">
+                        <h3>SEGURIDAD DE LA CUENTA</h3>
+                    </header>
+                    <section class="formulario-meta">
+                        <div class="grupo-formulario">
+                            <label for="contrasena-actual">Contraseña actual</label>
+                            <input type="password" id="contrasena-actual" placeholder="Ingresa tu contraseña actual">
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="nueva-contrasena">Nueva contraseña</label>
+                            <input type="password" id="nueva-contrasena" placeholder="Ingresa tu nueva contraseña">
+                        </div>
+                        <div class="indicador-fortaleza">
+                            <div class="barra-fortaleza llena"></div>
+                            <span class="texto-fortaleza">Fortaleza excelente</span>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="confirmar-contrasena">Confirmar nueva contraseña</label>
+                            <input type="password" id="confirmar-contrasena" placeholder="Repite tu nueva contraseña">
+                        </div>
+                        <div class="requisitos-contrasena">
+                            <p>Mínimo 8 caracteres, una mayúscula y un número</p>
+                        </div>
+                    </section>
+                </section>
+                <section class="acciones">
+                    <button type="button" class="boton-secundario" onclick="location.href='mi-perfil.html'">Cancelar</button>
+                    <button type="button" class="boton-primario">Actualizar Contraseña</button>
+                </section>
+            </div>
+            <aside class="columna-panel">
+                <div class="panel-consejos">
+                    <header class="encabezado-seccion">
+                        <h3>Buenas prácticas de seguridad</h3>
+                    </header>
+                    <ul class="lista-consejos">
+                        <li class="consejo-item">
+                            <span class="icono-consejo">🔑</span>
+                            <div>
+                                <strong>Usa contraseñas únicas</strong>
+                                <p>No repitas tu contraseña en otros sitios web.</p>
+                            </div>
+                        </li>
+                        <li class="consejo-item">
+                            <span class="icono-consejo">🔐</span>
+                            <div>
+                                <strong>Combina caracteres</strong>
+                                <p>Mezcla mayúsculas, minúsculas, números y símbolos.</p>
+                            </div>
+                        </li>
+                        <li class="consejo-item">
+                            <span class="icono-consejo">🔄</span>
+                            <div>
+                                <strong>Cambia tu contraseña periódicamente</strong>
+                                <p>Actualízala cada 3 meses para mayor seguridad.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="aviso-importante">
+                        <span class="icono-aviso">⚠️</span>
+                        <div>
+                            <strong>Importante</strong>
+                            <p>Nunca compartas tu contraseña con terceros. FluneXy nunca te solicitará tu contraseña por correo o teléfono.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>  </body>
+</html>

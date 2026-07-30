@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Pagos | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html" class="activo"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Historial de Pagos</h1>
+                <p>Pagos y aportes registrados</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">
+                    <img src="" alt="Foto de perfil">
+                </button>
+            </div>
+        </header>
+        <section class="barra-herramientas">
+            <div class="busqueda">
+                <span class="icono-busqueda">🔍</span>
+                <input type="text" placeholder="Buscar pagos...">
+            </div>
+            <div class="filtros-pestañas">
+                <button class="filtro-activo">Todos</button>
+                <button>Completados</button>
+                <button>Pendientes</button>
+                <button>Fallidos</button>
+            </div>
+        </section>
+        <section class="resumen-pagos">
+            <div class="tarjeta-resumen">
+                <p>Total pagado</p>
+                <strong>$945,000</strong>
+            </div>
+            <div class="tarjeta-resumen">
+                <p>Pendiente</p>
+                <strong>$250,000</strong>
+            </div>
+        </section>
+        <section class="tabla-historial-pagos">
+            <header class="encabezado-seccion">
+                <h3>ORDENADO POR FECHA</h3>
+            </header>
+            <div class="lista-pagos">
+                <article class="item-pago">
+                    <div class="icono-pago">💳</div>
+                    <div class="informacion-pago">
+                        <h4>Tarjeta de Crédito</h4>
+                        <p>15 Jun 2025</p>
+                    </div>
+                    <div class="valor-pago">
+                        <strong>$250,000</strong>
+                        <span class="estado completado">Completado</span>
+                    </div>
+                </article>
+                <article class="item-pago">
+                    <div class="icono-pago">💳</div>
+                    <div class="informacion-pago">
+                        <h4>Préstamo Personal</h4>
+                        <p>10 Jun 2025</p>
+                    </div>
+                    <div class="valor-pago">
+                        <strong>$400,000</strong>
+                        <span class="estado completado">Completado</span>
+                    </div>
+                </article>
+                <article class="item-pago">
+                    <div class="icono-pago">💳</div>
+                    <div class="informacion-pago">
+                        <h4>Seguro Vehículo</h4>
+                        <p>01 Jun 2025</p>
+                    </div>
+                    <div class="valor-pago">
+                        <strong>$295,000</strong>
+                        <span class="estado fallido">Fallido</span>
+                    </div>
+                </article>
+                <article class="item-pago">
+                    <div class="icono-pago">💳</div>
+                    <div class="informacion-pago">
+                        <h4>Internet ETB</h4>
+                        <p>28 May 2025</p>
+                    </div>
+                    <div class="valor-pago">
+                        <strong>$95,000</strong>
+                        <span class="estado completado">Completado</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>  </body>
+</html>

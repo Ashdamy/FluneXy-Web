@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil | FluneXy</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo-barra">FluneXy</div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav">👤</span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Editar Perfil</h1>
+                <p>Actualiza tu información personal</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion">
+                    <img src="" alt="Notificaciones">
+                </button>
+                <button type="button" class="boton-perfil">A</button>
+            </div>
+        </header>
+        <div class="contenedor-dos-columnas">
+            <div class="columna-formulario">
+                <section class="informacion-alerta">
+                    <header class="encabezado-seccion">
+                        <h3>INFORMACIÓN PERSONAL</h3>
+                    </header>
+                    <section class="formulario-meta">
+                        <div class="grupo-formulario">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" value="Ana Milena Sierra">
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" value="anamilena@ejemplo.com">
+                            <span class="texto-ayuda">Si lo cambias, verificaremos que no esté registrado</span>
+                        </div>
+                        <p class="requerido-nota">* Todos los campos son obligatorios</p>
+                    </section>
+                </section>
+                <section class="acciones">
+                    <button type="button" class="boton-secundario" onclick="location.href='mi-perfil.html'">Cancelar</button>
+                    <button type="button" class="boton-primario">Guardar Cambios</button>
+                </section>
+            </div>
+            <aside class="columna-panel">
+                <div class="panel-vista-previa">
+                    <header class="encabezado-seccion">
+                        <h3>VISTA PREVIA</h3>
+                    </header>
+                    <div class="contenido-vista-previa">
+                        <div class="avatar-vista-previa">
+                            <span class="avatar-letra grande">A</span>
+                        </div>
+                        <h4>Ana Milena Sierra</h4>
+                        <p class="email-vista">anamilena@ejemplo.com</p>
+                        <span class="badge-estado">Activa</span>
+                        <p class="descripcion-vista">Así se verá tu perfil en toda la plataforma.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>  </body>
+</html>
