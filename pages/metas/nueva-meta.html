@@ -45,7 +45,7 @@
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Nueva Meta</h1>
-                <p>Define un nuevo objetivo de ahorro</p>
+                <p>Define un nuevo objetivo financiero</p>
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
@@ -56,57 +56,104 @@
                 </button>
             </div>
         </header>
-        <section class="formulario-meta">
-            <div class="grupo-formulario">
-                <label for="nombre-meta">NOMBRE DE LA META</label>
-                <input type="text" id="nombre-meta" placeholder="Ej: Moto Nueva">
-            </div>
-            <div class="grupo-formulario">
-                <label for="monto-meta">MONTO OBJETIVO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="monto-meta" placeholder="0">
+
+        <section class="nueva-meta">
+            <div class="formulario-meta">
+                <div class="campo-meta">
+                    <label for="nombre-meta">NOMBRE DE LA META</label>
+                    <input type="text" id="nombre-meta" placeholder="Moto Nueva" value="Moto Nueva">
+                    <small class="ayuda-campo">Dale un nombre claro que te motive a cumplirla</small>
+                </div>
+
+                <div class="campo-meta">
+                    <label for="monto-meta">MONTO OBJETIVO</label>
+                    <div class="campo-con-prefijo">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="monto-meta" value="12.000.000">
+                        <span class="etiqueta-meta">META</span>
+                    </div>
+                    <small class="ayuda-campo">¿Cuánto dinero necesitas para cumplir esta meta?</small>
+                </div>
+
+                <div class="campo-meta">
+                    <label for="fecha-meta">FECHA OBJETIVO</label>
+                    <div class="campo-con-icono">
+                        <span class="icono-calendario">📅</span>
+                        <input type="text" id="fecha-meta" value="2025-12-31">
+                    </div>
+                    <small class="ayuda-campo">¿Cuándo quieres tener el dinero completo?</small>
+                </div>
+
+                <div class="campo-meta">
+                    <label>FONDO DE AHORRO</label>
+                    <div class="fondos-ahorro">
+                        <div class="fondo-opcion seleccionado">
+                            <div class="fondo-info">
+                                <span class="fondo-icono">🏦</span>
+                                <div>
+                                    <strong>Bancolombia</strong>
+                                    <span>$2.450.000</span>
+                                </div>
+                            </div>
+                            <span class="check-seleccionado"> ✓</span>
+                        </div>
+
+                        <div class="fondo-opcion">
+                            <div class="fondo-info">
+                                <span class="fondo-icono">📱</span>
+                                <div>
+                                    <strong>Nequi</strong>
+                                    <span>$380.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fondo-opcion">
+                            <div class="fondo-info">
+                                <span class="fondo-icono">💵</span>
+                                <div>
+                                    <strong>Efectivo</strong>
+                                    <span>$150.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="grupo-formulario">
-                <label for="categoria-meta">CATEGORÍA</label>
-                <select id="categoria-meta">
-                    <option>Selecciona una categoría</option>
-                    <option>Viajes</option>
-                    <option>Emergencia</option>
-                    <option>Tecnología</option>
-                    <option>Vivienda</option>
-                    <option>Educación</option>
-                    <option>Otro</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fondo-asociado">FONDO ASOCIADO</label>
-                <select id="fondo-asociado">
-                    <option>Selecciona un fondo</option>
-                    <option>Fondo de Ahorro Principal</option>
-                    <option>Fondo de Emergencia</option>
-                    <option>Fondo de Viajes</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fecha-meta">FECHA LÍMITE</label>
-                <div class="campo-con-icono">
-                    <span class="icono-calendario">📅</span>
-                    <input type="text" id="fecha-meta" placeholder="DD/MM/AAAA">
+
+            <aside class="vista-previa">
+                <h3>VISTA PREVIA</h3>
+
+                <div class="vista-previa-icono">🏍️</div>
+                <h4 class="vista-previa-nombre">Moto Nueva</h4>
+                <span class="vista-previa-tipo">META FINANCIERA</span>
+
+                <hr class="vista-previa-divisor">
+
+                <div class="vista-previa-dato">
+                    <small>Monto objetivo</small>
+                    <strong>$12.000.000</strong>
                 </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="aporte-periodico">APORTE PERIÓDICO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="aporte-periodico" placeholder="0">
+
+                <div class="vista-previa-dato">
+                    <small>Ahorro mensual requerido</small>
+                    <strong class="dato-violeta">$1.000.000</strong>
                 </div>
-            </div>
+
+                <div class="vista-previa-badges">
+                    <span class="badge-info">12 meses</span>
+                    <span class="badge-alcanzable">Alcanzable</span>
+                    <span class="badge-info">Dic 2025</span>
+                </div>
+
+                <p class="vista-previa-nota">Esta meta se sumará a tus Objetivos Activos y aportará a tu Total Ahorrado.</p>
+            </aside>
         </section>
+
         <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Meta</button>
+            <button type="button" class="boton-secundario">✕ Cancelar</button>
+            <button type="button" class="boton-primario">🎯 Guardar Meta</button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

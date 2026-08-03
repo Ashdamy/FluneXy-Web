@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
+    <!-- BARRA LATERAL COMPLETA -->
     <aside class="barra-lateral">
         <div class="logo-barra">FluneXy</div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
@@ -41,93 +42,125 @@
         <hr class="divisor-barra">
         <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
     </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenido-principal">
+        
+        <!-- ENCABEZADO DE PÁGINA -->
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Generar Reporte</h1>
                 <p>Selecciona el tipo y periodo del reporte</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" aria-label="Notificaciones">🔔</button>
+                <div class="avatar-perfil">A</div>
             </div>
         </header>
-        <div class="contenido-reporte">
-            <section class="formulario-reporte">
-                <div class="grupo-formulario">
+
+        <!-- LAYOUT GRID (2 COLUMNAS) -->
+        <div class="layout-generar-reporte">
+            
+            <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+            <section class="columna-formulario">
+                
+                <!-- Campo 1: Tipo de Reporte -->
+                <div class="campo-formulario">
                     <label>TIPO DE REPORTE</label>
-                    <div class="opciones-tipo-reporte">
-                        <button type="button" class="tarjeta-opcion seleccionado">
-                            <span class="icono-opcion">💵</span>
-                            <span class="texto-opcion">Flujo de caja</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">📊</span>
-                            <span class="texto-opcion">Balance general</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">🛒</span>
-                            <span class="texto-opcion">Gastos por categoría</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">📈</span>
-                            <span class="texto-opcion">Ingresos por período</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">🎯</span>
-                            <span class="texto-opcion">Historial de metas</span>
-                        </button>
+                    <div class="campo-input-caja">
+                        <span>Balance Financiero</span>
                     </div>
+                    <small class="ayuda-campo">Elige qué información quieres analizar</small>
                 </div>
-                <div class="grupo-formulario">
+
+                <!-- Campo 2: Periodo del Reporte -->
+                <div class="campo-formulario">
                     <label>PERIODO DEL REPORTE</label>
-                    <div class="campo-periodo">
-                        <label>Fecha inicio</label>
-                        <input type="date" class="campo-fecha" value="2026-06-01">
-                        <label>Fecha fin</label>
-                        <input type="date" class="campo-fecha" value="2026-06-30">
+                    <div class="campo-input-caja">
+                        <span class="icono-campo">📅</span>
+                        <span>Junio 2026</span>
+                        <span class="tag-meta">META</span>
                     </div>
+                    <small class="ayuda-campo">Selecciona el rango de tiempo a revisar</small>
                 </div>
-                <div class="grupo-formulario">
+
+                <!-- Campo 3: Formato de Exportación -->
+                <div class="campo-formulario">
                     <label>FORMATO DE EXPORTACIÓN</label>
-                    <div class="opciones-formato">
-                        <button type="button" class="chip chip-morado seleccionado">PDF</button>
-                        <button type="button" class="chip chip-verde">Excel</button>
-                        <button type="button" class="chip chip-azul">CSV</button>
+                    <div class="selector-formato">
+                        <button type="button" class="opcion-formato seleccionado">
+                            <span>📄</span> PDF
+                        </button>
+                        <button type="button" class="opcion-formato">
+                            <span>📊</span> Excel
+                        </button>
+                    </div>
+                    <small class="ayuda-campo">Elige PDF o Excel para exportar</small>
+                </div>
+
+                <!-- Campo 4: Otros Tipos Disponibles -->
+                <div class="campo-formulario">
+                    <label>OTROS TIPOS DISPONIBLES</label>
+                    <div class="lista-tipos-reporte">
+                        
+                        <!-- Opción 1 -->
+                        <div class="item-tipo-reporte seleccionado">
+                            <div class="info-tipo">
+                                <span class="icono-tipo">📊</span>
+                                <div>
+                                    <strong>Balance Financiero</strong>
+                                    <small>Seleccionado</small>
+                                </div>
+                            </div>
+                            <span class="check-seleccion">✓</span>
+                        </div>
+
+                        <!-- Opción 2 -->
+                        <div class="item-tipo-reporte">
+                            <div class="info-tipo">
+                                <span class="icono-tipo">💵</span>
+                                <div>
+                                    <strong>Flujo de Caja</strong>
+                                    <small>Disponible</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opción 3 -->
+                        <div class="item-tipo-reporte">
+                            <div class="info-tipo">
+                                <span class="icono-tipo">📈</span>
+                                <div>
+                                    <strong>Indicadores</strong>
+                                    <small>Disponible</small>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+                <!-- Botón Principal -->
+                <button type="button" class="boton-primario boton-ancho-completo">
+                    <span>📋</span> Generar Reporte
+                </button>
+
             </section>
-            <aside class="vista-previa">
-                <header class="encabezado-seccion">
-                    <h3>VISTA PREVIA RÁPIDA</h3>
-                </header>
-                <div class="tarjeta-resumen">
-                    <p class="label-reporte">Flujo de caja</p>
-                    <p class="label-periodo">Junio 2026</p>
-                    <p class="label-formato">PDF</p>
-                    <div class="resumen-valores">
-                        <div class="item-resumen">
-                            <p>Total Ingresos</p>
-                            <strong>$5,200,000</strong>
-                        </div>
-                        <div class="item-resumen">
-                            <p>Total Gastos</p>
-                            <strong>$2,400,000</strong>
-                        </div>
-                        <div class="item-resumen">
-                            <p>Balance Neto</p>
-                            <strong>$2,800,000</strong>
-                        </div>
-                    </div>
+
+            <!-- COLUMNA DERECHA: VISTA PREVIA RÁPIDA -->
+            <aside class="columna-vista-previa-rapida">
+                <h3>VISTA PREVIA RÁPIDA</h3>
+                <div class="tarjeta-vista-rapida">
+                    <div class="icono-vista-rapida">🧮</div>
+                    <small>Fecha de Generación</small>
+                    <h2>02 Jul 2026</h2>
+                    <p>La información se actualizará al generar el reporte</p>
                 </div>
             </aside>
+
         </div>
-        <section class="acciones">
-            <button type="button" class="boton-primario boton-ancho-completo">Generar Reporte</button>
-        </section>
-    </main>  </body>
+
+    </main>
+
+</body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
+    <!-- BARRA LATERAL INTEGRADA -->
     <aside class="barra-lateral">
         <div class="logo-barra">FluneXy</div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
@@ -41,6 +42,8 @@
         <hr class="divisor-barra">
         <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
     </aside>
+
+    <!-- CONTENIDO PRINCIPAL DEL CHAT -->
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
@@ -51,36 +54,46 @@
                 <button type="button" class="boton-notificacion" aria-label="Notificaciones">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                 </button>
-                <button type="button" class="boton-perfil" aria-label="Perfil">A</button>
+                <div class="avatar-perfil">A</div>
             </div>
         </header>
+
         <section class="chat-contenedor">
-            <div class="mensajes-area">
-                <div class="mensaje-asistente">
-                    <div class="burbuja-mensaje">
-                        <p>¡Hola! Soy tu asistente financiero. ¿En qué puedo ayudarte hoy?</p>
-                    </div>
-                </div>
-                <div class="mensaje-usuario">
-                    <div class="burbuja-mensaje">
-                        <p>¿Cómo van mis finanzas este mes?</p>
-                    </div>
-                </div>
-                <div class="mensaje-asistente">
-                    <div class="burbuja-mensaje">
-                        <p>Tus ingresos totales son de $4,200,000 y tus gastos de $2,800,000, lo que te da un balance positivo de $1,400,000. ¡Vas por buen camino!</p>
-                    </div>
-                </div>
-            </div>
+            <!-- PILDORAS / SUGERENCIAS ARRIBA -->
             <div class="chips-sugerencia">
                 <button type="button" class="chip">¿Cómo registro un movimiento?</button>
                 <button type="button" class="chip">¿Qué es el flujo de caja?</button>
                 <button type="button" class="chip">¿Cómo creo una meta?</button>
             </div>
+
+            <!-- MESA DE MENSAJES DE CHAT -->
+            <div class="mensajes-area">
+                <div class="mensaje-asistente">
+                    <div class="burbuja-mensaje">
+                        <p>¡Hola! Soy tu asistente financiero. Puedo ayudarte a resolver dudas sobre cómo usar FluneXy. ¿En qué te puedo ayudar hoy?</p>
+                    </div>
+                </div>
+
+                <div class="mensaje-usuario">
+                    <div class="burbuja-mensaje">
+                        <p>¿Cómo registro un movimiento?</p>
+                    </div>
+                </div>
+
+                <div class="mensaje-asistente">
+                    <div class="burbuja-mensaje">
+                        <p>Ve al menú y entra a Movimientos, luego toca "+ Nuevo Movimiento". Elige el tipo (Ingreso o gasto), el monto, una categoría y el fondo desde donde sale o entra el dinero. Así queda registrado al instante.</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- CAJA INFERIOR DE ENTRADA -->
         <section class="entrada-chat">
             <input type="text" placeholder="Escribe tu pregunta...">
-            <button type="button" class="boton-primario">Enviar</button>
+            <button type="button" class="boton-enviar-chat" aria-label="Enviar mensaje">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
         </section>
     </main>
 </body>

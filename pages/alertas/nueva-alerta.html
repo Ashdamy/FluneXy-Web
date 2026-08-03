@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Alertas | FluneXy</title>
+    <title>Nueva Alerta | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
@@ -44,8 +44,8 @@
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Historial de Alertas</h1>
-                <p>Consulta las notificaciones generadas.</p>
+                <h1>Nueva Alerta</h1>
+                <p>Define cuándo quieres recibir un aviso</p>
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion"><span class="icono-nav">🔔</span></button>
@@ -53,75 +53,68 @@
             </div>
         </header>
 
-        <section class="resumen-alertas">
-            <div class="resumen-alertas-izq">
-                <p>Este mes</p>
-                <h2>3</h2>
-                <span class="badge-resumen">Últimos 30 días</span>
-            </div>
-            <div class="resumen-alertas-der">
-                <p>Total</p>
-                <h2>12</h2>
-            </div>
-        </section>
+        <div class="layout-nueva-alerta">
+            <!-- Columna Izquierda -->
+            <section class="formulario-alerta">
+                <div class="campo-alerta">
+                    <label>Tipo de alerta</label>
+                    <div class="campo-select-simulado">Endeudamiento</div>
+                    <p class="ayuda-campo">Elige qué aspecto financiero quieres monitorear</p>
+                </div>
 
-        <h3 class="titulo-informacion">Alertas Generadas</h3>
+                <div class="campo-alerta">
+                    <label>Umbral de alerta (%)</label>
+                    <div class="campo-con-prefijo">
+                        <span class="prefijo-monto">≥</span>
+                        <input type="number" value="35">
+                        <span class="etiqueta-meta">META</span>
+                    </div>
+                    <p class="ayuda-campo">El sistema notificará al superar este umbral</p>
+                </div>
 
-        <div class="grid-eventos">
-            <article class="tarjeta-evento acento-violeta">
-                <span class="icono-evento">📉</span>
-                <div class="info-evento">
-                    <h4>Endeudamiento superó 35%</h4>
-                    <p>28 Jun 2026 · 09:14 am</p>
+                <div class="campo-alerta">
+                    <label>Estado de la alerta</label>
+                    <div class="campo-select-simulado">ON · Notificaciones Activas</div>
+                    <p class="ayuda-campo">Actívala para empezar a recibir notificaciones</p>
                 </div>
-                <div class="dato-evento">
-                    <small>Valor</small>
-                    <strong>35.2%</strong>
-                    <span class="estado-evento notificado"><span class="punto-estado"></span>Notificado</span>
-                </div>
-            </article>
 
-            <article class="tarjeta-evento acento-violeta">
-                <span class="icono-evento">📉</span>
-                <div class="info-evento">
-                    <h4>Endeudamiento superó 35%</h4>
-                    <p>15 Jun 2026 · 08:02 am</p>
+                <div class="campo-alerta">
+                    <label>Tipo de indicador a monitorear</label>
+                    <div class="opciones-indicador">
+                        <button type="button" class="opcion-indicador seleccionado">
+                            <div>
+                                <strong>Endeudamiento</strong>
+                                <span>Seleccionado</span>
+                            </div>
+                            <span class="check-seleccionado">✓</span>
+                        </button>
+                        <button type="button" class="opcion-indicador">
+                            <strong>Liquidez</strong>
+                        </button>
+                        <button type="button" class="opcion-indicador">
+                            <strong>Gasto Mensual</strong>
+                        </button>
+                    </div>
+                    <p class="ayuda-campo">Selecciona el aspecto financiero a monitorear</p>
                 </div>
-                <div class="dato-evento">
-                    <small>Valor</small>
-                    <strong>35.8%</strong>
-                    <span class="estado-evento notificado"><span class="punto-estado"></span>Notificado</span>
-                </div>
-            </article>
 
-            <article class="tarjeta-evento acento-verde">
-                <span class="icono-evento">💧</span>
-                <div class="info-evento">
-                    <h4>Liquidez bajo 1.0x</h4>
-                    <p>02 Jun 2026 · 11:40 pm</p>
-                </div>
-                <div class="dato-evento">
-                    <small>Valor</small>
-                    <strong>0.9x</strong>
-                    <span class="estado-evento notificado"><span class="punto-estado"></span>Notificado</span>
-                </div>
-            </article>
+                <button type="button" class="boton-primario boton-ancho">Guardar Alerta</button>
+            </section>
 
-            <article class="tarjeta-evento acento-slate">
-                <span class="icono-evento">🛒</span>
-                <div class="info-evento">
-                    <h4>Gasto excesivo del mes</h4>
-                    <p>30 May 2026 · 06:00 pm</p>
+            <!-- Columna Derecha -->
+            <aside class="vista-previa-alerta">
+                <span class="icono-vista-previa">📋</span>
+                <p class="etiqueta-vista-previa">VISTA PREVIA</p>
+                <p class="texto-vista-previa">Se activará cuando</p>
+                <h3>Endeudamiento ≥ 35%</h3>
+                <p class="nota-vista-previa">Recibirás una notificación push al superar el umbral</p>
+                <div class="badges-vista-previa">
+                    <span class="badge-info">Activa</span>
+                    <span class="badge-riesgo">Riesgo alto</span>
+                    <span class="badge-info">Tiempo real</span>
                 </div>
-                <div class="dato-evento">
-                    <small>Valor</small>
-                    <strong>$3.150.000</strong>
-                    <span class="estado-evento notificado"><span class="punto-estado"></span>Notificado</span>
-                </div>
-            </article>
+            </aside>
         </div>
-
-        <button type="button" class="boton-primario boton-ancho">🔔 Ver Alertas Activas</button>
     </main>
 </body>
 </html>

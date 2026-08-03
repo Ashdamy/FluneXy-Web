@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurar Alerta | FluneXy</title>
+    <title>Mis Alertas | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
@@ -44,62 +44,72 @@
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Configurar Alerta</h1>
-                <p>Define las condiciones de tu notificación</p>
+                <h1>Mis Alertas</h1>
+                <p>Configura avisos para riesgos financieros</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion"><span class="icono-nav">🔔</span></button>
+                <button type="button" class="boton-perfil">A</button>
             </div>
         </header>
-        <section class="formulario-alerta">
-            <div class="grupo-formulario">
-                <label>Tipo de alerta</label>
-                <div class="opciones-alerta">
-                    <button type="button" class="tarjeta-opcion seleccionado">
-                        <span class="icono-opcion">💳</span>
-                        <span class="texto-opcion">Gasto</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion">📅</span>
-                        <span class="texto-opcion">Vencimiento</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion">🎯</span>
-                        <span class="texto-opcion">Meta</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion">✏️</span>
-                        <span class="texto-opcion">Personalizada</span>
-                    </button>
+
+        <section class="resumen-alertas">
+            <div class="resumen-alertas-izq">
+                <p>Alertas Activas</p>
+                <h2>3</h2>
+                <span class="badge-resumen">3 activas de 4</span>
+            </div>
+            <div class="resumen-alertas-der">
+                <p>Total</p>
+                <h2>4</h2>
+            </div>
+        </section>
+
+        <div class="encabezado-lista-alertas">
+            <h3>Alertas Configuradas</h3>
+            <button type="button" class="boton-nueva-alerta">+ Agregar Nueva Alerta</button>
+        </div>
+
+        <div class="grid-alertas">
+            <article class="tarjeta-alerta acento-violeta">
+                <span class="icono-alerta">📉</span>
+                <div class="info-alerta">
+                    <h4>Endeudamiento</h4>
+                    <p>UMBRAL: 35%</p>
                 </div>
-            </div>
-            <div class="grupo-formulario">
-                <label>Condición</label>
-                <select class="campo-select">
-                    <option>Superar el 80% del presupuesto</option>
-                    <option>Superar el 50% del presupuesto</option>
-                    <option>Alcanzar el límite de gasto</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label>Mensaje de la alerta</label>
-                <textarea class="campo-textarea" rows="3" placeholder="Escribe el mensaje de la alerta...">Has alcanzado el 80% de tu presupuesto mensual en Alimentación</textarea>
-            </div>
-            <div class="grupo-formulario">
-                <label class="alternancia-label">
-                    <input type="checkbox" class="alternancia-checkbox" checked>
-                    <span>Activar alerta inmediatamente</span>
-                </label>
-            </div>
-        </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Alerta</button>
-        </section>
-    </main>  </body>
+                <div class="dato-alerta">
+                    <small>Actual</small>
+                    <strong>31.4%</strong>
+                    <span class="estado-alerta activa"><span class="punto-estado"></span>Activa</span>
+                </div>
+            </article>
+
+            <article class="tarjeta-alerta acento-verde">
+                <span class="icono-alerta">💧</span>
+                <div class="info-alerta">
+                    <h4>Liquidez</h4>
+                    <p>UMBRAL: 1.0x</p>
+                </div>
+                <div class="dato-alerta">
+                    <small>Actual</small>
+                    <strong>1.6x</strong>
+                    <span class="estado-alerta activa"><span class="punto-estado"></span>Activa</span>
+                </div>
+            </article>
+
+            <article class="tarjeta-alerta acento-slate">
+                <span class="icono-alerta">🛒</span>
+                <div class="info-alerta">
+                    <h4>Gasto Mensual</h4>
+                    <p>UMBRAL: $3.000.000/mes</p>
+                </div>
+                <div class="dato-alerta">
+                    <small>Actual</small>
+                    <strong>—</strong>
+                    <span class="estado-alerta inactiva"><span class="punto-estado"></span>Inactiva</span>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
 </html>

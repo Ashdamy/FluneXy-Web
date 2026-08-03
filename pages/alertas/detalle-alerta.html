@@ -45,51 +45,93 @@
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Detalle de Alerta</h1>
-                <p>Información completa de la notificación</p>
+                <p>Endeudamiento · Meta Financiera</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion"><span class="icono-nav">🔔</span></button>
+                <button type="button" class="boton-perfil">A</button>
             </div>
         </header>
-        <section class="tarjeta-resumen-alerta">
-            <h2>Límite de Gasto</h2>
-            <p>Alimentación</p>
-            <strong>$2,240,000 / $2,800,000</strong>
-        </section>
-        <section class="informacion-detalle">
-            <div class="campo-informacion">
-                <p>Tipo</p>
-                <strong>Límite de Gasto</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Categoría</p>
-                <strong>Alimentación</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Condición</p>
-                <strong>Superar el 80% del presupuesto</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Mensaje</p>
-                <strong>"Has alcanzado el 80% de tu presupuesto mensual en Alimentación"</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Estado</p>
-                <strong>Activa</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Creada</p>
-                <strong>01 Jun 2025</strong>
+
+        <section class="tarjeta-estado-alerta">
+            <header class="fila-superior-alerta">
+                <div class="identidad-alerta">
+                    <span class="icono-meta">🏍️</span>
+                    <span class="badge-tipo-meta">Meta Financiera</span>
+                </div>
+                <span class="badge-estado-progreso">En Progreso</span>
+            </header>
+            <h2>Endeudamiento</h2>
+            <div class="fila-valores-alerta">
+                <div class="valor-actual-alerta">
+                    <small>Estado Actual</small>
+                    <strong>31.4%</strong>
+                </div>
+                <div class="valor-umbral-alerta">
+                    <strong>Umbral configurado: 35%</strong>
+                    <small>Faltan 3.6 pts para el umbral</small>
+                </div>
             </div>
         </section>
+
+        <section class="ultimo-valor-alerta">
+            <div class="ultimo-valor-izq">
+                <span class="icono-calculo">📋</span>
+                <div>
+                    <small>Último Valor Detectado</small>
+                    <strong>31.4%</strong>
+                    <small>Detectado el 28 Jun 2026</small>
+                </div>
+            </div>
+            <div class="ultimo-valor-der">
+                <strong>2</strong>
+                <span>veces este mes</span>
+            </div>
+        </section>
+
+        <h3 class="titulo-informacion">INFORMACIÓN</h3>
+        <div class="informacion-detalle">
+            <div class="tarjeta-informacion">
+                <small>UMBRAL</small>
+                <strong>35%</strong>
+            </div>
+            <div class="tarjeta-informacion">
+                <small>VALOR ACTUAL</small>
+                <strong class="valor-verde">31.4%</strong>
+            </div>
+            <div class="tarjeta-informacion">
+                <small>TIPO</small>
+                <strong>Endeudamiento</strong>
+            </div>
+            <div class="tarjeta-informacion">
+                <small>ORIGEN</small>
+                <strong>Balance</strong>
+            </div>
+            <div class="tarjeta-informacion">
+                <small>FECHA CREACIÓN</small>
+                <strong>3 Ene 2026</strong>
+            </div>
+            <div class="tarjeta-informacion">
+                <small>ESTADO</small>
+                <strong class="valor-violeta">ACTIVA</strong>
+            </div>
+        </div>
+
+        <div class="tarjeta accion-link">
+            <div class="accion-link-info">
+                <span class="icono-circular">👁️</span>
+                <div>
+                    <h3>Ver Historial de Alertas</h3>
+                    <p>3 alertas generadas este mes</p>
+                </div>
+            </div>
+            <button class="flecha-circular">→</button>
+        </div>
+
         <section class="acciones">
-            <button type="button" class="boton-secundario">Editar</button>
-            <button type="button" class="boton-primario">Desactivar</button>
+            <button type="button" class="boton-primario">Editar Alerta</button>
+            <button type="button" class="boton-peligro">Desactivar Alerta</button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

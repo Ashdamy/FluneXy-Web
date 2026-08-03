@@ -7,138 +7,119 @@
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
-    <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
-        <span class="etiqueta-seccion">PRINCIPAL</span>
-        <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
-        </nav>
-        <span class="etiqueta-seccion">GESTIÓN</span>
-        <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
-        </nav>
-        <span class="etiqueta-seccion">ANÁLISIS</span>
-        <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html" class="activo"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
-        </nav>
-        <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
-        </nav>
-        <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
-    </aside>
-    <main class="contenido-principal">
-        <header class="encabezado-pagina">
-            <div class="titulo-pagina">
-                <h1>Balance Financiero</h1>
-                <p>Patrimonio Neto</p>
-            </div>
-            <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
-            </div>
-        </header>
-        <section class="seccion-periodo">
-            <select class="campo-select">
-                <option>Junio 2026</option>
-                <option>Mayo 2026</option>
-                <option>Abril 2026</option>
-            </select>
-        </section>
-        <section class="tarjeta-resumen balance-total">
-            <div class="informacion-resumen">
-                <p>Valor Actual</p>
-                <h2>$28.450.000</h2>
-                <small>Patrimonio Neto</small>
-            </div>
-        </section>
-        <section class="seccion-activos">
-            <header class="encabezado-seccion">
-                <h3>Activos Totales</h3>
+    <div class="app-container">
+        <aside class="barra-lateral">
+            <div class="logo-barra">FluneXy</div>
+            <span class="etiqueta-seccion">PRINCIPAL</span>
+            <nav class="navegacion-barra">
+                <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
+                <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
+                <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            </nav>
+            <span class="etiqueta-seccion">GESTIÓN</span>
+            <nav class="navegacion-barra">
+                <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
+                <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
+                <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
+                <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
+                <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
+                <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            </nav>
+            <span class="etiqueta-seccion">ANÁLISIS</span>
+            <nav class="navegacion-barra">
+                <a href="../balance-financiero/balance-financiero.html" class="activo"><span class="icono-nav">📊</span> Balance financiero</a>
+                <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
+                <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
+                <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
+                <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            </nav>
+            <span class="etiqueta-seccion">SOPORTE</span>
+            <nav class="navegacion-barra">
+                <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
+                <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
+                <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            </nav>
+            <hr class="divisor-barra">
+            <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        </aside>
+
+        <main class="contenido-principal">
+            <header class="encabezado-pagina">
+                <div class="titulo-pagina">
+                    <h1>Balance Financiero</h1>
+                </div>
+                <div class="acciones-usuario">
+                    <button type="button" class="boton-notificacion"><span class="icono-nav">🔔</span></button>
+                    <button type="button" class="boton-perfil">A</button>
+                </div>
             </header>
-            <div class="lista-balance">
-                <div class="item-balance">
-                    <span>Efectivo</span>
-                    <strong>$5,000,000</strong>
-                </div>
-                <div class="item-balance">
-                    <span>Cuentas por cobrar</span>
-                    <strong>$2,500,000</strong>
-                </div>
-                <div class="item-balance">
-                    <span>Inversiones</span>
-                    <strong>$15,000,000</strong>
-                </div>
-                <div class="item-balance">
-                    <span>Propiedades</span>
-                    <strong>$200,000,000</strong>
-                </div>
-                <div class="item-balance total">
-                    <span>Total Activos</span>
-                    <strong>$235.000.000</strong>
-                </div>
+
+            <div class="dashboard-grid">
+                <!-- Columna Izquierda -->
+                <section class="panel-izquierdo">
+                    <div class="tarjeta patrimonio">
+                        <p>Patrimonio Neto</p>
+                        <h2>$28.450.000</h2>
+                        <div class="valor-actual">Valor Actual</div>
+                        <span class="badge">Activo</span>
+                    </div>
+
+                    <div class="tarjeta estadisticas">
+                        <p>ACTIVOS VS. PASIVOS</p>
+                        <h3>86% en activos</h3>
+                        <div class="barra-progreso"><div class="relleno"></div></div>
+                        <div class="footer-stats">
+                            <div><small>Total Activos</small><p>$235.000.000</p></div>
+                            <div><small>Total Pasivos</small><p>$8.200.000</p></div>
+                            <div><small>Patrimonio</small><p>$226.800.000</p></div>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta relacion">
+                        <small>RELACIÓN CON INDICADORES</small>
+                        <p>Base para cálculo de indicadores</p>
+                    </div>
+
+                    <div class="tarjeta accion-link">
+                        <div class="accion-link-info">
+                            <span class="icono-circular">📈</span>
+                            <div>
+                                <h3>Ver Indicadores Financieros</h3>
+                                <p>Liquidez, endeudamiento y más</p>
+                            </div>
+                        </div>
+                        <button class="flecha-circular">→</button>
+                    </div>
+
+                    <div class="botones-accion">
+                        <button class="btn-primary">📄 Generar Reporte de Balance</button>
+                        <button class="btn-secondary">💵 Ver Flujo de Caja</button>
+                    </div>
+                </section>
+
+                <!-- Columna Derecha -->
+                <aside class="panel-derecho">
+                    <h3 class="titulo-seccion">INDICADORES</h3>
+                    <div class="card-indicador">
+                        <small>💧 LIQUIDEZ</small>
+                        <h2>1.6x</h2>
+                    </div>
+                    <div class="card-indicador">
+                        <small>📉 ENDEUDAMIENTO</small>
+                        <h2>3.5%</h2>
+                        <p class="txt-bajo">Riesgo bajo</p>
+                    </div>
+                    <div class="card-indicador">
+                        <small>🏛️ ACTIVOS</small>
+                        <h2>$235.000.000</h2>
+                    </div>
+                    <div class="card-indicador">
+                        <small>💳 PASIVOS</small>
+                        <h2>$8.200.000</h2>
+                    </div>
+                </aside>
             </div>
-        </section>
-        <section class="seccion-pasivos">
-            <header class="encabezado-seccion">
-                <h3>Pasivos Totales</h3>
-            </header>
-            <div class="lista-balance">
-                <div class="item-balance">
-                    <span>Tarjeta de Crédito</span>
-                    <strong>$1,200,000</strong>
-                </div>
-                <div class="item-balance">
-                    <span>Préstamo Personal</span>
-                    <strong>$5,000,000</strong>
-                </div>
-                <div class="item-balance">
-                    <span>Hipoteca</span>
-                    <strong>$2,000,000</strong>
-                </div>
-                <div class="item-balance total">
-                    <span>Total Pasivos</span>
-                    <strong>$8.200.000</strong>
-                </div>
-            </div>
-        </section>
-        <section class="seccion-ratios">
-            <header class="encabezado-seccion">
-                <h3>Indicadores</h3>
-            </header>
-            <div class="tarjetas-ratio">
-                <article class="tarjeta-ratio">
-                    <h4>Índice de Endeudamiento</h4>
-                    <p class="valor-ratio">3.5%</p>
-                    <small>Riesgo bajo</small>
-                </article>
-                <article class="tarjeta-ratio">
-                    <h4>Liquidez</h4>
-                    <p class="valor-ratio">1.6x</p>
-                </article>
-                <article class="tarjeta-ratio">
-                    <h4>Ahorro</h4>
-                    <p class="valor-ratio">$2,800,000</p>
-                </article>
-            </div>
-        </section>
-    </main>  </body>
+        </main>
+    </div>
+</body>
 </html>

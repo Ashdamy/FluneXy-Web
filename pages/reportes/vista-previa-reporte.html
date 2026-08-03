@@ -41,76 +41,79 @@
         <hr class="divisor-barra">
         <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
     </aside>
+
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Vista Previa del Reporte</h1>
-                <p>Revisa el informe antes de descargarlo</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion">🔔</button>
+                <div class="avatar-perfil">A</div>
             </div>
         </header>
-        <section class="tarjeta-vista-previa">
-            <div class="encabezado-vista-previa">
-                <div>
-                    <h3>Flujo de caja</h3>
-                    <p>Junio 2026 · PDF</p>
-                </div>
+
+        <!-- Tarjeta Principal del Patrimonio -->
+        <section class="tarjeta-patrimonio">
+            <div class="encabezado-tarjeta-patrimonio">
+                <div class="icono-patrimonio">🎬</div>
+                <span class="badge-gasto">↓ Gasto</span>
             </div>
-            <div class="resumen-reporte">
-                <div class="item-resumen">
-                    <p>Total Ingresos</p>
-                    <strong>$5,200,000</strong>
+            <p class="label-patrimonio">Patrimonio Neto</p>
+            <h2 class="monto-patrimonio">$28.450.000</h2>
+            <span class="badge-activo">Activo</span>
+        </section>
+
+        <!-- Grid de Detalles -->
+        <section class="grid-detalles-reporte">
+            <div class="tarjeta-detalle">
+                <div class="encabezado-detalle">
+                    <span class="icono-detalle">📊</span>
+                    <small>TIPO</small>
                 </div>
-                <div class="item-resumen">
-                    <p>Total Gastos</p>
-                    <strong>$2,400,000</strong>
-                </div>
-                <div class="item-resumen">
-                    <p>Balance Neto</p>
-                    <strong>$2,800,000</strong>
-                </div>
+                <strong>Balance Financiero</strong>
             </div>
-            <table class="tabla-estadisticas">
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Monto</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alimentación</td>
-                        <td>$800,000</td>
-                    </tr>
-                    <tr>
-                        <td>Transporte</td>
-                        <td>$300,000</td>
-                    </tr>
-                    <tr>
-                        <td>Servicios</td>
-                        <td>$250,000</td>
-                    </tr>
-                    <tr>
-                        <td>Entretenimiento</td>
-                        <td>$150,000</td>
-                    </tr>
-                    <tr>
-                        <td>Otros</td>
-                        <td>$900,000</td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="tarjeta-detalle">
+                <div class="encabezado-detalle">
+                    <span class="icono-detalle">📅</span>
+                    <small>PERIODO</small>
+                </div>
+                <strong>Junio 2026</strong>
+            </div>
+
+            <div class="tarjeta-detalle">
+                <div class="encabezado-detalle">
+                    <span class="icono-detalle">📄</span>
+                    <small>FORMATO</small>
+                </div>
+                <strong>PDF</strong>
+            </div>
+
+            <div class="tarjeta-detalle">
+                <div class="encabezado-detalle">
+                    <span class="icono-detalle">✓</span>
+                    <small>ESTADO</small>
+                </div>
+                <strong>Listo</strong>
+            </div>
         </section>
-        <section class="acciones">
-            <button type="button" class="boton-primario">Descargar</button>
-            <button type="button" class="boton-secundario">Editar Reporte</button>
+
+        <!-- Caja de Resumen Completo -->
+        <section class="tarjeta-resumen-reporte">
+            <small class="titulo-seccion-resumen">RESUMEN</small>
+            <p>Incluye activos, pasivos, patrimonio neto, liquidez y endeudamiento del periodo seleccionado.</p>
         </section>
-    </main>  </body>
+
+        <!-- Acciones de Descarga/Exportación -->
+        <section class="acciones-exportacion">
+            <button type="button" class="boton-primario">
+                📥 Exportar PDF
+            </button>
+            <button type="button" class="boton-secundario">
+                📊 Exportar Excel
+            </button>
+        </section>
+    </main>
+</body>
 </html>

@@ -56,66 +56,85 @@
                 </button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="tile-resumen">
-                <p>META</p>
-                <strong>Moto Nueva</strong>
+
+        <section class="cabecera-detalle">
+            <div class="icono-meta">🏍️</div>
+            <div class="informacion">
+                <p>Editando</p>
+                <h2>Moto Nueva</h2>
             </div>
-            <div class="tile-resumen">
-                <p>AHORRADO</p>
-                <strong>$6,000,000</strong>
-                <span>/ $12,000,000</span>
-            </div>
-        </section>
-        <section class="formulario-meta">
-            <div class="grupo-formulario">
-                <label for="nombre-meta">NOMBRE</label>
-                <input type="text" id="nombre-meta" value="Moto Nueva">
-            </div>
-            <div class="grupo-formulario">
-                <label for="monto-meta">MONTO OBJETIVO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="monto-meta" value="12,000,000">
-                </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="categoria-meta">CATEGORÍA</label>
-                <select id="categoria-meta">
-                    <option>Vehicular</option>
-                    <option>Viajes</option>
-                    <option>Emergencia</option>
-                    <option>Tecnología</option>
-                    <option>Vivienda</option>
-                    <option>Educación</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fondo-asociado">FONDO ASOCIADO</label>
-                <select id="fondo-asociado">
-                    <option>Fondo de Ahorro Principal</option>
-                    <option>Fondo de Emergencia</option>
-                    <option>Fondo de Viajes</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fecha-meta">FECHA LÍMITE</label>
-                <div class="campo-con-icono">
-                    <span class="icono-calendario">📅</span>
-                    <input type="text" id="fecha-meta" value="Dic 2025">
-                </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="aporte-periodico">APORTE PERIÓDICO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="aporte-periodico" value="1,000,000">
-                </div>
+            <div class="progreso-cabecera">
+                <small>Progreso actual</small>
+                <strong>50% · $6M/$12M</strong>
             </div>
         </section>
+
+        <section class="editar-meta">
+            <div class="panel-edicion">
+                <div class="campo-meta">
+                    <label for="nombre-meta">NOMBRE DE LA META</label>
+                    <input type="text" id="nombre-meta" value="Moto Nueva">
+                </div>
+
+                <div class="campo-meta">
+                    <label for="monto-meta">MONTO OBJETIVO</label>
+                    <div class="campo-con-prefijo">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="monto-meta" value="12.000.000">
+                        <span class="etiqueta-meta">META</span>
+                    </div>
+                    <small class="ayuda-campo">Cambiar el monto recalculará el ahorro mensual requerido</small>
+                </div>
+
+                <div class="campo-meta">
+                    <label for="fecha-meta">FECHA OBJETIVO</label>
+                    <div class="campo-con-icono">
+                        <span class="icono-calendario">📅</span>
+                        <input type="text" id="fecha-meta" value="2025-12-31">
+                    </div>
+                    <small class="ayuda-campo">Cambiar la fecha recalculará el ahorro mensual requerido</small>
+                </div>
+
+                <div class="badges-estado-meta">
+                    <span class="badge-info">6 meses restantes</span>
+                    <span class="badge-alcanzable">✓ Alcanzable</span>
+                </div>
+            </div>
+
+            <div class="columna-estado">
+                <aside class="panel-estado">
+                    <div class="vista-previa-icono">🏍️</div>
+                    <h4 class="vista-previa-nombre">Moto Nueva</h4>
+                    <span class="vista-previa-tipo">Meta Financiera</span>
+
+                    <hr class="vista-previa-divisor">
+
+                    <div class="vista-previa-dato">
+                        <small>Progreso</small>
+                        <strong>50% · $6.000.000</strong>
+                    </div>
+
+                    <div class="vista-previa-dato">
+                        <small>Ahorro mensual actual</small>
+                        <strong class="dato-violeta">$1.000.000/mes</strong>
+                    </div>
+                </aside>
+
+                <div class="calculo-automatico">
+                    <div class="calculo-encabezado">
+                        <span class="icono-calculo">🔄</span>
+                        <span class="etiqueta-calculo">NUEVO CÁLCULO AUTOMÁTICO</span>
+                    </div>
+                    <strong>$1.000.000</strong>
+                    <p class="nota-calculo">Con los datos actuales sigues necesitando $1.000.000/mes para cumplir tu meta en Dic 2025</p>
+                </div>
+            </div>
+        </section>
+
         <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
+            <button type="button" class="boton-secundario">✕ Cancelar</button>
             <button type="button" class="boton-primario">Guardar Cambios</button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

@@ -44,8 +44,8 @@
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Moto Nueva</h1>
-                <p>Meta: Dic 2025 · 6 meses</p>
+                <h1>Detalle de Meta</h1>
+                <p>Información completa del objetivo</p>
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
@@ -56,92 +56,88 @@
                 </button>
             </div>
         </header>
-        <section class="seccion-progreso">
-            <div class="badge-porcentaje-grande">
-                <span class="porcentaje">50%</span>
-                <span class="label-logrado">logrado</span>
-            </div>
-            <div class="barra-progreso">
-                <div class="barra-progreso-llenado" style="width: 50%"></div>
-            </div>
-            <div class="detalle-monto">
-                <strong>$6.000.000</strong>
-                <span>/ $12.000.000</span>
-            </div>
-        </section>
-        <section class="estadisticas-meta">
-            <div class="estadistica">
-                <p>PROGRESO</p>
-                <strong>50%</strong>
-            </div>
-            <div class="estadistica">
-                <p>AHORRADO</p>
-                <strong>$6.000.000</strong>
-            </div>
-            <div class="estadistica">
-                <p>TIEMPO</p>
-                <strong>3/6 meses</strong>
-            </div>
-        </section>
-        <div class="estado-badge">
-            <span class="estado estado-activa"><span class="punto-verde"></span>Activa</span>
-        </div>
-        <section class="informacion-meta">
-            <header class="encabezado-seccion">
-                <h3>INFORMACIÓN DE LA META</h3>
-            </header>
-            <div class="grid-informacion">
-                <div class="campo-informacion">
-                    <p>Tipo de meta</p>
-                    <strong>Vehicular</strong>
+
+        <section class="detalle-meta">
+
+            <div class="tarjeta-progreso-meta">
+                <div class="cabecera-detalle">
+                    <div class="icono-meta">🏍️</div>
+                    <div class="informacion">
+                        <h2>Moto Nueva</h2>
+                        <span class="badge-tipo-meta">Meta Financiera</span>
+                    </div>
+                    <span class="badge-estado-meta">En Progreso</span>
                 </div>
-                <div class="campo-informacion">
-                    <p>Monto objetivo</p>
-                    <strong>$12,000,000</strong>
+
+                <div class="progreso-ahorro">
+                    <div class="progreso-ahorro-izq">
+                        <p>PROGRESO DE AHORRO</p>
+                        <strong class="progreso-porcentaje">50%</strong>
+                    </div>
+                    <div class="progreso-ahorro-der">
+                        <strong>$6.000.000 <span>de $12.000.000</span></strong>
+                        <small>Faltan $6.000.000</small>
+                    </div>
                 </div>
-                <div class="campo-informacion">
-                    <p>Ahorrado</p>
-                    <strong>$6,000,000</strong>
+            </div>
+
+            <div class="ahorro-mensual-requerido">
+                <div class="ahorro-mensual-izq">
+                    <span class="icono-calculo">🧮</span>
+                    <div>
+                        <p>Ahorro Mensual Requerido</p>
+                        <strong>$1.000.000</strong>
+                        <small>Para cumplir en Dic 2025</small>
+                    </div>
                 </div>
-                <div class="campo-informacion">
-                    <p>Fondo asociado</p>
-                    <strong>Fondo de Ahorro Principal</strong>
+                <div class="ahorro-mensual-der">
+                    <strong>183</strong>
+                    <span>días restantes</span>
                 </div>
-                <div class="campo-informacion">
-                    <p>Fecha límite</p>
+            </div>
+
+            <div class="informacion-detalle">
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">🎯</span> MONTO OBJETIVO</small>
+                    <strong>$12.000.000</strong>
+                </div>
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">💰</span> MONTO AHORRADO</small>
+                    <strong>$6.000.000</strong>
+                </div>
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">🏦</span> FONDO ASOCIADO</small>
+                    <strong>Nequi Personal</strong>
+                </div>
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">📅</span> FECHA OBJETIVO</small>
                     <strong>Dic 2025</strong>
                 </div>
-                <div class="campo-informacion">
-                    <p>Estado</p>
-                    <strong>En progreso</strong>
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">🗓️</span> FECHA CREACIÓN</small>
+                    <strong>3 Ene 2025</strong>
+                </div>
+                <div class="tarjeta-informacion">
+                    <small><span class="icono-campo">📶</span> ESTADO</small>
+                    <strong class="estado-texto">EN_PROCESO</strong>
                 </div>
             </div>
+
+            <div class="registrar-aporte">
+                <span class="icono-aporte">💰</span>
+                <div class="registrar-aporte-texto">
+                    <strong>Registrar Aporte</strong>
+                    <span>Último aporte: $500.000 hace 12 días</span>
+                </div>
+                <button type="button" aria-label="Registrar aporte">→</button>
+            </div>
+
+            <section class="acciones">
+                <button type="button" class="boton-primario">✏️ Editar Meta</button>
+                <button type="button" class="boton-peligro">⚠️ Desactivar Meta</button>
+            </section>
+
         </section>
-        <section class="aportes-recientes">
-            <header class="encabezado-seccion">
-                <h3>APORTES RECIENTES</h3>
-            </header>
-            <ul class="lista-aportes">
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 Jun 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 May 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 Abr 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-            </ul>
-        </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Editar Meta</button>
-            <button type="button" class="boton-peligro">Desactivar Meta</button>
-        </section>
-    </main>  </body>
+    </main>
+</body>
 </html>
