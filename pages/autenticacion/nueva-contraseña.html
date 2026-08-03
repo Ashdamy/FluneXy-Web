@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva contraseña</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <main class="contenedor-autenticacion">
         <div class="volver">
-            <a href="#">← Volver</a>
+            <a href="#"><i class="ph ph-arrow-left"></i> Volver</a>
         </div>
         <section class="tarjeta-formulario">
-            <div class="icono-formulario">
-                <img src="" alt="icono nueva contraseña">
+            <div class="icono-formulario icono-nueva">
+                <i class="ph ph-key"></i>
             </div>
             <header class="encabezado-autenticacion">
                 <h1>Nueva contraseña</h1>
@@ -32,12 +33,19 @@
                         id="contrasena"
                         name="contrasena"
                         required>
+                        <div class="barra-fortaleza">
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                        </div>
                         <p class="mensaje-fortaleza">
                             Fortaleza: excelente
                         </p>
                         <div class="requisito-contrasena">
+                            <i class="ph ph-check"></i>
                             <p>
-                                ✓ Mínimo 8 caracteres, una mayúscula y un número.
+                                Mínimo 8 caracteres, una mayúscula y un número.
                             </p>
                         </div>
              </div>
@@ -56,5 +64,6 @@
              </button>
              </form>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificar contraseña</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <main class="contenedor-autenticacion">
         <div class="volver">
-            <a href="login.html">← Volver</a>
+            <a href="login.html"><i class="ph ph-arrow-left"></i> Volver</a>
         </div>
         <section class="tarjeta-formulario">
-        <div class="icono-formulario">
-            <img src="" alt="Icono de verificación de correo">
+        <div class="icono-formulario icono-verificacion">
+            <i class="ph ph-lock"></i>
         </div>
         <header class="encabezado-autenticacion">
             <h1>Verifica tu correo</h1>
@@ -64,7 +65,7 @@
     </div>
     <p class="mensaje-renvio">
       ¿No recibiste el código?
-      <a href="">Reenviar (00:42)</a>
+      <a href="#">Reenviar (00:42)</a>
     </p>
     <button
              type="submit"
@@ -72,9 +73,12 @@
              Verificar código
              </button>
 </form>
-             <div class="enlace-secundario">
-               <a href="">Cambiar correo</a>
-             </div>
+              <button
+                       type="button"
+                       class="boton-secundario">
+                       Cambiar correo
+              </button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

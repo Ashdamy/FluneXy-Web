@@ -1,0 +1,59 @@
+/* ==========================================================
+   ACCIONES DE USUARIO (Componente)
+   Figma desktop: botón de notificaciones + avatar de perfil
+   (36×36, esquina superior derecha del encabezado).
+   ========================================================== */
+
+.acciones-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boton-notificacion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.boton-notificacion i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  color: var(--white);
+}
+
+.boton-notificacion::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+
+.boton-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--indigo);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+}

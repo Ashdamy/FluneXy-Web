@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Contraseña</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <main class="contenedor-autenticacion">
     <div class="volver">
-        <a href="#">Volver</a>
+        <a href="iniciar-sesion.html"><i class="ph ph-arrow-left"></i> Iniciar sesión</a>
     </div>
     <section class="tarjeta-formulario">
-        <div class="icono-formulario">
-            <img src="" alt="Icono de recuperación de contraseña">
+        <div class="icono-formulario icono-recuperar">
+            <i class="ph ph-envelope"></i>
         </div>
         <header class="encabezado-autenticacion">
             <h1>Recupera tu acceso</h1>
@@ -40,10 +41,13 @@
                 class="boton-primario">
                 Enviar enlace de recuperación
             </button>
-            <div class="enlace-secundario">
-                <a href="#">Volver al inicio de sesión</a>
-            </div>
+            <button
+                type="button"
+                class="boton-secundario">
+                Volver al inicio de sesión
+            </button>
         </form>
     </section>
-</main>  </body>
+    </main>
+</body>
 </html>

@@ -1,0 +1,110 @@
+- generic [active] [ref=f10e1]:
+  - complementary [ref=f10e2]:
+    - generic [ref=f10e3]: FluneXy
+    - text: PRINCIPAL
+    - navigation [ref=f10e4]:
+      - link " Inicio" [ref=f10e5] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f10e6]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f10e8] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f10e9]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f10e11] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f10e12]: 
+        - text: Fondos
+    - text: GESTIÓN
+    - navigation [ref=f10e14]:
+      - link " Activos" [ref=f10e15] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f10e16]: 
+        - text: Activos
+      - link " Pasivos" [ref=f10e18] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f10e19]: 
+        - text: Pasivos
+      - link " Metas" [ref=f10e21] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f10e22]: 
+        - text: Metas
+      - link " Plantillas" [ref=f10e24] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f10e25]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f10e27] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f10e28]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f10e30] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f10e31]: 
+        - text: Pagos
+    - text: ANÁLISIS
+    - navigation [ref=f10e33]:
+      - link " Balance financiero" [ref=f10e34] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f10e35]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f10e37] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f10e38]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f10e40] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f10e41]: 
+        - text: Flujo de caja
+      - link " Alertas3" [ref=f10e43] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f10e44]: 
+        - text: Alertas3
+      - link " Reportes" [ref=f10e46] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f10e47]: 
+        - text: Reportes
+    - text: SOPORTE
+    - navigation [ref=f10e49]:
+      - link " Asistente inteligente" [ref=f10e50] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f10e51]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f10e53] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f10e54]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f10e56] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f10e57]: 
+        - text: Mi perfil
+    - separator [ref=f10e59]
+    - link " Cerrar sesión" [ref=f10e60] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f10e61]: 
+      - text: Cerrar sesión
+  - main [ref=f10e63]:
+    - generic [ref=f10e64]:
+      - generic [ref=f10e65]:
+        - heading "Flujo de Caja" [level=1] [ref=f10e66]
+        - paragraph [ref=f10e67]: Proyección de ingresos y egresos
+      - generic [ref=f10e68]:
+        - button [ref=f10e69] [cursor=pointer]:
+          - img "Notificaciones" [ref=f10e70]
+        - button [ref=f10e71] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f10e72]
+    - generic [ref=f10e73]:
+      - paragraph [ref=f10e74]: SALDO PROYECTADO
+      - heading "$2.680.000" [level=2] [ref=f10e75]
+      - generic [ref=f10e76]: Al finalizar Junio 2025 Positivo
+    - generic [ref=f10e77]:
+      - button "◀" [ref=f10e78] [cursor=pointer]
+      - text: Junio 2025
+      - button "▶" [ref=f10e79] [cursor=pointer]
+    - generic [ref=f10e80]:
+      - heading "COMPONENTES DEL FLUJO" [level=3] [ref=f10e81]
+      - generic [ref=f10e82]:
+        - generic [ref=f10e83]: Ingresos Estimados +$4.500.000
+        - generic [ref=f10e84]: Gastos Estimados -$1.820.000
+        - generic [ref=f10e85]: Cuotas de Deuda -$478.200
+        - generic [ref=f10e86]: Ahorro de Metas -$1.833.000
+      - button "Ver Detalle del Flujo" [ref=f10e87] [cursor=pointer]

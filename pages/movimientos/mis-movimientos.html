@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Movimientos | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html" class="activo"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html" class="activo"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -49,110 +51,141 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                 </button>
                 <button type="button" class="boton-perfil">A</button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="informacion-resumen">
-                <p>Balance del mes</p>
-                <h2>$1,400,000</h2>
-                <small>Ingresos - Gastos</small>
-            </div>
-            <div class="estadisticas-resumen">
-                <div class="estadistica">
+        <section class="grid-resumen-movimientos">
+            <article class="tile-movimiento">
+                <div class="icono-tile ingreso"><i class="ph ph-arrow-down-left"></i></div>
+                <div class="detalle-tile">
                     <p>Ingresos</p>
                     <strong>$4,200,000</strong>
                 </div>
-                <div class="estadistica">
+            </article>
+            <article class="tile-movimiento">
+                <div class="icono-tile gasto"><i class="ph ph-arrow-up-right"></i></div>
+                <div class="detalle-tile">
                     <p>Gastos</p>
-                    <strong>-$2,800,000</strong>
+                    <strong>$2,800,000</strong>
                 </div>
-            </div>
+            </article>
+            <article class="tile-movimiento">
+                <div class="icono-tile balance"><i class="ph ph-wallet"></i></div>
+                <div class="detalle-tile">
+                    <p>Balance del mes</p>
+                    <strong>$1,400,000</strong>
+                    <small>Ingresos - Gastos</small>
+                </div>
+            </article>
         </section>
-        <section class="barra-herramientas">
+        <section class="barra-herramientas barra-movimientos">
             <div class="busqueda">
-                <input type="search" placeholder="Buscar movimiento...">
+                <input type="search" placeholder="Buscar movimiento por nombre...">
             </div>
-            <div class="filtro">
-                <select>
-                    <option>Todos</option>
-                    <option>Ingresos</option>
-                    <option>Gastos</option>
-                </select>
+            <div class="filtros">
+                <button type="button" class="filtro-activo">Todos</button>
+                <button type="button" class="filtro">Ingresos</button>
+                <button type="button" class="filtro">Gastos</button>
+            </div>
+            <button type="button" class="boton-primario boton-nuevo-movimiento" onclick="location.href='nuevo-movimiento-ingreso.html'">
+                <i class="ph ph-plus"></i> Nuevo Movimiento
+            </button>
+        </section>
+        <h3 class="tabla-movimientos-titulo">TODOS LOS MOVIMIENTOS</h3>
+        <section class="tabla-movimientos">
+            <div class="tabla-movimientos-cabecera">
+                <span>MOVIMIENTO</span>
+                <span>CATEGORÍA</span>
+                <span>FONDO</span>
+                <span>FECHA</span>
+                <span>MONTO</span>
+                <span>ESTADO</span>
+                <span>ACCIONES</span>
+            </div>
+            <span class="agrupacion-fecha">HOY · 3 Jun 2025</span>
+            <div class="fila-movimiento ingreso">
+                <div class="celda-movimiento">
+                    <span class="icono-movimiento ingreso"><i class="ph ph-bank"></i></span>
+                    <span class="nombre-movimiento">Salario Junio</span>
+                </div>
+                <span class="celda-categoria">Trabajo</span>
+                <span class="celda-fondo">Bancolombia</span>
+                <span class="celda-fecha">3 Jun 2025</span>
+                <span class="celda-monto positivo">+$2,500,000</span>
+                <span class="celda-estado completado">Completado</span>
+                <div class="celda-acciones">
+                    <button type="button" title="Ver detalle" onclick="location.href='detalle-movimiento.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" title="Editar" onclick="location.href='editar-movimiento.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" title="Eliminar" onclick="location.href='desactivar-movimiento.html'"><i class="ph ph-trash"></i></button>
+                </div>
+            </div>
+            <div class="fila-movimiento gasto">
+                <div class="celda-movimiento">
+                    <span class="icono-movimiento gasto"><i class="ph ph-television"></i></span>
+                    <span class="nombre-movimiento">Netflix</span>
+                </div>
+                <span class="celda-categoria">Entretenimiento</span>
+                <span class="celda-fondo">Nequi</span>
+                <span class="celda-fecha">3 Jun 2025</span>
+                <span class="celda-monto negativo">-$35,000</span>
+                <span class="celda-estado completado">Completado</span>
+                <div class="celda-acciones">
+                    <button type="button" title="Ver detalle" onclick="location.href='detalle-movimiento.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" title="Editar" onclick="location.href='editar-movimiento.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" title="Eliminar" onclick="location.href='desactivar-movimiento.html'"><i class="ph ph-trash"></i></button>
+                </div>
+            </div>
+            <span class="agrupacion-fecha">AYER · 2 Jun 2025</span>
+            <div class="fila-movimiento gasto">
+                <div class="celda-movimiento">
+                    <span class="icono-movimiento gasto"><i class="ph ph-shopping-cart"></i></span>
+                    <span class="nombre-movimiento">Mercado Éxito</span>
+                </div>
+                <span class="celda-categoria">Alimentación</span>
+                <span class="celda-fondo">Bancolombia</span>
+                <span class="celda-fecha">2 Jun 2025</span>
+                <span class="celda-monto negativo">-$320,000</span>
+                <span class="celda-estado completado">Completado</span>
+                <div class="celda-acciones">
+                    <button type="button" title="Ver detalle" onclick="location.href='detalle-movimiento.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" title="Editar" onclick="location.href='editar-movimiento.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" title="Eliminar" onclick="location.href='desactivar-movimiento.html'"><i class="ph ph-trash"></i></button>
+                </div>
+            </div>
+            <div class="fila-movimiento gasto">
+                <div class="celda-movimiento">
+                    <span class="icono-movimiento gasto"><i class="ph ph-car"></i></span>
+                    <span class="nombre-movimiento">Transporte</span>
+                </div>
+                <span class="celda-categoria">Transporte</span>
+                <span class="celda-fondo">Efectivo</span>
+                <span class="celda-fecha">2 Jun 2025</span>
+                <span class="celda-monto negativo">-$60,000</span>
+                <span class="celda-estado completado">Completado</span>
+                <div class="celda-acciones">
+                    <button type="button" title="Ver detalle" onclick="location.href='detalle-movimiento.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" title="Editar" onclick="location.href='editar-movimiento.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" title="Eliminar" onclick="location.href='desactivar-movimiento.html'"><i class="ph ph-trash"></i></button>
+                </div>
+            </div>
+            <div class="fila-movimiento ingreso">
+                <div class="celda-movimiento">
+                    <span class="icono-movimiento ingreso"><i class="ph ph-briefcase"></i></span>
+                    <span class="nombre-movimiento">Freelance App</span>
+                </div>
+                <span class="celda-categoria">Trabajo</span>
+                <span class="celda-fondo">Nequi</span>
+                <span class="celda-fecha">2 Jun 2025</span>
+                <span class="celda-monto positivo">+$1,700,000</span>
+                <span class="celda-estado pendiente">Pendiente</span>
+                <div class="celda-acciones">
+                    <button type="button" title="Ver detalle" onclick="location.href='detalle-movimiento.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" title="Editar" onclick="location.href='editar-movimiento.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" title="Eliminar" onclick="location.href='desactivar-movimiento.html'"><i class="ph ph-trash"></i></button>
+                </div>
             </div>
         </section>
-        <section class="lista-plantillas">
-            <header class="encabezado-seccion">
-                <h3>Movimientos recientes</h3>
-            </header>
-            <article class="item-movimiento">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla"><img src="" alt="Salario"></div>
-                    <div class="detalle-plantilla">
-                        <h3>Salario</h3>
-                        <p>Ingreso · Ayer</p>
-                    </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong class="positivo">+$2,500,000</strong>
-                    <p>Ingreso</p>
-                </div>
-            </article>
-            <article class="item-movimiento">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla"><img src="" alt="Arriendo"></div>
-                    <div class="detalle-plantilla">
-                        <h3>Arriendo</h3>
-                        <p>Vivienda · Hoy</p>
-                    </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$1,200,000</strong>
-                    <p>Gasto</p>
-                </div>
-            </article>
-            <article class="item-movimiento">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla"><img src="" alt="Supermercado"></div>
-                    <div class="detalle-plantilla">
-                        <h3>Supermercado</h3>
-                        <p>Alimentación · 2 días</p>
-                    </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$320,000</strong>
-                    <p>Gasto</p>
-                </div>
-            </article>
-            <article class="item-movimiento">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla"><img src="" alt="Freelance"></div>
-                    <div class="detalle-plantilla">
-                        <h3>Freelance</h3>
-                        <p>Ingreso · 5 días</p>
-                    </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong class="positivo">+$1,700,000</strong>
-                    <p>Ingreso</p>
-                </div>
-            </article>
-            <article class="item-movimiento">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla"><img src="" alt="Internet"></div>
-                    <div class="detalle-plantilla">
-                        <h3>Internet ETB</h3>
-                        <p>Servicios · 7 días</p>
-                    </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$95,000</strong>
-                    <p>Gasto</p>
-                </div>
-            </article>
-        </section>
-        <button type="button" class="boton-primario" style="position:fixed;bottom:2rem;right:2rem;z-index:10;" onclick="location.href='nuevo-movimiento-ingreso.html'">+ Nuevo Movimiento</button>
     </main>  </body>
 </html>

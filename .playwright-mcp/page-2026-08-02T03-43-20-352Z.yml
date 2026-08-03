@@ -1,0 +1,156 @@
+- generic [active] [ref=f5e1]:
+  - complementary [ref=f5e2]:
+    - img "FluneXy" [ref=f5e4]
+    - generic [ref=f5e5]: PRINCIPAL
+    - navigation [ref=f5e6]:
+      - link " Inicio" [ref=f5e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f5e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f5e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f5e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f5e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f5e14]: 
+        - text: Fondos
+    - generic [ref=f5e16]: GESTIÓN
+    - navigation [ref=f5e17]:
+      - link " Activos" [ref=f5e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f5e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f5e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f5e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f5e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f5e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f5e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f5e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f5e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f5e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f5e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f5e34]: 
+        - text: Pagos
+    - generic [ref=f5e36]: ANÁLISIS
+    - navigation [ref=f5e37]:
+      - link " Balance financiero" [ref=f5e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f5e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f5e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f5e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f5e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f5e45]: 
+        - text: Flujo de caja
+      - link " Detalle Flujo" [ref=f5e47] [cursor=pointer]:
+        - /url: ../detalle-flujo-caja/detalle-flujo-caja.html
+        - generic [ref=f5e48]: 
+        - text: Detalle Flujo
+      - link " Alertas 3" [ref=f5e50] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f5e51]: 
+        - text: Alertas
+        - generic [ref=f5e53]: "3"
+      - link " Reportes" [ref=f5e54] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f5e55]: 
+        - text: Reportes
+    - generic [ref=f5e57]: SOPORTE
+    - navigation [ref=f5e58]:
+      - link " Asistente inteligente" [ref=f5e59] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f5e60]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f5e62] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f5e63]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f5e65] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f5e66]: 
+        - text: Mi perfil
+    - separator [ref=f5e68]
+    - link " Cerrar sesión" [ref=f5e69] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f5e70]: 
+      - text: Cerrar sesión
+  - main [ref=f5e72]:
+    - generic [ref=f5e73]:
+      - generic [ref=f5e74]:
+        - heading "Detalle del Flujo de Caja" [level=1] [ref=f5e75]
+        - paragraph [ref=f5e76]: Origen y composición de cada componente
+      - generic [ref=f5e77]:
+        - button [ref=f5e78] [cursor=pointer]:
+          - img "Notificaciones" [ref=f5e79]
+        - button "A" [ref=f5e80] [cursor=pointer]
+    - generic [ref=f5e81]:
+      - generic [ref=f5e82]:
+        - paragraph [ref=f5e83]: Saldo Proyectado
+        - heading "$2.680.000" [level=2] [ref=f5e84]
+        - generic [ref=f5e85]: Junio 2025
+      - generic [ref=f5e86]:
+        - generic [ref=f5e87]: Ítems
+        - strong [ref=f5e88]: "18"
+    - generic [ref=f5e89]: COMPONENTES · JUNIO 2025
+    - generic [ref=f5e90]:
+      - article [ref=f5e91]:
+        - generic [ref=f5e92]: 
+        - generic [ref=f5e94]:
+          - heading "Salario Junio" [level=3] [ref=f5e95]
+          - paragraph [ref=f5e96]: "INGRESO · ORIGEN: MOVIMIENTO"
+        - generic [ref=f5e97]:
+          - generic [ref=f5e98]: Valor
+          - strong [ref=f5e99]: +$4.500.000
+        - generic [ref=f5e100]: Confirmado
+      - article [ref=f5e102]:
+        - generic [ref=f5e103]: 
+        - generic [ref=f5e105]:
+          - heading "Mercado y Hogar" [level=3] [ref=f5e106]
+          - paragraph [ref=f5e107]: "GASTO · ORIGEN: PLANTILLA"
+        - generic [ref=f5e108]:
+          - generic [ref=f5e109]: Valor
+          - strong [ref=f5e110]: "-$1.820.000"
+        - generic [ref=f5e111]: Estimado
+      - article [ref=f5e113]:
+        - generic [ref=f5e114]: 
+        - generic [ref=f5e116]:
+          - heading "Cuota Crédito Moto NKD" [level=3] [ref=f5e117]
+          - paragraph [ref=f5e118]: "DEUDA · ORIGEN: CUOTA"
+        - generic [ref=f5e119]:
+          - generic [ref=f5e120]: Valor
+          - strong [ref=f5e121]: "-$478.200"
+        - generic [ref=f5e122]: Programado
+      - article [ref=f5e124]:
+        - generic [ref=f5e125]: 
+        - generic [ref=f5e127]:
+          - heading "Aporte Fondo Emergencia" [level=3] [ref=f5e128]
+          - paragraph [ref=f5e129]: "META · ORIGEN: CUOTA"
+        - generic [ref=f5e130]:
+          - generic [ref=f5e131]: Valor
+          - strong [ref=f5e132]: "-$1.833.000"
+        - generic [ref=f5e133]: Programado
+      - article [ref=f5e135]:
+        - generic [ref=f5e136]: 
+        - generic [ref=f5e138]:
+          - heading "Cuota Crédito Vivienda" [level=3] [ref=f5e139]
+          - paragraph [ref=f5e140]: "PASIVO · ORIGEN: CUOTA"
+        - generic [ref=f5e141]:
+          - generic [ref=f5e142]: Valor
+          - strong [ref=f5e143]: "-$620.000"
+        - generic [ref=f5e144]: Programado
+    - button " Ver Flujo de caja" [ref=f5e146] [cursor=pointer]:
+      - generic [ref=f5e147]: 
+      - text: Ver Flujo de caja

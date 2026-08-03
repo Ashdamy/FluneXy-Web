@@ -1,0 +1,133 @@
+- generic [active] [ref=f7e1]:
+  - complementary [ref=f7e2]:
+    - generic [ref=f7e3]: FluneXy
+    - generic [ref=f7e4]: PRINCIPAL
+    - navigation [ref=f7e5]:
+      - link " Inicio" [ref=f7e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f7e7]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f7e9] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f7e10]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f7e12] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f7e13]: 
+        - text: Fondos
+    - generic [ref=f7e15]: GESTIÓN
+    - navigation [ref=f7e16]:
+      - link " Activos" [ref=f7e17] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f7e18]: 
+        - text: Activos
+      - link " Pasivos" [ref=f7e20] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f7e21]: 
+        - text: Pasivos
+      - link " Metas" [ref=f7e23] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f7e24]: 
+        - text: Metas
+      - link " Plantillas" [ref=f7e26] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f7e27]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f7e29] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f7e30]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f7e32] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f7e33]: 
+        - text: Pagos
+    - generic [ref=f7e35]: ANÁLISIS
+    - navigation [ref=f7e36]:
+      - link " Balance financiero" [ref=f7e37] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f7e38]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f7e40] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f7e41]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f7e43] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f7e44]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f7e46] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f7e47]: 
+        - text: Alertas
+        - generic [ref=f7e49]: "3"
+      - link " Reportes" [ref=f7e50] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f7e51]: 
+        - text: Reportes
+    - generic [ref=f7e53]: SOPORTE
+    - navigation [ref=f7e54]:
+      - link " Asistente inteligente" [ref=f7e55] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f7e56]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f7e58] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f7e59]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f7e61] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f7e62]: 
+        - text: Mi perfil
+    - separator [ref=f7e64]
+    - link " Cerrar sesión" [ref=f7e65] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f7e66]: 
+      - text: Cerrar sesión
+  - main [ref=f7e68]:
+    - generic [ref=f7e69]:
+      - generic [ref=f7e70]:
+        - heading "Historial de Pagos" [level=1] [ref=f7e71]
+        - paragraph [ref=f7e72]: Pagos y aportes registrados
+      - generic [ref=f7e73]:
+        - button [ref=f7e74] [cursor=pointer]:
+          - img "Notificaciones" [ref=f7e75]
+        - button [ref=f7e76] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f7e77]
+    - generic [ref=f7e78] [cursor=pointer]:
+      - generic [ref=f7e79]: 
+      - generic [ref=f7e81]: Últimos 30 días
+      - generic [ref=f7e82]: ▾
+    - generic [ref=f7e83]: ORDENADO POR FECHA
+    - generic [ref=f7e85]:
+      - article [ref=f7e86]:
+        - generic [ref=f7e87]: 
+        - generic [ref=f7e89]:
+          - heading "Pago Cuota 7" [level=4] [ref=f7e90]
+          - paragraph [ref=f7e91]: Crédito Moto NKD · 5 May 2025
+        - generic [ref=f7e92]:
+          - strong [ref=f7e93]: $478.200
+          - generic [ref=f7e94]: Normal
+      - article [ref=f7e95]:
+        - generic [ref=f7e96]: 
+        - generic [ref=f7e98]:
+          - heading "Pago Cuota 6" [level=4] [ref=f7e99]
+          - paragraph [ref=f7e100]: Crédito Moto NKD · 2 May 2025
+        - generic [ref=f7e101]:
+          - strong [ref=f7e102]: $500.000
+          - generic [ref=f7e103]: Normal
+      - article [ref=f7e104]:
+        - generic [ref=f7e105]: 
+        - generic [ref=f7e107]:
+          - heading "Pago Cuota 5" [level=4] [ref=f7e108]
+          - paragraph [ref=f7e109]: Crédito Moto NKD · 8 Abr 2025
+        - generic [ref=f7e110]:
+          - strong [ref=f7e111]: $478.200
+          - generic [ref=f7e112]: Anticipado
+      - article [ref=f7e113]:
+        - generic [ref=f7e114]: 
+        - generic [ref=f7e116]:
+          - heading "Aporte Fondo Emergencia" [level=4] [ref=f7e117]
+          - paragraph [ref=f7e118]: "Meta: Fondo Emergencia · 10 May 2025"
+        - generic [ref=f7e119]:
+          - strong [ref=f7e120]: $300.000
+          - generic [ref=f7e121]: Aporte

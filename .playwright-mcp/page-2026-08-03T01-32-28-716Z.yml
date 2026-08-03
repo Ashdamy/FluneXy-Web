@@ -1,0 +1,139 @@
+- generic [active] [ref=f9e1]:
+  - complementary [ref=f9e2]:
+    - img "FluneXy" [ref=f9e4]
+    - generic [ref=f9e5]: PRINCIPAL
+    - navigation [ref=f9e6]:
+      - link " Inicio" [ref=f9e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f9e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f9e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f9e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f9e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f9e14]: 
+        - text: Fondos
+    - generic [ref=f9e16]: GESTIÓN
+    - navigation [ref=f9e17]:
+      - link " Activos" [ref=f9e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f9e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f9e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f9e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f9e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f9e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f9e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f9e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f9e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f9e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f9e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f9e34]: 
+        - text: Pagos
+    - generic [ref=f9e36]: ANÁLISIS
+    - navigation [ref=f9e37]:
+      - link " Balance financiero" [ref=f9e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f9e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f9e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f9e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f9e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f9e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f9e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f9e48]: 
+        - text: Alertas
+        - generic [ref=f9e50]: "3"
+      - link " Reportes" [ref=f9e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f9e52]: 
+        - text: Reportes
+    - generic [ref=f9e54]: SOPORTE
+    - navigation [ref=f9e55]:
+      - link " Asistente inteligente" [ref=f9e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f9e57]: 
+        - text: Asistente inteligente
+      - link " Mi perfil" [ref=f9e59] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f9e60]: 
+        - text: Mi perfil
+    - separator [ref=f9e62]
+    - link " Cerrar sesión" [ref=f9e63] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f9e64]: 
+      - text: Cerrar sesión
+  - main [ref=f9e66]:
+    - generic [ref=f9e67]:
+      - generic [ref=f9e68]:
+        - heading "Indicadores Financieros" [level=1] [ref=f9e69]
+        - paragraph [ref=f9e70]: Evalúa tu salud financiera de un vistazo
+      - generic [ref=f9e71]:
+        - button "" [ref=f9e72] [cursor=pointer]
+        - button "A" [ref=f9e74] [cursor=pointer]
+    - generic [ref=f9e76]:
+      - generic [ref=f9e77]:
+        - paragraph [ref=f9e78]: Indicadores · 4 activos
+        - article [ref=f9e79]:
+          - generic [ref=f9e81]: 
+          - generic [ref=f9e83]:
+            - heading "Liquidez" [level=3] [ref=f9e84]
+            - generic [ref=f9e85]: Capacidad de pago inmediato
+          - generic [ref=f9e86]:
+            - generic [ref=f9e87]: Valor
+            - strong [ref=f9e88]: 1.6x
+          - generic [ref=f9e89]: Saludable
+        - article [ref=f9e91]:
+          - generic [ref=f9e93]: 
+          - generic [ref=f9e95]:
+            - heading "Endeudamiento" [level=3] [ref=f9e96]
+            - generic [ref=f9e97]: Riesgo financiero
+          - generic [ref=f9e98]:
+            - generic [ref=f9e99]: Valor
+            - strong [ref=f9e100]: 3.5%
+          - generic [ref=f9e101]: Bajo
+        - article [ref=f9e103]:
+          - generic [ref=f9e105]: 
+          - generic [ref=f9e107]:
+            - heading "Ahorro Mensual" [level=3] [ref=f9e108]
+            - generic [ref=f9e109]: Capacidad de ahorro
+          - generic [ref=f9e110]:
+            - generic [ref=f9e111]: Valor
+            - strong [ref=f9e112]: 33%
+          - generic [ref=f9e113]: Saludable
+        - article [ref=f9e115]:
+          - generic [ref=f9e117]: 
+          - generic [ref=f9e119]:
+            - heading "Cobertura de Deuda" [level=3] [ref=f9e120]
+            - generic [ref=f9e121]: Meta vs. deuda
+          - generic [ref=f9e122]:
+            - generic [ref=f9e123]: Valor
+            - strong [ref=f9e124]: N/A
+          - generic [ref=f9e125]: Sin datos
+      - complementary [ref=f9e127]:
+        - generic [ref=f9e128]:
+          - paragraph [ref=f9e129]: Índice de Salud Financiera
+          - generic [ref=f9e130]:
+            - strong [ref=f9e131]: "82"
+            - generic [ref=f9e132]: / 100
+        - generic [ref=f9e135]:
+          - paragraph [ref=f9e136]: Acciones
+          - button " Generar reporte" [ref=f9e137] [cursor=pointer]:
+            - generic [ref=f9e138]: 
+            - text: Generar reporte

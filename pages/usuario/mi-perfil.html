@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil | FluneXy</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+<link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -49,55 +51,86 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                 </button>
                 <button type="button" class="boton-perfil">A</button>
             </div>
         </header>
-        <section class="tarjeta-perfil">
-            <div class="avatar-perfil">
-                <span class="avatar-letra">A</span>
+
+        <div class="mp-contenido">
+            <div class="mp-columna-izq">
+                <section class="mp-hero">
+                    <div class="mp-avatar">
+                        <span>A</span>
+                    </div>
+                    <div class="mp-hero-info">
+                        <h2>Ana Milena Sierra</h2>
+                        <p>anamilena@ejemplo.com</p>
+                        <div class="mp-hero-badges">
+                            <span class="mp-pill-activa"><i class="ph ph-circle-fill"></i> Activa</span>
+                            <span class="mp-pill-miembro">Miembro desde 12 Ene 2025</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mp-seccion-datos">
+                    <p class="mp-seccion-titulo">DATOS DE LA CUENTA</p>
+                    <div class="mp-datos-tarjeta">
+                        <div class="mp-fila">
+                            <span class="mp-fila-icono"><i class="ph ph-user"></i></span>
+                            <div class="mp-fila-info">
+                                <small>Nombre completo</small>
+                                <strong>Ana Milena Sierra</strong>
+                            </div>
+                        </div>
+                        <div class="mp-divisor"></div>
+                        <div class="mp-fila">
+                            <span class="mp-fila-icono"><i class="ph ph-envelope"></i></span>
+                            <div class="mp-fila-info">
+                                <small>Correo electrónico</small>
+                                <strong>anamilena@ejemplo.com</strong>
+                            </div>
+                        </div>
+                        <div class="mp-divisor"></div>
+                        <div class="mp-fila">
+                            <span class="mp-fila-icono"><i class="ph ph-calendar-blank"></i></span>
+                            <div class="mp-fila-info">
+                                <small>Miembro desde</small>
+                                <strong>12 Ene 2025</strong>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="informacion-perfil">
-                <h2>Ana Milena Sierra</h2>
-                <p>anamilena@ejemplo.com</p>
-                <span class="badge-estado">Activa</span>
-                <small>Miembro desde 12 Ene 2025</small>
+
+            <div class="mp-columna-der">
+                <p class="mp-seccion-titulo">ACCIONES DE CUENTA</p>
+                <a href="editar-perfil.html" class="mp-accion mp-accion-indigo">
+                    <span class="mp-accion-icono"><i class="ph ph-pencil-simple"></i></span>
+                    <div>
+                        <strong>Editar Perfil</strong>
+                        <p>Actualiza tu nombre y correo electrónico</p>
+                    </div>
+                    <i class="ph ph-caret-right mp-chevron"></i>
+                </a>
+                <a href="cambiar-contrasena.html" class="mp-accion mp-accion-borde">
+                    <span class="mp-accion-icono"><i class="ph ph-lock"></i></span>
+                    <div>
+                        <strong>Cambiar Contraseña</strong>
+                        <p>Protege el acceso a tu cuenta</p>
+                    </div>
+                    <i class="ph ph-caret-right mp-chevron"></i>
+                </a>
+                <a href="desactivar-cuenta.html" class="mp-accion mp-accion-peligro">
+                    <span class="mp-accion-icono"><i class="ph ph-warning"></i></span>
+                    <div>
+                        <strong>Desactivar Cuenta</strong>
+                        <p>Suspende temporalmente el acceso</p>
+                    </div>
+                    <i class="ph ph-caret-right mp-chevron"></i>
+                </a>
             </div>
-        </section>
-        <section class="informacion-alerta">
-            <header class="encabezado-seccion">
-                <h3>DATOS DE LA CUENTA</h3>
-            </header>
-            <div class="detalle-informacion">
-                <div class="informacion">
-                    <p>Nombre completo</p>
-                    <strong>Ana Milena Sierra</strong>
-                </div>
-                <div class="informacion">
-                    <p>Correo electrónico</p>
-                    <strong>anamilena@ejemplo.com</strong>
-                </div>
-            </div>
-        </section>
-        <section class="acciones">
-            <header class="encabezado-seccion">
-                <h3>ACCIONES DE CUENTA</h3>
-            </header>
-            <div class="grid-acciones">
-                <div class="accion-item">
-                    <button type="button" class="boton-secundario" onclick="location.href='editar-perfil.html'">Editar Perfil</button>
-                    <p class="descripcion-accion">Actualiza tus datos personales y preferencias</p>
-                </div>
-                <div class="accion-item">
-                    <button type="button" class="boton-secundario" onclick="location.href='cambiar-contrasena.html'">Cambiar Contraseña</button>
-                    <p class="descripcion-accion">Protege el acceso a tu cuenta</p>
-                </div>
-                <div class="accion-item">
-                    <button type="button" class="boton-peligro" onclick="location.href='desactivar-cuenta.html'">Desactivar Cuenta</button>
-                    <p class="descripcion-accion">Desactiva tu cuenta temporalmente</p>
-                </div>
-            </div>
-        </section>
-    </main>  </body>
+        </div>
+    </main>
+</body>
 </html>

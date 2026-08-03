@@ -1,0 +1,2 @@
+[     297ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/nueva-contrase%C3%B1a.html:0
+[     303ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/nueva-contrase%C3%B1a.html:0

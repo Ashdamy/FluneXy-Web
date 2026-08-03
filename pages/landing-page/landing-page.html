@@ -1,192 +1,350 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FluneXy | Tu app financiera</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div>FluneXy</div>
-            <div>
-                <a href="#">Producto</a>
-                <a href="#">Funcionalidades</a>
-                <a href="#">Beneficios</a>
-                <a href="#">Precios</a>
+<body class="landing">
+    <header class="landing-header">
+        <nav class="landing-nav">
+          <img class="nav-logo" src="/media/img/logo-fluenxy.png" alt="FluneXy">
+            <div class="nav-links">
+                <a href="#producto">Producto</a>
+                <a href="#funcionalidades">Funcionalidades</a>
+                <a href="#beneficios">Beneficios</a>
             </div>
-            <div>
-                <button type="button" onclick="location.href='../autenticacion/iniciar-sesion.html'">Iniciar sesión</button>
-                <button type="button" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
+            <div class="nav-actions">
+                <button type="button" class="btn btn-ghost btn-header" onclick="location.href='../autenticacion/iniciar-sesion.html'">Iniciar sesión</button>
+                <button type="button" class="btn btn-primary btn-header" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section>
-            <div>
-                <span>●</span>
-                <span>PLATAFORMA FINANCIERA INTELIGENTE</span>
-            </div>
-            <div>
-                <h1>Controla tus finanzas<br>con total claridad</h1>
-                <p>FluneXy centraliza tus fondos, movimientos, metas y reportes en un solo lugar, para que tomes mejores decisiones financieras cada día.</p>
-                <div>
-                    <button type="button" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
-                    <button type="button">Ver cómo funciona</button>
+        <section class="hero" id="producto">
+            <div class="hero-orb orb-indigo"></div>
+            <div class="hero-orb orb-violet"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span class="badge-label">PLATAFORMA FINANCIERA INTELIGENTE</span>
                 </div>
-                <div>
-                    <div><span>✓</span> Sin tarjeta de crédito</div>
-                    <div><span>✓</span> Configuración en minutos</div>
-                    <div><span>✓</span> Datos protegidos</div>
+                <h1 class="hero-title">Controla tus finanzas<br>con total claridad</h1>
+                <p class="hero-description">FluneXy centraliza tus fondos, movimientos, metas y reportes en un solo lugar, para que tomes mejores decisiones financieras cada día.</p>
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
+                    <button type="button" class="btn btn-secondary btn-lg">Ver cómo funciona</button>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Todo lo que necesitas para tu salud financiera</h2>
-            <p>Beneficios diseñados para darte control real sobre tu dinero</p>
-            <div>
-                <div>
-                    <h3>Organización inteligente</h3>
-                    <p>Categoriza y clasifica tus movimientos automáticamente.</p>
-                </div>
-                <div>
-                    <h3>Automatización</h3>
-                    <p>Plantillas y flujos recurrentes sin esfuerzo manual.</p>
-                </div>
-                <div>
-                    <h3>Reportes financieros</h3>
-                    <p>Visualiza tu balance con reportes claros y detallados.</p>
-                </div>
-                <div>
-                    <h3>Seguimiento de metas</h3>
-                    <p>Define metas de ahorro y monitorea tu progreso.</p>
-                </div>
-                <div>
-                    <h3>Control total</h3>
-                    <p>Administra fondos, activos y pasivos en un solo lugar.</p>
+                <div class="hero-checkpoints">
+                    <div class="checkpoint"><span class="check-icon"><i class="ph ph-check"></i></span> Sin tarjeta de crédito</div>
+                    <div class="checkpoint"><span class="check-icon"><i class="ph ph-check"></i></span> Configuración en minutos</div>
+                    <div class="checkpoint"><span class="check-icon"><i class="ph ph-check"></i></span> Datos protegidos</div>
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2>Un módulo para cada parte de tus finanzas</h2>
-            <p>Explora las herramientas ya disponibles dentro de la plataforma</p>
-            <div>
-                <div>
-                    <h3>Fondos</h3>
-                    <p>Administra tus cuentas, billeteras y efectivo.</p>
+            <div class="hero-mockup">
+                <div class="mockup-sidebar">
+                    <span class="ms-logo">F</span>
+                    <span class="ms-item active"></span>
+                    <span class="ms-item"></span>
+                    <span class="ms-item"></span>
+                    <span class="ms-item"></span>
+                    <span class="ms-item"></span>
                 </div>
-                <div>
-                    <h3>Movimientos</h3>
-                    <p>Registra tus ingresos y gastos al instante.</p>
-                </div>
-                <div>
-                    <h3>Activos</h3>
-                    <p>Lleva el control de lo que posees.</p>
-                </div>
-                <div>
-                    <h3>Pasivos</h3>
-                    <p>Da seguimiento a tus deudas y obligaciones.</p>
-                </div>
-                <div>
-                    <h3>Metas</h3>
-                    <p>Define objetivos de ahorro claros.</p>
-                </div>
-                <div>
-                    <h3>Plantillas</h3>
-                    <p>Automatiza movimientos recurrentes.</p>
-                </div>
-                <div>
-                    <h3>Cuotas</h3>
-                    <p>Organiza pagos fraccionados fácilmente.</p>
-                </div>
-                <div>
-                    <h3>Pagos</h3>
-                    <p>Controla vencimientos y pagos pendientes.</p>
-                </div>
-                <div>
-                    <h3>Flujo de caja</h3>
-                    <p>Visualiza entradas y salidas de dinero.</p>
+                <div class="mockup-main">
+                    <div class="mockup-top">
+                        <span>Bienvenido de vuelta</span>
+                        <span class="m-avatar"></span>
+                    </div>
+                    <div class="mockup-balance">
+                        <div>
+                            <span class="m-label">SALDO TOTAL</span>
+                            <strong>$ 2,540,000</strong>
+                        </div>
+                        <span class="m-badge">+12.4%</span>
+                    </div>
+                    <div class="mockup-chart">
+                        <span style="--h: 55%"></span>
+                        <span style="--h: 80%"></span>
+                        <span style="--h: 45%"></span>
+                        <span style="--h: 95%"></span>
+                        <span style="--h: 70%"></span>
+                        <span style="--h: 100%"></span>
+                        <span style="--h: 60%"></span>
+                    </div>
+                    <div class="mockup-stats">
+                        <div class="m-stat">
+                            <span class="m-dot" style="background: #34D399"></span>
+                            <div><span>Ingresos</span><strong>+$4.2M</strong></div>
+                        </div>
+                        <div class="m-stat">
+                            <span class="m-dot" style="background: #F87171"></span>
+                            <div><span>Gastos</span><strong>-$1.7M</strong></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>¿Por qué elegir FluneXy?</h2>
-            <p>Seguridad, automatización y claridad en cada decisión financiera.</p>
-            <div>
-                <div>
-                    <h3>Seguridad integral</h3>
-                    <p>Tus datos financieros protegidos en cada módulo.</p>
+        <section class="beneficios" id="funcionalidades">
+            <h2 class="section-title">Todo lo que necesitas para tu salud financiera</h2>
+            <p class="section-subtitle">Beneficios diseñados para darte control real sobre tu dinero</p>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="card-icon"><i class="ph ph-robot"></i></div>
+                    <h3 class="card-title">Organización inteligente</h3>
+                    <p class="card-text">Categoriza y clasifica tus movimientos automáticamente.</p>
                 </div>
-                <div>
-                    <h3>Automatización real</h3>
-                    <p>Menos tareas manuales, más control automático.</p>
+                <div class="beneficio-card">
+                    <div class="card-icon"><i class="ph ph-arrows-clockwise"></i></div>
+                    <h3 class="card-title">Automatización</h3>
+                    <p class="card-text">Plantillas y flujos recurrentes sin esfuerzo manual.</p>
                 </div>
-                <div>
-                    <h3>Métricas claras</h3>
-                    <p>Indicadores y balances entendibles al instante.</p>
+                <div class="beneficio-card">
+                    <div class="card-icon"><i class="ph ph-clipboard-text"></i></div>
+                    <h3 class="card-title">Reportes financieros</h3>
+                    <p class="card-text">Visualiza tu balance con reportes claros y detallados.</p>
                 </div>
-                <div>
-                    <h3>Crecimiento patrimonial</h3>
-                    <p>Metas y seguimiento para construir tu futuro.</p>
+                <div class="beneficio-card">
+                    <div class="card-icon"><i class="ph ph-target"></i></div>
+                    <h3 class="card-title">Seguimiento de metas</h3>
+                    <p class="card-text">Define metas de ahorro y monitorea tu progreso.</p>
                 </div>
-                <div>
-                    <h3>Todo en un solo lugar</h3>
-                    <p>Fondos, movimientos, metas, activos y pasivos conectados entre sí, para que veas el panorama completo de tu economía sin cambiar de app.</p>
+                <div class="beneficio-card">
+                    <div class="card-icon"><i class="ph ph-user"></i></div>
+                    <h3 class="card-title">Control total</h3>
+                    <p class="card-text">Administra fondos, activos y pasivos en un solo lugar.</p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Empieza a controlar tus finanzas hoy</h2>
-            <p>Únete a FluneXy y organiza tus fondos, movimientos y metas en un solo lugar.</p>
-            <button type="button" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
+        <section class="modulos" id="beneficios">
+            <h2 class="section-title">Un módulo para cada parte de tus finanzas</h2>
+            <p class="section-subtitle">Explora las herramientas ya disponibles dentro de la plataforma</p>
+            <div class="modulos-grid">
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-wallet"></i></div>
+                        <h3 class="card-title">Fondos</h3>
+                    </div>
+                    <p class="card-text">Administra tus cuentas, billeteras y efectivo.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-arrows-left-right"></i></div>
+                        <h3 class="card-title">Movimientos</h3>
+                    </div>
+                    <p class="card-text">Registra tus ingresos y gastos al instante.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-file-text"></i></div>
+                        <h3 class="card-title">Activos</h3>
+                    </div>
+                    <p class="card-text">Lleva el control de lo que posees.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-credit-card"></i></div>
+                        <h3 class="card-title">Pasivos</h3>
+                    </div>
+                    <p class="card-text">Da seguimiento a tus deudas y obligaciones.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-target"></i></div>
+                        <h3 class="card-title">Metas</h3>
+                    </div>
+                    <p class="card-text">Define objetivos de ahorro claros.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-arrows-clockwise"></i></div>
+                        <h3 class="card-title">Plantillas</h3>
+                    </div>
+                    <p class="card-text">Automatiza movimientos recurrentes.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-receipt"></i></div>
+                        <h3 class="card-title">Cuotas</h3>
+                    </div>
+                    <p class="card-text">Organiza pagos fraccionados fácilmente.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-money"></i></div>
+                        <h3 class="card-title">Pagos</h3>
+                    </div>
+                    <p class="card-text">Controla vencimientos y pagos pendientes.</p>
+                </div>
+                <div class="modulo-card">
+                    <div class="modulo-top">
+                        <div class="card-icon"><i class="ph ph-bank"></i></div>
+                        <h3 class="card-title">Flujo de caja</h3>
+                    </div>
+                    <p class="card-text">Visualiza entradas y salidas de dinero.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <h2 class="section-title">Diseñado para que veas todo con claridad</h2>
+            <p class="section-subtitle">Una vista real de tu módulo de Movimientos, con la misma experiencia del Dashboard</p>
+            <div class="showcase-frame">
+                <div class="browser-bar">
+                    <span class="b-dot" style="background: #F87171"></span>
+                    <span class="b-dot" style="background: #FBBF24"></span>
+                    <span class="b-dot" style="background: #34D399"></span>
+                    <span class="b-url">flunexy.com/movimientos</span>
+                </div>
+                <div class="mov-screen">
+                    <div class="mov-header">
+                        <h3>Mis Movimientos</h3>
+                        <button type="button" class="mov-btn">+ Nuevo movimiento</button>
+                    </div>
+                    <div class="mov-table">
+                        <div class="mov-row mov-head">
+                            <span>Concepto</span>
+                            <span>Categoría</span>
+                            <span>Fondo</span>
+                            <span>Fecha</span>
+                            <span>Valor</span>
+                        </div>
+                        <div class="mov-row">
+                            <span class="mov-name">Salario</span>
+                            <span class="mov-cat">Ingreso</span>
+                            <span>Principal</span>
+                            <span>01 Jul</span>
+                            <span class="pos">+$1,800,000</span>
+                        </div>
+                        <div class="mov-row">
+                            <span class="mov-name">Mercado</span>
+                            <span class="mov-cat">Alimentación</span>
+                            <span>Efectivo</span>
+                            <span>02 Jul</span>
+                            <span class="neg">-$320,000</span>
+                        </div>
+                        <div class="mov-row">
+                            <span class="mov-name">Transporte</span>
+                            <span class="mov-cat">Movilidad</span>
+                            <span>Principal</span>
+                            <span>03 Jul</span>
+                            <span class="neg">-$120,000</span>
+                        </div>
+                        <div class="mov-row">
+                            <span class="mov-name">Suscripciones</span>
+                            <span class="mov-cat">Servicios</span>
+                            <span>Efectivo</span>
+                            <span>05 Jul</span>
+                            <span class="neg">-$45,000</span>
+                        </div>
+                        <div class="mov-row">
+                            <span class="mov-name">Ahorro</span>
+                            <span class="mov-cat">Metas</span>
+                            <span>Metas</span>
+                            <span>07 Jul</span>
+                            <span class="pos">+$250,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="porque">
+            <div class="porque-left">
+                <h2 class="section-title">¿Por qué elegir FluneXy?</h2>
+                <p class="section-subtitle">Seguridad, automatización y claridad en cada decisión financiera.</p>
+                <div class="feature-row">
+                    <div class="feature-icon"><i class="ph ph-gear"></i></div>
+                    <div class="feature-text">
+                        <strong>Seguridad integral</strong>
+                        <span>Tus datos financieros protegidos en cada módulo.</span>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-icon"><i class="ph ph-arrows-clockwise"></i></div>
+                    <div class="feature-text">
+                        <strong>Automatización real</strong>
+                        <span>Menos tareas manuales, más control automático.</span>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-icon"><i class="ph ph-chart-line"></i></div>
+                    <div class="feature-text">
+                        <strong>Métricas claras</strong>
+                        <span>Indicadores y balances entendibles al instante.</span>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-icon"><i class="ph ph-target"></i></div>
+                    <div class="feature-text">
+                        <strong>Crecimiento patrimonial</strong>
+                        <span>Metas y seguimiento para construir tu futuro.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="card-icon"><i class="ph ph-robot"></i></div>
+                <h3>Todo en un solo lugar</h3>
+                <p>Fondos, movimientos, metas, activos y pasivos conectados entre sí, para que veas el panorama completo de tu economía sin cambiar de app.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-panel">
+                <h2>Empieza a controlar tus finanzas hoy</h2>
+                <p>Únete a FluneXy y organiza tus fondos, movimientos y metas en un solo lugar.</p>
+                <button type="button" class="btn" onclick="location.href='../autenticacion/registro.html'">Comenzar gratis</button>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div>
-            <div>
-                <div>FluneXy</div>
-                <p>Fluye con tus finanzas</p>
-                <p>Plataforma financiera personal para organizar fondos, movimientos, metas y reportes en un solo lugar.</p>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="nav-logo">FluneXy</div>
+                <p class="footer-tagline">Fluye con tus finanzas</p>
+                <p class="footer-desc">Plataforma financiera personal para organizar fondos, movimientos, metas y reportes en un solo lugar.</p>
             </div>
-            <div>
-                <h4>PRODUCTO</h4>
-                <a href="#">Fondos</a>
-                <a href="#">Movimientos</a>
-                <a href="#">Metas</a>
-                <a href="#">Reportes</a>
-            </div>
-            <div>
-                <h4>EMPRESA</h4>
-                <a href="#">Sobre nosotros</a>
-                <a href="#">Blog</a>
-                <a href="#">Términos</a>
-                <a href="#">Privacidad</a>
-            </div>
-            <div>
-                <h4>CONTACTO</h4>
-                <p>soporte@flunexy.com</p>
-                <p>+57 300 000 0000</p>
-                <p>Bogotá, Colombia</p>
-            </div>
-            <div>
-                <h4>SÍGUENOS</h4>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">X (Twitter)</a>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>PRODUCTO</h4>
+                    <a href="#">Fondos</a>
+                    <a href="#">Movimientos</a>
+                    <a href="#">Metas</a>
+                    <a href="#">Reportes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>EMPRESA</h4>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACTO</h4>
+                    <p>soporte@flunexy.com</p>
+                    <p>+57 300 000 0000</p>
+                    <p>Bogotá, Colombia</p>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>SÍGUENOS</h4>
+                    <a href="#"><span class="dot"></span> Instagram</a>
+                    <a href="#"><span class="dot"></span> LinkedIn</a>
+                    <a href="#"><span class="dot"></span> X (Twitter)</a>
+                </div>
             </div>
         </div>
-        <div>
+        <div class="footer-bottom">
             <p>&copy; 2026 FluneXy. Todos los derechos reservados.</p>
-            <div>
+            <div class="legal">
                 <a href="#">Términos de servicio</a>
-                <span>•</span>
                 <a href="#">Política de privacidad</a>
             </div>
         </div>

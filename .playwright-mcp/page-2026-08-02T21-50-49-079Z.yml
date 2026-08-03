@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - img "FluneXy" [ref=e4]
+    - text: PRINCIPAL
+    - navigation [ref=e5]:
+      - link " Inicio" [ref=e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=e7]: 
+        - text: Inicio
+      - link " Movimientos" [ref=e9] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=e10]: 
+        - text: Movimientos
+      - link " Fondos" [ref=e12] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=e13]: 
+        - text: Fondos
+    - text: GESTIÓN
+    - navigation [ref=e15]:
+      - link " Activos" [ref=e16] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=e17]: 
+        - text: Activos
+      - link " Pasivos" [ref=e19] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=e20]: 
+        - text: Pasivos
+      - link " Metas" [ref=e22] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=e23]: 
+        - text: Metas
+      - link " Plantillas" [ref=e25] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=e26]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=e28] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=e29]: 
+        - text: Cuotas
+      - link " Pagos" [ref=e31] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=e32]: 
+        - text: Pagos
+    - text: ANÁLISIS
+    - navigation [ref=e34]:
+      - link " Balance financiero" [ref=e35] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=e36]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=e38] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=e39]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=e41] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=e42]: 
+        - text: Flujo de caja
+      - link " Alertas3" [ref=e44] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=e45]: 
+        - text: Alertas3
+      - link " Reportes" [ref=e47] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=e48]: 
+        - text: Reportes
+    - text: SOPORTE
+    - navigation [ref=e50]:
+      - link " Asistente inteligente" [ref=e51] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=e52]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=e54] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e55]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=e57] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=e58]: 
+        - text: Mi perfil
+    - separator [ref=e60]
+    - link " Cerrar sesión" [ref=e61] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=e62]: 
+      - text: Cerrar sesión
+  - main [ref=e64]:
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - heading "Hola, Ana Milena" [level=1] [ref=e67]
+        - paragraph [ref=e68]: Así van tus finanzas hoy
+      - generic [ref=e69]:
+        - button [ref=e70] [cursor=pointer]:
+          - img "Notificaciones" [ref=e71]
+        - button "A" [ref=e72] [cursor=pointer]
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - text: PATRIMONIO TOTAL
+        - generic [ref=e75]:
+          - heading "$28.450.000" [level=2] [ref=e76]
+          - text: COP
+        - text: ▲ +2.4% hoy
+      - separator [ref=e77]
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - text: Ingresos
+          - strong [ref=e80]: +$4.2M
+        - generic [ref=e81]:
+          - text: Gastos
+          - strong [ref=e82]: "-$2.8M"
+        - generic [ref=e83]:
+          - text: Ahorro
+          - strong [ref=e84]: $1.4M
+    - generic [ref=e85]:
+      - heading "Accesos rápidos" [level=3] [ref=e86]
+      - generic [ref=e87]:
+        - link " Flujo de caja Ingresos y egresos" [ref=e88] [cursor=pointer]:
+          - /url: ../flujo-caja/flujo-caja.html
+          - generic [ref=e89]: 
+          - heading "Flujo de caja" [level=4] [ref=e92]
+          - paragraph [ref=e93]: Ingresos y egresos
+        - link " Balance Ver resumen" [ref=e94] [cursor=pointer]:
+          - /url: ../balance-financiero/balance-financiero.html
+          - generic [ref=e95]: 
+          - heading "Balance" [level=4] [ref=e98]
+          - paragraph [ref=e99]: Ver resumen
+        - link " Metas Tus objetivos" [ref=e100] [cursor=pointer]:
+          - /url: ../metas/mis-metas.html
+          - generic [ref=e101]: 
+          - heading "Metas" [level=4] [ref=e104]
+          - paragraph [ref=e105]: Tus objetivos
+        - link " Reportes Historial" [ref=e106] [cursor=pointer]:
+          - /url: ../reportes/generar-reporte.html
+          - generic [ref=e107]: 
+          - heading "Reportes" [level=4] [ref=e110]
+          - paragraph [ref=e111]: Historial
+    - generic [ref=e112]:
+      - heading "Resumen financiero" [level=3] [ref=e113]
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - text: Ingresos del mes
+          - generic [ref=e116]:
+            - strong [ref=e117]: $4.200.000
+            - generic [ref=e118]: +12%
+        - generic [ref=e119]:
+          - text: Gastos del mes
+          - generic [ref=e120]:
+            - strong [ref=e121]: $2.800.000
+            - generic [ref=e122]: +5%
+        - generic [ref=e123]:
+          - text: Deuda activa
+          - generic [ref=e124]:
+            - strong [ref=e125]: $1.200.000
+            - generic [ref=e126]: 31%
+        - generic [ref=e127]:
+          - text: Ahorro neto
+          - generic [ref=e128]:
+            - strong [ref=e129]: $1.400.000
+            - generic [ref=e130]: +8%
+    - generic [ref=e131]:
+      - heading "Movimientos recientes" [level=3] [ref=e132]
+      - article [ref=e133]:
+        - generic [ref=e134]: 
+        - generic [ref=e137]:
+          - heading "D1" [level=4] [ref=e138]
+          - paragraph [ref=e139]: Hoy, 10:30 am
+        - generic [ref=e140]:
+          - strong [ref=e141]: "-$85.000"
+          - paragraph [ref=e142]: Mercado
+      - article [ref=e143]:
+        - generic [ref=e144]: 
+        - generic [ref=e147]:
+          - heading "CDT Bancolombia" [level=4] [ref=e148]
+          - paragraph [ref=e149]: 07 mayo 2025
+        - generic [ref=e150]:
+          - strong [ref=e151]: +$280.000
+          - paragraph [ref=e152]: Rendimiento
+      - article [ref=e153]:
+        - generic [ref=e154]: 
+        - generic [ref=e157]:
+          - heading "Pago Seguro" [level=4] [ref=e158]
+          - paragraph [ref=e159]: 06 mayo 2025
+        - generic [ref=e160]:
+          - strong [ref=e161]: "-$120.000"
+          - paragraph [ref=e162]: Seguros
+    - complementary [ref=e163]:
+      - generic [ref=e164]: 
+      - generic [ref=e167]:
+        - heading "Alerta de endeudamiento" [level=4] [ref=e168]
+        - paragraph [ref=e169]: Tu índice es 31.4%, cerca del umbral de riesgo (35%).
+        - button "Ver análisis completo" [ref=e170] [cursor=pointer]
+    - button "" [ref=e171] [cursor=pointer]

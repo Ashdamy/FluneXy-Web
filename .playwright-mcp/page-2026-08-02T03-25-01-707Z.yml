@@ -1,0 +1,109 @@
+- generic [active] [ref=f12e1]:
+  - complementary [ref=f12e2]:
+    - img "FluneXy" [ref=f12e4]
+    - generic [ref=f12e5]: PRINCIPAL
+    - navigation [ref=f12e6]:
+      - link " Inicio" [ref=f12e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f12e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f12e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f12e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f12e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f12e14]: 
+        - text: Fondos
+    - generic [ref=f12e16]: GESTIÓN
+    - navigation [ref=f12e17]:
+      - link " Activos" [ref=f12e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f12e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f12e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f12e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f12e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f12e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f12e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f12e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f12e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f12e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f12e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f12e34]: 
+        - text: Pagos
+    - generic [ref=f12e36]: ANÁLISIS
+    - navigation [ref=f12e37]:
+      - link " Balance financiero" [ref=f12e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f12e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f12e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f12e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f12e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f12e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f12e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f12e48]: 
+        - text: Alertas
+        - generic [ref=f12e50]: "3"
+      - link " Reportes" [ref=f12e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f12e52]: 
+        - text: Reportes
+    - generic [ref=f12e54]: SOPORTE
+    - navigation [ref=f12e55]:
+      - link " Asistente inteligente" [ref=f12e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f12e57]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f12e59] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f12e60]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f12e62] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f12e63]: 
+        - text: Mi perfil
+    - separator [ref=f12e65]
+    - link " Cerrar sesión" [ref=f12e66] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f12e67]: 
+      - text: Cerrar sesión
+  - main [ref=f12e69]:
+    - generic [ref=f12e70]:
+      - generic [ref=f12e71]:
+        - heading "Registrar Aporte" [level=1] [ref=f12e72]
+        - paragraph [ref=f12e73]: Moto Nueva · Meta Financiera
+      - generic [ref=f12e74]:
+        - button [ref=f12e75] [cursor=pointer]:
+          - img "Notificaciones" [ref=f12e76]
+        - button [ref=f12e77] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f12e78]
+    - generic [ref=f12e79]:
+      - generic [ref=f12e80]: 
+      - generic [ref=f12e82]:
+        - strong [ref=f12e83]: "Progreso: 50%"
+        - generic [ref=f12e84]: Ahorrado de la meta
+      - strong [ref=f12e85]: $6.000.000 de $12.000.000
+    - generic [ref=f12e86]:
+      - generic [ref=f12e87]: MONTO DEL APORTE
+      - generic [ref=f12e88]:
+        - generic [ref=f12e89]: $
+        - generic [ref=f12e90]: "500.000"
+    - generic [ref=f12e91]:
+      - button "Cancelar" [ref=f12e92] [cursor=pointer]
+      - button "Registrar Aporte" [ref=f12e93] [cursor=pointer]

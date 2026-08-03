@@ -1,0 +1,103 @@
+- generic [active] [ref=f8e1]:
+  - complementary [ref=f8e2]:
+    - generic [ref=f8e3]: FluneXy
+    - generic [ref=f8e4]: PRINCIPAL
+    - navigation [ref=f8e5]:
+      - link " Inicio" [ref=f8e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f8e7]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f8e9] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f8e10]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f8e12] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f8e13]: 
+        - text: Fondos
+    - generic [ref=f8e15]: GESTIÓN
+    - navigation [ref=f8e16]:
+      - link " Activos" [ref=f8e17] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f8e18]: 
+        - text: Activos
+      - link " Pasivos" [ref=f8e20] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f8e21]: 
+        - text: Pasivos
+      - link " Metas" [ref=f8e23] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f8e24]: 
+        - text: Metas
+      - link " Plantillas" [ref=f8e26] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f8e27]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f8e29] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f8e30]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f8e32] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f8e33]: 
+        - text: Pagos
+    - generic [ref=f8e35]: ANÁLISIS
+    - navigation [ref=f8e36]:
+      - link " Balance financiero" [ref=f8e37] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f8e38]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f8e40] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f8e41]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f8e43] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f8e44]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f8e46] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f8e47]: 
+        - text: Alertas
+        - generic [ref=f8e49]: "3"
+      - link " Reportes" [ref=f8e50] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f8e51]: 
+        - text: Reportes
+    - generic [ref=f8e53]: SOPORTE
+    - navigation [ref=f8e54]:
+      - link " Asistente inteligente" [ref=f8e55] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f8e56]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f8e58] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f8e59]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f8e61] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f8e62]: 
+        - text: Mi perfil
+    - separator [ref=f8e64]
+    - link " Cerrar sesión" [ref=f8e65] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f8e66]: 
+      - text: Cerrar sesión
+  - main [ref=f8e68]:
+    - generic [ref=f8e69]:
+      - generic [ref=f8e70]:
+        - heading "Historial de Pagos" [level=1] [ref=f8e71]
+        - paragraph [ref=f8e72]: Pagos y aportes registrados
+      - generic [ref=f8e73]:
+        - button [ref=f8e74] [cursor=pointer]:
+          - img "Notificaciones" [ref=f8e75]
+        - button [ref=f8e76] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f8e77]
+    - generic [ref=f8e78] [cursor=pointer]:
+      - generic [ref=f8e79]: 
+      - generic [ref=f8e81]: 1 Ene 2024 – 31 Dic 2024
+    - generic [ref=f8e82]:
+      - generic [ref=f8e83]: 
+      - heading "Sin transacciones" [level=2] [ref=f8e87]
+      - paragraph [ref=f8e88]: No hay pagos ni aportes registrados en el período seleccionado
+    - button "Registrar Pago" [ref=f8e90] [cursor=pointer]

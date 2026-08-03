@@ -1,0 +1,60 @@
+- generic [active] [ref=f1e1]:
+  - complementary [ref=f1e2]:
+    - generic [ref=f1e3]: FluneXy
+    - text: PRINCIPAL
+    - navigation [ref=f1e4]:
+      - link "🏠 Inicio" [ref=f1e5] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+      - link "↔️ Movimientos" [ref=f1e6] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+      - link "👛 Fondos" [ref=f1e7] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+    - text: GESTIÓN
+    - navigation [ref=f1e8]:
+      - link "📄 Activos" [ref=f1e9] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+      - link "💳 Pasivos" [ref=f1e10] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+      - link "🎯 Metas" [ref=f1e11] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+      - link "🔁 Plantillas" [ref=f1e12] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+      - link "🧾 Cuotas" [ref=f1e13] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+      - link "💸 Pagos" [ref=f1e14] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+    - text: ANÁLISIS
+    - navigation [ref=f1e15]:
+      - link "📊 Balance financiero" [ref=f1e16] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+      - link "📈 Indicadores" [ref=f1e17] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+      - link "💵 Flujo de caja" [ref=f1e18] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+      - link "🔔 Alertas3" [ref=f1e19] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+      - link "📋 Reportes" [ref=f1e20] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+    - text: SOPORTE
+    - navigation [ref=f1e21]:
+      - link "🤖 Asistente inteligente" [ref=f1e22] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+      - link "⚙️ Configuración" [ref=f1e23] [cursor=pointer]:
+        - /url: "#"
+      - link "👤 Mi perfil" [ref=f1e24] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+    - separator [ref=f1e25]
+    - link "🚪 Cerrar sesión" [ref=f1e26] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+  - main [ref=f1e27]:
+    - generic [ref=f1e28]:
+      - generic [ref=f1e29]:
+        - heading "Tabla de Cuotas" [level=1] [ref=f1e30]
+        - paragraph [ref=f1e31]: Crédito Moto NKD · Amortización Francesa
+      - generic [ref=f1e32]:
+        - button "🔔" [ref=f1e33] [cursor=pointer]
+        - button "A" [ref=f1e34] [cursor=pointer]
+    - generic [ref=f1e35]:
+      - generic [ref=f1e36]: 📋
+      - heading "No hay cuotas registradas" [level=2] [ref=f1e39]
+      - paragraph [ref=f1e40]: Aún no existen cuotas disponibles para consultar en este elemento

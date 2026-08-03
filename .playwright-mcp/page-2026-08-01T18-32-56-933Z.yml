@@ -1,0 +1,134 @@
+- generic [active] [ref=f4e1]:
+  - complementary [ref=f4e2]:
+    - generic [ref=f4e3]: FluneXy
+    - generic [ref=f4e4]: PRINCIPAL
+    - navigation [ref=f4e5]:
+      - link "🏠 Inicio" [ref=f4e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f4e7]: 🏠
+        - text: Inicio
+      - link "↔️ Movimientos" [ref=f4e8] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f4e9]: ↔️
+        - text: Movimientos
+      - link "👛 Fondos" [ref=f4e10] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f4e11]: 👛
+        - text: Fondos
+    - generic [ref=f4e12]: GESTIÓN
+    - navigation [ref=f4e13]:
+      - link "📄 Activos" [ref=f4e14] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f4e15]: 📄
+        - text: Activos
+      - link "💳 Pasivos" [ref=f4e16] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f4e17]: 💳
+        - text: Pasivos
+      - link "🎯 Metas" [ref=f4e18] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f4e19]: 🎯
+        - text: Metas
+      - link "🔁 Plantillas" [ref=f4e20] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f4e21]: 🔁
+        - text: Plantillas
+      - link "🧾 Cuotas" [ref=f4e22] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f4e23]: 🧾
+        - text: Cuotas
+      - link "💸 Pagos" [ref=f4e24] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f4e25]: 💸
+        - text: Pagos
+    - generic [ref=f4e26]: ANÁLISIS
+    - navigation [ref=f4e27]:
+      - link "📊 Balance financiero" [ref=f4e28] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f4e29]: 📊
+        - text: Balance financiero
+      - link "📈 Indicadores" [ref=f4e30] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f4e31]: 📈
+        - text: Indicadores
+      - link "💵 Flujo de caja" [ref=f4e32] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f4e33]: 💵
+        - text: Flujo de caja
+      - link "🔔 Alertas 3" [ref=f4e34] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f4e35]: 🔔
+        - text: Alertas
+        - generic [ref=f4e36]: "3"
+      - link "📋 Reportes" [ref=f4e37] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f4e38]: 📋
+        - text: Reportes
+    - generic [ref=f4e39]: SOPORTE
+    - navigation [ref=f4e40]:
+      - link "🤖 Asistente inteligente" [ref=f4e41] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f4e42]: 🤖
+        - text: Asistente inteligente
+      - link "⚙️ Configuración" [ref=f4e43] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f4e44]: ⚙️
+        - text: Configuración
+      - link "👤 Mi perfil" [ref=f4e45] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f4e46]: 👤
+        - text: Mi perfil
+    - separator [ref=f4e47]
+    - link "🚪 Cerrar sesión" [ref=f4e48] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f4e49]: 🚪
+      - text: Cerrar sesión
+  - main [ref=f4e50]:
+    - generic [ref=f4e51]:
+      - generic [ref=f4e52]:
+        - heading "Detalle de Cuota" [level=1] [ref=f4e53]
+        - paragraph [ref=f4e54]: Información completa de la cuota
+      - generic [ref=f4e55]:
+        - button "🔔" [ref=f4e56] [cursor=pointer]
+        - button "A" [ref=f4e57] [cursor=pointer]
+    - generic [ref=f4e58]:
+      - generic [ref=f4e59]: "CUOTA #7 DE 36"
+      - strong [ref=f4e60]: $478.200
+      - generic [ref=f4e61]: Crédito Moto NKD
+      - generic [ref=f4e62]: 5 Jun 2025 · Vence en 12 días
+      - generic [ref=f4e63]: PENDIENTE
+    - generic [ref=f4e64]: DESGLOSE DE LA CUOTA
+    - generic [ref=f4e65]:
+      - generic [ref=f4e66]:
+        - generic [ref=f4e68]: Saldo Inicial
+        - strong [ref=f4e69]: $8.200.000
+      - generic [ref=f4e70]:
+        - generic [ref=f4e72]: Interés (1.8% MV)
+        - strong [ref=f4e73]: $147.600
+      - generic [ref=f4e74]:
+        - generic [ref=f4e76]: Abono a Capital
+        - strong [ref=f4e77]: $330.600
+      - generic [ref=f4e78]:
+        - generic [ref=f4e80]: Saldo Final
+        - strong [ref=f4e81]: $7.869.400
+    - generic [ref=f4e82]:
+      - generic [ref=f4e83]: Total a Pagar
+      - strong [ref=f4e84]: $478.200
+    - generic [ref=f4e85]: INFORMACIÓN DE LA CUOTA
+    - generic [ref=f4e86]:
+      - generic [ref=f4e87]:
+        - generic [ref=f4e88]: ESTADO
+        - strong [ref=f4e89]: PENDIENTE
+      - generic [ref=f4e90]:
+        - generic [ref=f4e91]: NÚMERO DE CUOTA
+        - strong [ref=f4e92]: "#7 de 36"
+      - generic [ref=f4e93]:
+        - generic [ref=f4e94]: PASIVO
+        - strong [ref=f4e95]: Moto NKD
+      - generic [ref=f4e96]:
+        - generic [ref=f4e97]: ENVÍA DATOS A
+        - strong [ref=f4e98]: Pagos
+    - generic [ref=f4e99]:
+      - button "Registrar Pago" [ref=f4e100] [cursor=pointer]
+      - link "← Ver todas las cuotas" [ref=f4e101] [cursor=pointer]:
+        - /url: tabla-cuotas.html

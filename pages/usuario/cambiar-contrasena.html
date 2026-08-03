@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar Contraseña | FluneXy</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+<link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -49,81 +51,58 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                 </button>
                 <button type="button" class="boton-perfil">A</button>
             </div>
         </header>
-        <div class="contenedor-dos-columnas">
-            <div class="columna-formulario">
-                <section class="informacion-alerta">
-                    <header class="encabezado-seccion">
-                        <h3>SEGURIDAD DE LA CUENTA</h3>
-                    </header>
-                    <section class="formulario-meta">
-                        <div class="grupo-formulario">
-                            <label for="contrasena-actual">Contraseña actual</label>
-                            <input type="password" id="contrasena-actual" placeholder="Ingresa tu contraseña actual">
+
+        <div class="ep-contenido">
+            <div class="ep-columna-form">
+                <section class="ep-seccion">
+                    <p class="ep-seccion-titulo">SEGURIDAD DE LA CUENTA</p>
+                    <div class="ep-form">
+                        <p class="ep-etiqueta-campo">CONTRASEÑA ACTUAL</p>
+                        <div class="ep-campo">
+                            <span class="ep-icono"><i class="ph ph-lock"></i></span>
+                            <input type="password" value="••••••••••">
                         </div>
-                        <div class="grupo-formulario">
-                            <label for="nueva-contrasena">Nueva contraseña</label>
-                            <input type="password" id="nueva-contrasena" placeholder="Ingresa tu nueva contraseña">
+                        <p class="ep-etiqueta-campo">NUEVA CONTRASEÑA</p>
+                        <div class="ep-campo">
+                            <span class="ep-icono"><i class="ph ph-lock"></i></span>
+                            <input type="password" value="••••••••••••">
                         </div>
-                        <div class="indicador-fortaleza">
-                            <div class="barra-fortaleza llena"></div>
-                            <span class="texto-fortaleza">Fortaleza excelente</span>
+                        <div class="cp-fortaleza">
+                            <span class="cp-barra"></span><span class="cp-barra"></span><span class="cp-barra"></span>
+                            <p>Fortaleza excelente</p>
                         </div>
-                        <div class="grupo-formulario">
-                            <label for="confirmar-contrasena">Confirmar nueva contraseña</label>
-                            <input type="password" id="confirmar-contrasena" placeholder="Repite tu nueva contraseña">
-                        </div>
-                        <div class="requisitos-contrasena">
-                            <p>Mínimo 8 caracteres, una mayúscula y un número</p>
-                        </div>
-                    </section>
-                </section>
-                <section class="acciones">
-                    <button type="button" class="boton-secundario" onclick="location.href='mi-perfil.html'">Cancelar</button>
-                    <button type="button" class="boton-primario">Actualizar Contraseña</button>
-                </section>
-            </div>
-            <aside class="columna-panel">
-                <div class="panel-consejos">
-                    <header class="encabezado-seccion">
-                        <h3>Buenas prácticas de seguridad</h3>
-                    </header>
-                    <ul class="lista-consejos">
-                        <li class="consejo-item">
-                            <span class="icono-consejo">🔑</span>
-                            <div>
-                                <strong>Usa contraseñas únicas</strong>
-                                <p>No repitas tu contraseña en otros sitios web.</p>
-                            </div>
-                        </li>
-                        <li class="consejo-item">
-                            <span class="icono-consejo">🔐</span>
-                            <div>
-                                <strong>Combina caracteres</strong>
-                                <p>Mezcla mayúsculas, minúsculas, números y símbolos.</p>
-                            </div>
-                        </li>
-                        <li class="consejo-item">
-                            <span class="icono-consejo">🔄</span>
-                            <div>
-                                <strong>Cambia tu contraseña periódicamente</strong>
-                                <p>Actualízala cada 3 meses para mayor seguridad.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="aviso-importante">
-                        <span class="icono-aviso">⚠️</span>
-                        <div>
-                            <strong>Importante</strong>
-                            <p>Nunca compartas tu contraseña con terceros. FluneXy nunca te solicitará tu contraseña por correo o teléfono.</p>
+                        <p class="cp-req"><i class="ph ph-check"></i> Mínimo 8 caracteres, una mayúscula y un número</p>
+                        <p class="ep-etiqueta-campo">CONFIRMAR NUEVA CONTRASEÑA</p>
+                        <div class="ep-campo">
+                            <span class="ep-icono"><i class="ph ph-lock"></i></span>
+                            <input type="password" value="••••••••••••">
                         </div>
                     </div>
-                </div>
+                </section>
+            </div>
+
+            <aside class="ep-columna-vista">
+                <section class="cp-seguridad">
+                    <span class="cp-seguridad-icono"><i class="ph ph-shield-check"></i></span>
+                    <h3>Buenas prácticas de seguridad</h3>
+                    <ul class="cp-tips">
+                        <li><span class="cp-dot"></span><p>Usa una combinación única que no compartas con otras cuentas.</p></li>
+                        <li><span class="cp-dot"></span><p>Evita datos personales fáciles de adivinar, como fechas de nacimiento.</p></li>
+                        <li><span class="cp-dot"></span><p>La nueva contraseña no puede ser igual a la actual. Se cerrarán todas tus otras sesiones activas.</p></li>
+                    </ul>
+                </section>
             </aside>
         </div>
-    </main>  </body>
+
+        <div class="ep-acciones">
+            <button type="button" class="ep-boton ep-boton-cancelar" onclick="location.href='mi-perfil.html'">Cancelar</button>
+            <button type="button" class="ep-boton ep-boton-guardar">Actualizar Contraseña</button>
+        </div>
+    </main>
+</body>
 </html>

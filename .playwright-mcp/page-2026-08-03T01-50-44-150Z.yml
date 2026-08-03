@@ -1,0 +1,140 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - img "FluneXy" [ref=e4]
+    - generic [ref=e5]: PRINCIPAL
+    - navigation [ref=e6]:
+      - link " Inicio" [ref=e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=e14]: 
+        - text: Fondos
+    - generic [ref=e16]: GESTIÓN
+    - navigation [ref=e17]:
+      - link " Activos" [ref=e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=e34]: 
+        - text: Pagos
+    - generic [ref=e36]: ANÁLISIS
+    - navigation [ref=e37]:
+      - link " Balance financiero" [ref=e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=e48]: 
+        - text: Alertas
+        - generic [ref=e50]: "3"
+      - link " Reportes" [ref=e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=e52]: 
+        - text: Reportes
+    - generic [ref=e54]: SOPORTE
+    - navigation [ref=e55]:
+      - link " Asistente inteligente" [ref=e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=e57]: 
+        - text: Asistente inteligente
+      - link " Mi perfil" [ref=e59] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=e60]: 
+        - text: Mi perfil
+    - separator [ref=e62]
+    - link " Cerrar sesión" [ref=e63] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=e64]: 
+      - text: Cerrar sesión
+  - main [ref=e66]:
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - heading "Mis Alertas" [level=1] [ref=e69]
+        - paragraph [ref=e70]: Configura avisos para riesgos financieros
+      - generic [ref=e71]:
+        - button "" [ref=e72] [cursor=pointer]
+        - button "A" [ref=e74] [cursor=pointer]
+    - generic [ref=e76]:
+      - generic [ref=e78]:
+        - text: Alertas Activas
+        - strong [ref=e79]: "3"
+        - generic [ref=e80]: 3 activas de 4
+      - generic [ref=e81]:
+        - generic [ref=e82]: Total
+        - strong [ref=e83]: "4"
+    - generic [ref=e84]:
+      - heading "Alertas Configuradas" [level=3] [ref=e85]
+      - link " Nueva Alerta" [ref=e86] [cursor=pointer]:
+        - /url: configurar-alerta.html
+        - generic [ref=e87]: 
+        - text: Nueva Alerta
+    - generic [ref=e88]:
+      - article [ref=e89]:
+        - generic [ref=e91]: 
+        - generic [ref=e93]:
+          - heading "Endeudamiento" [level=4] [ref=e94]
+          - generic [ref=e95]: "UMBRAL: 35%"
+        - generic [ref=e96]:
+          - generic [ref=e97]: Actual
+          - strong [ref=e98]: 31.4%
+        - generic [ref=e99]: Activa
+      - article [ref=e101]:
+        - generic [ref=e103]: 
+        - generic [ref=e105]:
+          - strong [ref=e106]: Liquidez Baja
+          - generic [ref=e107]: "UMBRAL: 1.0x"
+        - generic [ref=e108]:
+          - generic [ref=e109]: Actual
+          - strong [ref=e110]: 1.6x
+        - generic [ref=e111]: Activa
+      - article [ref=e113]:
+        - generic [ref=e115]: 
+        - generic [ref=e117]:
+          - strong [ref=e118]: Gasto Excesivo
+          - generic [ref=e119]: "UMBRAL: $3.000.000/mes"
+        - generic [ref=e120]:
+          - generic [ref=e121]: Actual
+          - strong [ref=e122]: $1.820.000
+        - generic [ref=e123]: Activa
+      - article [ref=e125]:
+        - generic [ref=e127]: 
+        - generic [ref=e129]:
+          - strong [ref=e130]: Meta Atrasada
+          - generic [ref=e131]: "UMBRAL: 80% del plazo"
+        - generic [ref=e132]:
+          - generic [ref=e133]: Actual
+          - strong [ref=e134]: "-"
+        - generic [ref=e135]: Inactiva

@@ -1,47 +1,49 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | FluneXy</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+<link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html" class="activo"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html" class="activo"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
-    <main class="contenido-principal">
+    <main class="contenido-principal pagina-home">
         <div class="encabezado-contenido">
             <div class="saludo">
                 <h1>Hola, Ana Milena</h1>
@@ -49,7 +51,7 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                     <span class="punto-notificacion"></span>
                 </button>
                 <button type="button" class="boton-perfil">A</button>
@@ -93,22 +95,22 @@
             <h3>Accesos rápidos</h3>
             <div class="grid-accesos">
                 <a href="../flujo-caja/flujo-caja.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-flujo"><span>💵</span></div>
+                    <div class="icono-acceso icono-flujo"><span><i class="ph ph-currency-circle-dollar"></i></span></div>
                     <h4>Flujo de caja</h4>
                     <p>Ingresos y egresos</p>
                 </a>
                 <a href="../balance-financiero/balance-financiero.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-balance"><span>📊</span></div>
+                    <div class="icono-acceso icono-balance"><span><i class="ph ph-chart-bar"></i></span></div>
                     <h4>Balance</h4>
                     <p>Ver resumen</p>
                 </a>
                 <a href="../metas/mis-metas.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-metas"><span>🎯</span></div>
+                    <div class="icono-acceso icono-metas"><span><i class="ph ph-target"></i></span></div>
                     <h4>Metas</h4>
                     <p>Tus objetivos</p>
                 </a>
                 <a href="../reportes/generar-reporte.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-reportes"><span>📋</span></div>
+                    <div class="icono-acceso icono-reportes"><span><i class="ph ph-clipboard-text"></i></span></div>
                     <h4>Reportes</h4>
                     <p>Historial</p>
                 </a>
@@ -117,41 +119,41 @@
         <section class="seccion-resumen">
             <h3>Resumen financiero</h3>
             <div class="grid-resumen">
-                <div class="tarjeta-resumen">
+                <div class="tarjeta-resumen-home">
                     <span class="etiqueta">Ingresos del mes</span>
-                    <div class="valor-resumen">
+                    <div class="valor-resumen-home">
                         <strong>$4.200.000</strong>
-                        <span class="badge badge-positivo">+12%</span>
+                        <span class="badge-positivo">+12%</span>
                     </div>
                     <div class="barra-progreso">
                         <span class="relleno ingresos" style="width: 90px;"></span>
                     </div>
                 </div>
-                <div class="tarjeta-resumen">
+                <div class="tarjeta-resumen-home">
                     <span class="etiqueta">Gastos del mes</span>
-                    <div class="valor-resumen">
+                    <div class="valor-resumen-home">
                         <strong>$2.800.000</strong>
-                        <span class="badge badge-negativo">+5%</span>
+                        <span class="badge-negativo">+5%</span>
                     </div>
                     <div class="barra-progreso">
                         <span class="relleno gastos" style="width: 58px;"></span>
                     </div>
                 </div>
-                <div class="tarjeta-resumen">
+                <div class="tarjeta-resumen-home">
                     <span class="etiqueta">Deuda activa</span>
-                    <div class="valor-resumen">
+                    <div class="valor-resumen-home">
                         <strong>$1.200.000</strong>
-                        <span class="badge badge-advertencia">31%</span>
+                        <span class="badge-advertencia">31%</span>
                     </div>
                     <div class="barra-progreso">
                         <span class="relleno deuda" style="width: 40px;"></span>
                     </div>
                 </div>
-                <div class="tarjeta-resumen">
+                <div class="tarjeta-resumen-home">
                     <span class="etiqueta">Ahorro neto</span>
-                    <div class="valor-resumen">
+                    <div class="valor-resumen-home">
                         <strong>$1.400.000</strong>
-                        <span class="badge badge-info">+8%</span>
+                        <span class="badge-info">+8%</span>
                     </div>
                     <div class="barra-progreso">
                         <span class="relleno ahorro" style="width: 70px;"></span>
@@ -161,8 +163,8 @@
         </section>
         <section class="seccion-movimientos">
             <h3>Movimientos recientes</h3>
-            <article class="item-movimiento">
-                <div class="icono-movimiento icono-gasto"><span>🛒</span></div>
+            <article class="item-movimiento-home">
+                <div class="icono-movimiento icono-gasto"><span><i class="ph ph-shopping-cart"></i></span></div>
                 <div class="detalle-movimiento">
                     <h4>D1</h4>
                     <p>Hoy, 10:30 am</p>
@@ -172,8 +174,8 @@
                     <p>Mercado</p>
                 </div>
             </article>
-            <article class="item-movimiento">
-                <div class="icono-movimiento icono-ingreso"><span>💰</span></div>
+            <article class="item-movimiento-home">
+                <div class="icono-movimiento icono-ingreso"><span><i class="ph ph-money"></i></span></div>
                 <div class="detalle-movimiento">
                     <h4>CDT Bancolombia</h4>
                     <p>07 mayo 2025</p>
@@ -183,8 +185,8 @@
                     <p>Rendimiento</p>
                 </div>
             </article>
-            <article class="item-movimiento">
-                <div class="icono-movimiento icono-alerta"><span>🚗</span></div>
+            <article class="item-movimiento-home">
+                <div class="icono-movimiento icono-alerta"><span><i class="ph ph-car"></i></span></div>
                 <div class="detalle-movimiento">
                     <h4>Pago Seguro</h4>
                     <p>06 mayo 2025</p>
@@ -196,13 +198,13 @@
             </article>
         </section>
         <aside class="alerta-endeudamiento">
-            <div class="icono-alerta"><span>⚠️</span></div>
+            <div class="icono-alerta"><span><i class="ph ph-warning"></i></span></div>
             <div class="contenido-alerta">
                 <h4>Alerta de endeudamiento</h4>
                 <p>Tu índice es 31.4%, cerca del umbral de riesgo (35%).</p>
                 <button type="button" class="boton-texto">Ver análisis completo</button>
             </div>
         </aside>
-        <button type="button" class="fab-asistente">💬</button>
+        <button type="button" class="fab-asistente"><i class="ph ph-chat-circle"></i></button>
     </main>  </body>
 </html>

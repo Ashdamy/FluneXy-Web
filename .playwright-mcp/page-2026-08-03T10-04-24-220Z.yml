@@ -1,0 +1,155 @@
+- generic [active] [ref=f24e1]:
+  - complementary [ref=f24e2]:
+    - img "FluneXy" [ref=f24e4]
+    - generic [ref=f24e5]: PRINCIPAL
+    - navigation [ref=f24e6]:
+      - link " Inicio" [ref=f24e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f24e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f24e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f24e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f24e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f24e14]: 
+        - text: Fondos
+    - generic [ref=f24e16]: GESTIÓN
+    - navigation [ref=f24e17]:
+      - link " Activos" [ref=f24e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f24e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f24e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f24e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f24e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f24e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f24e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f24e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f24e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f24e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f24e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f24e34]: 
+        - text: Pagos
+    - generic [ref=f24e36]: ANÁLISIS
+    - navigation [ref=f24e37]:
+      - link " Balance financiero" [ref=f24e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f24e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f24e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f24e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f24e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f24e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f24e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f24e48]: 
+        - text: Alertas
+        - generic [ref=f24e50]: "3"
+      - link " Reportes" [ref=f24e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f24e52]: 
+        - text: Reportes
+    - generic [ref=f24e54]: SOPORTE
+    - navigation [ref=f24e55]:
+      - link " Asistente inteligente" [ref=f24e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f24e57]: 
+        - text: Asistente inteligente
+      - link " Mi perfil" [ref=f24e59] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f24e60]: 
+        - text: Mi perfil
+    - separator [ref=f24e62]
+    - link " Cerrar sesión" [ref=f24e63] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f24e64]: 
+      - text: Cerrar sesión
+  - main [ref=f24e66]:
+    - generic [ref=f24e67]:
+      - generic [ref=f24e68]:
+        - heading "Mis Movimientos" [level=1] [ref=f24e69]
+        - paragraph [ref=f24e70]: Consulta todos tus ingresos y gastos
+      - generic [ref=f24e71]:
+        - button "" [ref=f24e72] [cursor=pointer]
+        - button "A" [ref=f24e74] [cursor=pointer]
+    - generic [ref=f24e75]:
+      - generic [ref=f24e76]:
+        - paragraph [ref=f24e77]: Balance del mes
+        - heading "$1,400,000" [level=2] [ref=f24e78]
+        - text: Ingresos - Gastos
+      - generic [ref=f24e79]:
+        - generic [ref=f24e80]:
+          - paragraph [ref=f24e81]: Ingresos
+          - strong [ref=f24e82]: $4,200,000
+        - generic [ref=f24e83]:
+          - paragraph [ref=f24e84]: Gastos
+          - strong [ref=f24e85]: "-$2,800,000"
+    - generic [ref=f24e86]:
+      - searchbox "Buscar movimiento..." [ref=f24e88]
+      - combobox [ref=f24e90] [cursor=pointer]:
+        - option "Todos" [selected]
+        - option "Ingresos"
+        - option "Gastos"
+    - generic [ref=f24e91]:
+      - heading "Movimientos recientes" [level=3] [ref=f24e93]
+      - article [ref=f24e94]:
+        - generic [ref=f24e95]:
+          - img "Salario" [ref=f24e97]
+          - generic [ref=f24e98]:
+            - heading "Salario" [level=3] [ref=f24e99]
+            - paragraph [ref=f24e100]: Ingreso · Ayer
+        - generic [ref=f24e101]:
+          - strong [ref=f24e102]: +$2,500,000
+          - paragraph [ref=f24e103]: Ingreso
+      - article [ref=f24e104]:
+        - generic [ref=f24e105]:
+          - img "Arriendo" [ref=f24e107]
+          - generic [ref=f24e108]:
+            - heading "Arriendo" [level=3] [ref=f24e109]
+            - paragraph [ref=f24e110]: Vivienda · Hoy
+        - generic [ref=f24e111]:
+          - strong [ref=f24e112]: "-$1,200,000"
+          - paragraph [ref=f24e113]: Gasto
+      - article [ref=f24e114]:
+        - generic [ref=f24e115]:
+          - img "Supermercado" [ref=f24e117]
+          - generic [ref=f24e118]:
+            - heading "Supermercado" [level=3] [ref=f24e119]
+            - paragraph [ref=f24e120]: Alimentación · 2 días
+        - generic [ref=f24e121]:
+          - strong [ref=f24e122]: "-$320,000"
+          - paragraph [ref=f24e123]: Gasto
+      - article [ref=f24e124]:
+        - generic [ref=f24e125]:
+          - img "Freelance" [ref=f24e127]
+          - generic [ref=f24e128]:
+            - heading "Freelance" [level=3] [ref=f24e129]
+            - paragraph [ref=f24e130]: Ingreso · 5 días
+        - generic [ref=f24e131]:
+          - strong [ref=f24e132]: +$1,700,000
+          - paragraph [ref=f24e133]: Ingreso
+      - article [ref=f24e134]:
+        - generic [ref=f24e135]:
+          - img "Internet" [ref=f24e137]
+          - generic [ref=f24e138]:
+            - heading "Internet ETB" [level=3] [ref=f24e139]
+            - paragraph [ref=f24e140]: Servicios · 7 días
+        - generic [ref=f24e141]:
+          - strong [ref=f24e142]: "-$95,000"
+          - paragraph [ref=f24e143]: Gasto
+    - button "+ Nuevo Movimiento" [ref=f24e144] [cursor=pointer]

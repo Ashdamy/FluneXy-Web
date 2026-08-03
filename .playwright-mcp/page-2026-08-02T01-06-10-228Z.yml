@@ -1,0 +1,143 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - generic [ref=e3]: FluneXy
+    - generic [ref=e4]: PRINCIPAL
+    - navigation [ref=e5]:
+      - link " Inicio" [ref=e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=e7]: 
+        - text: Inicio
+      - link " Movimientos" [ref=e9] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=e10]: 
+        - text: Movimientos
+      - link " Fondos" [ref=e12] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=e13]: 
+        - text: Fondos
+    - generic [ref=e15]: GESTIÓN
+    - navigation [ref=e16]:
+      - link " Activos" [ref=e17] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=e18]: 
+        - text: Activos
+      - link " Pasivos" [ref=e20] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=e21]: 
+        - text: Pasivos
+      - link " Metas" [ref=e23] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=e24]: 
+        - text: Metas
+      - link " Plantillas" [ref=e26] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=e27]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=e29] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=e30]: 
+        - text: Cuotas
+      - link " Pagos" [ref=e32] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=e33]: 
+        - text: Pagos
+    - generic [ref=e35]: ANÁLISIS
+    - navigation [ref=e36]:
+      - link " Balance financiero" [ref=e37] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=e38]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=e40] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=e41]: 
+        - text: Indicadores
+      - link [ref=e43] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+      - link " Alertas 3" [ref=e45] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=e46]: 
+        - text: Alertas
+        - generic [ref=e48]: "3"
+      - link " Reportes" [ref=e49] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=e50]: 
+        - text: Reportes
+    - generic [ref=e52]: SOPORTE
+    - navigation [ref=e53]:
+      - link " Asistente inteligente" [ref=e54] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=e55]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=e57] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e58]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=e60] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=e61]: 
+        - text: Mi perfil
+    - separator [ref=e63]
+    - link " Cerrar sesión" [ref=e64] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=e65]: 
+      - text: Cerrar sesión
+  - main [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - heading "Tabla de Cuotas" [level=1] [ref=e70]
+        - paragraph [ref=e71]: Crédito Moto NKD · Amortización Francesa
+      - generic [ref=e72]:
+        - button "" [ref=e73] [cursor=pointer]
+        - button "A" [ref=e75] [cursor=pointer]
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e78]: CUOTAS PAGADAS
+        - strong [ref=e79]: 6 de 36
+        - generic [ref=e80]: 17% completado
+      - generic [ref=e81]:
+        - generic [ref=e82]: Cuotas Restantes
+        - strong [ref=e83]: "30"
+      - generic [ref=e84]:
+        - generic [ref=e85]: Total de Cuotas
+        - strong [ref=e86]: "36"
+    - generic [ref=e87]:
+      - searchbox "Buscar cuota por número..." [ref=e89]
+      - combobox [ref=e90]:
+        - option "Todas" [selected]
+    - generic [ref=e91]: ORDENADAS POR VENCIMIENTO
+    - table [ref=e93]:
+      - rowgroup [ref=e94]:
+        - row [ref=e95]:
+          - columnheader "CUOTA" [ref=e96]
+          - columnheader "VENCIMIENTO" [ref=e97]
+          - columnheader "MONTO" [ref=e98]
+          - columnheader "ESTADO" [ref=e99]
+      - rowgroup [ref=e100]:
+        - row [ref=e101]:
+          - cell "7 Cuota 7 de 36" [ref=e102]:
+            - generic [ref=e103]: "7"
+            - strong [ref=e104]: Cuota 7 de 36
+          - cell "5 Jun 2025" [ref=e105]
+          - cell "$478.200" [ref=e106]
+          - cell "Pendiente" [ref=e107]
+        - row [ref=e109]:
+          - cell "6 Cuota 6 de 36" [ref=e110]:
+            - generic [ref=e111]: "6"
+            - strong [ref=e112]: Cuota 6 de 36
+          - cell "5 May 2025" [ref=e113]
+          - cell "$478.200" [ref=e114]
+          - cell "Pagada" [ref=e115]
+        - row [ref=e117]:
+          - cell "5 Cuota 5 de 36" [ref=e118]:
+            - generic [ref=e119]: "5"
+            - strong [ref=e120]: Cuota 5 de 36
+          - cell "5 Abr 2025" [ref=e121]
+          - cell "$478.200" [ref=e122]
+          - cell "Pagada" [ref=e123]
+        - row [ref=e125]:
+          - cell "4 Cuota 4 de 36" [ref=e126]:
+            - generic [ref=e127]: "4"
+            - strong [ref=e128]: Cuota 4 de 36
+          - cell "5 Mar 2025" [ref=e129]
+          - cell "$478.200" [ref=e130]
+          - cell "Pagada" [ref=e131]

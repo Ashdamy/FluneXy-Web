@@ -1,0 +1,127 @@
+- generic [active] [ref=f5e1]:
+  - complementary [ref=f5e2]:
+    - generic [ref=f5e3]: FluneXy
+    - generic [ref=f5e4]: PRINCIPAL
+    - navigation [ref=f5e5]:
+      - link "🏠 Inicio" [ref=f5e6] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f5e7]: 🏠
+        - text: Inicio
+      - link "↔️ Movimientos" [ref=f5e8] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f5e9]: ↔️
+        - text: Movimientos
+      - link "👛 Fondos" [ref=f5e10] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f5e11]: 👛
+        - text: Fondos
+    - generic [ref=f5e12]: GESTIÓN
+    - navigation [ref=f5e13]:
+      - link "📄 Activos" [ref=f5e14] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f5e15]: 📄
+        - text: Activos
+      - link "💳 Pasivos" [ref=f5e16] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f5e17]: 💳
+        - text: Pasivos
+      - link "🎯 Metas" [ref=f5e18] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f5e19]: 🎯
+        - text: Metas
+      - link "🔁 Plantillas" [ref=f5e20] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f5e21]: 🔁
+        - text: Plantillas
+      - link "🧾 Cuotas" [ref=f5e22] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f5e23]: 🧾
+        - text: Cuotas
+      - link "💸 Pagos" [ref=f5e24] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f5e25]: 💸
+        - text: Pagos
+    - generic [ref=f5e26]: ANÁLISIS
+    - navigation [ref=f5e27]:
+      - link "📊 Balance financiero" [ref=f5e28] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f5e29]: 📊
+        - text: Balance financiero
+      - link "📈 Indicadores" [ref=f5e30] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f5e31]: 📈
+        - text: Indicadores
+      - link "💵 Flujo de caja" [ref=f5e32] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f5e33]: 💵
+        - text: Flujo de caja
+      - link "🔔 Alertas 3" [ref=f5e34] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f5e35]: 🔔
+        - text: Alertas
+        - generic [ref=f5e36]: "3"
+      - link "📋 Reportes" [ref=f5e37] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f5e38]: 📋
+        - text: Reportes
+    - generic [ref=f5e39]: SOPORTE
+    - navigation [ref=f5e40]:
+      - link "🤖 Asistente inteligente" [ref=f5e41] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f5e42]: 🤖
+        - text: Asistente inteligente
+      - link "⚙️ Configuración" [ref=f5e43] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f5e44]: ⚙️
+        - text: Configuración
+      - link "👤 Mi perfil" [ref=f5e45] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f5e46]: 👤
+        - text: Mi perfil
+    - separator
+    - link "🚪 Cerrar sesión" [ref=f5e47] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f5e48]: 🚪
+      - text: Cerrar sesión
+  - main [ref=f5e49]:
+    - generic [ref=f5e50]:
+      - generic [ref=f5e51]:
+        - heading "Cuotas" [level=1] [ref=f5e52]
+        - paragraph [ref=f5e53]: Controla tus pagos periódicos y su estado
+      - generic [ref=f5e54]:
+        - button [ref=f5e55] [cursor=pointer]:
+          - img "Notificaciones" [ref=f5e56]
+        - button [ref=f5e57] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f5e58]
+    - generic [ref=f5e59]:
+      - generic [ref=f5e60]:
+        - text: CUOTAS ACTIVAS
+        - strong [ref=f5e61]: "3"
+      - generic [ref=f5e62]:
+        - text: TOTAL MENSUAL
+        - strong [ref=f5e63]: $945,000
+    - searchbox "Buscar por nombre..." [ref=f5e65]
+    - table [ref=f5e67]:
+      - rowgroup [ref=f5e68]:
+        - row [ref=f5e69]:
+          - columnheader "Nombre" [ref=f5e70]
+          - columnheader "Monto" [ref=f5e71]
+          - columnheader "Próximo pago" [ref=f5e72]
+          - columnheader "Estado" [ref=f5e73]
+      - rowgroup [ref=f5e74]:
+        - row [ref=f5e75]:
+          - cell "Tarjeta de Crédito" [ref=f5e76]
+          - cell "$250,000" [ref=f5e77]
+          - cell "15 Jul 2025" [ref=f5e78]
+          - cell "Pendiente" [ref=f5e79]
+        - row [ref=f5e81]:
+          - cell "Préstamo Personal" [ref=f5e82]
+          - cell "$400,000" [ref=f5e83]
+          - cell "20 Jul 2025" [ref=f5e84]
+          - cell "Pagada" [ref=f5e85]
+        - row [ref=f5e87]:
+          - cell "Seguro Vehículo" [ref=f5e88]
+          - cell "$295,000" [ref=f5e89]
+          - cell "01 Jul 2025" [ref=f5e90]
+          - cell "Vencida" [ref=f5e91]
+    - button "+ Nueva Cuota" [ref=f5e93] [cursor=pointer]

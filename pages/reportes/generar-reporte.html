@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generar Reporte | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html" class="activo"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html" class="activo"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -49,85 +51,86 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                 </button>
                 <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
+                    <span>A</span>
                 </button>
             </div>
         </header>
-        <div class="contenido-reporte">
-            <section class="formulario-reporte">
-                <div class="grupo-formulario">
-                    <label>TIPO DE REPORTE</label>
-                    <div class="opciones-tipo-reporte">
-                        <button type="button" class="tarjeta-opcion seleccionado">
-                            <span class="icono-opcion">💵</span>
-                            <span class="texto-opcion">Flujo de caja</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">📊</span>
-                            <span class="texto-opcion">Balance general</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">🛒</span>
-                            <span class="texto-opcion">Gastos por categoría</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">📈</span>
-                            <span class="texto-opcion">Ingresos por período</span>
-                        </button>
-                        <button type="button" class="tarjeta-opcion">
-                            <span class="icono-opcion">🎯</span>
-                            <span class="texto-opcion">Historial de metas</span>
-                        </button>
-                    </div>
+
+        <div class="rep-dashboard">
+            <div class="rep-columna-form">
+                <p class="rep-etiqueta">Tipo de Reporte</p>
+                <button type="button" class="rep-selector rep-selector-activo">
+                    <span class="rep-selector-icono"><i class="ph ph-chart-bar"></i></span>
+                    Balance Financiero
+                    <span class="rep-selector-flecha"><i class="ph ph-caret-down"></i></span>
+                </button>
+                <p class="rep-ayuda">Elige qué información quieres analizar</p>
+
+                <p class="rep-etiqueta">Periodo del Reporte</p>
+                <button type="button" class="rep-periodo">
+                    <span class="rep-periodo-icono"><i class="ph ph-calendar-blank"></i></span>
+                    <span class="rep-periodo-valor">Junio 2026</span>
+                    <span class="rep-badge">META</span>
+                </button>
+                <p class="rep-ayuda">Selecciona el rango de tiempo a revisar</p>
+
+                <p class="rep-etiqueta">Formato de Exportación</p>
+                <div class="rep-formato">
+                    <button type="button" class="rep-chip rep-chip-pdf">
+                        <i class="ph ph-file-pdf"></i> PDF
+                    </button>
+                    <button type="button" class="rep-chip">
+                        <i class="ph ph-microsoft-excel-logo"></i> Excel
+                    </button>
                 </div>
-                <div class="grupo-formulario">
-                    <label>PERIODO DEL REPORTE</label>
-                    <div class="campo-periodo">
-                        <label>Fecha inicio</label>
-                        <input type="date" class="campo-fecha" value="2026-06-01">
-                        <label>Fecha fin</label>
-                        <input type="date" class="campo-fecha" value="2026-06-30">
-                    </div>
+                <p class="rep-ayuda">Elige PDF o Excel para exportar</p>
+
+                <p class="rep-etiqueta">Otros Tipos Disponibles</p>
+                <div class="rep-otros">
+                    <button type="button" class="rep-fila rep-fila-seleccionada">
+                        <span class="rep-fila-icono"><i class="ph ph-chart-bar"></i></span>
+                        <span class="rep-fila-texto">
+                            <strong>Balance Financiero</strong>
+                            <small>Seleccionado</small>
+                        </span>
+                        <span class="rep-check"><i class="ph ph-check"></i></span>
+                    </button>
+                    <button type="button" class="rep-fila">
+                        <span class="rep-fila-icono"><i class="ph ph-currency-circle-dollar"></i></span>
+                        <span class="rep-fila-texto">
+                            <strong>Flujo de Caja</strong>
+                            <small>Disponible</small>
+                        </span>
+                    </button>
+                    <button type="button" class="rep-fila">
+                        <span class="rep-fila-icono"><i class="ph ph-chart-line-up"></i></span>
+                        <span class="rep-fila-texto">
+                            <strong>Indicadores</strong>
+                            <small>Disponible</small>
+                        </span>
+                    </button>
                 </div>
-                <div class="grupo-formulario">
-                    <label>FORMATO DE EXPORTACIÓN</label>
-                    <div class="opciones-formato">
-                        <button type="button" class="chip chip-morado seleccionado">PDF</button>
-                        <button type="button" class="chip chip-verde">Excel</button>
-                        <button type="button" class="chip chip-azul">CSV</button>
-                    </div>
-                </div>
-            </section>
-            <aside class="vista-previa">
-                <header class="encabezado-seccion">
-                    <h3>VISTA PREVIA RÁPIDA</h3>
-                </header>
-                <div class="tarjeta-resumen">
-                    <p class="label-reporte">Flujo de caja</p>
-                    <p class="label-periodo">Junio 2026</p>
-                    <p class="label-formato">PDF</p>
-                    <div class="resumen-valores">
-                        <div class="item-resumen">
-                            <p>Total Ingresos</p>
-                            <strong>$5,200,000</strong>
-                        </div>
-                        <div class="item-resumen">
-                            <p>Total Gastos</p>
-                            <strong>$2,400,000</strong>
-                        </div>
-                        <div class="item-resumen">
-                            <p>Balance Neto</p>
-                            <strong>$2,800,000</strong>
-                        </div>
-                    </div>
+            </div>
+
+            <aside class="rep-columna-vista">
+                <p class="rep-vista-titulo">Vista Previa Rápida</p>
+                <div class="rep-vista-tarjeta">
+                    <span class="rep-vista-icono"><i class="ph ph-file-text"></i></span>
+                    <p class="rep-vista-etiqueta">Fecha de Generación</p>
+                    <strong class="rep-vista-fecha">02 Jul 2026</strong>
+                    <small class="rep-vista-nota">La información se actualizará al generar el reporte</small>
                 </div>
             </aside>
         </div>
-        <section class="acciones">
-            <button type="button" class="boton-primario boton-ancho-completo">Generar Reporte</button>
+
+        <section class="rep-acciones">
+            <button type="button" class="rep-boton-generar">
+                <i class="ph ph-download"></i> Generar Reporte
+            </button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

@@ -1,0 +1,247 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - img "FluneXy" [ref=e4]
+      - generic [ref=e5]:
+        - link "Producto" [ref=e6] [cursor=pointer]:
+          - /url: "#producto"
+        - link "Funcionalidades" [ref=e7] [cursor=pointer]:
+          - /url: "#funcionalidades"
+        - link "Beneficios" [ref=e8] [cursor=pointer]:
+          - /url: "#beneficios"
+      - generic [ref=e9]:
+        - button "Iniciar sesión" [ref=e10] [cursor=pointer]
+        - button "Comenzar gratis" [ref=e11] [cursor=pointer]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: PLATAFORMA FINANCIERA INTELIGENTE
+        - heading "Controla tus finanzas con total claridad" [level=1] [ref=e18]: Controla tus finanzascon total claridad
+        - paragraph [ref=e19]: FluneXy centraliza tus fondos, movimientos, metas y reportes en un solo lugar, para que tomes mejores decisiones financieras cada día.
+        - generic [ref=e20]:
+          - button "Comenzar gratis" [ref=e21] [cursor=pointer]
+          - button "Ver cómo funciona" [ref=e22] [cursor=pointer]
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: ✓
+            - text: Sin tarjeta de crédito
+          - generic [ref=e26]:
+            - generic [ref=e27]: ✓
+            - text: Configuración en minutos
+          - generic [ref=e28]:
+            - generic [ref=e29]: ✓
+            - text: Datos protegidos
+      - generic [ref=e30]:
+        - generic [ref=e31]: F
+        - generic [ref=e38]:
+          - generic [ref=e39]: Bienvenido de vuelta
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: SALDO TOTAL
+              - strong [ref=e45]: $ 2,540,000
+            - generic [ref=e46]: +12.4%
+          - generic [ref=e55]:
+            - generic [ref=e58]:
+              - generic [ref=e59]: Ingresos
+              - strong [ref=e60]: +$4.2M
+            - generic [ref=e63]:
+              - generic [ref=e64]: Gastos
+              - strong [ref=e65]: "-$1.7M"
+    - generic [ref=e66]:
+      - heading "Todo lo que necesitas para tu salud financiera" [level=2] [ref=e67]
+      - paragraph [ref=e68]: Beneficios diseñados para darte control real sobre tu dinero
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: 🗂️
+          - heading "Organización inteligente" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Categoriza y clasifica tus movimientos automáticamente.
+        - generic [ref=e74]:
+          - generic [ref=e75]: ⚙️
+          - heading "Automatización" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Plantillas y flujos recurrentes sin esfuerzo manual.
+        - generic [ref=e78]:
+          - generic [ref=e79]: 📊
+          - heading "Reportes financieros" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Visualiza tu balance con reportes claros y detallados.
+        - generic [ref=e82]:
+          - generic [ref=e83]: 🎯
+          - heading "Seguimiento de metas" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Define metas de ahorro y monitorea tu progreso.
+        - generic [ref=e86]:
+          - generic [ref=e87]: 🧭
+          - heading "Control total" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Administra fondos, activos y pasivos en un solo lugar.
+    - generic [ref=e90]:
+      - heading "Un módulo para cada parte de tus finanzas" [level=2] [ref=e91]
+      - paragraph [ref=e92]: Explora las herramientas ya disponibles dentro de la plataforma
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: 💰
+            - heading "Fondos" [level=3] [ref=e97]
+          - paragraph [ref=e98]: Administra tus cuentas, billeteras y efectivo.
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - generic [ref=e101]: 💸
+            - heading "Movimientos" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Registra tus ingresos y gastos al instante.
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: 🏠
+            - heading "Activos" [level=3] [ref=e107]
+          - paragraph [ref=e108]: Lleva el control de lo que posees.
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: 💳
+            - heading "Pasivos" [level=3] [ref=e112]
+          - paragraph [ref=e113]: Da seguimiento a tus deudas y obligaciones.
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - generic [ref=e116]: 🎯
+            - heading "Metas" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Define objetivos de ahorro claros.
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: 📋
+            - heading "Plantillas" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Automatiza movimientos recurrentes.
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]: 🧾
+            - heading "Cuotas" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Organiza pagos fraccionados fácilmente.
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]: 📅
+            - heading "Pagos" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Controla vencimientos y pagos pendientes.
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - generic [ref=e136]: 📈
+            - heading "Flujo de caja" [level=3] [ref=e137]
+          - paragraph [ref=e138]: Visualiza entradas y salidas de dinero.
+    - generic [ref=e139]:
+      - heading "Diseñado para que veas todo con claridad" [level=2] [ref=e140]
+      - paragraph [ref=e141]: Una vista real de tu módulo de Movimientos, con la misma experiencia del Dashboard
+      - generic [ref=e142]:
+        - generic [ref=e143]: flunexy.com/movimientos
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - heading "Mis Movimientos" [level=3] [ref=e150]
+            - button "+ Nuevo movimiento" [ref=e151] [cursor=pointer]
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - generic [ref=e154]: Concepto
+              - generic [ref=e155]: Categoría
+              - generic [ref=e156]: Fondo
+              - generic [ref=e157]: Fecha
+              - generic [ref=e158]: Valor
+            - generic [ref=e159]:
+              - generic [ref=e160]: Salario
+              - generic [ref=e161]: Ingreso
+              - generic [ref=e162]: Principal
+              - generic [ref=e163]: 01 Jul
+              - generic [ref=e164]: +$1,800,000
+            - generic [ref=e165]:
+              - generic [ref=e166]: Mercado
+              - generic [ref=e167]: Alimentación
+              - generic [ref=e168]: Efectivo
+              - generic [ref=e169]: 02 Jul
+              - generic [ref=e170]: "-$320,000"
+            - generic [ref=e171]:
+              - generic [ref=e172]: Transporte
+              - generic [ref=e173]: Movilidad
+              - generic [ref=e174]: Principal
+              - generic [ref=e175]: 03 Jul
+              - generic [ref=e176]: "-$120,000"
+            - generic [ref=e177]:
+              - generic [ref=e178]: Suscripciones
+              - generic [ref=e179]: Servicios
+              - generic [ref=e180]: Efectivo
+              - generic [ref=e181]: 05 Jul
+              - generic [ref=e182]: "-$45,000"
+            - generic [ref=e183]:
+              - generic [ref=e184]: Ahorro
+              - generic [ref=e185]: Metas
+              - generic [ref=e186]: Metas
+              - generic [ref=e187]: 07 Jul
+              - generic [ref=e188]: +$250,000
+    - generic [ref=e189]:
+      - generic [ref=e190]:
+        - heading "¿Por qué elegir FluneXy?" [level=2] [ref=e191]
+        - paragraph [ref=e192]: Seguridad, automatización y claridad en cada decisión financiera.
+        - generic [ref=e193]:
+          - generic [ref=e194]: ⚙️
+          - generic [ref=e195]:
+            - strong [ref=e196]: Seguridad integral
+            - generic [ref=e197]: Tus datos financieros protegidos en cada módulo.
+        - generic [ref=e198]:
+          - generic [ref=e199]: 🔁
+          - generic [ref=e200]:
+            - strong [ref=e201]: Automatización real
+            - generic [ref=e202]: Menos tareas manuales, más control automático.
+        - generic [ref=e203]:
+          - generic [ref=e204]: 📈
+          - generic [ref=e205]:
+            - strong [ref=e206]: Métricas claras
+            - generic [ref=e207]: Indicadores y balances entendibles al instante.
+        - generic [ref=e208]:
+          - generic [ref=e209]: 🎯
+          - generic [ref=e210]:
+            - strong [ref=e211]: Crecimiento patrimonial
+            - generic [ref=e212]: Metas y seguimiento para construir tu futuro.
+      - generic [ref=e213]:
+        - generic [ref=e214]: 🔗
+        - heading "Todo en un solo lugar" [level=3] [ref=e215]
+        - paragraph [ref=e216]: Fondos, movimientos, metas, activos y pasivos conectados entre sí, para que veas el panorama completo de tu economía sin cambiar de app.
+    - generic [ref=e218]:
+      - heading "Empieza a controlar tus finanzas hoy" [level=2] [ref=e219]
+      - paragraph [ref=e220]: Únete a FluneXy y organiza tus fondos, movimientos y metas en un solo lugar.
+      - button "Comenzar gratis" [ref=e221] [cursor=pointer]
+  - contentinfo [ref=e222]:
+    - generic [ref=e223]:
+      - generic [ref=e224]:
+        - generic [ref=e225]: FluneXy
+        - paragraph [ref=e226]: Fluye con tus finanzas
+        - paragraph [ref=e227]: Plataforma financiera personal para organizar fondos, movimientos, metas y reportes en un solo lugar.
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - heading "PRODUCTO" [level=4] [ref=e230]
+          - link "Fondos" [ref=e231] [cursor=pointer]:
+            - /url: "#"
+          - link "Movimientos" [ref=e232] [cursor=pointer]:
+            - /url: "#"
+          - link "Metas" [ref=e233] [cursor=pointer]:
+            - /url: "#"
+          - link "Reportes" [ref=e234] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e235]:
+          - heading "EMPRESA" [level=4] [ref=e236]
+          - link "Sobre nosotros" [ref=e237] [cursor=pointer]:
+            - /url: "#"
+          - link "Blog" [ref=e238] [cursor=pointer]:
+            - /url: "#"
+          - link "Términos" [ref=e239] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacidad" [ref=e240] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e241]:
+          - heading "CONTACTO" [level=4] [ref=e242]
+          - paragraph [ref=e243]: soporte@flunexy.com
+          - paragraph [ref=e244]: +57 300 000 0000
+          - paragraph [ref=e245]: Bogotá, Colombia
+        - generic [ref=e246]:
+          - heading "SÍGUENOS" [level=4] [ref=e247]
+          - link "Instagram" [ref=e248] [cursor=pointer]:
+            - /url: "#"
+          - link "LinkedIn" [ref=e250] [cursor=pointer]:
+            - /url: "#"
+          - link "X (Twitter)" [ref=e252] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e254]:
+      - paragraph [ref=e255]: © 2026 FluneXy. Todos los derechos reservados.
+      - generic [ref=e256]:
+        - link "Términos de servicio" [ref=e257] [cursor=pointer]:
+          - /url: "#"
+        - link "Política de privacidad" [ref=e258] [cursor=pointer]:
+          - /url: "#"

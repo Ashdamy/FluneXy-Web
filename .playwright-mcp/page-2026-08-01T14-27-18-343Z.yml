@@ -1,0 +1,22 @@
+- main [ref=f6e2]:
+  - link "← Volver" [ref=f6e4] [cursor=pointer]:
+    - /url: login.html
+  - generic [ref=f6e5]:
+    - generic [ref=f6e6]: 
+    - generic [ref=f6e8]:
+      - heading "Verifica tu correo" [level=1] [ref=f6e9]
+      - paragraph [ref=f6e10]: Enviamos un código de 6 dígitos a ***@ejemplo.com
+    - generic [ref=f6e11]:
+      - generic [ref=f6e12]:
+        - textbox [ref=f6e13]
+        - textbox [ref=f6e14]
+        - textbox [ref=f6e15]
+        - textbox [ref=f6e16]
+        - textbox [ref=f6e17]
+        - textbox [ref=f6e18]
+      - paragraph [ref=f6e19]:
+        - text: ¿No recibiste el código?
+        - link "Reenviar (00:42)" [ref=f6e20] [cursor=pointer]:
+          - /url: "#"
+      - button "Verificar código" [ref=f6e21] [cursor=pointer]
+    - button "Cambiar correo" [ref=f6e22] [cursor=pointer]

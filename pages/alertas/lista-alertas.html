@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Alertas | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-</head>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 <body>
     <aside class="barra-lateral">
-        <div class="logo-barra">FluneXy</div>
+        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html" class="activo"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html" class="activo"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -49,112 +51,91 @@
             </div>
             <div class="acciones-usuario">
                 <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
+                    <i class="ph ph-bell"></i>
                 </button>
                 <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
+                    <span>A</span>
                 </button>
             </div>
         </header>
-        <section class="seccion-alertas">
-            <header class="encabezado-seccion">
-                <h3>Alertas</h3>
-            </header>
-            <div class="lista-alertas">
-                <article class="tarjeta-alerta">
-                    <div class="contenido-alerta">
-                        <header class="encabezado-alerta">
-                            <div class="info-alerta">
-                                <h4>Endeudamiento</h4>
-                                <p>UMBRAL: 35%</p>
-                            </div>
-                        </header>
-                        <div class="cuerpo-alerta">
-                            <div class="valor-alerta">
-                                <strong>31.4%</strong>
-                            </div>
-                            <div class="estado-alerta">
-                                <span class="punto-estado activo"></span>
-                                <span>Activa</span>
-                            </div>
-                        </div>
-                        <div class="acciones-alerta">
-                            <button type="button" class="boton-texto">Editar</button>
-                            <button type="button" class="boton-texto">Desactivar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-alerta">
-                    <div class="contenido-alerta">
-                        <header class="encabezado-alerta">
-                            <div class="info-alerta">
-                                <h4>Liquidez Baja</h4>
-                                <p>UMBRAL: 1.0x</p>
-                            </div>
-                        </header>
-                        <div class="cuerpo-alerta">
-                            <div class="valor-alerta">
-                                <strong>1.6x</strong>
-                            </div>
-                            <div class="estado-alerta">
-                                <span class="punto-estado activo"></span>
-                                <span>Activa</span>
-                            </div>
-                        </div>
-                        <div class="acciones-alerta">
-                            <button type="button" class="boton-texto">Editar</button>
-                            <button type="button" class="boton-texto">Desactivar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-alerta">
-                    <div class="contenido-alerta">
-                        <header class="encabezado-alerta">
-                            <div class="info-alerta">
-                                <h4>Gasto Excesivo</h4>
-                                <p>UMBRAL: $3.000.000/mes</p>
-                            </div>
-                        </header>
-                        <div class="cuerpo-alerta">
-                            <div class="valor-alerta">
-                                <strong>$1.820.000</strong>
-                            </div>
-                            <div class="estado-alerta">
-                                <span class="punto-estado activo"></span>
-                                <span>Activa</span>
-                            </div>
-                        </div>
-                        <div class="acciones-alerta">
-                            <button type="button" class="boton-texto">Editar</button>
-                            <button type="button" class="boton-texto">Desactivar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-alerta">
-                    <div class="contenido-alerta">
-                        <header class="encabezado-alerta">
-                            <div class="info-alerta">
-                                <h4>Meta Atrasada</h4>
-                                <p>UMBRAL: 80% del plazo</p>
-                            </div>
-                        </header>
-                        <div class="cuerpo-alerta">
-                            <div class="valor-alerta">
-                                <strong>-</strong>
-                            </div>
-                            <div class="estado-alerta">
-                                <span class="punto-estado inactivo"></span>
-                                <span>Inactiva</span>
-                            </div>
-                        </div>
-                        <div class="acciones-alerta">
-                            <button type="button" class="boton-texto">Editar</button>
-                            <button type="button" class="boton-texto">Activar</button>
-                        </div>
-                    </div>
-                </article>
+
+        <section class="alert-sum">
+            <span class="alert-sum-orb"></span>
+            <div class="alert-sum-izq">
+                <span class="alert-sum-etiqueta">Alertas Activas</span>
+                <strong class="alert-sum-numero">3</strong>
+                <span class="alert-sum-pill">3 activas de 4</span>
+            </div>
+            <div class="alert-sum-der">
+                <span class="alert-sum-total-etiqueta">Total</span>
+                <strong class="alert-sum-total">4</strong>
             </div>
         </section>
-        <button type="button" class="boton-fab">+ Nueva Alerta</button>
-    </main>  </body>
+
+        <div class="alert-encabezado">
+            <h3>Alertas Configuradas</h3>
+            <a href="configurar-alerta.html" class="alert-boton-nueva">
+                <i class="ph ph-plus"></i> Nueva Alerta
+            </a>
+        </div>
+
+        <section class="alert-grid">
+            <article class="alert-tarjeta alert-acento-indigo">
+                <span class="alert-acento"></span>
+                <span class="alert-icono"><i class="ph ph-chart-line-down"></i></span>
+                <div class="alert-info">
+                    <h4>Endeudamiento</h4>
+                    <span>UMBRAL: 35%</span>
+                </div>
+                <div class="alert-medida">
+                    <span class="alert-etiqueta-medida">Actual</span>
+                    <strong>31.4%</strong>
+                </div>
+                <span class="alert-estado"><i class="alert-punto"></i>Activa</span>
+            </article>
+
+            <article class="alert-tarjeta alert-acento-violeta">
+                <span class="alert-acento"></span>
+                <span class="alert-icono"><i class="ph ph-drop-half"></i></span>
+                <div class="alert-info">
+                    <strong>Liquidez Baja</strong>
+                    <span>UMBRAL: 1.0x</span>
+                </div>
+                <div class="alert-medida">
+                    <span class="alert-etiqueta-medida">Actual</span>
+                    <strong>1.6x</strong>
+                </div>
+                <span class="alert-estado"><i class="alert-punto"></i>Activa</span>
+            </article>
+
+            <article class="alert-tarjeta alert-acento-verde">
+                <span class="alert-acento"></span>
+                <span class="alert-icono"><i class="ph ph-money"></i></span>
+                <div class="alert-info">
+                    <strong>Gasto Excesivo</strong>
+                    <span>UMBRAL: $3.000.000/mes</span>
+                </div>
+                <div class="alert-medida">
+                    <span class="alert-etiqueta-medida">Actual</span>
+                    <strong>$1.820.000</strong>
+                </div>
+                <span class="alert-estado"><i class="alert-punto"></i>Activa</span>
+            </article>
+
+            <article class="alert-tarjeta alert-acento-gris">
+                <span class="alert-acento"></span>
+                <span class="alert-icono"><i class="ph ph-target"></i></span>
+                <div class="alert-info">
+                    <strong>Meta Atrasada</strong>
+                    <span>UMBRAL: 80% del plazo</span>
+                </div>
+                <div class="alert-medida">
+                    <span class="alert-etiqueta-medida">Actual</span>
+                    <strong>-</strong>
+                </div>
+                <span class="alert-estado alert-estado-inactiva"><i class="alert-punto"></i>Inactiva</span>
+            </article>
+        </section>
+    </main>
+</body>
 </html>

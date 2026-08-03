@@ -1,0 +1,192 @@
+- generic [active] [ref=f41e1]:
+  - complementary [ref=f41e2]:
+    - img "FluneXy" [ref=f41e4]
+    - generic [ref=f41e5]: PRINCIPAL
+    - navigation [ref=f41e6]:
+      - link " Inicio" [ref=f41e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f41e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f41e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f41e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f41e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f41e14]: 
+        - text: Fondos
+    - generic [ref=f41e16]: GESTIÓN
+    - navigation [ref=f41e17]:
+      - link " Activos" [ref=f41e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f41e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f41e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f41e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f41e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f41e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f41e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f41e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f41e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f41e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f41e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f41e34]: 
+        - text: Pagos
+    - generic [ref=f41e36]: ANÁLISIS
+    - navigation [ref=f41e37]:
+      - link " Balance financiero" [ref=f41e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f41e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f41e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f41e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f41e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f41e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f41e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f41e48]: 
+        - text: Alertas
+        - generic [ref=f41e50]: "3"
+      - link " Reportes" [ref=f41e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f41e52]: 
+        - text: Reportes
+    - generic [ref=f41e54]: SOPORTE
+    - navigation [ref=f41e55]:
+      - link " Asistente inteligente" [ref=f41e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f41e57]: 
+        - text: Asistente inteligente
+      - link " Mi perfil" [ref=f41e59] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f41e60]: 
+        - text: Mi perfil
+    - separator [ref=f41e62]
+    - link " Cerrar sesión" [ref=f41e63] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f41e64]: 
+      - text: Cerrar sesión
+  - main [ref=f41e66]:
+    - generic [ref=f41e67]:
+      - generic [ref=f41e68]:
+        - heading "Mis Movimientos" [level=1] [ref=f41e69]
+        - paragraph [ref=f41e70]: Consulta todos tus ingresos y gastos
+      - generic [ref=f41e71]:
+        - button "" [ref=f41e72] [cursor=pointer]
+        - button "A" [ref=f41e74] [cursor=pointer]
+    - generic [ref=f41e75]:
+      - article [ref=f41e76]:
+        - generic [ref=f41e77]: 
+        - generic [ref=f41e79]:
+          - paragraph [ref=f41e80]: Ingresos
+          - strong [ref=f41e81]: $4,200,000
+      - article [ref=f41e82]:
+        - generic [ref=f41e83]: 
+        - generic [ref=f41e85]:
+          - paragraph [ref=f41e86]: Gastos
+          - strong [ref=f41e87]: $2,800,000
+      - article [ref=f41e88]:
+        - generic [ref=f41e89]: 
+        - generic [ref=f41e91]:
+          - paragraph [ref=f41e92]: Balance del mes
+          - strong [ref=f41e93]: $1,400,000
+          - generic [ref=f41e94]: Ingresos - Gastos
+    - generic [ref=f41e95]:
+      - searchbox "Buscar movimiento por nombre..." [ref=f41e97]
+      - generic [ref=f41e98]:
+        - button "Todos" [ref=f41e99] [cursor=pointer]
+        - button "Ingresos" [ref=f41e100] [cursor=pointer]
+        - button "Gastos" [ref=f41e101] [cursor=pointer]
+      - button " Nuevo Movimiento" [ref=f41e102] [cursor=pointer]:
+        - generic [ref=f41e103]: 
+        - text: Nuevo Movimiento
+    - heading "TODOS LOS MOVIMIENTOS" [level=3] [ref=f41e104]
+    - generic [ref=f41e105]:
+      - generic [ref=f41e106]:
+        - generic [ref=f41e107]: MOVIMIENTO
+        - generic [ref=f41e108]: CATEGORÍA
+        - generic [ref=f41e109]: FONDO
+        - generic [ref=f41e110]: FECHA
+        - generic [ref=f41e111]: MONTO
+        - generic [ref=f41e112]: ESTADO
+        - generic [ref=f41e113]: ACCIONES
+      - generic [ref=f41e114]: HOY · 3 Jun 2025
+      - generic [ref=f41e115]:
+        - generic [ref=f41e116]:
+          - generic [ref=f41e117]: 
+          - generic [ref=f41e119]: Salario Junio
+        - generic [ref=f41e120]: Trabajo
+        - generic [ref=f41e121]: Bancolombia
+        - generic [ref=f41e122]: 3 Jun 2025
+        - generic [ref=f41e123]: +$2,500,000
+        - generic [ref=f41e124]: Completado
+        - generic [ref=f41e125]:
+          - button "" [ref=f41e126] [cursor=pointer]
+          - button "" [ref=f41e128] [cursor=pointer]
+          - button "" [ref=f41e130] [cursor=pointer]
+      - generic [ref=f41e132]:
+        - generic [ref=f41e133]:
+          - generic [ref=f41e134]: 
+          - generic [ref=f41e136]: Netflix
+        - generic [ref=f41e137]: Entretenimiento
+        - generic [ref=f41e138]: Nequi
+        - generic [ref=f41e139]: 3 Jun 2025
+        - generic [ref=f41e140]: "-$35,000"
+        - generic [ref=f41e141]: Completado
+        - generic [ref=f41e142]:
+          - button "" [ref=f41e143] [cursor=pointer]
+          - button "" [ref=f41e145] [cursor=pointer]
+          - button "" [ref=f41e147] [cursor=pointer]
+      - generic [ref=f41e149]: AYER · 2 Jun 2025
+      - generic [ref=f41e150]:
+        - generic [ref=f41e151]:
+          - generic [ref=f41e152]: 
+          - generic [ref=f41e154]: Mercado Éxito
+        - generic [ref=f41e155]: Alimentación
+        - generic [ref=f41e156]: Bancolombia
+        - generic [ref=f41e157]: 2 Jun 2025
+        - generic [ref=f41e158]: "-$320,000"
+        - generic [ref=f41e159]: Completado
+        - generic [ref=f41e160]:
+          - button "" [ref=f41e161] [cursor=pointer]
+          - button "" [ref=f41e163] [cursor=pointer]
+          - button "" [ref=f41e165] [cursor=pointer]
+      - generic [ref=f41e167]:
+        - generic [ref=f41e168]:
+          - generic [ref=f41e169]: 
+          - generic [ref=f41e171]: Transporte
+        - generic [ref=f41e172]: Transporte
+        - generic [ref=f41e173]: Efectivo
+        - generic [ref=f41e174]: 2 Jun 2025
+        - generic [ref=f41e175]: "-$60,000"
+        - generic [ref=f41e176]: Completado
+        - generic [ref=f41e177]:
+          - button "" [ref=f41e178] [cursor=pointer]
+          - button "" [ref=f41e180] [cursor=pointer]
+          - button "" [ref=f41e182] [cursor=pointer]
+      - generic [ref=f41e184]:
+        - generic [ref=f41e185]:
+          - generic [ref=f41e186]: 
+          - generic [ref=f41e188]: Freelance App
+        - generic [ref=f41e189]: Trabajo
+        - generic [ref=f41e190]: Nequi
+        - generic [ref=f41e191]: 2 Jun 2025
+        - generic [ref=f41e192]: +$1,700,000
+        - generic [ref=f41e193]: Pendiente
+        - generic [ref=f41e194]:
+          - button "" [ref=f41e195] [cursor=pointer]
+          - button "" [ref=f41e197] [cursor=pointer]
+          - button "" [ref=f41e199] [cursor=pointer]

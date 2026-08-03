@@ -1,0 +1,169 @@
+- generic [active] [ref=f26e1]:
+  - complementary [ref=f26e2]:
+    - img "FluneXy" [ref=f26e4]
+    - generic [ref=f26e5]: PRINCIPAL
+    - navigation [ref=f26e6]:
+      - link " Inicio" [ref=f26e7] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f26e8]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f26e10] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f26e11]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f26e13] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f26e14]: 
+        - text: Fondos
+    - generic [ref=f26e16]: GESTIÓN
+    - navigation [ref=f26e17]:
+      - link " Activos" [ref=f26e18] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f26e19]: 
+        - text: Activos
+      - link " Pasivos" [ref=f26e21] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f26e22]: 
+        - text: Pasivos
+      - link " Metas" [ref=f26e24] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f26e25]: 
+        - text: Metas
+      - link " Plantillas" [ref=f26e27] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f26e28]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f26e30] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f26e31]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f26e33] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f26e34]: 
+        - text: Pagos
+    - generic [ref=f26e36]: ANÁLISIS
+    - navigation [ref=f26e37]:
+      - link " Balance financiero" [ref=f26e38] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f26e39]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f26e41] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f26e42]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f26e44] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f26e45]: 
+        - text: Flujo de caja
+      - link " Alertas 3" [ref=f26e47] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f26e48]: 
+        - text: Alertas
+        - generic [ref=f26e50]: "3"
+      - link " Reportes" [ref=f26e51] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f26e52]: 
+        - text: Reportes
+    - generic [ref=f26e54]: SOPORTE
+    - navigation [ref=f26e55]:
+      - link " Asistente inteligente" [ref=f26e56] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f26e57]: 
+        - text: Asistente inteligente
+      - link " Mi perfil" [ref=f26e59] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f26e60]: 
+        - text: Mi perfil
+    - separator [ref=f26e62]
+    - link " Cerrar sesión" [ref=f26e63] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f26e64]: 
+      - text: Cerrar sesión
+  - main [ref=f26e66]:
+    - generic [ref=f26e67]:
+      - generic [ref=f26e68]:
+        - heading "Mis Fondos" [level=1] [ref=f26e69]
+        - paragraph [ref=f26e70]: Administra tus cuentas y saldos disponibles
+      - generic [ref=f26e71]:
+        - generic [ref=f26e72]: Hola, Ana Milena
+        - button "" [ref=f26e73] [cursor=pointer]
+        - button "A" [ref=f26e75] [cursor=pointer]
+    - generic [ref=f26e76]:
+      - generic [ref=f26e77]:
+        - paragraph [ref=f26e78]: Balance Total
+        - heading "$2.980.000" [level=2] [ref=f26e79]
+        - generic [ref=f26e80]:
+          - generic [ref=f26e81]: 
+          - text: 3 fondos activos
+      - generic [ref=f26e82]:
+        - generic [ref=f26e83]:
+          - paragraph [ref=f26e84]: Activos
+          - strong [ref=f26e85]: "3"
+        - generic [ref=f26e86]:
+          - paragraph [ref=f26e87]: Inactivos
+          - strong [ref=f26e88]: "1"
+    - generic [ref=f26e89]:
+      - generic [ref=f26e90]:
+        - button "Todos" [ref=f26e91] [cursor=pointer]
+        - button "Activos" [ref=f26e92] [cursor=pointer]
+        - button "Inactivos" [ref=f26e93] [cursor=pointer]
+      - searchbox "Buscar fondo por nombre..." [ref=f26e95]
+      - button "+ Agregar Fondo" [ref=f26e96] [cursor=pointer]
+    - generic [ref=f26e97]:
+      - heading "CUENTAS REGISTRADAS" [level=3] [ref=f26e98]
+      - article [ref=f26e99]:
+        - generic [ref=f26e100]:
+          - generic [ref=f26e101]: 
+          - generic [ref=f26e103]: Activo
+        - generic [ref=f26e105]:
+          - heading "Bancolombia" [level=3] [ref=f26e106]
+          - paragraph [ref=f26e107]: BANCO
+        - generic [ref=f26e108]:
+          - generic [ref=f26e109]: Saldo disponible
+          - strong [ref=f26e110]: $2.450.000
+        - generic [ref=f26e111]:
+          - button "" [ref=f26e112] [cursor=pointer]
+          - button "" [ref=f26e114] [cursor=pointer]
+          - button "" [ref=f26e116] [cursor=pointer]
+      - article [ref=f26e118]:
+        - generic [ref=f26e119]:
+          - generic [ref=f26e120]: 
+          - generic [ref=f26e122]: Activo
+        - generic [ref=f26e124]:
+          - heading "Nequi" [level=3] [ref=f26e125]
+          - paragraph [ref=f26e126]: BILLETERA DIGITAL
+        - generic [ref=f26e127]:
+          - generic [ref=f26e128]: Saldo disponible
+          - strong [ref=f26e129]: $380.000
+        - generic [ref=f26e130]:
+          - button "" [ref=f26e131] [cursor=pointer]
+          - button "" [ref=f26e133] [cursor=pointer]
+          - button "" [ref=f26e135] [cursor=pointer]
+      - article [ref=f26e137]:
+        - generic [ref=f26e138]:
+          - generic [ref=f26e139]: 
+          - generic [ref=f26e141]: Activo
+        - generic [ref=f26e143]:
+          - heading "Efectivo" [level=3] [ref=f26e144]
+          - paragraph [ref=f26e145]: EFECTIVO
+        - generic [ref=f26e146]:
+          - generic [ref=f26e147]: Saldo disponible
+          - strong [ref=f26e148]: $150.000
+        - generic [ref=f26e149]:
+          - button "" [ref=f26e150] [cursor=pointer]
+          - button "" [ref=f26e152] [cursor=pointer]
+          - button "" [ref=f26e154] [cursor=pointer]
+      - article [ref=f26e156]:
+        - generic [ref=f26e157]:
+          - generic [ref=f26e158]: 
+          - generic [ref=f26e160]: Inactivo
+        - generic [ref=f26e162]:
+          - heading "Daviplata" [level=3] [ref=f26e163]
+          - paragraph [ref=f26e164]: BILLETERA DIGITAL
+        - generic [ref=f26e165]:
+          - generic [ref=f26e166]: Saldo disponible
+          - strong [ref=f26e167]: $0
+        - generic [ref=f26e168]:
+          - button "" [ref=f26e169] [cursor=pointer]
+          - button "" [ref=f26e171] [cursor=pointer]
+          - button "" [ref=f26e173] [cursor=pointer]

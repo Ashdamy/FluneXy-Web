@@ -1,0 +1,112 @@
+- generic [active] [ref=f2e1]:
+  - complementary [ref=f2e2]:
+    - generic [ref=f2e3]: FluneXy
+    - text: PRINCIPAL
+    - navigation [ref=f2e4]:
+      - link " Inicio" [ref=f2e5] [cursor=pointer]:
+        - /url: ../home-dashboard/home.html
+        - generic [ref=f2e6]: 
+        - text: Inicio
+      - link " Movimientos" [ref=f2e8] [cursor=pointer]:
+        - /url: ../movimientos/mis-movimientos.html
+        - generic [ref=f2e9]: 
+        - text: Movimientos
+      - link " Fondos" [ref=f2e11] [cursor=pointer]:
+        - /url: ../fondos/mis-fondos.html
+        - generic [ref=f2e12]: 
+        - text: Fondos
+    - text: GESTIÓN
+    - navigation [ref=f2e14]:
+      - link " Activos" [ref=f2e15] [cursor=pointer]:
+        - /url: ../activos/mis-activos.html
+        - generic [ref=f2e16]: 
+        - text: Activos
+      - link " Pasivos" [ref=f2e18] [cursor=pointer]:
+        - /url: ../pasivos/mis-pasivos.html
+        - generic [ref=f2e19]: 
+        - text: Pasivos
+      - link " Metas" [ref=f2e21] [cursor=pointer]:
+        - /url: ../metas/mis-metas.html
+        - generic [ref=f2e22]: 
+        - text: Metas
+      - link " Plantillas" [ref=f2e24] [cursor=pointer]:
+        - /url: ../plantillas/mis-plantillas.html
+        - generic [ref=f2e25]: 
+        - text: Plantillas
+      - link " Cuotas" [ref=f2e27] [cursor=pointer]:
+        - /url: ../cuotas/tabla-cuotas.html
+        - generic [ref=f2e28]: 
+        - text: Cuotas
+      - link " Pagos" [ref=f2e30] [cursor=pointer]:
+        - /url: ../pagos/Historial-pagos.html
+        - generic [ref=f2e31]: 
+        - text: Pagos
+    - text: ANÁLISIS
+    - navigation [ref=f2e33]:
+      - link " Balance financiero" [ref=f2e34] [cursor=pointer]:
+        - /url: ../balance-financiero/balance-financiero.html
+        - generic [ref=f2e35]: 
+        - text: Balance financiero
+      - link " Indicadores" [ref=f2e37] [cursor=pointer]:
+        - /url: ../indicador-financiero/indicador-financiero.html
+        - generic [ref=f2e38]: 
+        - text: Indicadores
+      - link " Flujo de caja" [ref=f2e40] [cursor=pointer]:
+        - /url: ../flujo-caja/flujo-caja.html
+        - generic [ref=f2e41]: 
+        - text: Flujo de caja
+      - link " Alertas3" [ref=f2e43] [cursor=pointer]:
+        - /url: ../alertas/lista-alertas.html
+        - generic [ref=f2e44]: 
+        - text: Alertas3
+      - link " Reportes" [ref=f2e46] [cursor=pointer]:
+        - /url: ../reportes/generar-reporte.html
+        - generic [ref=f2e47]: 
+        - text: Reportes
+    - text: SOPORTE
+    - navigation [ref=f2e49]:
+      - link " Asistente inteligente" [ref=f2e50] [cursor=pointer]:
+        - /url: ../asistente/asistente.html
+        - generic [ref=f2e51]: 
+        - text: Asistente inteligente
+      - link " Configuración" [ref=f2e53] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f2e54]: 
+        - text: Configuración
+      - link " Mi perfil" [ref=f2e56] [cursor=pointer]:
+        - /url: ../usuario/mi-perfil.html
+        - generic [ref=f2e57]: 
+        - text: Mi perfil
+    - separator [ref=f2e59]
+    - link " Cerrar sesión" [ref=f2e60] [cursor=pointer]:
+      - /url: ../autenticacion/cerrar-sesion.html
+      - generic [ref=f2e61]: 
+      - text: Cerrar sesión
+  - main [ref=f2e63]:
+    - generic [ref=f2e64]:
+      - generic [ref=f2e65]:
+        - heading "Registrar Aporte" [level=1] [ref=f2e66]
+        - paragraph [ref=f2e67]: Moto Nueva · Meta Financiera
+      - generic [ref=f2e68]:
+        - button [ref=f2e69] [cursor=pointer]:
+          - img "Notificaciones" [ref=f2e70]
+        - button [ref=f2e71] [cursor=pointer]:
+          - img "Foto de perfil" [ref=f2e72]
+    - generic [ref=f2e73]:
+      - generic [ref=f2e74]: 
+      - generic [ref=f2e76]:
+        - strong [ref=f2e77]: "Progreso: 50%"
+        - generic [ref=f2e78]: Ahorrado de la meta
+      - strong [ref=f2e79]: $6.000.000 de $12.000.000
+    - generic [ref=f2e80]:
+      - generic [ref=f2e81]: MONTO DEL APORTE
+      - generic [ref=f2e82]:
+        - generic [ref=f2e83]: $
+        - generic [ref=f2e84]: "500.000"
+      - generic [ref=f2e85]: TIPO DE REGISTRO
+      - button "Aporte" [ref=f2e87] [cursor=pointer]
+      - generic [ref=f2e88]: FONDO ASOCIADO
+      - strong [ref=f2e90]: Nequi Personal · $620.000 disponible
+    - generic [ref=f2e91]:
+      - button "Cancelar" [ref=f2e92] [cursor=pointer]
+      - button "Registrar Aporte" [ref=f2e93] [cursor=pointer]

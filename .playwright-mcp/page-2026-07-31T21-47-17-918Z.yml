@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - generic [ref=e3]: FluneXy
+    - generic [ref=e4]: PRINCIPAL
+    - navigation [ref=e5]:
+      - link " Inicio" [ref=e6] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e7]: 
+        - text: Inicio
+      - link " Movimientos" [ref=e9] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e10]: 
+        - text: Movimientos
+      - link " Fondos" [ref=e12] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e13]: 
+        - text: Fondos
+    - generic [ref=e15]: ANÁLISIS
+    - navigation [ref=e16]:
+      - link " Alertas 3" [ref=e17] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e18]: 
+        - text: Alertas
+        - generic [ref=e20]: "3"
+      - link " Indicadores" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+        - text: Indicadores
+    - separator [ref=e24]
+    - link " Cerrar sesión" [ref=e25] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e26]: 
+      - text: Cerrar sesión
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - heading "Mis Fondos" [level=1] [ref=e31]
+        - paragraph [ref=e32]: Administra tus cuentas y saldos disponibles
+      - generic [ref=e33]:
+        - generic [ref=e34]: Hola, Ana Milena
+        - button "" [ref=e35] [cursor=pointer]
+        - button "A" [ref=e38] [cursor=pointer]
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: Balance Total
+        - heading "$2.980.000" [level=2] [ref=e42]
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - paragraph [ref=e45]: Fondos activos
+          - strong [ref=e46]: "3"
+        - generic [ref=e47]:
+          - paragraph [ref=e48]: Movimientos
+          - strong [ref=e49]: "42"
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - button "Todos" [ref=e52]
+        - button "Activos" [ref=e53] [cursor=pointer]
+        - button "Inactivos" [ref=e54] [cursor=pointer]
+      - searchbox "Buscar fondo por nombre..." [ref=e56]
+      - button "+ Agregar Fondo" [ref=e57] [cursor=pointer]
+    - generic [ref=e58]:
+      - heading "CUENTAS REGISTRADAS" [level=3] [ref=e59]
+      - article [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]: 
+          - generic [ref=e64]: BANCO
+        - generic [ref=e65]:
+          - heading "Bancolombia" [level=3] [ref=e66]
+          - paragraph [ref=e67]: BANCO
+        - generic [ref=e68]:
+          - text: Saldo
+          - strong [ref=e69]: $2.450.000
+        - generic [ref=e70]:
+          - button "" [ref=e71] [cursor=pointer]
+          - button "" [ref=e73] [cursor=pointer]
+      - article [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: 
+          - generic [ref=e79]: BILLETERA
+        - generic [ref=e80]:
+          - heading "Daviplata" [level=3] [ref=e81]
+          - paragraph [ref=e82]: BILLETERA DIGITAL
+        - generic [ref=e83]:
+          - text: Saldo
+          - strong [ref=e84]: $0
+        - generic [ref=e85]:
+          - generic [ref=e86]: Inactivo
+          - button "" [ref=e87] [cursor=pointer]
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e91]: Ingresos del mes
+        - generic [ref=e92]:
+          - strong [ref=e93]: $4.200.000
+          - generic [ref=e94]: +12%
+      - generic [ref=e97]:
+        - generic [ref=e98]: Gastos del mes
+        - generic [ref=e99]:
+          - strong [ref=e100]: $2.800.000
+          - generic [ref=e101]: +5%
+    - generic [ref=e104]:
+      - link " Flujo de caja Ingresos y egresos" [ref=e105] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e106]: 
+        - heading "Flujo de caja" [level=4] [ref=e108]
+        - paragraph [ref=e109]: Ingresos y egresos
+      - link " Metas Tus objetivos" [ref=e110] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e111]: 
+        - heading "Metas" [level=4] [ref=e113]
+        - paragraph [ref=e114]: Tus objetivos
+    - article [ref=e115]:
+      - generic [ref=e116]: 
+      - generic [ref=e118]:
+        - heading "D1" [level=4] [ref=e119]
+        - paragraph [ref=e120]: Hoy, 10:30 am
+      - generic [ref=e121]:
+        - strong [ref=e122]: "-$85.000"
+        - paragraph [ref=e123]: Mercado
+    - table [ref=e125]:
+      - rowgroup [ref=e126]:
+        - row [ref=e127]:
+          - columnheader "Nombre" [ref=e128]
+          - columnheader "Monto" [ref=e129]
+          - columnheader "Próximo pago" [ref=e130]
+          - columnheader "Estado" [ref=e131]
+      - rowgroup [ref=e132]:
+        - row [ref=e133]:
+          - cell "Tarjeta de Crédito" [ref=e134]
+          - cell "$250,000" [ref=e135]
+          - cell "15 Jul 2025" [ref=e136]
+          - cell "Pendiente" [ref=e137]
+        - row [ref=e139]:
+          - cell "Préstamo Personal" [ref=e140]
+          - cell "$400,000" [ref=e141]
+          - cell "20 Jul 2025" [ref=e142]
+          - cell "Pagada" [ref=e143]
+        - row [ref=e145]:
+          - cell "Seguro Vehículo" [ref=e146]
+          - cell "$295,000" [ref=e147]
+          - cell "01 Jul 2025" [ref=e148]
+          - cell "Vencida" [ref=e149]
+    - generic [ref=e151]:
+      - button "PDF" [ref=e152] [cursor=pointer]
+      - button "Excel" [ref=e153] [cursor=pointer]
+      - button "CSV" [ref=e154] [cursor=pointer]
+    - generic [ref=e155]:
+      - generic [ref=e156]: Nombre del Fondo
+      - textbox "Nombre del Fondo" [ref=e157]:
+        - /placeholder: Nequi Personal
+      - generic [ref=e158]: Escoge un nombre que identifique este fondo
+    - generic [ref=e159]:
+      - generic [ref=e160]: Saldo Inicial
+      - textbox "Saldo Inicial" [ref=e161]:
+        - /placeholder: $0
+    - generic [ref=e162]:
+      - generic [ref=e163]: 
+      - heading "No tienes fondos registrados" [level=2] [ref=e165]
+      - paragraph [ref=e166]: Agrega tu primer fondo para empezar a organizar tu dinero
+    - generic [ref=e167]:
+      - button "Cancelar" [ref=e168] [cursor=pointer]
+      - button "Desactivar" [ref=e169] [cursor=pointer]
+      - button "Crear Fondo" [ref=e170] [cursor=pointer]
+    - dialog [ref=e171]:
+      - article [ref=e172]:
+        - generic [ref=e174]:
+          - generic [ref=e175]: 
+          - generic [ref=e177]:
+            - heading "Bancolombia" [level=2] [ref=e178]
+            - paragraph [ref=e179]: Banco · $2.450.000
+        - generic [ref=e180]:
+          - generic [ref=e181]: 
+          - heading "Desactivar fondo?" [level=3] [ref=e183]
+          - paragraph [ref=e184]: Vas a desactivar Bancolombia. Conservará su historial financiero completo.
+        - paragraph [ref=e186]: Puedes volver a activar este fondo en cualquier momento.
+        - generic [ref=e187]:
+          - button "Cancelar" [ref=e188] [cursor=pointer]
+          - button "Desactivar" [ref=e189] [cursor=pointer]
