@@ -1,151 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Plantillas</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
     <aside class="barra-lateral">
         <div class="logo-barra">FluneXy</div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><i class="ph ph-house icono-nav"></i> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><i class="ph ph-arrows-left-right icono-nav"></i>
+                Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><i class="ph ph-wallet icono-nav"></i> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html" class="activo"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/activos-vacio.html" ><i class="ph ph-file-text icono-nav"></i> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><i class="ph ph-credit-card icono-nav"></i> Pasivos</a>
+            <a href="../metas/mis-metas.html"><i class="ph ph-target icono-nav"></i> Metas</a>
+            <a href="../plantillas/mis-plantillas.html" class="activo"><i class="ph ph-arrows-counter-clockwise icono-nav"></i>
+                Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><i class="ph ph-receipt icono-nav"></i> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><i class="ph ph-hand-coins icono-nav"></i> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><i class="ph ph-chart-bar icono-nav"></i> Balance
+                financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><i class="ph ph-trend-up icono-nav"></i>
+                Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><i class="ph ph-money icono-nav"></i> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><i class="ph ph-bell icono-nav"></i> Alertas<span
+                    class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><i class="ph ph-clipboard-text icono-nav"></i> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><i class="ph ph-robot icono-nav"></i> Asistente inteligente</a>
+            <a href="#"><i class="ph ph-gear icono-nav"></i> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><i class="ph ph-user icono-nav"></i> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><i class="ph ph-door-open icono-nav"></i>
+            Cerrar
+            sesión</a>
     </aside>
     <main class="contenido-principal">
-        <header class="encabezado-pagina">
-            <div class="titulo-pagina">
+        <div class="encabezado-contenido">
+            <div class="titulos-bloque">
+                <a href="../home-dashboard/home.html" class="volver">← Volver</a>
                 <h1>Mis Plantillas</h1>
-                <p>Automatiza tus movimientos recurrentes</p>
+                <p class="subtitulo-pagina">Automatiza tus movimientos recurrentes</p>
             </div>
-            <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <img src="" alt="Notificaciones">
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+            <section class="acciones-header">
+                <a href="/pages/alertas/lista-alertas.html">
+                    <button type="button" class="btn-notificacion"><i class="ph ph-bell"></i></button>
+                </a>
+                <a href="/pages/usuario/mi-perfil.html">
+                    <button type="button" class="avatar-usuario"> A </button>
+                </a>
+            </section>
+        </div>
+        <section class="hero-total-plantillas">
+            <div class="tarjeta-resumen-bloque">
+                <span class="etiqueta-hero">ACTIVAS</span>
+                <h2 class="valor-hero">3 plantillas</h2>
             </div>
-        </header>
-        <section class="resumen-plantillas">
-            <div class="tarjeta-resumen">
-                <p>Plantillas activas</p>
-                <strong>3</strong>
-                <small>Automatizaciones disponibles</small>
+            <div class="tarjeta-resumen-bloque">
+                <span class="etiqueta-hero-gasto">GASTO MENSUAL AUTO</span>
+                <h2 class="valor-hero-gasto">-$1.295.000</h2>
             </div>
-            <div class="tarjeta-resumen">
-                <p>Gasto mensual automático</p>
-                <strong>-$1,295,000</strong>
-                <small>Total estimado</small>
-            </div>
-            <div class="acciones">
-                <button type="button" class="boton-primario">
-                    Nueva plantilla
-                </button>
-            </div>
+            <a href="nueva-plantilla-ingreso.html">
+            <button type="button" class="btn-nueva-plantilla">+ Nueva Plantilla</button>
+            </a>
         </section>
-        <section class="lista-plantillas">
-            <header class="encabezado-seccion">
-                <h3>Plantillas registradas</h3>
-            </header>
-            <div class="tarjeta-plantilla">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla">
-                        <img src="" alt="Arriendo">
+
+        <!-- 2. REJILLA DE LAS PLANTILLAS -->
+        <section class="seccion-lista-plantillas">
+            <span class="etiqueta-lista">Plantillas Configuradas</span>
+
+            <div class="grid-plantillas">
+
+                <!-- TARJETA 1: ARRIENDO -->
+                <article class="card-plantilla gasto-borde">
+                    <div class="barra-accent-plantilla gasto-color"></div>
+                    <div class="header-card-plantilla">
+                        <div class="icono-card-plantilla"><i class="ph ph-house"></i></div>
+                        <div class="info-card-plantilla">
+                            <h3>Arriendo</h3>
+                            <span class="subtipo-plantilla">VIVIENDA</span>
+                        </div>
+                        <span class="badge-tipo-movimiento gasto">Gasto</span>
                     </div>
-                    <div class="detalle-plantilla">
-                        <h3>Arriendo</h3>
-                        <p>Vivienda</p>
-                        <small>Mensual · Día 5 · 2 días</small>
+                    <div class="monto-card-plantilla">-$1.200.000</div>
+                    <div class="footer-card-plantilla">
+                        <div class="capsulas-tags">
+                            <span class="tag-plantilla">Mensual</span>
+                            <span class="tag-plantilla">Día 5</span>
+                            <span class="tag-plantilla destacada">2 días</span>
+                        </div>
+                        <span class="status-plantilla activa">Activa</span>
                     </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$1,200,000</strong>
-                    <p>Gasto</p>
-                    <small>Activa</small>
-                </div>
-            </div>
-            <div class="tarjeta-plantilla">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla">
-                        <img src="" alt="Internet ETB">
+                </article>
+
+                <!-- TARJETA 2: INTERNET ETB -->
+                <article class="card-plantilla gasto-borde">
+                    <div class="barra-accent-plantilla gasto-color"></div>
+                    <div class="header-card-plantilla">
+                        <div class="icono-card-plantilla"><i class="ph ph-globe"></i></div>
+                        <div class="info-card-plantilla">
+                            <h3>Internet ETB</h3>
+                            <span class="subtipo-plantilla">SERVICIOS</span>
+                        </div>
+                        <span class="badge-tipo-movimiento gasto">Gasto</span>
                     </div>
-                    <div class="detalle-plantilla">
-                        <h3>Internet ETB</h3>
-                        <p>Servicios</p>
-                        <small>Mensual · Día 10 · 7 días</small>
+                    <div class="monto-card-plantilla">-$95.000</div>
+                    <div class="footer-card-plantilla">
+                        <div class="capsulas-tags">
+                            <span class="tag-plantilla">Mensual</span>
+                            <span class="tag-plantilla">Día 10</span>
+                            <span class="tag-plantilla destacada">7 días</span>
+                        </div>
+                        <span class="status-plantilla activa">Activa</span>
                     </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$95,000</strong>
-                    <p>Gasto</p>
-                    <small>Activa</small>
-                </div>
-            </div>
-            <div class="tarjeta-plantilla">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla">
-                        <img src="" alt="Salario">
+                </article>
+
+                <!-- TARJETA 3: SALARIO -->
+                <article class="card-plantilla ingreso-borde">
+                    <div class="barra-accent-plantilla ingreso-color"></div>
+                    <div class="header-card-plantilla">
+                        <div class="icono-card-plantilla"><i class="ph ph-money"></i></div>
+                        <div class="info-card-plantilla">
+                            <h3>Salario</h3>
+                            <span class="subtipo-plantilla">INGRESOS</span>
+                        </div>
+                        <span class="badge-tipo-movimiento ingreso">Ingreso</span>
                     </div>
-                    <div class="detalle-plantilla">
-                        <h3>Salario</h3>
-                        <p>Ingresos</p>
-                        <small>Mensual · Día 30 · 27 días</small>
+                    <div class="monto-card-plantilla positivo">+$2.500.000</div>
+                    <div class="footer-card-plantilla">
+                        <div class="capsulas-tags">
+                            <span class="tag-plantilla">Mensual</span>
+                            <span class="tag-plantilla">Día 30</span>
+                            <span class="tag-plantilla destacada">27 días</span>
+                        </div>
+                        <span class="status-plantilla activa">Activa</span>
                     </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>+$2,500,000</strong>
-                    <p>Ingreso</p>
-                    <small>Activa</small>
-                </div>
-            </div>
-            <div class="tarjeta-plantilla">
-                <div class="informacion-plantilla">
-                    <div class="icono-plantilla">
-                        <img src="" alt="Netflix">
+                </article>
+
+                <!-- TARJETA 4: NETFLIX -->
+                <article class="card-plantilla vencida-borde">
+                    <div class="barra-accent-plantilla vencida-color"></div>
+                    <div class="header-card-plantilla">
+                        <div class="icono-card-plantilla"><i class="ph ph-film-slate"></i></div>
+                        <div class="info-card-plantilla">
+                            <h3>Netflix</h3>
+                            <span class="subtipo-plantilla">ENTRETENIMIENTO · VIGENCIA VENCIDA</span>
+                        </div>
+                        <span class="badge-tipo-movimiento gasto">Gasto</span>
                     </div>
-                    <div class="detalle-plantilla">
-                        <h3>Netflix</h3>
-                        <p>Entretenimiento</p>
-                        <small>Vigencia vencida</small>
+                    <div class="monto-card-plantilla">-$45.000</div>
+                    <div class="footer-card-plantilla">
+                        <div class="capsulas-tags">
+                            <!-- Netflix no tiene tags activos en la imagen -->
+                        </div>
+                        <span class="status-plantilla vencida">Vencida</span>
                     </div>
-                </div>
-                <div class="valor-plantilla">
-                    <strong>-$45,000</strong>
-                    <p>Gasto</p>
-                    <small>Vencida</small>
-                </div>
+                </article>
+
             </div>
         </section>
     </main>
-</body>
-</html>

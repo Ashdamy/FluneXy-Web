@@ -1,112 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Activo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
 </head>
 <body>
     <aside class="barra-lateral">
         <div class="logo-barra">FluneXy</div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><i class="ph ph-house icono-nav"></i> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><i class="ph ph-arrows-left-right icono-nav"></i> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><i class="ph ph-wallet icono-nav"></i> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html" class="activo"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/activos-vacio.html" class="activo"><i class="ph ph-file-text icono-nav"></i> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><i class="ph ph-credit-card icono-nav"></i> Pasivos</a>
+            <a href="../metas/mis-metas.html"><i class="ph ph-target icono-nav"></i> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><i class="ph ph-arrows-counter-clockwise icono-nav"></i> Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><i class="ph ph-receipt icono-nav"></i> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><i class="ph ph-hand-coins icono-nav"></i> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><i class="ph ph-chart-bar icono-nav"></i> Balance
+                financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><i class="ph ph-trend-up icono-nav"></i>
+                Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><i class="ph ph-money icono-nav"></i> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><i class="ph ph-bell icono-nav"></i> Alertas<span
+                    class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><i class="ph ph-clipboard-text icono-nav"></i> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><i class="ph ph-robot icono-nav"></i> Asistente inteligente</a>
+            <a href="#"><i class="ph ph-gear icono-nav"></i> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><i class="ph ph-user icono-nav"></i> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><i class="ph ph-door-open icono-nav"></i> Cerrar
+            sesión</a>
     </aside>
     <main class="contenido-principal">
         <div class="encabezado-contenido">
-            <a href="mis-activos.html" class="volver">← Volver</a>
-            <h1>Editar Activo</h1>
-            <p>Actualiza la información de tu bien</p>
+            <div class="titulos-bloque">
+                <a href="../home-dashboard/home.html" class="volver">← Volver</a>
+                <h1>Editar Activo</h1>
+                <p class="subtitulo-pagina">Actualiza la información de tu bien</p>
+            </div>
+            <section class="acciones-header">
+                <a href="/pages/alertas/lista-alertas.html">
+                    <button type="button" class="btn-notificacion">🔔</button>
+                </a>
+                <a href="/pages/usuario/mi-perfil.html">
+                    <button type="button" class="avatar-usuario"> A </button>
+                </a>
+            </section>
         </div>
-        <section class="banner-edicion">
-            <span>🏠</span>
-            <div>
-                <span class="editando-label">Editando</span>
-                <strong>Casa Principal</strong>
-            </div>
-            <div class="valor-actual">
-                <span>Valor actual</span>
-                <strong>$180.000.000</strong>
-            </div>
+        <section class="edit-asset">
+            <section class="formulario">
+                <article class="banner-edicion">
+                    <section class="editing-card__info"> <span>🏠</span>
+                        <p class="editando-label">Editando</p>
+                        <strong>Casa Principal</strong>
+                        </div>
+                    </section>
+                    <section class="valor-actual">
+                        <p>Valor actual</p>
+                        <h3>$180.000.000</h3>
+                    </section>
+                </article>
+
+                <section class="asset-name"> <label class="label-form">NOMBRE DEL ACTIVO</label>
+                    <p class="input-form">Casa Principal</p>
+                </section>
+
+                <section class="asset-category">
+                    <label class="label-form">CATEGORÍA</label>
+                    <div class="grid-categorias">
+                        <article class="categoria seleccionada"> <span>🏠</span>
+                            <div>
+                                <h3>Vivienda</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                        <article class="categoria"> <span>🚗</span>
+                            <div>
+                                <h3>Vehículo</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                        <article class="categoria"> <span>📈</span>
+                            <div>
+                                <h3>Inversión</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                        <article class="categoria"> <span>💰</span>
+                            <div>
+                                <h3>Ahorro</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                        <article class="categoria"> <span>🏪</span>
+                            <div>
+                                <h3>Negocio</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                        <article class="categoria"> <span>🏗️</span>
+                            <div>
+                                <h3>Propiedad</h3>
+                                <p class="tipo-cat">Activo</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="asset-value"> <label class="label-form">VALOR DEL ACTIVO</label>
+                    <section class="input-moneda">
+                        <span>$</span>
+                        <h2>180.000.000</h2>
+                        <span class="badge-activo">ACTIVO</span>
+                    </section>
+                </section>
+
+                <section class="asset-date"> <label class="label-form">FECHA DE ACTUALIZACIÓN</label>
+                    <section class="input-icono">
+                        <span>📅</span>
+                        <p>2025-06-03</p>
+                    </section>
+                </section>
+
+                <section class="edit-actions">
+                    <button type="button" class="btn-cancelar"> Cancelar </button>
+                    <button type="button" class="btn-guardar"> Guardar Cambios </button>
+                </section>
+            </section>
+
+            <aside class="current-status">
+                <header>
+                    <h2>ESTADO ACTUAL</h2>
+                </header>
+                <section class="current-status__asset"> <span class="icon"></span>
+                    <div>
+                        <h3>Casa Principal</h3>
+                        <p>Vivienda · Activo</p>
+                    </div>
+                </section>
+                <section class="current-status__info">
+                    <article>
+                        <p>Registrado</p>
+                        <h4>12 Ene 2025</h4>
+                    </article>
+                    <article>
+                        <p>Participación en patrimonio</p>
+                        <h4>76% del total</h4>
+                    </article>
+                </section>
+            </aside>
         </section>
-        <form class="formulario">
-            <label class="label-form" for="nombre">NOMBRE DEL ACTIVO</label>
-            <input type="text" id="nombre" class="input-form" value="Casa Principal">
-            <label class="label-form">CATEGORÍA</label>
-            <div class="grid-categorias">
-                <button type="button" class="categoria seleccionada">
-                    <span>🏠</span>
-                    <span>Vivienda</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span>🚗</span>
-                    <span>Vehículo</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span>📈</span>
-                    <span>Inversión</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span>💰</span>
-                    <span>Ahorro</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span>🏪</span>
-                    <span>Negocio</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span>🏗️</span>
-                    <span>Propiedad</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-            </div>
-            <label class="label-form" for="valor">VALOR DEL ACTIVO</label>
-            <div class="input-moneda">
-                <span>$</span>
-                <input type="text" id="valor" value="180.000.000">
-                <span class="badge-activo">ACTIVO</span>
-            </div>
-            <label class="label-form" for="fecha">FECHA DE ACTUALIZACIÓN</label>
-            <div class="input-icono">
-                <span>📅</span>
-                <input type="text" id="fecha" value="2025-06-03">
-            </div>
-            <button type="submit" class="btn-guardar">Guardar Cambios</button>
-        </form>
-    </main>
-</body>
-</html>

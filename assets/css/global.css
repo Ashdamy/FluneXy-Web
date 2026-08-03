@@ -1,0 +1,4594 @@
+@import url(tokens.css);
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-card);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA BARRA LATERAL (CON DESIGN TOKENS)
+   ========================================================================== */
+
+/* 1. Contenedor Principal (Fijado a la izquierda) */
+aside.barra-lateral {
+    background-color: var(--bg-dark);
+    /* Tu color oscuro base */
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    /* Apila las secciones verticalmente */
+    padding: 24px 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Scroll si hay muchas opciones */
+    font-family: var(--font-body);
+    /* Tu fuente base "Inter" */
+}
+
+/* 2. Logotipo (FluneXy) */
+.logo-barra {
+    color: var(--white);
+    font-family: var(--font-heading);
+    /* Tu fuente "Sora" para títulos */
+    font-size: var(--desktop-h2);
+    /* Tamaño 28px según tus tokens */
+    font-weight: 700;
+    margin-bottom: 32px;
+    padding-left: 8px;
+}
+
+/* 3. Etiquetas de Sección (PRINCIPAL, GESTIÓN, etc.) */
+.etiqueta-seccion {
+    color: var(--slate-500);
+    /* Gris intermedio para subtítulos */
+    font-size: var(--desktop-small);
+    /* Tamaño 12px de tus tokens */
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    display: block;
+    /* Obliga a ocupar toda la línea */
+}
+
+/* 4. Bloques de Navegación */
+.navegacion-barra {
+    display: flex;
+    flex-direction: column;
+    /* Despliegue puramente vertical */
+    gap: 4px;
+    /* Separación controlada entre enlaces */
+}
+
+/* 5. Enlaces Individuales (Items del menú) */
+.navegacion-barra a {
+    display: flex;
+    align-items: center;
+    /* Centra emoji y texto en la misma línea */
+    gap: 12px;
+    /* Espacio entre el ícono y el texto */
+    color: var(--slate-400);
+    /* Color de texto apagado de tus tokens */
+    text-decoration: none;
+    font-size: var(--desktop-caption);
+    /* Tamaño 13px ideal para menús */
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efecto Hover al pasar el mouse */
+.navegacion-barra a:hover {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Brillo sutil */
+}
+
+/* Contenedor del Emoji/Ícono */
+.icono-nav {
+    font-size: var(--icon-standard);
+    /* Tamaño 20px según tus tokens */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    /* Ancho fijo para alinear los textos uniformemente */
+}
+
+/* 6. ESTILO ELEMENTO ACTIVO (Ej: Activos) */
+.navegacion-barra a.activo {
+    color: var(--white);
+    background-color: var(--bg-card);
+    /* Usa tu color de tarjeta oscuro */
+    font-weight: 600;
+    position: relative;
+}
+
+/* Línea indicadora vertical a la izquierda del item activo */
+.navegacion-barra a.activo::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    /* Se pega al borde izquierdo del menú */
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--indigo);
+    /* Color Indigo brillante de tus tokens */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* 7. Ajuste para fila de Alertas con notificación */
+.navegacion-barra a[href*="lista-alertas"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contador de Notificación (El número 3 rojo) */
+.contador-notificacion {
+    background-color: var(--red);
+    /* Tu token rojo para alertas */
+    color: var(--white);
+    font-size: var(--desktop-small);
+    /* Tamaño 12px */
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: auto;
+    /* Empuja el número al extremo derecho automáticamente */
+}
+
+/* 8. Separador Inferior y Cerrar Sesión */
+.divisor-barra {
+    border: 0;
+    border-top: 1px solid var(--slate-700);
+    /* Divisor usando tus grises oscuros */
+    margin-top: auto;
+    /* Truco Flexbox: Empuja el botón al fondo de la pantalla */
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.cerrar-sesion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--red);
+    /* Texto rojo suave inicial de tus tokens */
+    text-decoration: none;
+    font-size: var(--desktop-caption);
+    /* Tamaño 13px */
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cerrar-sesion:hover {
+    background-color: rgba(248, 113, 113, 0.1);
+    /* Fondo rojizo translúcido */
+    color: var(--red);
+}
+
+/* ==========================================================================
+   CSS REPARADO PARA EL ENCABEZADO (SIN DESCUADRES)
+   ========================================================================== */
+
+/* Contenedor principal */
+main.contenido-principal {
+    background-color: var(--bg-dark);
+    margin-left: 260px;
+    /* Espacio para tu sidebar */
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado Superior (Distribuye izquierda y derecha limpiamente) */
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+/* Contenedor de textos (Agrupa Volver, H1 y Subtítulo verticalmente) */
+.titulos-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.encabezado-contenido .volver {
+    color: var(--slate-400);
+    text-decoration: none;
+    font-size: var(--desktop-small);
+    transition: color 0.2s ease;
+    margin-bottom: 2px;
+}
+
+.encabezado-contenido .volver:hover {
+    color: var(--white);
+}
+
+.encabezado-contenido h1 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h2);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Estilo para la descripción en el HTML */
+.subtitulo-pagina {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    margin: 0;
+}
+
+/* Íconos del Encabezado (Alineados a la derecha de forma horizontal) */
+.acciones-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Botón de la Campana */
+.btn-notificacion {
+    background: transparent;
+    border: 1px solid var(--slate-700);
+    color: var(--white);
+    font-size: var(--icon-small);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--avatar-desktop-sm);
+    /* 32px o el tamaño de tu token */
+    height: var(--avatar-desktop-sm);
+    transition: background-color 0.2s;
+}
+
+.btn-notificacion:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Avatar del Usuario "A" */
+.avatar-usuario {
+    background-color: var(--indigo);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    width: var(--avatar-desktop-sm);
+    /* 40px o el tamaño de tu token */
+    height: var(--avatar-desktop-sm);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   BLOQUE CENTRAL (ESTADO VACÍO)
+   ========================================================================== */
+.estado-vacio {
+    margin: auto;
+    /* Centrado absoluto vertical y horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 440px;
+    position: relative;
+}
+
+/* Aura circular difuminada de fondo */
+.estado-vacio::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, rgba(7, 9, 32, 0) 70%);
+    width: 240px;
+    height: 240px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Círculo contenedor de la casa */
+.icono-vacio {
+    background-color: var(--bg-card);
+    border: 1px solid var(--slate-700);
+    font-size: var(--icon-large);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.estado-vacio h3 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h3);
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.estado-vacio p {
+    color: var(--slate-400);
+    font-size: var(--desktop-caption);
+    margin: 0 0 32px 0;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón Violeta "+ Agregar Activo" con iluminación neón */
+.fab-principal {
+    background-color: var(--indigo);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(129, 140, 248, 0.45);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.fab-principal:hover {
+    background-color: var(--violet);
+}
+
+.fab-principal:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================================================
+   VISTA DE ACTIVOS COMPLETA Y CORREGIDA (CON DESIGN TOKENS)
+   ========================================================================== */
+
+/* 1. CONTENEDOR PRINCIPAL Y ENCABEZADO */
+main.contenido-principal {
+    background-color: var(--bg-dark);
+    margin-left: 260px;
+    /* Respeta el espacio de tu sidebar */
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.titulos-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.encabezado-contenido .volver {
+    color: var(--slate-400);
+    text-decoration: none;
+    font-size: var(--desktop-small);
+    transition: color 0.2s ease;
+    margin-bottom: 2px;
+}
+
+.encabezado-contenido .volver:hover {
+    color: var(--white);
+}
+
+.encabezado-contenido h1 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h2);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.subtitulo-pagina {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    margin: 0;
+}
+
+
+.btn-notificacion {
+    background: transparent;
+    border: 1px solid var(--slate-700);
+    color: var(--white);
+    font-size: var(--icon-standard);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--avatar-desktop-sm);
+    height: var(--avatar-desktop-sm);
+    transition: background-color 0.2s;
+}
+
+.btn-notificacion:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.avatar-usuario {
+    background-color: var(--indigo);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    width: var(--avatar-desktop-sm);
+    height: var(--avatar-desktop-sm);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   2. HERO TOTAL (BALANCE Y CONTADORES EN LA ESQUINA SUPERIOR DERECHA)
+   ========================================================================== */
+.hero-total {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+
+    /* Grid para fijar elementos en las esquinas */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.etiqueta-hero {
+    grid-column: 1;
+    color: var(--green);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.valor-hero {
+    grid-column: 1;
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h1);
+    /* 40px */
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Contenedor de estadísticas (Se alinea arriba a la derecha en la segunda columna) */
+.footer-hero-total {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    /* Abarca el alto del bloque derecho */
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* La insignia verde de "3 bienes activos" (Baja automáticamente en el flujo del grid) */
+.footer-hero-total article:first-child {
+    order: -1;
+    /* Lo mantiene en su posición semántica */
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    background-color: rgba(52, 211, 153, 0.1);
+    color: var(--green);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+/* Forzar que el contenedor principal del héroe tenga posición relativa para anclar la insignia */
+.hero-total {
+    position: relative;
+    padding-bottom: 74px;
+    /* Deja espacio abajo para la insignia verde */
+}
+
+/* Ajuste de los números Activos / Inactivos */
+.footer-hero-total article:not(:first-child) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-hero-total article h4 {
+    color: var(--slate-500);
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    margin: 0;
+}
+
+.footer-hero-total article p {
+    font-size: var(--desktop-body);
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer-hero-total article:nth-child(2) p {
+    color: var(--green);
+    /* Número 3 en verde */
+}
+
+.footer-hero-total article:nth-child(3) p {
+    color: var(--slate-400);
+    /* Número 1 en gris */
+}
+
+/* ==========================================================================
+   3. BARRA DE ACCIONES (BUSCADOR, FILTRO Y BOTÓN NUEVO)
+   ========================================================================== */
+.assets-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 24px;
+}
+
+.search-form {
+    display: flex;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.search-field {
+    position: relative;
+    flex-grow: 1;
+    max-width: 480px;
+}
+
+/* Icono de Lupa simulado */
+.search-field::before {
+    content: "🔍";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.search-field input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--slate-700);
+    color: var(--white);
+    padding: 12px 16px 12px 44px;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-field input:focus {
+    border-color: var(--indigo);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Dropdown de Filtro */
+.filter-field select {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--slate-700);
+    color: var(--white);
+    padding: 12px 40px 12px 16px;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px;
+}
+
+/* Botón "+ Nuevo Activo" al lado del filtro */
+.new-asset {
+    background-color: var(--indigo);
+    color: var(--white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(129, 140, 248, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.new-asset:hover {
+    background-color: var(--violet);
+}
+
+/* ==========================================================================
+   4. SECCIÓN REJILLA DE ACTIVOS (GRID DE 3 COLUMNAS)
+   ========================================================================== */
+.lista-activos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas como en la imagen */
+    gap: 24px;
+}
+
+.etiqueta-lista {
+    grid-column: 1 / -1;
+    /* Ocupa toda la fila superior */
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+/* Tarjeta individual */
+.card-activo {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-activo:hover {
+    transform: translateY(-4px);
+    border-color: var(--slate-500);
+}
+
+
+.barra-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.barra-accent.activo {
+    background-color: var(--indigo);
+}
+
+.barra-accent.vehiculo {
+    background-color: var(--sky);
+}
+
+.barra-accent.ahorro {
+    background-color: var(--green);
+}
+
+.barra-accent.inactivo {
+    background-color: var(--slate-500);
+}
+
+.icono-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: var(--icon-standard);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-body);
+    color: var(--white);
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.subtipo {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+}
+
+.valor-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label-valor {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+}
+
+.valor-card strong {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h3);
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* Badge de estado flotante arriba a la derecha en la tarjeta */
+.estado-card {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.punto {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.punto.activo {
+    background-color: var(--green);
+    box-shadow: 0 0 8px var(--green);
+}
+
+.texto-estado {
+    font-size: var(--desktop-small);
+    color: var(--green);
+    font-weight: 600;
+}
+
+.texto-estado.inactivo {
+    color: var(--slate-400);
+}
+
+/* ==========================================================================
+   VISTA: DETALLE DEL ACTIVO (CÓDIGO COMPLETO Y CORREGIDO)
+   ========================================================================== */
+
+/* 1. CONTENEDOR PRINCIPAL DE LA PÁGINA */
+main.contenido-principal {
+    background-color: var(--bg-dark);
+    margin-left: 260px;
+    /* Respeta el espacio ocupado por tu sidebar */
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 70px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+
+    /* Sistema de 3 grandes bloques distribuidos de extremo a extremo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centrado vertical absoluto de los 3 bloques */
+    position: relative;
+    gap: 24px;
+}
+
+/* NUEVO: Une el icono y los textos lado a lado horizontalmente */
+.bloque-izquierdo-hero {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente el icono con los textos */
+    gap: 16px;
+    /* Separación entre el cuadrado de la casa y las letras */
+    flex: 1;
+    /* Ocupa espacio proporcional a la izquierda */
+}
+
+/* Contenedor interno para los textos del nombre */
+.info-nombre-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.icono-hero {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: var(--icon-main);
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* Evita que el cuadro de la casa se deforme */
+}
+
+.contenedor-monto-hero {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Alinea los textos verticalmente centrados uno sobre otro */
+    text-align: center;
+    gap: 4px;
+}
+
+.nombre-hero {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h2);
+    /* 28px */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.badge-tipo {
+    background-color: rgba(52, 211, 153, 0.1);
+    color: var(--green);
+    font-size: var(--desktop-small);
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+/* CONTENEDOR CENTRAL: Flota libremente en el medio horizontal de la pantalla */
+.contenedor-monto-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    flex: 1;
+    /* Asegura el mismo peso visual en el centro */
+}
+
+/* ==========================================================================
+   CORRECCIÓN DEFINITIVA: CENTRADO DE VALOR ACTUAL CON FLEXBOX
+   ========================================================================== */
+
+/* Estilos limpios para las fuentes, sin pelear con posiciones del grid */
+.label-hero {
+    color: var(--slate-400);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.monto-hero {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h2);
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* CONTENEDOR DERECHO DEL CHIP DE ESTADO */
+.chip-estado {
+    background-color: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    color: var(--green);
+    font-size: var(--desktop-small);
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    justify-content: flex-end;
+    /* Empuja el chip hacia el extremo derecho */
+    background-clip: padding-box;
+}
+
+
+.chip-estado .punto {
+    width: 6px;
+    height: 6px;
+    background-color: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--green);
+    /* Resplandor verde */
+}
+
+
+/* 3. CARD DE PARTICIPACIÓN EN EL PATRIMONIO */
+.card-participacion {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.label-participacion {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* El riel gris contenedor */
+.barra-progreso {
+    background-color: var(--slate-700);
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* El relleno verde que representa el 76% */
+.barra-progreso .relleno {
+    background-color: var(--green);
+    height: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Textos informativos inferiores */
+.info-participacion {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--desktop-caption);
+    /* 13px */
+}
+
+.info-participacion .porcentaje {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.info-participacion .detalle {
+    color: var(--slate-500);
+}
+
+
+/* 4. CARD DE IMPACTO EN EL BALANCE FINANCIERO */
+.card-impacto {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label-impacto {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-impacto strong {
+    color: var(--green);
+    /* "Suma al Patrimonio Neto" se destaca en verde */
+    font-size: var(--desktop-body);
+    /* 16px */
+    font-weight: 600;
+}
+
+
+/* 5. BLOQUE DE INFORMACIÓN (Los 4 mosaicos de datos en fila) */
+.informacion-activo {
+    margin-bottom: 32px;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas perfectamente iguales */
+    gap: 16px;
+}
+
+.tile-info {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Ajuste para los pequeños emojis dentro de cada mosaico */
+.tile-info>span:first-child {
+    font-size: 18px;
+    opacity: 0.8;
+    grid-row: span 2;
+}
+
+.tile-label {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.tile-info strong {
+    font-size: var(--desktop-body);
+    color: var(--white);
+    font-weight: 600;
+}
+
+
+/* ==========================================================================
+   6. SECCIÓN DE ACCIONES (BOTONES LADO A LADO EN FILA)
+   ========================================================================== */
+
+/* Remueve o ignora la etiqueta hr antigua para mantener la limpieza */
+main.contenido-principal hr {
+    display: none;
+}
+
+/* El nuevo contenedor Flex que alinea los botones en una sola línea horizontal */
+.acciones-detalle {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    /* Separación proporcional entre ambos elementos */
+    margin-top: 16px;
+}
+
+/* Estilos compartidos para el botón Editar y Desactivar */
+.btn-secundario,
+.btn-peligro {
+    flex: 1;
+    /* Obliga a que cada uno ocupe exactamente el 50% de la fila */
+    font-family: var(--font-body);
+    /* Inter */
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s ease, transform 0.1s;
+}
+
+/* Botón Editar Activo (Color morado / índigo sólido de tus tokens) */
+.btn-secundario {
+    background-color: var(--indigo);
+    color: var(--white);
+}
+
+/* Botón Desactivar Activo (Fondo rojo oscuro sutil translúcido con borde) */
+.btn-peligro {
+    background-color: rgba(248, 113, 113, 0.05);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    color: var(--red);
+}
+
+/* Efectos de interacción */
+.btn-secundario:hover,
+.btn-peligro:hover {
+    opacity: 0.85;
+}
+
+.btn-secundario:active,
+.btn-peligro:active {
+    transform: scale(0.99);
+    /* Efecto de hundimiento sutil al hacer clic */
+}
+
+/* ==========================================================================
+   VISTA: EDITAR ACTIVO (CÓDIGO INTEGRADO EN GLOBAL.CSS)
+   ========================================================================== */
+
+/* Contenedor principal que divide el formulario (izq) y el estado (der) */
+.edit-asset {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 16px;
+}
+
+/* 1. SECCIÓN DEL FORMULARIO PRINCIPAL (IZQUIERDA) */
+.formulario {
+    flex: 1;
+    /* Toma todo el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Banner superior: "Editando Casa Principal" */
+.banner-edicion {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editing-card__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.editing-card__info span {
+    font-size: var(--icon-main);
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editando-label {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.editing-card__info strong {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-body);
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* Lado derecho del banner (Monto actual) */
+.valor-actual {
+    text-align: right;
+}
+
+.valor-actual p {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    margin-bottom: 2px;
+}
+
+.valor-actual h3 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h3);
+    color: var(--green);
+    /* Destacado en verde brillante */
+    font-weight: 700;
+}
+
+/* Etiquetas generales de los títulos de campo */
+.label-form {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+/* 2. CAMPOS DE ENTRADA / INPUTS */
+.input-form {
+    background-color: var(--bg-card);
+    border: 1px solid var(--slate-700);
+    color: var(--white);
+    padding: 16px;
+    border-radius: 10px;
+    font-size: var(--desktop-body);
+    font-weight: 600;
+}
+
+/* Contenedor de Valor con Símbolo de Moneda y Badge */
+.input-moneda {
+    background-color: var(--bg-card);
+    border: 1px solid var(--slate-700);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-moneda span:first-child {
+    color: var(--slate-500);
+    font-size: var(--desktop-h3);
+    font-weight: 600;
+}
+
+.input-moneda h2 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-h2);
+    color: var(--white);
+    font-weight: 700;
+    flex: 1;
+}
+
+.badge-activo {
+    background-color: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    color: var(--green);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+/* Bloque de fecha con ícono flotante */
+.input-icono {
+    background-color: var(--bg-card);
+    border: 1px solid var(--slate-700);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-icono span {
+    font-size: var(--icon-standard);
+}
+
+.input-icono p {
+    font-size: var(--desktop-body);
+    color: var(--white);
+    font-weight: 600;
+}
+
+
+/* 3. REJILLA DE CATEGORÍAS (3 COLUMNAS) */
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.categoria {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.categoria:hover {
+    border-color: var(--slate-500);
+}
+
+/* Estado de la Categoría seleccionada (Vivienda en la imagen) */
+.categoria.seleccionada {
+    border: 1px solid var(--green);
+    background-color: var(--bg-card)
+}
+
+.categoria span:first-child {
+    font-size: var(--icon-standard);
+    opacity: 0.8;
+}
+
+.categoria h3 {
+    font-size: var(--desktop-caption);
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.tipo-cat {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+}
+
+
+/* 4. BOTONES DE ACCIÓN DEL FORMULARIO */
+.edit-actions {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-cancelar {
+    background-color: var(--bg-card);
+    color: var(--slate-400);
+}
+
+.btn-cancelar:hover {
+    color: var(--white);
+}
+
+.btn-guardar {
+    background-color: var(--indigo);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(129, 140, 248, 0.3);
+}
+
+.btn-guardar:hover {
+    background-color: var(--violet);
+}
+
+.btn-cancelar:active,
+.btn-guardar:active {
+    transform: scale(0.99);
+}
+
+
+/* ==========================================================================
+   5. ASIDE: ASIDE DE ESTADO ACTUAL (DERECHA)
+   ========================================================================== */
+.current-status {
+    width: 320px;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.current-status h2 {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Tarjeta informativa del activo en el panel */
+.current-status__asset {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Reutiliza el estilo del círculo con icono */
+.current-status__asset span.icon::before {
+    content: "🏠";
+    /* Inyección del icono */
+    font-size: var(--icon-standard);
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-status__asset h3 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-body);
+    color: var(--white);
+    margin-bottom: 2px;
+}
+
+.current-status__asset p {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+}
+
+/* Bloques inferiores de datos métricos */
+.current-status__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+}
+
+.current-status__info article p {
+    color: var(--slate-500);
+    font-size: var(--desktop-small);
+    margin-bottom: 4px;
+}
+
+.current-status__info article h4 {
+    font-size: var(--desktop-body);
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* Destaca el porcentaje de patrimonio en verde brillante */
+.current-status__info article:last-child h4 {
+    color: var(--green);
+}
+
+/* ==========================================================================
+   CSS PARA MODAL FLOTANTE (DESACTIVAR ACTIVO OVERLAY)
+   ========================================================================== */
+
+/* Capa que oscurece el fondo de la pantalla completa */
+/* ==========================================================================
+   CORRECCIÓN: LIBERAR EL SIDEBAR DEL BLOQUEO
+   ========================================================================== */
+
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  
+  /* CAMBIO CLAVE: Comienza justo después de los 260px que mide tu sidebar */
+  left: 260px; 
+  
+  /* CAMBIO CLAVE: Calcula el ancho restante de la pantalla para no desbordar */
+  width: calc(100vw - 260px); 
+  
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Oscurece solo el área de contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; 
+}
+
+
+/* El cuadro central flotante (El modal en sí) */
+.sheet-modal {
+    background-color: #111536;
+    /* Azul oscuro un tono más claro que el fondo general */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: 540px;
+    /* Ancho exacto del cuadro de tu imagen */
+    padding: 32px;
+    border-radius: 24px;
+    /* Bordes muy redondeados como se ve en la captura */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    /* Sombra pesada para dar profundidad */
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* 1. TARJETA COMPACTA INTERNA */
+.tarjeta-min-activo {
+    background-color: var(--bg-card);
+    /* Fondo más oscuro para contrastar */
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 20px 24px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bloque-izq-min {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icono-min {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: var(--icon-standard);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-min h3 {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-body);
+    color: var(--white);
+    margin: 0 0 2px 0;
+    font-weight: 700;
+}
+
+.info-min span {
+    color: var(--slate-400);
+    font-size: var(--desktop-small);
+}
+
+.monto-min {
+    font-family: var(--font-heading);
+    font-size: var(--desktop-body);
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* 2. CONTENIDO INTERNO DEL MODAL */
+.contenido-desactivar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icono-warning {
+    background-color: rgba(248, 113, 113, 0.05);
+    border: 1px solid rgba(248, 113, 113, 0.15);
+    font-size: var(--icon-main);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--red);
+}
+
+.contenido-desactivar h2 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.descripcion-desactivar {
+    color: var(--slate-400);
+    font-size: var(--desktop-caption);
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+}
+
+/* CAJA DE ADVERTENCIA ÁMBAR */
+.caja-advertencia {
+    background-color: rgba(251, 191, 36, 0.05);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.icono-alerta {
+    font-size: var(--icon-standard);
+    margin-top: 1px;
+}
+
+.texto-alerta {
+    color: var(--amber);
+    font-size: var(--desktop-small);
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 3. BOTONES ACCIONES */
+.acciones-modal {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.btn-cancelar,
+.btn-desactivar {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: var(--desktop-caption);
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-cancelar {
+    background: var(--bg-card);
+    color: var(--slate-400);
+}
+
+.btn-cancelar:hover {
+    color: var(--white);
+}
+
+.btn-desactivar {
+    background-color: var(--red);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(248, 113, 113, 0.2);
+}
+
+.btn-desactivar:hover {
+    opacity: 0.9;
+}
+
+.btn-cancelar:active,
+.btn-desactivar:active {
+    transform: scale(0.98);
+}
+/* ==========================================================================
+   VISTA: REGISTRAR ACTIVO (COMPLEMENTO CORREGIDO PARA GLOBAL.CSS)
+   ========================================================================== */
+
+/* 1. DISTRIBUCIÓN DEL LAYOUT GENERAL (Formulario izquierda · Panel derecha) */
+.seccion-registro {
+  display: flex;
+  gap: 40px;          /* Separación exacta entre el bloque izquierdo y la vista previa */
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.bloque-formulario {
+  flex: 1;            /* El formulario se estira para tomar todo el espacio izquierdo */
+}
+
+/* Contenedor vertical de cada grupo (Label + Input + Texto de ayuda) */
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;           /* Espaciado interno ordenado para cada sección del formulario */
+  margin-bottom: 24px;
+}
+
+/* Texto gris pequeño explicativo debajo de cada campo input */
+.ayuda-form {
+  color: var(--slate-500);
+  font-size: var(--desktop-small); /* 12px de tus tokens */
+  margin-top: 2px;
+}
+
+
+/* 2. REUTILIZACIÓN DE ELEMENTOS DE ENTRADA (Inputs modificados con placeholders) */
+.campo-formulario input[type="text"] {
+  background-color: var(--bg-card);
+  border: 1px solid transparent;
+  color: var(--white);
+  padding: 16px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.campo-formulario input[type="text"]:focus {
+  border-color: var(--indigo);
+}
+
+
+/* 3. ACCIONES DEL FORMULARIO (Botones de Cancelar y Guardar abajo) */
+.acciones-formulario {
+  display: flex;
+  width: 100%;
+  gap: 24px;          /* Separación limpia e idéntica a la sección de detalle */
+  margin-top: 24px;
+}
+
+/* El botón Cancelar es transparente con texto plano */
+.acciones-formulario .btn-cancelar {
+  flex: 1;
+  background: var(--bg-card);
+  color: var(--slate-400);
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.acciones-formulario .btn-cancelar:hover {
+  color: var(--white);
+}
+
+/* El botón Guardar es morado brillante e iluminado */
+.acciones-formulario .btn-guardar {
+  flex: 1;
+  background-color: var(--indigo);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.35); /* Resplandor característico de la captura */
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.acciones-formulario .btn-guardar:hover {
+  background-color: var(--violet);
+}
+
+/* Icono de rombo calado (◇) antes del texto Guardar Activo */
+.acciones-formulario .btn-guardar::before {
+  content: "◇";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+/* ==========================================================================
+   4. PANEL LATERAL DE VISTA PREVIA (DERECHA)
+   ========================================================================== */
+.panel-vista-previa {
+  width: 320px;       /* Ancho fijo para mantener la consistencia del panel lateral */
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Título superior de VISTA PREVIA en verde de tus tokens */
+.encabezado-panel h2 {
+  color: var(--sky);  /* Usamos el celeste o verde tenue financiero de tu paleta */
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Contenido de la previsualización */
+.contenido-panel-previa {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Círculo contenedor oscuro para el emoji */
+.icono-panel-previa {
+  font-size: var(--icon-standard); /* 20px */
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contenido-panel-previa h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;   /* Tamaño unificado e ideal para títulos de tarjeta */
+  color: var(--white);
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+
+.subtipo-panel-previa {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Línea divisoria interna */
+  padding-bottom: 16px;
+}
+
+/* Etiquetas pequeñas internas del panel */
+.label-metrica-previa {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin-bottom: 4px;
+}
+
+/* Los montos y valores destacados */
+.valor-metrica-previa {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Ajuste específico para el renglón de la fecha */
+.contenido-panel-previa p:nth-of-type(2) + h4 {
+  font-size: var(--desktop-body); /* La fecha va a 16px según la captura */
+  margin-bottom: 24px;
+}
+
+/* Badge del chip "Activo" inferior */
+.chip-estado-previa {
+  background-color: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: var(--green);
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.punto-previa {
+  width: 6px;
+  height: 6px;
+  background-color: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green);
+}
+
+/* Texto de advertencia del pie de la tarjeta */
+.pie-panel-previa {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+}
+
+.pie-panel-previa p {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption); /* 13px */
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   VISTA: DETALLE DE LA PLANTILLA (ARRIENDO) - CON DESIGN TOKENS
+   ========================================================================== */
+
+/* 1. TARJETA RESUMEN SUPERIOR (Estructura Horizontal de 3 bloques) */
+.resumen-plantilla {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Pseudo-elemento para inyectar el cuadro del emoji de la casa a la izquierda */
+.resumen-plantilla::before {
+  content: "🏠";
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--icon-main); /* 24px */
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* Contenedor del nombre y el tipo de gasto */
+.informacion-plantilla:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.informacion-plantilla h2 {
+  font-family: var(--font-heading); /* Sora */
+  font-size: var(--desktop-h2); /* 28px */
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Badge rojo/rosado "Gasto Recurrente" con flecha hacia abajo */
+.informacion-plantilla small {
+  background-color: rgba(248, 113, 113, 0.1); /* Tu token rojo translúcido */
+  color: var(--red);
+  font-size: var(--desktop-small); /* 12px */
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.informacion-plantilla small::before {
+  content: "↓";
+}
+
+/* Bloque central: Monto por Ejecución */
+.monto-plantilla {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea los textos a la derecha de su columna */
+  gap: 4px;
+  flex: 1;
+  text-align: right;
+}
+
+.monto-plantilla p {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* El monto negativo en color rojo pastel de tu captura */
+.monto-plantilla strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--red); /* Color rojizo financiero de tu imagen */
+  font-weight: 700;
+}
+
+/* Badge de estado "Activa" en el extremo derecho */
+.estado-plantilla small {
+  background-color: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: var(--green);
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.estado-plantilla small::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green);
+}
+
+
+/* 2. TARJETAS DE ALERTA Y EJECUCIÓN (Bloques apilados intermedios) */
+.proxima-ejecucion, .ultima-ejecucion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 64px; /* Deja espacio para el icono flotante izquierdo */
+}
+
+/* Inyección de los mini-iconos de la izquierda (Rayo y Advertencia) */
+.proxima-ejecucion::before {
+  content: "⚡";
+  position: absolute;
+  left: 24px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.ultima-ejecucion::before {
+  content: "⚠️";
+  position: absolute;
+  left: 24px;
+  font-size: 16px;
+  color: var(--amber);
+}
+
+.proxima-ejecucion h3, .ultima-ejecucion h3 {
+  font-size: var(--desktop-body); /* 16px */
+  color: var(--white);
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.proxima-ejecucion p, .ultima-ejecucion p {
+  color: var(--slate-400);
+  font-size: var(--desktop-caption); /* 13px */
+  margin: 0;
+}
+
+/* Estilo específico para destacar la advertencia fallida en amarillo/ámbar */
+.ultima-ejecucion h3 {
+  color: var(--amber); /* Cambia el título de la alerta a amarillo */
+}
+
+/* Contador de días en el extremo derecho de la próxima ejecución ("2 días") */
+.proxima-ejecucion div:last-child {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.proxima-ejecucion div:last-child strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--indigo); /* El número 2 se resalta en morado brillante */
+  font-weight: 700;
+}
+
+.proxima-ejecucion div:last-child small {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+}
+
+
+/* 3. BLOQUE CUADRICULADO DE INFORMACIÓN (GRID DE 3 COLUMNAS) */
+.informacion-plantilla:last-of-type {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Título de la sección "INFORMACIÓN" en gris apagado */
+.encabezado-seccion h3 {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* Rejilla de 3 columnas para los 6 mosaicos informativos */
+.informacion-detalle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 bloques por fila como en la imagen */
+  gap: 16px;
+}
+
+.informacion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  padding-left: 56px; /* Espacio para los iconos inyectados */
+}
+
+/* Inyección masiva de los emojis izquierdos para cada mosaico basado en su orden */
+.informacion::before {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.informacion:nth-child(1)::before { content: "🏠"; } /* Categoría */
+.informacion:nth-child(2)::before { content: "🔄"; } /* Recurrencia */
+.informacion:nth-child(3)::before { content: "📅"; } /* Día Ejecución */
+.informacion:nth-child(4)::before { content: "⚙️"; } /* Ejecuciones */
+.informacion:nth-child(5)::before { content: "🗓️"; } /* Fecha Inicio */
+.informacion:nth-child(6)::before { content: "🏁"; } /* Fecha Fin */
+
+.informacion p {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.informacion strong {
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+}
+
+
+/* 4. BARRA DE TOTAL AUTOMATIZADO (FONDO LARGO) */
+.total-periodo {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center; /* Alineación horizontal en una sola fila recta */
+  gap: 16px;
+}
+
+.total-periodo p {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.total-periodo strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--white);
+  font-weight: 700;
+}
+
+.total-periodo small {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  margin-left: 8px; /* Separa el cálculo multiplicativo hacia la derecha */
+}
+
+
+/* 5. BOTONES DE ACCIÓN INFERIORES (LADO A LADO EN FILA) */
+.acciones {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  margin-top: auto; /* Empuja los botones abajo si hay espacio vertical sobrante */
+}
+
+.boton-secundario, .boton-peligro {
+  flex: 1; /* Cada botón toma exactamente el 50% de la barra horizontal */
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+/* Botón Editar Plantilla (Morado brillante de tus tokens) */
+.boton-secundario {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.boton-secundario::before {
+  content: "✏️";
+  font-size: 14px;
+}
+
+/* Botón Desactivar Plantilla (Rojo opaco translúcido con borde) */
+.boton-peligro {
+  background-color: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+}
+
+.boton-peligro::before {
+  content: "⚠️";
+  font-size: 14px;
+}
+
+/* Efectos de interacción */
+.boton-secundario:hover, .boton-peligro:hover {
+  opacity: 0.85;
+}
+
+.boton-secundario:active, .boton-peligro:active {
+  transform: scale(0.99);
+}
+/* ==========================================================================
+   CSS EXCLUSIVO Y CORREGIDO PARA DETALLE DE LA PLANTILLA
+   ========================================================================== */
+
+/* 1. TARJETA RESUMEN SUPERIOR (Estructura Horizontal Limpia) */
+.resumen-plantilla {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px 32px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  
+  /* Alineación horizontal en una sola línea recta */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+/* El bloque izquierdo que une el título y el subtítulo */
+.informacion-plantilla:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resumen-plantilla h2 {
+  font-family: var(--font-heading); /* Sora */
+  font-size: var(--desktop-h2); /* 28px */
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Badge rojo/rosado de Gasto Recurrente */
+.informacion-plantilla small {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--red);
+  font-size: var(--desktop-small); /* 12px */
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  width: fit-content;
+  display: block;
+}
+
+/* Bloque del Monto (Centrado en la mitad horizontal de la tarjeta) */
+.monto-plantilla {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el texto de "Monto por ejecución" con el número */
+  gap: 4px;
+}
+
+.monto-plantilla p {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* El valor negativo en rojo brillante */
+.monto-plantilla strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* Badge de estado "Activa" en el extremo derecho */
+.estado-plantilla small {
+  background-color: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: var(--green);
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.estado-plantilla small::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green);
+}
+
+
+.proxima-ejecucion, .ultima-ejecucion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* CAMBIO CLAVE: Activamos la posición relativa para controlar el icono */
+  position: relative;
+  /* CAMBIO CLAVE: Creamos la zona segura a la izquierda para empujar los textos */
+  padding-left: 64px; 
+}
+
+/* REPARACIÓN MAESTRA DE LOS MINI-ICONOS (Rayo y Advertencia) */
+.proxima-ejecucion::before, .ultima-ejecucion::before {
+  position: absolute;
+  left: 24px; /* Separación limpia respecto al borde izquierdo de la tarjeta */
+  top: 50%;
+  transform: translateY(-50%); /* Centrado vertical matemático exacto */
+  font-size: var(--icon-standard); /* Tamaño unificado de tus tokens */
+  z-index: 1;
+}
+
+.proxima-ejecucion::before {
+  content: "⚡";
+  opacity: 0.8;
+}
+
+.ultima-ejecucion::before {
+  content: "⚠️";
+  color: var(--amber);
+}
+
+
+/* Estilos de los textos internos alineados */
+.proxima-ejecucion h3, .ultima-ejecucion h3 {
+  font-size: var(--desktop-body); /* 16px */
+  color: var(--white);
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+/* Forzar que la última ejecución fallida tenga el título ámbar de advertencia */
+.ultima-ejecucion h3 {
+  color: var(--amber);
+}
+
+.proxima-ejecucion p, .ultima-ejecucion p {
+  color: var(--slate-400);
+  font-size: var(--desktop-caption); /* 13px */
+  margin: 0;
+}
+
+/* Bloque derecho del contador ("2 días") */
+.proxima-ejecucion div:last-child {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.proxima-ejecucion div:last-child strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--indigo); /* El número 2 en morado brillante */
+  font-weight: 700;
+}
+
+.proxima-ejecucion div:last-child small {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+}
+
+
+/* 3. REJILLA CUADRICULADA DE INFORMACIÓN (GRID COMPARTIDO) */
+/* Nota: Como en tu HTML usas la misma clase "informacion-plantilla" para esta sección, 
+   usamos la etiqueta html section para separarlo sin romper la tarjeta superior */
+section.informacion-plantilla {
+  margin-top: 32px;
+  margin-bottom: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+/* El título general "INFORMACIÓN" */
+.encabezado-seccion h3 {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Forzar la cuadrícula matemática de 3 columnas para los mosaicos */
+.informacion-detalle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Mantén las 3 columnas perfectas */
+  gap: 16px;
+  width: 100%;
+}
+
+.informacion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  
+  /* CAMBIO CLAVE: Activamos la posición relativa para que el ícono no flote libre */
+  position: relative;
+  /* CAMBIO CLAVE: Dejamos un espacio fijo de 64px a la izquierda para que el texto nunca sea pisado */
+  padding-left: 64px; 
+}
+
+.informacion::before {
+  position: absolute;
+  left: 20px; /* Separación limpia respecto al borde izquierdo de la tarjeta */
+  top: 50%;
+  transform: translateY(-50%); /* Centrado vertical matemático exacto */
+  font-size: var(--icon-standard); /* Tamaño de 20px o el de tu token */
+  opacity: 0.8;
+  z-index: 1; /* Asegura que no quede oculto detrás del fondo */
+}
+
+.informacion p {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.informacion strong {
+  font-size: var(--desktop-body); /* 16px */
+  color: var(--white);
+  font-weight: 600;
+}
+
+
+/* 4. BARRA DE TOTAL AUTOMATIZADO */
+.total-periodo {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center; /* Alineación horizontal recta */
+  gap: 16px;
+}
+
+.total-periodo p {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.total-periodo strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--white);
+  font-weight: 700;
+}
+
+.total-periodo small {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  margin-left: auto; /* Empuja el cálculo de la multiplicación al extremo derecho */
+}
+
+
+/* 5. SECCIÓN DE ACCIONES (BOTONES INFERIORES) */
+.acciones {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.boton-secundario, .boton-peligro {
+  flex: 1; /* Cada uno toma exactamente el 50% de la barra */
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.boton-secundario {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.boton-peligro {
+  background-color: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+}
+
+.boton-secundario:hover, .boton-peligro:hover {
+  opacity: 0.85;
+}
+
+.boton-secundario:active, .boton-peligro:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   VISTA: EDITAR PLANTILLA AUTOMÁTICA (CON DESIGN TOKENS)
+   ========================================================================== */
+
+/* --- 1. BANNER RESUMEN SUPERIOR --- */
+.resumen-plantilla {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px 32px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 80px; /* Espacio para el ícono de la casa */
+}
+
+/* El cuadro con el emoji de la casa a la izquierda */
+.resumen-plantilla::before {
+  content: "🏠";
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--icon-standard);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.informacion-plantilla {
+  display: flex;
+  flex-direction: column;
+}
+
+/* "EDITANDO" en letras pequeñas grises */
+.informacion-plantilla h2 {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* "Arriendo" en texto fuerte */
+.informacion-plantilla p {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 700;
+  margin: 4px 0 0 0;
+}
+
+/* Bloque derecho del dinero actual */
+.monto-actual {
+  text-align: right;
+}
+
+.monto-actual p {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin: 0 0 4px 0;
+}
+
+.monto-actual strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-body);
+  color: var(--slate-300);
+  font-weight: 700;
+}
+
+
+/* --- 2. CONTENEDOR MAESTRO EN DOS COLUMNAS DE LA IMAGEN --- */
+.formulario-plantilla {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Columna izquierda ligeramente más ancha */
+  gap: 32px 40px; /* Separación horizontal y vertical perfecta */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Bloques del formulario */
+.datos-principales, .configuracion {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Títulos generales grises (MONTO, CATEGORÍA, RECURRENCIA, etc.) */
+.formulario-plantilla h3 {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+}
+
+
+/* --- 3. COLUMNA IZQUIERDA: CAMPOS --- */
+
+/* Campo de Monto */
+.monto {
+  width: 100%;
+}
+
+.monto-gasto strong {
+  background-color: var(--bg-card);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+  position: relative;
+  padding-left: 44px; /* Zona segura para el $ */
+}
+
+/* Inserta el signo de pesos flotando adentro a la izquierda */
+.monto-gasto strong::before {
+  content: "$";
+  position: absolute;
+  left: 20px;
+  color: var(--slate-400);
+  font-weight: 500;
+}
+
+/* El badge rojo "GASTO" a la extrema derecha */
+.monto-gasto  small {
+  margin-left: auto;
+  background-color: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* Cuadrícula de Categorías (2 columnas en su bloque) */
+.lista-categories, .lista-categorias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.categoria {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 56px; /* Zona segura para los íconos de mosaico */
+}
+
+/* Inyección de emojis a cada recuadro de categoría */
+.categoria::before {
+  position: absolute;
+  left: 20px;
+  font-size: var(--icon-standard);
+  opacity: 0.8;
+}
+
+.categoria:nth-child(1)::before { content: "🏠"; }
+.categoria:nth-child(2)::before { content: "🌐"; }
+.categoria:nth-child(3)::before { content: "🎬"; }
+.categoria:nth-child(4)::before { content: "💡"; }
+
+.categoria h4 {
+  font-size: var(--desktop-caption); /* 13px */
+  color: var(--slate-400);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* La tarjeta de Vivienda está seleccionada con el borde azul neón */
+.categoria:first-child {
+  border: 1px solid var(--sky);
+  background-color: var(--bg-card);
+}
+
+.categoria:first-child h4 {
+  color: var(--white);
+}
+
+/* Fila de Recurrencia (Botones inferiores de la izquierda) */
+.opciones-recurrencia {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.opciones-recurrencia button {
+  flex: 1;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 48px 16px 16px 16px; /* Padding superior alto para dejar caer el texto */
+  color: var(--slate-400);
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Inyección de los íconos de calendario flotando centrados arriba en el botón */
+.opciones-recurrencia button::before {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--icon-standard);
+}
+
+.opciones-recurrencia button:nth-child(1)::before { content: "📅"; }
+.opciones-recurrencia button:nth-child(2)::before { content: "📋"; }
+.opciones-recurrencia button:nth-child(3)::before { content: "📆"; }
+
+/* Mensual está seleccionado de forma activa */
+.opciones-recurrencia button:first-child {
+  border: 1px solid var(--indigo);
+  color: var(--white);
+  background-color: var(--bg-card);
+}
+
+
+/* --- 4. COLUMNA DERECHA: CONFIGURACIÓN --- */
+
+/* Selector del día de ejecución horizontal */
+.selector-dia {
+  background-color: var(--bg-card);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.selector-dia p {
+  color: var(--slate-400);
+  font-size: var(--desktop-caption);
+  margin: 0;
+}
+
+/* Los pequeños botones de más y menos de la esquina */
+.selector-dia button {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--slate-700);
+  color: var(--white);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selector-dia strong {
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+/* Periodo de Vigencia (Fechas lado a lado) */
+.fechas {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.fechas > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fechas p {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.fechas strong {
+  background-color: var(--bg-card);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 14px 16px 14px 44px; /* Espacio izquierdo para el calendario */
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  color: var(--white);
+  font-weight: 600;
+  position: relative;
+}
+
+/* Inyecta el mini calendario dentro de las cajas de fecha */
+.fechas strong::before {
+  content: "📅";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+
+/* --- 5. BOTONES ACCIONES DEL PIE --- */
+.acciones {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  margin-top: 48px; /* Separación amplia al fondo */
+}
+
+.boton-secundario, .boton-primario {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+/* Cancelar es un enlace gris simple centrado */
+.boton-secundario {
+  background: var(--bg-card);
+  color: var(--slate-400);
+}
+
+.boton-secundario:hover {
+  color: var(--white);
+}
+
+/* Guardar Cambios (Morado Neón brillante) */
+.boton-primario {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.boton-primario:hover {
+  background-color: var(--violet);
+}
+
+/* Inyecta el disquete antes de la frase Guardar Cambios */
+.boton-primario::before {
+  content: "💾";
+  font-size: 14px;
+}
+
+.boton-secundario:active, .boton-primario:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   VISTA: LISTADO DE PLANTILLAS EN DOBLE COLUMNA (GRID EXACTO)
+   ========================================================================== */
+
+/* 1. HERO SUPERIOR DE DOS ENTRADAS Y BOTÓN DERECHO */
+.hero-total-plantillas {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px 32px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto; /* Deja espacio al final para empujar el botón */
+  align-items: center;
+  gap: 64px; /* Separación amplia horizontal entre los bloques numéricos */
+  position: relative;
+}
+
+.tarjeta-resumen-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.etiqueta-hero { color: var(--slate-500); font-size: var(--desktop-small); font-weight: 700; letter-spacing: 0.5px; }
+.etiqueta-hero-gasto { color: var(--slate-500); font-size: var(--desktop-small); font-weight: 700; letter-spacing: 0.5px; }
+.valor-hero { font-family: var(--font-heading); font-size: var(--desktop-h2); font-weight: 700; color: var(--white); }
+.valor-hero-gasto { font-family: var(--font-heading); font-size: var(--desktop-h2); font-weight: 700; color: var(--red); } /* Gasto acumulado en rojo */
+
+/* El botón azul/morado flotante del extremo derecho */
+.btn-nueva-plantilla {
+  grid-column: 4; /* Lo ancla al final */
+  background-color: var(--indigo);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(129, 140, 248, 0.25);
+  transition: background-color 0.2s;
+}
+
+.btn-nueva-plantilla:hover { background-color: var(--violet); }
+
+
+/* 2. REJILLA GENERAL DE LAS TARJETAS (MODO 2 COLUMNAS DE LA IMAGEN) */
+.seccion-lista-plantillas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.etiqueta-lista {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.grid-plantillas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas exactas a la imagen */
+  gap: 24px;
+}
+
+
+/* 3. COMPONENTE TARJETA DE PLANTILLA */
+.card-plantilla {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card-plantilla:hover {
+  transform: translateY(-2px);
+  border-color: var(--slate-500);
+}
+
+/* Línea decorativa sutil en la orilla izquierda de la tarjeta */
+.barra-accent-plantilla {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.gasto-color { background-color: var(--red); }
+.ingreso-color { background-color: var(--green); }
+.vencida-color { background-color: var(--amber); }
+
+
+/* 4. SECCIONES INTERNAS DE LA TARJETA */
+
+.header-card-plantilla {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.icono-card-plantilla {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--icon-standard); /* 20px de Phosphor */
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-card-plantilla {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.info-card-plantilla h3 {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-body); /* 16px */
+  font-weight: 700;
+  color: var(--white);
+}
+
+.subtipo-plantilla {
+  color: var(--slate-500);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Badges ovalados superiores de Gasto / Ingreso */
+.badge-tipo-movimiento {
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.badge-tipo-movimiento.gasto { background-color: rgba(248, 113, 113, 0.05); border: 1px solid rgba(248, 113, 113, 0.15); color: var(--red); }
+.badge-tipo-movimiento.ingreso { background-color: rgba(52, 211, 153, 0.05); border: 1px solid rgba(52, 211, 153, 0.15); color: var(--green); }
+
+
+/* El dinero destacado abajo a la derecha de forma alineada */
+.monto-card-plantilla {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h3); /* 22px */
+  font-weight: 700;
+  color: var(--red); /* Rojo por defecto para gastos */
+  text-align: right;
+  margin-top: -12px;
+}
+
+.monto-card-plantilla.positivo {
+  color: var(--green); /* Verde brillante si es salario */
+}
+
+
+/* 5. CÁPSULAS DE FILTRADO Y ESTADO EN EL PIE DE TARJETA */
+.footer-card-plantilla {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.capsulas-tags {
+  display: flex;
+  gap: 8px;
+}
+
+/* Las cajas de texto grises del pie */
+.tag-plantilla {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Resalta la cápsula de días en azul sutil */
+.tag-plantilla.destacada {
+  background-color: rgba(129, 140, 248, 0.04);
+  border-color: rgba(129, 140, 248, 0.15);
+  color: var(--indigo);
+}
+
+/* Puntitos de estado e indicadores de la extrema derecha */
+.status-plantilla {
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-plantilla.activa { color: var(--green); }
+.status-plantilla.vencida { color: var(--amber); }
+
+.status-plantilla::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-plantilla.activa::before { background-color: var(--green); box-shadow: 0 0 6px var(--green); }
+.status-plantilla.vencida::before { background-color: var(--amber); box-shadow: 0 0 6px var(--amber); }
+
+/* ==========================================================================
+   VISTA: NUEVA PLANTILLA AUTOMÁTICA (AJUSTES PUREMENTE ESPECÍFICOS)
+   ========================================================================== */
+
+/* --- 1. BLOQUE TIPO Y MONTO (SELECTOR INICIAL) --- */
+.tipo-transaccion {
+  display: flex;
+  background-color: rgba(7, 9, 32, 0.4); /* Fondo más oscuro empotrado */
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+/* Estilos para los botones internos de Ingreso / Gasto lado a lado */
+.tipo-transaccion button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: var(--bg-card);
+  color: var(--slate-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Inyección de las flechas de ingreso y gasto en los botones */
+.tipo-transaccion button:first-child::before { content: "↑"; }
+.tipo-transaccion button:last-child::before { content: "↓"; }
+
+/* El botón de Gasto está seleccionado activamente con el fondo rojo translúcido */
+/* PANTALLA GASTO: Se pinta de rojo/rosado */
+.tipo-transaccion.es-gasto .boton-primario {
+  background-color: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: var(--red);
+}
+
+
+/* --- 2. REJILLA DE CATEGORÍAS EN 2 COLUMNAS (MÉTODO ESPECÍFICO) --- */
+/* Nota: Tu HTML usa la clase .lista-categorias. Le aplicamos 2 columnas horizontales */
+.lista-categorias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Refinamiento de los textos internos de cada bloque de categoría */
+.lista-categorias .categoria {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column; /* Apila el texto gris "Gasto" debajo del título */
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 56px; /* Zona segura para la inyección de iconos */
+}
+
+/* Inyección de iconos vectoriales para las categorías de esta página */
+.lista-categorias .categoria::before {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--icon-standard);
+  opacity: 0.8;
+}
+
+.lista-categorias .categoria:nth-child(1)::before { content: "🚌"; } /* Transporte */
+.lista-categorias .categoria:nth-child(2)::before { content: "🌐"; } /* Servicios */
+.lista-categorias .categoria:nth-child(3)::before { content: "🎬"; } /* Entretenimiento */
+.lista-categorias .categoria:nth-child(4)::before { content: "🍔"; } /* Alimentacion */
+.lista-categorias .categoria:nth-child(5)::before { content: "📦"; } /* Otro */
+
+/* Transporte está seleccionado activamente con el borde azul de la imagen */
+.lista-categorias .categoria:first-child {
+  border: 1px solid var(--sky);
+  background-color: var(--bg-card);
+}
+
+.lista-categorias .categoria h4 {
+  font-size: var(--desktop-caption);
+  color: var(--white);
+  font-weight: 600;
+  margin: 0;
+}
+
+.lista-categorias .categoria small {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin: 0;
+}
+
+
+/* --- 3. SECCIÓN DERECHA: TEXTOS DE AYUDA DE CONFIGURACIÓN --- */
+.dia-ejecucion small, .vigencia small {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin-top: 10px;
+  display: block;
+  line-height: 1.4;
+}
+
+
+/* --- 4. NUEVA SECCIÓN: FONDO ASOCIADO (BANCOLOMBIA / NEQUI) --- */
+.fondo-asociado {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.fondo {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 56px; /* Zona segura para el banco o el cel */
+}
+
+/* Inyección de iconos decorativos para las entidades financieras */
+.fondo::before {
+  position: absolute;
+  left: 20px;
+  font-size: var(--icon-standard);
+  opacity: 0.8;
+}
+
+.fondo:nth-child(2)::before { content: "🏛️"; } /* Bancolombia */
+.fondo:nth-child(3)::before { content: "📱"; } /* Nequi */
+
+/* Estructura de los textos alineados a la izquierda */
+.fondo h4 {
+  font-size: var(--desktop-caption);
+  color: var(--white);
+  font-weight: 600;
+  margin: 0;
+}
+
+.fondo small {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin-left: 8px; /* Separa el saldo disponible al lado del nombre */
+}
+
+/* Bancolombia seleccionado activamente con el gancho (✓) a la derecha */
+.fondo:nth-child(2) {
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  background-color: var(--bg-card);
+}
+
+.fondo:nth-child(2)::after {
+  content: "✓";
+  position: absolute;
+  right: 20px;
+  color: var(--indigo);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* PANTALLA INGRESO: Se pinta de verde neón */
+.tipo-transaccion.es-ingreso .boton-primario {
+  background-color: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: var(--green);
+}
+.monto-ingreso strong {
+  background-color: var(--bg-card);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+  position: relative;
+  padding-left: 44px; /* Zona segura para el $ */
+}
+
+/* Inserta el signo de pesos flotando adentro a la izquierda */
+.monto-ingreso strong::before {
+  content: "$";
+  position: absolute;
+  left: 20px;
+  color: var(--slate-400);
+  font-weight: 500;
+}
+
+/* El badge rojo "GASTO" a la extrema derecha */
+.monto-ingreso  small {
+  margin-left: auto;
+  background-color: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: var(--green);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   VISTA: DETALLE DEL PASIVO (CÓDIGO INTEGRADO COMPLETO Y CORREGIDO)
+   ========================================================================== */
+
+/* --- 1. HERO CARD DEL CRÉDITO --- */
+.hero-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; /* Centrado vertical absoluto de los bloques */
+  gap: 24px;
+  position: relative;
+}
+
+.bloque-izquierdo-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.icono-hero {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--icon-main); /* 24px */
+  color: var(--slate-400);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-nombre-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nombre-hero {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Insignia de Crédito Vehículo */
+.badge-tipo-pasivo {
+  background-color: rgba(248, 113, 113, 0.1); 
+  color: var(--red);
+  font-size: var(--desktop-small); /* 12px */
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  width: fit-content;
+  display: block;
+}
+
+/* Bloque central: Saldo Pendiente */
+.contenedor-monto-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.label-hero {
+  color: var(--slate-400);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.monto-hero {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--red); /* Saldo destacado en rojo */
+  font-weight: 700;
+}
+
+/* CORRECCIÓN: El chip de estado ya no se estira de forma masiva */
+.chip-estado-pasivo {
+  background-color: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: var(--green);
+  font-size: var(--desktop-small);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  
+  /* Truco clave: evita que flex estire el fondo y lo obliga a encogerse al texto */
+  width: fit-content; 
+  align-self: center;
+  margin-left: auto; /* Lo empuja elegantemente a la esquina derecha */
+}
+
+.chip-estado-pasivo .punto {
+  width: 6px;
+  height: 6px;
+  background-color: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green);
+}
+
+
+/* --- 2. CARD DE PROGRESO DE PAGO --- */
+.card-progreso {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label-progreso {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.barra-progreso {
+  background-color: var(--slate-700);
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barra-progreso .relleno {
+  background-color: var(--green);
+  height: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.info-progreso {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--desktop-caption);
+}
+
+.info-progreso .porcentaje {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.info-progreso .detalle {
+  color: var(--slate-500);
+}
+
+
+/* --- 3. CARD DE IMPACTO EN EL BALANCE --- */
+.card-impacto {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label-impacto {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card-impacto strong {
+  color: var(--red);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+}
+
+
+/* --- 4. REJILLA GRID DE INFORMACIÓN (CORRECCIÓN DE LOS TEXTOS EN COLUMNA) --- */
+.grid-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important; 
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tile-info {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center; /* Alinea el ícono de Phosphor centrado a la izquierda */
+  gap: 16px;
+}
+
+.tile-info i {
+  font-size: var(--icon-standard); /* 20px */
+  color: var(--slate-400);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+/* CORRECCIÓN CLAVE: El contenedor interno obliga a que la etiqueta y el valor caigan en columna */
+.tile-textos {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  gap: 4px; /* Separación vertical sutil idéntica a la imagen */
+}
+
+/* Estilo horizontal continuo para que el valor fuerte se lea al lado de la etiqueta si van acoplados */
+.tile-info strong {
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+  display: inline-block;
+}
+
+.tile-label {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Pequeño texto secundario de los meses restantes */
+.tile-subtexto {
+  color: var(--slate-500);
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+
+/* --- 5. BARRA DE TABLA DE AMORTIZACIÓN --- */
+.btn-tabla-amortizacion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+}
+
+.btn-tabla-amortizacion i {
+  font-size: var(--icon-main);
+  color: var(--slate-400);
+}
+
+.textos-tabla {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.textos-tabla strong {
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.textos-tabla p {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  margin: 0;
+}
+
+.flecha-link {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flecha-link i {
+  font-size: var(--icon-small) !important;
+  color: var(--slate-300);
+}
+
+
+/* --- 6. BOTONES ACCIONES DEL PIE --- */
+.acciones-detalle {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.btn-secundario, .btn-peligro {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-secundario {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.btn-peligro {
+  background-color: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+}
+
+.btn-secundario:hover, .btn-peligro:hover { opacity: 0.85; }
+.btn-secundario:active, .btn-peligro:active { transform: scale(0.99); }
+
+/* ==========================================================================
+   VISTA: EDITAR PASIVO (REPARACIÓN DE DOBLE COLUMNA Y REJILLAS COMPLETA)
+   ========================================================================== */
+
+/* 1. ACTIVAR LA DOBLE COLUMNA DE LA IMAGEN ORIGINAL */
+.seccion-edicion {
+  display: flex;
+  gap: 40px; /* Espacio limpio entre el formulario y el panel derecho */
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* El bloque izquierdo toma el espacio restante de la pantalla */
+.seccion-edicion .bloque-formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* 2. CORRECCIÓN DEL BANNER SUPERIOR INTERNO */
+.banner-edicion {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.banner-edicion .valor-actual h3 {
+  color: var(--red) !important; /* Rojo financiero para el saldo */
+}
+
+/* 3. CORRECCIÓN DE TASA Y PLAZO (ANCHOS CORTOS Y PALABRAS ALINEADAS) */
+.grid-formulario-mitad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.input-con-sufijo {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+  overflow: hidden;
+  
+  /* Ajuste crucial: limita el tamaño horizontal exacto de la caja corta */
+  max-width: 240px; 
+  width: 100%;
+  margin-top: 12px;
+}
+
+.input-con-sufijo input {
+  background: transparent !important;
+  border: none !important;
+  padding: 16px !important;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+  outline: none;
+  width: 100% !important;
+}
+
+.sufijo-input {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Modificación del badge gris "SALDO" */
+.input-moneda .badge-activo {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--slate-700) !important;
+  color: var(--slate-400) !important;
+}
+/* ==========================================================================
+   4. CORRECCIÓN DEL TIPO DE AMORTIZACIÓN (LIMPIEZA DE EMOJIS Y ALINEACIÓN)
+   ========================================================================== */
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important; /* Mantiene 3 columnas perfectas */
+  gap: 16px;
+  margin-top: 12px;
+  width: 100%; /* Ocupa el 100% de la columna del formulario */
+  max-width: none !important; /* ELIMINA el límite para que se estiren al nivel de la fecha de abajo */
+}
+
+/* Reinicio de los mosaicos de amortización */
+.grid-categorias .categoria {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  
+  display: flex !important;
+  flex-direction: column !important; /* Fuerza el icono de Phosphor ARRIBA y el texto ABAJO */
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  gap: 8px !important;
+  padding: 24px 16px !important;
+  height: 110px; /* Alto fijo perfectamente cuadrado */
+  
+  /* REPARACIÓN CLAVE: Cancela el padding izquierdo del CSS viejo para que el texto no se ruede */
+  padding-left: 16px !important; 
+  position: relative;
+}
+
+/* ¡ELIMINA LOS EMOJIS EXTRA DE LA IZQUIERDA! */
+/* Apaga de forma estricta las inyecciones automáticas de emojis viejos en esta sección */
+.grid-categorias .categoria::before {
+  display: none !important;
+  content: "" !important;
+}
+
+/* Configuración de los iconos de tabla de Phosphor */
+.grid-categorias .categoria i {
+  font-size: var(--icon-main) !important; /* Tamaño grande y limpio */
+  color: var(--slate-400);
+  display: block !important;
+}
+
+/* Cuando la tarjeta está seleccionada (Francesa) */
+.grid-categorias .categoria.seleccionada {
+  border: 1px solid var(--sky); 
+  background-color: rgba(56, 189, 248, 0.02);
+}
+
+.grid-categorias .categoria.seleccionada i {
+  color: var(--white);
+}
+
+.nombre-cat {
+  color: var(--slate-400);
+  font-size: var(--desktop-caption); /* 13px */
+  font-weight: 600;
+}
+
+.grid-categorias .categoria.seleccionada .nombre-cat {
+  color: var(--white);
+}
+
+/* 5. PANEL LATERAL DE ESTADO ACTUAL (FIJADO ARRIBA A LA DERECHA) */
+.seccion-edicion .current-status {
+  width: 320px; /* Ancho rígido de la barra lateral */
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0; /* Prohíbe que el panel se encoja o colapse */
+}
+
+/* Limpieza del icono inyectado del panel lateral */
+.current-status__asset span.icon::before {
+  display: none !important;
+}
+
+.current-status__asset span.icon {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--icon-standard);
+  color: var(--slate-400);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-porcentaje-verde {
+  color: var(--green) !important; /* 18% pagado en verde brillante */
+}
+
+/* ==========================================================================
+   VISTA: LISTADO DE PASIVOS (AJUSTES COMPLEMENTARIOS EN GLOBAL.CSS)
+   ========================================================================== */
+
+/* --- 1. CONFIGURACIÓN DEL HERO SUPERIOR DOBLE --- */
+.hero-pasivos-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* El bloque de totales es ligeramente más ancho */
+  gap: 24px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+/* Tarjeta izquierda: Total Pasivos */
+.hero-total-pasivos {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* El sutil círculo decorativo morado de fondo que se ve en la captura */
+.hero-total-pasivos::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.08) 0%, rgba(7, 9, 32, 0) 70%);
+  border-radius: 50%;
+}
+
+.etiqueta-hero-pasivo {
+  color: var(--slate-400);
+  font-size: var(--desktop-small); /* 12px */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.valor-hero-pasivo {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h1); /* 40px */
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Tarjeta derecha: Índice de Endeudamiento */
+.card-indice-endeudamiento {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.etiqueta-indice {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-indice-datos {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.valor-indice {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h1); /* 40px */
+  color: var(--amber); /* Resaltado en color amarillo/naranja moderado */
+  font-weight: 700;
+  margin: 0;
+}
+
+.barra-progreso-indice {
+  background-color: var(--slate-700);
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barra-progreso-indice .relleno-indice {
+  background-color: var(--amber); /* Relleno amarillo moderado */
+  height: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.ayuda-indice {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 500;
+}
+
+
+/* --- 2. REFINAMIENTO DE LAS TARJETAS DE PASIVOS (.PASIVO-CARD) --- */
+.pasivo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px !important; /* Mantiene la separación vertical exacta interna */
+}
+
+/* El saldo pendiente hereda de tus valores pero forzamos estilos apilados hacia abajo */
+.valor-card-pasivo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.valor-card-pasivo strong {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h3); /* 22px */
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* --- NUEVO COMPONENTE: BARRA DE PROGRESO DE PAGO INTERNA --- */
+.progreso-pago-pasivo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.textos-progreso-pasivo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--desktop-small); /* 12px */
+}
+
+.textos-progreso-pasivo span {
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+/* El porcentaje flotante en verde azulado a la derecha */
+.textos-progreso-pasivo strong {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.barra-progreso-mini {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barra-progreso-mini .relleno-mini {
+  background-color: var(--green); /* Barra de progreso interna verde */
+  height: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Acomodo del badge Inactivo abajo a la izquierda para el elemento vacío */
+.estado-card-inactivo {
+  font-size: var(--desktop-small);
+  color: var(--slate-500);
+  font-weight: 600;
+  margin-top: 4px;
+}
+/* ==========================================================================
+   CORRECCIÓN: SEPARAR EL BOTÓN FAB DE LA ÚLTIMA TARJETA
+   ========================================================================== */
+
+/* 1. Le da un colchón de espacio abajo a la rejilla de tarjetas para que no choquen */
+.lista-activos {
+  margin-bottom: 80px !important; /* Añade un espacio libre de 80px al fondo de la página */
+}
+
+/* 2. Asegura que el botón flote libremente abajo a la derecha en su esquina */
+.fab-principal {
+  bottom: 40px !important;   /* Separación del borde inferior de la ventana */
+  right: 40px !important;    /* Separación del borde derecho de la ventana */
+  z-index: 999 !important;   /* Se asegura de flotar por encima de todas las tarjetas */
+}
+
+/* ==========================================================================
+   CSS EXCLUSIVO: REGISTRAR PASIVO (CLASES CON PREFIJO AISLADO "REG-PASIVO")
+   ========================================================================== */
+
+/* Distribución del layout en dos grandes columnas paralelas */
+.reg-pasivo-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.reg-pasivo-col-formulario {
+  flex: 1;
+}
+
+.reg-pasivo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Quita estilos nativos de fieldset */
+.reg-pasivo-bloque {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos de cada bloque (INFORMACIÓN GENERAL, VALORES, etc.) */
+.reg-pasivo-seccion-titulo {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.reg-pasivo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.reg-pasivo-label {
+  color: var(--slate-400);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.reg-pasivo-ayuda {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin-top: 4px;
+  display: block;
+}
+
+/* Inputs de texto largos estándar */
+.reg-pasivo-input-texto {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  color: var(--white);
+  padding: 16px;
+  border-radius: 10px;
+  font-size: var(--desktop-body);
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.reg-pasivo-input-texto:focus {
+  border-color: var(--indigo);
+}
+
+/* --- REJILLA DE CATEGORÍAS (COLUMNAS EN FILAS DE TRES) --- */
+.reg-pasivo-grid-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.reg-pasivo-btn-cat {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.reg-pasivo-btn-cat i {
+  font-size: var(--icon-standard);
+  color: var(--slate-400);
+}
+
+.reg-pasivo-cat-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reg-pasivo-cat-nom {
+  color: var(--white);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+}
+
+.reg-pasivo-cat-tipo {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 500;
+}
+
+/* Estado seleccionado de Crédito Vehículo */
+.reg-pasivo-btn-cat.seleccionada {
+  border: 1px solid rgba(248, 113, 113, 0.3); /* Borde rojo pasivo sutil */
+  background-color: rgba(248, 113, 113, 0.02);
+}
+
+.reg-pasivo-btn-cat.seleccionada i {
+  color: var(--red);
+}
+
+/* --- SECCIÓN DE VALORES Y TÉRMINOS (FILAS PARTIDAS) --- */
+.reg-pasivo-fila-mitad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Barra contenedora larga de montos */
+.reg-pasivo-input-barra-larga {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.reg-pasivo-recuadro-monto {
+  background-color: rgba(7, 9, 32, 0.4);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  width: 240px;
+  gap: 12px;
+}
+
+.reg-pasivo-recuadro-monto span {
+  color: var(--slate-400);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+}
+
+.reg-pasivo-recuadro-monto input {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: var(--desktop-body);
+  font-weight: 700;
+  width: 100%;
+  outline: none;
+}
+
+/* Badges del extremo de los montos */
+.reg-pasivo-badge-gris, .reg-pasivo-badge-rojo {
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.reg-pasivo-badge-gris {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  color: var(--slate-400);
+}
+
+.reg-pasivo-badge-rojo {
+  background-color: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+}
+
+/* Cajas cortas con sufijo integrado (% MV / meses) */
+.reg-pasivo-input-sufijo {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+  overflow: hidden;
+  max-width: 240px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.reg-pasivo-input-sufijo input {
+  background: transparent;
+  border: none;
+  padding: 16px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+  outline: none;
+  width: 100%;
+}
+
+.reg-pasivo-texto-sufijo {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- TIPO DE AMORTIZACIÓN (MOSAICOS VERTICALES EN FILA DE 3) --- */
+.reg-pasivo-grid-amortizacion {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.reg-pasivo-btn-amort {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  gap: 10px !important;
+  padding: 24px 16px !important;
+  height: 110px;
+}
+
+.reg-pasivo-btn-amort i {
+  font-size: var(--icon-main) !important;
+  color: var(--slate-400);
+}
+
+.reg-pasivo-amort-nom {
+  color: var(--slate-400);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+}
+
+.reg-pasivo-btn-amort.seleccionada {
+  border: 1px solid var(--indigo);
+  background-color: rgba(129, 140, 248, 0.02);
+}
+
+.reg-pasivo-btn-amort.seleccionada i { color: var(--white); }
+.reg-pasivo-btn-amort.seleccionada .reg-pasivo-amort-nom { color: var(--white); }
+
+/* Input con icono de calendario */
+.reg-pasivo-input-icono-izq {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--slate-700);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.reg-pasivo-input-icono-izq i {
+  color: var(--slate-400);
+  font-size: var(--icon-standard);
+}
+
+.reg-pasivo-input-icono-izq input {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--desktop-body);
+  font-weight: 600;
+  outline: none;
+  width: 100%;
+}
+
+/* --- FILA DE BOTONES DE ACCIÓN COMPLETA (AL 100% HORIZONTAL) --- */
+.reg-pasivo-fila-botones {
+  display: flex !important;
+  width: 100% !important;
+  gap: 24px !important;
+  margin-top: 12px !important;
+}
+
+.reg-pasivo-btn-cancelar, .reg-pasivo-btn-guardar {
+  flex: 1 !important;
+  width: 100% !important;
+  font-family: var(--font-body);
+  font-size: var(--desktop-caption);
+  font-weight: 600;
+  padding: 16px !important;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+  box-sizing: border-box !important;
+}
+
+.reg-pasivo-btn-cancelar {
+  background: var(--bg-card);
+  color: var(--slate-400);
+}
+
+.reg-pasivo-btn-cancelar:hover { color: var(--white); }
+
+.reg-pasivo-btn-guardar {
+  background-color: var(--indigo);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.3);
+}
+
+.reg-pasivo-btn-guardar:hover { background-color: var(--violet); }
+.reg-pasivo-btn-cancelar:active, .reg-pasivo-btn-guardar:active { transform: scale(0.99); }
+
+
+/* --- 3. PANEL LATERAL DE VISTA PREVIA DERECHO --- */
+.reg-pasivo-panel-previa {
+  width: 320px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.reg-pasivo-previa-header h2 {
+  color: var(--red); /* Título VISTA PREVIA en rojo pasivo sutil */
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.reg-pasivo-previa-contenido {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-pasivo-previa-icono {
+  font-size: var(--icon-standard);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--slate-400);
+}
+
+.reg-pasivo-previa-contenido h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--white);
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+
+.reg-pasivo-previa-subtipo {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 16px;
+}
+
+.reg-pasivo-previa-label {
+  color: var(--slate-500);
+  font-size: var(--desktop-small);
+  margin-bottom: 4px;
+}
+
+/* Monto destacado en color rojo pasivo perimetral */
+.reg-pasivo-previa-monto-rojo {
+  font-family: var(--font-heading);
+  font-size: var(--desktop-h2); /* 28px */
+  color: var(--red); 
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.reg-pasivo-previa-cuota {
+  font-size: var(--desktop-body);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.reg-pasivo-previa-pie {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+}
+
+.reg-pasivo-previa-pie p {
+  color: var(--slate-500);
+  font-size: var(--desktop-caption);
+  line-height: 1.5;
+}
+

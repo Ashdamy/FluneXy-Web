@@ -1,69 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Pasivo | FluneXy</title>
+    <title>Desactivar pasivo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
 </head>
+
 <body>
     <aside class="barra-lateral">
         <div class="logo-barra">FluneXy</div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
-            <a href="../home-dashboard/home.html"><span class="icono-nav">🏠</span> Inicio</a>
-            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav">↔️</span> Movimientos</a>
-            <a href="../fondos/mis-fondos.html"><span class="icono-nav">👛</span> Fondos</a>
+            <a href="../home-dashboard/home.html"><i class="ph ph-house icono-nav"></i> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><i class="ph ph-arrows-left-right icono-nav"></i>
+                Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><i class="ph ph-wallet icono-nav"></i> Fondos</a>
         </nav>
         <span class="etiqueta-seccion">GESTIÓN</span>
         <nav class="navegacion-barra">
-            <a href="../activos/mis-activos.html"><span class="icono-nav">📄</span> Activos</a>
-            <a href="../pasivos/mis-pasivos.html" class="activo"><span class="icono-nav">💳</span> Pasivos</a>
-            <a href="../metas/mis-metas.html"><span class="icono-nav">🎯</span> Metas</a>
-            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav">🔁</span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav">🧾</span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav">💸</span> Pagos</a>
+            <a href="../activos/activos-vacio.html"><i class="ph ph-file-text icono-nav"></i> Activos</a>
+            <a href="../pasivos/mis-pasivos.html" class="activo"><i class="ph ph-credit-card icono-nav"></i> Pasivos</a>
+            <a href="../metas/mis-metas.html"><i class="ph ph-target icono-nav"></i> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><i class="ph ph-arrows-counter-clockwise icono-nav"></i>
+                Plantillas</a>
+            <a href="../cuotas/tabla-cuotas.html"><i class="ph ph-receipt icono-nav"></i> Cuotas</a>
+            <a href="../pagos/Historial-pagos.html"><i class="ph ph-hand-coins icono-nav"></i> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
-            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav">📊</span> Balance financiero</a>
-            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav">📈</span> Indicadores</a>
-            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav">💵</span> Flujo de caja</a>
-            <a href="../alertas/lista-alertas.html"><span class="icono-nav">🔔</span> Alertas<span class="contador-notificacion">3</span></a>
-            <a href="../reportes/generar-reporte.html"><span class="icono-nav">📋</span> Reportes</a>
+            <a href="../balance-financiero/balance-financiero.html"><i class="ph ph-chart-bar icono-nav"></i> Balance
+                financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><i class="ph ph-trend-up icono-nav"></i>
+                Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><i class="ph ph-money icono-nav"></i> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><i class="ph ph-bell icono-nav"></i> Alertas<span
+                    class="contador-notificacion">3</span></a>
+            <a href="../reportes/generar-reporte.html"><i class="ph ph-clipboard-text icono-nav"></i> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
         <nav class="navegacion-barra">
-            <a href="../asistente/asistente.html"><span class="icono-nav">🤖</span> Asistente inteligente</a>
-            <a href="#"><span class="icono-nav">⚙️</span> Configuración</a>
-            <a href="../usuario/mi-perfil.html"><span class="icono-nav">👤</span> Mi perfil</a>
+            <a href="../asistente/asistente.html"><i class="ph ph-robot icono-nav"></i> Asistente inteligente</a>
+            <a href="#"><i class="ph ph-gear icono-nav"></i> Configuración</a>
+            <a href="../usuario/mi-perfil.html"><i class="ph ph-user icono-nav"></i> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav">🚪</span> Cerrar sesión</a>
+        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><i class="ph ph-door-open icono-nav"></i>
+            Cerrar
+            sesión</a>
     </aside>
-    <dialog class="modal-desactivar-meta" open>
-        <article class="contenedor-modal">
-            <header class="encabezado-modal">
-                <div class="informacion-meta">
-                    <div class="icono-meta"><img src="" alt="Pasivo"></div>
-                    <div class="detalle-meta">
-                        <h2>Tarjeta de Crédito · Banco ABC · -$2,500,000</h2>
+    <main class="contenido-principal">
+
+        <!-- ... Aquí va todo tu contenido normal de la página de Activos ... -->
+        <!-- (El encabezado, la tarjeta de valor total, el buscador y las tarjetas de la lista) -->
+
+        <!-- CAPA OSCURA QUE CUBRE TODA LA PANTALLA -->
+        <div class="overlay-modal">
+            <!-- CUADRO CENTRAL (EL MODAL) -->
+            <div class="sheet-modal">
+
+                <!-- Tarjeta superior compacta del activo -->
+                <article class="tarjeta-min-activo">
+                    <div class="bloque-izq-min">
+                        <div class="icono-min">🏠</div>
+                        <div class="info-min">
+                            <h3>Crédito Moto NKD</h3>
+                            <span>Crédito Vehículo · Amort. Francesa</span>
+                        </div>
+                    </div>
+                    <strong class="monto-min">-$8.200.000</strong>
+                </article>
+
+                <!-- Bloque de advertencia central -->
+                <div class="contenido-desactivar">
+                    <div class="icono-warning">⚠️</div>
+                    <h2>¿Desactivar pasivo?</h2>
+                    <p class="descripcion-desactivar">
+                        El pasivo Crédito Moto NKD dejará de participar en los cálculos financieros futuros, pero
+                        conservará su historial de cuotas y pagos para consulta.
+                    </p>
+
+                    <!-- Caja de advertencia de color ámbar -->
+                    <div class="caja-advertencia">
+                        <span class="icono-alerta">⚠️</span>
+                        <p class="texto-alerta">El total de pasivos disminuirá en $8.200.000 y el Patrimonio Neto será
+                            recalculado. Las cuotas pendientes quedarán inactivas.</p>
+                    </div>
+
+                    <!-- Botones inferiores -->
+                    <div class="acciones-modal">
+                        <button type="button" class="btn-cancelar"
+                            onclick="location.href='mis-activos.html'">Cancelar</button>
+                        <button type="button" class="btn-desactivar">Desactivar</button>
                     </div>
                 </div>
-            </header>
-            <section class="contenido-modal">
-                <div class="icono-advertencia"><img src="" alt="Advertencia"></div>
-                <h3>¿Eliminar pasivo?</h3>
-                <p>Esta acción eliminará esta deuda de tu lista de pasivos.</p>
-            </section>
-            <section class="mensaje-advertencia">
-                <p>Esta acción no se puede deshacer. El pasivo dejará de aparecer en tu lista.</p>
-            </section>
-            <footer class="acciones">
-                <button type="button" class="boton-primario">Cancelar</button>
-                <button type="button" class="boton-peligro">Eliminar</button>
-            </footer>
-        </article>
-    </dialog>
+
+            </div>
+        </div>
+    </main>
+
 </body>
+
 </html>
