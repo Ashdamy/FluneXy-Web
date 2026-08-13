@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Plantilla</title>
+    <title>Editar Plantilla | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-plantilla-form mod-plantilla-editar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -48,90 +56,74 @@
                 <p>Ajusta la configuración del movimiento automático</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="resumen-plantilla">
-            <div class="informacion-plantilla">
-                <small>Editando</small>
-                <h2>Arriendo</h2>
+        <section class="edit-banner-plantilla">
+            <div class="icono-franja"><i class="ph ph-house"></i></div>
+            <div class="info-franja">
+                <span class="etiqueta-franja">EDITANDO</span>
+                <strong class="nombre-franja">Arriendo</strong>
             </div>
-            <div class="monto-actual">
-                <p>Monto actual</p>
-                <strong>-$1,200,000</strong>
+            <div class="saldo-franja">
+                <span class="label-saldo-franja">Monto actual</span>
+                <strong class="monto-saldo-franja">-$1.200.000</strong>
             </div>
         </section>
-        <section class="formulario-plantilla">
-            <section class="datos-principales">
-                <div class="monto">
-                    <h3>Monto</h3>
-                    <strong>$1,200,000</strong>
-                    <small>Gasto</small>
-                </div>
-                <div class="categorias">
-                    <h3>Categoría</h3>
-                    <div class="lista-categorias">
-                        <div class="categoria">
-                            <h4>Vivienda</h4>
-                        </div>
-                        <div class="categoria">
-                            <h4>Servicios</h4>
-                        </div>
-                        <div class="categoria">
-                            <h4>Entretenimiento</h4>
-                        </div>
-                        <div class="categoria">
-                            <h4>Servicios Públicos</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="recurrencia">
-                    <h3>Recurrencia</h3>
-                    <div class="opciones-recurrencia">
-                        <button type="button">Mensual</button>
-                        <button type="button">Quincenal</button>
-                        <button type="button">Semanal</button>
-                    </div>
-                </div>
-            </section>
-            <section class="configuracion">
-                <div class="dia-ejecucion">
-                    <h3>Día de ejecución</h3>
-                    <div class="selector-dia">
-                        <p>Ejecutar el día</p>
-                        <button type="button">-</button>
-                        <strong>5</strong>
-                        <button type="button">+</button>
-                    </div>
-                </div>
-                <div class="vigencia">
-                    <h3>Periodo de vigencia</h3>
-                    <div class="fechas">
-                        <div>
-                            <p>Fecha inicio</p>
-                            <strong>2025-06-01</strong>
-                        </div>
-                        <div>
-                            <p>Fecha fin</p>
-                            <strong>2025-12-31</strong>
+        <div class="grid-plantilla-form">
+            <div class="col-izq-form">
+                <p class="seccion-label">MONTO</p>
+                <section class="campo-monto">
+                    <span class="prefijo-monto">$</span>
+                    <input type="text" id="monto" value="1.200.000">
+                    <span class="badge-tipo-monto gasto">GASTO</span>
+                </section>
+                <p class="seccion-label">CATEGORÍA</p>
+                <section class="opciones-categoria">
+                    <button type="button" class="cat-chip activa"><i class="ph ph-house"></i><span class="texto-chip"><strong>Vivienda</strong><small>Gasto</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-globe"></i><span class="texto-chip"><strong>Servicios</strong><small>Gasto</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-film-slate"></i><span class="texto-chip"><strong>Entretenimiento</strong><small>Gasto</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-lightbulb"></i><span class="texto-chip"><strong>Servicios Públicos</strong><small>Gasto</small></span></button>
+                </section>
+                <p class="seccion-label">RECURRENCIA</p>
+                <section class="rec-row">
+                    <button type="button" class="rec-opcion activo"><i class="ph ph-calendar"></i>Mensual</button>
+                    <button type="button" class="rec-opcion"><i class="ph ph-calendar-blank"></i>Quincenal</button>
+                    <button type="button" class="rec-opcion"><i class="ph ph-calendar-blank"></i>Semanal</button>
+                </section>
+            </div>
+            <div class="col-der-form">
+                <p class="seccion-label">DÍA DE EJECUCIÓN</p>
+                <section class="day-box">
+                    <span class="day-texto">Ejecutar el día</span>
+                    <button type="button" class="stepper-btn">−</button>
+                    <strong class="day-valor">5</strong>
+                    <button type="button" class="stepper-btn">+</button>
+                </section>
+                <p class="seccion-label">PERIODO DE VIGENCIA</p>
+                <section class="fila-fechas">
+                    <div class="grupo-fecha">
+                        <span class="label-fecha">FECHA INICIO</span>
+                        <div class="date-box">
+                            <i class="ph ph-calendar"></i>
+                            <input type="text" id="fecha-inicio" value="2025-06-01">
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="grupo-fecha">
+                        <span class="label-fecha">FECHA FIN</span>
+                        <div class="date-box">
+                            <i class="ph ph-calendar"></i>
+                            <input type="text" id="fecha-fin" value="2025-12-31">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='detalle-plantilla.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-plantillas.html'"><i class="ph ph-floppy-disk"></i>Guardar Cambios</button>
         </section>
-        <footer class="acciones">
-            <button type="button" class="boton-secundario">
-                Cancelar
-            </button>
-            <button type="button" class="boton-primario">
-                Guardar Cambios
-            </button>
-        </footer>
     </main>
 </body>
 </html>

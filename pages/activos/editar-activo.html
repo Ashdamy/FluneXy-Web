@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Activo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-activo-form mod-activo-editar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -39,74 +47,123 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <div class="encabezado-contenido">
-            <a href="mis-activos.html" class="volver"><i class="ph ph-arrow-left"></i> Volver</a>
-            <h1>Editar Activo</h1>
-            <p>Actualiza la información de tu bien</p>
-        </div>
-        <section class="banner-edicion">
-            <span><i class="ph ph-house"></i></span>
-            <div>
-                <span class="editando-label">Editando</span>
-                <strong>Casa Principal</strong>
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Editar Activo</h1>
+                <p>Actualiza la información de tu bien</p>
             </div>
-            <div class="valor-actual">
-                <span>Valor actual</span>
-                <strong>$180.000.000</strong>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
+        </header>
+        <section class="activo-form-layout">
+            <div class="activo-form-col">
+                <section class="franja-edicion">
+                    <div class="icono-franja"><i class="ph ph-house"></i></div>
+                    <div class="info-franja">
+                        <span class="etiqueta-franja">Editando</span>
+                        <strong class="nombre-franja">Casa Principal</strong>
+                    </div>
+                    <div class="saldo-franja">
+                        <span class="label-saldo-franja">Valor actual</span>
+                        <strong class="monto-saldo-franja">$180.000.000</strong>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-nombre">
+                    <label for="nombre">NOMBRE DEL ACTIVO</label>
+                    <input type="text" id="nombre" value="Casa Principal">
+                </section>
+                <section class="grupo-campo campo-categoria">
+                    <label for="categoria">CATEGORÍA</label>
+                    <div class="opciones-tipo">
+                        <button type="button" class="opcion-tipo activa" data-valor="vivienda">
+                            <i class="ph ph-house"></i>
+                            <span class="texto-tipo">
+                                <strong>Vivienda</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="vehiculo">
+                            <i class="ph ph-car"></i>
+                            <span class="texto-tipo">
+                                <strong>Vehículo</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="inversiones">
+                            <i class="ph ph-trend-up"></i>
+                            <span class="texto-tipo">
+                                <strong>Inversiones</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="ahorro">
+                            <i class="ph ph-piggy-bank"></i>
+                            <span class="texto-tipo">
+                                <strong>Ahorro</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="negocio">
+                            <i class="ph ph-storefront"></i>
+                            <span class="texto-tipo">
+                                <strong>Negocio</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="otros">
+                            <i class="ph ph-dots-three-outline"></i>
+                            <span class="texto-tipo">
+                                <strong>Otros</strong>
+                                <small>Activo</small>
+                            </span>
+                        </button>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-valor">
+                    <label for="valor">VALOR DEL ACTIVO</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="valor" value="180.000.000">
+                        <span class="badge-campo">ACTIVO</span>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-fecha-activo">
+                    <label for="fecha">FECHA DE ACTUALIZACIÓN</label>
+                    <div class="campo-fecha-activo-input">
+                        <i class="ph ph-calendar"></i>
+                        <input type="text" id="fecha" value="2025-06-03">
+                    </div>
+                </section>
+            </div>
+            <aside class="activo-panel-previa">
+                <div class="activo-previa-header">
+                    <h2>ESTADO ACTUAL</h2>
+                </div>
+                <div class="activo-previa-contenido">
+                    <div class="activo-previa-fila-icono">
+                        <span class="activo-previa-icono"><i class="ph ph-house"></i></span>
+                        <div class="activo-previa-titular">
+                            <h3>Casa Principal</h3>
+                            <span class="activo-previa-subtipo">Vivienda · Activo</span>
+                        </div>
+                    </div>
+                    <hr class="activo-previa-divider">
+                    <span class="activo-previa-label">Registrado</span>
+                    <strong class="activo-previa-fecha">12 Ene 2025</strong>
+                    <span class="activo-previa-label">Participación en patrimonio</span>
+                    <strong class="activo-previa-monto">76% del total</strong>
+                </div>
+            </aside>
         </section>
-        <form class="formulario">
-            <label class="label-form" for="nombre">NOMBRE DEL ACTIVO</label>
-            <input type="text" id="nombre" class="input-form" value="Casa Principal">
-            <label class="label-form">CATEGORÍA</label>
-            <div class="grid-categorias">
-                <button type="button" class="categoria seleccionada">
-                    <span><i class="ph ph-house"></i></span>
-                    <span>Vivienda</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-car"></i></span>
-                    <span>Vehículo</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-chart-line-up"></i></span>
-                    <span>Inversión</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-money"></i></span>
-                    <span>Ahorro</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-storefront"></i></span>
-                    <span>Negocio</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-buildings"></i></span>
-                    <span>Propiedad</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-            </div>
-            <label class="label-form" for="valor">VALOR DEL ACTIVO</label>
-            <div class="input-moneda">
-                <span>$</span>
-                <input type="text" id="valor" value="180.000.000">
-                <span class="badge-activo">ACTIVO</span>
-            </div>
-            <label class="label-form" for="fecha">FECHA DE ACTUALIZACIÓN</label>
-            <div class="input-icono">
-                <span><i class="ph ph-calendar"></i></span>
-                <input type="text" id="fecha" value="2025-06-03">
-            </div>
-            <button type="submit" class="btn-guardar">Guardar Cambios</button>
-        </form>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-activos.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-activos.html'"><i class="ph ph-floppy-disk"></i>Guardar Cambios</button>
+        </section>
     </main>
 </body>
 </html>

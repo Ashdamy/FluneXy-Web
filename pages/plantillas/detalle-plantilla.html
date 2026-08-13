@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Plantilla</title>
+    <title>Detalle de Plantilla | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-plantilla-detalle">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,101 +42,100 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Arriendo</h1>
-                <p>Detalle de la plantilla · Vivienda</p>
+                <p>Detalle de la plantilla · VIVIENDA</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="resumen-plantilla">
-            <div class="informacion-plantilla">
-                <h2>Arriendo</h2>
-                <small>Gasto Recurrente</small>
+        <section class="hero-card-plantilla">
+            <div class="bloque-izquierdo-hero">
+                <div class="icono-hero"><i class="ph ph-house"></i></div>
+                <div class="info-nombre-hero">
+                    <h2 class="nombre-hero">Arriendo</h2>
+                    <span class="badge-tipo-plantilla"><i class="ph ph-trend-down"></i>Gasto Recurrente</span>
+                </div>
             </div>
-            <div class="monto-plantilla">
-                <p>Monto por ejecución</p>
-                <strong>-$1,200,000</strong>
+            <div class="contenedor-monto-hero">
+                <span class="label-hero">MONTO POR EJECUCIÓN</span>
+                <strong class="monto-hero-plantilla">-$1.200.000</strong>
             </div>
-            <div class="estado-plantilla">
-                <small>Activa</small>
-            </div>
+            <span class="chip-estado">
+                <span class="punto"></span>
+                Activa
+            </span>
         </section>
-        <section class="proxima-ejecucion">
-            <div>
-                <h3>Próxima ejecución</h3>
-                <p>Lunes, 5 de junio 2025</p>
+        <section class="next-exec-banner">
+            <div class="bloque-ejec">
+                <div class="info-ejec">
+                    <span class="label-ejec">Próxima ejecución</span>
+                    <strong>Lunes, 5 de junio 2025</strong>
+                </div>
             </div>
-            <div>
+            <div class="cuenta-ejec">
                 <strong>2</strong>
-                <small>días</small>
+                <span>días</span>
             </div>
         </section>
-        <section class="ultima-ejecucion">
-            <div>
-                <h3>Última ejecución fallida</h3>
-                <p>Saldo insuficiente en Bancolombia · 5 Jun 2025</p>
+        <section class="fail-exec-banner">
+            <i class="ph ph-warning"></i>
+            <div class="info-fail">
+                <span class="label-fail">ÚLTIMA EJECUCIÓN FALLIDA</span>
+                <strong>Saldo insuficiente en Bancolombia · 5 Jun 2025</strong>
             </div>
         </section>
         <section class="informacion-plantilla">
-            <header class="encabezado-seccion">
-                <h3>Información</h3>
-            </header>
-            <div class="informacion-detalle">
-                <div class="informacion">
-                    <p>Categoría</p>
+            <span class="seccion-label">INFORMACIÓN</span>
+            <div class="grid-info-plantilla">
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">CATEGORÍA</span>
                     <strong>Vivienda</strong>
                 </div>
-                <div class="informacion">
-                    <p>Recurrencia</p>
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">RECURRENCIA</span>
                     <strong>Mensual</strong>
                 </div>
-                <div class="informacion">
-                    <p>Día ejecución</p>
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">DÍA EJECUCIÓN</span>
                     <strong>Día 5 · de cada mes</strong>
                 </div>
-                <div class="informacion">
-                    <p>Ejecuciones</p>
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">EJECUCIONES</span>
                     <strong>6 / 7 completadas</strong>
                 </div>
-                <div class="informacion">
-                    <p>Fecha inicio</p>
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">FECHA INICIO</span>
                     <strong>1 Jun 2025</strong>
                 </div>
-                <div class="informacion">
-                    <p>Fecha fin</p>
+                <div class="tile-info-plantilla">
+                    <span class="tile-label">FECHA FIN</span>
                     <strong>31 Dic 2025</strong>
                 </div>
             </div>
         </section>
-        <section class="total-periodo">
-            <p>Total automatizado en el periodo</p>
-            <strong>$8,400,000</strong>
-            <small>7 ejecuciones × $1,200,000</small>
+        <section class="tile-total-plantilla">
+            <div class="bloque-total">
+                <span class="label-total">TOTAL AUTOMATIZADO EN EL PERIODO</span>
+                <strong>$8.400.000</strong>
+            </div>
+            <small>7 ejecuciones × $1.200.000</small>
         </section>
-        <footer class="acciones">
-            <button type="button" class="boton-secundario">
-                Editar Plantilla
-            </button>
-            <button type="button" class="boton-peligro">
-                Desactivar Plantilla
-            </button>
-        </footer>
+        <div class="acciones-detalle">
+            <button type="button" class="btn-editar-plantilla" onclick="location.href='editar-plantilla.html'"><i class="ph ph-pencil-simple"></i>Editar Plantilla</button>
+            <button type="button" class="btn-desactivar-plantilla" onclick="location.href='desactivar-plantilla.html'"><i class="ph ph-warning"></i>Desactivar Plantilla</button>
+        </div>
     </main>
 </body>
 </html>

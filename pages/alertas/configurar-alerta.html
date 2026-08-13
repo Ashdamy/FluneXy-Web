@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-alertas mod-alertas-configurar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -41,67 +47,85 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Configurar Alerta</h1>
-                <p>Define las condiciones de tu notificación</p>
+                <h1>Nueva Alerta</h1>
+                <p>Define cuándo quieres recibir un aviso</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
+                    <span>A</span>
                 </button>
             </div>
         </header>
-        <section class="formulario-alerta">
-            <div class="grupo-formulario">
-                <label>Tipo de alerta</label>
-                <div class="opciones-alerta">
-                    <button type="button" class="tarjeta-opcion seleccionado">
-                        <span class="icono-opcion"><i class="ph ph-credit-card"></i></span>
-                        <span class="texto-opcion">Gasto</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion"><i class="ph ph-calendar"></i></span>
-                        <span class="texto-opcion">Vencimiento</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion"><i class="ph ph-target"></i></span>
-                        <span class="texto-opcion">Meta</span>
-                    </button>
-                    <button type="button" class="tarjeta-opcion">
-                        <span class="icono-opcion"><i class="ph ph-pencil"></i></span>
-                        <span class="texto-opcion">Personalizada</span>
-                    </button>
+
+        <div class="alerta-config-layout">
+            <div class="alerta-config-form">
+                <p class="campo-label">TIPO DE ALERTA</p>
+                <div class="alerta-input">
+                    <span><i class="ph ph-chart-line-down"></i></span>
+                    Endeudamiento
+                    <i class="ph ph-caret-down" style="margin-left:auto"></i>
+                </div>
+                <p class="campo-ayuda">Elige qué aspecto financiero quieres monitorear</p>
+
+                <p class="campo-label">UMBRAL DE ALERTA (%)</p>
+                <div class="alerta-input alerta-input-monto">
+                    <span class="simbolo">≥</span>
+                    <span class="valor">35</span>
+                    <span class="badge-meta">META</span>
+                </div>
+                <p class="campo-ayuda">El sistema notificará al superar este umbral</p>
+
+                <p class="campo-label">ESTADO DE LA ALERTA</p>
+                <div class="alerta-input alerta-input-toggle">
+                    <span class="punto-on"></span>
+                    ON · Notificaciones Activas
+                </div>
+                <p class="campo-ayuda">Actívala para empezar a recibir notificaciones</p>
+
+                <p class="campo-label">TIPO DE INDICADOR A MONITOREAR</p>
+                <div class="fund-row">
+                    <div class="fund-card seleccionada">
+                        <strong>Endeudamiento</strong>
+                        <span>Seleccionado</span>
+                        <span class="check"><i class="ph ph-check"></i></span>
+                    </div>
+                    <div class="fund-card">
+                        <strong>Liquidez</strong>
+                        <span>Monitorear</span>
+                    </div>
+                    <div class="fund-card">
+                        <strong>Gasto Mensual</strong>
+                        <span>Monitorear</span>
+                    </div>
+                </div>
+                <p class="campo-ayuda">Selecciona el aspecto financiero a monitorear</p>
+            </div>
+
+            <div class="alerta-config-extra">
+                <div class="calc-card">
+                    <div class="calc-icono"><i class="ph ph-bell"></i></div>
+                    <span class="calc-vista">VISTA PREVIA</span>
+                    <span class="calc-ayuda">Se activará cuando</span>
+                    <strong class="calc-monto">Endeudamiento ≥ 35%</strong>
+                    <span class="calc-texto">Recibirás una notificación push al superar el umbral</span>
+                </div>
+                <div class="info-chips">
+                    <span class="info-chip indigo">Activa</span>
+                    <span class="info-chip rojo">Riesgo alto</span>
+                    <span class="info-chip violeta">Tiempo real</span>
                 </div>
             </div>
-            <div class="grupo-formulario">
-                <label>Condición</label>
-                <select class="campo-select">
-                    <option>Superar el 80% del presupuesto</option>
-                    <option>Superar el 50% del presupuesto</option>
-                    <option>Alcanzar el límite de gasto</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label>Mensaje de la alerta</label>
-                <textarea class="campo-textarea" rows="3" placeholder="Escribe el mensaje de la alerta...">Has alcanzado el 80% de tu presupuesto mensual en Alimentación</textarea>
-            </div>
-            <div class="grupo-formulario">
-                <label class="alternancia-label">
-                    <input type="checkbox" class="alternancia-checkbox" checked>
-                    <span>Activar alerta inmediatamente</span>
-                </label>
-            </div>
-        </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Alerta</button>
-        </section>
-    </main>  </body>
+        </div>
+
+        <button type="button" class="btn-guardar-alerta" onclick="location.href='lista-alertas.html'">Guardar Alerta</button>
+    </main>
+</body>
 </html>

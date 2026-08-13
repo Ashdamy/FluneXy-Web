@@ -1,15 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desactivar Plantilla | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-plantillas">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,47 +41,41 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <dialog class="modal-desactivar-plantilla" open>
-            <article class="contenedor-modal">
-                <header class="encabezado-modal">
-                    <section class="informacion-plantilla">
-                        <span class="icono"></span>
-                        <div>
-                            <h2>Arriendo</h2>
-                            <p>Vivienda · Gasto</p>
+        <div class="overlay-modal">
+            <div class="sheet-modal">
+                <div class="preview-card">
+                    <div class="bloque-izq-preview">
+                        <div class="icono-preview"><i class="ph ph-house"></i></div>
+                        <div class="info-preview">
+                            <h3>Arriendo</h3>
+                            <span>Vivienda · Gasto</span>
                         </div>
-                        <strong>-$1,200,000</strong>
-                    </section>
-                </header>
-                <section class="contenido-modal">
-                    <span class="icono"></span>
+                    </div>
+                    <strong class="monto-preview" style="color:var(--red)">-$1.200.000</strong>
+                </div>
+                <div class="contenido-desactivar">
+                    <div class="icono-warning"><i class="ph ph-warning"></i></div>
                     <h2>¿Desactivar plantilla?</h2>
-                    <p>
-                        La plantilla Arriendo dejará de generar movimientos automáticos,
-                        pero conservará su historial de ejecuciones completo.
-                    </p>
-                </section>
-                <section class="mensaje-advertencia">
-                    <span class="icono"></span>
-                    <p>
-                        La próxima ejecución programada será cancelada.
-                        Podrás reactivar la plantilla en cualquier momento.
-                    </p>
-                </section>
-                <footer class="acciones">
-                    <button type="button" class="boton-secundario">Cancelar</button>
-                    <button type="button" class="boton-peligro">Desactivar</button>
-                </footer>
-            </article>
-        </dialog>
+                    <p class="descripcion-desactivar">La plantilla Arriendo dejará de generar movimientos automáticos, pero conservará su historial de ejecuciones completo.</p>
+                </div>
+                <div class="caja-advertencia">
+                    <span class="icono-alerta"><i class="ph ph-warning"></i></span>
+                    <span class="texto-alerta">La próxima ejecución programada será cancelada. Podrás reactivar la plantilla en cualquier momento.</span>
+                </div>
+                <div class="acciones-modal">
+                    <button type="button" class="btn-cancelar" onclick="location.href='mis-plantillas.html'">Cancelar</button>
+                    <button type="button" class="btn-desactivar" onclick="location.href='mis-plantillas.html'">Desactivar</button>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

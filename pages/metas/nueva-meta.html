@@ -1,17 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Meta</title>
+    <title>Nueva Meta | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-meta-form mod-meta-crear">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,79 +42,106 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Nueva Meta</h1>
-                <p>Define un nuevo objetivo de ahorro</p>
+                <p>Define un nuevo objetivo financiero</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="formulario-meta">
-            <div class="grupo-formulario">
-                <label for="nombre-meta">NOMBRE DE LA META</label>
-                <input type="text" id="nombre-meta" placeholder="Ej: Moto Nueva">
+        <section class="meta-form-layout">
+            <div class="meta-form-col">
+                <section class="grupo-campo campo-nombre">
+                    <label for="nombre-meta">Nombre de la meta</label>
+                    <input type="text" id="nombre-meta" placeholder="Moto Nueva">
+                    <small>Dale un nombre claro que te motive a cumplirla</small>
+                </section>
+                <section class="grupo-campo campo-valor">
+                    <label for="monto-meta">Monto objetivo</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="monto-meta" placeholder="12.000.000">
+                        <span class="badge-campo">META</span>
+                    </div>
+                    <small>¿Cuánto dinero necesitas para cumplir esta meta?</small>
+                </section>
+                <section class="grupo-campo campo-fecha-meta">
+                    <label for="fecha-meta">Fecha objetivo</label>
+                    <div class="campo-fecha-meta-input">
+                        <i class="ph ph-calendar"></i>
+                        <input type="text" id="fecha-meta" placeholder="2025-12-31">
+                    </div>
+                    <small>¿Cuándo quieres tener el dinero completo?</small>
+                </section>
+                <section class="grupo-campo campo-fondos">
+                    <label>Fondo de ahorro</label>
+                    <div class="lista-fondos">
+                        <button type="button" class="fila-fondo activa" data-fondo="bancolombia">
+                            <i class="ph ph-bank"></i>
+                            <span class="info-fondo">
+                                <strong class="nombre-fondo">Bancolombia</strong>
+                                <small class="saldo-fondo">$2.450.000</small>
+                            </span>
+                            <i class="ph ph-check-circle check-fondo"></i>
+                        </button>
+                        <button type="button" class="fila-fondo" data-fondo="nequi">
+                            <i class="ph ph-wallet"></i>
+                            <span class="info-fondo">
+                                <strong class="nombre-fondo">Nequi</strong>
+                                <small class="saldo-fondo">$380.000</small>
+                            </span>
+                            <i class="ph ph-check-circle check-fondo"></i>
+                        </button>
+                        <button type="button" class="fila-fondo" data-fondo="efectivo">
+                            <i class="ph ph-money"></i>
+                            <span class="info-fondo">
+                                <strong class="nombre-fondo">Efectivo</strong>
+                                <small class="saldo-fondo">$150.000</small>
+                            </span>
+                            <i class="ph ph-check-circle check-fondo"></i>
+                        </button>
+                    </div>
+                </section>
             </div>
-            <div class="grupo-formulario">
-                <label for="monto-meta">MONTO OBJETIVO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="monto-meta" placeholder="0">
+            <aside class="meta-panel-previa">
+                <div class="meta-previa-header">
+                    <h2>VISTA PREVIA</h2>
                 </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="categoria-meta">CATEGORÍA</label>
-                <select id="categoria-meta">
-                    <option>Selecciona una categoría</option>
-                    <option>Viajes</option>
-                    <option>Emergencia</option>
-                    <option>Tecnología</option>
-                    <option>Vivienda</option>
-                    <option>Educación</option>
-                    <option>Otro</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fondo-asociado">FONDO ASOCIADO</label>
-                <select id="fondo-asociado">
-                    <option>Selecciona un fondo</option>
-                    <option>Fondo de Ahorro Principal</option>
-                    <option>Fondo de Emergencia</option>
-                    <option>Fondo de Viajes</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fecha-meta">FECHA LÍMITE</label>
-                <div class="campo-con-icono">
-                    <span class="icono-calendario"><i class="ph ph-calendar"></i></span>
-                    <input type="text" id="fecha-meta" placeholder="DD/MM/AAAA">
+                <div class="meta-previa-contenido">
+                    <span class="meta-previa-icono"><i class="ph ph-motorcycle"></i></span>
+                    <h3>Moto Nueva</h3>
+                    <span class="meta-previa-subtipo">META FINANCIERA</span>
+                    <hr class="meta-previa-divider">
+                    <span class="meta-previa-label">Monto objetivo</span>
+                    <strong class="meta-previa-monto">$12.000.000</strong>
+                    <span class="meta-previa-label">Ahorro mensual requerido</span>
+                    <span class="meta-previa-aporte">$1.000.000</span>
+                    <div class="meta-previa-chips">
+                        <span class="chip chip-meses">12 meses</span>
+                        <span class="chip chip-alcanzable">Alcanzable</span>
+                        <span class="chip chip-fecha">Dic 2025</span>
+                    </div>
                 </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="aporte-periodico">APORTE PERIÓDICO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="aporte-periodico" placeholder="0">
+                <div class="meta-previa-pie">
+                    <p>Esta meta se sumará a tus Objetivos Activos y aportará a tu Total Ahorrado.</p>
                 </div>
-            </div>
+            </aside>
         </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Meta</button>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-metas.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-metas.html'"><i class="ph ph-check"></i>Guardar Meta</button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FluneXy · Preguntas / Soporte</title>
+  <link rel="stylesheet" href="/assets/css/soporte.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="bg-blob bg-blob--left"></div>
+  <div class="bg-blob bg-blob--right"></div>
+
+  <main class="wrapper">
+    <div class="card">
+
+      <div class="card__header">
+        <div class="logo">
+          <img src="/media/img/logo-fluenxy.png" alt="FluneXy">
+        </div>
+      </div>
+
+      <h1 class="title">Preguntas / Soporte</h1>
+      <p class="subtitle">¿Tienes dudas sobre tu cuenta o el uso de la plataforma? Cuéntanos y te responderemos a tu correo.</p>
+
+      <form id="soporteForm" class="form" action="https://formsubmit.co/TU_CORREO@dominio.com" method="POST">
+
+        <input type="hidden" name="_subject" value="Nueva pregunta / soporte - FluneXy">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre_completo" placeholder="Ej: Juan Pérez" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div class="field">
+          <label for="pregunta">Tu pregunta</label>
+          <textarea id="pregunta" name="pregunta" rows="5" placeholder="Escribe aquí tu pregunta o el problema que presentas..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn" id="btnEnviar">
+          <span id="btnTexto">Enviar</span>
+        </button>
+
+        <p id="mensajeEstado" class="mensaje-estado"></p>
+      </form>
+
+    </div>
+  </main>
+
+  <script src="js/scritp.js"></script>
+</body>
+</html>

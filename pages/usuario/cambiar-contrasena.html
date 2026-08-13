@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
 <body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
-            <a href="../usuario/mi-perfil.html" class="activo"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -50,10 +56,10 @@
                 <p>Protege el acceso a tu cuenta</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">A</button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
 
@@ -101,7 +107,7 @@
 
         <div class="ep-acciones">
             <button type="button" class="ep-boton ep-boton-cancelar" onclick="location.href='mi-perfil.html'">Cancelar</button>
-            <button type="button" class="ep-boton ep-boton-guardar">Actualizar Contraseña</button>
+            <button type="button" class="ep-boton ep-boton-guardar" onclick="location.href='mi-perfil.html'">Actualizar Contraseña</button>
         </div>
     </main>
 </body>

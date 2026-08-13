@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Activo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-activo-detalle">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -39,25 +47,37 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <div class="encabezado-contenido">
-            <a href="mis-activos.html" class="volver"><i class="ph ph-arrow-left"></i> Volver</a>
-            <h1>Detalle del Activo</h1>
-        </div>
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Casa Principal</h1>
+                <p>Detalle del activo · VIVIENDA</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
+            </div>
+        </header>
         <section class="hero-card">
-            <div class="icono-hero"><i class="ph ph-house"></i></div>
-            <span class="badge-tipo">Vivienda · Activo</span>
-            <h2 class="nombre-hero">Casa Principal</h2>
-            <span class="label-hero">Valor Actual</span>
-            <strong class="monto-hero">$180.000.000</strong>
+            <div class="bloque-izquierdo-hero">
+                <div class="icono-hero"><i class="ph ph-house"></i></div>
+                <div class="info-nombre-hero">
+                    <h2 class="nombre-hero">Casa Principal</h2>
+                    <span class="badge-tipo">Vivienda · Activo</span>
+                </div>
+            </div>
+            <div class="contenedor-monto-hero">
+                <span class="label-hero">Valor Actual</span>
+                <strong class="monto-hero">$180.000.000</strong>
+            </div>
             <span class="chip-estado">
                 <span class="punto"></span>
                 Activo
             </span>
         </section>
-        <section class="card-participacion">
+        <section class="contrib-card">
             <span class="label-participacion">PARTICIPACIÓN EN EL PATRIMONIO TOTAL</span>
             <div class="barra-progreso">
                 <span class="relleno" style="width:76%"></span>
@@ -71,34 +91,43 @@
             <span class="seccion-label">INFORMACIÓN</span>
             <div class="grid-info">
                 <div class="tile-info">
-                    <span><i class="ph ph-house"></i></span>
-                    <span class="tile-label">CATEGORÍA</span>
+                    <div class="fila-tile">
+                        <i class="ph ph-house"></i>
+                        <span class="tile-label">CATEGORÍA</span>
+                    </div>
                     <strong>Vivienda</strong>
                 </div>
                 <div class="tile-info">
-                    <span><i class="ph ph-calendar"></i></span>
-                    <span class="tile-label">ÚLT. ACTUALIZ.</span>
+                    <div class="fila-tile">
+                        <i class="ph ph-calendar"></i>
+                        <span class="tile-label">ÚLT. ACTUALIZ.</span>
+                    </div>
                     <strong>3 Jun 2025</strong>
                 </div>
                 <div class="tile-info">
-                    <span><i class="ph ph-calendar-blank"></i></span>
-                    <span class="tile-label">FECHA REGISTRO</span>
+                    <div class="fila-tile">
+                        <i class="ph ph-calendar-blank"></i>
+                        <span class="tile-label">FECHA REGISTRO</span>
+                    </div>
                     <strong>12 Ene 2025</strong>
                 </div>
                 <div class="tile-info">
-                    <span><i class="ph ph-chart-bar"></i></span>
-                    <span class="tile-label">TIPO</span>
-                    <strong class="activo">Activo</strong>
+                    <div class="fila-tile">
+                        <i class="ph ph-chart-bar"></i>
+                        <span class="tile-label">TIPO</span>
+                    </div>
+                    <strong>Activo</strong>
                 </div>
             </div>
         </section>
-        <section class="card-impacto">
+        <section class="tile-impacto">
             <span class="label-impacto">IMPACTO EN BALANCE FINANCIERO</span>
             <strong>Suma al Patrimonio Neto</strong>
         </section>
-        <hr>
-        <button type="button" class="btn-secundario" onclick="location.href='editar-activo.html'">Editar Activo</button>
-        <button type="button" class="btn-peligro" onclick="location.href='desactivar-activo.html'">Desactivar Activo</button>
+        <div class="acciones-detalle">
+            <button type="button" class="btn-secundario" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i> Editar Activo</button>
+            <button type="button" class="btn-peligro" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i> Desactivar Activo</button>
+        </div>
     </main>
 </body>
 </html>

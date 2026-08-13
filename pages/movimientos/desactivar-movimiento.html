@@ -1,17 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Movimiento | FluneXy</title>
+    <title>Desactivar Movimiento | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-modal-movimiento">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,36 +42,53 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
-    <dialog class="modal-desactivar-meta" open>
-        <article class="contenedor-modal">
-            <header class="encabezado-modal">
-                <div class="informacion-meta">
-                    <div class="icono-meta"><img src="" alt="Movimiento"></div>
-                    <div class="detalle-meta">
-                        <h2>Arriendo</h2>
-                        <p>Gasto · Vivienda · -$1,200,000</p>
-                    </div>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Movimientos</h1>
+                <p>Consulta todos tus ingresos y gastos</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
+                    <i class="ph ph-bell"></i>
+                </button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
+            </div>
+        </header>
+    </main>
+    <div class="modal-movimiento">
+        <div class="contenedor-modal">
+            <div class="tarjeta-preview">
+                <i class="ph ph-film-slate"></i>
+                <div class="info-preview">
+                    <strong>Netflix</strong>
+                    <span>Entretenimiento · Nequi</span>
                 </div>
-            </header>
+                <span class="monto-preview">-$45.000</span>
+            </div>
+            <div class="icono-advertencia">
+                <i class="ph ph-warning"></i>
+            </div>
             <section class="contenido-modal">
-                <div class="icono-advertencia"><img src="" alt="Advertencia"></div>
-                <h3>¿Eliminar movimiento?</h3>
-                <p>Esta acción eliminará el movimiento de tu historial y ajustará el saldo del fondo asociado.</p>
+                <h3>¿Desactivar movimiento?</h3>
+                <p>Vas a desactivar Netflix. Este movimiento dejará de mostrarse en las operaciones activas, pero conservará su historial financiero completo.</p>
             </section>
             <section class="mensaje-advertencia">
-                <p>Esta acción no se puede deshacer. El saldo del fondo Bancolombia se incrementará en $1,200,000.</p>
+                <i class="ph ph-warning"></i>
+                <p>Los saldos de los fondos asociados serán recalculados automáticamente.</p>
             </section>
-            <footer class="acciones">
-                <button type="button" class="boton-primario">Cancelar</button>
-                <button type="button" class="boton-peligro">Eliminar</button>
+            <footer class="acciones-modal">
+                <button type="button" class="boton-secundario" onclick="location.href='detalle-movimiento.html'">Cancelar</button>
+                <button type="button" class="boton-peligro" onclick="location.href='mis-movimientos.html'">Desactivar</button>
             </footer>
-        </article>
-    </dialog>  </body>
+        </div>
+    </div>
+  </body>
 </html>

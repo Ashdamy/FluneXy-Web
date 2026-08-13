@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-meta-form mod-meta-editar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -50,74 +56,81 @@
                 <p>Actualiza los datos de tu objetivo</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="tile-resumen">
-                <p>META</p>
-                <strong>Moto Nueva</strong>
-            </div>
-            <div class="tile-resumen">
-                <p>AHORRADO</p>
-                <strong>$6,000,000</strong>
-                <span>/ $12,000,000</span>
-            </div>
-        </section>
-        <section class="formulario-meta">
-            <div class="grupo-formulario">
-                <label for="nombre-meta">NOMBRE</label>
-                <input type="text" id="nombre-meta" value="Moto Nueva">
-            </div>
-            <div class="grupo-formulario">
-                <label for="monto-meta">MONTO OBJETIVO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="monto-meta" value="12,000,000">
+        <section class="meta-form-layout">
+            <div class="meta-form-col">
+                <section class="franja-edicion">
+                    <div class="icono-franja"><i class="ph ph-motorcycle"></i></div>
+                    <div class="info-franja">
+                        <span class="etiqueta-franja">Editando</span>
+                        <strong class="nombre-franja">Moto Nueva</strong>
+                    </div>
+                    <div class="saldo-franja">
+                        <span class="label-saldo-franja">Progreso actual</span>
+                        <strong class="monto-saldo-franja">50% · $6M/$12M</strong>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-nombre">
+                    <label for="nombre-meta">NOMBRE DE LA META</label>
+                    <input type="text" id="nombre-meta" value="Moto Nueva">
+                </section>
+                <section class="grupo-campo campo-valor">
+                    <label for="monto-meta">MONTO OBJETIVO</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="monto-meta" value="12.000.000">
+                        <span class="badge-campo">META</span>
+                    </div>
+                    <small>Cambiar el monto recalculará el ahorro mensual requerido</small>
+                </section>
+                <section class="grupo-campo campo-fecha-meta">
+                    <label for="fecha-meta">FECHA OBJETIVO</label>
+                    <div class="campo-fecha-meta-input">
+                        <i class="ph ph-calendar"></i>
+                        <input type="text" id="fecha-meta" value="2025-12-31">
+                    </div>
+                    <small>Cambiar la fecha recalculará el ahorro mensual requerido</small>
+                </section>
+                <div class="chips-meta">
+                    <span class="chip chip-meses">6 meses restantes</span>
+                    <span class="chip chip-alcanzable"><i class="ph ph-check"></i>Alcanzable</span>
                 </div>
             </div>
-            <div class="grupo-formulario">
-                <label for="categoria-meta">CATEGORÍA</label>
-                <select id="categoria-meta">
-                    <option>Vehicular</option>
-                    <option>Viajes</option>
-                    <option>Emergencia</option>
-                    <option>Tecnología</option>
-                    <option>Vivienda</option>
-                    <option>Educación</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fondo-asociado">FONDO ASOCIADO</label>
-                <select id="fondo-asociado">
-                    <option>Fondo de Ahorro Principal</option>
-                    <option>Fondo de Emergencia</option>
-                    <option>Fondo de Viajes</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="fecha-meta">FECHA LÍMITE</label>
-                <div class="campo-con-icono">
-                    <span class="icono-calendario"><i class="ph ph-calendar"></i></span>
-                    <input type="text" id="fecha-meta" value="Dic 2025">
-                </div>
-            </div>
-            <div class="grupo-formulario">
-                <label for="aporte-periodico">APORTE PERIÓDICO</label>
-                <div class="campo-con-prefijo">
-                    <span class="prefijo-monto">$</span>
-                    <input type="text" id="aporte-periodico" value="1,000,000">
+            <div class="meta-panel-col">
+                <aside class="meta-panel-previa">
+                    <div class="meta-previa-header">
+                        <h2>ESTADO ACTUAL</h2>
+                    </div>
+                    <div class="meta-previa-contenido">
+                        <div class="meta-previa-fila-icono">
+                            <span class="meta-previa-icono"><i class="ph ph-motorcycle"></i></span>
+                            <div class="meta-previa-titular">
+                                <h3>Moto Nueva</h3>
+                                <span class="meta-previa-subtipo">Meta Financiera</span>
+                            </div>
+                        </div>
+                        <hr class="meta-previa-divider">
+                        <span class="meta-previa-label">Progreso</span>
+                        <strong class="meta-previa-fecha">50% · $6.000.000</strong>
+                        <span class="meta-previa-label">Ahorro mensual actual</span>
+                        <strong class="meta-previa-monto">$1.000.000/mes</strong>
+                    </div>
+                </aside>
+                <div class="meta-calc-card">
+                    <div class="c-icono"><i class="ph ph-arrows-clockwise"></i></div>
+                    <span class="c-titulo">NUEVO CÁLCULO AUTOMÁTICO</span>
+                    <strong class="c-monto">$1.000.000</strong>
+                    <p class="c-texto">Con los datos actuales sigues necesitando $1.000.000/mes para cumplir tu meta en Dic 2025</p>
                 </div>
             </div>
         </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Cambios</button>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-metas.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-metas.html'"><i class="ph ph-floppy-disk"></i>Guardar Cambios</button>
         </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

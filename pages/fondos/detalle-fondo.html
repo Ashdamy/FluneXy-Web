@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-fondos">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,104 +42,100 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Detalle del Fondo</h1>
-                <p>Actividad Reciente</p>
+                <h1>Bancolombia</h1>
+                <p>Detalle del fondo · BANCO</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
                     <img src="" alt="Foto de perfil">
                 </button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="informacion-resumen">
-                <p>Saldo Actual</p>
-                <h2>$2.450.000</h2>
-                <small>ACTUALIZACIÓN: Hace 2 días</small>
+        <section class="hero-card">
+            <div class="bloque-izquierdo-hero">
+                <div class="icono-hero"><i class="ph ph-bank"></i></div>
+                <div class="info-nombre-hero">
+                    <h2 class="nombre-hero">Bancolombia</h2>
+                    <span class="badge-tipo">Banco</span>
+                </div>
             </div>
+            <div class="contenedor-monto-hero">
+                <span class="label-hero">Saldo Actual</span>
+                <strong class="monto-hero">$2.450.000</strong>
+            </div>
+            <span class="chip-estado">
+                <span class="punto"></span>
+                Activo
+            </span>
         </section>
-        <section class="informacion-alerta">
-            <header class="encabezado-seccion">
-                <h3>Información del fondo</h3>
-            </header>
-            <div class="detalle-informacion">
-                <div class="informacion">
-                    <p>CREADO</p>
+        <section class="informacion-activo">
+            <div class="grid-info">
+                <div class="tile-info">
+                    <div class="fila-tile">
+                        <i class="ph ph-calendar"></i>
+                        <span class="tile-label">CREADO</span>
+                    </div>
                     <strong>12 Ene 2025</strong>
                 </div>
-                <div class="informacion">
-                    <p>ACTUALIZACIÓN</p>
+                <div class="tile-info">
+                    <div class="fila-tile">
+                        <i class="ph ph-arrows-clockwise"></i>
+                        <span class="tile-label">ACTUALIZACIÓN</span>
+                    </div>
                     <strong>Hace 2 días</strong>
                 </div>
-                <div class="informacion">
-                    <p>TRANSACCIONES</p>
+                <div class="tile-info">
+                    <div class="fila-tile">
+                        <i class="ph ph-chart-bar"></i>
+                        <span class="tile-label">TRANSACCIONES</span>
+                    </div>
                     <strong>47</strong>
                 </div>
-                <div class="informacion">
-                    <p>CATEGORÍA</p>
-                    <strong>Principal</strong>
-                </div>
-                <div class="informacion">
-                    <p></p>
-                    <strong></strong>
-                </div>
-                <div class="informacion">
-                    <p></p>
-                    <strong></strong>
+                <div class="tile-info">
+                    <div class="fila-tile">
+                        <i class="ph ph-tag"></i>
+                        <span class="tile-label">CATEGORÍA</span>
+                    </div>
+                    <strong>Banco</strong>
                 </div>
             </div>
         </section>
         <section class="actividad-reciente">
-            <header class="encabezado-seccion">
-                <h3>ACTIVIDAD RECIENTE</h3>
-            </header>
+            <span class="seccion-label">ACTIVIDAD RECIENTE</span>
             <div class="lista-transacciones">
                 <div class="item-transaccion ingreso">
-                    <span class="icono-transaccion ingreso"></span>
-                    <div class="detalle-transaccion">
-                        <p>Nómina Enero</p>
-                    </div>
-                    <div class="valor-transaccion">
-                        <strong>+$3.200.000</strong>
-                    </div>
+                    <span class="punto"></span>
+                    <p>Nómina Enero</p>
+                    <strong>+$3.200.000</strong>
                 </div>
                 <div class="item-transaccion gasto">
-                    <span class="icono-transaccion gasto"></span>
-                    <div class="detalle-transaccion">
-                        <p>Supermercado</p>
-                        <small></small>
-                    </div>
-                    <div class="valor-transaccion">
-                        <strong>-$180.000</strong>
-                    </div>
+                    <span class="punto"></span>
+                    <p>Supermercado</p>
+                    <strong>-$180.000</strong>
                 </div>
                 <div class="item-transaccion gasto">
-                    <span class="icono-transaccion gasto"></span>
-                    <div class="detalle-transaccion">
-                        <p>Servicios públicos</p>
-                    </div>
-                    <div class="valor-transaccion">
-                        <strong>-$220.000</strong>
-                    </div>
+                    <span class="punto"></span>
+                    <p>Servicios públicos</p>
+                    <strong>-$220.000</strong>
                 </div>
             </div>
         </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario" onclick="location.href='editar-fondo.html'">Editar Fondo</button>
-            <button type="button" class="boton-peligro">Desactivar Fondo</button>
-        </section>
+        <div class="acciones-detalle">
+            <button type="button" class="btn-secundario" onclick="location.href='editar-fondo.html'"><i class="ph ph-pencil-simple"></i> Editar Fondo</button>
+            <button type="button" class="btn-peligro" onclick="location.href='desactivar-fondo.html'"><i class="ph ph-warning"></i> Desactivar Fondo</button>
+        </div>
     </main>  </body>
 </html>

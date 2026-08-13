@@ -1,6 +1,0 @@
-[     369ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/registro.html:0
-[     373ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/registro.html:0
-[     506ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/favicon.ico:0
-[   14355ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/pages/autenticacion/login.html:0
-[   16257ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/registro.html:0
-[   16257ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/registro.html:0

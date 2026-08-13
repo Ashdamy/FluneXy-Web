@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-lista-metas mod-meta-desactivar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,34 +42,102 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <dialog class="modal-desactivar-meta" open>
-            <article class="contenedor-modal">
-                <section class="informacion-meta-modal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Metas</h1>
+                <p>Construye tus objetivos financieros</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'"><img src="" alt="Foto de perfil"></button>
+            </div>
+        </header>
+        <section class="tarjeta-resumen">
+            <div class="tile-resumen">
+                <p>METAS ACTIVAS</p>
+                <strong>3</strong>
+            </div>
+            <div class="tile-resumen">
+                <p>TOTAL AHORRADO</p>
+                <strong>$23.5M</strong>
+            </div>
+            <div class="tile-resumen">
+                <p>OBJETIVO</p>
+                <strong>$97M</strong>
+            </div>
+        </section>
+        <header class="encabezado-seccion">
+            <h2>Objetivos en Progreso  •  4 metas</h2>
+        </header>
+        <section class="lista-metas">
+            <div class="grid-metas">
+                <article class="tarjeta-meta" onclick="location.href='detalle-meta.html'">
+                    <div class="barra-accent"></div>
+                    <div class="contenido-meta">
+                        <div class="encabezado-meta">
+                            <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
+                            <div>
+                                <h3>Moto Nueva</h3>
+                                <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+                            </div>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">50%</span>
+                            <span class="label-logrado">logrado</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <div class="barra-progreso-llenado" style="width: 50%"></div>
+                        </div>
+                        <div class="detalle-meta">
+                            <strong>$6.000.000</strong>
+                            <span>/ $12.000.000</span>
+                        </div>
+                        <div class="estado-meta">
+                            <span class="estado estado-progreso">En progreso</span>
+                            <span class="badge-estado badge-activa">Activa</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <div class="overlay-meta-modal" aria-hidden="false">
+        <article class="modal-desactivar-meta" role="alertdialog" aria-modal="true">
+            <div class="preview-meta">
+                <span class="preview-icono"><i class="ph ph-motorcycle"></i></span>
+                <div class="preview-info">
                     <h3>Moto Nueva</h3>
-                    <p>Categoría: Vehicular</p>
-                    <strong>$6,000,000</strong>
-                    <span>/ $12,000,000</span>
-                </section>
-                <header class="encabezado-modal">
-                    <h2>¿Desactivar meta?</h2>
-                    <p>Esta acción desactivará la meta y detendrá el seguimiento de tu progreso.</p>
-                </header>
-                <section class="mensaje-advertencia">
-                    <p>Al desactivarla, perderás el progreso registrado y no podrás seguir aportando.</p>
-                </section>
-                <footer class="acciones">
-                    <button type="button" class="boton-secundario">Cancelar</button>
-                    <button type="button" class="boton-primario">Desactivar</button>
-                </footer>
-            </article>
-        </dialog>
-    </main>  </body>
+                    <p>Vehicular · En progreso</p>
+                </div>
+                <span class="preview-saldo">$6.000.000</span>
+            </div>
+            <div class="icono-advertencia-meta">
+                <i class="ph ph-warning"></i>
+            </div>
+            <h2 class="titulo-modal-meta">¿Desactivar meta?</h2>
+            <p class="descripcion-modal-meta">Esta acción desactivará la meta Moto Nueva y detendrá el seguimiento de tu progreso de ahorro.</p>
+            <div class="nota-aviso-meta">
+                <i class="ph ph-warning"></i>
+                <span>Perderás el progreso registrado y no podrás seguir aportando a esta meta.</span>
+            </div>
+            <div class="acciones-modal-meta">
+                <button type="button" class="btn-cancelar-meta" onclick="location.href='mis-metas.html'">Cancelar</button>
+                <button type="button" class="btn-eliminar-meta" onclick="location.href='mis-metas.html'">Desactivar</button>
+            </div>
+        </article>
+    </div>
+</body>
 </html>

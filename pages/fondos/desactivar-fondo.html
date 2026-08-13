@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-fondos">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,42 +42,166 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-    <dialog class="modal-desactivar-meta" open>
-        <article class="contenedor-modal">
-            <header class="encabezado-modal">
-                <div class="informacion-meta">
-                    <div class="icono-meta">
-                        <img src="" alt="Fondo">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Fondos</h1>
+                <p>Administra tus cuentas y saldos disponibles</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
+                    <i class="ph ph-bell"></i>
+                </button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
+            </div>
+        </header>
+        <section class="tarjeta-resumen resumen-fondos">
+            <div class="informacion-resumen">
+                <p>BALANCE TOTAL</p>
+                <h2>$2.980.000</h2>
+                <span class="badge-fondos">3 fondos activos</span>
+            </div>
+            <div class="estadisticas-resumen">
+                <div class="estadistica positivo">
+                    <p>Activos</p>
+                    <strong>3</strong>
+                </div>
+                <div class="estadistica">
+                    <p>Inactivos</p>
+                    <strong>1</strong>
+                </div>
+            </div>
+            <div class="divisor-resumen"></div>
+        </section>
+        <section class="barra-herramientas barra-fondos">
+            <div class="busqueda">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar fondo por nombre...">
+            </div>
+            <button type="button" class="filtro-todos">Todos</button>
+            <button type="button" class="boton-primario" onclick="location.href='crear-fondo.html'">
+                <i class="ph ph-plus"></i> Agregar Fondo
+            </button>
+        </section>
+        <h3 class="lista-fondos-titulo">CUENTAS REGISTRADAS</h3>
+        <section class="lista-activos lista-fondos">
+            <article class="tarjeta-activo fondo-banco">
+                <header class="encabezado-activo">
+                    <span class="icono"><i class="ph ph-bank"></i></span>
+                    <span class="estado-fondo activo"><span class="punto"></span>Activo</span>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Bancolombia</h3>
+                    <p>BANCO</p>
+                </div>
+                <div class="fila-saldo">
+                    <div class="info-saldo">
+                        <span class="etiqueta-saldo">Saldo disponible</span>
+                        <strong class="monto-fondo">$2.450.000</strong>
                     </div>
-                    <div class="detalle-meta">
-                        <h2>Bancolombia</h2>
-                        <p>Banco · $2.450.000</p>
+                    <div class="acciones-tarjeta">
+                        <button type="button" title="Ver detalle" onclick="location.href='detalle-fondo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="location.href='editar-fondo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="location.href='desactivar-fondo.html'"><i class="ph ph-warning"></i></button>
                     </div>
                 </div>
-            </header>
-            <section class="contenido-modal">
-                <div class="icono-advertencia">
-                    <img src="" alt="Advertencia">
+            </article>
+            <article class="tarjeta-activo fondo-billetera">
+                <header class="encabezado-activo">
+                    <span class="icono"><i class="ph ph-device-mobile"></i></span>
+                    <span class="estado-fondo activo"><span class="punto"></span>Activo</span>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Nequi</h3>
+                    <p>BILLETERA DIGITAL</p>
                 </div>
-                <h3>Desactivar fondo?</h3>
-                <p>Vas a desactivar Bancolombia. Este fondo dejará de mostrarse en las operaciones activas, pero conservará su historial financiero completo.</p>
-            </section>
-            <section class="mensaje-advertencia">
-                <p>Puedes volver a activar este fondo en cualquier momento desde la configuración de Fondos.</p>
-            </section>
-            <footer class="acciones">
-                <button type="button" class="boton-primario" onclick="location.href='mis-fondos.html'">Cancelar</button>
-                <button type="button" class="boton-peligro">Desactivar</button>
-            </footer>
+                <div class="fila-saldo">
+                    <div class="info-saldo">
+                        <span class="etiqueta-saldo">Saldo disponible</span>
+                        <strong class="monto-fondo">$380.000</strong>
+                    </div>
+                    <div class="acciones-tarjeta">
+                        <button type="button" title="Ver detalle" onclick="location.href='detalle-fondo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="location.href='editar-fondo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="location.href='desactivar-fondo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+            </article>
+            <article class="tarjeta-activo fondo-efectivo">
+                <header class="encabezado-activo">
+                    <span class="icono"><i class="ph ph-money"></i></span>
+                    <span class="estado-fondo activo"><span class="punto"></span>Activo</span>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Efectivo</h3>
+                    <p>EFECTIVO</p>
+                </div>
+                <div class="fila-saldo">
+                    <div class="info-saldo">
+                        <span class="etiqueta-saldo">Saldo disponible</span>
+                        <strong class="monto-fondo">$150.000</strong>
+                    </div>
+                    <div class="acciones-tarjeta">
+                        <button type="button" title="Ver detalle" onclick="location.href='detalle-fondo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="location.href='editar-fondo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="location.href='desactivar-fondo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+            </article>
+            <article class="tarjeta-activo fondo-inactivo inactivo">
+                <header class="encabezado-activo">
+                    <span class="icono"><i class="ph ph-credit-card"></i></span>
+                    <span class="estado-fondo"><span class="punto"></span>Inactivo</span>
+                </header>
+                <div class="cuerpo-activo">
+                    <h3>Daviplata</h3>
+                    <p>BILLETERA DIGITAL</p>
+                </div>
+                <div class="fila-saldo">
+                    <div class="info-saldo">
+                        <span class="etiqueta-saldo">Saldo disponible</span>
+                        <strong class="monto-fondo">$0</strong>
+                    </div>
+                    <div class="acciones-tarjeta">
+                        <button type="button" title="Ver detalle" onclick="location.href='detalle-fondo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="location.href='editar-fondo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="location.href='desactivar-fondo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <div class="overlay-fondo-modal" aria-hidden="false">
+        <article class="modal-desactivar-fondo" role="alertdialog" aria-modal="true">
+            <div class="preview-fondo">
+                <span class="preview-icono"><i class="ph ph-bank"></i></span>
+                <div class="preview-info">
+                    <h3>Bancolombia</h3>
+                    <p>Banco</p>
+                </div>
+                <span class="preview-saldo">$2.450.000</span>
+            </div>
+            <div class="icono-advertencia-fondo">
+                <i class="ph ph-warning"></i>
+            </div>
+            <h2 class="titulo-modal-fondo">¿Desactivar fondo?</h2>
+            <p class="descripcion-modal-fondo">Vas a desactivar Bancolombia. Este fondo dejará de mostrarse en las operaciones activas, pero conservará su historial financiero completo.</p>
+            <div class="nota-aviso-fondo">
+                <i class="ph ph-warning"></i>
+                <span>Puedes volver a activar este fondo en cualquier momento desde la configuración de Fondos.</span>
+            </div>
+            <div class="acciones-modal-fondo">
+                <button type="button" class="btn-cancelar-fondo" onclick="location.href='mis-fondos.html'">Cancelar</button>
+                <button type="button" class="btn-desactivar-fondo" onclick="location.href='mis-fondos.html'">Desactivar</button>
+            </div>
         </article>
-    </dialog>
-    </main>  </body>
+    </div>
+</body>
 </html>

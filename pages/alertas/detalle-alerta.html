@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-alertas mod-alertas-detalle">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -41,57 +47,91 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Detalle de Alerta</h1>
-                <p>Información completa de la notificación</p>
+                <p>Endeudamiento · Meta Financiera</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
+                    <span>A</span>
                 </button>
             </div>
         </header>
-        <section class="tarjeta-resumen-alerta">
-            <h2>Límite de Gasto</h2>
-            <p>Alimentación</p>
-            <strong>$2,240,000 / $2,800,000</strong>
+
+        <section class="hero-card">
+            <div class="hero-icono"><i class="ph ph-chart-line-down"></i></div>
+            <span class="badge-tipo">Meta Financiera</span>
+            <span class="chip-estado">En Progreso</span>
+            <h2 class="hero-titulo">Endeudamiento</h2>
+            <span class="hero-label">Estado Actual</span>
+            <strong class="hero-valor">31.4%</strong>
+            <span class="hero-umbral">Umbral configurado: 35%</span>
+            <span class="hero-faltan">Faltan 3.6 pts para el umbral</span>
         </section>
-        <section class="informacion-detalle">
-            <div class="campo-informacion">
-                <p>Tipo</p>
-                <strong>Límite de Gasto</strong>
+
+        <section class="calc-card">
+            <div class="c-icono"><i class="ph ph-bell"></i></div>
+            <div class="c-info">
+                <span class="c-label">Último Valor Detectado</span>
+                <strong class="c-valor">31.4%</strong>
+                <span class="c-fecha">Detectado el 28 Jun 2026</span>
             </div>
-            <div class="campo-informacion">
-                <p>Categoría</p>
-                <strong>Alimentación</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Condición</p>
-                <strong>Superar el 80% del presupuesto</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Mensaje</p>
-                <strong>"Has alcanzado el 80% de tu presupuesto mensual en Alimentación"</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Estado</p>
-                <strong>Activa</strong>
-            </div>
-            <div class="campo-informacion">
-                <p>Creada</p>
-                <strong>01 Jun 2025</strong>
+            <div class="c-der">
+                <strong>2</strong>
+                <span>veces este mes</span>
             </div>
         </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Editar</button>
-            <button type="button" class="boton-primario">Desactivar</button>
+
+        <h3 class="info-titulo">INFORMACIÓN</h3>
+        <section class="tiles">
+            <div class="tile">
+                <span>UMBRAL</span>
+                <strong>35%</strong>
+            </div>
+            <div class="tile tile-verde">
+                <span>VALOR ACTUAL</span>
+                <strong>31.4%</strong>
+            </div>
+            <div class="tile">
+                <span>TIPO</span>
+                <strong>Endeudamiento</strong>
+            </div>
+            <div class="tile">
+                <span>ORIGEN</span>
+                <strong>Balance</strong>
+            </div>
+            <div class="tile">
+                <span>FECHA CREACIÓN</span>
+                <strong>3 Ene 2026</strong>
+            </div>
+            <div class="tile tile-indigo">
+                <span>ESTADO</span>
+                <strong>ACTIVA</strong>
+            </div>
         </section>
-    </main>  </body>
+
+        <a class="aporte-banner" href="historial-alertas.html">
+            <span class="a-icono"><i class="ph ph-clock-counter-clockwise"></i></span>
+            <div class="a-info">
+                <strong>Ver Historial de Alertas</strong>
+                <span>3 alertas generadas este mes</span>
+            </div>
+            <span class="a-arr"><i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <div class="detalle-divider"></div>
+
+        <section class="acciones-alerta">
+            <button type="button" class="btn-editar" onclick="location.href='configurar-alerta.html'">Editar Alerta</button>
+            <button type="button" class="btn-desactivar" onclick="location.href='lista-alertas.html'">Desactivar Alerta</button>
+        </section>
+    </main>
+</body>
 </html>

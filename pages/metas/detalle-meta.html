@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-meta-detalle">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,114 +42,103 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Moto Nueva</h1>
-                <p>Meta: Dic 2025 · 6 meses</p>
+                <h1>Detalle de Meta</h1>
+                <p>Información completa del objetivo</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="seccion-progreso">
-            <div class="badge-porcentaje-grande">
-                <span class="porcentaje">50%</span>
-                <span class="label-logrado">logrado</span>
+        <section class="hero-card">
+            <div class="hero-icono"><i class="ph ph-motorcycle"></i></div>
+            <h2 class="hero-titulo">Moto Nueva</h2>
+            <span class="badge-tipo">Meta Financiera</span>
+            <span class="chip-estado">En Progreso</span>
+            <span class="hero-label">PROGRESO DE AHORRO</span>
+            <strong class="hero-valor">50%</strong>
+            <span class="hero-detalle">$6.000.000 de $12.000.000</span>
+            <span class="hero-faltan">Faltan $6.000.000</span>
+        </section>
+        <section class="calc-card">
+            <div class="c-icono"><i class="ph ph-coins"></i></div>
+            <div class="c-info">
+                <span class="c-label">Ahorro Mensual Requerido</span>
+                <strong class="c-valor">$1.000.000</strong>
+                <span class="c-fecha">Para cumplir en Dic 2025</span>
             </div>
-            <div class="barra-progreso">
-                <div class="barra-progreso-llenado" style="width: 50%"></div>
-            </div>
-            <div class="detalle-monto">
-                <strong>$6.000.000</strong>
-                <span>/ $12.000.000</span>
+            <div class="c-der">
+                <strong>183</strong>
+                <span>días restantes</span>
             </div>
         </section>
-        <section class="estadisticas-meta">
-            <div class="estadistica">
-                <p>PROGRESO</p>
-                <strong>50%</strong>
+        <h3 class="info-titulo">INFORMACIÓN</h3>
+        <section class="tiles">
+            <div class="tile">
+                <div class="fila-tile">
+                    <i class="ph ph-target"></i>
+                    <span class="tile-label">MONTO OBJETIVO</span>
+                </div>
+                <strong>$12.000.000</strong>
             </div>
-            <div class="estadistica">
-                <p>AHORRADO</p>
+            <div class="tile">
+                <div class="fila-tile">
+                    <i class="ph ph-piggy-bank"></i>
+                    <span class="tile-label">MONTO AHORRADO</span>
+                </div>
                 <strong>$6.000.000</strong>
             </div>
-            <div class="estadistica">
-                <p>TIEMPO</p>
-                <strong>3/6 meses</strong>
+            <div class="tile">
+                <div class="fila-tile">
+                    <i class="ph ph-wallet"></i>
+                    <span class="tile-label">FONDO ASOCIADO</span>
+                </div>
+                <strong>Nequi Personal</strong>
+            </div>
+            <div class="tile">
+                <div class="fila-tile">
+                    <i class="ph ph-calendar-blank"></i>
+                    <span class="tile-label">FECHA OBJETIVO</span>
+                </div>
+                <strong>Dic 2025</strong>
+            </div>
+            <div class="tile">
+                <div class="fila-tile">
+                    <i class="ph ph-calendar-plus"></i>
+                    <span class="tile-label">FECHA CREACIÓN</span>
+                </div>
+                <strong>3 Ene 2025</strong>
+            </div>
+            <div class="tile tile-indigo">
+                <div class="fila-tile">
+                    <i class="ph ph-check-circle"></i>
+                    <span class="tile-label">ESTADO</span>
+                </div>
+                <strong>EN_PROCESO</strong>
             </div>
         </section>
-        <div class="estado-badge">
-            <span class="estado estado-activa"><span class="punto-verde"></span>Activa</span>
+        <a class="aporte-banner" href="../pagos/registrar-aporte.html">
+            <span class="a-icono"><i class="ph ph-plus"></i></span>
+            <div class="a-info">
+                <strong>Registrar Aporte</strong>
+                <span>Último aporte: $500.000 hace 12 días</span>
+            </div>
+            <span class="a-arr"><i class="ph ph-arrow-right"></i></span>
+        </a>
+        <div class="acciones-detalle">
+            <button type="button" class="btn-editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i> Editar Meta</button>
+            <button type="button" class="btn-desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i> Desactivar Meta</button>
         </div>
-        <section class="informacion-meta">
-            <header class="encabezado-seccion">
-                <h3>INFORMACIÓN DE LA META</h3>
-            </header>
-            <div class="grid-informacion">
-                <div class="campo-informacion">
-                    <p>Tipo de meta</p>
-                    <strong>Vehicular</strong>
-                </div>
-                <div class="campo-informacion">
-                    <p>Monto objetivo</p>
-                    <strong>$12,000,000</strong>
-                </div>
-                <div class="campo-informacion">
-                    <p>Ahorrado</p>
-                    <strong>$6,000,000</strong>
-                </div>
-                <div class="campo-informacion">
-                    <p>Fondo asociado</p>
-                    <strong>Fondo de Ahorro Principal</strong>
-                </div>
-                <div class="campo-informacion">
-                    <p>Fecha límite</p>
-                    <strong>Dic 2025</strong>
-                </div>
-                <div class="campo-informacion">
-                    <p>Estado</p>
-                    <strong>En progreso</strong>
-                </div>
-            </div>
-        </section>
-        <section class="aportes-recientes">
-            <header class="encabezado-seccion">
-                <h3>APORTES RECIENTES</h3>
-            </header>
-            <ul class="lista-aportes">
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 Jun 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 May 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-                <li class="aporte-item">
-                    <span class="aporte-fecha">15 Abr 2025</span>
-                    <span class="aporte-concepto">Ahorro mensual</span>
-                    <span class="aporte-monto">$500.000</span>
-                </li>
-            </ul>
-        </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Editar Meta</button>
-            <button type="button" class="boton-peligro">Desactivar Meta</button>
-        </section>
-    </main>  </body>
+    </main>
+</body>
 </html>

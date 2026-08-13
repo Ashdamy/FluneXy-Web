@@ -6,11 +6,12 @@
     <title>Nueva contraseña</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>
     <main class="contenedor-autenticacion">
         <div class="volver">
-            <a href="#"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="recuperar-contraseña.html"><i class="ph ph-arrow-left"></i> Volver</a>
         </div>
         <section class="tarjeta-formulario">
             <div class="icono-formulario icono-nueva">
@@ -59,7 +60,8 @@
                         </div>
              <button
              type="submit"
-             class="boton-primario">
+             class="boton-primario"
+             onclick="event.preventDefault(); location.href='iniciar-sesion.html';">
              Guardar nueva contraseña
              </button>
              </form>

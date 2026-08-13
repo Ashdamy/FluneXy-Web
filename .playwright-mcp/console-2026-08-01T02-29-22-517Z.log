@@ -1,2 +1,0 @@
-[    1330ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8000/pages/autenticacion/iniciar-sesion.html:0
-[  574379ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/pages/autenticacion/recuperar-contrasena.html:0

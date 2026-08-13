@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Activo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-activo-form mod-activo-crear">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -39,66 +47,79 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <div class="encabezado-contenido">
-            <a href="mis-activos.html" class="volver"><i class="ph ph-arrow-left"></i> Volver</a>
-            <h1>Registrar Activo</h1>
-            <p>Agrega un bien a tu patrimonio personal</p>
-        </div>
-        <form class="formulario">
-            <label class="label-form" for="nombre">NOMBRE DEL ACTIVO</label>
-            <input type="text" id="nombre" class="input-form" value="Casa Principal">
-            <span class="ayuda-form">Escoge un nombre que identifique claramente este bien</span>
-            <label class="label-form">CATEGORÍA</label>
-            <div class="grid-categorias">
-                <button type="button" class="categoria seleccionada">
-                    <span><i class="ph ph-house"></i></span>
-                    <span>Vivienda</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-car"></i></span>
-                    <span>Vehículo</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-chart-line-up"></i></span>
-                    <span>Inversión</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-money"></i></span>
-                    <span>Ahorro</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-storefront"></i></span>
-                    <span>Negocio</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
-                <button type="button" class="categoria">
-                    <span><i class="ph ph-buildings"></i></span>
-                    <span>Propiedad</span>
-                    <span class="tipo-cat">Activo</span>
-                </button>
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Registrar Activo</h1>
+                <p>Agrega un bien a tu patrimonio personal</p>
             </div>
-            <label class="label-form" for="valor">VALOR DEL ACTIVO</label>
-            <div class="input-moneda">
-                <span>$</span>
-                <input type="text" id="valor" value="180.000.000">
-                <span class="badge-activo">ACTIVO</span>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
-            <span class="ayuda-form">Ingresa el valor estimado actual en pesos colombianos (COP)</span>
-            <label class="label-form" for="fecha">FECHA DE ACTUALIZACIÓN</label>
-            <div class="input-icono">
-                <span><i class="ph ph-calendar"></i></span>
-                <input type="text" id="fecha" value="2025-06-03">
+        </header>
+        <section class="activo-form-layout">
+            <div class="activo-form-col">
+                <section class="grupo-campo campo-nombre">
+                    <label for="nombre">Nombre del Activo</label>
+                    <input type="text" id="nombre" placeholder="Casa Principal">
+                    <small>Escoge un nombre que identifique claramente este bien</small>
+                </section>
+                <section class="grupo-campo campo-categoria">
+                    <label>Categoría</label>
+                    <div class="opciones-tipo">
+                        <button type="button" class="opcion-tipo activa" data-tipo="vivienda"><i class="ph ph-house"></i><span class="texto-tipo"><strong>Vivienda</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="vehiculo"><i class="ph ph-car"></i><span class="texto-tipo"><strong>Vehículo</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="inversion"><i class="ph ph-chart-line-up"></i><span class="texto-tipo"><strong>Inversión</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="ahorro"><i class="ph ph-money"></i><span class="texto-tipo"><strong>Ahorro</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="negocio"><i class="ph ph-storefront"></i><span class="texto-tipo"><strong>Negocio</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="otro"><i class="ph ph-clipboard-text"></i><span class="texto-tipo"><strong>Otro</strong><small>Activo</small></span></button>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-valor">
+                    <label for="valor">Valor del Activo</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="valor" placeholder="180.000.000">
+                        <span class="badge-campo">ACTIVO</span>
+                    </div>
+                    <small>Ingresa el valor estimado actual en pesos colombianos (COP)</small>
+                </section>
+                <section class="grupo-campo campo-fecha-activo">
+                    <label for="fecha">Fecha de Actualización</label>
+                    <div class="campo-fecha-activo-input">
+                        <i class="ph ph-calendar"></i>
+                        <input type="text" id="fecha" placeholder="2025-06-03">
+                    </div>
+                    <small>Fecha en la que se verificó o estimó este valor</small>
+                </section>
             </div>
-            <span class="ayuda-form">Fecha en la que se verificó o estimó este valor</span>
-            <button type="submit" class="btn-guardar">Guardar Activo</button>
-        </form>
+            <aside class="activo-panel-previa">
+                <div class="activo-previa-header">
+                    <h2>VISTA PREVIA</h2>
+                </div>
+                <div class="activo-previa-contenido">
+                    <span class="activo-previa-icono"><i class="ph ph-house"></i></span>
+                    <h3>Casa Principal</h3>
+                    <span class="activo-previa-subtipo">VIVIENDA · ACTIVO</span>
+                    <hr class="activo-previa-divider">
+                    <span class="activo-previa-label">Valor actual</span>
+                    <strong class="activo-previa-monto">$180.000.000</strong>
+                    <span class="activo-previa-label">Fecha de actualización</span>
+                    <span class="activo-previa-fecha">3 Jun 2025</span>
+                    <span class="activo-previa-badge">Activo</span>
+                </div>
+                <div class="activo-previa-pie">
+                    <p>Este bien se sumará al Valor Total de Activos y al Patrimonio Neto.</p>
+                </div>
+            </aside>
+        </section>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-activos.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-activos.html'"><i class="ph ph-diamond"></i>Guardar Activo</button>
+        </section>
     </main>
 </body>
 </html>

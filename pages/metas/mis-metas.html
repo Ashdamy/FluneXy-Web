@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-lista-metas">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -50,10 +56,10 @@
                 <p>Construye tus objetivos financieros</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
                     <img src="" alt="Foto de perfil">
                 </button>
             </div>
@@ -72,14 +78,17 @@
                 <strong>$97M</strong>
             </div>
         </section>
-        <section class="filtros-pestañas">
-            <button class="filtro-activo">Todas</button>
-            <button>En progreso</button>
-            <button>Completadas</button>
+        <section class="barra-herramientas barra-metas">
+            <div class="busqueda">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar meta por nombre...">
+            </div>
+            <button type="button" class="filtro-todos">Todas <i class="ph ph-caret-down"></i></button>
+            <button type="button" class="boton-primario" onclick="location.href='nueva-meta.html'">
+                <i class="ph ph-plus"></i> Nueva Meta
+            </button>
         </section>
-        <header class="encabezado-seccion">
-            <h2>Objetivos en Progreso  •  4 metas</h2>
-        </header>
+        <h3 class="lista-metas-titulo">OBJETIVOS EN PROGRESO</h3>
         <section class="lista-metas">
             <div class="grid-metas">
                 <article class="tarjeta-meta">
@@ -91,10 +100,15 @@
                                 <h3>Moto Nueva</h3>
                                 <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
                             </div>
-                            <div class="badge-porcentaje">
-                                <span class="porcentaje">50%</span>
-                                <span class="label-logrado">logrado</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">50%</span>
+                            <span class="label-logrado">logrado</span>
                         </div>
                         <div class="barra-progreso">
                             <div class="barra-progreso-llenado" style="width: 50%"></div>
@@ -121,10 +135,15 @@
                                 <h3>Vivienda</h3>
                                 <span class="etiqueta-fecha">Meta: Jun 2028 • 36 meses</span>
                             </div>
-                            <div class="badge-porcentaje">
-                                <span class="porcentaje">18%</span>
-                                <span class="label-logrado">logrado</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">18%</span>
+                            <span class="label-logrado">logrado</span>
                         </div>
                         <div class="barra-progreso">
                             <div class="barra-progreso-llenado" style="width: 18%"></div>
@@ -151,10 +170,15 @@
                                 <h3>Viaje a México</h3>
                                 <span class="etiqueta-fecha">Meta: Sep 2025 • 3 meses</span>
                             </div>
-                            <div class="badge-porcentaje">
-                                <span class="porcentaje">50%</span>
-                                <span class="label-logrado">logrado</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">50%</span>
+                            <span class="label-logrado">logrado</span>
                         </div>
                         <div class="barra-progreso">
                             <div class="barra-progreso-llenado" style="width: 50%"></div>
@@ -181,10 +205,15 @@
                                 <h3>Fondo Estudios</h3>
                                 <span class="etiqueta-fecha">Meta: Ene 2025 - Completada</span>
                             </div>
-                            <div class="badge-porcentaje">
-                                <span class="porcentaje">100%</span>
-                                <span class="label-final">final</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">100%</span>
+                            <span class="label-final">final</span>
                         </div>
                         <div class="barra-progreso">
                             <div class="barra-progreso-llenado" style="width: 100%"></div>
@@ -200,6 +229,5 @@
                 </article>
             </div>
         </section>
-        <button class="boton-fab">+ Nueva Meta</button>
     </main>  </body>
 </html>

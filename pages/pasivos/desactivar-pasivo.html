@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Pasivo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-lista-pasivos mod-pasivo-desactivar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,36 +42,163 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
-    <dialog class="modal-desactivar-meta" open>
-        <article class="contenedor-modal">
-            <header class="encabezado-modal">
-                <div class="informacion-meta">
-                    <div class="icono-meta"><img src="" alt="Pasivo"></div>
-                    <div class="detalle-meta">
-                        <h2>Tarjeta de Crédito · Banco ABC · -$2,500,000</h2>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Pasivos</h1>
+                <p>Controla todas tus obligaciones financieras</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
+            </div>
+        </header>
+        <section class="hero-pasivos">
+            <div class="card-total-pasivos">
+                <span class="etiqueta-hero-pasivo">TOTAL PASIVOS</span>
+                <strong class="monto-hero-pasivo">$13.800.000</strong>
+            </div>
+            <div class="card-indice-endeudamiento">
+                <span class="etiqueta-indice">ÍNDICE DE ENDEUDAMIENTO</span>
+                <div class="barra-progreso-indice"><span class="relleno-indice" style="width:28%"></span></div>
+                <strong class="valor-indice">28%</strong>
+                <small class="ayuda-indice">Nivel moderado · Alerta si supera 40%</small>
+            </div>
+        </section>
+        <section class="barra-herramientas barra-pasivos">
+            <div class="busqueda">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar pasivo por nombre...">
+            </div>
+            <button type="button" class="filtro-todos">Todos <i class="ph ph-caret-down"></i></button>
+            <button type="button" class="boton-primario" onclick="location.href='registrar-pasivo.html'">
+                <i class="ph ph-plus"></i> Nuevo Pasivo
+            </button>
+        </section>
+        <h3 class="lista-deudas-titulo">DEUDAS REGISTRADAS</h3>
+        <section class="grid-deudas">
+            <article class="tarjeta-deuda deuda-ambar" onclick="location.href='detalle-pasivo.html'">
+                <span class="icono-deuda"><i class="ph ph-credit-card"></i></span>
+                <h4 class="nombre-deuda">Tarjeta Bancolombia</h4>
+                <p class="subtipo-deuda">TARJETA DE CRÉDITO</p>
+                <div class="fila-saldo-deuda">
+                    <div class="info-saldo-deuda">
+                        <span class="etiqueta-saldo">Saldo pendiente</span>
+                        <strong class="monto-deuda">$3.500.000</strong>
+                    </div>
+                    <div class="acciones-deuda">
+                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
                     </div>
                 </div>
-            </header>
-            <section class="contenido-modal">
-                <div class="icono-advertencia"><img src="" alt="Advertencia"></div>
-                <h3>¿Eliminar pasivo?</h3>
-                <p>Esta acción eliminará esta deuda de tu lista de pasivos.</p>
-            </section>
-            <section class="mensaje-advertencia">
-                <p>Esta acción no se puede deshacer. El pasivo dejará de aparecer en tu lista.</p>
-            </section>
-            <footer class="acciones">
-                <button type="button" class="boton-primario">Cancelar</button>
-                <button type="button" class="boton-peligro">Eliminar</button>
-            </footer>
+                <div class="progreso-deuda">
+                    <div class="fila-progreso">
+                        <span class="label-progreso">Progreso de pago</span>
+                        <strong class="valor-progreso">30%</strong>
+                    </div>
+                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:30%"></span></div>
+                </div>
+                <span class="estado-deuda"><span class="punto"></span>Activo</span>
+            </article>
+            <article class="tarjeta-deuda deuda-roja" onclick="location.href='detalle-pasivo.html'">
+                <span class="icono-deuda"><i class="ph ph-motorcycle"></i></span>
+                <h4 class="nombre-deuda">Crédito Moto NKD</h4>
+                <p class="subtipo-deuda">CRÉDITO VEHÍCULO · FRANCESA</p>
+                <div class="fila-saldo-deuda">
+                    <div class="info-saldo-deuda">
+                        <span class="etiqueta-saldo">Saldo pendiente</span>
+                        <strong class="monto-deuda">$8.200.000</strong>
+                    </div>
+                    <div class="acciones-deuda">
+                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+                <div class="progreso-deuda">
+                    <div class="fila-progreso">
+                        <span class="label-progreso">Progreso de pago</span>
+                        <strong class="valor-progreso">18%</strong>
+                    </div>
+                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:18%"></span></div>
+                </div>
+                <span class="estado-deuda"><span class="punto"></span>Activo</span>
+            </article>
+            <article class="tarjeta-deuda deuda-sky" onclick="location.href='detalle-pasivo.html'">
+                <span class="icono-deuda"><i class="ph ph-book-open"></i></span>
+                <h4 class="nombre-deuda">Crédito Educativo</h4>
+                <p class="subtipo-deuda">CRÉDITO EDUCATIVO</p>
+                <div class="fila-saldo-deuda">
+                    <div class="info-saldo-deuda">
+                        <span class="etiqueta-saldo">Saldo pendiente</span>
+                        <strong class="monto-deuda">$2.100.000</strong>
+                    </div>
+                    <div class="acciones-deuda">
+                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+                <div class="progreso-deuda">
+                    <div class="fila-progreso">
+                        <span class="label-progreso">Progreso de pago</span>
+                        <strong class="valor-progreso">45%</strong>
+                    </div>
+                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:45%"></span></div>
+                </div>
+                <span class="estado-deuda"><span class="punto"></span>Activo</span>
+            </article>
+            <article class="tarjeta-deuda deuda-inactiva inactiva" onclick="location.href='detalle-pasivo.html'">
+                <span class="icono-deuda"><i class="ph ph-bank"></i></span>
+                <h4 class="nombre-deuda">Préstamo Personal</h4>
+                <p class="subtipo-deuda">PRÉSTAMO PERSONAL</p>
+                <div class="fila-saldo-deuda">
+                    <div class="info-saldo-deuda">
+                        <span class="etiqueta-saldo">Saldo pendiente</span>
+                        <strong class="monto-deuda">$0</strong>
+                    </div>
+                    <div class="acciones-deuda">
+                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                </div>
+                <span class="estado-deuda inactivo">Inactivo</span>
+            </article>
+        </section>
+    </main>
+    <div class="overlay-pasivo-modal" aria-hidden="false">
+        <article class="modal-desactivar-pasivo" role="alertdialog" aria-modal="true">
+            <div class="preview-pasivo">
+                <span class="preview-icono"><i class="ph ph-credit-card"></i></span>
+                <div class="preview-info">
+                    <h3>Tarjeta Bancolombia</h3>
+                    <p>Tarjeta de crédito · Activo</p>
+                </div>
+                <span class="preview-saldo">$3.500.000</span>
+            </div>
+            <div class="icono-advertencia-pasivo">
+                <i class="ph ph-warning"></i>
+            </div>
+            <h2 class="titulo-modal-pasivo">¿Eliminar pasivo?</h2>
+            <p class="descripcion-modal-pasivo">Esta acción eliminará la deuda Tarjeta Bancolombia de tu lista de pasivos y de los cálculos de tu Balance Financiero.</p>
+            <div class="nota-aviso-pasivo">
+                <i class="ph ph-warning"></i>
+                <span>El total de pasivos disminuirá en $3.500.000 y el Índice de Endeudamiento será recalculado automáticamente.</span>
+            </div>
+            <div class="acciones-modal-pasivo">
+                <button type="button" class="btn-cancelar-pasivo" onclick="location.href='mis-pasivos.html'">Cancelar</button>
+                <button type="button" class="btn-eliminar-pasivo" onclick="location.href='mis-pasivos.html'">Eliminar</button>
+            </div>
         </article>
-    </dialog>
+    </div>
 </body>
 </html>

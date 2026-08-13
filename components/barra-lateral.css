@@ -31,11 +31,12 @@
 }
 
 .etiqueta-seccion {
-  margin: 12px 24px 12px;
+  margin: 12px 24px 9px;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  line-height: 15px;
   color: var(--sidebar-muted);
 }
 
@@ -44,12 +45,17 @@
   flex-direction: column;
 }
 
+.navegacion-barra {
+  position: relative;
+}
+
 .navegacion-barra a {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 9px;
   margin: 0 16px;
-  padding: 8px 21px;
+  padding: 8px 8px 8px 5px;
   height: 36px;
   border-radius: 8px;
   font-family: var(--font-body);
@@ -78,7 +84,17 @@
   background-color: rgba(129, 140, 248, 0.15);
   color: var(--slate-50);
   font-weight: 600;
-  box-shadow: inset 2px 0 0 0 var(--indigo);
+}
+
+.navegacion-barra a.activo::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--indigo);
+  border-radius: 2px;
 }
 
 .contador-notificacion {
@@ -98,9 +114,9 @@
 }
 
 .divisor-barra {
-  margin: 24px 24px 12px;
+  margin: 12px 16px 16px;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cerrar-sesion {
@@ -108,13 +124,13 @@
   align-items: center;
   gap: 9px;
   margin: 0 16px 24px;
-  padding: 8px 21px;
+  padding: 8px 8px 8px 5px;
   height: 36px;
   border-radius: 8px;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  color: var(--slate-400);
+  color: var(--red);
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -136,4 +152,7 @@
 .contenido-principal {
   margin-left: 260px;
   min-height: 100vh;
+  padding-bottom: 40px;
+  background-color: var(--bg-card);
+  box-sizing: border-box;
 }

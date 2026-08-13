@@ -6,11 +6,12 @@
     <title>Verificar contraseña</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>
     <main class="contenedor-autenticacion">
         <div class="volver">
-            <a href="login.html"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="iniciar-sesion.html"><i class="ph ph-arrow-left"></i> Volver</a>
         </div>
         <section class="tarjeta-formulario">
         <div class="icono-formulario icono-verificacion">
@@ -69,13 +70,15 @@
     </p>
     <button
              type="submit"
-             class="boton-primario">
+             class="boton-primario"
+             onclick="event.preventDefault(); location.href='nueva-contraseña.html';">
              Verificar código
              </button>
 </form>
               <button
                        type="button"
-                       class="boton-secundario">
+                       class="boton-secundario"
+                       onclick="location.href='recuperar-contraseña.html';">
                        Cambiar correo
               </button>
         </section>

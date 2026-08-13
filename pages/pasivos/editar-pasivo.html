@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pasivo | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-pasivo-form mod-pasivo-editar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -48,55 +56,106 @@
                 <p>Actualiza los datos de la deuda</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="informacion-resumen">
-                <p>Editando:</p>
-                <strong>Tarjeta de Crédito · Banco ABC · -$2,500,000</strong>
+        <section class="pasivo-form-layout">
+            <div class="pasivo-form-col">
+                <section class="franja-edicion">
+                    <div class="icono-franja"><i class="ph ph-motorcycle"></i></div>
+                    <div class="info-franja">
+                        <span class="etiqueta-franja">Editando</span>
+                        <strong class="nombre-franja">Crédito Moto NKD</strong>
+                    </div>
+                    <div class="saldo-franja">
+                        <span class="label-saldo-franja">Saldo actual</span>
+                        <strong class="monto-saldo-franja">$8.200.000</strong>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-nombre">
+                    <label for="nombre">NOMBRE DEL PASIVO</label>
+                    <input type="text" id="nombre" value="Crédito Moto NKD">
+                </section>
+                <section class="grupo-campo campo-saldo">
+                    <label for="saldo">SALDO ACTUAL</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" id="saldo" value="8.200.000">
+                        <span class="badge-campo">SALDO</span>
+                    </div>
+                    <small>Actualiza si realizaste un abono extraordinario</small>
+                </section>
+                <section class="fila-campos">
+                    <section class="grupo-campo campo-tasa">
+                        <label for="tasa">TASA MENSUAL</label>
+                        <div class="campo-monto">
+                            <input type="text" id="tasa" value="1.8">
+                            <span class="sufijo-campo">% MV</span>
+                        </div>
+                    </section>
+                    <section class="grupo-campo campo-plazo">
+                        <label for="plazo">PLAZO</label>
+                        <div class="campo-monto">
+                            <input type="text" id="plazo" value="36">
+                            <span class="sufijo-campo">meses</span>
+                        </div>
+                    </section>
+                </section>
+                <section class="grupo-campo campo-amortizacion">
+                    <label for="amortizacion">TIPO DE AMORTIZACIÓN</label>
+                    <div class="opciones-tipo">
+                        <button type="button" class="opcion-tipo activa" data-valor="francesa">
+                            <i class="ph ph-calculator"></i>
+                            <span class="texto-tipo">
+                                <strong>Francesa</strong>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="alemana">
+                            <i class="ph ph-sort-ascending"></i>
+                            <span class="texto-tipo">
+                                <strong>Alemana</strong>
+                            </span>
+                        </button>
+                        <button type="button" class="opcion-tipo" data-valor="americana">
+                            <i class="ph ph-chart-bar"></i>
+                            <span class="texto-tipo">
+                                <strong>Americana</strong>
+                            </span>
+                        </button>
+                    </div>
+                </section>
+                <section class="grupo-campo campo-fecha-pasivo">
+                    <label for="fecha">FECHA DE INICIO</label>
+                    <div class="campo-fecha-pasivo-input">
+                        <i class="ph ph-calendar"></i>
+                        <input type="text" id="fecha" value="2025-01-15">
+                    </div>
+                </section>
             </div>
+            <aside class="pasivo-panel-previa">
+                <div class="pasivo-previa-header">
+                    <h2>ESTADO ACTUAL</h2>
+                </div>
+                <div class="pasivo-previa-contenido">
+                    <div class="pasivo-previa-fila-icono">
+                        <span class="pasivo-previa-icono"><i class="ph ph-motorcycle"></i></span>
+                        <div class="pasivo-previa-titular">
+                            <h3>Crédito Moto NKD</h3>
+                            <span class="pasivo-previa-subtipo">Crédito Vehículo · Francesa</span>
+                        </div>
+                    </div>
+                    <hr class="pasivo-previa-divider">
+                    <span class="pasivo-previa-label">Progreso de pago</span>
+                    <strong class="pasivo-previa-monto">18% pagado</strong>
+                    <span class="pasivo-previa-label">Fecha de inicio</span>
+                    <strong class="pasivo-previa-fecha">15 Ene 2025</strong>
+                </div>
+            </aside>
         </section>
-        <section class="formulario-meta">
-            <div class="grupo-formulario">
-                <label for="nombre">Nombre del pasivo</label>
-                <input type="text" id="nombre" value="Tarjeta de Crédito">
-            </div>
-            <div class="grupo-formulario">
-                <label for="tipo">Tipo de pasivo</label>
-                <select id="tipo">
-                    <option selected>Tarjeta de crédito</option>
-                    <option>Préstamo personal</option>
-                    <option>Hipoteca</option>
-                    <option>Servicio</option>
-                    <option>Otro</option>
-                </select>
-            </div>
-            <div class="grupo-formulario">
-                <label for="monto">Monto total</label>
-                <input type="text" id="monto" value="$2,500,000">
-            </div>
-            <div class="grupo-formulario">
-                <label for="cuota">Cuota mensual</label>
-                <input type="text" id="cuota" value="$250,000">
-            </div>
-            <div class="grupo-formulario">
-                <label for="fecha-vencimiento">Fecha de vencimiento</label>
-                <input type="date" id="fecha-vencimiento" value="2025-07-15">
-            </div>
-            <div class="grupo-formulario">
-                <label for="entidad">Entidad / Acreedor</label>
-                <input type="text" id="entidad" value="Banco ABC">
-            </div>
-        </section>
-        <section class="acciones">
-            <button type="button" class="boton-secundario">Cancelar</button>
-            <button type="button" class="boton-primario">Guardar Cambios</button>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-pasivos.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-pasivos.html'"><i class="ph ph-floppy-disk"></i>Guardar Cambios</button>
         </section>
     </main>
 </body>

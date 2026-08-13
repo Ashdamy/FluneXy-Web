@@ -1,0 +1,1507 @@
+
+.menu-toggle {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-hamburguesa,
+.menu-overlay {
+  display: none;
+}
+
+/* ==========================================================
+   COMPACTO (hasta 1400px): grids a 1-2 columnas fluidas.
+   ========================================================== */
+@media (max-width: 1400px) {
+  /* Grids con columnas de ancho fijo → una columna.
+     body[class] iguala la especificidad de los selectores
+     body.mod-* de global.css y gana por orden de carga. */
+  .contenido-dos-columnas,
+  .lista-componentes,
+  .lista-detalle-flujo,
+  .fila-categorias,
+  body[class] .contenido-dos-columnas,
+  body[class] .grid-plantillas,
+  body[class] .lista-componentes,
+  body[class] .lista-detalle-flujo,
+  body[class] .formulario-plantilla,
+  body[class] .grid-plantilla-form,
+  body[class] .fila-campos,
+  body[class] .fila-monto-fecha,
+  body[class] .fila-cat-fondo,
+  body[class] .grid-categorias,
+  body[class] .opciones-categoria,
+  body[class] .hero-pasivos-container,
+  body.mod-plantilla-form .opciones-categoria,
+  body.mod-plantilla-editar .opciones-categoria {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* grid-categorias en la página de pasivos compite con un
+     !important de global.css, por lo que sí debe mantenerlo. */
+  body.mod-pasivos .grid-categorias {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Grids de tarjetas de 3 columnas fijas → 2 columnas */
+  .alert-grid,
+  .tiles,
+  body[class] .alert-grid,
+  body[class] .alerta-grid,
+  body[class] .tiles,
+  body[class] .grid-info-plantilla,
+  body.mod-alertas-detalle .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================
+   TABLET + MÓVIL (hasta 1024px)
+   ========================================================== */
+@media (max-width: 1400px) {
+  /* Ocultar la barra lateral fuera de pantalla.
+     En laptops (1025-1400px) la sidebar de 250px deja menos de
+     1030px de contenido: la barra pasa a menú hamburguesa y el
+     contenido usa el ancho completo. Por encima de 1400px la
+     sidebar vuelve a mostrarse. */
+  .barra-lateral {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 80;
+  }
+
+  /* Contenido a ancho completo.
+     El selector genérico cubre páginas sin clase en el <body>;
+     body[class] iguala la especificidad (0,2,1) de los selectores
+     body.mod-* .contenido-principal de global.css y gana por orden. */
+  .contenido-principal,
+  body[class] .contenido-principal {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Botón hamburguesa */
+  .menu-hamburguesa {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 90;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(129, 140, 248, 0.25);
+    cursor: pointer;
+    transition: left 0.3s ease;
+  }
+
+  .menu-hamburguesa span {
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--white);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Menú abierto: la X se coloca al lado de la barra desplegada */
+  #menu-toggle:checked ~ .menu-hamburguesa {
+    left: 280px;
+  }
+
+  #menu-toggle:checked ~ .menu-hamburguesa span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  #menu-toggle:checked ~ .menu-hamburguesa span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked ~ .menu-hamburguesa span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Desplegar la barra lateral */
+  #menu-toggle:checked ~ .barra-lateral {
+    transform: translateX(0);
+  }
+
+  /* Overlay oscurecido (clic para cerrar) */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  #menu-toggle:checked ~ .menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body:has(#menu-toggle:checked) {
+    overflow: hidden;
+  }
+
+  /* Reducir márgenes/paddings laterales del contenido y dejar
+     espacio bajo el botón hamburguesa (fixed en top:20, h 40px) */
+  .contenido-principal,
+  body[class] .contenido-principal {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 64px;
+    overflow-x: auto;
+  }
+
+  .encabezado-pagina,
+  .encabezado-contenido,
+  body[class] .encabezado-pagina,
+  body[class] .encabezado-contenido {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-summary,
+  .tarjeta-patrimonio,
+  .seccion-accesos,
+  .hero-pasivos,
+  body[class] .hero-summary,
+  body[class] .tarjeta-patrimonio,
+  body[class] .seccion-accesos,
+  body[class] .hero-pasivos {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* ==========================================================
+   COMPACTO (hasta 1400px): apilado de contenidos
+   ========================================================== */
+@media (max-width: 1400px) {
+  .encabezado-pagina,
+  .encabezado-contenido {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .titulo-pagina h1,
+  .encabezado-contenido .saludo h1 {
+    font-size: 22px;
+  }
+
+  .acciones-usuario {
+    align-self: flex-end;
+  }
+
+  /* ===== Colapsar grids de tarjetas/dashboards a 1 columna =====
+     El selector genérico cubre páginas sin clase en el <body>;
+     body[class] iguala la especificidad (0,2,1) de los selectores
+     body.mod-* de global.css y gana por orden de carga. */
+  .grid-resumen,
+  .grid-resumen-movimientos,
+  .grid-accesos,
+  .grid-metas,
+  .grid-info,
+  .grid-informacion,
+  .grid-detalle,
+  .grid-info-plantilla,
+  .grid-bienes,
+  .grid-deudas,
+  .grid-categorias,
+  .grid-fondos,
+  .grid-formulario-mitad,
+  .lista-activos,
+  .lista-fondos,
+  .lista-categorias,
+  .lista-categories,
+  .detalle-informacion,
+  .estadisticas-meta,
+  .tiles-info-cuota,
+  .vp-datos,
+  .alert-grid,
+  .alerta-grid,
+  .fund-row,
+  .reg-pasivo-fila-mitad,
+  .reg-pasivo-grid-amortizacion,
+  .reg-pasivo-grid-categories,
+  .tile-resumen,
+  .opciones-tipo,
+  .opciones-categoria,
+  .acciones-formulario,
+  .acciones,
+  body[class] .grid-resumen,
+  body[class] .grid-resumen-movimientos,
+  body[class] .grid-accesos,
+  body[class] .grid-metas,
+  body[class] .grid-info,
+  body[class] .grid-informacion,
+  body[class] .grid-detalle,
+  body[class] .grid-info-plantilla,
+  body[class] .grid-bienes,
+  body[class] .grid-deudas,
+  body[class] .grid-categorias,
+  body[class] .grid-fondos,
+  body[class] .grid-formulario-mitad,
+  body[class] .lista-activos,
+  body[class] .lista-fondos,
+  body[class] .lista-categorias,
+  body[class] .lista-categories,
+  body[class] .detalle-informacion,
+  body[class] .estadisticas-meta,
+  body[class] .tiles-info-cuota,
+  body[class] .vp-datos,
+  body[class] .alert-grid,
+  body[class] .alerta-grid,
+  body[class] .fund-row,
+  body[class] .reg-pasivo-fila-mitad,
+  body[class] .reg-pasivo-grid-amortizacion,
+  body[class] .reg-pasivo-grid-categories,
+  body[class] .tile-resumen,
+  body[class] .opciones-tipo,
+  body[class] .opciones-categoria,
+  body[class] .acciones-formulario,
+  body[class] .acciones {
+    grid-template-columns: 1fr;
+  }
+
+  /* grid-info, grid-categorias y reg-pasivo-grid-amortizacion en la
+     página de pasivos compiten con !important de global.css, por lo
+     que sí deben mantenerlo. */
+  body.mod-pasivos .grid-info,
+  body.mod-pasivos .grid-categorias,
+  body.mod-pasivos .reg-pasivo-grid-amortizacion {
+    grid-template-columns: 1fr !important;
+  }
+
+  .estadisticas-patrimonio {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Dashboards de dos columnas apilados */
+  .balance-dashboard,
+  .ind-dashboard,
+  .rep-dashboard,
+  .grid-detalle,
+  .grid-resumen,
+  body[class] .balance-dashboard,
+  body[class] .ind-dashboard,
+  body[class] .rep-dashboard,
+  body[class] .grid-detalle,
+  body[class] .grid-resumen {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  /* Columnas internas con ancho fijo → ancho completo */
+  .bal-columna-izq,
+  .ind-columna-izq,
+  .rep-columna-form,
+  .rep-columna-vista,
+  .bal-columna-der,
+  .ind-columna-der,
+  .rep-columna-preview,
+  body[class] .bal-columna-izq,
+  body[class] .ind-columna-izq,
+  body[class] .rep-columna-form,
+  body[class] .rep-columna-vista,
+  body[class] .bal-columna-der,
+  body[class] .ind-columna-der,
+  body[class] .rep-columna-preview {
+    width: 100%;
+  }
+
+  /* Formularios de dos columnas → una columna */
+  .fila-campos,
+  .fila-monto-fecha,
+  .fila-cat-fondo,
+  .contenido-dos-columnas,
+  .grid-plantilla-form,
+  .grid-formulario-mitad,
+  body[class] .fila-campos,
+  body[class] .fila-monto-fecha,
+  body[class] .fila-cat-fondo,
+  body[class] .contenido-dos-columnas,
+  body[class] .grid-plantilla-form,
+  body[class] .grid-formulario-mitad {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fila-campos > *,
+  .fila-monto-fecha > *,
+  .fila-cat-fondo > *,
+  .contenido-dos-columnas > *,
+  .grid-plantilla-form > *,
+  .grid-formulario-mitad > *,
+  body[class] .fila-campos > *,
+  body[class] .fila-monto-fecha > *,
+  body[class] .fila-cat-fondo > *,
+  body[class] .contenido-dos-columnas > *,
+  body[class] .grid-plantilla-form > *,
+  body[class] .grid-formulario-mitad > * {
+    min-width: 0;
+  }
+
+  /* Selectores de tipo (tarjetas) → apiladas a ancho completo.
+     Los selectores prefijados body.mod-* igualan la especificidad
+     (0,2,1) de global.css y ganan por orden de carga. */
+  .opciones-tipo,
+  .opcion-tipo,
+  body.mod-fondo-form .opciones-tipo,
+  body.mod-activo-form .opciones-tipo,
+  body.mod-fondo-form .opcion-tipo,
+  body.mod-activo-form .opcion-tipo {
+    flex-direction: column;
+  }
+
+  body.mod-fondo-form .opcion-tipo,
+  body.mod-activo-form .opcion-tipo {
+    width: 100%;
+    height: auto;
+    padding: 14px;
+  }
+
+  /* Barras de búsqueda/filtro → columna a ancho completo */
+  .barra-activos,
+  .barra-pasivos,
+  .barra-fondos,
+  .barra-movimientos,
+  .barra-metas,
+  body[class] .barra-activos,
+  body[class] .barra-pasivos,
+  body[class] .barra-fondos,
+  body[class] .barra-movimientos,
+  body[class] .barra-metas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .barra-activos .busqueda,
+  .barra-pasivos .busqueda,
+  .barra-fondos .busqueda,
+  .barra-movimientos .busqueda,
+  .barra-metas .busqueda,
+  body[class] .barra-activos .busqueda,
+  body[class] .barra-pasivos .busqueda,
+  body[class] .barra-fondos .busqueda,
+  body[class] .barra-movimientos .busqueda,
+  body[class] .barra-metas .busqueda {
+    flex: 1 1 auto;
+    max-width: none;
+    width: 100%;
+  }
+
+  .barra-activos .filtro-todos,
+  .barra-pasivos .filtro-todos,
+  .barra-metas .filtro-todos,
+  .barra-activos .boton-primario,
+  .barra-pasivos .boton-primario,
+  .barra-metas .boton-primario,
+  body[class] .barra-activos .filtro-todos,
+  body[class] .barra-pasivos .filtro-todos,
+  body[class] .barra-metas .filtro-todos,
+  body[class] .barra-activos .boton-primario,
+  body[class] .barra-pasivos .boton-primario,
+  body[class] .barra-metas .boton-primario {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Tarjetas de resumen con gap amplio → columna */
+  .estadisticas-resumen {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .hero-total-plantillas,
+  body.mod-plantillas .hero-total-plantillas {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 16px;
+  }
+
+  body.mod-plantillas .tarjeta-resumen-bloque {
+    position: static;
+    margin-bottom: 12px;
+  }
+
+  body.mod-plantillas .hero-total-plantillas > span {
+    display: none;
+  }
+
+  body.mod-plantillas .btn-nueva-plantilla {
+    position: static;
+    width: 100%;
+    height: 44px;
+    margin-top: 8px;
+  }
+
+  .resumen-mini {
+    min-width: 0;
+  }
+
+  /* Tablas que desbordan → scroll horizontal */
+  .tabla-cuotas,
+  .contenedor-tabla,
+  .tabla-wrapper,
+  body[class] .tabla-cuotas,
+  body[class] .contenedor-tabla,
+  body[class] .tabla-wrapper {
+    overflow-x: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Botones de ancho fijo (dashboards) → ancho completo */
+  .componentes-flujo .boton-texto,
+  body[class] .componentes-flujo .boton-texto {
+    width: 100%;
+  }
+
+  /* Alternador ingreso/gasto en formularios de movimiento */
+  .alternador-tipo,
+  body[class] .alternador-tipo {
+    width: 100%;
+  }
+
+  /* Formulario de plantillas: hijos con ancho fijo → 100% */
+  body.mod-plantilla-form .grid-plantilla-form {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.mod-plantilla-form .type-toggle,
+  body.mod-plantilla-form .campo-monto,
+  body.mod-plantilla-form .rec-row,
+  body.mod-plantilla-form .day-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.mod-plantilla-form .campo-monto input {
+    min-width: 0;
+  }
+
+  body.mod-plantilla-form .opciones-categoria,
+  body.mod-plantilla-form .fila-fechas,
+  body.mod-plantilla-form .lista-fondos-asociados {
+    width: 100%;
+  }
+
+  body.mod-plantilla-form .fila-fechas {
+    flex-direction: column;
+  }
+
+  body.mod-plantilla-form .grupo-fecha {
+    width: 100%;
+  }
+
+  body.mod-plantilla-form .rec-opcion,
+  body.mod-plantilla-form .cat-chip,
+  body.mod-plantilla-form .fund-row {
+    width: 100%;
+  }
+
+  body.mod-plantilla-form .rec-row {
+    flex-wrap: wrap;
+  }
+
+  body.mod-plantilla-form .rec-opcion {
+    flex: 1 1 120px;
+    min-width: 0;
+  }
+
+  body.mod-plantilla-editar .edit-banner-plantilla {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* ===== Detalles (activo/pasivo/meta/plantilla): hero absoluto → flujo ===== */
+  body.mod-activo-detalle .hero-card,
+  body.mod-pasivo-detalle .hero-card,
+  body.mod-meta-detalle .hero-card,
+  body.mod-plantilla-detalle .hero-card,
+  body.mod-plantilla-detalle .hero-card-plantilla {
+    height: auto;
+    margin: 16px 0 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  body.mod-activo-detalle .bloque-izquierdo-hero,
+  body.mod-plantilla-detalle .bloque-izquierdo-hero,
+  body.mod-activo-detalle .contenedor-monto-hero,
+  body.mod-plantilla-detalle .contenedor-monto-hero,
+  body.mod-activo-detalle .chip-estado,
+  body.mod-pasivo-detalle .chip-estado,
+  body.mod-meta-detalle .chip-estado,
+  body.mod-plantilla-detalle .chip-estado {
+    position: static;
+  }
+
+  body.mod-activo-detalle .monto-hero {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  /* Detalle de pasivo: hero absoluto → flujo (clases nuevas) */
+  body.mod-pasivo-detalle .hero-icono,
+  body.mod-pasivo-detalle .hero-titulo,
+  body.mod-pasivo-detalle .badge-tipo,
+  body.mod-pasivo-detalle .hero-label,
+  body.mod-pasivo-detalle .hero-valor {
+    position: static;
+  }
+
+  body.mod-pasivo-detalle .hero-valor {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  body.mod-pasivo-detalle .progreso-card,
+  body.mod-pasivo-detalle .impacto-card,
+  body.mod-pasivo-detalle .tiles,
+  body.mod-pasivo-detalle .cuota-banner,
+  body.mod-pasivo-detalle .acciones-detalle {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.mod-pasivo-detalle .acciones-detalle {
+    grid-template-columns: 1fr;
+  }
+
+  /* Detalle de meta: hero absoluto → flujo (clases nuevas) */
+  body.mod-meta-detalle .hero-icono,
+  body.mod-meta-detalle .hero-titulo,
+  body.mod-meta-detalle .badge-tipo,
+  body.mod-meta-detalle .hero-label,
+  body.mod-meta-detalle .hero-valor,
+  body.mod-meta-detalle .hero-detalle,
+  body.mod-meta-detalle .hero-faltan {
+    position: static;
+  }
+
+  body.mod-meta-detalle .hero-valor {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  body.mod-meta-detalle .calc-card,
+  body.mod-meta-detalle .info-titulo,
+  body.mod-meta-detalle .tiles,
+  body.mod-meta-detalle .aporte-banner,
+  body.mod-meta-detalle .acciones-detalle {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.mod-meta-detalle .c-der {
+    position: static;
+    margin-left: auto;
+    align-items: flex-end;
+  }
+
+  body.mod-meta-detalle .a-arr {
+    position: static;
+    margin-left: auto;
+  }
+
+  body.mod-meta-detalle .acciones-detalle {
+    grid-template-columns: 1fr;
+  }
+
+  /* Detalle de plantilla: bloques de ancho fijo → ancho completo */
+  body.mod-plantilla-detalle .hero-card-plantilla,
+  body.mod-plantilla-detalle .next-exec-banner,
+  body.mod-plantilla-detalle .fail-exec-banner,
+  body.mod-plantilla-detalle .informacion-plantilla {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.mod-plantilla-detalle .grid-info-plantilla {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.mod-plantilla-detalle .tile-total-plantilla,
+  body.mod-plantilla-detalle .acciones-detalle {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.mod-plantilla-detalle .acciones-detalle {
+    flex-direction: column;
+  }
+
+  body.mod-plantilla-detalle .btn-editar-plantilla,
+  body.mod-plantilla-detalle .btn-desactivar-plantilla {
+    width: 100%;
+  }
+
+  /* Detalle de movimiento: hero absoluto → flujo */
+  body.mod-detalle-movimiento .hero-movimiento .monto-hero,
+  body.mod-detalle-movimiento .hero-movimiento .chip-estado {
+    position: static;
+  }
+
+  body.mod-detalle-movimiento .hero-movimiento {
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Elementos decorativos que desbordan en móvil */
+  body.mod-alertas .alerta-suma-orb,
+  body.mod-fondo-editar .saldo-franja,
+  body.mod-activo-editar .saldo-franja,
+  body.mod-pasivo-editar .saldo-franja,
+  body.mod-meta-editar .saldo-franja,
+  body.mod-plantilla-editar .saldo-franja {
+    display: none;
+  }
+
+  /* ===== Alertas · lista (S1) ===== */
+  body.mod-alertas .alerta-suma {
+    height: auto;
+    margin: 16px 0 0;
+    padding: 16px;
+  }
+
+  body.mod-alertas .alerta-suma-divider {
+    left: 16px;
+    right: 16px;
+  }
+
+  body.mod-alertas .alerta-fila-titulo {
+    margin: 24px 0 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  body.mod-alertas .alerta-boton-nueva {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body.mod-alertas .alerta-grid {
+    margin: 20px 0 0;
+  }
+
+  /* Tarjeta: altura fija → flujo con wrap en 2 filas */
+  body.mod-alertas .alerta-tarjeta {
+    height: auto;
+    min-height: 104px;
+    padding: 16px;
+    flex-wrap: wrap;
+    row-gap: 14px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  body.mod-alertas .alerta-info {
+    flex: 1 1 auto;
+  }
+
+  body.mod-alertas .alerta-medida {
+    margin-left: 0;
+    min-width: 0;
+  }
+
+  body.mod-alertas .alerta-acciones {
+    margin-left: 0;
+  }
+
+  body.mod-alertas .alerta-estado {
+    margin-left: auto;
+  }
+
+  /* ===== Alertas · detalle (S3) ===== */
+  body.mod-alertas-detalle .hero-card {
+    height: auto;
+    margin: 16px 0 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  body.mod-alertas-detalle .hero-icono,
+  body.mod-alertas-detalle .badge-tipo,
+  body.mod-alertas-detalle .chip-estado,
+  body.mod-alertas-detalle .hero-titulo,
+  body.mod-alertas-detalle .hero-label,
+  body.mod-alertas-detalle .hero-valor,
+  body.mod-alertas-detalle .hero-umbral,
+  body.mod-alertas-detalle .hero-faltan {
+    position: static;
+  }
+
+  body.mod-alertas-detalle .hero-titulo {
+    margin: 6px 0 0;
+  }
+
+  body.mod-alertas-detalle .hero-umbral {
+    margin: 2px 0 0;
+  }
+
+  body.mod-alertas-detalle .hero-faltan {
+    margin: 0;
+  }
+
+  body.mod-alertas-detalle .calc-card {
+    height: auto;
+    min-height: 90px;
+    margin: 16px 0 0;
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  body.mod-alertas-detalle .c-der {
+    position: static;
+    margin-left: auto;
+  }
+
+  body.mod-alertas-detalle .info-titulo {
+    margin: 24px 0 0;
+  }
+
+  body.mod-alertas-detalle .tiles {
+    margin: 12px 0 0;
+  }
+
+  body.mod-alertas-detalle .aporte-banner {
+    height: auto;
+    min-height: 76px;
+    margin: 20px 0 0;
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  body.mod-alertas-detalle .a-arr {
+    position: static;
+    margin-left: auto;
+  }
+
+  body.mod-alertas-detalle .detalle-divider {
+    margin: 12px 0 0;
+  }
+
+  body.mod-alertas-detalle .acciones-alerta {
+    margin: 14px 0 0;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* ===== Alertas · configurar (S2) ===== */
+  body.mod-alertas-configurar .alerta-config-layout {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 16px 0 0;
+    gap: 24px;
+  }
+
+  body.mod-alertas-configurar .alerta-config-form,
+  body.mod-alertas-configurar .alerta-config-extra {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  body.mod-alertas-configurar .fund-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.mod-alertas-configurar .info-chips {
+    flex-wrap: wrap;
+  }
+
+  body.mod-alertas-configurar .btn-guardar-alerta {
+    width: 100%;
+    margin: 20px 0 0;
+  }
+
+  /* ===== Alertas · historial (S4) ===== */
+  body.mod-alertas-historial .alerta-boton-historial {
+    width: 100%;
+    margin: 24px 0 0;
+  }
+
+  /* ===== Alertas · vacío (S1b) ===== */
+  body.mod-alertas-vacio .estado-vacio {
+    margin: 48px 0 0;
+  }
+
+  body.mod-alertas-vacio .vacio-orb {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ===== Estados vacíos → columna centrada ===== */
+  body.mod-activos-vacio .estado-vacio-activos,
+  body.mod-fondos .estado-vacio-fondos,
+  body.mod-meta-vacio .estado-vacio-metas,
+  body.mod-pasivo-vacio .estado-vacio-pasivos,
+  body.mod-plantilla-vacio .estado-vacio-plantillas {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 48px 0 0;
+    text-align: center;
+  }
+
+  body.mod-activos-vacio .estado-vacio-activos .halo-activos,
+  body.mod-fondos .estado-vacio-fondos .halo-fondos,
+  body.mod-meta-vacio .estado-vacio-metas .halo-metas,
+  body.mod-pasivo-vacio .estado-vacio-pasivos .halo-pasivos,
+  body.mod-plantilla-vacio .estado-vacio-plantillas .halo-plantillas {
+    position: static;
+    width: 220px;
+    height: 220px;
+  }
+
+  body.mod-activos-vacio .estado-vacio-activos .circulo-activos,
+  body.mod-fondos .estado-vacio-fondos .circulo-fondos,
+  body.mod-meta-vacio .estado-vacio-metas .circulo-metas,
+  body.mod-pasivo-vacio .estado-vacio-pasivos .circulo-pasivos,
+  body.mod-plantilla-vacio .estado-vacio-plantillas .circulo-plantillas {
+    position: static;
+    width: 110px;
+    height: 110px;
+    margin: -165px 0 0;
+  }
+
+  body.mod-fondos .estado-vacio-fondos > i {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: -79px 0 0;
+  }
+
+  body.mod-activos-vacio .estado-vacio-activos h2,
+  body.mod-fondos .estado-vacio-fondos h2,
+  body.mod-meta-vacio .estado-vacio-metas h2,
+  body.mod-pasivo-vacio .estado-vacio-pasivos h2,
+  body.mod-plantilla-vacio .estado-vacio-plantillas h2 {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 24px 0 0;
+  }
+
+  body.mod-activos-vacio .estado-vacio-activos p,
+  body.mod-fondos .estado-vacio-fondos p,
+  body.mod-meta-vacio .estado-vacio-metas p,
+  body.mod-pasivo-vacio .estado-vacio-pasivos p,
+  body.mod-plantilla-vacio .estado-vacio-plantillas p {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 8px 0 0;
+  }
+
+  body.mod-activos-vacio .btn-primer-activo,
+  body.mod-fondos .btn-primer-fondo,
+  body.mod-meta-vacio .btn-primer-meta,
+  body.mod-pasivo-vacio .btn-primer-pasivo,
+  body.mod-plantilla-vacio .btn-primer-plantilla {
+    position: static;
+    width: 220px;
+    margin: 28px 0 0;
+  }
+
+  /* Movimientos vacío (estructura distinta) */
+  body.mod-vacio-movimientos .estado-vacio {
+    position: static;
+    margin: 48px 0 0;
+  }
+
+  body.mod-vacio-movimientos .iconos-vacio {
+    position: static;
+    width: 220px;
+    height: 220px;
+    margin: 0;
+  }
+
+  body.mod-vacio-movimientos .circulo-interior {
+    top: 55px;
+    left: 55px;
+    width: 110px;
+    height: 110px;
+  }
+
+  body.mod-vacio-movimientos .estado-vacio h2 {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 24px 0 0;
+  }
+
+  body.mod-vacio-movimientos .estado-vacio p {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 8px 0 0;
+  }
+
+  body.mod-vacio-movimientos .estado-vacio .boton-vacio {
+    position: static;
+    width: 240px;
+    margin: 28px 0 0;
+  }
+
+  /* ===== Flujo de caja · tarjeta resumen y botón ===== */
+  .tarjeta-resumen-flujo {
+    width: 100%;
+    height: auto;
+    margin: 16px 0 0;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .tarjeta-resumen-flujo .saldo-resumen-flujo,
+  .tarjeta-resumen-flujo .metrica-resumen-flujo {
+    position: static;
+  }
+
+  .tarjeta-resumen-flujo .metrica-resumen-flujo {
+    margin-left: auto;
+  }
+
+  .etiqueta-detalle-flujo {
+    margin: 16px 0 0;
+  }
+
+  .lista-detalle-flujo {
+    margin: 12px 0 0;
+  }
+
+  .item-detalle-flujo {
+    height: auto;
+    min-height: 80px;
+    padding: 14px 12px 14px 0;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .estado-detalle-flujo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .item-componente {
+    height: auto;
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .info-componente {
+    min-width: 0;
+  }
+
+  .monto-componente {
+    margin-left: auto;
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .lista-detalle-flujo + .boton-texto {
+    width: 100%;
+    margin: 16px 0 0;
+    box-sizing: border-box;
+  }
+
+  /* ===== Fondo · detalle ===== */
+  body.mod-fondos .hero-card {
+    height: auto;
+    margin: 16px 0 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  body.mod-fondos .hero-card .bloque-izquierdo-hero,
+  body.mod-fondos .hero-card .contenedor-monto-hero,
+  body.mod-fondos .hero-card .chip-estado {
+    position: static;
+  }
+
+  body.mod-fondos .informacion-activo,
+  body.mod-fondos .actividad-reciente {
+    margin: 0;
+  }
+
+  body.mod-fondos .grid-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.mod-fondos .fila-tile {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  body.mod-fondos .tile-label {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
+  }
+
+  body.mod-fondos .item-transaccion {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  body.mod-fondos .acciones-detalle {
+    width: 100%;
+    margin: 16px 0 0;
+    gap: 12px;
+  }
+
+  /* ===== Movimiento · editar (banner) ===== */
+  body.mod-editar-movimiento .banner-editar {
+    height: auto;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+  }
+
+  body.mod-editar-movimiento .banner-editar > i,
+  body.mod-editar-movimiento .banner-editar .info-banner,
+  body.mod-editar-movimiento .banner-editar .monto-banner {
+    position: static;
+  }
+
+  body.mod-editar-movimiento .banner-editar .monto-banner {
+    margin-left: auto;
+  }
+
+  /* ===== Home · movimientos recientes ===== */
+  .item-movimiento-home {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .detalle-movimiento {
+    min-width: 0;
+  }
+
+  .valor-movimiento {
+    margin-left: auto;
+  }
+
+  /* ===== Pagos ===== */
+  .filter-periodo,
+  .filter-periodo.simple {
+    width: 100%;
+    max-width: 340px;
+    margin: 16px 0 0;
+  }
+
+  .etiqueta-orden {
+    margin: 16px 0 0;
+  }
+
+  .tabla-historial-pagos {
+    margin: 0;
+  }
+
+  .snap-meta,
+  .snap-cuota {
+    grid-template-columns: auto 1fr;
+    height: auto;
+    margin: 16px 0 0;
+    padding: 16px;
+    gap: 8px 16px;
+    box-sizing: border-box;
+  }
+
+  .valor-snap-meta,
+  .valor-snap-cuota {
+    grid-column: 1 / -1;
+    justify-self: start;
+    font-size: 16px;
+  }
+
+  .item-pago {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  /* ===== Balance financiero ===== */
+  .bal-datos {
+    flex-wrap: wrap;
+  }
+
+  .bal-dato {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+
+  /* Encabezado de plantillas (título + acciones) en columna */
+  body.mod-plantillas .encabezado-pagina {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Tarjetas de plantilla: footer absoluto → flujo con wrap */
+  body.mod-plantillas .footer-card-plantilla {
+    position: static;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  body.mod-plantillas .monto-card-plantilla {
+    position: static;
+    margin-top: 12px;
+  }
+
+  /* ===== Mi perfil ===== */
+  .mp-contenido {
+    flex-direction: column;
+    gap: 24px;
+    margin: 8px 0 0;
+  }
+
+  .mp-columna-izq,
+  .mp-columna-der {
+    width: 100%;
+  }
+
+  .mp-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .mp-hero-info h2 {
+    font-size: 24px;
+  }
+
+  .mp-hero-badges {
+    flex-wrap: wrap;
+  }
+
+  .mp-datos-tarjeta {
+    padding: 0 20px;
+  }
+
+  .mp-fila {
+    gap: 16px;
+  }
+
+  .mp-fila-icono {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mp-accion {
+    height: auto;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  /* ===== Editar perfil (ep-*) ===== */
+  .ep-contenido {
+    flex-direction: column;
+    gap: 24px;
+    margin: 8px 0 24px;
+  }
+
+  .ep-columna-form,
+  .ep-columna-vista {
+    width: 100%;
+  }
+
+  .ep-form {
+    padding: 24px 16px;
+  }
+
+  .ep-preview {
+    max-width: 100%;
+  }
+
+  .ep-acciones {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ep-boton {
+    width: 100%;
+  }
+
+  .ep-campo input {
+    min-width: 0;
+  }
+
+  /* ===== Formularios con panel de previsualización (activo/pasivo/meta) ===== */
+  body.mod-activo-form .activo-form-layout,
+  body.mod-pasivo-form .pasivo-form-layout,
+  body.mod-meta-form .meta-form-layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  body.mod-activo-form .activo-panel-previa,
+  body.mod-pasivo-form .pasivo-panel-previa,
+  body.mod-meta-form .meta-panel-previa,
+  body.mod-activo-editar .activo-panel-previa,
+  body.mod-pasivo-editar .pasivo-panel-previa,
+  body.mod-meta-editar .meta-panel-previa,
+  body.mod-meta-editar .meta-panel-col {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  /* ===== Modales de advertencia (desactivar fondo/activo/pasivo/meta) ===== */
+  body.mod-fondos .modal-desactivar-fondo,
+  body.mod-activo-desactivar .modal-desactivar-activo,
+  body.mod-pasivo-desactivar .modal-desactivar-pasivo,
+  body.mod-meta-desactivar .modal-desactivar-meta,
+  body.mod-alertas-desactivar .modal-desactivar-alerta {
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 24px 16px;
+    box-sizing: border-box;
+  }
+
+  body.mod-fondos .overlay-fondo-modal,
+  body.mod-activo-desactivar .overlay-activo-modal,
+  body.mod-pasivo-desactivar .overlay-pasivo-modal,
+  body.mod-meta-desactivar .overlay-meta-modal,
+  body.mod-alertas-desactivar .overlay-alerta-modal {
+    padding: 24px 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  body.mod-fondos .preview-fondo,
+  body.mod-fondos .icono-advertencia-fondo,
+  body.mod-fondos .titulo-modal-fondo,
+  body.mod-fondos .descripcion-modal-fondo,
+  body.mod-fondos .nota-aviso-fondo,
+  body.mod-fondos .acciones-modal-fondo,
+  body.mod-activo-desactivar .preview-activo,
+  body.mod-activo-desactivar .icono-advertencia-activo,
+  body.mod-activo-desactivar .titulo-modal-activo,
+  body.mod-activo-desactivar .descripcion-modal-activo,
+  body.mod-activo-desactivar .nota-aviso-activo,
+  body.mod-activo-desactivar .acciones-modal-activo,
+  body.mod-pasivo-desactivar .preview-pasivo,
+  body.mod-pasivo-desactivar .icono-advertencia-pasivo,
+  body.mod-pasivo-desactivar .titulo-modal-pasivo,
+  body.mod-pasivo-desactivar .descripcion-modal-pasivo,
+  body.mod-pasivo-desactivar .nota-aviso-pasivo,
+  body.mod-pasivo-desactivar .acciones-modal-pasivo,
+  body.mod-meta-desactivar .preview-meta,
+  body.mod-meta-desactivar .icono-advertencia-meta,
+  body.mod-meta-desactivar .titulo-modal-meta,
+  body.mod-meta-desactivar .descripcion-modal-meta,
+  body.mod-meta-desactivar .nota-aviso-meta,
+  body.mod-meta-desactivar .acciones-modal-meta,
+  body.mod-alertas-desactivar .preview-alerta,
+  body.mod-alertas-desactivar .icono-advertencia-alerta,
+  body.mod-alertas-desactivar .titulo-modal-alerta,
+  body.mod-alertas-desactivar .descripcion-modal-alerta,
+  body.mod-alertas-desactivar .nota-aviso-alerta,
+  body.mod-alertas-desactivar .acciones-modal-alerta {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  body.mod-fondos .preview-fondo,
+  body.mod-activo-desactivar .preview-activo,
+  body.mod-pasivo-desactivar .preview-pasivo,
+  body.mod-meta-desactivar .preview-meta,
+  body.mod-alertas-desactivar .preview-alerta {
+    margin-bottom: 16px;
+  }
+
+  body.mod-fondos .icono-advertencia-fondo,
+  body.mod-activo-desactivar .icono-advertencia-activo,
+  body.mod-pasivo-desactivar .icono-advertencia-pasivo,
+  body.mod-meta-desactivar .icono-advertencia-meta,
+  body.mod-alertas-desactivar .icono-advertencia-alerta {
+    margin: 0 auto 16px;
+  }
+
+  body.mod-fondos .titulo-modal-fondo,
+  body.mod-activo-desactivar .titulo-modal-activo,
+  body.mod-pasivo-desactivar .titulo-modal-pasivo,
+  body.mod-meta-desactivar .titulo-modal-meta,
+  body.mod-alertas-desactivar .titulo-modal-alerta {
+    margin-bottom: 8px;
+  }
+
+  body.mod-fondos .descripcion-modal-fondo,
+  body.mod-activo-desactivar .descripcion-modal-activo,
+  body.mod-pasivo-desactivar .descripcion-modal-pasivo,
+  body.mod-meta-desactivar .descripcion-modal-meta,
+  body.mod-alertas-desactivar .descripcion-modal-alerta {
+    margin-bottom: 16px;
+  }
+
+  body.mod-fondos .nota-aviso-fondo,
+  body.mod-activo-desactivar .nota-aviso-activo,
+  body.mod-pasivo-desactivar .nota-aviso-pasivo,
+  body.mod-meta-desactivar .nota-aviso-meta,
+  body.mod-alertas-desactivar .nota-aviso-alerta {
+    height: auto;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  body.mod-fondos .acciones-modal-fondo,
+  body.mod-activo-desactivar .acciones-modal-activo,
+  body.mod-pasivo-desactivar .acciones-modal-pasivo,
+  body.mod-meta-desactivar .acciones-modal-meta,
+  body.mod-alertas-desactivar .acciones-modal-alerta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  body.mod-fondos .acciones-modal-fondo button,
+  body.mod-activo-desactivar .acciones-modal-activo button,
+  body.mod-pasivo-desactivar .acciones-modal-pasivo button,
+  body.mod-meta-desactivar .acciones-modal-meta button,
+  body.mod-alertas-desactivar .acciones-modal-alerta button {
+    width: 100%;
+    flex: none;
+  }
+
+  /* ===== Modal de advertencia (desactivar movimiento) ===== */
+  body.mod-modal-movimiento .modal-movimiento {
+    padding: 24px 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  body.mod-modal-movimiento .contenedor-modal {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 24px 16px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  body.mod-modal-movimiento .tarjeta-preview,
+  body.mod-modal-movimiento .icono-advertencia,
+  body.mod-modal-movimiento .contenido-modal h3,
+  body.mod-modal-movimiento .contenido-modal p,
+  body.mod-modal-movimiento .mensaje-advertencia,
+  body.mod-modal-movimiento .acciones-modal {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  body.mod-modal-movimiento .tarjeta-preview {
+    margin-bottom: 16px;
+  }
+
+  body.mod-modal-movimiento .icono-advertencia {
+    margin: 0 auto 16px;
+  }
+
+  body.mod-modal-movimiento .contenido-modal h3 {
+    margin-bottom: 8px;
+  }
+
+  body.mod-modal-movimiento .contenido-modal p {
+    margin-bottom: 16px;
+  }
+
+  body.mod-modal-movimiento .mensaje-advertencia {
+    height: auto;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  body.mod-modal-movimiento .acciones-modal {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  body.mod-modal-movimiento .acciones-modal button {
+    width: 100%;
+    flex: none;
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================
+   Escritorio (desde 1400px): el estado vacío es un contenedor
+   absoluto de 1180px que en pantallas 1400-1439px no cabe en el
+   área de contenido (~1150px). Se centra y fluye hasta 100%.
+   ========================================================== */
+@media (min-width: 1400px) {
+  body.mod-activos-vacio .estado-vacio-activos,
+  body.mod-fondos .estado-vacio-fondos,
+  body.mod-meta-vacio .estado-vacio-metas,
+  body.mod-pasivo-vacio .estado-vacio-pasivos,
+  body.mod-plantilla-vacio .estado-vacio-plantillas {
+    width: min(1180px, 100%);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

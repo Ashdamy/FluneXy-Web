@@ -1,15 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Plantilla</title>
+    <title>Nueva Plantilla | FluneXy</title>
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/components/barra-lateral.css">
+    <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-plantilla-form mod-plantilla-crear">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -34,12 +42,12 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
@@ -48,111 +56,83 @@
                 <p>Configura un movimiento automático recurrente</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
-                </button>
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="formulario-plantilla">
-            <section class="datos-principales">
-                <div class="tipo-monto">
-                    <h3>Tipo y monto</h3>
-                    <div class="tipo-transaccion">
-                        <button type="button" class="boton-primario">
-                            Ingreso
-                        </button>
-                        <button type="button" class="boton-secundario">
-                            Gasto
-                        </button>
-                    </div>
-                    <div class="monto">
-                        <strong>$1,200,000</strong>
-                        <small>Ingreso</small>
-                    </div>
-                </div>
-                <div class="categorias">
-                    <h3>Categoría</h3>
-                    <div class="lista-categorias">
-                        <div class="categoria">
-                            <h4>Salario</h4>
-                            <small>Ingreso</small>
-                        </div>
-                        <div class="categoria">
-                            <h4>Inversión</h4>
-                            <small>Ingreso</small>
-                        </div>
-                        <div class="categoria">
-                            <h4>Ventas</h4>
-                            <small>Ingreso</small>
-                        </div>
-                        <div class="categoria">
-                            <h4>Bonificación</h4>
-                            <small>Ingreso</small>
-                        </div>
-                        <div class="categoria">
-                            <h4>Otro</h4>
-                            <small>Ingreso</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="recurrencia">
-                    <h3>Recurrencia</h3>
-                    <div class="opciones-recurrencia">
-                        <button type="button">Mensual</button>
-                        <button type="button">Quincenal</button>
-                        <button type="button">Semanal</button>
-                    </div>
-                </div>
-            </section>
-            <section class="configuracion">
-                <div class="dia-ejecucion">
-                    <h3>Día de ejecución</h3>
-                    <div class="selector-dia">
-                        <p>Ejecutar el día</p>
-                        <button type="button">-</button>
-                        <strong>5</strong>
-                        <button type="button">+</button>
-                    </div>
-                    <small>de cada mes · La ejecución se programa automáticamente</small>
-                </div>
-                <div class="vigencia">
-                    <h3>Periodo de vigencia</h3>
-                    <div class="fechas">
-                        <div>
-                            <p>Fecha inicio</p>
-                            <strong>2025-06-01</strong>
-                        </div>
-                        <div>
-                            <p>Fecha fin</p>
-                            <strong>2025-12-31</strong>
+        <div class="grid-plantilla-form">
+            <div class="col-izq-form">
+                <p class="seccion-label">TIPO Y MONTO</p>
+                <section class="type-toggle">
+                    <button type="button" class="toggle-tipo activo" data-tipo="ingreso"><i class="ph ph-trend-up"></i>Ingreso</button>
+                    <button type="button" class="toggle-tipo" data-tipo="gasto" onclick="location.href='nueva-plantilla-gasto.html'"><i class="ph ph-trend-down"></i>Gasto</button>
+                </section>
+                <section class="campo-monto">
+                    <span class="prefijo-monto">$</span>
+                    <input type="text" id="monto" placeholder="0">
+                    <span class="badge-tipo-monto ingreso">INGRESO</span>
+                </section>
+                <p class="seccion-label">CATEGORÍA</p>
+                <section class="opciones-categoria">
+                    <button type="button" class="cat-chip activa"><i class="ph ph-briefcase"></i><span class="texto-chip"><strong>Salario</strong><small>Ingreso</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-chart-line-up"></i><span class="texto-chip"><strong>Inversión</strong><small>Ingreso</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-shopping-bag"></i><span class="texto-chip"><strong>Ventas</strong><small>Ingreso</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-gift"></i><span class="texto-chip"><strong>Bonificación</strong><small>Ingreso</small></span></button>
+                    <button type="button" class="cat-chip"><i class="ph ph-dots-three"></i><span class="texto-chip"><strong>Otro</strong><small>Ingreso</small></span></button>
+                </section>
+                <p class="seccion-label">RECURRENCIA</p>
+                <section class="rec-row">
+                    <button type="button" class="rec-opcion activo"><i class="ph ph-calendar"></i>Mensual</button>
+                    <button type="button" class="rec-opcion"><i class="ph ph-calendar-blank"></i>Quincenal</button>
+                    <button type="button" class="rec-opcion"><i class="ph ph-calendar-blank"></i>Semanal</button>
+                </section>
+            </div>
+            <div class="col-der-form">
+                <p class="seccion-label">DÍA DE EJECUCIÓN</p>
+                <section class="day-box">
+                    <span class="day-texto">Ejecutar el día</span>
+                    <button type="button" class="stepper-btn">−</button>
+                    <strong class="day-valor">5</strong>
+                    <button type="button" class="stepper-btn">+</button>
+                </section>
+                <small class="hint-plantilla">de cada mes · La ejecución se programa automáticamente</small>
+                <p class="seccion-label">PERIODO DE VIGENCIA</p>
+                <section class="fila-fechas">
+                    <div class="grupo-fecha">
+                        <span class="label-fecha">FECHA INICIO</span>
+                        <div class="date-box">
+                            <i class="ph ph-calendar"></i>
+                            <input type="text" id="fecha-inicio" value="2025-06-01">
                         </div>
                     </div>
-                    <small>7 meses de vigencia · 7 ejecuciones programadas</small>
-                </div>
-                <div class="fondo-asociado">
-                    <h3>Fondo asociado</h3>
-                    <div class="fondo">
-                        <h4>Bancolombia</h4>
-                        <small>$2,450,000</small>
+                    <div class="grupo-fecha">
+                        <span class="label-fecha">FECHA FIN</span>
+                        <div class="date-box">
+                            <i class="ph ph-calendar"></i>
+                            <input type="text" id="fecha-fin" value="2025-12-31">
+                        </div>
                     </div>
-                    <div class="fondo">
-                        <h4>Nequi</h4>
-                        <small>$380,000</small>
-                    </div>
-                </div>
-            </section>
+                </section>
+                <small class="hint-plantilla">7 meses de vigencia · 7 ejecuciones programadas</small>
+                <p class="seccion-label">FONDO ASOCIADO</p>
+                <section class="lista-fondos-asociados">
+                    <button type="button" class="fund-row activo">
+                        <i class="ph ph-bank"></i>
+                        <span class="info-fund"><strong>Bancolombia</strong><small>$2,450,000</small></span>
+                        <i class="ph ph-check check-fund"></i>
+                    </button>
+                    <button type="button" class="fund-row">
+                        <i class="ph ph-device-mobile"></i>
+                        <span class="info-fund"><strong>Nequi</strong><small>$380,000</small></span>
+                        <i class="ph ph-check check-fund"></i>
+                    </button>
+                </section>
+            </div>
+        </div>
+        <section class="acciones-formulario">
+            <button type="button" class="btn-cancelar" onclick="location.href='mis-plantillas.html'">Cancelar</button>
+            <button type="button" class="btn-guardar" onclick="location.href='mis-plantillas.html'"><i class="ph ph-floppy-disk"></i>Guardar Plantilla</button>
         </section>
-        <footer class="acciones">
-            <button type="button" class="boton-secundario">
-                Cancelar
-            </button>
-            <button type="button" class="boton-primario">
-                Guardar Plantilla
-            </button>
-        </footer>
     </main>
 </body>
 </html>

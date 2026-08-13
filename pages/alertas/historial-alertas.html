@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-alertas mod-alertas-historial">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -41,74 +47,103 @@
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
         </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
                 <h1>Historial de Alertas</h1>
-                <p>Registro de todas las notificaciones enviadas</p>
+                <p>Consulta las notificaciones generadas</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">
-                    <img src="" alt="Foto de perfil">
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
+                    <span>A</span>
                 </button>
             </div>
         </header>
-        <section class="seccion-filtro">
-            <select class="campo-select">
-                <option>Filtrar por tipo</option>
-                <option>Límite de gasto</option>
-                <option>Vencimiento</option>
-                <option>Meta</option>
-            </select>
-        </section>
-        <section class="historial-eventos">
-            <header class="encabezado-seccion">
-                <h3>Últimas notificaciones</h3>
-            </header>
-            <div class="lista-eventos">
-                <article class="tarjeta-evento">
-                    <div class="contenido-evento">
-                        <div class="info-evento">
-                            <h4>Límite de gasto</h4>
-                            <p>Alimentación · 15 Jun 2025</p>
-                        </div>
-                        <span class="badge-evento enviada">Enviada</span>
-                    </div>
-                </article>
-                <article class="tarjeta-evento">
-                    <div class="contenido-evento">
-                        <div class="info-evento">
-                            <h4>Vencimiento</h4>
-                            <p>Tarjeta de Crédito · 10 Jun 2025</p>
-                        </div>
-                        <span class="badge-evento leida">Leída</span>
-                    </div>
-                </article>
-                <article class="tarjeta-evento">
-                    <div class="contenido-evento">
-                        <div class="info-evento">
-                            <h4>Meta</h4>
-                            <p>Ahorro Vacaciones · 05 Jun 2025</p>
-                        </div>
-                        <span class="badge-evento enviada">Enviada</span>
-                    </div>
-                </article>
-                <article class="tarjeta-evento">
-                    <div class="contenido-evento">
-                        <div class="info-evento">
-                            <h4>Límite de gasto</h4>
-                            <p>Transporte · 01 Jun 2025</p>
-                        </div>
-                        <span class="badge-evento leida">Leída</span>
-                    </div>
-                </article>
+
+        <section class="alerta-suma alerta-suma-historial">
+            <span class="alerta-suma-orb"></span>
+            <div class="alerta-suma-izq">
+                <span class="alerta-suma-etiqueta">Este mes</span>
+                <strong class="alerta-suma-numero">3</strong>
+                <span class="alerta-suma-pill">Últimos 30 días</span>
             </div>
-            <button type="button" class="boton-texto">Ver todas</button>
+            <div class="alerta-suma-der">
+                <span class="alerta-suma-total-etiqueta">Total</span>
+                <strong class="alerta-suma-total">12</strong>
+            </div>
+            <span class="alerta-suma-divider"></span>
         </section>
-    </main>  </body>
+
+        <div class="alerta-fila-titulo">
+            <h3>Alertas Generadas</h3>
+        </div>
+
+        <section class="alerta-grid">
+            <article class="alerta-tarjeta alerta-acento-indigo">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-chart-line-down"></i></span>
+                <div class="alerta-info">
+                    <h4>Endeudamiento superó 35%</h4>
+                    <span>28 Jun 2026 · 09:14 am</span>
+                </div>
+                <div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Valor</span>
+                    <strong>35.2%</strong>
+                </div>
+                <span class="alerta-estado"><i class="alerta-punto"></i>Notificado</span>
+            </article>
+
+            <article class="alerta-tarjeta alerta-acento-violeta">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-chart-line-down"></i></span>
+                <div class="alerta-info">
+                    <h4>Endeudamiento superó 35%</h4>
+                    <span>15 Jun 2026 · 08:02 am</span>
+                </div>
+                <div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Valor</span>
+                    <strong>35.8%</strong>
+                </div>
+                <span class="alerta-estado"><i class="alerta-punto"></i>Notificado</span>
+            </article>
+
+            <article class="alerta-tarjeta alerta-acento-verde">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-drop-half"></i></span>
+                <div class="alerta-info">
+                    <h4>Liquidez bajo 1.0x</h4>
+                    <span>02 Jun 2026 · 11:40 pm</span>
+                </div>
+                <div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Valor</span>
+                    <strong>0.9x</strong>
+                </div>
+                <span class="alerta-estado"><i class="alerta-punto"></i>Notificado</span>
+            </article>
+
+            <article class="alerta-tarjeta alerta-acento-gris">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-money"></i></span>
+                <div class="alerta-info">
+                    <h4>Gasto excesivo del mes</h4>
+                    <span>30 May 2026 · 06:00 pm</span>
+                </div>
+                <div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Valor</span>
+                    <strong>$3.150.000</strong>
+                </div>
+                <span class="alerta-estado alerta-estado-inactiva">Notificado</span>
+            </article>
+        </section>
+
+        <a href="lista-alertas.html" class="alerta-boton-historial">
+            <i class="ph ph-bell"></i> Ver Alertas Activas
+        </a>
+    </main>
+</body>
 </html>

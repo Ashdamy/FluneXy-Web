@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="/components/barra-lateral.css">
     <link rel="stylesheet" href="/components/acciones-usuario.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-<body>
-    <aside class="barra-lateral">
-        <div class="logo-barra"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></div>
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body class="mod-form-movimiento mod-form-saldo">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="/index.html" class="logo-enlace"><img src="/media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
         <span class="etiqueta-seccion">PRINCIPAL</span>
         <nav class="navegacion-barra">
             <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
@@ -36,66 +42,93 @@
             <a href="../reportes/generar-reporte.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
         </nav>
         <span class="etiqueta-seccion">SOPORTE</span>
-        <nav class="navegacion-barra">
+            <nav class="navegacion-barra">
             <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
             <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
-        </nav>
+            </nav>
         <hr class="divisor-barra">
-        <a href="../autenticacion/cerrar-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
         <header class="encabezado-pagina">
             <div class="titulo-pagina">
-                <h1>Registrar Movimiento</h1>
-                <p>Saldo insuficiente en el fondo seleccionado</p>
+                <h1>Nuevo Movimiento</h1>
+                <p>Registra un ingreso o gasto</p>
             </div>
             <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
                     <i class="ph ph-bell"></i>
                 </button>
-                <button type="button" class="boton-perfil">A</button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <div class="contenido-dos-columnas">
-            <section class="formulario-meta">
-                <div class="tipo-transaccion">
-                    <button type="button" class="boton-secundario">Ingreso</button>
-                    <button type="button" class="boton-primario">Gasto</button>
+        <form class="formulario-movimiento" novalidate>
+            <div class="grupo-formulario gap-tipo">
+                <label>TIPO DE MOVIMIENTO</label>
+                <div class="alternador-tipo">
+                    <button type="button" class="opcion-alternador" onclick="location.href='nuevo-movimiento-ingreso.html'"><i class="ph ph-arrow-up-right"></i> Ingreso</button>
+                    <button type="button" class="opcion-alternador activo-gasto"><i class="ph ph-arrow-down-left"></i> Gasto</button>
+                </div>
+            </div>
+            <div class="fila-monto-fecha">
+                <div class="grupo-formulario">
+                    <label>MONTO</label>
+                    <div class="campo-monto">
+                        <span class="prefijo-monto">$</span>
+                        <input type="text" placeholder="45.000">
+                        <span class="badge-tipo badge-gasto">Gasto</span>
+                    </div>
                 </div>
                 <div class="grupo-formulario">
-                    <label for="nombre">Nombre del movimiento</label>
-                    <input type="text" id="nombre" value="Arriendo">
+                    <label>FECHA</label>
+                    <div class="campo-fecha">
+                        <input type="text" value="03 Jun 2025">
+                        <span class="icono-calendario"><i class="ph ph-calendar"></i></span>
+                    </div>
                 </div>
-                <div class="grupo-formulario">
-                    <label for="monto">Monto</label>
-                    <input type="text" id="monto" value="$1,200,000">
+            </div>
+            <div class="grupo-formulario gap-categorias">
+                <label>CATEGORÍA</label>
+                <div class="grid-categorias">
+                    <button type="button" class="item-categoria activo"><i class="ph ph-film-slate"></i> Entretenimiento</button>
+                    <button type="button" class="item-categoria"><i class="ph ph-bowl-food"></i> Alimentación</button>
+                    <button type="button" class="item-categoria"><i class="ph ph-bus"></i> Transporte</button>
+                    <button type="button" class="item-categoria"><i class="ph ph-wrench"></i> Servicios</button>
+                    <button type="button" class="item-categoria"><i class="ph ph-dots-three-circle"></i> Otro</button>
                 </div>
-                <div class="grupo-formulario">
-                    <label for="categoria">Categoría</label>
-                    <select id="categoria"><option>Vivienda</option></select>
+            </div>
+            <div class="grupo-formulario gap-fondo">
+                <label>FONDO (MOD04)</label>
+                <div class="grid-fondos">
+                    <button type="button" class="item-fondo activo">
+                        <i class="ph ph-device-mobile"></i>
+                        <span class="info-fondo"><strong>Nequi</strong><span>$380.000</span></span>
+                        <span class="check-fondo"><i class="ph ph-check"></i></span>
+                    </button>
+                    <button type="button" class="item-fondo">
+                        <i class="ph ph-bank"></i>
+                        <span class="info-fondo"><strong>Bancolombia</strong><span>$2.450.000</span></span>
+                        <span class="check-fondo"><i class="ph ph-check"></i></span>
+                    </button>
+                    <button type="button" class="item-fondo">
+                        <i class="ph ph-money"></i>
+                        <span class="info-fondo"><strong>Efectivo</strong><span>$150.000</span></span>
+                        <span class="check-fondo"><i class="ph ph-check"></i></span>
+                    </button>
                 </div>
-                <div class="grupo-formulario">
-                    <label for="fondo">Fondo asociado</label>
-                    <select id="fondo">
-                        <option>Nequi ($380,000)</option>
-                        <option>Bancolombia ($2,450,000)</option>
-                    </select>
-                </div>
-            </section>
-            <aside class="vista-previa">
-                <header class="encabezado-seccion">
-                    <h3>Error</h3>
-                </header>
-                <div class="mensaje-error">
-                    <p>El fondo Nequi no tiene saldo suficiente para realizar este gasto.</p>
-                    <small>Saldo disponible: $380,000 | Monto requerido: $1,200,000</small>
-                </div>
-                <p>Selecciona otro fondo con saldo suficiente o reduce el monto del gasto.</p>
-            </aside>
-        </div>
-        <section class="acciones">
-            <button type="button" class="boton-secundario" onclick="location.href='nuevo-movimiento-gasto.html'">Cancelar</button>
-            <button type="button" class="boton-primario">Intentar con otro fondo</button>
-        </section>
+            </div>
+            <div class="aviso-saldo">
+                <i class="ph ph-warning"></i>
+                <span>Saldo insuficiente en Nequi. Disponible: $380.000, monto requerido: $450.000.</span>
+            </div>
+            <div class="grupo-formulario gap-descripcion">
+                <label>DESCRIPCIÓN (opcional)</label>
+                <textarea placeholder="Suscripción mensual Netflix plan Premium"></textarea>
+            </div>
+            <div class="acciones-movimiento">
+                <button type="button" class="boton-secundario" onclick="location.href='nuevo-movimiento-gasto.html'">Cancelar</button>
+                <button type="button" class="boton-primario" onclick="location.href='mis-movimientos.html'"><i class="ph ph-check"></i> Guardar Movimiento</button>
+            </div>
+        </form>
     </main>  </body>
 </html>
