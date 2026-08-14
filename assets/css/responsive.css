@@ -1490,6 +1490,90 @@
 }
 
 /* ==========================================================
+   MÓVIL (hasta 640px): recuadros con altura fija que recortan
+   el contenido. Se libera la altura para que la info fluya.
+   ========================================================== */
+@media (max-width: 640px) {
+  /* Resumen de activos/fondos: tarjeta en fila con gap fijo de
+     escritorio que desborda en pantallas estrechas. → columna. */
+  body.mod-lista-activos .resumen-activos,
+  body.mod-fondos .resumen-fondos,
+  body[class] .resumen-activos,
+  body[class] .resumen-fondos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    height: auto;
+  }
+
+  body.mod-lista-activos .resumen-activos .estadisticas-resumen,
+  body.mod-fondos .resumen-fondos .estadisticas-resumen,
+  body[class] .resumen-activos .estadisticas-resumen,
+  body[class] .resumen-fondos .estadisticas-resumen {
+    margin-left: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  body.mod-lista-activos .resumen-activos .estadisticas-resumen .estadistica,
+  body.mod-fondos .resumen-fondos .estadisticas-resumen .estadistica,
+  body[class] .resumen-activos .estadisticas-resumen .estadistica,
+  body[class] .resumen-fondos .estadisticas-resumen .estadistica {
+    padding: 0;
+  }
+
+  /* Resumen de metas: tiles en fila con gap de escritorio → wrap */
+  .tarjeta-resumen,
+  body[class] .tarjeta-resumen {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    align-items: center;
+  }
+
+  .tile-resumen,
+  body[class] .tile-resumen {
+    min-width: 0;
+  }
+
+  /* Plantilla: altura fija 140px recorta el footer → auto */
+  body.mod-plantillas .card-plantilla,
+  body[class] .card-plantilla {
+    height: auto;
+  }
+
+  /* Flujo de caja: saldo proyectado de ancho fijo 660px con
+     detalle que desborda → ancho completo y altura libre */
+  .tarjeta-saldo-proyectado,
+  body[class] .tarjeta-saldo-proyectado {
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Indicador financiero: estado con ancho fijo 84px desborda */
+  .ind-tarjeta,
+  body[class] .ind-tarjeta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ind-estado,
+  body[class] .ind-estado {
+    width: auto;
+  }
+
+  /* Tabla de movimientos: grid de 7 columnas fijas (1100px) con
+     overflow:hidden → scroll horizontal */
+  body.mod-lista-movimientos .tabla-movimientos,
+  .tabla-movimientos,
+  body[class] .tabla-movimientos {
+    overflow-x: auto;
+  }
+}
+
+/* ==========================================================
    Escritorio (desde 1400px): el estado vacío es un contenedor
    absoluto de 1180px que en pantallas 1400-1439px no cabe en el
    área de contenido (~1150px). Se centra y fluye hasta 100%.
