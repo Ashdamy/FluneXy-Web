@@ -11,6 +11,23 @@
   display: none;
 }
 
+/* Asistente Inteligente: el chat tiene max-width:900px pero margen
+   izquierdo/derecho fijo de 40px (no auto) — en cualquier ancho donde
+   el contenedor disponible supera ~980px (incluye el rango "compacto"
+   con hamburguesa, no solo escritorio ancho/TV) el chat queda pegado
+   a la izquierda con todo el espacio sobrante acumulado a la derecha
+   en vez de quedar centrado. OJO: un margen auto en el eje cruzado de
+   un hijo flex desactiva el stretch por defecto y lo hace encogerse a
+   su contenido — sin west "width:100%" el contenedor se angostaba a
+   su burbuja más ancha y desbordaba horizontalmente en mobile. */
+body.mod-asistente .chat-contenedor,
+body.mod-asistente .entrada-chat {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ==========================================================
    COMPACTO (hasta 1400px): grids a 1-2 columnas fluidas.
    ========================================================== */
@@ -22,6 +39,7 @@
   .lista-componentes,
   .lista-detalle-flujo,
   .fila-categorias,
+  .grid-selector-pago,
   body[class] .contenido-dos-columnas,
   body[class] .grid-plantillas,
   body[class] .lista-componentes,
@@ -37,6 +55,7 @@
   body.mod-plantilla-form .opciones-categoria,
   body.mod-plantilla-editar .opciones-categoria {
     grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
   }
 
   /* grid-categorias en la página de pasivos compite con un
@@ -175,6 +194,7 @@
   .tarjeta-patrimonio,
   .seccion-accesos,
   .hero-pasivos,
+  .grid-selector-pago,
   body[class] .hero-summary,
   body[class] .tarjeta-patrimonio,
   body[class] .seccion-accesos,
@@ -188,12 +208,20 @@
    COMPACTO (hasta 1400px): apilado de contenidos
    ========================================================== */
 @media (max-width: 1400px) {
+  /* El header se mantiene en fila (como en escritorio) para que las
+     acciones rápidas (notificación + perfil) queden alineadas con el
+     título principal, no empujadas debajo del subtítulo. */
   .encabezado-pagina,
   .encabezado-contenido {
-    flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     padding-top: 24px;
+  }
+
+  .titulo-pagina,
+  .encabezado-contenido .saludo {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   .titulo-pagina h1,
@@ -202,7 +230,48 @@
   }
 
   .acciones-usuario {
-    align-self: flex-end;
+    flex-shrink: 0;
+  }
+
+  /* Vista Previa de Reporte: .vp-acciones-header (2 botones con
+     texto, ~300px) es demasiado ancho para compartir fila con el
+     título — darle flex-shrink:0 dejaba el título en ~0px y su texto
+     se desbordaba por encima de los botones (superposición real, no
+     solo apretado). Baja a su propia fila completa debajo del título. */
+  .vp-encabezado {
+    flex-wrap: wrap;
+  }
+
+  .vp-acciones-header {
+    flex: 1 1 100%;
+  }
+
+  /* Balance Financiero: .acciones-derecha-pagina agrupa el selector
+     de periodo (200px fijo) + campana/avatar junto al título — ese
+     bloque de ~300px no cabía y colisionaba con "Balance Financiero".
+     Se angosta el selector de periodo específicamente en este
+     contexto (no afecta a .fila-flujo, que ya tiene su propio ancho
+     100% en Flujo de Caja). */
+  .acciones-derecha-pagina {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .acciones-derecha-pagina .selector-periodo {
+    width: 130px;
+    padding: 0 10px;
+  }
+
+  .acciones-derecha-pagina .selector-periodo .texto-periodo {
+    font-size: 12px;
+  }
+
+  /* Vista Previa de Reporte: "Volver a Generar Reporte" + periodo en
+     una fila flex sin wrap se apretaban y el link partía sus propias
+     palabras en varias líneas. */
+  .vp-encabezado .titulo-pagina p {
+    flex-wrap: wrap;
+    row-gap: 4px;
   }
 
   /* ===== Colapsar grids de tarjetas/dashboards a 1 columna =====
@@ -373,7 +442,11 @@
     padding: 14px;
   }
 
-  /* Barras de búsqueda/filtro → columna a ancho completo */
+  /* Barras de búsqueda/filtro → columna a ancho completo.
+     Activos/Pasivos/Metas usan gap:0 en escritorio (el espacio entre
+     buscador, filtro y botón lo dan márgenes pensados para la fila
+     horizontal); al apilarlos y poner esos márgenes en 0 quedaban
+     pegados. Se agrega gap para separarlos en móvil. */
   .barra-activos,
   .barra-pasivos,
   .barra-fondos,
@@ -386,6 +459,38 @@
   body[class] .barra-metas {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+  }
+
+  /* Tarjetas de Fondos/Pasivos/Activos: la fila de "Saldo/Valor +
+     botones de acción" comparte una sola línea sin wrap y queda muy
+     apretada — el valor grande y los 3 botones casi se tocan. Los
+     botones de acción pasan a su propia línea completa a la derecha. */
+  .lista-fondos .fila-saldo,
+  body[class] .lista-fondos .fila-saldo,
+  body.mod-lista-pasivos .fila-saldo-deuda,
+  body[class] .fila-saldo-deuda,
+  .fila-valor,
+  body[class] .fila-valor {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .lista-fondos .acciones-tarjeta,
+  body[class] .lista-fondos .acciones-tarjeta,
+  body.mod-lista-pasivos .acciones-deuda,
+  body[class] .acciones-deuda,
+  .acciones-bien,
+  body[class] .acciones-bien {
+    flex: 0 0 100%;
+    justify-content: flex-end;
+  }
+
+  /* .tarjeta-bien tiene height:176px fijo (no min-height) en escritorio;
+     al envolver la fila de acciones a una línea nueva, el contenido se
+     desborda por debajo del recuadro de la tarjeta. */
+  body.mod-lista-activos .tarjeta-bien {
+    height: auto;
   }
 
   .barra-activos .busqueda,
@@ -426,6 +531,30 @@
     align-items: stretch;
   }
 
+  /* Mis Metas: fila estado+acciones+badge sin wrap se desbordaba y el
+     overflow:hidden de la tarjeta cortaba el texto ("Sin seguimiento"
+     quedaba como "Sin segui..."); el pill de estado se apretaba a 2
+     líneas. El badge de estado pasa a su propia línea, alineado a la
+     derecha; estado y acciones quedan en la primera línea. */
+  .estado-meta,
+  body[class] .estado-meta {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 10px;
+  }
+
+  .estado-meta .acciones-meta,
+  body[class] .estado-meta .acciones-meta {
+    margin-left: 12px;
+    margin-right: 0;
+  }
+
+  .estado-meta .badge-estado,
+  body[class] .estado-meta .badge-estado {
+    flex: 0 0 100%;
+    justify-content: flex-end;
+  }
+
   .hero-total-plantillas,
   body.mod-plantillas .hero-total-plantillas {
     display: block;
@@ -450,8 +579,24 @@
     margin-top: 8px;
   }
 
+  /* Tabla de Cuotas: hero de 3 bloques (principal + 2 mini) en una
+     fila sin wrap — los mini-bloques con min-width:120px fijo dejaban
+     casi sin espacio al bloque principal, partiendo "6 de 36" en 2
+     líneas. El bloque principal pasa a su propia fila completa. */
+  .hero-summary,
+  body[class] .hero-summary {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+  .resumen-pagadas,
+  body[class] .resumen-pagadas {
+    flex: 1 1 100%;
+  }
+
   .resumen-mini {
     min-width: 0;
+    flex: 1;
   }
 
   /* Tablas que desbordan → scroll horizontal */
@@ -661,6 +806,8 @@
   }
 
   /* Detalle de movimiento: hero absoluto → flujo */
+  body.mod-detalle-movimiento .hero-movimiento .icono-hero,
+  body.mod-detalle-movimiento .hero-movimiento .info-hero,
   body.mod-detalle-movimiento .hero-movimiento .monto-hero,
   body.mod-detalle-movimiento .hero-movimiento .chip-estado {
     position: static;
@@ -675,6 +822,12 @@
     gap: 16px;
   }
 
+  body.mod-detalle-movimiento .hero-movimiento .info-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   /* Elementos decorativos que desbordan en móvil */
   body.mod-alertas .alerta-suma-orb,
   body.mod-fondo-editar .saldo-franja,
@@ -683,6 +836,83 @@
   body.mod-meta-editar .saldo-franja,
   body.mod-plantilla-editar .saldo-franja {
     display: none;
+  }
+
+  /* Crear/Editar Fondo: a diferencia de Activo/Pasivo/Meta, no tienen
+     un wrapper "-form-layout" que resetee la sangría de 40-64px del
+     diseño de escritorio, así que en móvil todo el formulario quedaba
+     desplazado hacia la derecha en vez de alinearse con el resto de
+     pantallas. */
+  body.mod-fondo-editar .encabezado-pagina {
+    padding-left: 0;
+  }
+
+  body.mod-fondo-crear .seccion-label,
+  body.mod-fondo-crear .fila-campos,
+  body.mod-fondo-crear .campo-saldo,
+  body.mod-fondo-crear .acciones-formulario,
+  body.mod-fondo-editar .seccion-label,
+  body.mod-fondo-editar .fila-campos,
+  body.mod-fondo-editar .campo-saldo,
+  body.mod-fondo-editar .acciones-formulario,
+  body.mod-fondo-editar .franja-edicion {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Plantillas: .acciones-formulario aquí es display:flex (no grid
+     como en Fondo/Activo/Pasivo/Meta), así que la regla genérica de
+     colapso a grid-template-columns:1fr no le hace nada — "Cancelar"
+     y "Guardar Plantilla" seguían lado a lado partiendo el texto del
+     botón en 2 líneas. Se apilan en columna, a ancho completo. */
+  body.mod-plantilla-form .acciones-formulario {
+    flex-direction: column;
+    margin: 24px 0 0;
+  }
+
+  body.mod-plantilla-form .btn-cancelar,
+  body.mod-plantilla-form .btn-guardar {
+    width: 100%;
+  }
+
+  /* Nuevo Movimiento (ingreso/gasto) y Saldo Insuficiente: mismo
+     patrón — .acciones-movimiento es flex sin wrap con botones de
+     height:56px fijo (no min-height); "Guardar Movimiento" partía en
+     2 líneas y quedaba cortado contra el borde del botón. */
+  body.mod-form-movimiento .acciones-movimiento {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  body.mod-form-movimiento .acciones-movimiento button {
+    width: 100%;
+    height: auto;
+    min-height: 52px;
+    padding: 14px 0;
+  }
+
+  /* Editar Alerta: mismo patrón — .acciones-formulario aquí es flex,
+     no grid, así que la regla genérica de colapso no le hace nada. */
+  body.mod-alertas-configurar .acciones-formulario {
+    flex-direction: column;
+    margin: 20px 0 0;
+  }
+
+  body.mod-alertas-configurar .acciones-formulario .btn-guardar-alerta,
+  body.mod-alertas-configurar .acciones-formulario .btn-cancelar {
+    width: 100%;
+  }
+
+  /* Detalle de Cuota: "Registrar Pago" / "Ver todas las cuotas" son
+     flex:1 sin wrap con margin:24px 40px fijo — "Ver todas las
+     cuotas" partía en 2 líneas dentro de un botón muy angosto. */
+  .acciones-cuota {
+    flex-direction: column;
+    margin: 24px 0 0;
+  }
+
+  .acciones-cuota > * {
+    width: 100%;
   }
 
   /* ===== Alertas · lista (S1) ===== */
@@ -713,32 +943,52 @@
     margin: 20px 0 0;
   }
 
-  /* Tarjeta: altura fija → flujo con wrap en 2 filas */
+  /* Tarjeta: icono ocupa las 2 filas a la izquierda;
+     fila 1 = título+umbral / valor actual, fila 2 = acciones / estado */
   body.mod-alertas .alerta-tarjeta {
-    height: auto;
-    min-height: 104px;
-    padding: 16px;
-    flex-wrap: wrap;
-    row-gap: 14px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 10px;
     align-items: center;
+    height: auto;
+    min-height: 0;
+    padding: 16px;
     box-sizing: border-box;
   }
 
+  body.mod-alertas .alerta-icono {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-right: 0;
+  }
+
   body.mod-alertas .alerta-info {
-    flex: 1 1 auto;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
   }
 
   body.mod-alertas .alerta-medida {
+    grid-column: 3;
+    grid-row: 1;
     margin-left: 0;
     min-width: 0;
   }
 
   body.mod-alertas .alerta-acciones {
+    grid-column: 2;
+    grid-row: 2;
     margin-left: 0;
+    justify-self: start;
   }
 
   body.mod-alertas .alerta-estado {
-    margin-left: auto;
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: 0;
+    justify-self: end;
   }
 
   /* ===== Alertas · detalle (S3) ===== */
@@ -949,8 +1199,16 @@
     margin: 48px 0 0;
   }
 
+  /* .iconos-vacio debe seguir siendo positioned (relative, no static):
+     sus hijos .circulo-exterior/.circulo-interior son position:absolute
+     en escritorio y necesitan un ancla — si no, escapan hacia arriba en
+     el árbol DOM y quedan superpuestos sobre el encabezado. top/left del
+     desktop (181px/400px) también deben resetearse: son propiedades
+     independientes de position y seguían desplazando el elemento. */
   body.mod-vacio-movimientos .iconos-vacio {
-    position: static;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 220px;
     height: 220px;
     margin: 0;
@@ -983,26 +1241,27 @@
     margin: 28px 0 0;
   }
 
-  /* ===== Flujo de caja · tarjeta resumen y botón ===== */
-  .tarjeta-resumen-flujo {
+  /* ===== Flujo de caja · saldo proyectado y selector de periodo =====
+     Fila con tarjeta de 660px fijo + selector de 200px sin wrap:
+     el flex las apretaba hasta partir cada palabra en su propia línea.
+     Se apilan en columna con ancho completo. */
+  .fila-flujo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0 0;
+  }
+
+  .tarjeta-saldo-proyectado {
     width: 100%;
     height: auto;
-    margin: 16px 0 0;
-    padding: 16px;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px 20px;
   }
 
-  .tarjeta-resumen-flujo .saldo-resumen-flujo,
-  .tarjeta-resumen-flujo .metrica-resumen-flujo {
-    position: static;
-  }
-
-  .tarjeta-resumen-flujo .metrica-resumen-flujo {
-    margin-left: auto;
+  .fila-flujo .selector-periodo {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
   }
 
   .etiqueta-detalle-flujo {
@@ -1026,21 +1285,36 @@
     flex-shrink: 1;
   }
 
+  /* Ícono ocupa las 2 filas a la izquierda; fila 1 = nombre+sub,
+     fila 2 = monto — evita que el nombre se aprieta palabra por palabra */
   .item-componente {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: center;
     height: auto;
     padding: 14px 16px;
-    flex-wrap: wrap;
-    row-gap: 8px;
+  }
+
+  .item-componente .icono-componente {
+    grid-column: 1;
+    grid-row: 1 / 3;
   }
 
   .info-componente {
+    grid-column: 2;
+    grid-row: 1;
     min-width: 0;
   }
 
   .monto-componente {
-    margin-left: auto;
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 0;
     font-size: 16px;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .lista-detalle-flujo + .boton-texto {
@@ -1118,8 +1392,14 @@
   }
 
   /* ===== Home · movimientos recientes ===== */
+  /* align-items:center (escritorio) centra verticalmente el valor
+     contra la altura total de la fila; cuando el título largo
+     ("CDT Bancolombia") se envuelve a 2 líneas, el valor centrado
+     queda superpuesto sobre la segunda línea del título. Se alinea
+     todo arriba para que el valor quede junto a la primera línea. */
   .item-movimiento-home {
     flex-wrap: wrap;
+    align-items: flex-start;
     row-gap: 8px;
   }
 
@@ -1129,6 +1409,7 @@
 
   .valor-movimiento {
     margin-left: auto;
+    text-align: right;
   }
 
   /* ===== Pagos ===== */
@@ -1164,9 +1445,76 @@
     font-size: 16px;
   }
 
+  /* Fila de pago: icono | título+subtítulo / monto+badge.
+     En vez de envolver todo el flex en una fila desordenada,
+     se arma como grid de 2 columnas: el icono ocupa ambas filas
+     y el monto queda alineado bajo el título, no bajo el icono. */
   .item-pago {
-    flex-wrap: wrap;
-    row-gap: 10px;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 6px;
+    align-items: start;
+    min-height: 0;
+    padding: 14px 0;
+  }
+
+  .item-pago .icono-pago {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .item-pago .informacion-pago {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .item-pago .valor-pago {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* Registrar Pago/Aporte: layout de 2 columnas (flex sin wrap) con
+     el panel de resumen de ancho fijo 380px y flex-shrink:0 — la
+     columna del formulario quedaba aplastada a 0 y su contenido
+     (grids/alturas fijas) se superponía con el panel. Se apilan en
+     columna con ambos elementos a ancho completo.
+     align-items:flex-start del escritorio queda heredado — al pasar
+     de fila a columna los ejes se invierten, y ese flex-start pasa de
+     afectar la alineación vertical (inofensivo) a controlar el ancho
+     horizontal, encogiendo .pago-form-col a su contenido y pegándolo
+     a la izquierda en vez de ocupar el ancho completo. */
+  .pago-form-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .form-card {
+    margin: 16px 0 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .panel-resumen-pago {
+    width: 100%;
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+
+  /* .type-toggle ("Abono Capital"/"Anticipado") no se estiraba al
+     ancho completo del form-card como el resto de campos, pese a
+     heredar align-items:stretch del flex padre — al ser display:grid
+     con columnas fr se resuelve a fit-content en vez de estirarse. */
+  .type-toggle {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* ===== Balance financiero ===== */
@@ -1177,13 +1525,6 @@
   .bal-dato {
     flex: 1 1 140px;
     min-width: 0;
-  }
-
-  /* Encabezado de plantillas (título + acciones) en columna */
-  body.mod-plantillas .encabezado-pagina {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
   }
 
   /* Tarjetas de plantilla: footer absoluto → flujo con wrap */
@@ -1274,15 +1615,44 @@
     width: 100%;
   }
 
+  /* .ep-boton-guardar hereda flex:1 (flex-basis:0) del layout en fila
+     de escritorio. Al pasar .ep-acciones a columna, ese flex-basis:0
+     pasa a regir la altura y colapsa el botón a su contenido en vez
+     de respetar height:52px de .ep-boton, superponiendo su sombra
+     sobre "Cancelar". */
+  .ep-boton-guardar {
+    flex: none;
+  }
+
+  /* Tabla de movimientos: grid fijo de 7 columnas (~1100px) con
+     overflow:hidden en escritorio. Ya tenía scroll horizontal en
+     mobile (max-width:640px), pero no en 641-1400px, donde el
+     sidebar ya está oculto y el contenido tampoco llega a 1100px —
+     MONTO/ESTADO/ACCIONES quedaban recortados sin forma de verlos. */
+  body.mod-lista-movimientos .tabla-movimientos,
+  .tabla-movimientos,
+  body[class] .tabla-movimientos {
+    overflow-x: auto;
+  }
+
   .ep-campo input {
     min-width: 0;
   }
 
-  /* ===== Formularios con panel de previsualización (activo/pasivo/meta) ===== */
+  /* ===== Formularios con panel de previsualización (activo/pasivo/meta) =====
+     Mismo patrón que .pago-form-layout: align-items:flex-start del
+     escritorio queda heredado y, al pasar de fila a columna, encoge
+     la columna del formulario a su contenido en vez de ocupar el
+     ancho completo. Las variantes -editar (mod-activo-editar, etc.)
+     ni siquiera tenían regla de apilado — se agregan aquí también. */
   body.mod-activo-form .activo-form-layout,
   body.mod-pasivo-form .pasivo-form-layout,
-  body.mod-meta-form .meta-form-layout {
+  body.mod-meta-form .meta-form-layout,
+  body.mod-activo-editar .activo-form-layout,
+  body.mod-pasivo-editar .pasivo-form-layout,
+  body.mod-meta-editar .meta-form-layout {
     flex-direction: column;
+    align-items: stretch;
     gap: 24px;
   }
 
@@ -1494,12 +1864,68 @@
    el contenido. Se libera la altura para que la info fluya.
    ========================================================== */
 @media (max-width: 640px) {
+  /* Verificación de código: 6 inputs de 56px + gaps de 16px = 416px,
+     no caben en el ancho de una tarjeta móvil (~358px) y desbordan
+     con scroll horizontal, cortando el 6to dígito. */
+  .grupo-codigo {
+    gap: 8px;
+  }
+
+  .grupo-codigo input {
+    width: 44px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  /* Campos de monto (activo/pasivo/meta, crear y editar): el valor
+     numérico + badge de tipo no caben con el tamaño de fuente de
+     escritorio y el texto se corta visualmente dentro del input.
+     Editar Activo/Meta tienen además una regla de escritorio más
+     específica (body.mod-X-editar .campo-valor .campo-monto input)
+     que le gana a la regla simple de abajo sin importar el orden de
+     carga — hay que igualar esa especificidad para que el font-size
+     móvil realmente aplique. */
+  body.mod-activo-crear .campo-monto input,
+  body.mod-pasivo-crear .campo-monto input,
+  body.mod-meta-crear .campo-monto input,
+  body.mod-activo-editar .campo-monto input,
+  body.mod-pasivo-editar .campo-monto input,
+  body.mod-meta-editar .campo-monto input,
+  body.mod-activo-editar .campo-valor .campo-monto input,
+  body.mod-meta-editar .campo-valor .campo-monto input {
+    font-size: 17px;
+  }
+
+  /* Desactivar Cuenta: .dc-contenedor tiene margin:8px 40px 0 fijo,
+     nunca reseteado — el modal (que ya es width:min(520px,100%))
+     queda con menos "100%" disponible del que debería, angostando
+     el botón "Desactivar mi Cuenta" hasta partir su texto en 2 líneas. */
+  .dc-contenedor {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* .dc-acciones reparte 50%/50% (Cancelar / Desactivar mi Cuenta) —
+     a diferencia de los demás modales de desactivar (Fondo/Activo/
+     Pasivo/Meta), que apilan los botones a ancho completo. Se iguala
+     el patrón para que "Desactivar mi Cuenta" no parta en 2 líneas. */
+  .dc-acciones {
+    flex-direction: column;
+  }
+
+  .dc-acciones .ep-boton-cancelar,
+  .dc-acciones .dc-boton-desactivar {
+    width: 100%;
+  }
+
   /* Resumen de activos/fondos: tarjeta en fila con gap fijo de
      escritorio que desborda en pantallas estrechas. → columna. */
   body.mod-lista-activos .resumen-activos,
   body.mod-fondos .resumen-fondos,
+  body.mod-lista-metas .resumen-metas,
   body[class] .resumen-activos,
-  body[class] .resumen-fondos {
+  body[class] .resumen-fondos,
+  body[class] .resumen-metas {
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
@@ -1508,8 +1934,10 @@
 
   body.mod-lista-activos .resumen-activos .estadisticas-resumen,
   body.mod-fondos .resumen-fondos .estadisticas-resumen,
+  body.mod-lista-metas .resumen-metas .estadisticas-resumen,
   body[class] .resumen-activos .estadisticas-resumen,
-  body[class] .resumen-fondos .estadisticas-resumen {
+  body[class] .resumen-fondos .estadisticas-resumen,
+  body[class] .resumen-metas .estadisticas-resumen {
     margin-left: 0;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1518,8 +1946,10 @@
 
   body.mod-lista-activos .resumen-activos .estadisticas-resumen .estadistica,
   body.mod-fondos .resumen-fondos .estadisticas-resumen .estadistica,
+  body.mod-lista-metas .resumen-metas .estadisticas-resumen .estadistica,
   body[class] .resumen-activos .estadisticas-resumen .estadistica,
-  body[class] .resumen-fondos .estadisticas-resumen .estadistica {
+  body[class] .resumen-fondos .estadisticas-resumen .estadistica,
+  body[class] .resumen-metas .estadisticas-resumen .estadistica {
     padding: 0;
   }
 
@@ -1543,25 +1973,46 @@
     height: auto;
   }
 
-  /* Flujo de caja: saldo proyectado de ancho fijo 660px con
-     detalle que desborda → ancho completo y altura libre */
-  .tarjeta-saldo-proyectado,
-  body[class] .tarjeta-saldo-proyectado {
-    height: auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Indicador financiero: estado con ancho fijo 84px desborda */
+  /* Indicador financiero: fila única (ícono+nombre+valor+estado) con
+     wrap simple quedaba distinta según el largo del texto de cada
+     tarjeta. Mismo patrón grid que Alertas: ícono ocupa 2 filas;
+     fila 1 = nombre+sub / valor, fila 2 = estado. */
   .ind-tarjeta,
   body[class] .ind-tarjeta {
-    flex-wrap: wrap;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: 46px 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 10px;
+    align-items: center;
+  }
+
+  .ind-icono,
+  body[class] .ind-icono {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .ind-info,
+  body[class] .ind-info {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .ind-lectura,
+  body[class] .ind-lectura {
+    grid-column: 3;
+    grid-row: 1;
+    margin-right: 0;
   }
 
   .ind-estado,
   body[class] .ind-estado {
+    grid-column: 3;
+    grid-row: 2;
     width: auto;
+    justify-self: end;
   }
 
   /* Tabla de movimientos: grid de 7 columnas fijas (1100px) con
@@ -1588,4 +2039,192 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
 }
+
+/* MÓDULO: Alertas — S1 Lista de Alertas (pantallas anchas)
+   .alerta-fila-titulo usa justify-content:space-between sobre todo
+   el ancho de .contenido-principal, mientras que .alerta-grid tiene
+   un ancho fijo de 1100px (2 columnas de 540px). En pantallas anchas
+   el botón "Agregar Nueva Alerta" queda flotando lejos de las
+   tarjetas. Se limita la fila de título al mismo ancho de la grilla. */
+@media (min-width: 1400px) {
+  body.mod-alertas .alerta-fila-titulo {
+    max-width: 1100px;
+  }
+}
+
+/* ==========================================================
+   LANDING (index.html): sin tratamiento responsive previo.
+   El header, el hero y las grillas usan anchos fijos en px
+   pensados para 1440px y desbordan por debajo de ~1180px.
+   ========================================================== */
+@media (max-width: 1024px) {
+  .landing .landing-nav {
+    padding: 0 24px;
+    height: auto;
+    min-height: 72px;
+  }
+
+  .landing .nav-links {
+    display: none;
+  }
+
+  .landing .hero {
+    flex-direction: column;
+    padding: 48px 24px 64px;
+  }
+
+  .landing .hero-content {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .landing .hero-mockup {
+    display: none;
+  }
+
+  .landing .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .landing .beneficios,
+  .landing .modulos,
+  .landing .showcase,
+  .landing .cta-section {
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  .landing .beneficios-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .landing .beneficio-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    min-height: 170px;
+  }
+
+  .landing .modulos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landing .modulo-card {
+    width: 100%;
+    height: auto;
+    min-height: 110px;
+  }
+
+  .landing .showcase-frame {
+    width: 100%;
+    height: auto;
+  }
+
+  .landing .mov-screen {
+    overflow-x: auto;
+  }
+
+  .landing .mov-row {
+    min-width: 560px;
+  }
+
+  .landing .porque {
+    flex-direction: column;
+    padding: 48px 24px 0;
+    gap: 32px;
+  }
+
+  .landing .highlight-card {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+
+  .landing .cta-panel {
+    height: auto;
+    padding: 40px 24px;
+    margin: 0 24px;
+  }
+
+  .landing .cta-panel .btn {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .landing .footer-grid {
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  .landing .footer-brand {
+    flex: none;
+    width: 100%;
+  }
+
+  .landing .footer-cols {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .landing .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing .hero-title {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .landing .modulos-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .landing .nav-actions {
+    gap: 8px;
+  }
+
+  .landing .btn-header {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   PANTALLAS MUY ANCHAS (2K / ultrawide / 4K, ≥2000px):
+   .contenido-principal no tiene max-width en ningún módulo — a
+   partir de 2560px las tarjetas, barras y listas se estiran a un
+   ancho absurdo (una fila de gasto/movimiento se convierte en una
+   franja delgadísima). Se limita el ancho del contenido y se deja
+   el espacio sobrante como fondo, sin tocar el desktop base.
+   ========================================================== */
+@media (min-width: 2000px) {
+  .contenido-principal,
+  body[class] .contenido-principal {
+    max-width: 1700px;
+    box-sizing: border-box;
+    margin-left: calc(260px + (100vw - 260px - 1700px) / 2);
+    margin-right: calc((100vw - 260px - 1700px) / 2);
+  }
+}
+

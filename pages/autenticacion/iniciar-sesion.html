@@ -8,7 +8,8 @@
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
+<body class="mod-auth">
+    <!-- MÓDULO: Autenticación — S1 · Iniciar Sesión (Escritorio) -->
     <main class="contenedor-autenticacion">
         <section class="tarjeta-formulario">
             <div class="logo">
@@ -33,6 +34,7 @@
                         type="email"
                         id="correo"
                         name="correo"
+                        placeholder="anamilena@ejemplo.com"
                         required>
                 </div>
                 <div class="grupo-formulario">
@@ -52,8 +54,9 @@
                 </div>
                 <button
                     type="submit"
-                    class="boton-primario">
-                  <a href="/pages/home-dashboard/home.html">  Iniciar sesión</a>
+                    class="boton-primario"
+                    onclick="event.preventDefault(); location.href='/pages/home-dashboard/home.html';">
+                    Iniciar sesión
                 </button>
                 <p class="separador-social">
                     o continúa con

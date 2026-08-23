@@ -10,7 +10,8 @@
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
+<body class="mod-reportes">
+    <!-- MÓDULO: Reportes — S2 · Vista Previa del Reporte (Escritorio) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -30,8 +31,8 @@
             <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
             <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
             <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
@@ -50,68 +51,49 @@
         <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
     </aside>
     <main class="contenido-principal">
-        <header class="encabezado-pagina">
+        <header class="encabezado-pagina vp-encabezado">
             <div class="titulo-pagina">
                 <h1>Vista Previa del Reporte</h1>
-                <p>Revisa el informe antes de descargarlo</p>
+                <p><a href="generar-reporte.html" class="vp-volver"><i class="ph ph-arrow-left"></i> Volver a Generar Reporte</a><span class="vp-meta-periodo">Balance Financiero · Junio 2026</span></p>
             </div>
-            <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
-                    <span>A</span>
-                </button>
+            <div class="vp-acciones-header">
+                <button type="button" class="vp-boton-excel"><i class="ph ph-microsoft-excel-logo"></i> Exportar Excel</button>
+                <button type="button" class="vp-boton-pdf"><i class="ph ph-download-simple"></i> Descargar PDF</button>
             </div>
         </header>
 
-        <div class="vp-contenido">
-            <section class="vp-hero">
-                <span class="vp-hero-icono"><i class="ph ph-note-pencil"></i></span>
-                <span class="vp-hero-badge"><i class="ph ph-arrow-down"></i> Gasto</span>
-                <p class="vp-hero-etiqueta">Patrimonio Neto</p>
-                <strong class="vp-hero-valor">$28.450.000</strong>
-                <span class="vp-chip">Activo</span>
-            </section>
-
-            <section class="vp-datos">
-                <article class="vp-dato">
-                    <span class="vp-dato-icono"><i class="ph ph-chart-bar"></i></span>
-                    <small>TIPO</small>
-                    <strong>Balance Financiero</strong>
-                </article>
-                <article class="vp-dato">
-                    <span class="vp-dato-icono"><i class="ph ph-calendar-blank"></i></span>
-                    <small>PERIODO</small>
-                    <strong>Junio 2026</strong>
-                </article>
-                <article class="vp-dato">
-                    <span class="vp-dato-icono"><i class="ph ph-file-pdf"></i></span>
-                    <small>FORMATO</small>
-                    <strong>PDF</strong>
-                </article>
-                <article class="vp-dato">
-                    <span class="vp-dato-icono"><i class="ph ph-check-circle"></i></span>
-                    <small>ESTADO</small>
-                    <strong>Listo</strong>
-                </article>
-            </section>
-
-            <section class="vp-resumen">
-                <p class="vp-resumen-titulo">Resumen</p>
-                <p class="vp-resumen-texto">Incluye activos, pasivos, patrimonio neto, liquidez y endeudamiento del periodo seleccionado.</p>
-            </section>
-
-            <div class="vp-divisor"></div>
-
-            <div class="vp-acciones">
-                <button type="button" class="vp-boton vp-boton-primario">
-                    <i class="ph ph-download-simple"></i> Descargar Reporte
-                </button>
-                <button type="button" class="vp-boton vp-boton-ghost" onclick="location.href='generar-reporte.html'">
-                    <i class="ph ph-pencil-simple"></i> Editar Reporte
-                </button>
-            </div>
+        <div class="vp-documento-wrap">
+            <article class="vp-documento">
+                <header class="vp-doc-header">
+                    <strong class="vp-doc-marca">FluneXy</strong>
+                    <span class="vp-doc-fecha">Generado el 02 Jul 2026</span>
+                </header>
+                <h2 class="vp-doc-titulo">Balance Financiero</h2>
+                <p class="vp-doc-periodo">Periodo: Junio 2026</p>
+                <hr class="vp-doc-divider">
+                <section class="vp-doc-seccion">
+                    <span class="vp-doc-label">RESUMEN</span>
+                    <p class="vp-doc-sublabel">Patrimonio Neto</p>
+                    <strong class="vp-doc-valor-grande">$221.200.000</strong>
+                </section>
+                <section class="vp-doc-fila">
+                    <span class="vp-doc-label">ACTIVOS</span>
+                    <div class="vp-doc-linea"><span>Total Activos</span><strong class="verde">$235.000.000</strong></div>
+                </section>
+                <section class="vp-doc-fila">
+                    <span class="vp-doc-label">PASIVOS</span>
+                    <div class="vp-doc-linea"><span>Total Pasivos</span><strong class="rojo">$13.800.000</strong></div>
+                </section>
+                <section class="vp-doc-fila">
+                    <span class="vp-doc-label">INDICADORES</span>
+                    <div class="vp-doc-linea"><span>Liquidez</span><strong>1.6x</strong></div>
+                    <div class="vp-doc-linea"><span>Endeudamiento</span><strong>5.9%</strong></div>
+                </section>
+                <footer class="vp-doc-footer">
+                    <span>Generado por FluneXy</span>
+                    <span>Página 1 de 1</span>
+                </footer>
+            </article>
         </div>
     </main>
 </body>

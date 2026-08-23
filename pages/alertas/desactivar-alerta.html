@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body class="mod-alertas mod-alertas-desactivar">
+    <!-- MÓDULO: Alertas — S5 · Desactivar Alerta (Modal, Desktop) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -30,8 +31,8 @@
             <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
             <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
             <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
@@ -96,7 +97,7 @@
                 </div>
                 <div class="alerta-medida">
                     <span class="alerta-etiqueta-medida">Actual</span>
-                    <strong>31.4%</strong>
+                    <strong>5.9%</strong>
                 </div>
                 <div class="alerta-acciones">
                     <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
@@ -110,7 +111,7 @@
                 <span class="alerta-acento"></span>
                 <span class="alerta-icono"><i class="ph ph-drop-half"></i></span>
                 <div class="alerta-info">
-                    <h4>Liquidez Baja</h4>
+                    <h4>Liquidez</h4>
                     <span>UMBRAL: 1.0x</span>
                 </div>
                 <div class="alerta-medida">
@@ -127,7 +128,7 @@
 
             <article class="alerta-tarjeta alerta-acento-verde" onclick="location.href='detalle-alerta.html'">
                 <span class="alerta-acento"></span>
-                <span class="alerta-icono"><i class="ph ph-money"></i></span>
+                <span class="alerta-icono"><i class="ph ph-shopping-cart"></i></span>
                 <div class="alerta-info">
                     <h4>Gasto Mensual</h4>
                     <span>UMBRAL: $3.000.000/mes</span>
@@ -153,7 +154,7 @@
                 <span class="preview-icono-alerta"><i class="ph ph-chart-line-down"></i></span>
                 <div class="preview-info-alerta">
                     <h3>Endeudamiento</h3>
-                    <p>Umbral: 35% · Actual: 31.4%</p>
+                    <p>Umbral: 35% · Actual: 5.9%</p>
                 </div>
                 <span class="preview-estado-alerta">Activa</span>
             </div>
@@ -164,7 +165,7 @@
             <p class="descripcion-modal-alerta" id="descripcion-desactivar-alerta">La alerta Endeudamiento dejará de generar notificaciones cuando tu índice supere el umbral, pero conservará su historial para consulta.</p>
             <div class="nota-aviso-alerta">
                 <i class="ph ph-warning"></i>
-                <span>No recibirás avisos si tu índice de endeudamiento (actualmente 31.4%) supera el umbral configurado de 35%. Puedes reactivarla en cualquier momento.</span>
+                <span>No recibirás avisos si tu índice de endeudamiento (actualmente 5.9%) supera el umbral configurado de 35%. Puedes reactivarla en cualquier momento.</span>
             </div>
             <div class="acciones-modal-alerta">
                 <button type="button" class="btn-cancelar-alerta" onclick="location.href='lista-alertas.html'">Cancelar</button>

@@ -10,7 +10,8 @@
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
+<body class="mod-balance">
+    <!-- MÓDULO: Balance Financiero — S1 · Balance Financiero (Desktop) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -30,8 +31,8 @@
             <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
             <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
             <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
@@ -55,13 +56,20 @@
                 <h1>Balance Financiero</h1>
                 <p>Patrimonio Neto</p>
             </div>
-            <div class="acciones-usuario">
-                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
-                    <i class="ph ph-bell"></i>
-                </button>
-                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
-                    <span>A</span>
-                </button>
+            <div class="acciones-derecha-pagina">
+                <div class="selector-periodo">
+                    <span class="icono-periodo"><i class="ph ph-calendar"></i></span>
+                    <span class="texto-periodo">30 Jun 2026</span>
+                    <span class="flecha-periodo">▾</span>
+                </div>
+                <div class="acciones-usuario">
+                    <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
+                        <i class="ph ph-bell"></i>
+                    </button>
+                    <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
+                        <span>A</span>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -69,16 +77,16 @@
             <div class="bal-columna-izq">
                 <section class="bal-hero">
                     <p class="bal-hero-etiqueta">Patrimonio Neto</p>
-                    <h2 class="bal-hero-valor">$28.450.000</h2>
+                    <h2 class="bal-hero-valor">$221.200.000</h2>
                     <p class="bal-hero-sub">Valor Actual</p>
                     <span class="bal-chip">Activo</span>
                 </section>
 
                 <section class="bal-progreso">
                     <p class="bal-seccion-titulo">Activos vs. Pasivos</p>
-                    <p class="bal-progreso-texto">86% en activos</p>
+                    <p class="bal-progreso-texto">94% en activos</p>
                     <div class="bal-barra">
-                        <span class="bal-barra-relleno" style="width: 86.6%"></span>
+                        <span class="bal-barra-relleno" style="width: 94%"></span>
                     </div>
                     <div class="bal-datos">
                         <div class="bal-dato">
@@ -87,11 +95,11 @@
                         </div>
                         <div class="bal-dato">
                             <span>Total Pasivos</span>
-                            <strong>$8.200.000</strong>
+                            <strong>$13.800.000</strong>
                         </div>
                         <div class="bal-dato bal-dato-destacado">
                             <span>Patrimonio</span>
-                            <strong>$226.800.000</strong>
+                            <strong>$221.200.000</strong>
                         </div>
                     </div>
                 </section>
@@ -132,7 +140,7 @@
                 <article class="bal-tile">
                     <i class="ph ph-scales"></i>
                     <span class="bal-tile-nombre">Endeudamiento</span>
-                    <strong class="bal-tile-valor">3.5%</strong>
+                    <strong class="bal-tile-valor">5.9%</strong>
                     <small class="bal-tile-estado">Riesgo bajo</small>
                 </article>
                 <article class="bal-tile">
@@ -143,7 +151,7 @@
                 <article class="bal-tile">
                     <i class="ph ph-credit-card"></i>
                     <span class="bal-tile-nombre">Pasivos</span>
-                    <strong class="bal-tile-valor">$8.200.000</strong>
+                    <strong class="bal-tile-valor">$13.800.000</strong>
                 </article>
             </aside>
         </div>

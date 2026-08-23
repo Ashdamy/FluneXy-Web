@@ -8,7 +8,8 @@
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
+<body class="mod-auth">
+    <!-- MÓDULO: Autenticación — S3 · Registro (Escritorio) -->
     <main class="contenedor-autenticacion">
         <div class="volver">
             <a href="/pages/autenticacion/iniciar-sesion.html"><i class="ph ph-arrow-left"></i> Volver</a>
@@ -16,7 +17,7 @@
         <section class="tarjeta-formulario">
             <header class="encabezado-autenticacion">
                 <h1>Crea tu cuenta</h1>
-                <p>Empieza totalmente gratis.</p>
+                <p>Empieza gratis. Sin tarjeta de crédito.</p>
             </header>
             <form class="formulario-registro" action="" method="post">
                 <div class="grupo-formulario">
@@ -25,6 +26,7 @@
                         type="text"
                         id="nombre"
                         name="nombre"
+                        placeholder="Ana Milena"
                         required>
                 </div>
                 <div class="grupo-formulario">
@@ -33,6 +35,7 @@
                         type="email"
                         id="correo"
                         name="correo"
+                        placeholder="anamilena@ejemplo.com"
                         required>
                     <p class="mensaje-ayuda">
                         Usaremos este correo para verificar tu cuenta.
@@ -52,7 +55,7 @@
                         <div class="nivel-fortaleza"></div>
                     </div>
                     <p class="mensaje-fortaleza">
-                        Fortaleza: media - añade símbolos para mejorarla.
+                        Fortaleza: media — añade símbolos para mejorarla.
                     </p>
                 </div>
                 <div class="grupo-formulario">

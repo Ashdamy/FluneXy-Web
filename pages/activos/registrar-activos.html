@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body class="mod-activo-form mod-activo-crear">
+    <!-- MÓDULO: Activos — S2 · Registrar Activo (Desktop) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -30,8 +31,8 @@
             <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
             <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
             <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
@@ -64,15 +65,15 @@
             <div class="activo-form-col">
                 <section class="grupo-campo campo-nombre">
                     <label for="nombre">Nombre del Activo</label>
-                    <input type="text" id="nombre" placeholder="Casa Principal">
+                    <input type="text" id="nombre" placeholder="Portafolio de Inversiones">
                     <small>Escoge un nombre que identifique claramente este bien</small>
                 </section>
                 <section class="grupo-campo campo-categoria">
                     <label>Categoría</label>
                     <div class="opciones-tipo">
-                        <button type="button" class="opcion-tipo activa" data-tipo="vivienda"><i class="ph ph-house"></i><span class="texto-tipo"><strong>Vivienda</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo" data-tipo="vivienda"><i class="ph ph-house"></i><span class="texto-tipo"><strong>Vivienda</strong><small>Activo</small></span></button>
                         <button type="button" class="opcion-tipo" data-tipo="vehiculo"><i class="ph ph-car"></i><span class="texto-tipo"><strong>Vehículo</strong><small>Activo</small></span></button>
-                        <button type="button" class="opcion-tipo" data-tipo="inversion"><i class="ph ph-chart-line-up"></i><span class="texto-tipo"><strong>Inversión</strong><small>Activo</small></span></button>
+                        <button type="button" class="opcion-tipo activa" data-tipo="inversion"><i class="ph ph-chart-line-up"></i><span class="texto-tipo"><strong>Inversión</strong><small>Activo</small></span></button>
                         <button type="button" class="opcion-tipo" data-tipo="ahorro"><i class="ph ph-money"></i><span class="texto-tipo"><strong>Ahorro</strong><small>Activo</small></span></button>
                         <button type="button" class="opcion-tipo" data-tipo="negocio"><i class="ph ph-storefront"></i><span class="texto-tipo"><strong>Negocio</strong><small>Activo</small></span></button>
                         <button type="button" class="opcion-tipo" data-tipo="otro"><i class="ph ph-clipboard-text"></i><span class="texto-tipo"><strong>Otro</strong><small>Activo</small></span></button>
@@ -101,9 +102,9 @@
                     <h2>VISTA PREVIA</h2>
                 </div>
                 <div class="activo-previa-contenido">
-                    <span class="activo-previa-icono"><i class="ph ph-house"></i></span>
-                    <h3>Casa Principal</h3>
-                    <span class="activo-previa-subtipo">VIVIENDA · ACTIVO</span>
+                    <span class="activo-previa-icono"><i class="ph ph-chart-line-up"></i></span>
+                    <h3>Portafolio de Inversiones</h3>
+                    <span class="activo-previa-subtipo">INVERSIÓN · ACTIVO</span>
                     <hr class="activo-previa-divider">
                     <span class="activo-previa-label">Valor actual</span>
                     <strong class="activo-previa-monto">$180.000.000</strong>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body class="mod-lista-metas">
+    <!-- MÓDULO: Metas — S1 · Mis Metas (Desktop) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -30,8 +31,8 @@
             <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
             <a href="../metas/mis-metas.html" class="activo"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
             <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
-            <a href="../cuotas/tabla-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
-            <a href="../pagos/Historial-pagos.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
         </nav>
         <span class="etiqueta-seccion">ANÁLISIS</span>
         <nav class="navegacion-barra">
@@ -62,18 +63,21 @@
 <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="tarjeta-resumen">
-            <div class="tile-resumen">
-                <p>METAS ACTIVAS</p>
-                <strong>3</strong>
-            </div>
-            <div class="tile-resumen">
+        <section class="tarjeta-resumen resumen-metas">
+            <div class="informacion-resumen">
                 <p>TOTAL AHORRADO</p>
-                <strong>$23.5M</strong>
+                <h2>$23.500.000</h2>
+                <span class="badge-fondos">3 metas activas</span>
             </div>
-            <div class="tile-resumen">
-                <p>OBJETIVO</p>
-                <strong>$97M</strong>
+            <div class="estadisticas-resumen">
+                <div class="estadistica">
+                    <p>Metas Activas</p>
+                    <strong>3</strong>
+                </div>
+                <div class="estadistica">
+                    <p>Objetivo Total</p>
+                    <strong>$97.000.000</strong>
+                </div>
             </div>
         </section>
         <section class="barra-herramientas barra-metas">
@@ -98,11 +102,6 @@
                                 <h3>Moto Nueva</h3>
                                 <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
                             </div>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
-                            </div>
                         </div>
                         <div class="badge-porcentaje">
                             <span class="porcentaje">50%</span>
@@ -120,6 +119,11 @@
                         </div>
                         <div class="estado-meta">
                             <span class="estado estado-progreso">En progreso</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
                             <span class="badge-estado badge-activa">Activa</span>
                         </div>
                     </div>
@@ -132,11 +136,6 @@
                             <div>
                                 <h3>Vivienda</h3>
                                 <span class="etiqueta-fecha">Meta: Jun 2028 • 36 meses</span>
-                            </div>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
                         </div>
                         <div class="badge-porcentaje">
@@ -155,6 +154,11 @@
                         </div>
                         <div class="estado-meta">
                             <span class="estado estado-esfuerzo">Requiere esfuerzo</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
                             <span class="badge-estado badge-activa">Activa</span>
                         </div>
                     </div>
@@ -167,11 +171,6 @@
                             <div>
                                 <h3>Viaje a México</h3>
                                 <span class="etiqueta-fecha">Meta: Sep 2025 • 3 meses</span>
-                            </div>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
                         </div>
                         <div class="badge-porcentaje">
@@ -190,6 +189,11 @@
                         </div>
                         <div class="estado-meta">
                             <span class="estado estado-casi-lista">¡Casi lista!</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
                             <span class="badge-estado badge-activa">Activa</span>
                         </div>
                     </div>
@@ -202,11 +206,6 @@
                             <div>
                                 <h3>Fondo Estudios</h3>
                                 <span class="etiqueta-fecha">Meta: Ene 2025 - Completada</span>
-                            </div>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
                             </div>
                         </div>
                         <div class="badge-porcentaje">
@@ -221,6 +220,11 @@
                         </div>
                         <div class="estado-meta">
                             <span class="estado estado-completada">Completada</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
                             <span class="badge-estado badge-sin-seguimiento">Sin seguimiento</span>
                         </div>
                     </div>
