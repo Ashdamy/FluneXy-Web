@@ -796,6 +796,24 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
+  /* .tile-total-plantilla es flex-row + height:74px fijo en escritorio
+     (label a la izquierda, desglose "N ejecuciones × $X" a la derecha,
+     todo en una sola línea a 1100px de ancho). En móvil la etiqueta
+     "TOTAL AUTOMATIZADO EN EL PERIODO" no cabe y se envuelve a 2
+     líneas, pero la altura sigue fija en 74px y el desglose sigue al
+     lado en vez de debajo — el contenido queda apretado/superpuesto. */
+  body.mod-plantilla-detalle .tile-total-plantilla {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 20px;
+  }
+
+  body.mod-plantilla-detalle .tile-total-plantilla small {
+    align-self: flex-start;
+  }
+
   body.mod-plantilla-detalle .acciones-detalle {
     flex-direction: column;
   }
@@ -2127,6 +2145,15 @@ body.mod-asistente .entrada-chat {
 
   .landing .mov-screen {
     overflow-x: auto;
+  }
+
+  /* .mov-table (global.css) tiene overflow:hidden — recorta las filas
+     ANTES de que el overflow-x:auto de .mov-screen (su padre) tenga
+     algo que desbordar, así que el scroll nunca se activa y las
+     columnas de la derecha (Fondo/Fecha/Valor) quedan inaccesibles. */
+  .landing .mov-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .landing .mov-row {
