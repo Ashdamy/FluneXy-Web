@@ -795,6 +795,19 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
+  /* .next-exec-banner (height:68px) y .fail-exec-banner (height:60px)
+     tienen altura fija en escritorio, pensada para un solo renglón de
+     texto a 1100px de ancho. En móvil "Saldo insuficiente en
+     Bancolombia · 5 Jun 2025" envuelve a 2 líneas y el texto se
+     desborda por fuera de la caja redondeada, que no crece. */
+  body.mod-plantilla-detalle .next-exec-banner,
+  body.mod-plantilla-detalle .fail-exec-banner {
+    height: auto;
+    min-height: 60px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
   body.mod-plantilla-detalle .grid-info-plantilla {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -955,6 +968,46 @@ body.mod-asistente .entrada-chat {
   .acciones-cuota > * {
     width: 100%;
     flex: none;
+  }
+
+  /* Desactivar Plantilla: a diferencia de los demás modales de
+     desactivar (Fondo/Activo/Pasivo/Meta/Alerta, que centran con
+     align-items:center), este usa align-items:flex-start más
+     padding-top:155px fijo — pensado para acomodarse en una pantalla
+     de escritorio alta, pero en móvil empuja el modal hacia abajo en
+     vez de centrarlo, dejando un hueco vacío arriba. */
+  body.mod-plantillas .overlay-modal {
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* Balance Financiero: .bal-hero-valor usa font-size:var(--desktop-h1)
+     (40px) sin ajuste móvil — un valor de 12+ caracteres ("$221.200.000")
+     casi llena el ancho de la tarjeta a ese tamaño, quedando pegado al
+     borde derecho y con muy poco aire respecto al chip "Activo". */
+  .bal-hero-valor {
+    font-size: 28px;
+    word-break: break-word;
+  }
+
+  /* Registro/Recuperar-Nueva-Verificación contraseña: ".volver" es
+     position:absolute; top:64px fijo, independiente de la tarjeta de
+     formulario (que se centra verticalmente con flex). En formularios
+     altos (Registro) en pantallas móviles cortas, la tarjeta centrada
+     queda con su borde superior muy cerca de esos 64px, así que
+     "Volver" y "Crea tu cuenta" quedan casi pegados. Se usa :has()
+     para no afectar las pantallas de auth que no tienen "Volver"
+     (Iniciar sesión, Cerrar sesión), que ya se centran bien. */
+  .contenedor-autenticacion:has(.volver) {
+    align-items: flex-start;
+    padding-top: 88px;
+    padding-bottom: 40px;
+  }
+
+  .volver {
+    top: 24px;
+    left: 16px;
   }
 
   /* ===== Alertas · lista (S1) ===== */
@@ -1693,6 +1746,23 @@ body.mod-asistente .entrada-chat {
      sobre "Cancelar". */
   .ep-boton-guardar {
     flex: none;
+  }
+
+  /* Registrar Activo/Pasivo: el título "Nombre del Activo"/"INFORMACIÓN
+     GENERAL" queda pegado al subtítulo del encabezado — ya pasa igual
+     en escritorio (no es un problema introducido por el responsive):
+     body.mod-pasivo-crear .pasivo-form-col .seccion-label:first-child
+     tiene margin-top:4px en global.css, que gana por especificidad
+     sobre la regla de margin-top:40px pensada para este mismo label.
+     Activo ni siquiera tiene un .seccion-label para el primer campo.
+     Se corrige aquí (solo en el rango responsive) dándole el espacio
+     correcto al primer bloque de cada formulario. */
+  body.mod-pasivo-crear .pasivo-form-col .seccion-label:first-child {
+    margin-top: 24px;
+  }
+
+  body.mod-activo-crear .activo-form-col > .grupo-campo:first-child {
+    margin-top: 24px;
   }
 
   /* Tabla de movimientos: grid fijo de 7 columnas (~1100px) con
