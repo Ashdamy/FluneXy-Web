@@ -11,15 +11,6 @@
   display: none;
 }
 
-/* Asistente Inteligente: el chat tiene max-width:900px pero margen
-   izquierdo/derecho fijo de 40px (no auto) — en cualquier ancho donde
-   el contenedor disponible supera ~980px (incluye el rango "compacto"
-   con hamburguesa, no solo escritorio ancho/TV) el chat queda pegado
-   a la izquierda con todo el espacio sobrante acumulado a la derecha
-   en vez de quedar centrado. OJO: un margen auto en el eje cruzado de
-   un hijo flex desactiva el stretch por defecto y lo hace encogerse a
-   su contenido — sin west "width:100%" el contenedor se angostaba a
-   su burbuja más ancha y desbordaba horizontalmente en mobile. */
 body.mod-asistente .chat-contenedor,
 body.mod-asistente .entrada-chat {
   width: 100%;
@@ -32,9 +23,9 @@ body.mod-asistente .entrada-chat {
    COMPACTO (hasta 1400px): grids a 1-2 columnas fluidas.
    ========================================================== */
 @media (max-width: 1400px) {
-  /* Grids con columnas de ancho fijo → una columna.
-     body[class] iguala la especificidad de los selectores
-     body.mod-* de global.css y gana por orden de carga. */
+  /* body[class] iguala la especificidad (0,2,1) de los selectores
+     body.mod-* de global.css y gana por orden de carga — se repite
+     este patrón en todo el archivo por la misma razón. */
   .contenido-dos-columnas,
   .lista-componentes,
   .lista-detalle-flujo,
@@ -58,13 +49,10 @@ body.mod-asistente .entrada-chat {
     row-gap: 20px;
   }
 
-  /* grid-categorias en la página de pasivos compite con un
-     !important de global.css, por lo que sí debe mantenerlo. */
   body.mod-pasivos .grid-categorias {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
-  /* Grids de tarjetas de 3 columnas fijas → 2 columnas */
   .alert-grid,
   .tiles,
   body[class] .alert-grid,
@@ -77,37 +65,21 @@ body.mod-asistente .entrada-chat {
 }
 
 /* ==========================================================
-   TABLET + MÓVIL (hasta 1024px)
+   TABLET + MÓVIL (hasta 1400px): sidebar a menú hamburguesa
    ========================================================== */
 @media (max-width: 1400px) {
-  /* Ocultar la barra lateral fuera de pantalla.
-     En laptops (1025-1400px) la sidebar de 250px deja menos de
-     1030px de contenido: la barra pasa a menú hamburguesa y el
-     contenido usa el ancho completo. Por encima de 1400px la
-     sidebar vuelve a mostrarse. */
   .barra-lateral {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 80;
   }
 
-  /* Contenido a ancho completo.
-     El selector genérico cubre páginas sin clase en el <body>;
-     body[class] iguala la especificidad (0,2,1) de los selectores
-     body.mod-* .contenido-principal de global.css y gana por orden. */
   .contenido-principal,
   body[class] .contenido-principal {
     margin-left: 0;
     width: 100%;
   }
 
-  /* Botón hamburguesa: position:fixed hace que se quede quieto
-     mientras el contenido de la página se desplaza debajo — con un
-     fondo casi transparente (6% blanco) el contenido que pasa por
-     detrás se ve "a través" del botón, dando la impresión de un
-     botón roto/recortado en vez de un control flotante intencional.
-     Se le da un fondo sólido (oscuro, coherente con el tema) más
-     blur, para que quede claramente por encima del contenido. */
   .menu-hamburguesa {
     display: flex;
     position: fixed;
@@ -138,7 +110,6 @@ body.mod-asistente .entrada-chat {
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  /* Menú abierto: la X se coloca al lado de la barra desplegada */
   #menu-toggle:checked ~ .menu-hamburguesa {
     left: 280px;
   }
@@ -155,12 +126,10 @@ body.mod-asistente .entrada-chat {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Desplegar la barra lateral */
   #menu-toggle:checked ~ .barra-lateral {
     transform: translateX(0);
   }
 
-  /* Overlay oscurecido (clic para cerrar) */
   .menu-overlay {
     display: block;
     position: fixed;
@@ -181,8 +150,6 @@ body.mod-asistente .entrada-chat {
     overflow: hidden;
   }
 
-  /* Reducir márgenes/paddings laterales del contenido y dejar
-     espacio bajo el botón hamburguesa (fixed en top:20, h 40px) */
   .contenido-principal,
   body[class] .contenido-principal {
     padding-left: 16px;
@@ -217,9 +184,6 @@ body.mod-asistente .entrada-chat {
    COMPACTO (hasta 1400px): apilado de contenidos
    ========================================================== */
 @media (max-width: 1400px) {
-  /* El header se mantiene en fila (como en escritorio) para que las
-     acciones rápidas (notificación + perfil) queden alineadas con el
-     título principal, no empujadas debajo del subtítulo. */
   .encabezado-pagina,
   .encabezado-contenido {
     align-items: flex-start;
@@ -242,11 +206,6 @@ body.mod-asistente .entrada-chat {
     flex-shrink: 0;
   }
 
-  /* Vista Previa de Reporte: .vp-acciones-header (2 botones con
-     texto, ~300px) es demasiado ancho para compartir fila con el
-     título — darle flex-shrink:0 dejaba el título en ~0px y su texto
-     se desbordaba por encima de los botones (superposición real, no
-     solo apretado). Baja a su propia fila completa debajo del título. */
   .vp-encabezado {
     flex-wrap: wrap;
   }
@@ -255,12 +214,6 @@ body.mod-asistente .entrada-chat {
     flex: 1 1 100%;
   }
 
-  /* Balance Financiero: .acciones-derecha-pagina agrupa el selector
-     de periodo (200px fijo) + campana/avatar junto al título — ese
-     bloque de ~300px no cabía y colisionaba con "Balance Financiero".
-     Se angosta el selector de periodo específicamente en este
-     contexto (no afecta a .fila-flujo, que ya tiene su propio ancho
-     100% en Flujo de Caja). */
   .acciones-derecha-pagina {
     flex-shrink: 0;
     gap: 8px;
@@ -275,18 +228,12 @@ body.mod-asistente .entrada-chat {
     font-size: 12px;
   }
 
-  /* Vista Previa de Reporte: "Volver a Generar Reporte" + periodo en
-     una fila flex sin wrap se apretaban y el link partía sus propias
-     palabras en varias líneas. */
   .vp-encabezado .titulo-pagina p {
     flex-wrap: wrap;
     row-gap: 4px;
   }
 
-  /* ===== Colapsar grids de tarjetas/dashboards a 1 columna =====
-     El selector genérico cubre páginas sin clase en el <body>;
-     body[class] iguala la especificidad (0,2,1) de los selectores
-     body.mod-* de global.css y gana por orden de carga. */
+  /* ===== Colapsar grids de tarjetas/dashboards a 1 columna ===== */
   .grid-resumen,
   .grid-resumen-movimientos,
   .grid-accesos,
@@ -354,9 +301,6 @@ body.mod-asistente .entrada-chat {
     grid-template-columns: 1fr;
   }
 
-  /* grid-info, grid-categorias y reg-pasivo-grid-amortizacion en la
-     página de pasivos compiten con !important de global.css, por lo
-     que sí deben mantenerlo. */
   body.mod-pasivos .grid-info,
   body.mod-pasivos .grid-categorias,
   body.mod-pasivos .reg-pasivo-grid-amortizacion {
@@ -368,7 +312,6 @@ body.mod-asistente .entrada-chat {
     gap: 16px;
   }
 
-  /* Dashboards de dos columnas apilados */
   .balance-dashboard,
   .ind-dashboard,
   .rep-dashboard,
@@ -383,7 +326,6 @@ body.mod-asistente .entrada-chat {
     flex-direction: column;
   }
 
-  /* Columnas internas con ancho fijo → ancho completo */
   .bal-columna-izq,
   .ind-columna-izq,
   .rep-columna-form,
@@ -401,7 +343,6 @@ body.mod-asistente .entrada-chat {
     width: 100%;
   }
 
-  /* Formularios de dos columnas → una columna */
   .fila-campos,
   .fila-monto-fecha,
   .fila-cat-fondo,
@@ -432,9 +373,6 @@ body.mod-asistente .entrada-chat {
     min-width: 0;
   }
 
-  /* Selectores de tipo (tarjetas) → apiladas a ancho completo.
-     Los selectores prefijados body.mod-* igualan la especificidad
-     (0,2,1) de global.css y ganan por orden de carga. */
   .opciones-tipo,
   .opcion-tipo,
   body.mod-fondo-form .opciones-tipo,
@@ -451,11 +389,6 @@ body.mod-asistente .entrada-chat {
     padding: 14px;
   }
 
-  /* Barras de búsqueda/filtro → columna a ancho completo.
-     Activos/Pasivos/Metas usan gap:0 en escritorio (el espacio entre
-     buscador, filtro y botón lo dan márgenes pensados para la fila
-     horizontal); al apilarlos y poner esos márgenes en 0 quedaban
-     pegados. Se agrega gap para separarlos en móvil. */
   .barra-activos,
   .barra-pasivos,
   .barra-fondos,
@@ -471,10 +404,6 @@ body.mod-asistente .entrada-chat {
     gap: 12px;
   }
 
-  /* Tarjetas de Fondos/Pasivos/Activos: la fila de "Saldo/Valor +
-     botones de acción" comparte una sola línea sin wrap y queda muy
-     apretada — el valor grande y los 3 botones casi se tocan. Los
-     botones de acción pasan a su propia línea completa a la derecha. */
   .lista-fondos .fila-saldo,
   body[class] .lista-fondos .fila-saldo,
   body.mod-lista-pasivos .fila-saldo-deuda,
@@ -495,9 +424,6 @@ body.mod-asistente .entrada-chat {
     justify-content: flex-end;
   }
 
-  /* .tarjeta-bien tiene height:176px fijo (no min-height) en escritorio;
-     al envolver la fila de acciones a una línea nueva, el contenido se
-     desborda por debajo del recuadro de la tarjeta. */
   body.mod-lista-activos .tarjeta-bien {
     height: auto;
   }
@@ -533,18 +459,12 @@ body.mod-asistente .entrada-chat {
     margin: 0;
   }
 
-  /* Tarjetas de resumen con gap amplio → columna */
   .estadisticas-resumen {
     flex-direction: column;
     gap: 16px;
     align-items: stretch;
   }
 
-  /* Mis Metas: fila estado+acciones+badge sin wrap se desbordaba y el
-     overflow:hidden de la tarjeta cortaba el texto ("Sin seguimiento"
-     quedaba como "Sin segui..."); el pill de estado se apretaba a 2
-     líneas. El badge de estado pasa a su propia línea, alineado a la
-     derecha; estado y acciones quedan en la primera línea. */
   .estado-meta,
   body[class] .estado-meta {
     flex-wrap: wrap;
@@ -588,10 +508,6 @@ body.mod-asistente .entrada-chat {
     margin-top: 8px;
   }
 
-  /* Tabla de Cuotas: hero de 3 bloques (principal + 2 mini) en una
-     fila sin wrap — los mini-bloques con min-width:120px fijo dejaban
-     casi sin espacio al bloque principal, partiendo "6 de 36" en 2
-     líneas. El bloque principal pasa a su propia fila completa. */
   .hero-summary,
   body[class] .hero-summary {
     flex-wrap: wrap;
@@ -608,7 +524,6 @@ body.mod-asistente .entrada-chat {
     flex: 1;
   }
 
-  /* Tablas que desbordan → scroll horizontal */
   .tabla-cuotas,
   .contenedor-tabla,
   .tabla-wrapper,
@@ -620,19 +535,16 @@ body.mod-asistente .entrada-chat {
     margin-right: 0;
   }
 
-  /* Botones de ancho fijo (dashboards) → ancho completo */
   .componentes-flujo .boton-texto,
   body[class] .componentes-flujo .boton-texto {
     width: 100%;
   }
 
-  /* Alternador ingreso/gasto en formularios de movimiento */
   .alternador-tipo,
   body[class] .alternador-tipo {
     width: 100%;
   }
 
-  /* Formulario de plantillas: hijos con ancho fijo → 100% */
   body.mod-plantilla-form .grid-plantilla-form {
     margin-left: 0;
     margin-right: 0;
@@ -715,7 +627,6 @@ body.mod-asistente .entrada-chat {
     line-height: 32px;
   }
 
-  /* Detalle de pasivo: hero absoluto → flujo (clases nuevas) */
   body.mod-pasivo-detalle .hero-icono,
   body.mod-pasivo-detalle .hero-titulo,
   body.mod-pasivo-detalle .badge-tipo,
@@ -744,7 +655,6 @@ body.mod-asistente .entrada-chat {
     grid-template-columns: 1fr;
   }
 
-  /* Detalle de meta: hero absoluto → flujo (clases nuevas) */
   body.mod-meta-detalle .hero-icono,
   body.mod-meta-detalle .hero-titulo,
   body.mod-meta-detalle .badge-tipo,
@@ -786,7 +696,6 @@ body.mod-asistente .entrada-chat {
     grid-template-columns: 1fr;
   }
 
-  /* Detalle de plantilla: bloques de ancho fijo → ancho completo */
   body.mod-plantilla-detalle .hero-card-plantilla,
   body.mod-plantilla-detalle .next-exec-banner,
   body.mod-plantilla-detalle .fail-exec-banner,
@@ -795,11 +704,7 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* .next-exec-banner (height:68px) y .fail-exec-banner (height:60px)
-     tienen altura fija en escritorio, pensada para un solo renglón de
-     texto a 1100px de ancho. En móvil "Saldo insuficiente en
-     Bancolombia · 5 Jun 2025" envuelve a 2 líneas y el texto se
-     desborda por fuera de la caja redondeada, que no crece. */
+  /* height fija en escritorio no crece con texto envuelto a 2 líneas */
   body.mod-plantilla-detalle .next-exec-banner,
   body.mod-plantilla-detalle .fail-exec-banner {
     height: auto;
@@ -818,12 +723,6 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* .tile-total-plantilla es flex-row + height:74px fijo en escritorio
-     (label a la izquierda, desglose "N ejecuciones × $X" a la derecha,
-     todo en una sola línea a 1100px de ancho). En móvil la etiqueta
-     "TOTAL AUTOMATIZADO EN EL PERIODO" no cabe y se envuelve a 2
-     líneas, pero la altura sigue fija en 74px y el desglose sigue al
-     lado en vez de debajo — el contenido queda apretado/superpuesto. */
   body.mod-plantilla-detalle .tile-total-plantilla {
     height: auto;
     flex-direction: column;
@@ -846,7 +745,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* Detalle de movimiento: hero absoluto → flujo */
   body.mod-detalle-movimiento .hero-movimiento .icono-hero,
   body.mod-detalle-movimiento .hero-movimiento .info-hero,
   body.mod-detalle-movimiento .hero-movimiento .monto-hero,
@@ -869,7 +767,6 @@ body.mod-asistente .entrada-chat {
     gap: 10px;
   }
 
-  /* Elementos decorativos que desbordan en móvil */
   body.mod-alertas .alerta-suma-orb,
   body.mod-fondo-editar .saldo-franja,
   body.mod-activo-editar .saldo-franja,
@@ -879,21 +776,10 @@ body.mod-asistente .entrada-chat {
     display: none;
   }
 
-  /* Crear/Editar Fondo: a diferencia de Activo/Pasivo/Meta, no tienen
-     un wrapper "-form-layout" que resetee la sangría de 40-64px del
-     diseño de escritorio, así que en móvil todo el formulario quedaba
-     desplazado hacia la derecha en vez de alinearse con el resto de
-     pantallas. */
   body.mod-fondo-editar .encabezado-pagina {
     padding-left: 0;
   }
 
-  /* Mi Perfil (y demás pantallas de usuario): .encabezado-pagina tiene
-     su propio padding-left:16px (regla general de arriba) que se SUMA
-     al padding-left:16px de .contenido-principal — "Mi Perfil" y su
-     subtítulo quedan con 32px de margen izquierdo mientras el resto
-     del contenido (DATOS DE LA CUENTA, ACCIONES DE CUENTA, tarjetas)
-     solo tiene 16px, desalineados entre sí. */
   body.mod-usuario .encabezado-pagina {
     padding-left: 0;
     padding-right: 0;
@@ -912,11 +798,6 @@ body.mod-asistente .entrada-chat {
     margin-right: 0;
   }
 
-  /* Plantillas: .acciones-formulario aquí es display:flex (no grid
-     como en Fondo/Activo/Pasivo/Meta), así que la regla genérica de
-     colapso a grid-template-columns:1fr no le hace nada — "Cancelar"
-     y "Guardar Plantilla" seguían lado a lado partiendo el texto del
-     botón en 2 líneas. Se apilan en columna, a ancho completo. */
   body.mod-plantilla-form .acciones-formulario {
     flex-direction: column;
     margin: 24px 0 0;
@@ -928,10 +809,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* Nuevo Movimiento (ingreso/gasto) y Saldo Insuficiente: mismo
-     patrón — .acciones-movimiento es flex sin wrap con botones de
-     height:56px fijo (no min-height); "Guardar Movimiento" partía en
-     2 líneas y quedaba cortado contra el borde del botón. */
   body.mod-form-movimiento .acciones-movimiento {
     flex-direction: column;
     margin-top: 24px;
@@ -944,8 +821,6 @@ body.mod-asistente .entrada-chat {
     padding: 14px 0;
   }
 
-  /* Editar Alerta: mismo patrón — .acciones-formulario aquí es flex,
-     no grid, así que la regla genérica de colapso no le hace nada. */
   body.mod-alertas-configurar .acciones-formulario {
     flex-direction: column;
     margin: 20px 0 0;
@@ -957,9 +832,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* Detalle de Cuota: "Registrar Pago" / "Ver todas las cuotas" son
-     flex:1 sin wrap con margin:24px 40px fijo — "Ver todas las
-     cuotas" partía en 2 líneas dentro de un botón muy angosto. */
   .acciones-cuota {
     flex-direction: column;
     margin: 24px 0 0;
@@ -970,35 +842,19 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* Desactivar Plantilla: a diferencia de los demás modales de
-     desactivar (Fondo/Activo/Pasivo/Meta/Alerta, que centran con
-     align-items:center), este usa align-items:flex-start más
-     padding-top:155px fijo — pensado para acomodarse en una pantalla
-     de escritorio alta, pero en móvil empuja el modal hacia abajo en
-     vez de centrarlo, dejando un hueco vacío arriba. */
   body.mod-plantillas .overlay-modal {
     align-items: center;
     padding-top: 16px;
     padding-bottom: 16px;
   }
 
-  /* Balance Financiero: .bal-hero-valor usa font-size:var(--desktop-h1)
-     (40px) sin ajuste móvil — un valor de 12+ caracteres ("$221.200.000")
-     casi llena el ancho de la tarjeta a ese tamaño, quedando pegado al
-     borde derecho y con muy poco aire respecto al chip "Activo". */
   .bal-hero-valor {
     font-size: 28px;
     word-break: break-word;
   }
 
-  /* Registro/Recuperar-Nueva-Verificación contraseña: ".volver" es
-     position:absolute; top:64px fijo, independiente de la tarjeta de
-     formulario (que se centra verticalmente con flex). En formularios
-     altos (Registro) en pantallas móviles cortas, la tarjeta centrada
-     queda con su borde superior muy cerca de esos 64px, así que
-     "Volver" y "Crea tu cuenta" quedan casi pegados. Se usa :has()
-     para no afectar las pantallas de auth que no tienen "Volver"
-     (Iniciar sesión, Cerrar sesión), que ya se centran bien. */
+  /* :has() evita afectar las pantallas de auth sin botón "Volver"
+     (Iniciar/Cerrar sesión), que ya se centran bien por su cuenta. */
   .contenedor-autenticacion:has(.volver) {
     align-items: flex-start;
     padding-top: 88px;
@@ -1038,8 +894,6 @@ body.mod-asistente .entrada-chat {
     margin: 20px 0 0;
   }
 
-  /* Tarjeta: icono ocupa las 2 filas a la izquierda;
-     fila 1 = título+umbral / valor actual, fila 2 = acciones / estado */
   body.mod-alertas .alerta-tarjeta {
     display: grid;
     grid-template-columns: 48px 1fr auto;
@@ -1288,18 +1142,14 @@ body.mod-asistente .entrada-chat {
     margin: 28px 0 0;
   }
 
-  /* Movimientos vacío (estructura distinta) */
   body.mod-vacio-movimientos .estado-vacio {
     position: static;
     margin: 48px 0 0;
   }
 
-  /* .iconos-vacio debe seguir siendo positioned (relative, no static):
-     sus hijos .circulo-exterior/.circulo-interior son position:absolute
-     en escritorio y necesitan un ancla — si no, escapan hacia arriba en
-     el árbol DOM y quedan superpuestos sobre el encabezado. top/left del
-     desktop (181px/400px) también deben resetearse: son propiedades
-     independientes de position y seguían desplazando el elemento. */
+  /* .circulo-exterior/.circulo-interior son position:absolute en
+     escritorio y necesitan un ancla positioned; sin esto escapan
+     hacia arriba en el árbol DOM y quedan sobre el encabezado. */
   body.mod-vacio-movimientos .iconos-vacio {
     position: relative;
     top: 0;
@@ -1336,10 +1186,6 @@ body.mod-asistente .entrada-chat {
     margin: 28px 0 0;
   }
 
-  /* ===== Flujo de caja · saldo proyectado y selector de periodo =====
-     Fila con tarjeta de 660px fijo + selector de 200px sin wrap:
-     el flex las apretaba hasta partir cada palabra en su propia línea.
-     Se apilan en columna con ancho completo. */
   .fila-flujo {
     flex-direction: column;
     align-items: stretch;
@@ -1380,8 +1226,9 @@ body.mod-asistente .entrada-chat {
     flex-shrink: 1;
   }
 
-  /* Ícono ocupa las 2 filas a la izquierda; fila 1 = nombre+sub,
-     fila 2 = monto — evita que el nombre se aprieta palabra por palabra */
+  /* Patrón grid reutilizado (Alertas/Indicadores/Pagos): el ícono
+     ocupa 2 filas para que texto largo se envuelva sin apretar
+     el resto de la fila palabra por palabra. */
   .item-componente {
     display: grid;
     grid-template-columns: 52px 1fr;
@@ -1418,7 +1265,6 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* ===== Fondo · detalle ===== */
   body.mod-fondos .hero-card {
     height: auto;
     margin: 16px 0 20px;
@@ -1466,12 +1312,6 @@ body.mod-asistente .entrada-chat {
     gap: 12px;
   }
 
-  /* Detalle de Activo: sin override propio (a diferencia de Fondos),
-     seguía con el margin:44px 40px fijo y width:calc(100% - 80px) de
-     escritorio — "Desactivar Activo" (más largo que "Desactivar
-     Fondo") no cabía junto a "Editar Activo" y partía en 2 líneas
-     dentro de un botón más bajo que su vecino. Se apilan en columna
-     para no depender de que el texto quepa en la fila. */
   body.mod-activo-detalle .acciones-detalle {
     flex-direction: column;
     width: 100%;
@@ -1485,7 +1325,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* ===== Movimiento · editar (banner) ===== */
   body.mod-editar-movimiento .banner-editar {
     height: auto;
     padding: 16px;
@@ -1505,12 +1344,9 @@ body.mod-asistente .entrada-chat {
     margin-left: auto;
   }
 
-  /* ===== Home · movimientos recientes ===== */
-  /* align-items:center (escritorio) centra verticalmente el valor
-     contra la altura total de la fila; cuando el título largo
-     ("CDT Bancolombia") se envuelve a 2 líneas, el valor centrado
-     queda superpuesto sobre la segunda línea del título. Se alinea
-     todo arriba para que el valor quede junto a la primera línea. */
+  /* align-items:center (escritorio) centra el valor contra la altura
+     total de la fila — con un título largo envuelto a 2 líneas el
+     valor queda superpuesto sobre la segunda línea. Se alinea arriba. */
   .item-movimiento-home {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -1526,7 +1362,6 @@ body.mod-asistente .entrada-chat {
     text-align: right;
   }
 
-  /* ===== Pagos ===== */
   .filter-periodo,
   .filter-periodo.simple {
     width: 100%;
@@ -1559,10 +1394,6 @@ body.mod-asistente .entrada-chat {
     font-size: 16px;
   }
 
-  /* Fila de pago: icono | título+subtítulo / monto+badge.
-     En vez de envolver todo el flex en una fila desordenada,
-     se arma como grid de 2 columnas: el icono ocupa ambas filas
-     y el monto queda alineado bajo el título, no bajo el icono. */
   .item-pago {
     display: grid;
     grid-template-columns: 56px 1fr;
@@ -1593,16 +1424,11 @@ body.mod-asistente .entrada-chat {
     gap: 12px;
   }
 
-  /* Registrar Pago/Aporte: layout de 2 columnas (flex sin wrap) con
-     el panel de resumen de ancho fijo 380px y flex-shrink:0 — la
-     columna del formulario quedaba aplastada a 0 y su contenido
-     (grids/alturas fijas) se superponía con el panel. Se apilan en
-     columna con ambos elementos a ancho completo.
-     align-items:flex-start del escritorio queda heredado — al pasar
-     de fila a columna los ejes se invierten, y ese flex-start pasa de
-     afectar la alineación vertical (inofensivo) a controlar el ancho
-     horizontal, encogiendo .pago-form-col a su contenido y pegándolo
-     a la izquierda en vez de ocupar el ancho completo. */
+  /* align-items:flex-start del escritorio queda heredado al pasar de
+     fila a columna: los ejes se invierten y ese flex-start pasa de
+     alinear verticalmente (inofensivo) a encoger el ancho del hijo
+     en vez de estirarlo. Se agrega align-items:stretch en cada caso
+     que apila un layout de 2 columnas (form + panel/preview). */
   .pago-form-layout {
     flex-direction: column;
     align-items: stretch;
@@ -1622,16 +1448,12 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* .type-toggle ("Abono Capital"/"Anticipado") no se estiraba al
-     ancho completo del form-card como el resto de campos, pese a
-     heredar align-items:stretch del flex padre — al ser display:grid
-     con columnas fr se resuelve a fit-content en vez de estirarse. */
+  /* display:grid no hereda el align-items:stretch de un padre flex */
   .type-toggle {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* ===== Balance financiero ===== */
   .bal-datos {
     flex-wrap: wrap;
   }
@@ -1641,7 +1463,6 @@ body.mod-asistente .entrada-chat {
     min-width: 0;
   }
 
-  /* Tarjetas de plantilla: footer absoluto → flujo con wrap */
   body.mod-plantillas .footer-card-plantilla {
     position: static;
     flex-wrap: wrap;
@@ -1654,7 +1475,6 @@ body.mod-asistente .entrada-chat {
     margin-top: 12px;
   }
 
-  /* ===== Mi perfil ===== */
   .mp-contenido {
     flex-direction: column;
     gap: 24px;
@@ -1700,17 +1520,13 @@ body.mod-asistente .entrada-chat {
     gap: 16px;
   }
 
-  /* .mp-accion-indigo (tarjeta "Editar Perfil") tiene fondo
-     var(--indigo) = #818CF8, un morado claro-medio. El subtítulo usa
-     blanco al 85% de opacidad, lo que da un contraste ~2.2:1 (muy por
-     debajo del mínimo de 4.5:1) — el texto casi no se distingue del
-     fondo. Se oscurece el texto para que sea legible sobre ese fondo. */
+  /* var(--indigo) es un morado claro-medio; texto blanco a 85% de
+     opacidad da ~2.2:1 de contraste (mínimo legible es 4.5:1). */
   .mp-accion-indigo p,
   .mp-accion-indigo .mp-chevron {
     color: rgba(7, 9, 32, 0.75);
   }
 
-  /* ===== Editar perfil (ep-*) ===== */
   .ep-contenido {
     flex-direction: column;
     gap: 24px;
@@ -1739,24 +1555,14 @@ body.mod-asistente .entrada-chat {
     width: 100%;
   }
 
-  /* .ep-boton-guardar hereda flex:1 (flex-basis:0) del layout en fila
-     de escritorio. Al pasar .ep-acciones a columna, ese flex-basis:0
-     pasa a regir la altura y colapsa el botón a su contenido en vez
-     de respetar height:52px de .ep-boton, superponiendo su sombra
-     sobre "Cancelar". */
+  /* flex:1 (flex-basis:0) heredado de escritorio pasa a regir la
+     altura al apilar en columna, colapsando el botón por debajo de
+     su height fija — hay que resetear a flex:none en cada botón que
+     se apile así (ver también los demás "flex: none;" del archivo). */
   .ep-boton-guardar {
     flex: none;
   }
 
-  /* Registrar Activo/Pasivo: el título "Nombre del Activo"/"INFORMACIÓN
-     GENERAL" queda pegado al subtítulo del encabezado — ya pasa igual
-     en escritorio (no es un problema introducido por el responsive):
-     body.mod-pasivo-crear .pasivo-form-col .seccion-label:first-child
-     tiene margin-top:4px en global.css, que gana por especificidad
-     sobre la regla de margin-top:40px pensada para este mismo label.
-     Activo ni siquiera tiene un .seccion-label para el primer campo.
-     Se corrige aquí (solo en el rango responsive) dándole el espacio
-     correcto al primer bloque de cada formulario. */
   body.mod-pasivo-crear .pasivo-form-col .seccion-label:first-child {
     margin-top: 24px;
   }
@@ -1765,11 +1571,6 @@ body.mod-asistente .entrada-chat {
     margin-top: 24px;
   }
 
-  /* Tabla de movimientos: grid fijo de 7 columnas (~1100px) con
-     overflow:hidden en escritorio. Ya tenía scroll horizontal en
-     mobile (max-width:640px), pero no en 641-1400px, donde el
-     sidebar ya está oculto y el contenido tampoco llega a 1100px —
-     MONTO/ESTADO/ACCIONES quedaban recortados sin forma de verlos. */
   body.mod-lista-movimientos .tabla-movimientos,
   .tabla-movimientos,
   body[class] .tabla-movimientos {
@@ -1780,12 +1581,6 @@ body.mod-asistente .entrada-chat {
     min-width: 0;
   }
 
-  /* ===== Formularios con panel de previsualización (activo/pasivo/meta) =====
-     Mismo patrón que .pago-form-layout: align-items:flex-start del
-     escritorio queda heredado y, al pasar de fila a columna, encoge
-     la columna del formulario a su contenido en vez de ocupar el
-     ancho completo. Las variantes -editar (mod-activo-editar, etc.)
-     ni siquiera tenían regla de apilado — se agregan aquí también. */
   body.mod-activo-form .activo-form-layout,
   body.mod-pasivo-form .pasivo-form-layout,
   body.mod-meta-form .meta-form-layout,
@@ -1883,13 +1678,8 @@ body.mod-asistente .entrada-chat {
     margin-bottom: 16px;
   }
 
-  /* .preview-saldo (el valor "$X" a la derecha de cada tarjeta de
-     confirmación) sigue con position:absolute; right:11px del
-     escritorio aunque su contenedor (.preview-meta/.preview-fondo/...)
-     ya se resetea a position:static arriba — al perder ese contenedor
-     como referencia de posicionamiento, el valor termina anclado a un
-     ancestro distinto (más ancho) y queda pegado o saliéndose del
-     borde derecho de la tarjeta ya achicada. */
+  /* .preview-saldo queda position:absolute aunque su contenedor ya
+     se resetea arriba a static — pierde su referencia de posición. */
   body.mod-fondos .preview-saldo,
   body.mod-activo-desactivar .preview-saldo,
   body.mod-pasivo-desactivar .preview-saldo,
@@ -1956,7 +1746,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* ===== Modal de advertencia (desactivar movimiento) ===== */
   body.mod-modal-movimiento .modal-movimiento {
     padding: 24px 16px;
     box-sizing: border-box;
@@ -2024,13 +1813,9 @@ body.mod-asistente .entrada-chat {
 }
 
 /* ==========================================================
-   MÓVIL (hasta 640px): recuadros con altura fija que recortan
-   el contenido. Se libera la altura para que la info fluya.
+   MÓVIL (hasta 640px)
    ========================================================== */
 @media (max-width: 640px) {
-  /* Verificación de código: 6 inputs de 56px + gaps de 16px = 416px,
-     no caben en el ancho de una tarjeta móvil (~358px) y desbordan
-     con scroll horizontal, cortando el 6to dígito. */
   .grupo-codigo {
     gap: 8px;
   }
@@ -2041,14 +1826,9 @@ body.mod-asistente .entrada-chat {
     font-size: 20px;
   }
 
-  /* Campos de monto (activo/pasivo/meta, crear y editar): el valor
-     numérico + badge de tipo no caben con el tamaño de fuente de
-     escritorio y el texto se corta visualmente dentro del input.
-     Editar Activo/Meta tienen además una regla de escritorio más
-     específica (body.mod-X-editar .campo-valor .campo-monto input)
-     que le gana a la regla simple de abajo sin importar el orden de
-     carga — hay que igualar esa especificidad para que el font-size
-     móvil realmente aplique. */
+  /* Editar Activo/Meta tienen una regla de escritorio más específica
+     (body.mod-X-editar .campo-valor .campo-monto input) que gana sin
+     importar el orden de carga — hay que igualar esa especificidad. */
   body.mod-activo-crear .campo-monto input,
   body.mod-pasivo-crear .campo-monto input,
   body.mod-meta-crear .campo-monto input,
@@ -2060,19 +1840,11 @@ body.mod-asistente .entrada-chat {
     font-size: 17px;
   }
 
-  /* Desactivar Cuenta: .dc-contenedor tiene margin:8px 40px 0 fijo,
-     nunca reseteado — el modal (que ya es width:min(520px,100%))
-     queda con menos "100%" disponible del que debería, angostando
-     el botón "Desactivar mi Cuenta" hasta partir su texto en 2 líneas. */
   .dc-contenedor {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* .dc-acciones reparte 50%/50% (Cancelar / Desactivar mi Cuenta) —
-     a diferencia de los demás modales de desactivar (Fondo/Activo/
-     Pasivo/Meta), que apilan los botones a ancho completo. Se iguala
-     el patrón para que "Desactivar mi Cuenta" no parta en 2 líneas. */
   .dc-acciones {
     flex-direction: column;
   }
@@ -2083,8 +1855,6 @@ body.mod-asistente .entrada-chat {
     flex: none;
   }
 
-  /* Resumen de activos/fondos: tarjeta en fila con gap fijo de
-     escritorio que desborda en pantallas estrechas. → columna. */
   body.mod-lista-activos .resumen-activos,
   body.mod-fondos .resumen-fondos,
   body.mod-lista-metas .resumen-metas,
@@ -2118,7 +1888,6 @@ body.mod-asistente .entrada-chat {
     padding: 0;
   }
 
-  /* Resumen de metas: tiles en fila con gap de escritorio → wrap */
   .tarjeta-resumen,
   body[class] .tarjeta-resumen {
     height: auto;
@@ -2132,16 +1901,11 @@ body.mod-asistente .entrada-chat {
     min-width: 0;
   }
 
-  /* Plantilla: altura fija 140px recorta el footer → auto */
   body.mod-plantillas .card-plantilla,
   body[class] .card-plantilla {
     height: auto;
   }
 
-  /* Indicador financiero: fila única (ícono+nombre+valor+estado) con
-     wrap simple quedaba distinta según el largo del texto de cada
-     tarjeta. Mismo patrón grid que Alertas: ícono ocupa 2 filas;
-     fila 1 = nombre+sub / valor, fila 2 = estado. */
   .ind-tarjeta,
   body[class] .ind-tarjeta {
     display: grid;
@@ -2180,8 +1944,6 @@ body.mod-asistente .entrada-chat {
     justify-self: end;
   }
 
-  /* Tabla de movimientos: grid de 7 columnas fijas (1100px) con
-     overflow:hidden → scroll horizontal */
   body.mod-lista-movimientos .tabla-movimientos,
   .tabla-movimientos,
   body[class] .tabla-movimientos {
@@ -2189,11 +1951,9 @@ body.mod-asistente .entrada-chat {
   }
 }
 
-/* ==========================================================
-   Escritorio (desde 1400px): el estado vacío es un contenedor
+/* Escritorio (desde 1400px): el estado vacío es un contenedor
    absoluto de 1180px que en pantallas 1400-1439px no cabe en el
-   área de contenido (~1150px). Se centra y fluye hasta 100%.
-   ========================================================== */
+   área de contenido (~1150px). */
 @media (min-width: 1400px) {
   body.mod-activos-vacio .estado-vacio-activos,
   body.mod-fondos .estado-vacio-fondos,
@@ -2207,12 +1967,6 @@ body.mod-asistente .entrada-chat {
 
 }
 
-/* MÓDULO: Alertas — S1 Lista de Alertas (pantallas anchas)
-   .alerta-fila-titulo usa justify-content:space-between sobre todo
-   el ancho de .contenido-principal, mientras que .alerta-grid tiene
-   un ancho fijo de 1100px (2 columnas de 540px). En pantallas anchas
-   el botón "Agregar Nueva Alerta" queda flotando lejos de las
-   tarjetas. Se limita la fila de título al mismo ancho de la grilla. */
 @media (min-width: 1400px) {
   body.mod-alertas .alerta-fila-titulo {
     max-width: 1100px;
@@ -2220,9 +1974,8 @@ body.mod-asistente .entrada-chat {
 }
 
 /* ==========================================================
-   LANDING (index.html): sin tratamiento responsive previo.
-   El header, el hero y las grillas usan anchos fijos en px
-   pensados para 1440px y desbordan por debajo de ~1180px.
+   LANDING (index.html): header/hero/grillas usan anchos fijos
+   en px pensados para 1440px y desbordan por debajo de ~1180px.
    ========================================================== */
 @media (max-width: 1024px) {
   .landing .landing-nav {
@@ -2294,10 +2047,9 @@ body.mod-asistente .entrada-chat {
     overflow-x: auto;
   }
 
-  /* .mov-table (global.css) tiene overflow:hidden — recorta las filas
-     ANTES de que el overflow-x:auto de .mov-screen (su padre) tenga
-     algo que desbordar, así que el scroll nunca se activa y las
-     columnas de la derecha (Fondo/Fecha/Valor) quedan inaccesibles. */
+  /* .mov-table tiene overflow:hidden propio y recortaba las filas
+     antes de que el overflow-x:auto del padre tuviera algo que
+     desbordar — el scroll nunca se activaba. */
   .landing .mov-table {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -2355,12 +2107,28 @@ body.mod-asistente .entrada-chat {
     text-align: left;
   }
 
+  .landing .footer-col {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .landing .footer-col a,
+  .landing .footer-col p {
+    text-align: left;
+  }
+
   .landing .footer-bottom {
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
     padding-left: 24px;
     padding-right: 24px;
     box-sizing: border-box;
+  }
+
+  .landing .footer-bottom .legal {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -2384,14 +2152,9 @@ body.mod-asistente .entrada-chat {
   }
 }
 
-/* ==========================================================
-   PANTALLAS MUY ANCHAS (2K / ultrawide / 4K, ≥2000px):
-   .contenido-principal no tiene max-width en ningún módulo — a
-   partir de 2560px las tarjetas, barras y listas se estiran a un
-   ancho absurdo (una fila de gasto/movimiento se convierte en una
-   franja delgadísima). Se limita el ancho del contenido y se deja
-   el espacio sobrante como fondo, sin tocar el desktop base.
-   ========================================================== */
+/* Pantallas muy anchas (2K/ultrawide/4K, ≥2000px): .contenido-principal
+   no tiene max-width en ningún módulo y se estira sin límite. Se limita
+   el ancho y se centra en el espacio libre junto al sidebar. */
 @media (min-width: 2000px) {
   .contenido-principal,
   body[class] .contenido-principal {
@@ -2401,4 +2164,3 @@ body.mod-asistente .entrada-chat {
     margin-right: calc((100vw - 260px - 1700px) / 2);
   }
 }
-
