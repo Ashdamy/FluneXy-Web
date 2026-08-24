@@ -101,7 +101,13 @@ body.mod-asistente .entrada-chat {
     width: 100%;
   }
 
-  /* Botón hamburguesa */
+  /* Botón hamburguesa: position:fixed hace que se quede quieto
+     mientras el contenido de la página se desplaza debajo — con un
+     fondo casi transparente (6% blanco) el contenido que pasa por
+     detrás se ve "a través" del botón, dando la impresión de un
+     botón roto/recortado en vez de un control flotante intencional.
+     Se le da un fondo sólido (oscuro, coherente con el tema) más
+     blur, para que quede claramente por encima del contenido. */
   .menu-hamburguesa {
     display: flex;
     position: fixed;
@@ -115,8 +121,11 @@ body.mod-asistente .entrada-chat {
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(129, 140, 248, 0.25);
+    background-color: rgba(7, 9, 32, 0.92);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     transition: left 0.3s ease;
   }
@@ -821,6 +830,7 @@ body.mod-asistente .entrada-chat {
   body.mod-plantilla-detalle .btn-editar-plantilla,
   body.mod-plantilla-detalle .btn-desactivar-plantilla {
     width: 100%;
+    flex: none;
   }
 
   /* Detalle de movimiento: hero absoluto → flujo */
@@ -865,6 +875,17 @@ body.mod-asistente .entrada-chat {
     padding-left: 0;
   }
 
+  /* Mi Perfil (y demás pantallas de usuario): .encabezado-pagina tiene
+     su propio padding-left:16px (regla general de arriba) que se SUMA
+     al padding-left:16px de .contenido-principal — "Mi Perfil" y su
+     subtítulo quedan con 32px de margen izquierdo mientras el resto
+     del contenido (DATOS DE LA CUENTA, ACCIONES DE CUENTA, tarjetas)
+     solo tiene 16px, desalineados entre sí. */
+  body.mod-usuario .encabezado-pagina {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   body.mod-fondo-crear .seccion-label,
   body.mod-fondo-crear .fila-campos,
   body.mod-fondo-crear .campo-saldo,
@@ -891,6 +912,7 @@ body.mod-asistente .entrada-chat {
   body.mod-plantilla-form .btn-cancelar,
   body.mod-plantilla-form .btn-guardar {
     width: 100%;
+    flex: none;
   }
 
   /* Nuevo Movimiento (ingreso/gasto) y Saldo Insuficiente: mismo
@@ -919,6 +941,7 @@ body.mod-asistente .entrada-chat {
   body.mod-alertas-configurar .acciones-formulario .btn-guardar-alerta,
   body.mod-alertas-configurar .acciones-formulario .btn-cancelar {
     width: 100%;
+    flex: none;
   }
 
   /* Detalle de Cuota: "Registrar Pago" / "Ver todas las cuotas" son
@@ -931,6 +954,7 @@ body.mod-asistente .entrada-chat {
 
   .acciones-cuota > * {
     width: 100%;
+    flex: none;
   }
 
   /* ===== Alertas · lista (S1) ===== */
@@ -1389,6 +1413,25 @@ body.mod-asistente .entrada-chat {
     gap: 12px;
   }
 
+  /* Detalle de Activo: sin override propio (a diferencia de Fondos),
+     seguía con el margin:44px 40px fijo y width:calc(100% - 80px) de
+     escritorio — "Desactivar Activo" (más largo que "Desactivar
+     Fondo") no cabía junto a "Editar Activo" y partía en 2 líneas
+     dentro de un botón más bajo que su vecino. Se apilan en columna
+     para no depender de que el texto quepa en la fila. */
+  body.mod-activo-detalle .acciones-detalle {
+    flex-direction: column;
+    width: 100%;
+    margin: 16px 0 0;
+    gap: 12px;
+  }
+
+  body.mod-activo-detalle .acciones-detalle .btn-secundario,
+  body.mod-activo-detalle .acciones-detalle .btn-peligro {
+    width: 100%;
+    flex: none;
+  }
+
   /* ===== Movimiento · editar (banner) ===== */
   body.mod-editar-movimiento .banner-editar {
     height: auto;
@@ -1604,6 +1647,16 @@ body.mod-asistente .entrada-chat {
     gap: 16px;
   }
 
+  /* .mp-accion-indigo (tarjeta "Editar Perfil") tiene fondo
+     var(--indigo) = #818CF8, un morado claro-medio. El subtítulo usa
+     blanco al 85% de opacidad, lo que da un contraste ~2.2:1 (muy por
+     debajo del mínimo de 4.5:1) — el texto casi no se distingue del
+     fondo. Se oscurece el texto para que sea legible sobre ese fondo. */
+  .mp-accion-indigo p,
+  .mp-accion-indigo .mp-chevron {
+    color: rgba(7, 9, 32, 0.75);
+  }
+
   /* ===== Editar perfil (ep-*) ===== */
   .ep-contenido {
     flex-direction: column;
@@ -1755,7 +1808,30 @@ body.mod-asistente .entrada-chat {
   body.mod-pasivo-desactivar .preview-pasivo,
   body.mod-meta-desactivar .preview-meta,
   body.mod-alertas-desactivar .preview-alerta {
+    height: auto;
+    padding: 14px 16px 14px 0;
     margin-bottom: 16px;
+  }
+
+  /* .preview-saldo (el valor "$X" a la derecha de cada tarjeta de
+     confirmación) sigue con position:absolute; right:11px del
+     escritorio aunque su contenedor (.preview-meta/.preview-fondo/...)
+     ya se resetea a position:static arriba — al perder ese contenedor
+     como referencia de posicionamiento, el valor termina anclado a un
+     ancestro distinto (más ancho) y queda pegado o saliéndose del
+     borde derecho de la tarjeta ya achicada. */
+  body.mod-fondos .preview-saldo,
+  body.mod-activo-desactivar .preview-saldo,
+  body.mod-pasivo-desactivar .preview-saldo,
+  body.mod-meta-desactivar .preview-saldo,
+  body.mod-alertas-desactivar .preview-saldo,
+  .preview-saldo,
+  body[class] .preview-saldo {
+    position: static;
+    right: auto;
+    margin-left: auto;
+    flex-shrink: 0;
+    padding-left: 8px;
   }
 
   body.mod-fondos .icono-advertencia-fondo,
@@ -1934,6 +2010,7 @@ body.mod-asistente .entrada-chat {
   .dc-acciones .ep-boton-cancelar,
   .dc-acciones .dc-boton-desactivar {
     width: 100%;
+    flex: none;
   }
 
   /* Resumen de activos/fondos: tarjeta en fila con gap fijo de
