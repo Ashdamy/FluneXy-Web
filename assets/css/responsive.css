@@ -23,9 +23,6 @@ body.mod-asistente .entrada-chat {
    COMPACTO (hasta 1400px): grids a 1-2 columnas fluidas.
    ========================================================== */
 @media (max-width: 1400px) {
-  /* body[class] iguala la especificidad (0,2,1) de los selectores
-     body.mod-* de global.css y gana por orden de carga — se repite
-     este patrón en todo el archivo por la misma razón. */
   .contenido-dos-columnas,
   .lista-componentes,
   .lista-detalle-flujo,
@@ -704,7 +701,6 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* height fija en escritorio no crece con texto envuelto a 2 líneas */
   body.mod-plantilla-detalle .next-exec-banner,
   body.mod-plantilla-detalle .fail-exec-banner {
     height: auto;
@@ -853,8 +849,6 @@ body.mod-asistente .entrada-chat {
     word-break: break-word;
   }
 
-  /* :has() evita afectar las pantallas de auth sin botón "Volver"
-     (Iniciar/Cerrar sesión), que ya se centran bien por su cuenta. */
   .contenedor-autenticacion:has(.volver) {
     align-items: flex-start;
     padding-top: 88px;
@@ -1147,9 +1141,6 @@ body.mod-asistente .entrada-chat {
     margin: 48px 0 0;
   }
 
-  /* .circulo-exterior/.circulo-interior son position:absolute en
-     escritorio y necesitan un ancla positioned; sin esto escapan
-     hacia arriba en el árbol DOM y quedan sobre el encabezado. */
   body.mod-vacio-movimientos .iconos-vacio {
     position: relative;
     top: 0;
@@ -1226,9 +1217,6 @@ body.mod-asistente .entrada-chat {
     flex-shrink: 1;
   }
 
-  /* Patrón grid reutilizado (Alertas/Indicadores/Pagos): el ícono
-     ocupa 2 filas para que texto largo se envuelva sin apretar
-     el resto de la fila palabra por palabra. */
   .item-componente {
     display: grid;
     grid-template-columns: 52px 1fr;
@@ -1344,9 +1332,6 @@ body.mod-asistente .entrada-chat {
     margin-left: auto;
   }
 
-  /* align-items:center (escritorio) centra el valor contra la altura
-     total de la fila — con un título largo envuelto a 2 líneas el
-     valor queda superpuesto sobre la segunda línea. Se alinea arriba. */
   .item-movimiento-home {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -1424,11 +1409,6 @@ body.mod-asistente .entrada-chat {
     gap: 12px;
   }
 
-  /* align-items:flex-start del escritorio queda heredado al pasar de
-     fila a columna: los ejes se invierten y ese flex-start pasa de
-     alinear verticalmente (inofensivo) a encoger el ancho del hijo
-     en vez de estirarlo. Se agrega align-items:stretch en cada caso
-     que apila un layout de 2 columnas (form + panel/preview). */
   .pago-form-layout {
     flex-direction: column;
     align-items: stretch;
@@ -1448,7 +1428,6 @@ body.mod-asistente .entrada-chat {
     box-sizing: border-box;
   }
 
-  /* display:grid no hereda el align-items:stretch de un padre flex */
   .type-toggle {
     width: 100%;
     box-sizing: border-box;
@@ -1520,8 +1499,6 @@ body.mod-asistente .entrada-chat {
     gap: 16px;
   }
 
-  /* var(--indigo) es un morado claro-medio; texto blanco a 85% de
-     opacidad da ~2.2:1 de contraste (mínimo legible es 4.5:1). */
   .mp-accion-indigo p,
   .mp-accion-indigo .mp-chevron {
     color: rgba(7, 9, 32, 0.75);
@@ -1555,10 +1532,6 @@ body.mod-asistente .entrada-chat {
     width: 100%;
   }
 
-  /* flex:1 (flex-basis:0) heredado de escritorio pasa a regir la
-     altura al apilar en columna, colapsando el botón por debajo de
-     su height fija — hay que resetear a flex:none en cada botón que
-     se apile así (ver también los demás "flex: none;" del archivo). */
   .ep-boton-guardar {
     flex: none;
   }
@@ -1678,8 +1651,6 @@ body.mod-asistente .entrada-chat {
     margin-bottom: 16px;
   }
 
-  /* .preview-saldo queda position:absolute aunque su contenedor ya
-     se resetea arriba a static — pierde su referencia de posición. */
   body.mod-fondos .preview-saldo,
   body.mod-activo-desactivar .preview-saldo,
   body.mod-pasivo-desactivar .preview-saldo,
@@ -1826,9 +1797,6 @@ body.mod-asistente .entrada-chat {
     font-size: 20px;
   }
 
-  /* Editar Activo/Meta tienen una regla de escritorio más específica
-     (body.mod-X-editar .campo-valor .campo-monto input) que gana sin
-     importar el orden de carga — hay que igualar esa especificidad. */
   body.mod-activo-crear .campo-monto input,
   body.mod-pasivo-crear .campo-monto input,
   body.mod-meta-crear .campo-monto input,
@@ -1951,9 +1919,7 @@ body.mod-asistente .entrada-chat {
   }
 }
 
-/* Escritorio (desde 1400px): el estado vacío es un contenedor
-   absoluto de 1180px que en pantallas 1400-1439px no cabe en el
-   área de contenido (~1150px). */
+/* Escritorio (desde 1400px) */
 @media (min-width: 1400px) {
   body.mod-activos-vacio .estado-vacio-activos,
   body.mod-fondos .estado-vacio-fondos,
@@ -1974,8 +1940,7 @@ body.mod-asistente .entrada-chat {
 }
 
 /* ==========================================================
-   LANDING (index.html): header/hero/grillas usan anchos fijos
-   en px pensados para 1440px y desbordan por debajo de ~1180px.
+   LANDING (index.html)
    ========================================================== */
 @media (max-width: 1024px) {
   .landing .landing-nav {
@@ -2047,9 +2012,6 @@ body.mod-asistente .entrada-chat {
     overflow-x: auto;
   }
 
-  /* .mov-table tiene overflow:hidden propio y recortaba las filas
-     antes de que el overflow-x:auto del padre tuviera algo que
-     desbordar — el scroll nunca se activaba. */
   .landing .mov-table {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -2152,9 +2114,7 @@ body.mod-asistente .entrada-chat {
   }
 }
 
-/* Pantallas muy anchas (2K/ultrawide/4K, ≥2000px): .contenido-principal
-   no tiene max-width en ningún módulo y se estira sin límite. Se limita
-   el ancho y se centra en el espacio libre junto al sidebar. */
+/* Pantallas muy anchas (2K/ultrawide/4K, ≥2000px) */
 @media (min-width: 2000px) {
   .contenido-principal,
   body[class] .contenido-principal {

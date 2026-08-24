@@ -7956,7 +7956,7 @@ body.mod-activos .current-status__info article:last-child h4, body.mod-pasivos .
 /*5. Enlaces Individuales (Items del menú)*/
 
 /*==========================================================================
-   CSS REPARADO PARA EL ENCABEZADO (SIN DESCUADRES)
+   ENCABEZADO · ACTIVOS / PASIVOS / PLANTILLAS
    ==========================================================================*/
 
 body.mod-activos .encabezado-contenido, body.mod-pasivos .encabezado-contenido, body.mod-plantillas .encabezado-contenido {
@@ -8122,7 +8122,7 @@ transform: scale(0.97);
 }
 
 /*==========================================================================
-   VISTA DE ACTIVOS COMPLETA Y CORREGIDA (CON DESIGN TOKENS)
+   VISTA DE ACTIVOS (CON DESIGN TOKENS)
    ==========================================================================*/
 
 body.mod-activos .encabezado-contenido {
@@ -8522,7 +8522,7 @@ color: var(--slate-400);
 }
 
 /*==========================================================================
-   VISTA: DETALLE DEL ACTIVO (CÓDIGO COMPLETO Y CORREGIDO)
+   VISTA: DETALLE DEL ACTIVO
    ==========================================================================*/
 
 body.mod-activos .hero-card {
@@ -8602,7 +8602,7 @@ display: flex;
 }
 
 /*==========================================================================
-   CORRECCIÓN DEFINITIVA: CENTRADO DE VALOR ACTUAL CON FLEXBOX
+   HERO · VALOR ACTUAL
    ==========================================================================*/
 
 body.mod-activos .label-hero {
@@ -9313,7 +9313,7 @@ transform: scale(0.98);
 }
 
 /*==========================================================================
-   VISTA: REGISTRAR ACTIVO (COMPLEMENTO CORREGIDO PARA GLOBAL.CSS)
+   VISTA: REGISTRAR ACTIVO
    ==========================================================================*/
 
 body.mod-activos .seccion-registro {
@@ -9860,7 +9860,7 @@ transform: scale(0.99);
 }
 
 /*==========================================================================
-   CSS EXCLUSIVO Y CORREGIDO PARA DETALLE DE LA PLANTILLA
+   DETALLE DE LA PLANTILLA
    ==========================================================================*/
 
 body.mod-plantillas .resumen-plantilla {
@@ -10766,7 +10766,7 @@ background-color: var(--amber); box-shadow: 0 0 6px var(--amber);
 }
 
 /*==========================================================================
-   VISTA: NUEVA PLANTILLA AUTOMÁTICA (AJUSTES PUREMENTE ESPECÍFICOS)
+   VISTA: NUEVA PLANTILLA AUTOMÁTICA
    ==========================================================================*/
 
 body.mod-plantillas .tipo-transaccion {
@@ -10991,7 +10991,7 @@ margin-left: auto;
 }
 
 /*==========================================================================
-   VISTA: DETALLE DEL PASIVO (CÓDIGO INTEGRADO COMPLETO Y CORREGIDO)
+   VISTA: DETALLE DEL PASIVO
    ==========================================================================*/
 
 body.mod-pasivos .hero-card {
@@ -11324,7 +11324,7 @@ transform: scale(0.99);
 }
 
 /*==========================================================================
-   VISTA: EDITAR PASIVO (REPARACIÓN DE DOBLE COLUMNA Y REJILLAS COMPLETA)
+   VISTA: EDITAR PASIVO
    ==========================================================================*/
 
 body.mod-pasivos .seccion-edicion {
@@ -11496,7 +11496,7 @@ color: var(--green) !important;
 }
 
 /*==========================================================================
-   VISTA: LISTADO DE PASIVOS (AJUSTES COMPLEMENTARIOS EN GLOBAL.CSS)
+   VISTA: LISTADO DE PASIVOS
    ==========================================================================*/
 
 body.mod-pasivos .hero-pasivos-container {
@@ -11666,7 +11666,7 @@ font-size: var(--desktop-small);
 }
 
 /*==========================================================================
-   CORRECCIÓN: SEPARAR EL BOTÓN FAB DE LA ÚLTIMA TARJETA
+   LISTA · BOTÓN FAB
    ==========================================================================*/
 
 body.mod-activos .lista-activos, body.mod-pasivos .lista-activos, body.mod-plantillas .lista-activos {
@@ -12122,8 +12122,6 @@ color: var(--slate-500);
 
 /* ============================================================
    ALINEACIÓN FIGMA (escritorio 1440×900, content 1180@260, pad 40)
-   Fuente de verdad: geometría exacta de Mis Activos / Pasivos /
-   Plantillas. Se aplica al final (mayor precedencia).
    ============================================================ */
 /* --- Encabezado: título y=32, subtítulo y=68, hero y=100 (gap 16) --- */
 body.mod-activos .encabezado-contenido, body.mod-pasivos .encabezado-contenido, body.mod-plantillas .encabezado-contenido {
@@ -20798,10 +20796,6 @@ body.mod-meta-crear .chip-fecha {
 
 /* ==========================================================
    EDITAR (S4/S5 Figma) · ACTIVO · PASIVO · META
-   Reescribe los bloques heredados para alinear las pantallas
-   de edición al diseño S4/S5 del Figma FluneXy:
-   banner dentro de la columna de formulario, panel a la derecha
-   y botones a lo ancho del contenido.
    ========================================================== */
 
 /* --- Layout general --- */
@@ -22516,10 +22510,7 @@ body.mod-alertas-desactivar .btn-desactivar-alerta:hover {
 }
 
 /* ==========================================================
-   CORRECCIÓN HEADER · LISTADO DE PLANTILLAS
-   Alinea el encabezado de mis-plantillas.html con el estándar
-   del resto de listados (header pegado arriba, padding solo en
-   el main), sin migrar las 378 reglas de body.mod-plantillas.
+   ENCABEZADO · LISTADO DE PLANTILLAS
    ========================================================== */
 body.mod-plantillas .contenido-principal {
   padding-top: 0;
