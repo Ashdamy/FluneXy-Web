@@ -2522,9 +2522,9 @@ tbody td:nth-child(3) {
 }
 
 .tipo-pago.aporte {
-  background-color: rgba(245, 166, 36, 0.1);
-  border: 1px solid rgba(245, 166, 36, 0.22);
-  color: #f5a624;
+  background-color: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  color: var(--amber);
 }
 
 /* --- Estado vacío: botón flotante --- */
@@ -6754,8 +6754,8 @@ tbody td:nth-child(3) {
 }
 
 .celda-estado.pendiente {
-  background-color: rgba(255, 180, 92, 0.14);
-  color: #ffb45c;
+  background-color: rgba(251, 191, 36, 0.14);
+  color: var(--amber);
 }
 
 .celda-acciones {
@@ -7582,7 +7582,7 @@ body.mod-fondos .modal-desactivar-fondo {
   width: 500px;
   height: 510px;
   margin-top: -80px;
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
 }
@@ -7839,7 +7839,7 @@ body.mod-activos .overlay-modal, body.mod-pasivos .overlay-modal, body.mod-plant
   z-index: 999;
 }
 body.mod-activos .sheet-modal, body.mod-pasivos .sheet-modal, body.mod-plantillas .sheet-modal {
-  background-color: #111536;
+  background-color: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.05);
   width: 100%;
   max-width: 540px;
@@ -9145,7 +9145,7 @@ position: fixed;
 }
 
 body.mod-activos .sheet-modal {
-background-color: #111536;
+background-color: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.05);
     width: 100%;
     max-width: 540px;
@@ -15923,7 +15923,7 @@ body.mod-modal-movimiento .contenedor-modal {
   box-sizing: border-box;
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
-  background-color: #16194c;
+  background-color: var(--bg-card);
 }
 
 body.mod-modal-movimiento .tarjeta-preview {
@@ -16994,7 +16994,7 @@ body.mod-activo-desactivar .modal-desactivar-activo {
   width: 500px;
   height: 510px;
   margin-top: -80px;
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
 }
@@ -18042,7 +18042,7 @@ body.mod-plantillas .overlay-modal {
 }
 
 body.mod-plantillas .sheet-modal {
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: none;
   width: 500px;
   max-width: 500px;
@@ -18878,7 +18878,7 @@ body.mod-pasivo-desactivar .modal-desactivar-pasivo {
   width: 500px;
   height: 510px;
   margin-top: -80px;
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
 }
@@ -19198,7 +19198,7 @@ body.mod-meta-desactivar .modal-desactivar-meta {
   width: 500px;
   height: 510px;
   margin: -80px auto 0;
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
   padding: 0;
@@ -22346,7 +22346,7 @@ body.mod-alertas-desactivar .modal-desactivar-alerta {
   width: 500px;
   height: 510px;
   margin-top: -80px;
-  background-color: #16194c;
+  background-color: var(--bg-card);
   border: 1px solid rgba(129, 140, 248, 0.08);
   border-radius: 20px;
   box-sizing: border-box;
