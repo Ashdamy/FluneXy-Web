@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Alertas | FluneXy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../components/barra-lateral.css">
+    <link rel="stylesheet" href="../../components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="mod-alertas mod-alertas-lista">
+    <!-- MÓDULO: Alertas — S1 · Lista de Alertas (Desktop) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="../../index.html" class="logo-enlace"><img src="../../media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html" class="activo"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/historial-reportes.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+        <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
+        </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Alertas</h1>
+                <p>Configura avisos para riesgos financieros</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'">
+                    <i class="ph ph-bell"></i>
+                </button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">
+                    <span>A</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="alerta-suma">
+            <span class="alerta-suma-orb"></span>
+            <div class="alerta-suma-izq">
+                <span class="alerta-suma-etiqueta">Alertas Activas</span>
+                <strong class="alerta-suma-numero">3</strong>
+                <span class="alerta-suma-pill">3 activas de 4</span>
+            </div>
+            <div class="alerta-suma-der">
+                <span class="alerta-suma-total-etiqueta">Total</span>
+                <strong class="alerta-suma-total">4</strong>
+            </div>
+            <span class="alerta-suma-divider"></span>
+        </section>
+
+        <div class="alerta-fila-titulo">
+            <h3>Alertas Configuradas</h3>
+            <a href="configurar-alerta.html" class="alerta-boton-nueva">
+                <i class="ph ph-plus"></i> Agregar Nueva Alerta
+            </a>
+        </div>
+
+        <section class="alerta-grid">
+            <article class="alerta-tarjeta alerta-acento-indigo" onclick="location.href='detalle-alerta.html'">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-chart-line-down"></i></span>
+                <div class="alerta-info">
+                    <h4>Endeudamiento</h4>
+                    <span>UMBRAL: 35%</span>
+                </div>
+<div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Actual</span>
+                    <strong>5.9%</strong>
+                </div>
+                <div class="alerta-acciones">
+                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                </div>
+                <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
+            </article>
+
+            <article class="alerta-tarjeta alerta-acento-violeta" onclick="location.href='detalle-alerta.html'">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-drop-half"></i></span>
+                <div class="alerta-info">
+                    <h4>Liquidez</h4>
+                    <span>UMBRAL: 1.0x</span>
+                </div>
+<div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Actual</span>
+                    <strong>1.6x</strong>
+                </div>
+                <div class="alerta-acciones">
+                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                </div>
+                <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
+            </article>
+
+            <article class="alerta-tarjeta alerta-acento-verde" onclick="location.href='detalle-alerta.html'">
+                <span class="alerta-acento"></span>
+                <span class="alerta-icono"><i class="ph ph-shopping-cart"></i></span>
+                <div class="alerta-info">
+                    <h4>Gasto Mensual</h4>
+                    <span>UMBRAL: $3.000.000/mes</span>
+                </div>
+<div class="alerta-medida">
+                    <span class="alerta-etiqueta-medida">Actual</span>
+                    <strong>—</strong>
+                </div>
+                <div class="alerta-acciones">
+                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                </div>
+                <span class="alerta-estado alerta-estado-inactiva"><i class="alerta-punto"></i>Inactiva</span>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desactivar Meta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../components/barra-lateral.css">
+    <link rel="stylesheet" href="../../components/acciones-usuario.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="mod-lista-metas mod-meta-desactivar">
+    <!-- MÓDULO: Metas — S5 · Desactivar Meta (Modal, Desktop) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+    <label for="menu-toggle" class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+    </label>
+    <label for="menu-toggle" class="menu-overlay" aria-hidden="true"></label>
+<aside class="barra-lateral">
+        <div class="logo-barra"><a href="../../index.html" class="logo-enlace"><img src="../../media/img/logo-fluenxy.png" alt="FluneXy"></a></div>
+        <span class="etiqueta-seccion">PRINCIPAL</span>
+        <nav class="navegacion-barra">
+            <a href="../home-dashboard/home.html"><span class="icono-nav"><i class="ph ph-house"></i></span> Inicio</a>
+            <a href="../movimientos/mis-movimientos.html"><span class="icono-nav"><i class="ph ph-arrows-left-right"></i></span> Movimientos</a>
+            <a href="../fondos/mis-fondos.html"><span class="icono-nav"><i class="ph ph-wallet"></i></span> Fondos</a>
+        </nav>
+        <span class="etiqueta-seccion">GESTIÓN</span>
+        <nav class="navegacion-barra">
+            <a href="../activos/mis-activos.html"><span class="icono-nav"><i class="ph ph-file-text"></i></span> Activos</a>
+            <a href="../pasivos/mis-pasivos.html"><span class="icono-nav"><i class="ph ph-credit-card"></i></span> Pasivos</a>
+            <a href="../metas/mis-metas.html" class="activo"><span class="icono-nav"><i class="ph ph-target"></i></span> Metas</a>
+            <a href="../plantillas/mis-plantillas.html"><span class="icono-nav"><i class="ph ph-arrows-clockwise"></i></span> Plantillas</a>
+            <a href="../cuotas/pasivos-con-cuotas.html"><span class="icono-nav"><i class="ph ph-receipt"></i></span> Cuotas</a>
+            <a href="../pagos/registrar-pago-o-aporte.html"><span class="icono-nav"><i class="ph ph-money"></i></span> Pagos</a>
+        </nav>
+        <span class="etiqueta-seccion">ANÁLISIS</span>
+        <nav class="navegacion-barra">
+            <a href="../balance-financiero/balance-financiero.html"><span class="icono-nav"><i class="ph ph-chart-bar"></i></span> Balance financiero</a>
+            <a href="../indicador-financiero/indicador-financiero.html"><span class="icono-nav"><i class="ph ph-chart-line-up"></i></span> Indicadores</a>
+            <a href="../flujo-caja/flujo-caja.html"><span class="icono-nav"><i class="ph ph-currency-circle-dollar"></i></span> Flujo de caja</a>
+            <a href="../alertas/lista-alertas.html"><span class="icono-nav"><i class="ph ph-bell"></i></span> Alertas<span class="contador-notificacion">3</span></a>
+            <a href="../reportes/historial-reportes.html"><span class="icono-nav"><i class="ph ph-clipboard-text"></i></span> Reportes</a>
+        </nav>
+        <span class="etiqueta-seccion">SOPORTE</span>
+            <nav class="navegacion-barra">
+            <a href="../asistente/asistente.html"><span class="icono-nav"><i class="ph ph-robot"></i></span> Asistente inteligente</a>
+            <a href="../usuario/mi-perfil.html"><span class="icono-nav"><i class="ph ph-user"></i></span> Mi perfil</a>
+            </nav>
+        <hr class="divisor-barra">
+        <a href="../autenticacion/cierre-sesion.html" class="cerrar-sesion"><span class="icono-nav"><i class="ph ph-sign-out"></i></span> Cerrar sesión</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div class="titulo-pagina">
+                <h1>Mis Metas</h1>
+                <p>Construye tus objetivos financieros</p>
+            </div>
+            <div class="acciones-usuario">
+                <button type="button" class="boton-notificacion" onclick="location.href='../alertas/lista-alertas.html'"><i class="ph ph-bell"></i></button>
+                <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
+            </div>
+        </header>
+        <section class="tarjeta-resumen resumen-metas">
+            <div class="informacion-resumen">
+                <p>TOTAL AHORRADO</p>
+                <h2>$23.500.000</h2>
+                <span class="badge-fondos">3 metas activas</span>
+            </div>
+            <div class="estadisticas-resumen">
+                <div class="estadistica">
+                    <p>Metas Activas</p>
+                    <strong>3</strong>
+                </div>
+                <div class="estadistica">
+                    <p>Objetivo Total</p>
+                    <strong>$97.000.000</strong>
+                </div>
+            </div>
+        </section>
+        <header class="encabezado-seccion">
+            <h2>Objetivos en Progreso  •  4 metas</h2>
+        </header>
+        <section class="lista-metas">
+            <div class="grid-metas">
+                <article class="tarjeta-meta" onclick="location.href='detalle-meta.html'">
+                    <div class="barra-accent"></div>
+                    <div class="contenido-meta">
+                        <div class="encabezado-meta">
+                            <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
+                            <div>
+                                <h3>Moto Nueva</h3>
+                                <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+                            </div>
+                        </div>
+                        <div class="badge-porcentaje">
+                            <span class="porcentaje">50%</span>
+                            <span class="label-logrado">logrado</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <div class="barra-progreso-llenado" style="width: 50%"></div>
+                        </div>
+                        <div class="detalle-meta">
+                            <strong>$6.000.000</strong>
+                            <span>/ $12.000.000</span>
+                        </div>
+                        <div class="estado-meta">
+                            <span class="estado estado-progreso">En progreso</span>
+                            <div class="acciones-meta">
+                                <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            </div>
+                            <span class="badge-estado badge-activa">Activa</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <div class="overlay-meta-modal" aria-hidden="false">
+        <article class="modal-desactivar-meta" role="alertdialog" aria-modal="true">
+            <div class="preview-meta">
+                <span class="preview-icono"><i class="ph ph-motorcycle"></i></span>
+                <div class="preview-info">
+                    <h3>Moto Nueva</h3>
+                    <p>50% completada · $6.000.000 ahorrados</p>
+                </div>
+                <span class="preview-saldo">$12.000.000</span>
+            </div>
+            <div class="icono-advertencia-meta">
+                <i class="ph ph-warning"></i>
+            </div>
+            <h2 class="titulo-modal-meta">¿Desactivar meta?</h2>
+            <p class="descripcion-modal-meta">La meta Moto Nueva dejará de participar en las proyecciones financieras del Flujo de Caja, pero conservará su historial de aportes completo.</p>
+            <div class="nota-aviso-meta">
+                <i class="ph ph-warning"></i>
+                <span>Los $6.000.000 ya ahorrados permanecen en el fondo Bancolombia. Solo se desactiva el seguimiento de la meta.</span>
+            </div>
+            <div class="acciones-modal-meta">
+                <button type="button" class="btn-cancelar-meta" onclick="location.href='mis-metas.html'">Cancelar</button>
+                <button type="button" class="btn-eliminar-meta" onclick="location.href='mis-metas.html'">Desactivar</button>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

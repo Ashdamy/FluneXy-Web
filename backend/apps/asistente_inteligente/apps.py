@@ -1,0 +1,8 @@
+from django.apps import AppConfig
+
+
+class AsistenteInteligenteConfig(AppConfig):
+    """MOD17 - Asistente Inteligente."""
+
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "apps.asistente_inteligente"

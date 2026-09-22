@@ -1,0 +1,4 @@
+# Dependencias del proyecto FluneXy.
+# El detalle vive en backend/requirements.txt; este archivo lo referencia
+# para poder instalar todo desde la raiz del proyecto.
+-r backend/requirements.txt

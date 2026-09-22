@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva contraseña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="mod-auth">
+    <!-- MÓDULO: Autenticación — S5 · Nueva Contraseña (Escritorio) -->
+    <main class="contenedor-autenticacion">
+        <div class="volver">
+            <a href="recuperar-contraseña.html"><i class="ph ph-arrow-left"></i> Volver</a>
+        </div>
+        <section class="tarjeta-formulario">
+            <div class="icono-formulario icono-nueva">
+                <i class="ph ph-key"></i>
+            </div>
+            <header class="encabezado-autenticacion">
+                <h1>Nueva contraseña</h1>
+                <p>
+                    Crea una contraseña segura para proteger tu cuenta.
+                </p>
+            </header>
+             <form 
+             class="formulario-nueva-contrasena" 
+             action=""
+             method="post">
+             <div class="grupo-formulario">
+                 <label for="contrasena">Nueva contraseña</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        required>
+                        <div class="barra-fortaleza">
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                            <div class="nivel-fortaleza"></div>
+                        </div>
+                        <p class="mensaje-fortaleza">
+                            Fortaleza: excelente
+                        </p>
+                        <div class="requisito-contrasena">
+                            <i class="ph ph-check"></i>
+                            <p>
+                                Mínimo 8 caracteres, una mayúscula y un número.
+                            </p>
+                        </div>
+             </div>
+             <div class="grupo-formulario">
+                        <label for="confirmar-contrasena">Confirmar contraseña</label>
+                    <input
+                        type="password"
+                        id="confirmar-contrasena"
+                        name="confirmar-contrasena"
+                        required>
+                        </div>
+             <button
+             type="submit"
+             class="boton-primario"
+             onclick="event.preventDefault(); location.href='iniciar-sesion.html';">
+             Guardar nueva contraseña
+             </button>
+             </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="mod-auth">
+    <!-- MÓDULO: Autenticación — S4 · Recuperar Contraseña (Escritorio) -->
+    <main class="contenedor-autenticacion">
+    <div class="volver">
+        <a href="iniciar-sesion.html"><i class="ph ph-arrow-left"></i> Iniciar sesión</a>
+    </div>
+    <section class="tarjeta-formulario">
+        <div class="icono-formulario icono-recuperar">
+            <i class="ph ph-envelope"></i>
+        </div>
+        <header class="encabezado-autenticacion">
+            <h1>Recupera tu acceso</h1>
+            <p>
+                Ingresa tu correo y te enviaremos un enlace para
+                restablecer tu contraseña.
+            </p>
+        </header>
+        <form
+            class="formulario-recuperacion-contrasena"
+            action=""
+            method="post">
+
+            <div class="grupo-formulario">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="anamilena@ejemplo.com"
+                    required>
+            </div>
+            <button
+                type="submit"
+                class="boton-primario"
+                onclick="event.preventDefault(); location.href='verificacion-contraseña.html';">
+                Enviar enlace de recuperación
+            </button>
+            <button
+                type="button"
+                class="boton-secundario"
+                onclick="location.href='iniciar-sesion.html';">
+                Volver al inicio de sesión
+            </button>
+        </form>
+    </section>
+    </main>
+</body>
+</html>

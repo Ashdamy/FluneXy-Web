@@ -1,0 +1,116 @@
+:root {
+
+  /* =====================================================
+     COLORES DE MARCA
+  ===================================================== */
+
+  --color-fondo-oscuro: #070920;
+  --color-fondo-claro: #F8F9FF;
+
+  --color-acento-principal-indigo: #818CF8;
+  --color-acento-secundario-violet: #A78BFA;
+
+  --color-informacion-sky: #38BDF8;
+  --color-exito-verde: #34D399;
+  --color-error-rojo: #F87171;
+  --color-advertencia-amber: #FBBF24;
+
+  /* =====================================================
+     COLORES NEUTROS
+  ===================================================== */
+
+  --color-fondo-tarjeta-oscuro: #0C0F40;
+
+  --color-slate-700: #334155;
+  --color-slate-500: #64748B;
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-50: #F1F5F9;
+
+  --color-blanco: #FFFFFF;
+
+  /* =====================================================
+     TIPOGRAFÍAS
+  ===================================================== */
+
+  --fuente-titulos: "Sora", sans-serif;
+  --fuente-texto: "Inter", sans-serif;
+
+  /* =====================================================
+     TAMAÑOS TIPOGRÁFICOS - MOBILE
+  ===================================================== */
+
+  --tamano-h1-mobile: 32px;
+  --tamano-h2-mobile: 24px;
+  --tamano-h3-mobile: 20px;
+  --tamano-body-mobile: 16px;
+
+  /* =====================================================
+     TAMAÑOS TIPOGRÁFICOS - DESKTOP
+  ===================================================== */
+
+  --tamano-h1-desktop: 40px;
+  --tamano-h2-desktop: 28px;
+  --tamano-h3-desktop: 22px;
+  --tamano-body-desktop: 16px;
+  --tamano-caption-desktop: 13px;
+  --tamano-small-desktop: 12px;
+
+  /* =====================================================
+     RESOLUCIONES DE REFERENCIA
+  ===================================================== */
+
+  --ancho-referencia-mobile: 360px;
+  --alto-referencia-mobile: 800px;
+
+  --ancho-referencia-desktop: 1440px;
+  --alto-referencia-desktop: 900px;
+
+  /* =====================================================
+     TAMAÑOS DE IMÁGENES - MOBILE
+  ===================================================== */
+
+  --ancho-imagen-hero-mobile: 240px;
+  --alto-imagen-hero-mobile: 320px;
+
+  --ancho-banner-mobile: 360px;
+  --alto-banner-mobile: 160px;
+
+  --ancho-imagen-card-mobile: 72px;
+  --alto-imagen-card-mobile: 96px;
+
+  --tamano-thumbnail-mobile: 48px;
+
+  --tamano-avatar-pequeno-mobile: 32px;
+  --tamano-avatar-mediano-mobile: 40px;
+  --tamano-avatar-grande-mobile: 48px;
+
+  /* =====================================================
+     TAMAÑOS DE IMÁGENES - DESKTOP
+  ===================================================== */
+
+  --ancho-imagen-hero-desktop: 360px;
+  --alto-imagen-hero-desktop: 480px;
+
+  --ancho-banner-desktop: 720px;
+  --alto-banner-desktop: 320px;
+
+  --ancho-imagen-card-desktop: 108px;
+  --alto-imagen-card-desktop: 144px;
+
+  --tamano-thumbnail-desktop: 64px;
+
+  --tamano-avatar-pequeno-desktop: 40px;
+  --tamano-avatar-mediano-desktop: 48px;
+  --tamano-avatar-grande-desktop: 56px;
+
+  /* =====================================================
+     TAMAÑOS DE ICONOS
+  ===================================================== */
+
+  --tamano-icono-pequeno: 16px;
+  --tamano-icono-estandar: 20px;
+  --tamano-icono-principal: 24px;
+  --tamano-icono-grande: 32px;
+
+}
