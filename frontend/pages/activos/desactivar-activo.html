@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -93,91 +95,99 @@
             </button>
         </section>
         <h3 class="lista-bienes-titulo">BIENES REGISTRADOS</h3>
-        <section class="grid-bienes">
-            <article class="tarjeta-bien bien-verde">
-                <header class="encabezado-bien">
-                    <span class="icono"><i class="ph ph-house"></i></span>
-                    <span class="estado-bien activo"><span class="punto"></span>Activo</span>
-                </header>
-                <div class="cuerpo-bien">
-                    <h3>Casa Principal</h3>
-                    <p>VIVIENDA · ACTIVO</p>
-                </div>
-                <div class="fila-valor">
-                    <div class="info-valor">
-                        <span class="etiqueta-valor">Valor actual</span>
-                        <strong class="monto-bien">$180.000.000</strong>
+        <section class="grid-bienes row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-bien bien-verde">
+                    <header class="encabezado-bien">
+                        <span class="icono"><i class="ph ph-house"></i></span>
+                        <span class="estado-bien activo"><span class="punto"></span>Activo</span>
+                    </header>
+                    <div class="cuerpo-bien">
+                        <h3>Casa Principal</h3>
+                        <p>VIVIENDA · ACTIVO</p>
                     </div>
-                    <div class="acciones-bien">
-                        <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                    <div class="fila-valor">
+                        <div class="info-valor">
+                            <span class="etiqueta-valor">Valor actual</span>
+                            <strong class="monto-bien">$180.000.000</strong>
+                        </div>
+                        <div class="acciones-bien">
+                            <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="tarjeta-bien bien-indigo">
-                <header class="encabezado-bien">
-                    <span class="icono"><i class="ph ph-car"></i></span>
-                    <span class="estado-bien activo"><span class="punto"></span>Activo</span>
-                </header>
-                <div class="cuerpo-bien">
-                    <h3>Moto NKD</h3>
-                    <p>VEHÍCULO · ACTIVO</p>
-                </div>
-                <div class="fila-valor">
-                    <div class="info-valor">
-                        <span class="etiqueta-valor">Valor actual</span>
-                        <strong class="monto-bien">$12.000.000</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-bien bien-indigo">
+                    <header class="encabezado-bien">
+                        <span class="icono"><i class="ph ph-car"></i></span>
+                        <span class="estado-bien activo"><span class="punto"></span>Activo</span>
+                    </header>
+                    <div class="cuerpo-bien">
+                        <h3>Moto NKD</h3>
+                        <p>VEHÍCULO · ACTIVO</p>
                     </div>
-                    <div class="acciones-bien">
-                        <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                    <div class="fila-valor">
+                        <div class="info-valor">
+                            <span class="etiqueta-valor">Valor actual</span>
+                            <strong class="monto-bien">$12.000.000</strong>
+                        </div>
+                        <div class="acciones-bien">
+                            <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="tarjeta-bien bien-ambar">
-                <header class="encabezado-bien">
-                    <span class="icono"><i class="ph ph-money"></i></span>
-                    <span class="estado-bien activo"><span class="punto"></span>Activo</span>
-                </header>
-                <div class="cuerpo-bien">
-                    <h3>Ahorros Bancarios</h3>
-                    <p>AHORRO · ACTIVO</p>
-                </div>
-                <div class="fila-valor">
-                    <div class="info-valor">
-                        <span class="etiqueta-valor">Valor actual</span>
-                        <strong class="monto-bien">$43.000.000</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-bien bien-ambar">
+                    <header class="encabezado-bien">
+                        <span class="icono"><i class="ph ph-money"></i></span>
+                        <span class="estado-bien activo"><span class="punto"></span>Activo</span>
+                    </header>
+                    <div class="cuerpo-bien">
+                        <h3>Ahorros Bancarios</h3>
+                        <p>AHORRO · ACTIVO</p>
                     </div>
-                    <div class="acciones-bien">
-                        <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                    <div class="fila-valor">
+                        <div class="info-valor">
+                            <span class="etiqueta-valor">Valor actual</span>
+                            <strong class="monto-bien">$43.000.000</strong>
+                        </div>
+                        <div class="acciones-bien">
+                            <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="tarjeta-bien bien-inactivo inactivo">
-                <header class="encabezado-bien">
-                    <span class="icono"><i class="ph ph-storefront"></i></span>
-                    <span class="estado-bien"><span class="punto"></span>Inactivo</span>
-                </header>
-                <div class="cuerpo-bien">
-                    <h3>Negocio Local</h3>
-                    <p>NEGOCIO · ACTIVO</p>
-                </div>
-                <div class="fila-valor">
-                    <div class="info-valor">
-                        <span class="etiqueta-valor">Valor actual</span>
-                        <strong class="monto-bien">$0</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-bien bien-inactivo inactivo">
+                    <header class="encabezado-bien">
+                        <span class="icono"><i class="ph ph-storefront"></i></span>
+                        <span class="estado-bien"><span class="punto"></span>Inactivo</span>
+                    </header>
+                    <div class="cuerpo-bien">
+                        <h3>Negocio Local</h3>
+                        <p>NEGOCIO · ACTIVO</p>
                     </div>
-                    <div class="acciones-bien">
-                        <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                    <div class="fila-valor">
+                        <div class="info-valor">
+                            <span class="etiqueta-valor">Valor actual</span>
+                            <strong class="monto-bien">$0</strong>
+                        </div>
+                        <div class="acciones-bien">
+                            <button type="button" title="Ver detalle" onclick="location.href='detalle-activo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="location.href='editar-activo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="location.href='desactivar-activo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </div>
         </section>
     </main>
     <div class="overlay-activo-modal" aria-hidden="false">

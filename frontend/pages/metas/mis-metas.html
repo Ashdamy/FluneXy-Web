@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -95,143 +97,151 @@
         </section>
         <h3 class="lista-metas-titulo">OBJETIVOS EN PROGRESO</h3>
         <section class="lista-metas">
-            <div class="grid-metas">
-                <article class="tarjeta-meta">
-                    <div class="barra-accent"></div>
-                    <div class="contenido-meta">
-                        <div class="encabezado-meta">
-                            <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
-                            <div>
-                                <h3>Moto Nueva</h3>
-                                <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+            <div class="grid-metas row">
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta-meta h-100">
+                        <div class="barra-accent"></div>
+                        <div class="contenido-meta">
+                            <div class="encabezado-meta">
+                                <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
+                                <div>
+                                    <h3>Moto Nueva</h3>
+                                    <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+                                </div>
+                            </div>
+                            <div class="badge-porcentaje">
+                                <span class="porcentaje">50%</span>
+                                <span class="label-logrado">logrado</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="barra-progreso-llenado" style="width: 50%"></div>
+                            </div>
+                            <div class="detalle-meta">
+                                <strong>$6.000.000</strong>
+                                <span>/ $12.000.000</span>
+                            </div>
+                            <div class="aporte-mensual">
+                                <span>$1.000.000/mes</span>
+                            </div>
+                            <div class="estado-meta">
+                                <span class="estado estado-progreso">En progreso</span>
+                                <div class="acciones-meta">
+                                    <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                    <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                    <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                                </div>
+                                <span class="badge-estado badge-activa">Activa</span>
                             </div>
                         </div>
-                        <div class="badge-porcentaje">
-                            <span class="porcentaje">50%</span>
-                            <span class="label-logrado">logrado</span>
-                        </div>
-                        <div class="barra-progreso">
-                            <div class="barra-progreso-llenado" style="width: 50%"></div>
-                        </div>
-                        <div class="detalle-meta">
-                            <strong>$6.000.000</strong>
-                            <span>/ $12.000.000</span>
-                        </div>
-                        <div class="aporte-mensual">
-                            <span>$1.000.000/mes</span>
-                        </div>
-                        <div class="estado-meta">
-                            <span class="estado estado-progreso">En progreso</span>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta-meta h-100">
+                        <div class="barra-accent"></div>
+                        <div class="contenido-meta">
+                            <div class="encabezado-meta">
+                                <div class="icono-meta"><i class="ph ph-house"></i></div>
+                                <div>
+                                    <h3>Vivienda</h3>
+                                    <span class="etiqueta-fecha">Meta: Jun 2028 • 36 meses</span>
+                                </div>
                             </div>
-                            <span class="badge-estado badge-activa">Activa</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-meta">
-                    <div class="barra-accent"></div>
-                    <div class="contenido-meta">
-                        <div class="encabezado-meta">
-                            <div class="icono-meta"><i class="ph ph-house"></i></div>
-                            <div>
-                                <h3>Vivienda</h3>
-                                <span class="etiqueta-fecha">Meta: Jun 2028 • 36 meses</span>
+                            <div class="badge-porcentaje">
+                                <span class="porcentaje">18%</span>
+                                <span class="label-logrado">logrado</span>
                             </div>
-                        </div>
-                        <div class="badge-porcentaje">
-                            <span class="porcentaje">18%</span>
-                            <span class="label-logrado">logrado</span>
-                        </div>
-                        <div class="barra-progreso">
-                            <div class="barra-progreso-llenado" style="width: 18%"></div>
-                        </div>
-                        <div class="detalle-meta">
-                            <strong>$15.000.000</strong>
-                            <span>/ $80.000.000</span>
-                        </div>
-                        <div class="aporte-mensual">
-                            <span>$1.805.000/mes</span>
-                        </div>
-                        <div class="estado-meta">
-                            <span class="estado estado-esfuerzo">Requiere esfuerzo</span>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                            <div class="barra-progreso">
+                                <div class="barra-progreso-llenado" style="width: 18%"></div>
                             </div>
-                            <span class="badge-estado badge-activa">Activa</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-meta">
-                    <div class="barra-accent"></div>
-                    <div class="contenido-meta">
-                        <div class="encabezado-meta">
-                            <div class="icono-meta"><i class="ph ph-airplane"></i></div>
-                            <div>
-                                <h3>Viaje a México</h3>
-                                <span class="etiqueta-fecha">Meta: Sep 2025 • 3 meses</span>
+                            <div class="detalle-meta">
+                                <strong>$15.000.000</strong>
+                                <span>/ $80.000.000</span>
+                            </div>
+                            <div class="aporte-mensual">
+                                <span>$1.805.000/mes</span>
+                            </div>
+                            <div class="estado-meta">
+                                <span class="estado estado-esfuerzo">Requiere esfuerzo</span>
+                                <div class="acciones-meta">
+                                    <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                    <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                    <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                                </div>
+                                <span class="badge-estado badge-activa">Activa</span>
                             </div>
                         </div>
-                        <div class="badge-porcentaje">
-                            <span class="porcentaje">50%</span>
-                            <span class="label-logrado">logrado</span>
-                        </div>
-                        <div class="barra-progreso">
-                            <div class="barra-progreso-llenado" style="width: 50%"></div>
-                        </div>
-                        <div class="detalle-meta">
-                            <strong>$2.500.000</strong>
-                            <span>/ $5.000.000</span>
-                        </div>
-                        <div class="aporte-mensual">
-                            <span>$833.000/mes</span>
-                        </div>
-                        <div class="estado-meta">
-                            <span class="estado estado-casi-lista">¡Casi lista!</span>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta-meta h-100">
+                        <div class="barra-accent"></div>
+                        <div class="contenido-meta">
+                            <div class="encabezado-meta">
+                                <div class="icono-meta"><i class="ph ph-airplane"></i></div>
+                                <div>
+                                    <h3>Viaje a México</h3>
+                                    <span class="etiqueta-fecha">Meta: Sep 2025 • 3 meses</span>
+                                </div>
                             </div>
-                            <span class="badge-estado badge-activa">Activa</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="tarjeta-meta">
-                    <div class="barra-accent"></div>
-                    <div class="contenido-meta">
-                        <div class="encabezado-meta">
-                            <div class="icono-meta"><i class="ph ph-books"></i></div>
-                            <div>
-                                <h3>Fondo Estudios</h3>
-                                <span class="etiqueta-fecha">Meta: Ene 2025 - Completada</span>
+                            <div class="badge-porcentaje">
+                                <span class="porcentaje">50%</span>
+                                <span class="label-logrado">logrado</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="barra-progreso-llenado" style="width: 50%"></div>
+                            </div>
+                            <div class="detalle-meta">
+                                <strong>$2.500.000</strong>
+                                <span>/ $5.000.000</span>
+                            </div>
+                            <div class="aporte-mensual">
+                                <span>$833.000/mes</span>
+                            </div>
+                            <div class="estado-meta">
+                                <span class="estado estado-casi-lista">¡Casi lista!</span>
+                                <div class="acciones-meta">
+                                    <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                    <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                    <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                                </div>
+                                <span class="badge-estado badge-activa">Activa</span>
                             </div>
                         </div>
-                        <div class="badge-porcentaje">
-                            <span class="porcentaje">100%</span>
-                            <span class="label-final">final</span>
-                        </div>
-                        <div class="barra-progreso">
-                            <div class="barra-progreso-llenado" style="width: 100%"></div>
-                        </div>
-                        <div class="detalle-meta">
-                            <strong>$8.000.000 de $8.000.000</strong>
-                        </div>
-                        <div class="estado-meta">
-                            <span class="estado estado-completada">Completada</span>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta-meta h-100">
+                        <div class="barra-accent"></div>
+                        <div class="contenido-meta">
+                            <div class="encabezado-meta">
+                                <div class="icono-meta"><i class="ph ph-books"></i></div>
+                                <div>
+                                    <h3>Fondo Estudios</h3>
+                                    <span class="etiqueta-fecha">Meta: Ene 2025 - Completada</span>
+                                </div>
                             </div>
-                            <span class="badge-estado badge-sin-seguimiento">Sin seguimiento</span>
+                            <div class="badge-porcentaje">
+                                <span class="porcentaje">100%</span>
+                                <span class="label-final">final</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="barra-progreso-llenado" style="width: 100%"></div>
+                            </div>
+                            <div class="detalle-meta">
+                                <strong>$8.000.000 de $8.000.000</strong>
+                            </div>
+                            <div class="estado-meta">
+                                <span class="estado estado-completada">Completada</span>
+                                <div class="acciones-meta">
+                                    <button type="button" title="Ver detalle" onclick="location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                    <button type="button" title="Editar" onclick="location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                    <button type="button" title="Desactivar" onclick="location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                                </div>
+                                <span class="badge-estado badge-sin-seguimiento">Sin seguimiento</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </section>
     </main>  </body>

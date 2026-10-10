@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -76,73 +78,79 @@
             <button type="button" class="filtro-todos">Todos <i class="ph ph-caret-down"></i></button>
         </section>
         <h3 class="lista-deudas-titulo">PASIVOS CON CUOTAS DISPONIBLES</h3>
-        <section class="grid-deudas">
-            <article class="tarjeta-deuda deuda-ambar" onclick="location.href='tabla-cuotas.html'">
-                <span class="icono-deuda"><i class="ph ph-credit-card"></i></span>
-                <h4 class="nombre-deuda">Tarjeta Bancolombia</h4>
-                <p class="subtipo-deuda">TARJETA DE CRÉDITO</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$3.500.000</strong>
+        <section class="grid-deudas row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-ambar h-100" onclick="location.href='tabla-cuotas.html'">
+                    <span class="icono-deuda"><i class="ph ph-credit-card"></i></span>
+                    <h4 class="nombre-deuda">Tarjeta Bancolombia</h4>
+                    <p class="subtipo-deuda">TARJETA DE CRÉDITO</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$3.500.000</strong>
+                        </div>
                     </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Cuotas pagadas</span>
-                        <strong class="valor-progreso">9 de 30</strong>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Cuotas pagadas</span>
+                            <strong class="valor-progreso">9 de 30</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:30%"></span></div>
                     </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:30%"></span></div>
-                </div>
-                <div class="pie-pasivo-cuota">
-                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
-                    <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
-                </div>
-            </article>
-            <article class="tarjeta-deuda deuda-roja" onclick="location.href='tabla-cuotas.html'">
-                <span class="icono-deuda"><i class="ph ph-motorcycle"></i></span>
-                <h4 class="nombre-deuda">Crédito Moto NKD</h4>
-                <p class="subtipo-deuda">CRÉDITO VEHÍCULO · Francesa</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$8.200.000</strong>
+                    <div class="pie-pasivo-cuota">
+                        <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                        <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
                     </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Cuotas pagadas</span>
-                        <strong class="valor-progreso">6 de 36</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-roja h-100" onclick="location.href='tabla-cuotas.html'">
+                    <span class="icono-deuda"><i class="ph ph-motorcycle"></i></span>
+                    <h4 class="nombre-deuda">Crédito Moto NKD</h4>
+                    <p class="subtipo-deuda">CRÉDITO VEHÍCULO · Francesa</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$8.200.000</strong>
+                        </div>
                     </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:17%"></span></div>
-                </div>
-                <div class="pie-pasivo-cuota">
-                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
-                    <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
-                </div>
-            </article>
-            <article class="tarjeta-deuda deuda-sky" onclick="location.href='tabla-cuotas.html'">
-                <span class="icono-deuda"><i class="ph ph-books"></i></span>
-                <h4 class="nombre-deuda">Crédito Educativo</h4>
-                <p class="subtipo-deuda">CRÉDITO EDUCATIVO</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$2.100.000</strong>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Cuotas pagadas</span>
+                            <strong class="valor-progreso">6 de 36</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:17%"></span></div>
                     </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Cuotas pagadas</span>
-                        <strong class="valor-progreso">9 de 20</strong>
+                    <div class="pie-pasivo-cuota">
+                        <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                        <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
                     </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:45%"></span></div>
-                </div>
-                <div class="pie-pasivo-cuota">
-                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
-                    <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
-                </div>
-            </article>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-sky h-100" onclick="location.href='tabla-cuotas.html'">
+                    <span class="icono-deuda"><i class="ph ph-books"></i></span>
+                    <h4 class="nombre-deuda">Crédito Educativo</h4>
+                    <p class="subtipo-deuda">CRÉDITO EDUCATIVO</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$2.100.000</strong>
+                        </div>
+                    </div>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Cuotas pagadas</span>
+                            <strong class="valor-progreso">9 de 20</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:45%"></span></div>
+                    </div>
+                    <div class="pie-pasivo-cuota">
+                        <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                        <a class="enlace-ver-cuotas" href="tabla-cuotas.html">Ver cuotas <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 </body>

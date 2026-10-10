@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -87,96 +89,104 @@
             </button>
         </section>
         <h3 class="lista-deudas-titulo">DEUDAS REGISTRADAS</h3>
-        <section class="grid-deudas">
-            <article class="tarjeta-deuda deuda-ambar" onclick="location.href='detalle-pasivo.html'">
-                <span class="icono-deuda"><i class="ph ph-credit-card"></i></span>
-                <h4 class="nombre-deuda">Tarjeta Bancolombia</h4>
-                <p class="subtipo-deuda">TARJETA DE CRÉDITO</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$3.500.000</strong>
+        <section class="grid-deudas row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-ambar h-100" onclick="location.href='detalle-pasivo.html'">
+                    <span class="icono-deuda"><i class="ph ph-credit-card"></i></span>
+                    <h4 class="nombre-deuda">Tarjeta Bancolombia</h4>
+                    <p class="subtipo-deuda">TARJETA DE CRÉDITO</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$3.500.000</strong>
+                        </div>
+                        <div class="acciones-deuda">
+                            <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                    <div class="acciones-deuda">
-                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Progreso de pago</span>
+                            <strong class="valor-progreso">30%</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:30%"></span></div>
                     </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Progreso de pago</span>
-                        <strong class="valor-progreso">30%</strong>
+                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-roja h-100" onclick="location.href='detalle-pasivo.html'">
+                    <span class="icono-deuda"><i class="ph ph-motorcycle"></i></span>
+                    <h4 class="nombre-deuda">Crédito Moto NKD</h4>
+                    <p class="subtipo-deuda">CRÉDITO VEHÍCULO · FRANCESA</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$8.200.000</strong>
+                        </div>
+                        <div class="acciones-deuda">
+                            <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:30%"></span></div>
-                </div>
-                <span class="estado-deuda"><span class="punto"></span>Activo</span>
-            </article>
-            <article class="tarjeta-deuda deuda-roja" onclick="location.href='detalle-pasivo.html'">
-                <span class="icono-deuda"><i class="ph ph-motorcycle"></i></span>
-                <h4 class="nombre-deuda">Crédito Moto NKD</h4>
-                <p class="subtipo-deuda">CRÉDITO VEHÍCULO · FRANCESA</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$8.200.000</strong>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Progreso de pago</span>
+                            <strong class="valor-progreso">18%</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:18%"></span></div>
                     </div>
-                    <div class="acciones-deuda">
-                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-sky h-100" onclick="location.href='detalle-pasivo.html'">
+                    <span class="icono-deuda"><i class="ph ph-book-open"></i></span>
+                    <h4 class="nombre-deuda">Crédito Educativo</h4>
+                    <p class="subtipo-deuda">CRÉDITO EDUCATIVO</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$2.100.000</strong>
+                        </div>
+                        <div class="acciones-deuda">
+                            <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Progreso de pago</span>
-                        <strong class="valor-progreso">18%</strong>
+                    <div class="progreso-deuda">
+                        <div class="fila-progreso">
+                            <span class="label-progreso">Progreso de pago</span>
+                            <strong class="valor-progreso">45%</strong>
+                        </div>
+                        <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:45%"></span></div>
                     </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:18%"></span></div>
-                </div>
-                <span class="estado-deuda"><span class="punto"></span>Activo</span>
-            </article>
-            <article class="tarjeta-deuda deuda-sky" onclick="location.href='detalle-pasivo.html'">
-                <span class="icono-deuda"><i class="ph ph-book-open"></i></span>
-                <h4 class="nombre-deuda">Crédito Educativo</h4>
-                <p class="subtipo-deuda">CRÉDITO EDUCATIVO</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$2.100.000</strong>
+                    <span class="estado-deuda"><span class="punto"></span>Activo</span>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta-deuda deuda-inactiva inactiva h-100" onclick="location.href='detalle-pasivo.html'">
+                    <span class="icono-deuda"><i class="ph ph-bank"></i></span>
+                    <h4 class="nombre-deuda">Préstamo Personal</h4>
+                    <p class="subtipo-deuda">PRÉSTAMO PERSONAL</p>
+                    <div class="fila-saldo-deuda">
+                        <div class="info-saldo-deuda">
+                            <span class="etiqueta-saldo">Saldo pendiente</span>
+                            <strong class="monto-deuda">$0</strong>
+                        </div>
+                        <div class="acciones-deuda">
+                            <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
+                            <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
+                            <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
+                        </div>
                     </div>
-                    <div class="acciones-deuda">
-                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
-                    </div>
-                </div>
-                <div class="progreso-deuda">
-                    <div class="fila-progreso">
-                        <span class="label-progreso">Progreso de pago</span>
-                        <strong class="valor-progreso">45%</strong>
-                    </div>
-                    <div class="barra-progreso-deuda"><span class="relleno-deuda" style="width:45%"></span></div>
-                </div>
-                <span class="estado-deuda"><span class="punto"></span>Activo</span>
-            </article>
-            <article class="tarjeta-deuda deuda-inactiva inactiva" onclick="location.href='detalle-pasivo.html'">
-                <span class="icono-deuda"><i class="ph ph-bank"></i></span>
-                <h4 class="nombre-deuda">Préstamo Personal</h4>
-                <p class="subtipo-deuda">PRÉSTAMO PERSONAL</p>
-                <div class="fila-saldo-deuda">
-                    <div class="info-saldo-deuda">
-                        <span class="etiqueta-saldo">Saldo pendiente</span>
-                        <strong class="monto-deuda">$0</strong>
-                    </div>
-                    <div class="acciones-deuda">
-                        <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-pasivo.html'"><i class="ph ph-eye"></i></button>
-                        <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-pasivo.html'"><i class="ph ph-pencil-simple"></i></button>
-                        <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-pasivo.html'"><i class="ph ph-warning"></i></button>
-                    </div>
-                </div>
-                <span class="estado-deuda inactivo">Inactivo</span>
-            </article>
+                    <span class="estado-deuda inactivo">Inactivo</span>
+                </article>
+            </div>
         </section>
     </main>
 </body>

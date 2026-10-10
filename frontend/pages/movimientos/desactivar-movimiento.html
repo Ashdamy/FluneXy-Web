@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -66,30 +68,32 @@
                 <button type="button" class="boton-perfil" onclick="location.href='../usuario/mi-perfil.html'">A</button>
             </div>
         </header>
-        <section class="grid-resumen-movimientos">
-            <article class="tile-movimiento ingreso">
-                <p>INGRESOS</p>
-                <strong>+$4.500.000</strong>
-            </article>
-            <article class="tile-movimiento gasto">
-                <p>GASTOS</p>
-                <strong>-$1.820.000</strong>
-            </article>
-            <article class="tile-movimiento balance">
-                <p>BALANCE</p>
-                <strong>$2.680.000</strong>
-            </article>
+        <section class="grid-resumen-movimientos row">
+            <div class="col-12 col-md-4">
+                <article class="tile-movimiento ingreso">
+                    <p>INGRESOS</p>
+                    <strong>+$4.500.000</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-4">
+                <article class="tile-movimiento gasto">
+                    <p>GASTOS</p>
+                    <strong>-$1.820.000</strong>
+                </article>
+            </div>
+            <div class="col-12 col-md-4">
+                <article class="tile-movimiento balance">
+                    <p>BALANCE</p>
+                    <strong>$2.680.000</strong>
+                </article>
+            </div>
         </section>
         <section class="barra-movimientos">
             <div class="busqueda">
                 <i class="ph ph-magnifying-glass"></i>
                 <input type="search" placeholder="Buscar movimiento por nombre...">
             </div>
-            <div class="filtros">
-                <button type="button" class="filtro-activo">Todos</button>
-                <button type="button" class="filtro">Ingresos</button>
-                <button type="button" class="filtro">Gastos</button>
-            </div>
+            <button type="button" class="filtro-todos">Todos <i class="ph ph-caret-down"></i></button>
             <button type="button" class="boton-nuevo-movimiento" onclick="location.href='nuevo-movimiento-ingreso.html'">
                 <i class="ph ph-plus"></i> Nuevo Movimiento
             </button>

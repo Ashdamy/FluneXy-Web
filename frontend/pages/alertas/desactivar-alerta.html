@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -90,63 +92,69 @@
             </a>
         </div>
 
-        <section class="alerta-grid">
-            <article class="alerta-tarjeta alerta-acento-indigo" onclick="location.href='detalle-alerta.html'">
-                <span class="alerta-acento"></span>
-                <span class="alerta-icono"><i class="ph ph-chart-line-down"></i></span>
-                <div class="alerta-info">
-                    <h4>Endeudamiento</h4>
-                    <span>UMBRAL: 35%</span>
-                </div>
-                <div class="alerta-medida">
-                    <span class="alerta-etiqueta-medida">Actual</span>
-                    <strong>5.9%</strong>
-                </div>
-                <div class="alerta-acciones">
-                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
-                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
-                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
-                </div>
-                <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
-            </article>
+        <section class="alerta-grid row">
+            <div class="col-12 col-lg-6">
+                <article class="alerta-tarjeta alerta-acento-indigo" onclick="location.href='detalle-alerta.html'">
+                    <span class="alerta-acento"></span>
+                    <span class="alerta-icono"><i class="ph ph-chart-line-down"></i></span>
+                    <div class="alerta-info">
+                        <h4>Endeudamiento</h4>
+                        <span>UMBRAL: 35%</span>
+                    </div>
+                    <div class="alerta-medida">
+                        <span class="alerta-etiqueta-medida">Actual</span>
+                        <strong>5.9%</strong>
+                    </div>
+                    <div class="alerta-acciones">
+                        <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                    <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
+                </article>
+            </div>
 
-            <article class="alerta-tarjeta alerta-acento-violeta" onclick="location.href='detalle-alerta.html'">
-                <span class="alerta-acento"></span>
-                <span class="alerta-icono"><i class="ph ph-drop-half"></i></span>
-                <div class="alerta-info">
-                    <h4>Liquidez</h4>
-                    <span>UMBRAL: 1.0x</span>
-                </div>
-                <div class="alerta-medida">
-                    <span class="alerta-etiqueta-medida">Actual</span>
-                    <strong>1.6x</strong>
-                </div>
-                <div class="alerta-acciones">
-                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
-                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
-                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
-                </div>
-                <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
-            </article>
+            <div class="col-12 col-lg-6">
+                <article class="alerta-tarjeta alerta-acento-violeta" onclick="location.href='detalle-alerta.html'">
+                    <span class="alerta-acento"></span>
+                    <span class="alerta-icono"><i class="ph ph-drop-half"></i></span>
+                    <div class="alerta-info">
+                        <h4>Liquidez</h4>
+                        <span>UMBRAL: 1.0x</span>
+                    </div>
+                    <div class="alerta-medida">
+                        <span class="alerta-etiqueta-medida">Actual</span>
+                        <strong>1.6x</strong>
+                    </div>
+                    <div class="alerta-acciones">
+                        <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                    <span class="alerta-estado"><i class="alerta-punto"></i>Activa</span>
+                </article>
+            </div>
 
-            <article class="alerta-tarjeta alerta-acento-verde" onclick="location.href='detalle-alerta.html'">
-                <span class="alerta-acento"></span>
-                <span class="alerta-icono"><i class="ph ph-shopping-cart"></i></span>
-                <div class="alerta-info">
-                    <h4>Gasto Mensual</h4>
-                    <span>UMBRAL: $3.000.000/mes</span>
-                </div>
-                <div class="alerta-medida">
-                    <span class="alerta-etiqueta-medida">Actual</span>
-                    <strong>—</strong>
-                </div>
-                <div class="alerta-acciones">
-                    <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
-                    <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
-                    <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
-                </div>
-                <span class="alerta-estado alerta-estado-inactiva"><i class="alerta-punto"></i>Inactiva</span>
-            </article>
+            <div class="col-12 col-lg-6">
+                <article class="alerta-tarjeta alerta-acento-verde" onclick="location.href='detalle-alerta.html'">
+                    <span class="alerta-acento"></span>
+                    <span class="alerta-icono"><i class="ph ph-shopping-cart"></i></span>
+                    <div class="alerta-info">
+                        <h4>Gasto Mensual</h4>
+                        <span>UMBRAL: $3.000.000/mes</span>
+                    </div>
+                    <div class="alerta-medida">
+                        <span class="alerta-etiqueta-medida">Actual</span>
+                        <strong>—</strong>
+                    </div>
+                    <div class="alerta-acciones">
+                        <button type="button" class="alerta-accion" title="Ver detalle" onclick="event.stopPropagation();location.href='detalle-alerta.html'"><i class="ph ph-eye"></i></button>
+                        <button type="button" class="alerta-accion" title="Editar" onclick="event.stopPropagation();location.href='configurar-alerta.html'"><i class="ph ph-pencil-simple"></i></button>
+                        <button type="button" class="alerta-accion alerta-accion-peligro" title="Desactivar" onclick="event.stopPropagation();location.href='../alertas/desactivar-alerta.html'"><i class="ph ph-warning"></i></button>
+                    </div>
+                    <span class="alerta-estado alerta-estado-inactiva"><i class="alerta-punto"></i>Inactiva</span>
+                </article>
+            </div>
         </section>
     </main>
 

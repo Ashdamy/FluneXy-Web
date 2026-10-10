@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
 <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -103,70 +105,86 @@
         </section>
         <section class="seccion-accesos">
             <h3>Accesos rápidos</h3>
-            <div class="grid-accesos">
-                <a href="../flujo-caja/flujo-caja.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-flujo"><span><i class="ph ph-currency-circle-dollar"></i></span></div>
-                    <h4>Flujo de caja</h4>
-                    <p>Ingresos y egresos</p>
-                </a>
-                <a href="../balance-financiero/balance-financiero.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-balance"><span><i class="ph ph-chart-bar"></i></span></div>
-                    <h4>Balance</h4>
-                    <p>Ver resumen</p>
-                </a>
-                <a href="../metas/mis-metas.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-metas"><span><i class="ph ph-target"></i></span></div>
-                    <h4>Metas</h4>
-                    <p>Tus objetivos</p>
-                </a>
-                <a href="../reportes/generar-reporte.html" class="tarjeta-acceso">
-                    <div class="icono-acceso icono-reportes"><span><i class="ph ph-clipboard-text"></i></span></div>
-                    <h4>Reportes</h4>
-                    <p>Historial</p>
-                </a>
+            <div class="grid-accesos row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a href="../flujo-caja/flujo-caja.html" class="tarjeta-acceso h-100">
+                        <div class="icono-acceso icono-flujo"><span><i class="ph ph-currency-circle-dollar"></i></span></div>
+                        <h4>Flujo de caja</h4>
+                        <p>Ingresos y egresos</p>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a href="../balance-financiero/balance-financiero.html" class="tarjeta-acceso h-100">
+                        <div class="icono-acceso icono-balance"><span><i class="ph ph-chart-bar"></i></span></div>
+                        <h4>Balance</h4>
+                        <p>Ver resumen</p>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a href="../metas/mis-metas.html" class="tarjeta-acceso h-100">
+                        <div class="icono-acceso icono-metas"><span><i class="ph ph-target"></i></span></div>
+                        <h4>Metas</h4>
+                        <p>Tus objetivos</p>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a href="../reportes/generar-reporte.html" class="tarjeta-acceso h-100">
+                        <div class="icono-acceso icono-reportes"><span><i class="ph ph-clipboard-text"></i></span></div>
+                        <h4>Reportes</h4>
+                        <p>Historial</p>
+                    </a>
+                </div>
             </div>
         </section>
         <section class="seccion-resumen">
             <h3>Resumen financiero</h3>
-            <div class="grid-resumen">
-                <div class="tarjeta-resumen-home">
-                    <span class="etiqueta">Ingresos del mes</span>
-                    <div class="valor-resumen-home">
-                        <strong>$4.200.000</strong>
-                        <span class="badge-positivo">+12%</span>
-                    </div>
-                    <div class="barra-progreso">
-                        <span class="relleno ingresos" style="width: 90px;"></span>
-                    </div>
-                </div>
-                <div class="tarjeta-resumen-home">
-                    <span class="etiqueta">Gastos del mes</span>
-                    <div class="valor-resumen-home">
-                        <strong>$2.800.000</strong>
-                        <span class="badge-negativo">+5%</span>
-                    </div>
-                    <div class="barra-progreso">
-                        <span class="relleno gastos" style="width: 58px;"></span>
+            <div class="grid-resumen row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="tarjeta-resumen-home h-100">
+                        <span class="etiqueta">Ingresos del mes</span>
+                        <div class="valor-resumen-home">
+                            <strong>$4.200.000</strong>
+                            <span class="badge-positivo">+12%</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <span class="relleno ingresos" style="width: 90px;"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="tarjeta-resumen-home">
-                    <span class="etiqueta">Deuda activa</span>
-                    <div class="valor-resumen-home">
-                        <strong>$1.200.000</strong>
-                        <span class="badge-advertencia">31%</span>
-                    </div>
-                    <div class="barra-progreso">
-                        <span class="relleno deuda" style="width: 40px;"></span>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="tarjeta-resumen-home h-100">
+                        <span class="etiqueta">Gastos del mes</span>
+                        <div class="valor-resumen-home">
+                            <strong>$2.800.000</strong>
+                            <span class="badge-negativo">+5%</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <span class="relleno gastos" style="width: 58px;"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="tarjeta-resumen-home">
-                    <span class="etiqueta">Ahorro neto</span>
-                    <div class="valor-resumen-home">
-                        <strong>$1.400.000</strong>
-                        <span class="badge-info">+8%</span>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="tarjeta-resumen-home h-100">
+                        <span class="etiqueta">Deuda activa</span>
+                        <div class="valor-resumen-home">
+                            <strong>$1.200.000</strong>
+                            <span class="badge-advertencia">31%</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <span class="relleno deuda" style="width: 40px;"></span>
+                        </div>
                     </div>
-                    <div class="barra-progreso">
-                        <span class="relleno ahorro" style="width: 70px;"></span>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="tarjeta-resumen-home h-100">
+                        <span class="etiqueta">Ahorro neto</span>
+                        <div class="valor-resumen-home">
+                            <strong>$1.400.000</strong>
+                            <span class="badge-info">+8%</span>
+                        </div>
+                        <div class="barra-progreso">
+                            <span class="relleno ahorro" style="width: 70px;"></span>
+                        </div>
                     </div>
                 </div>
             </div>

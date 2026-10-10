@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -77,12 +79,22 @@
                     <span class="badge-tipo-monto ingreso">INGRESO</span>
                 </section>
                 <p class="seccion-label">CATEGORÍA</p>
-                <section class="opciones-categoria">
-                    <button type="button" class="cat-chip activa"><i class="ph ph-briefcase"></i><span class="texto-chip"><strong>Salario</strong><small>Ingreso</small></span></button>
-                    <button type="button" class="cat-chip"><i class="ph ph-chart-line-up"></i><span class="texto-chip"><strong>Inversión</strong><small>Ingreso</small></span></button>
-                    <button type="button" class="cat-chip"><i class="ph ph-shopping-bag"></i><span class="texto-chip"><strong>Ventas</strong><small>Ingreso</small></span></button>
-                    <button type="button" class="cat-chip"><i class="ph ph-gift"></i><span class="texto-chip"><strong>Bonificación</strong><small>Ingreso</small></span></button>
-                    <button type="button" class="cat-chip"><i class="ph ph-dots-three"></i><span class="texto-chip"><strong>Otro</strong><small>Ingreso</small></span></button>
+                <section class="opciones-categoria row">
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="cat-chip activa"><i class="ph ph-briefcase"></i><span class="texto-chip"><strong>Salario</strong><small>Ingreso</small></span></button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="cat-chip"><i class="ph ph-chart-line-up"></i><span class="texto-chip"><strong>Inversión</strong><small>Ingreso</small></span></button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="cat-chip"><i class="ph ph-shopping-bag"></i><span class="texto-chip"><strong>Ventas</strong><small>Ingreso</small></span></button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="cat-chip"><i class="ph ph-gift"></i><span class="texto-chip"><strong>Bonificación</strong><small>Ingreso</small></span></button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="cat-chip"><i class="ph ph-dots-three"></i><span class="texto-chip"><strong>Otro</strong><small>Ingreso</small></span></button>
+                    </div>
                 </section>
                 <p class="seccion-label">RECURRENCIA</p>
                 <section class="rec-row">

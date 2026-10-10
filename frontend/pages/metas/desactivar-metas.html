@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -85,39 +87,41 @@
             <h2>Objetivos en Progreso  •  4 metas</h2>
         </header>
         <section class="lista-metas">
-            <div class="grid-metas">
-                <article class="tarjeta-meta" onclick="location.href='detalle-meta.html'">
-                    <div class="barra-accent"></div>
-                    <div class="contenido-meta">
-                        <div class="encabezado-meta">
-                            <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
-                            <div>
-                                <h3>Moto Nueva</h3>
-                                <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+            <div class="grid-metas row">
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta-meta h-100" onclick="location.href='detalle-meta.html'">
+                        <div class="barra-accent"></div>
+                        <div class="contenido-meta">
+                            <div class="encabezado-meta">
+                                <div class="icono-meta"><i class="ph ph-motorcycle"></i></div>
+                                <div>
+                                    <h3>Moto Nueva</h3>
+                                    <span class="etiqueta-fecha">Meta: Dic 2025 • 6 meses</span>
+                                </div>
+                            </div>
+                            <div class="badge-porcentaje">
+                                <span class="porcentaje">50%</span>
+                                <span class="label-logrado">logrado</span>
+                            </div>
+                            <div class="barra-progreso">
+                                <div class="barra-progreso-llenado" style="width: 50%"></div>
+                            </div>
+                            <div class="detalle-meta">
+                                <strong>$6.000.000</strong>
+                                <span>/ $12.000.000</span>
+                            </div>
+                            <div class="estado-meta">
+                                <span class="estado estado-progreso">En progreso</span>
+                                <div class="acciones-meta">
+                                    <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
+                                    <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
+                                    <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
+                                </div>
+                                <span class="badge-estado badge-activa">Activa</span>
                             </div>
                         </div>
-                        <div class="badge-porcentaje">
-                            <span class="porcentaje">50%</span>
-                            <span class="label-logrado">logrado</span>
-                        </div>
-                        <div class="barra-progreso">
-                            <div class="barra-progreso-llenado" style="width: 50%"></div>
-                        </div>
-                        <div class="detalle-meta">
-                            <strong>$6.000.000</strong>
-                            <span>/ $12.000.000</span>
-                        </div>
-                        <div class="estado-meta">
-                            <span class="estado estado-progreso">En progreso</span>
-                            <div class="acciones-meta">
-                                <button type="button" title="Ver detalle" onclick="event.stopPropagation(); location.href='detalle-meta.html'"><i class="ph ph-eye"></i></button>
-                                <button type="button" title="Editar" onclick="event.stopPropagation(); location.href='editar-meta.html'"><i class="ph ph-pencil-simple"></i></button>
-                                <button type="button" title="Desactivar" onclick="event.stopPropagation(); location.href='desactivar-metas.html'"><i class="ph ph-warning"></i></button>
-                            </div>
-                            <span class="badge-estado badge-activa">Activa</span>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </section>
     </main>

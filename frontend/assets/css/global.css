@@ -1849,6 +1849,18 @@ tbody td:nth-child(3) {
   margin: 0 40px;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 20px = el gap original; el margen
+   compensa el gutter: 30px + 10px = 40px de inset, -20px + 20px (del
+   hijo) = 0 arriba. */
+.tiles-info-cuota.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  margin: -20px 30px 0;
+}
+
 .tile-info {
   padding: 18px;
   border-radius: 14px;
@@ -3238,6 +3250,18 @@ tbody td:nth-child(3) {
   margin-top: 16px;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 20px = el gap original; -4px + 20px
+   (margin-top del hijo) = 16px, igual que antes. Los margenes laterales
+   negativos los aporta .row y los compensa el padding de cada columna. */
+.grid-accesos.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  margin-top: -4px;
+}
+
 .tarjeta-acceso {
   display: flex;
   flex-direction: column;
@@ -3307,6 +3331,23 @@ tbody td:nth-child(3) {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 16px;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 20px = el gap original; -4px + 20px
+   (margin-top del hijo) = 16px. Los margenes laterales negativos de .row
+   los absorbe el padre .seccion-resumen, que tiene margin 32px 40px 0.
+   El prefijo body.mod-home y el flex-direction son necesarios: en
+   responsive.css esta clase comparte una regla con los dashboards flex
+   que fija flex-direction: column bajo 1400px -- inerte sobre un grid,
+   pero activa aqui. Esa regla es body[class] (0,2,1) y hay que superarla. */
+body.mod-home .grid-resumen.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  margin-top: -4px;
 }
 
 .tarjeta-resumen-home {
@@ -6246,6 +6287,19 @@ tbody td:nth-child(3) {
   gap: 24px;
   align-items: stretch;
   margin: 0 40px;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*; desactivar-fondo.html usa la regla de arriba sin
+   cambios, y editar-movimiento.html / nueva-meta.html la redefinen como
+   lista vertical con mayor especificidad, asi que no se ven afectadas.
+   Gutter 24px = el gap original; 28px + 12px = 40px de inset. */
+.lista-fondos.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+  margin: -24px 28px 0;
 }
 
 .lista-fondos .tarjeta-activo + .tarjeta-activo {
@@ -14332,6 +14386,18 @@ body.mod-lista-activos .grid-bienes {
   margin: 0 40px;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*; las paginas sin convertir usan la regla de
+   arriba sin cambios. Gutter 24px = el gap original; el margen compensa
+   el gutter: 28px + 12px = 40px de inset, -24px + 24px (del hijo) = 0. */
+body.mod-lista-activos .grid-bienes.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+  margin: -24px 28px 0;
+}
+
 body.mod-lista-activos .tarjeta-bien {
   display: flex;
   flex-direction: column;
@@ -14678,6 +14744,19 @@ body.mod-lista-pasivos .grid-deudas {
   margin: 0 40px;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*; desactivar-pasivo.html y pasivos-con-cuotas.html
+   comparten esta clase y usan la regla de arriba sin cambios. Los gutters
+   reproducen column-gap/row-gap; el margen compensa el gutter horizontal:
+   28px + 12px = 40px de inset, -14px + 14px (del hijo) = 0 arriba. */
+body.mod-lista-pasivos .grid-deudas.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 14px;
+  margin: -14px 28px 0;
+}
+
 body.mod-lista-pasivos .tarjeta-deuda {
   display: flex;
   flex-direction: column;
@@ -14983,6 +15062,18 @@ body.mod-lista-movimientos .grid-resumen-movimientos {
   margin: 16px 0 0;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*; desactivar-movimiento.html comparte esta clase
+   y usa la regla de arriba sin cambios. Gutter 20px = el gap original;
+   -4px + 20px (margin-top del hijo) = 16px, igual que antes. */
+body.mod-lista-movimientos .grid-resumen-movimientos.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  margin: -4px calc(-.5 * var(--bs-gutter-x)) 0;
+}
+
 body.mod-lista-movimientos .tile-movimiento {
   display: flex;
   flex-direction: column;
@@ -15033,19 +15124,21 @@ body.mod-lista-movimientos .barra-movimientos {
   gap: 16px;
 }
 
+/* Busqueda y filtro alineados con los de activos/pasivos
+   (body.mod-lista-activos .barra-activos). */
 body.mod-lista-movimientos .barra-movimientos .busqueda {
   position: relative;
-  flex: 0 0 480px;
-  max-width: 480px;
+  flex: 0 0 560px;
+  max-width: 560px;
 }
 
 body.mod-lista-movimientos .barra-movimientos .busqueda i {
   position: absolute;
-  left: 17px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: var(--slate-500);
+  color: var(--white);
   pointer-events: none;
 }
 
@@ -15054,9 +15147,45 @@ body.mod-lista-movimientos .barra-movimientos .busqueda input {
   padding: 0 16px 0 48px;
   border: 1px solid var(--indigo);
   border-radius: 10px;
-  background-color: transparent;
-  color: var(--slate-50);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--white);
+  font-size: 12px;
+}
+
+/* Mismo boton "Todos" que activos/pasivos. margin-left 0 porque esta
+   barra ya separa sus elementos con gap: 16px. */
+body.mod-lista-movimientos .barra-movimientos .filtro-todos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 48px;
+  margin-left: 0;
+  padding: 0;
+  border: 1px solid rgba(129, 140, 248, 0.5);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--slate-400);
+  font-family: var(--font-body);
   font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.mod-lista-movimientos .barra-movimientos .filtro-todos:hover {
+  background-color: rgba(129, 140, 248, 0.12);
+}
+
+body.mod-lista-movimientos .barra-movimientos .filtro-todos i {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 1400px) {
+  body.mod-lista-movimientos .barra-movimientos .filtro-todos {
+    width: 100%;
+  }
 }
 
 body.mod-lista-movimientos .barra-movimientos .filtros {
@@ -15090,20 +15219,32 @@ body.mod-lista-movimientos .barra-movimientos .boton-nuevo-movimiento {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 230px;
+  width: 200px;
   height: 48px;
   margin-left: auto;
+  margin-right: 20px;
   border: none;
   border-radius: 12px;
   background-color: var(--indigo);
   color: var(--white);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
 }
 
+/* Medidas alineadas con "Nuevo Activo"
+   (body.mod-lista-activos .barra-activos .boton-primario). */
 body.mod-lista-movimientos .boton-nuevo-movimiento i {
-  font-size: 16px;
+  font-size: 20px;
+}
+
+/* Por debajo de 1400px la barra se apila: el boton ocupa todo el ancho,
+   igual que "Nuevo Activo". Va despues de la regla base para ganarle. */
+@media (max-width: 1400px) {
+  body.mod-lista-movimientos .barra-movimientos .boton-nuevo-movimiento {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 body.mod-lista-movimientos .tabla-movimientos-titulo {
@@ -15523,6 +15664,25 @@ body.mod-form-movimiento .grid-fondos {
   gap: 16px;
 }
 
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. La regla base no declara margenes, asi que los
+   de .row dejan el contenido en su sitio; el padding de 80px de
+   .contenido-principal absorbe los laterales negativos.
+   Sin h-100: .item-fondo tiene height 64px fija. */
+body.mod-form-movimiento .grid-fondos.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 16px;
+  --bs-gutter-y: 16px;
+}
+
+/* .item-fondo es un <button>: como grid item lo estiraba justify-items:
+   stretch, pero dentro de .col usa dimensionado intrinseco y se encoge.
+   width: 100% reproduce el ancho que tenia antes de la conversion. */
+body.mod-form-movimiento .grid-fondos.row .item-fondo {
+  width: 100%;
+}
+
 body.mod-form-movimiento .item-fondo {
   position: relative;
   display: flex;
@@ -15808,6 +15968,20 @@ body.mod-detalle-movimiento .grid-detalle {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 20px = el gap original; 0 + 20px
+   (margin-top del hijo) = 20px. Los margenes laterales negativos de .row
+   caen dentro del padding de 40px de .contenido-principal.
+   Sin h-100: .tile-detalle tiene height 90px fija. */
+body.mod-detalle-movimiento .grid-detalle.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  margin-top: 0;
 }
 
 body.mod-detalle-movimiento .tile-detalle {
@@ -17781,6 +17955,35 @@ body.mod-plantilla-form .opciones-categoria {
   gap: 12px 16px;
   margin-top:  9px;
 }
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutters = gap original (16px horizontal, 12px
+   vertical). max-width conserva el diseno fijo de dos chips de 302px por
+   encima de 1400px. -3px + 12px (margin-top del hijo) = 9px. Por debajo de
+   1400px responsive.css sube el gap vertical a 20px y pone width 100%;
+   se reproduce el gap y se anula el width para no romper los margenes de
+   .row. .cat-chip es un <button>: width 100% para que llene la columna. */
+body.mod-plantilla-form .opciones-categoria.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 16px;
+  --bs-gutter-y: 12px;
+  max-width: 636px;
+  width: auto;
+  margin-top: -3px;
+}
+
+body.mod-plantilla-form .opciones-categoria.row .cat-chip {
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+  body.mod-plantilla-form .opciones-categoria.row {
+    --bs-gutter-y: 20px;
+    max-width: none;
+    margin-top: -11px;
+  }
+}
 body.mod-plantilla-form .cat-chip {
   height: 64px;
   box-sizing: border-box;
@@ -18338,6 +18541,25 @@ body.mod-plantilla-detalle .grid-info-plantilla {
   display: grid;
   grid-template-columns: repeat(3, 353px);
   gap: 20px;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 20px = el gap original. max-width
+   conserva el diseno fijo de tres tiles de 353px por encima de 1400px. La
+   regla base no declara margenes, asi que los de .row dejan el contenido
+   en su sitio. Sin h-100: .tile-info-plantilla tiene height 84px fija. */
+body.mod-plantilla-detalle .grid-info-plantilla.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+  max-width: 1119px;
+}
+
+@media (max-width: 1400px) {
+  body.mod-plantilla-detalle .grid-info-plantilla.row {
+    max-width: none;
+  }
 }
 body.mod-plantilla-detalle .tile-info-plantilla {
   background-color: rgba(241, 245, 250, 0.04);
@@ -19951,6 +20173,17 @@ body.mod-lista-metas .grid-metas {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 26px;
   align-items: stretch;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*; desactivar-metas.html comparte esta clase y usa
+   la regla de arriba sin cambios. Ni esta regla ni la generica declaran
+   margenes, asi que los de .row ya dejan el contenido al mismo ras. */
+body.mod-lista-metas .grid-metas.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 26px;
+  --bs-gutter-y: 26px;
 }
 
 body.mod-lista-metas .tarjeta-meta {
@@ -21958,6 +22191,30 @@ body.mod-alertas .alerta-grid {
   gap: 24px 20px;
   margin: 32px 40px 0;
 }
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutters = gap original (20px horizontal, 24px
+   vertical). Por encima de 1400px conserva el diseno de ancho fijo: el
+   max-width deja dos tarjetas de 540px exactas tambien a 1920px. El
+   margen compensa el gutter: 30px + 10px = 40px de inset; 8px + 24px
+   (margin-top del hijo) = 32px arriba. Por debajo de 1400px, donde
+   responsive.css pone margin 20px 0 0, se ajusta el mismo calculo.
+   Sin h-100: .alerta-tarjeta tiene height 104px fija en desktop. */
+body.mod-alertas .alerta-grid.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 24px;
+  max-width: 1120px;
+  margin: 8px 30px 0;
+}
+
+@media (max-width: 1400px) {
+  body.mod-alertas .alerta-grid.row {
+    max-width: none;
+    margin: -4px -10px 0;
+  }
+}
 body.mod-alertas .alerta-tarjeta {
   position: relative;
   display: flex;
@@ -22192,6 +22449,20 @@ body.mod-alertas-configurar .fund-row {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 8px;
+}
+
+/* Variante convertida al grid de Bootstrap. Solo aplica donde el markup
+   ya lleva .row + .col-*. Gutter 16px = el gap original. La regla base
+   no declara margen superior ni laterales, asi que los de .row dejan el
+   contenido en su sitio; margin-bottom se hereda de la regla de arriba.
+   Sin h-100: .fund-card tiene height 60px fija.
+   Ojo: en mod-plantilla-form .fund-row es un boton de lista, no un grid;
+   esta variante no lo alcanza por el prefijo mod-alertas-configurar. */
+body.mod-alertas-configurar .fund-row.row {
+  display: flex;
+  gap: 0;
+  --bs-gutter-x: 16px;
+  --bs-gutter-y: 16px;
 }
 body.mod-alertas-configurar .fund-card {
   position: relative;
