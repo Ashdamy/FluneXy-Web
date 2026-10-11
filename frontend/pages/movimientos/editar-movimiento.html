@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -98,11 +100,19 @@
             <div class="fila-cat-fondo">
                 <div class="grupo-formulario grupo-categorias">
                     <label>CATEGORÍA</label>
-                    <div class="grid-categorias">
-                        <button type="button" class="item-categoria activo"><i class="ph ph-film-slate"></i> Entretenimiento</button>
-                        <button type="button" class="item-categoria"><i class="ph ph-bowl-food"></i> Alimentación</button>
-                        <button type="button" class="item-categoria"><i class="ph ph-bus"></i> Transporte</button>
-                        <button type="button" class="item-categoria"><i class="ph ph-wrench"></i> Servicios</button>
+                    <div class="grid-categorias row">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="item-categoria activo"><i class="ph ph-film-slate"></i> Entretenimiento</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="item-categoria"><i class="ph ph-bowl-food"></i> Alimentación</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="item-categoria"><i class="ph ph-bus"></i> Transporte</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="item-categoria"><i class="ph ph-wrench"></i> Servicios</button>
+                        </div>
                     </div>
                 </div>
                 <div class="grupo-formulario grupo-fondos">

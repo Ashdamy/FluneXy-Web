@@ -23,39 +23,24 @@ body.mod-asistente .entrada-chat {
    COMPACTO (hasta 1400px): grids a 1-2 columnas fluidas.
    ========================================================== */
 @media (max-width: 1400px) {
-  .contenido-dos-columnas,
   .lista-componentes,
-  .lista-detalle-flujo,
-  .fila-categorias,
   .grid-selector-pago,
-  body[class] .contenido-dos-columnas,
   body[class] .grid-plantillas,
   body[class] .lista-componentes,
-  body[class] .lista-detalle-flujo,
-  body[class] .formulario-plantilla,
   body[class] .grid-plantilla-form,
   body[class] .fila-campos,
   body[class] .fila-monto-fecha,
   body[class] .fila-cat-fondo,
   body[class] .grid-categorias,
   body[class] .opciones-categoria,
-  body[class] .hero-pasivos-container,
   body.mod-plantilla-form .opciones-categoria,
   body.mod-plantilla-editar .opciones-categoria {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 20px;
   }
 
-  body.mod-pasivos .grid-categorias {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  .alert-grid,
   .tiles,
-  body[class] .alert-grid,
-  body[class] .alerta-grid,
   body[class] .tiles,
-  body[class] .grid-info-plantilla,
   body.mod-alertas-detalle .tiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -232,76 +217,22 @@ body.mod-asistente .entrada-chat {
 
   /* ===== Colapsar grids de tarjetas/dashboards a 1 columna ===== */
   .grid-resumen,
-  .grid-resumen-movimientos,
-  .grid-accesos,
-  .grid-metas,
   .grid-info,
-  .grid-informacion,
   .grid-detalle,
-  .grid-info-plantilla,
-  .grid-bienes,
-  .grid-deudas,
-  .grid-categorias,
-  .grid-fondos,
-  .grid-formulario-mitad,
-  .lista-activos,
   .lista-fondos,
-  .lista-categorias,
-  .lista-categories,
-  .detalle-informacion,
-  .estadisticas-meta,
-  .tiles-info-cuota,
-  .vp-datos,
-  .alert-grid,
-  .alerta-grid,
   .fund-row,
-  .reg-pasivo-fila-mitad,
-  .reg-pasivo-grid-amortizacion,
-  .reg-pasivo-grid-categories,
-  .tile-resumen,
   .opciones-tipo,
-  .opciones-categoria,
   .acciones-formulario,
-  .acciones,
   body[class] .grid-resumen,
-  body[class] .grid-resumen-movimientos,
-  body[class] .grid-accesos,
-  body[class] .grid-metas,
   body[class] .grid-info,
-  body[class] .grid-informacion,
   body[class] .grid-detalle,
-  body[class] .grid-info-plantilla,
-  body[class] .grid-bienes,
-  body[class] .grid-deudas,
   body[class] .grid-categorias,
-  body[class] .grid-fondos,
-  body[class] .grid-formulario-mitad,
-  body[class] .lista-activos,
   body[class] .lista-fondos,
-  body[class] .lista-categorias,
-  body[class] .lista-categories,
-  body[class] .detalle-informacion,
-  body[class] .estadisticas-meta,
-  body[class] .tiles-info-cuota,
-  body[class] .vp-datos,
-  body[class] .alert-grid,
-  body[class] .alerta-grid,
   body[class] .fund-row,
-  body[class] .reg-pasivo-fila-mitad,
-  body[class] .reg-pasivo-grid-amortizacion,
-  body[class] .reg-pasivo-grid-categories,
-  body[class] .tile-resumen,
   body[class] .opciones-tipo,
   body[class] .opciones-categoria,
-  body[class] .acciones-formulario,
-  body[class] .acciones {
+  body[class] .acciones-formulario {
     grid-template-columns: 1fr;
-  }
-
-  body.mod-pasivos .grid-info,
-  body.mod-pasivos .grid-categorias,
-  body.mod-pasivos .reg-pasivo-grid-amortizacion {
-    grid-template-columns: 1fr !important;
   }
 
   .estadisticas-patrimonio {
@@ -329,44 +260,34 @@ body.mod-asistente .entrada-chat {
   .rep-columna-vista,
   .bal-columna-der,
   .ind-columna-der,
-  .rep-columna-preview,
   body[class] .bal-columna-izq,
   body[class] .ind-columna-izq,
   body[class] .rep-columna-form,
   body[class] .rep-columna-vista,
   body[class] .bal-columna-der,
-  body[class] .ind-columna-der,
-  body[class] .rep-columna-preview {
+  body[class] .ind-columna-der {
     width: 100%;
   }
 
   .fila-campos,
   .fila-monto-fecha,
   .fila-cat-fondo,
-  .contenido-dos-columnas,
   .grid-plantilla-form,
-  .grid-formulario-mitad,
   body[class] .fila-campos,
   body[class] .fila-monto-fecha,
   body[class] .fila-cat-fondo,
-  body[class] .contenido-dos-columnas,
-  body[class] .grid-plantilla-form,
-  body[class] .grid-formulario-mitad {
+  body[class] .grid-plantilla-form {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .fila-campos > *,
   .fila-monto-fecha > *,
   .fila-cat-fondo > *,
-  .contenido-dos-columnas > *,
   .grid-plantilla-form > *,
-  .grid-formulario-mitad > *,
   body[class] .fila-campos > *,
   body[class] .fila-monto-fecha > *,
   body[class] .fila-cat-fondo > *,
-  body[class] .contenido-dos-columnas > *,
-  body[class] .grid-plantilla-form > *,
-  body[class] .grid-formulario-mitad > * {
+  body[class] .grid-plantilla-form > * {
     min-width: 0;
   }
 
@@ -522,19 +443,10 @@ body.mod-asistente .entrada-chat {
   }
 
   .tabla-cuotas,
-  .contenedor-tabla,
-  .tabla-wrapper,
-  body[class] .tabla-cuotas,
-  body[class] .contenedor-tabla,
-  body[class] .tabla-wrapper {
+  body[class] .tabla-cuotas {
     overflow-x: auto;
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .componentes-flujo .boton-texto,
-  body[class] .componentes-flujo .boton-texto {
-    width: 100%;
   }
 
   .alternador-tipo,
@@ -597,7 +509,6 @@ body.mod-asistente .entrada-chat {
   body.mod-activo-detalle .hero-card,
   body.mod-pasivo-detalle .hero-card,
   body.mod-meta-detalle .hero-card,
-  body.mod-plantilla-detalle .hero-card,
   body.mod-plantilla-detalle .hero-card-plantilla {
     height: auto;
     margin: 16px 0 20px;
@@ -707,10 +618,6 @@ body.mod-asistente .entrada-chat {
     min-height: 60px;
     padding-top: 12px;
     padding-bottom: 12px;
-  }
-
-  body.mod-plantilla-detalle .grid-info-plantilla {
-    grid-template-columns: minmax(0, 1fr);
   }
 
   body.mod-plantilla-detalle .tile-total-plantilla,
@@ -1028,10 +935,6 @@ body.mod-asistente .entrada-chat {
     flex-shrink: 1;
   }
 
-  body.mod-alertas-configurar .fund-row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   body.mod-alertas-configurar .info-chips {
     flex-wrap: wrap;
   }
@@ -1196,27 +1099,6 @@ body.mod-asistente .entrada-chat {
     margin-left: 0;
   }
 
-  .etiqueta-detalle-flujo {
-    margin: 16px 0 0;
-  }
-
-  .lista-detalle-flujo {
-    margin: 12px 0 0;
-  }
-
-  .item-detalle-flujo {
-    height: auto;
-    min-height: 80px;
-    padding: 14px 12px 14px 0;
-    flex-wrap: wrap;
-    row-gap: 8px;
-  }
-
-  .estado-detalle-flujo {
-    min-width: 0;
-    flex-shrink: 1;
-  }
-
   .item-componente {
     display: grid;
     grid-template-columns: 52px 1fr;
@@ -1245,12 +1127,6 @@ body.mod-asistente .entrada-chat {
     margin-left: 0;
     font-size: 16px;
     white-space: nowrap;
-  }
-
-  .lista-detalle-flujo + .boton-texto {
-    width: 100%;
-    margin: 16px 0 0;
-    box-sizing: border-box;
   }
 
   body.mod-fondos .hero-card {
@@ -1655,7 +1531,6 @@ body.mod-asistente .entrada-chat {
   body.mod-activo-desactivar .preview-saldo,
   body.mod-pasivo-desactivar .preview-saldo,
   body.mod-meta-desactivar .preview-saldo,
-  body.mod-alertas-desactivar .preview-saldo,
   .preview-saldo,
   body[class] .preview-saldo {
     position: static;
@@ -1894,11 +1769,6 @@ body.mod-asistente .entrada-chat {
     flex-wrap: wrap;
     gap: 16px 28px;
     align-items: center;
-  }
-
-  .tile-resumen,
-  body[class] .tile-resumen {
-    min-width: 0;
   }
 
   body.mod-plantillas .card-plantilla,
