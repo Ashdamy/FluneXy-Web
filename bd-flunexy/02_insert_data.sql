@@ -1,15 +1,15 @@
 -- USUARIOS
-INSERT INTO usuarios (id_usuario, nombre_completo, correo, contrasena, estado, fecha_registro) VALUES
-(1, 'Ana Milena Sierra', 'anamilena@ejemplo.com', '$2b$12$hashusuario01xxxxxxxxx', TRUE, '2025-01-12'),
-(2, 'Carlos Andrés Pérez', 'carlos.perez@ejemplo.com', '$2b$12$hashusuario02xxxxxxxxx', TRUE, '2025-01-20'),
-(3, 'Laura Valentina Gómez', 'laura.gomez@ejemplo.com', '$2b$12$hashusuario03xxxxxxxxx', TRUE, '2025-02-03'),
-(4, 'Juan Pablo Rodríguez', 'juan.rodriguez@ejemplo.com', '$2b$12$hashusuario04xxxxxxxxx', TRUE, '2025-02-15'),
-(5, 'Mariana Torres', 'mariana.torres@ejemplo.com', '$2b$12$hashusuario05xxxxxxxxx', FALSE, '2025-03-01'),
-(6, 'Santiago Ramírez', 'santiago.ramirez@ejemplo.com', '$2b$12$hashusuario06xxxxxxxxx', TRUE, '2025-03-10'),
-(7, 'Camila Herrera', 'camila.herrera@ejemplo.com', '$2b$12$hashusuario07xxxxxxxxx', TRUE, '2025-03-22'),
-(8, 'Andrés Felipe Castro', 'andres.castro@ejemplo.com', '$2b$12$hashusuario08xxxxxxxxx', TRUE, '2025-04-05'),
-(9, 'Daniela Ospina', 'daniela.ospina@ejemplo.com', '$2b$12$hashusuario09xxxxxxxxx', FALSE, '2025-04-18'),
-(10, 'Felipe Morales', 'felipe.morales@ejemplo.com', '$2b$12$hashusuario10xxxxxxxxx', TRUE, '2025-05-02');
+INSERT INTO usuarios (id_usuario, nombre, apellido, correo, contrasena, estado, fecha_registro) VALUES
+(1, 'Ana Milena', 'Sierra', 'anamilena@ejemplo.com', '$2b$12$hashusuario01xxxxxxxxx', TRUE, '2025-01-12'),
+(2, 'Carlos Andrés', 'Pérez', 'carlos.perez@ejemplo.com', '$2b$12$hashusuario02xxxxxxxxx', TRUE, '2025-01-20'),
+(3, 'Laura Valentina', 'Gómez', 'laura.gomez@ejemplo.com', '$2b$12$hashusuario03xxxxxxxxx', TRUE, '2025-02-03'),
+(4, 'Juan Pablo', 'Rodríguez', 'juan.rodriguez@ejemplo.com', '$2b$12$hashusuario04xxxxxxxxx', TRUE, '2025-02-15'),
+(5, 'Mariana', 'Torres', 'mariana.torres@ejemplo.com', '$2b$12$hashusuario05xxxxxxxxx', FALSE, '2025-03-01'),
+(6, 'Santiago', 'Ramírez', 'santiago.ramirez@ejemplo.com', '$2b$12$hashusuario06xxxxxxxxx', TRUE, '2025-03-10'),
+(7, 'Camila', 'Herrera', 'camila.herrera@ejemplo.com', '$2b$12$hashusuario07xxxxxxxxx', TRUE, '2025-03-22'),
+(8, 'Andrés Felipe', 'Castro', 'andres.castro@ejemplo.com', '$2b$12$hashusuario08xxxxxxxxx', TRUE, '2025-04-05'),
+(9, 'Daniela', 'Ospina', 'daniela.ospina@ejemplo.com', '$2b$12$hashusuario09xxxxxxxxx', FALSE, '2025-04-18'),
+(10, 'Felipe', 'Morales', 'felipe.morales@ejemplo.com', '$2b$12$hashusuario10xxxxxxxxx', TRUE, '2025-05-02');
 
 -- CATEGORIAS
 INSERT INTO categorias (id_categoria, nombre, es_ingreso, aplica_a, estado) VALUES

@@ -49,7 +49,7 @@ WHERE id_usuario = 1 AND estado = TRUE;
 -- ============================================================
 
 -- Activos activos por usuario, con su categoría
-SELECT usuarios.nombre_completo, categorias.nombre AS categoria, activos.nombre, activos.valor
+SELECT usuarios.nombre, usuarios.apellido, categorias.nombre AS categoria, activos.nombre, activos.valor
 FROM activos
 INNER JOIN usuarios ON activos.id_usuario = usuarios.id_usuario
 INNER JOIN categorias ON activos.id_categoria = categorias.id_categoria

@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="../../assets/css/responsive.css">
@@ -23,14 +25,27 @@
                 <p>Empieza gratis. Sin tarjeta de crédito.</p>
             </header>
             <form class="formulario-registro" action="" method="post">
-                <div class="grupo-formulario">
-                    <label for="nombre">Nombre completo</label>
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Ana Milena"
-                        required>
+                <div class="row gx-3">
+                    <div class="col-6 grupo-formulario">
+                        <label for="nombre">Nombre</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Ana Milena"
+                            autocomplete="given-name"
+                            required>
+                    </div>
+                    <div class="col-6 grupo-formulario">
+                        <label for="apellido">Apellido</label>
+                        <input
+                            type="text"
+                            id="apellido"
+                            name="apellido"
+                            placeholder="Sierra"
+                            autocomplete="family-name"
+                            required>
+                    </div>
                 </div>
                 <div class="grupo-formulario">
                     <label for="correo">Correo electrónico</label>

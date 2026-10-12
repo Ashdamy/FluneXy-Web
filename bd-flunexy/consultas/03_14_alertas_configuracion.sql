@@ -47,8 +47,8 @@ FROM alertas_configuracion
 GROUP BY tipo_alerta;
 
 -- Usuarios y su cantidad de alertas configuradas, incluyendo quienes no tienen ninguna
-SELECT usuarios.nombre_completo, COUNT(alertas_configuracion.id_alerta_config) AS total_alertas
+SELECT usuarios.nombre, usuarios.apellido, COUNT(alertas_configuracion.id_alerta_config) AS total_alertas
 FROM usuarios
 LEFT JOIN alertas_configuracion ON usuarios.id_usuario = alertas_configuracion.id_usuario
-GROUP BY usuarios.nombre_completo
+GROUP BY usuarios.id_usuario, usuarios.nombre, usuarios.apellido
 ORDER BY total_alertas DESC;

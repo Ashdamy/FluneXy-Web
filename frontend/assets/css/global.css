@@ -1012,6 +1012,22 @@ h4 {
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
 }
 
+/* Autenticacion: los input de texto (nombre, apellido) usan el mismo estilo que correo y contrasena;
+   evita que la regla generica .grupo-formulario input[type="text"] de formularios internos los sobrescriba */
+body.mod-auth .grupo-formulario input[type="text"] {
+  height: 48px;
+  padding: 0 13px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  border-radius: 10px;
+  color: var(--slate-50);
+  font-size: 14px;
+}
+
+.formulario-registro {
+  margin-top: 32px;
+}
+
 .recuperar-contrasena {
   margin-top: 16px;
   text-align: right;
@@ -6233,10 +6249,13 @@ body.mod-home .grid-resumen.row {
 }
 
 .barra-fondos .filtro-todos {
-  width: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
   height: 48px;
   padding: 0;
-  border: 1px solid var(--indigo);
+  border: 1px solid rgba(129, 140, 248, 0.5);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.04);
   color: var(--slate-400);
@@ -6249,6 +6268,11 @@ body.mod-home .grid-resumen.row {
 
 .barra-fondos .filtro-todos:hover {
   background-color: rgba(129, 140, 248, 0.12);
+}
+
+.barra-fondos .filtro-todos i {
+  margin-left: 8px;
+  font-size: 14px;
 }
 
 .barra-fondos .boton-primario {
@@ -10492,6 +10516,17 @@ body.mod-plantillas .status-plantilla.vencida::before { background-color: var(--
 .ep-campo input::placeholder {
   color: var(--slate-500);
   font-weight: 400;
+}
+
+/* Nombre y apellido lado a lado: en movil se oculta el icono para dar espacio al texto (igual que en Figma) */
+@media (max-width: 575.98px) {
+  .ep-campos-nombre .ep-icono {
+    display: none;
+  }
+
+  .ep-campos-nombre .ep-campo {
+    padding: 0 16px;
+  }
 }
 
 .ep-ayuda {

@@ -39,8 +39,8 @@ FROM reportes_generados
 GROUP BY id_usuario;
 
 -- Usuarios y su cantidad de reportes generados, incluyendo quienes no han generado ninguno
-SELECT usuarios.nombre_completo, COUNT(reportes_generados.id_reporte) AS total_reportes
+SELECT usuarios.nombre, usuarios.apellido, COUNT(reportes_generados.id_reporte) AS total_reportes
 FROM usuarios
 LEFT JOIN reportes_generados ON usuarios.id_usuario = reportes_generados.id_usuario
-GROUP BY usuarios.nombre_completo
+GROUP BY usuarios.id_usuario, usuarios.nombre, usuarios.apellido
 ORDER BY total_reportes DESC;

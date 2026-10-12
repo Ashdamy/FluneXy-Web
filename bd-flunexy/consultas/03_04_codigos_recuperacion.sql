@@ -46,7 +46,7 @@ GROUP BY id_usuario
 HAVING COUNT(id_codigo) > 1;
 
 -- Historial de códigos por usuario
-SELECT usuarios.nombre_completo, codigos_recuperacion.codigo, codigos_recuperacion.utilizado
+SELECT usuarios.nombre, usuarios.apellido, codigos_recuperacion.codigo, codigos_recuperacion.utilizado
 FROM codigos_recuperacion
 INNER JOIN usuarios ON codigos_recuperacion.id_usuario = usuarios.id_usuario
-ORDER BY usuarios.nombre_completo ASC;
+ORDER BY usuarios.apellido ASC, usuarios.nombre ASC;

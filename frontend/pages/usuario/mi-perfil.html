@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
 <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -88,9 +90,17 @@
                     <div class="mp-datos-tarjeta">
                         <div class="mp-fila">
                             <span class="mp-fila-icono"><i class="ph ph-user"></i></span>
-                            <div class="mp-fila-info">
-                                <small>Nombre completo</small>
-                                <strong>Ana Milena Sierra</strong>
+                            <div class="mp-fila-info flex-grow-1">
+                                <div class="row gx-4">
+                                    <div class="col-6">
+                                        <small>Nombre</small>
+                                        <strong>Ana Milena</strong>
+                                    </div>
+                                    <div class="col-6">
+                                        <small>Apellido</small>
+                                        <strong>Sierra</strong>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="mp-divisor"></div>

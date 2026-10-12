@@ -1,7 +1,8 @@
 -- TABLA: USUARIOS
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
-    nombre_completo VARCHAR(150) NOT NULL,
+    nombre VARCHAR(75) NOT NULL,
+    apellido VARCHAR(75) NOT NULL,
     correo VARCHAR(150) UNIQUE NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
     estado BOOLEAN NOT NULL DEFAULT TRUE,

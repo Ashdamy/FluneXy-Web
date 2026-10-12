@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../components/barra-lateral.css">
     <link rel="stylesheet" href="../../components/acciones-usuario.css">
@@ -72,16 +74,27 @@
                 <section class="ep-seccion">
                     <p class="ep-seccion-titulo">INFORMACIÓN PERSONAL</p>
                     <div class="ep-form">
-                        <div class="ep-campo">
-                            <span class="ep-icono"><i class="ph ph-user"></i></span>
-                            <input type="text" value="Ana Milena Sierra">
+                        <div class="row gx-3 ep-campos-nombre">
+                            <div class="col-6">
+                                <label class="ep-etiqueta-campo d-block" for="ep-nombre">NOMBRE</label>
+                                <div class="ep-campo">
+                                    <span class="ep-icono"><i class="ph ph-user"></i></span>
+                                    <input type="text" id="ep-nombre" name="nombre" value="Ana Milena" autocomplete="given-name">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="ep-etiqueta-campo d-block" for="ep-apellido">APELLIDO</label>
+                                <div class="ep-campo">
+                                    <span class="ep-icono"><i class="ph ph-user"></i></span>
+                                    <input type="text" id="ep-apellido" name="apellido" value="Sierra" autocomplete="family-name">
+                                </div>
+                            </div>
                         </div>
-                        <p class="ep-etiqueta-campo">NOMBRE COMPLETO</p>
+                        <label class="ep-etiqueta-campo d-block" for="ep-correo">CORREO ELECTRÓNICO</label>
                         <div class="ep-campo">
                             <span class="ep-icono"><i class="ph ph-envelope"></i></span>
-                            <input type="email" value="anamilena@ejemplo.com">
+                            <input type="email" id="ep-correo" name="correo" value="anamilena@ejemplo.com" autocomplete="email">
                         </div>
-                        <p class="ep-etiqueta-campo">CORREO ELECTRÓNICO</p>
                         <p class="ep-ayuda">Si lo cambias, verificaremos que no esté registrado</p>
                         <div class="ep-divisor"></div>
                         <p class="ep-requerido">* Todos los campos son obligatorios</p>

@@ -4,8 +4,8 @@
 
 -- [HU02.1 - Registrarse]
 -- Crea la cuenta del nuevo usuario
-INSERT INTO usuarios (nombre_completo, correo, contrasena, fecha_registro)
-VALUES ('Nombre Ejemplo', 'correo.nuevo@ejemplo.com', '$2b$12$hashdeejemplo', '2026-08-22');
+INSERT INTO usuarios (nombre, apellido, correo, contrasena, fecha_registro)
+VALUES ('Nombre', 'Apellido', 'correo.nuevo@ejemplo.com', '$2b$12$hashdeejemplo', '2026-08-22');
 
 -- [HU02.2 - Validar que el correo sea único]
 -- Reutilizada por HU02.1 y HU02.5. Si devuelve una fila, el correo ya está en uso
@@ -19,7 +19,7 @@ WHERE correo = 'anamilena@ejemplo.com';
 
 -- [HU02.4 - Consultar los datos]
 -- Trae el perfil del usuario autenticado
-SELECT id_usuario, nombre_completo, correo, estado, fecha_registro
+SELECT id_usuario, nombre, apellido, correo, estado, fecha_registro
 FROM usuarios
 WHERE id_usuario = 1;
 
@@ -34,7 +34,7 @@ WHERE correo = 'nuevo.correo@ejemplo.com'
 -- [HU02.5 - Actualizar los datos]
 -- Guarda los cambios del perfil
 UPDATE usuarios
-SET nombre_completo = 'Laura Valentina Gómez R.', correo = 'laura.gomezr@ejemplo.com'
+SET nombre = 'Laura Valentina', apellido = 'Gómez Restrepo', correo = 'laura.gomezr@ejemplo.com'
 WHERE id_usuario = 3;
 
 -- [HU02.6 - Cambiar la contraseña]
@@ -66,13 +66,13 @@ WHERE id_usuario = 7;
 -- ============================================================
 
 -- Usuarios activos
-SELECT id_usuario, nombre_completo, correo, fecha_registro
+SELECT id_usuario, nombre, apellido, correo, fecha_registro
 FROM usuarios
 WHERE estado = TRUE
-ORDER BY nombre_completo ASC;
+ORDER BY apellido ASC, nombre ASC;
 
 -- Últimos usuarios registrados
-SELECT id_usuario, nombre_completo, fecha_registro
+SELECT id_usuario, nombre, apellido, fecha_registro
 FROM usuarios
 ORDER BY fecha_registro DESC
 LIMIT 5;
@@ -83,8 +83,8 @@ FROM usuarios
 GROUP BY estado;
 
 -- Usuarios y cantidad de fondos que tienen, incluyendo quienes no tienen ninguno
-SELECT usuarios.nombre_completo, COUNT(fondos.id_fondo) AS total_fondos
+SELECT usuarios.nombre, usuarios.apellido, COUNT(fondos.id_fondo) AS total_fondos
 FROM usuarios
 LEFT JOIN fondos ON usuarios.id_usuario = fondos.id_usuario
-GROUP BY usuarios.nombre_completo
+GROUP BY usuarios.id_usuario, usuarios.nombre, usuarios.apellido
 ORDER BY total_fondos DESC;
