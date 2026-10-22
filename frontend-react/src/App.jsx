@@ -2,6 +2,12 @@ import { Route, Routes } from 'react-router-dom'
 import LayoutApp from './componentes/LayoutApp.jsx'
 import LayoutPublico from './componentes/LayoutPublico.jsx'
 import Placeholder, { PlaceholderPublico } from './paginas/Placeholder.jsx'
+import CierreSesion from './paginas/autenticacion/CierreSesion.jsx'
+import IniciarSesion from './paginas/autenticacion/IniciarSesion.jsx'
+import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
+import RecuperarContrasena from './paginas/autenticacion/RecuperarContrasena.jsx'
+import Registro from './paginas/autenticacion/Registro.jsx'
+import VerificacionContrasena from './paginas/autenticacion/VerificacionContrasena.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -17,12 +23,12 @@ export default function App() {
       <Route path="/" element={<PlaceholderPublico titulo="Landing FluneXy" claseBody="landing" />} />
 
       <Route path="/autenticacion" element={<LayoutPublico />}>
-        <Route path="iniciar-sesion" element={<PlaceholderPublico titulo="Iniciar sesión" claseBody="mod-auth" />} />
-        <Route path="registro" element={<PlaceholderPublico titulo="Registro" claseBody="mod-auth" />} />
-        <Route path="recuperar-contrasena" element={<PlaceholderPublico titulo="Recuperar contraseña" claseBody="mod-auth" />} />
-        <Route path="verificacion-contrasena" element={<PlaceholderPublico titulo="Verificar contraseña" claseBody="mod-auth" />} />
-        <Route path="nueva-contrasena" element={<PlaceholderPublico titulo="Nueva contraseña" claseBody="mod-auth" />} />
-        <Route path="cierre-sesion" element={<PlaceholderPublico titulo="Sesión cerrada" claseBody="mod-auth" />} />
+        <Route path="iniciar-sesion" element={<IniciarSesion />} />
+        <Route path="registro" element={<Registro />} />
+        <Route path="recuperar-contrasena" element={<RecuperarContrasena />} />
+        <Route path="verificacion-contrasena" element={<VerificacionContrasena />} />
+        <Route path="nueva-contrasena" element={<NuevaContrasena />} />
+        <Route path="cierre-sesion" element={<CierreSesion />} />
       </Route>
 
       <Route element={<LayoutApp />}>
