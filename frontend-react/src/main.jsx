@@ -11,6 +11,7 @@ import './estilos/global.css'
 import './estilos/barra-lateral.css'
 import './estilos/acciones-usuario.css'
 import './estilos/responsive.css'
+import './estilos/ajustes-react.css'
 
 import App from './App.jsx'
 

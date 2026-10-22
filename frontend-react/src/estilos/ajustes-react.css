@@ -1,0 +1,9 @@
+/* Ajustes que necesita la version React y que el prototipo no tenia.
+   Los demas archivos de esta carpeta son copia exacta del frontend viejo. */
+
+/* Los campos de fecha ahora son <input type="date">. Se oculta el icono
+   nativo del navegador porque el diseño ya trae el suyo (.icono-calendario),
+   que abre el mismo calendario. */
+.campo-fecha input::-webkit-calendar-picker-indicator {
+  display: none;
+}

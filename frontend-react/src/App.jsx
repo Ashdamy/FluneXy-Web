@@ -12,6 +12,10 @@ import CrearFondo from './paginas/fondos/CrearFondo.jsx'
 import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
 import EditarFondo from './paginas/fondos/EditarFondo.jsx'
 import MisFondos from './paginas/fondos/MisFondos.jsx'
+import DetalleMovimiento from './paginas/movimientos/DetalleMovimiento.jsx'
+import EditarMovimiento from './paginas/movimientos/EditarMovimiento.jsx'
+import MisMovimientos from './paginas/movimientos/MisMovimientos.jsx'
+import NuevoMovimiento from './paginas/movimientos/NuevoMovimiento.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -47,10 +51,10 @@ export default function App() {
         <Route path="/fondos/:id" element={<DetalleFondo />} />
         <Route path="/fondos/:id/editar" element={<EditarFondo />} />
 
-        <Route path="/movimientos" element={<Placeholder titulo="Mis Movimientos" subtitulo="Consulta todos tus ingresos y gastos" claseBody="mod-lista-movimientos" />} />
-        <Route path="/movimientos/nuevo" element={<Placeholder titulo="Nuevo Movimiento" subtitulo="Registra un ingreso o gasto" claseBody="mod-form-movimiento" />} />
-        <Route path="/movimientos/:id" element={<Placeholder titulo="Detalle del Movimiento" subtitulo="Información completa del movimiento" claseBody="mod-detalle-movimiento" />} />
-        <Route path="/movimientos/:id/editar" element={<Placeholder titulo="Editar Movimiento" subtitulo="Actualiza los datos del movimiento" claseBody="mod-editar-movimiento" />} />
+        <Route path="/movimientos" element={<MisMovimientos />} />
+        <Route path="/movimientos/nuevo" element={<NuevoMovimiento />} />
+        <Route path="/movimientos/:id" element={<DetalleMovimiento />} />
+        <Route path="/movimientos/:id/editar" element={<EditarMovimiento />} />
 
         <Route path="/plantillas" element={<Placeholder titulo="Mis Plantillas" subtitulo="Automatiza tus movimientos recurrentes" claseBody="mod-plantillas" />} />
         <Route path="/plantillas/nueva" element={<Placeholder titulo="Nueva Plantilla" subtitulo="Configura un movimiento automático recurrente" claseBody="mod-plantilla-form mod-plantilla-crear" />} />
