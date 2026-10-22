@@ -1,0 +1,82 @@
+import { useState } from 'react'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
+import { actualizarFondo, obtenerFondo, TIPOS_FONDO } from '../../datos/fondos.js'
+import useClaseBody from '../../hooks/useClaseBody.js'
+import useTituloPagina from '../../hooks/useTituloPagina.js'
+import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import SelectorTipoFondo from './SelectorTipoFondo.jsx'
+
+export default function EditarFondo() {
+  useClaseBody('mod-fondo-form mod-fondo-editar')
+  useTituloPagina('Editar Fondo')
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const fondo = obtenerFondo(id)
+  // El valor inicial del estado sale del fondo que se esta editando.
+  const [tipo, setTipo] = useState(fondo?.tipo)
+
+  if (!fondo) return <Navigate to="/fondos" replace />
+
+  function enviar(evento) {
+    evento.preventDefault()
+    const datos = new FormData(evento.target)
+    actualizarFondo(fondo.id, {
+      nombre: datos.get('nombre').trim(),
+      tipo,
+      saldo: leerPesos(datos.get('saldo')),
+    })
+    navigate('/fondos')
+  }
+
+  return (
+    <>
+      <EncabezadoPagina titulo="Editar Fondo" subtitulo="Actualiza la información de tu cuenta" />
+      <section className="franja-edicion">
+        <div className="icono-franja"><i className={`ph ${TIPOS_FONDO[fondo.tipo].icono}`}></i></div>
+        <div className="info-franja">
+          <span className="etiqueta-franja">EDITANDO</span>
+          <strong className="nombre-franja">{fondo.nombre}</strong>
+        </div>
+        <div className="saldo-franja">
+          <span className="label-saldo-franja">Saldo actual</span>
+          <strong className="monto-saldo-franja">{formatoPesos(fondo.saldo)}</strong>
+        </div>
+      </section>
+      {/* defaultValue: el campo arranca con el dato actual y el usuario lo cambia libremente. */}
+      <form onSubmit={enviar}>
+        <p className="seccion-label">INFORMACIÓN DEL FONDO</p>
+        <section className="fila-campos">
+          <div className="grupo-campo">
+            <label htmlFor="nombre-fondo">Nombre del Fondo</label>
+            <input type="text" id="nombre-fondo" name="nombre" defaultValue={fondo.nombre} required />
+          </div>
+          <div className="grupo-campo">
+            <label>Tipo de Fondo</label>
+            <SelectorTipoFondo valor={tipo} onCambiar={setTipo} />
+          </div>
+        </section>
+        <section className="grupo-campo campo-saldo">
+          <label htmlFor="saldo">Saldo Actualizado</label>
+          <div className="campo-monto">
+            <span className="prefijo-monto">$</span>
+            <input
+              type="text"
+              id="saldo"
+              name="saldo"
+              defaultValue={fondo.saldo.toLocaleString('es-CO')}
+              inputMode="numeric"
+              pattern={PATRON_PESOS}
+              title="Solo números, por ejemplo 150000 o 150.000"
+              required
+            />
+          </div>
+        </section>
+        <section className="acciones-formulario">
+          <button type="button" className="btn-cancelar" onClick={() => navigate('/fondos')}>Cancelar</button>
+          <button type="submit" className="btn-guardar"><i className="ph ph-floppy-disk"></i>Guardar Cambios</button>
+        </section>
+      </form>
+    </>
+  )
+}

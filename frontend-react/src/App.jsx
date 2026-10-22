@@ -8,6 +8,10 @@ import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
 import RecuperarContrasena from './paginas/autenticacion/RecuperarContrasena.jsx'
 import Registro from './paginas/autenticacion/Registro.jsx'
 import VerificacionContrasena from './paginas/autenticacion/VerificacionContrasena.jsx'
+import CrearFondo from './paginas/fondos/CrearFondo.jsx'
+import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
+import EditarFondo from './paginas/fondos/EditarFondo.jsx'
+import MisFondos from './paginas/fondos/MisFondos.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -38,10 +42,10 @@ export default function App() {
         <Route path="/usuario/editar" element={<Placeholder titulo="Editar Perfil" subtitulo="Actualiza tu información personal" claseBody="mod-usuario" />} />
         <Route path="/usuario/cambiar-contrasena" element={<Placeholder titulo="Cambiar Contraseña" subtitulo="Protege el acceso a tu cuenta" claseBody="mod-usuario" />} />
 
-        <Route path="/fondos" element={<Placeholder titulo="Mis Fondos" subtitulo="Administra tus cuentas y saldos disponibles" claseBody="mod-fondos" />} />
-        <Route path="/fondos/nuevo" element={<Placeholder titulo="Nuevo Fondo" subtitulo="Registra una nueva cuenta o billetera" claseBody="mod-fondo-form mod-fondo-crear" />} />
-        <Route path="/fondos/:id" element={<Placeholder titulo="Detalle del Fondo" subtitulo="Detalle del fondo" claseBody="mod-fondos" />} />
-        <Route path="/fondos/:id/editar" element={<Placeholder titulo="Editar Fondo" subtitulo="Actualiza la información de tu cuenta" claseBody="mod-fondo-form mod-fondo-editar" />} />
+        <Route path="/fondos" element={<MisFondos />} />
+        <Route path="/fondos/nuevo" element={<CrearFondo />} />
+        <Route path="/fondos/:id" element={<DetalleFondo />} />
+        <Route path="/fondos/:id/editar" element={<EditarFondo />} />
 
         <Route path="/movimientos" element={<Placeholder titulo="Mis Movimientos" subtitulo="Consulta todos tus ingresos y gastos" claseBody="mod-lista-movimientos" />} />
         <Route path="/movimientos/nuevo" element={<Placeholder titulo="Nuevo Movimiento" subtitulo="Registra un ingreso o gasto" claseBody="mod-form-movimiento" />} />
