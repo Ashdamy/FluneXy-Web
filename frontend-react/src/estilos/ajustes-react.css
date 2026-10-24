@@ -2,8 +2,17 @@
    Los demas archivos de esta carpeta son copia exacta del frontend viejo. */
 
 /* Los campos de fecha ahora son <input type="date">. Se oculta el icono
-   nativo del navegador porque el diseño ya trae el suyo (.icono-calendario),
-   que abre el mismo calendario. */
-.campo-fecha input::-webkit-calendar-picker-indicator {
+   nativo del navegador porque el diseño ya trae el suyo (.icono-calendario
+   en Movimientos, el icono de .date-box en Plantillas); el calendario se
+   abre desde ese icono o al hacer clic en el campo. */
+.campo-fecha input::-webkit-calendar-picker-indicator,
+.date-box input::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+/* Botones de confirmar deshabilitados (por ejemplo, desactivar un ingreso
+   que dejaria el fondo en negativo). El prototipo no tenia este estado. */
+.acciones-modal button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom'
 import { obtenerFondo } from '../../datos/fondos.js'
-import { iconoCategoria, tituloMovimiento } from '../../datos/movimientos.js'
+import { errorSaldo, iconoCategoria, tituloMovimiento } from '../../datos/movimientos.js'
 import { formatoPesos } from '../../utilidades/moneda.js'
 
 // Modal propio de Movimientos: su HTML no se parece al de ModalConfirmar
@@ -9,6 +9,9 @@ import { formatoPesos } from '../../utilidades/moneda.js'
 export default function ModalDesactivarMovimiento({ movimiento, onCancelar, onConfirmar }) {
   const signo = movimiento.tipo === 'ingreso' ? '+' : '-'
   const titulo = tituloMovimiento(movimiento)
+  // Si quitar este ingreso deja el fondo en negativo, no se puede desactivar.
+  // El motivo va en la misma caja de advertencia del diseño.
+  const bloqueo = errorSaldo(null, movimiento)
 
   return createPortal(
     <div className="modal-movimiento" onKeyDown={(evento) => evento.key === 'Escape' && onCancelar()}>
@@ -30,11 +33,15 @@ export default function ModalDesactivarMovimiento({ movimiento, onCancelar, onCo
         </section>
         <section className="mensaje-advertencia">
           <i className="ph ph-warning"></i>
-          <p>Los saldos de los fondos asociados serán recalculados automáticamente.</p>
+          <p role={bloqueo ? 'alert' : undefined}>
+            {bloqueo
+              ? `No se puede desactivar: ${bloqueo}.`
+              : 'Los saldos de los fondos asociados serán recalculados automáticamente.'}
+          </p>
         </section>
         <footer className="acciones-modal">
           <button type="button" className="boton-secundario" onClick={onCancelar} autoFocus>Cancelar</button>
-          <button type="button" className="boton-peligro" onClick={onConfirmar}>Desactivar</button>
+          <button type="button" className="boton-peligro" onClick={onConfirmar} disabled={Boolean(bloqueo)}>Desactivar</button>
         </footer>
       </div>
     </div>,

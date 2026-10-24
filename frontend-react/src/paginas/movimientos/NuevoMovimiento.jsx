@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
 import { listarFondos, obtenerFondo } from '../../datos/fondos.js'
-import { CATEGORIAS_MOVIMIENTO, crearMovimiento, saldoResultante } from '../../datos/movimientos.js'
+import { CATEGORIAS_MOVIMIENTO, crearMovimiento, errorSaldo } from '../../datos/movimientos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { diaISO } from '../../utilidades/fecha.js'
@@ -32,7 +32,7 @@ export default function NuevoMovimiento() {
   // El aviso no es un estado aparte: se calcula en cada render con lo que
   // hay escrito. Solo importa cuando el monto ya es un numero valido.
   const montoValido = new RegExp(`^(${PATRON_PESOS})$`).test(monto)
-  const insuficiente = montoValido && fondoId && saldoResultante({ fondoId, tipo, monto: leerPesos(monto) }) < 0
+  const insuficiente = montoValido && fondoId && errorSaldo({ fondoId, tipo, monto: leerPesos(monto) }) !== ''
 
   useClaseBody(insuficiente ? 'mod-form-movimiento mod-form-saldo' : 'mod-form-movimiento')
   useTituloPagina(`Nuevo Movimiento | ${etiquetaTipo}`)

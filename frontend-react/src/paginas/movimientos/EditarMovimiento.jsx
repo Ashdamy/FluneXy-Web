@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { listarFondos, obtenerFondo } from '../../datos/fondos.js'
+import { listarFondos } from '../../datos/fondos.js'
 import {
   actualizarMovimiento,
   CATEGORIAS_MOVIMIENTO,
+  errorSaldo,
   iconoCategoria,
   obtenerMovimiento,
-  saldoResultante,
   tituloMovimiento,
 } from '../../datos/movimientos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
@@ -38,13 +38,11 @@ export default function EditarMovimiento() {
     const campoMonto = formulario.elements.monto
     const monto = leerPesos(campoMonto.value)
     // Sin aviso-saldo en el diseño de editar: se usa el aviso nativo del campo.
-    const saldo = saldoResultante({ fondoId, tipo: movimiento.tipo, monto }, movimiento)
+    // Cubre gastos que no alcanzan e ingresos que al bajar (o cambiar de
+    // fondo) dejarian un fondo en negativo.
+    const error = monto > 0 ? errorSaldo({ fondoId, tipo: movimiento.tipo, monto }, movimiento) : ''
     campoMonto.setCustomValidity(
-      monto <= 0
-        ? 'El monto debe ser mayor a cero'
-        : saldo < 0
-          ? `Saldo insuficiente en ${obtenerFondo(fondoId).nombre}`
-          : '',
+      monto <= 0 ? 'El monto debe ser mayor a cero' : error ? `No se puede guardar: ${error}.` : '',
     )
     if (!formulario.reportValidity()) return
     const datos = new FormData(formulario)

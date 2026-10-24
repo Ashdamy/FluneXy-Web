@@ -5,6 +5,7 @@
 
 import { actualizarFondo, obtenerFondo } from './fondos.js'
 import { haceDias } from '../utilidades/fecha.js'
+import { formatoPesos } from '../utilidades/moneda.js'
 
 // Categorias de bd/02_insert_data.sql, en el orden del prototipo.
 export const CATEGORIAS_MOVIMIENTO = {
@@ -50,12 +51,21 @@ function moverSaldo(fondoId, cantidad) {
   actualizarFondo(fondoId, { saldo: fondo.saldo + cantidad })
 }
 
-// Saldo que le quedaria al fondo si se guarda el movimiento. Al editar,
-// primero se descuenta lo que el movimiento anterior ya habia aplicado.
-export function saldoResultante({ fondoId, tipo, monto }, anterior) {
-  let saldo = obtenerFondo(fondoId).saldo
-  if (anterior?.activo && anterior.fondoId === fondoId) saldo -= efecto(anterior)
-  return saldo + efecto({ tipo, monto })
+// Revisa si un cambio dejaria algun fondo en negativo y devuelve el motivo
+// ('' si todo esta bien). Sirve para los tres casos:
+//   crear:      errorSaldo(nuevo)
+//   editar:     errorSaldo(nuevo, anterior)  (deshace el anterior y aplica el nuevo,
+//               aunque cambie de fondo)
+//   desactivar: errorSaldo(null, anterior)   (solo deshace el anterior)
+export function errorSaldo(nuevo, anterior) {
+  const saldos = new Map()
+  const mover = (fondoId, cantidad) => saldos.set(fondoId, (saldos.get(fondoId) ?? obtenerFondo(fondoId).saldo) + cantidad)
+  if (anterior?.activo) mover(anterior.fondoId, -efecto(anterior))
+  if (nuevo) mover(nuevo.fondoId, efecto(nuevo))
+  for (const [fondoId, saldo] of saldos) {
+    if (saldo < 0) return `${obtenerFondo(fondoId).nombre} quedaría con saldo negativo (${formatoPesos(saldo)})`
+  }
+  return ''
 }
 
 // Mas recientes primero.
