@@ -16,6 +16,10 @@ import DetalleMovimiento from './paginas/movimientos/DetalleMovimiento.jsx'
 import EditarMovimiento from './paginas/movimientos/EditarMovimiento.jsx'
 import MisMovimientos from './paginas/movimientos/MisMovimientos.jsx'
 import NuevoMovimiento from './paginas/movimientos/NuevoMovimiento.jsx'
+import DetallePlantilla from './paginas/plantillas/DetallePlantilla.jsx'
+import EditarPlantilla from './paginas/plantillas/EditarPlantilla.jsx'
+import MisPlantillas from './paginas/plantillas/MisPlantillas.jsx'
+import NuevaPlantilla from './paginas/plantillas/NuevaPlantilla.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -56,10 +60,10 @@ export default function App() {
         <Route path="/movimientos/:id" element={<DetalleMovimiento />} />
         <Route path="/movimientos/:id/editar" element={<EditarMovimiento />} />
 
-        <Route path="/plantillas" element={<Placeholder titulo="Mis Plantillas" subtitulo="Automatiza tus movimientos recurrentes" claseBody="mod-plantillas" />} />
-        <Route path="/plantillas/nueva" element={<Placeholder titulo="Nueva Plantilla" subtitulo="Configura un movimiento automático recurrente" claseBody="mod-plantilla-form mod-plantilla-crear" />} />
-        <Route path="/plantillas/:id" element={<Placeholder titulo="Detalle de Plantilla" subtitulo="Detalle de la plantilla" claseBody="mod-plantilla-detalle" />} />
-        <Route path="/plantillas/:id/editar" element={<Placeholder titulo="Editar Plantilla" subtitulo="Ajusta la configuración del movimiento automático" claseBody="mod-plantilla-form mod-plantilla-editar" />} />
+        <Route path="/plantillas" element={<MisPlantillas />} />
+        <Route path="/plantillas/nueva" element={<NuevaPlantilla />} />
+        <Route path="/plantillas/:id" element={<DetallePlantilla />} />
+        <Route path="/plantillas/:id/editar" element={<EditarPlantilla />} />
 
         <Route path="/activos" element={<Placeholder titulo="Mis Activos" subtitulo="Controla todos tus bienes y patrimonio" claseBody="mod-lista-activos" />} />
         <Route path="/activos/nuevo" element={<Placeholder titulo="Registrar Activo" subtitulo="Agrega un bien a tu patrimonio personal" claseBody="mod-activo-form mod-activo-crear" />} />
