@@ -20,6 +20,10 @@ import DetalleMovimiento from './paginas/movimientos/DetalleMovimiento.jsx'
 import EditarMovimiento from './paginas/movimientos/EditarMovimiento.jsx'
 import MisMovimientos from './paginas/movimientos/MisMovimientos.jsx'
 import NuevoMovimiento from './paginas/movimientos/NuevoMovimiento.jsx'
+import DetallePasivo from './paginas/pasivos/DetallePasivo.jsx'
+import EditarPasivo from './paginas/pasivos/EditarPasivo.jsx'
+import MisPasivos from './paginas/pasivos/MisPasivos.jsx'
+import RegistrarPasivo from './paginas/pasivos/RegistrarPasivo.jsx'
 import DetallePlantilla from './paginas/plantillas/DetallePlantilla.jsx'
 import EditarPlantilla from './paginas/plantillas/EditarPlantilla.jsx'
 import MisPlantillas from './paginas/plantillas/MisPlantillas.jsx'
@@ -74,10 +78,10 @@ export default function App() {
         <Route path="/activos/:id" element={<DetalleActivo />} />
         <Route path="/activos/:id/editar" element={<EditarActivo />} />
 
-        <Route path="/pasivos" element={<Placeholder titulo="Mis Pasivos" subtitulo="Controla todas tus obligaciones financieras" claseBody="mod-lista-pasivos" />} />
-        <Route path="/pasivos/nuevo" element={<Placeholder titulo="Registrar Pasivo" subtitulo="Agrega una deuda u obligación financiera" claseBody="mod-pasivo-form mod-pasivo-crear" />} />
-        <Route path="/pasivos/:id" element={<Placeholder titulo="Detalle del Pasivo" subtitulo="Información completa del pasivo" claseBody="mod-pasivo-detalle" />} />
-        <Route path="/pasivos/:id/editar" element={<Placeholder titulo="Editar Pasivo" subtitulo="Actualiza los datos de la deuda" claseBody="mod-pasivo-form mod-pasivo-editar" />} />
+        <Route path="/pasivos" element={<MisPasivos />} />
+        <Route path="/pasivos/nuevo" element={<RegistrarPasivo />} />
+        <Route path="/pasivos/:id" element={<DetallePasivo />} />
+        <Route path="/pasivos/:id/editar" element={<EditarPasivo />} />
 
         <Route path="/cuotas" element={<Placeholder titulo="Pasivos con Cuotas Disponibles" subtitulo="Consulta la tabla de amortización de tus pasivos activos" claseBody="mod-lista-pasivos mod-pasivos-cuotas" />} />
         <Route path="/cuotas/:pasivoId" element={<Placeholder titulo="Tabla de Cuotas" subtitulo="Amortización del pasivo" claseBody="mod-cuotas" />} />

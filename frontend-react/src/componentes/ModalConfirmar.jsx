@@ -17,6 +17,8 @@ export default function ModalConfirmar({
   descripcion,
   nota,
   textoConfirmar,
+  // Pasivos y Metas usan btn-eliminar-...; Fondos y Activos, btn-desactivar-...
+  claseConfirmar = `btn-desactivar-${sufijo}`,
   onCancelar,
   onConfirmar,
 }) {
@@ -47,7 +49,7 @@ export default function ModalConfirmar({
         <div className={`acciones-modal-${sufijo}`}>
           {/* autoFocus deja el foco en "Cancelar": Enter no desactiva por accidente y Escape cierra. */}
           <button type="button" className={`btn-cancelar-${sufijo}`} onClick={onCancelar} autoFocus>Cancelar</button>
-          <button type="button" className={`btn-desactivar-${sufijo}`} onClick={onConfirmar}>{textoConfirmar}</button>
+          <button type="button" className={claseConfirmar} onClick={onConfirmar}>{textoConfirmar}</button>
         </div>
       </article>
     </div>,

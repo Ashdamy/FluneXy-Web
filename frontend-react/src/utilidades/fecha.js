@@ -32,6 +32,20 @@ export function diaISO(fecha = new Date()) {
   return `${fecha.getFullYear()}-${dosDigitos(fecha.getMonth() + 1)}-${dosDigitos(fecha.getDate())}`
 }
 
+// Suma (o resta) meses a un dia "YYYY-MM-DD". Si el mes destino es mas corto
+// se usa su ultimo dia: 31 Ene + 1 mes = 28 Feb.
+export function sumarMeses(dia, meses) {
+  const [anio, mes, numero] = dia.split('-').map(Number)
+  const ultimoDia = new Date(anio, mes - 1 + meses + 1, 0).getDate()
+  return diaISO(new Date(anio, mes - 1 + meses, Math.min(numero, ultimoDia)))
+}
+
+// "Ene 2028"
+export function formatoMesAnio(dia) {
+  const [anio, mes] = dia.split('-').map(Number)
+  return `${MESES[mes - 1]} ${anio}`
+}
+
 // "YYYY-MM-DDTHH:MM" de hace "dias" dias a la hora indicada. Para datos de prueba.
 export function haceDias(dias, hora) {
   const fecha = new Date()

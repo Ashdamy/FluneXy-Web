@@ -6,7 +6,8 @@ import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { diaISO, formatoFecha } from '../../utilidades/fecha.js'
 import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
-import { CampoFechaActivo, SelectorCategoriaActivo } from './CamposActivo.jsx'
+import CampoFecha from '../../componentes/CampoFecha.jsx'
+import { SelectorCategoriaActivo } from './CamposActivo.jsx'
 
 export default function RegistrarActivo() {
   useClaseBody('mod-activo-form mod-activo-crear')
@@ -83,7 +84,7 @@ export default function RegistrarActivo() {
             </section>
             <section className="grupo-campo campo-fecha-activo">
               <label htmlFor="fecha">Fecha de Actualización</label>
-              <CampoFechaActivo valor={fecha} onCambiar={setFecha} />
+              <CampoFecha clase="campo-fecha-activo-input" valor={fecha} onCambiar={setFecha} />
               <small>Fecha en la que se verificó o estimó este valor</small>
             </section>
           </div>
