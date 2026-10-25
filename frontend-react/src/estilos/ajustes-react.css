@@ -6,8 +6,20 @@
    en Movimientos, el icono de .date-box en Plantillas); el calendario se
    abre desde ese icono o al hacer clic en el campo. */
 .campo-fecha input::-webkit-calendar-picker-indicator,
-.date-box input::-webkit-calendar-picker-indicator {
+.date-box input::-webkit-calendar-picker-indicator,
+.campo-fecha-activo-input input::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+/* En el prototipo de Activos el campo de fecha era type="text" y por eso
+   tomaba parte de la regla de input[type="text"] del formulario (recuadro
+   interior). Ahora es type="date": se copian solo las propiedades que
+   cambiaban, comparando los estilos calculados de ambas versiones. */
+body.mod-activo-form .campo-fecha-activo-input input[type="date"] {
+  padding: 0 17px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.07);
+  line-height: 17px;
 }
 
 /* Botones de confirmar deshabilitados (por ejemplo, desactivar un ingreso

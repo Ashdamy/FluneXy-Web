@@ -2,6 +2,10 @@ import { Route, Routes } from 'react-router-dom'
 import LayoutApp from './componentes/LayoutApp.jsx'
 import LayoutPublico from './componentes/LayoutPublico.jsx'
 import Placeholder, { PlaceholderPublico } from './paginas/Placeholder.jsx'
+import DetalleActivo from './paginas/activos/DetalleActivo.jsx'
+import EditarActivo from './paginas/activos/EditarActivo.jsx'
+import MisActivos from './paginas/activos/MisActivos.jsx'
+import RegistrarActivo from './paginas/activos/RegistrarActivo.jsx'
 import CierreSesion from './paginas/autenticacion/CierreSesion.jsx'
 import IniciarSesion from './paginas/autenticacion/IniciarSesion.jsx'
 import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
@@ -65,10 +69,10 @@ export default function App() {
         <Route path="/plantillas/:id" element={<DetallePlantilla />} />
         <Route path="/plantillas/:id/editar" element={<EditarPlantilla />} />
 
-        <Route path="/activos" element={<Placeholder titulo="Mis Activos" subtitulo="Controla todos tus bienes y patrimonio" claseBody="mod-lista-activos" />} />
-        <Route path="/activos/nuevo" element={<Placeholder titulo="Registrar Activo" subtitulo="Agrega un bien a tu patrimonio personal" claseBody="mod-activo-form mod-activo-crear" />} />
-        <Route path="/activos/:id" element={<Placeholder titulo="Detalle del Activo" subtitulo="Detalle del activo" claseBody="mod-activo-detalle" />} />
-        <Route path="/activos/:id/editar" element={<Placeholder titulo="Editar Activo" subtitulo="Actualiza la información de tu bien" claseBody="mod-activo-form mod-activo-editar" />} />
+        <Route path="/activos" element={<MisActivos />} />
+        <Route path="/activos/nuevo" element={<RegistrarActivo />} />
+        <Route path="/activos/:id" element={<DetalleActivo />} />
+        <Route path="/activos/:id/editar" element={<EditarActivo />} />
 
         <Route path="/pasivos" element={<Placeholder titulo="Mis Pasivos" subtitulo="Controla todas tus obligaciones financieras" claseBody="mod-lista-pasivos" />} />
         <Route path="/pasivos/nuevo" element={<Placeholder titulo="Registrar Pasivo" subtitulo="Agrega una deuda u obligación financiera" claseBody="mod-pasivo-form mod-pasivo-crear" />} />
