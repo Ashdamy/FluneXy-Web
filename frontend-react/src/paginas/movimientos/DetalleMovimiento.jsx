@@ -67,14 +67,17 @@ export default function DetalleMovimiento() {
         <span>DESCRIPCIÓN</span>
         <p>{movimiento.descripcion || 'Sin descripción'}</p>
       </section>
-      <section className="acciones-detalle">
-        <button type="button" className="boton-editar" onClick={() => navigate(`/movimientos/${movimiento.id}/editar`)}>
-          <i className="ph ph-pencil-simple"></i> Editar Movimiento
-        </button>
-        <button type="button" className="boton-desactivar" onClick={() => setConfirmando(true)}>
-          <i className="ph ph-warning"></i> Desactivar
-        </button>
-      </section>
+      {/* RN05.3.1 y RN05.4.6: un movimiento inactivo no se edita ni se vuelve a desactivar. */}
+      {movimiento.activo && (
+        <section className="acciones-detalle">
+          <button type="button" className="boton-editar" onClick={() => navigate(`/movimientos/${movimiento.id}/editar`)}>
+            <i className="ph ph-pencil-simple"></i> Editar Movimiento
+          </button>
+          <button type="button" className="boton-desactivar" onClick={() => setConfirmando(true)}>
+            <i className="ph ph-warning"></i> Desactivar
+          </button>
+        </section>
+      )}
       {confirmando && (
         <ModalDesactivarMovimiento movimiento={movimiento} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />
       )}

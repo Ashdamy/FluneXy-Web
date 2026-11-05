@@ -44,7 +44,9 @@ export default function MisMovimientos() {
   const [busqueda, setBusqueda] = useState('')
   const [aDesactivar, setADesactivar] = useState(null)
 
-  const vacio = movimientos.length === 0
+  // RN05.5.4: los inactivos no aparecen en el listado.
+  const activos = movimientos.filter((m) => m.activo)
+  const vacio = activos.length === 0
   // Cada estado de la pantalla tenia su propia clase en el <body> del prototipo.
   useClaseBody(
     vacio ? 'mod-vacio-movimientos' : aDesactivar ? 'mod-modal-movimiento mod-lista-movimientos' : 'mod-lista-movimientos',
@@ -80,16 +82,14 @@ export default function MisMovimientos() {
     )
   }
 
-  // Totales de los movimientos activos.
-  const activos = movimientos.filter((m) => m.activo)
-  const sumar = (tipo) => activos.filter((m) => m.tipo === tipo).reduce((total, m) => total + m.monto, 0)
+  const sumar =(tipo) => activos.filter((m) => m.tipo === tipo).reduce((total, m) => total + m.monto, 0)
   const ingresos = sumar('ingreso')
   const gastos = sumar('gasto')
 
   // Filtra por el buscador y agrupa por dia: [{ dia: 'HOY · 3 Jun 2025', items: [...] }, ...]
   const texto = busqueda.trim().toLowerCase()
   const grupos = []
-  for (const movimiento of movimientos) {
+  for (const movimiento of activos) {
     if (!`${tituloMovimiento(movimiento)} ${movimiento.categoria}`.toLowerCase().includes(texto)) continue
     const dia = etiquetaDia(movimiento.fecha)
     if (grupos.at(-1)?.dia !== dia) grupos.push({ dia, items: [] })
@@ -130,7 +130,7 @@ export default function MisMovimientos() {
             onChange={(evento) => setBusqueda(evento.target.value)}
           />
         </div>
-        {/* ponytail: filtro decorativo como en el prototipo; se conecta cuando haya un diseño del menú */}
+        {/* ponytail: filtro decorativo como en el prototipo; RN05.5.3 se conecta cuando haya un diseño del menú */}
         <button type="button" className="filtro-todos">Todos <i className="ph ph-caret-down"></i></button>
         <button type="button" className="boton-nuevo-movimiento" onClick={() => navigate('/movimientos/nuevo?tipo=ingreso')}>
           <i className="ph ph-plus"></i> Nuevo Movimiento

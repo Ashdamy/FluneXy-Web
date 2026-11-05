@@ -25,6 +25,7 @@ export default function EditarMovimiento() {
   const [fondoId, setFondoId] = useState(movimiento?.fondoId)
 
   if (!movimiento) return <Navigate to="/movimientos" replace />
+  if (!movimiento.activo) return <Navigate to={`/movimientos/${movimiento.id}`} replace />
 
   const esIngreso = movimiento.tipo === 'ingreso'
   const signo = esIngreso ? '+' : '-'
