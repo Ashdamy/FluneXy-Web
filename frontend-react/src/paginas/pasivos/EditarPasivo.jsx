@@ -3,10 +3,11 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import CampoFecha from '../../componentes/CampoFecha.jsx'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
 import {
-  actualizarPasivo,
   AMORTIZACIONES,
   categoriaPasivo,
+  editarPasivo,
   leerTasa,
+  listarPasivos,
   obtenerPasivo,
   PATRON_PLAZO,
   PATRON_TASA,
@@ -16,6 +17,7 @@ import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { formatoFecha } from '../../utilidades/fecha.js'
 import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import { SelectorAmortizacion } from './CamposPasivo.jsx'
 
 export default function EditarPasivo() {
@@ -28,6 +30,7 @@ export default function EditarPasivo() {
   const [fecha, setFecha] = useState(pasivo?.fechaInicio)
 
   if (!pasivo) return <Navigate to="/pasivos" replace />
+  if (!pasivo.activo) return <Navigate to={`/pasivos/${pasivo.id}`} replace />
   const categoria = categoriaPasivo(pasivo.categoria)
 
   function enviar(evento) {
@@ -35,17 +38,15 @@ export default function EditarPasivo() {
     const campos = evento.target.elements
     const saldo = leerPesos(campos.saldo.value)
     campos.saldo.setCustomValidity(saldo <= pasivo.valorInicial ? '' : `El saldo no puede ser mayor al valor inicial (${formatoPesos(pasivo.valorInicial)})`)
+    campos.nombre.setCustomValidity(nombreRepetido(listarPasivos(), campos.nombre.value, pasivo.id) ? 'Ya tienes un pasivo con este nombre' : '')
     if (!evento.target.reportValidity()) return
-    const plazoMeses = Number(campos.plazo.value)
-    actualizarPasivo(pasivo.id, {
+    editarPasivo(pasivo.id, {
       nombre: campos.nombre.value.trim(),
       saldoActual: saldo,
       tasaMensual: leerTasa(campos.tasa.value),
-      plazoMeses,
+      plazoMeses: Number(campos.plazo.value),
       amortizacion,
       fechaInicio: fecha,
-      // Si se acorta el plazo, no puede haber mas cuotas pagadas que cuotas.
-      cuotasPagadas: Math.min(pasivo.cuotasPagadas, plazoMeses),
     })
     navigate('/pasivos')
   }
@@ -53,7 +54,8 @@ export default function EditarPasivo() {
   return (
     <>
       <EncabezadoPagina titulo="Editar Pasivo" subtitulo="Actualiza los datos de la deuda" />
-      <form onSubmit={enviar}>
+      {/* noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <section className="pasivo-form-layout">
           <div className="pasivo-form-col">
             <section className="franja-edicion">

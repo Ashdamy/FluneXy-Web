@@ -45,16 +45,27 @@ export const leerTasa = (texto) => Number(String(texto).replace(',', '.'))
 // valorCuota = abonoCapital + interes (ck_composicion_cuota). Se redondea a
 // 2 decimales como DECIMAL(12,2); la ultima cuota absorbe la diferencia
 // para que el saldo termine exactamente en 0.
-export function tablaAmortizacion({ valorInicial, tasaMensual, plazoMeses, amortizacion, fechaInicio, cuotasPagadas = 0 }) {
+//
+// RN08.3.4 y RN08.5.3: si se editan los datos financieros, "saldoBase" y
+// "cuotaBase" recalculan las cuotas pendientes con el saldo y el plazo restante.
+export function tablaAmortizacion({ valorInicial, tasaMensual, plazoMeses, amortizacion, fechaInicio, cuotasPagadas = 0, saldoBase, cuotaBase = 0 }) {
   const tasa = tasaMensual / 100
-  const cuotaFija = tasa === 0 ? valorInicial / plazoMeses : (valorInicial * tasa) / (1 - (1 + tasa) ** -plazoMeses)
+  const cuotaFijaDe = (capital, meses) => (tasa === 0 ? capital / meses : (capital * tasa) / (1 - (1 + tasa) ** -meses))
   const cuotas = []
   let saldo = valorInicial
+  let cuotaFija = cuotaFijaDe(valorInicial, plazoMeses)
+  let abonoFijo = valorInicial / plazoMeses
   for (let numero = 1; numero <= plazoMeses; numero++) {
+    if (saldoBase !== undefined && numero === cuotaBase + 1) {
+      const mesesRestantes = plazoMeses - cuotaBase
+      saldo = saldoBase
+      cuotaFija = cuotaFijaDe(saldoBase, mesesRestantes)
+      abonoFijo = saldoBase / mesesRestantes
+    }
     const interes = redondear(saldo * tasa)
     let abonoCapital =
       amortizacion === 'FRANCESA' ? redondear(cuotaFija) - interes
-        : amortizacion === 'ALEMANA' ? redondear(valorInicial / plazoMeses)
+        : amortizacion === 'ALEMANA' ? redondear(abonoFijo)
           : 0
     if (numero === plazoMeses) abonoCapital = saldo
     abonoCapital = redondear(abonoCapital)
@@ -131,6 +142,18 @@ export function crearPasivo(datos) {
 
 export function actualizarPasivo(id, cambios) {
   pasivos = pasivos.map((pasivo) => (pasivo.id === Number(id) ? { ...pasivo, ...cambios } : pasivo))
+}
+
+// Guarda lo que se cambia en Editar Pasivo. Si cambia un dato financiero, las
+// cuotas pendientes se recalculan (RN08.3.4). Si se acorta el plazo, no puede
+// haber mas cuotas pagadas que cuotas, y con saldo en 0 no queda nada por pagar.
+export function editarPasivo(id, cambios) {
+  const pasivo = obtenerPasivo(id)
+  const { saldoActual, tasaMensual, plazoMeses, amortizacion } = cambios
+  const cuotasPagadas = saldoActual === 0 ? plazoMeses : Math.min(pasivo.cuotasPagadas, plazoMeses)
+  const cambioFinanciero =
+    saldoActual !== pasivo.saldoActual || tasaMensual !== pasivo.tasaMensual || plazoMeses !== pasivo.plazoMeses || amortizacion !== pasivo.amortizacion
+  actualizarPasivo(id, { ...cambios, cuotasPagadas, ...(cambioFinanciero && { saldoBase: saldoActual, cuotaBase: cuotasPagadas }) })
 }
 
 export function desactivarPasivo(id) {

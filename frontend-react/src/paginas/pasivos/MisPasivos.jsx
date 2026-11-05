@@ -39,8 +39,12 @@ function TarjetaPasivo({ pasivo, onVer, onEditar, onDesactivar }) {
           </div>
           <div className="acciones-deuda">
             <button type="button" title="Ver detalle" onClick={accion(onVer)}><i className="ph ph-eye"></i></button>
-            <button type="button" title="Editar" onClick={accion(onEditar)}><i className="ph ph-pencil-simple"></i></button>
-            <button type="button" title="Desactivar" onClick={accion(onDesactivar)}><i className="ph ph-warning"></i></button>
+            {pasivo.activo && (
+              <>
+                <button type="button" title="Editar" onClick={accion(onEditar)}><i className="ph ph-pencil-simple"></i></button>
+                <button type="button" title="Desactivar" onClick={accion(onDesactivar)}><i className="ph ph-warning"></i></button>
+              </>
+            )}
           </div>
         </div>
         {/* En el prototipo la tarjeta inactiva no muestra el progreso. */}

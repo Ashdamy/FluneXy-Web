@@ -96,14 +96,17 @@ export default function DetallePasivo() {
         </div>
         <span className="c-arr"><i className="ph ph-arrow-right"></i></span>
       </Link>
-      <div className="acciones-detalle">
-        <button type="button" className="btn-editar" onClick={() => navigate(`/pasivos/${pasivo.id}/editar`)}>
-          <i className="ph ph-pencil-simple"></i> Editar Pasivo
-        </button>
-        <button type="button" className="btn-desactivar" onClick={() => setConfirmando(true)}>
-          <i className="ph ph-warning"></i> Desactivar Pasivo
-        </button>
-      </div>
+      {/* RN08.3.2 y RN08.4.2: un pasivo inactivo no se edita ni se vuelve a desactivar. */}
+      {pasivo.activo && (
+        <div className="acciones-detalle">
+          <button type="button" className="btn-editar" onClick={() => navigate(`/pasivos/${pasivo.id}/editar`)}>
+            <i className="ph ph-pencil-simple"></i> Editar Pasivo
+          </button>
+          <button type="button" className="btn-desactivar" onClick={() => setConfirmando(true)}>
+            <i className="ph ph-warning"></i> Desactivar Pasivo
+          </button>
+        </div>
+      )}
       {confirmando && (
         <ModalDesactivarPasivo pasivo={pasivo} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />
       )}

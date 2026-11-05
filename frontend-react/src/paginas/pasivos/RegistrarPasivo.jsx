@@ -8,6 +8,7 @@ import {
   categoriaPasivo,
   crearPasivo,
   leerTasa,
+  listarPasivos,
   PATRON_PLAZO,
   PATRON_TASA,
   tablaAmortizacion,
@@ -16,6 +17,7 @@ import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { diaISO } from '../../utilidades/fecha.js'
 import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import { SelectorAmortizacion } from './CamposPasivo.jsx'
 
 const valido = (patron, texto) => new RegExp(`^(${patron})$`).test(texto)
@@ -49,6 +51,7 @@ export default function RegistrarPasivo() {
     campos['saldo-actual'].setCustomValidity(
       leerPesos(saldoActual) <= leerPesos(valorInicial) ? '' : 'El saldo actual no puede ser mayor al valor inicial',
     )
+    campos.nombre.setCustomValidity(nombreRepetido(listarPasivos(), nombre) ? 'Ya tienes un pasivo con este nombre' : '')
     if (!evento.target.reportValidity()) return
     crearPasivo({
       nombre: nombre.trim(),
@@ -72,7 +75,8 @@ export default function RegistrarPasivo() {
   return (
     <>
       <EncabezadoPagina titulo="Registrar Pasivo" subtitulo="Agrega una deuda u obligación financiera" />
-      <form onSubmit={enviar}>
+      {/* noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <section className="pasivo-form-layout">
           <div className="pasivo-form-col">
             <p className="seccion-label">INFORMACIÓN GENERAL</p>
