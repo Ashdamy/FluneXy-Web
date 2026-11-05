@@ -96,8 +96,9 @@ export default function DetalleCuota() {
         </div>
       </section>
       <section className="acciones-cuota">
-        {/* Solo se paga lo pendiente de un pasivo vigente. La URL le dira a Pagos que cuota es. */}
-        {!cuota.pagada && pasivo.activo && (
+        {/* Las cuotas se pagan en orden (cuotasPagadas es un contador): solo la proxima
+            de un pasivo vigente. La URL le dice a Pagos que cuota es. */}
+        {cuota.numero === pasivo.cuotasPagadas + 1 && pasivo.activo && (
           <button
             type="button"
             className="boton-registrar-pago"

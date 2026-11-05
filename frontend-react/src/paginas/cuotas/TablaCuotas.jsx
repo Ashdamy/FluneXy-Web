@@ -26,27 +26,6 @@ export default function TablaCuotas() {
 
   // Las cuotas no se guardan: se generan desde los terminos del pasivo.
   const cuotas = tablaAmortizacion(pasivo)
-  const encabezado = (
-    <EncabezadoPagina titulo="Tabla de Cuotas" subtitulo={`${pasivo.nombre} · Amortización ${AMORTIZACIONES[pasivo.amortizacion].etiqueta}`} />
-  )
-
-  // ponytail: hoy no ocurre porque ck_plazo exige plazo > 0; queda para cuando las cuotas vengan de la API
-  if (cuotas.length === 0) {
-    return (
-      <>
-        {encabezado}
-        <section className="estado-vacio">
-          <div className="ilustracion-estado-vacio">
-            <div className="circulo-estado-vacio"></div>
-            <div className="icono-estado-vacio"><i className="ph ph-clipboard-text"></i></div>
-          </div>
-          <h2>No hay cuotas registradas</h2>
-          <p>Aún no existen cuotas disponibles para consultar en este elemento</p>
-        </section>
-      </>
-    )
-  }
-
   const total = cuotas.length
   const pagadas = cuotas.filter((cuota) => cuota.pagada).length
   const visibles = cuotas.filter((cuota) => FILTROS[filtro].cumple(cuota) && String(cuota.numero).includes(busqueda.trim()))
@@ -54,7 +33,7 @@ export default function TablaCuotas() {
 
   return (
     <>
-      {encabezado}
+      <EncabezadoPagina titulo="Tabla de Cuotas" subtitulo={`${pasivo.nombre} · Amortización ${AMORTIZACIONES[pasivo.amortizacion].etiqueta}`} />
       <section className="hero-summary">
         <div className="resumen-pagadas">
           <span className="etiqueta-resumen">CUOTAS PAGADAS</span>
