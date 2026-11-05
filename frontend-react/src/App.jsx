@@ -45,6 +45,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<PlaceholderPublico titulo="Landing FluneXy" claseBody="landing" />} />
 
+      {/* LayoutPublico ya que es el inicio de seccion */}
       <Route path="/autenticacion" element={<LayoutPublico />}>
         <Route path="iniciar-sesion" element={<IniciarSesion />} />
         <Route path="registro" element={<Registro />} />
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="cierre-sesion" element={<CierreSesion />} />
       </Route>
       
+      {/* LayoutApp ya que es la pagina una vez se inicia sesion con todas sun funcionalidades */}
       <Route element={<LayoutApp />}>
         <Route path="/home" element={<Placeholder titulo="Inicio" claseBody="mod-home" />} />
 
