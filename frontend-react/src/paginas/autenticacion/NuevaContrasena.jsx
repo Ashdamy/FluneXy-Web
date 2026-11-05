@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
+import { AYUDA_CONTRASENA, PATRON_CONTRASENA } from '../../utilidades/validacion.js'
 
 export default function NuevaContrasena() {
   useTituloPagina('Nueva contraseña')
@@ -33,15 +34,14 @@ export default function NuevaContrasena() {
         <form className="formulario-nueva-contrasena" onSubmit={enviar}>
           <div className="grupo-formulario">
             <label htmlFor="contrasena">Nueva contraseña</label>
-            {/* Mismo requisito que muestra el aviso: 8+ caracteres, una mayuscula y un numero. */}
+            {/* Valida RN01.3.5 completa; el aviso de abajo sigue el prototipo (conflicto 06). */}
             <input
               type="password"
               id="contrasena"
               name="contrasena"
               required
-              minLength={8}
-              pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}"
-              title="Mínimo 8 caracteres, una mayúscula y un número."
+              pattern={PATRON_CONTRASENA}
+              title={AYUDA_CONTRASENA}
             />
             {/* ponytail: barra fija como en el prototipo; el CSS colorea todo en verde */}
             <div className="barra-fortaleza">

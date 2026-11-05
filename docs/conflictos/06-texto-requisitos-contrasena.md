@@ -10,7 +10,7 @@
 - **Prototipo:** muestra "Mínimo 8 caracteres, una mayúscula y un número", sin minúscula ni carácter especial.
 
 ## Qué hace hoy la aplicación
-Nueva Contraseña muestra el texto del prototipo y valida solo lo que ese texto dice. Registro no valida los requisitos. La validación es pendiente de corregir.
+Registro y Nueva Contraseña validan la regla completa con el aviso nativo del navegador. Nueva Contraseña conserva el texto del prototipo, porque el equipo indicó no cambiar el diseño, así que la pantalla pide menos de lo que se valida.
 
 ## Opciones
 1. **Validar la regla completa y actualizar el texto visible.** La pantalla dice lo mismo que se valida.

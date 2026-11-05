@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
+import { AYUDA_CONTRASENA, PATRON_CONTRASENA } from '../../utilidades/validacion.js'
 
 export default function Registro() {
   useTituloPagina('Registro')
@@ -46,7 +47,7 @@ export default function Registro() {
           </div>
           <div className="grupo-formulario">
             <label htmlFor="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" required />
+            <input type="password" id="contrasena" name="contrasena" pattern={PATRON_CONTRASENA} title={AYUDA_CONTRASENA} required />
             {/* ponytail: barra fija como en el prototipo; el CSS colorea por posicion, no por nivel */}
             <div className="barra-fortaleza">
               <div className="nivel-fortaleza"></div>
