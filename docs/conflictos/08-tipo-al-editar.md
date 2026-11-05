@@ -11,7 +11,7 @@
 - **Prototipos:** los dos muestran el tipo como una etiqueta fija (GASTO), sin un control para cambiarlo.
 
 ## Qué hace hoy la aplicación
-Sigue los prototipos: el tipo no se puede cambiar al editar. Un cambio de tipo también debe recalcular el saldo del fondo (RN05.3.4) y validar RN05.0.1.
+Sigue los prototipos: el tipo no se puede cambiar al editar. El equipo indicó esperar el diseño. Cuando se agregue, un cambio de tipo también debe recalcular el saldo del fondo (RN05.3.4) y validar RN05.0.1.
 
 ## Opciones
 1. **Agregar el alternador de tipo** de Nuevo Movimiento y Nueva Plantilla a sus pantallas de edición. Cumple las reglas con un diseño que ya existe.
