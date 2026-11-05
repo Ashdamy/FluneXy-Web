@@ -3,7 +3,7 @@
 // (campo-fecha-activo-input, campo-fecha-pasivo-input...). El input es
 // type="date" y al hacer clic abre el calendario nativo; su aspecto se
 // iguala al prototipo en ajustes-react.css.
-export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name = 'fecha' }) {
+export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name = 'fecha', max }) {
   return (
     <div className={clase}>
       <i className="ph ph-calendar"></i>
@@ -12,6 +12,7 @@ export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name
         id={id}
         name={name}
         required
+        max={max}
         value={valor}
         onChange={(evento) => onCambiar(evento.target.value)}
         onClick={(evento) => evento.target.showPicker?.()}

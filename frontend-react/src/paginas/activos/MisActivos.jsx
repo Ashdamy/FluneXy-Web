@@ -31,8 +31,12 @@ function TarjetaActivo({ activo, onVer, onEditar, onDesactivar }) {
           </div>
           <div className="acciones-bien">
             <button type="button" title="Ver detalle" onClick={onVer}><i className="ph ph-eye"></i></button>
-            <button type="button" title="Editar" onClick={onEditar}><i className="ph ph-pencil-simple"></i></button>
-            <button type="button" title="Desactivar" onClick={onDesactivar}><i className="ph ph-warning"></i></button>
+            {activo.activo && (
+              <>
+                <button type="button" title="Editar" onClick={onEditar}><i className="ph ph-pencil-simple"></i></button>
+                <button type="button" title="Desactivar" onClick={onDesactivar}><i className="ph ph-warning"></i></button>
+              </>
+            )}
           </div>
         </div>
       </article>

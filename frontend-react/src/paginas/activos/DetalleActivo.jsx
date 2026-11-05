@@ -84,14 +84,17 @@ export default function DetalleActivo() {
         <span className="label-impacto">IMPACTO EN BALANCE FINANCIERO</span>
         <strong>{activo.activo ? 'Suma al Patrimonio Neto' : 'No suma al Patrimonio Neto'}</strong>
       </section>
-      <div className="acciones-detalle">
-        <button type="button" className="btn-secundario" onClick={() => navigate(`/activos/${activo.id}/editar`)}>
-          <i className="ph ph-pencil-simple"></i> Editar Activo
-        </button>
-        <button type="button" className="btn-peligro" onClick={() => setConfirmando(true)}>
-          <i className="ph ph-warning"></i> Desactivar Activo
-        </button>
-      </div>
+      {/* RN07.3.2 y RN07.4.2: un activo inactivo no se edita ni se vuelve a desactivar. */}
+      {activo.activo && (
+        <div className="acciones-detalle">
+          <button type="button" className="btn-secundario" onClick={() => navigate(`/activos/${activo.id}/editar`)}>
+            <i className="ph ph-pencil-simple"></i> Editar Activo
+          </button>
+          <button type="button" className="btn-peligro" onClick={() => setConfirmando(true)}>
+            <i className="ph ph-warning"></i> Desactivar Activo
+          </button>
+        </div>
+      )}
       {confirmando && (
         <ModalDesactivarActivo activo={activo} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />
       )}

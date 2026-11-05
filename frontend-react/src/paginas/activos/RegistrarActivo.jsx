@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { categoriaActivo, crearActivo } from '../../datos/activos.js'
+import { categoriaActivo, crearActivo, listarActivos } from '../../datos/activos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { diaISO, formatoFecha } from '../../utilidades/fecha.js'
 import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import CampoFecha from '../../componentes/CampoFecha.jsx'
 import { SelectorCategoriaActivo } from './CamposActivo.jsx'
 
@@ -24,6 +25,7 @@ export default function RegistrarActivo() {
     const campoValor = evento.target.elements.valor
     // La BD exige valor > 0 (ck_valor_activo).
     campoValor.setCustomValidity(leerPesos(valor) > 0 ? '' : 'El valor debe ser mayor a cero')
+    evento.target.elements.nombre.setCustomValidity(nombreRepetido(listarActivos(), nombre) ? 'Ya tienes un activo con este nombre' : '')
     if (!evento.target.reportValidity()) return
     crearActivo({
       nombre: nombre.trim(),
@@ -38,7 +40,8 @@ export default function RegistrarActivo() {
   return (
     <>
       <EncabezadoPagina titulo="Registrar Activo" subtitulo="Agrega un bien a tu patrimonio personal" />
-      <form onSubmit={enviar}>
+      {/* noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <section className="activo-form-layout">
           <div className="activo-form-col">
             <section className="grupo-campo campo-nombre">
@@ -84,7 +87,7 @@ export default function RegistrarActivo() {
             </section>
             <section className="grupo-campo campo-fecha-activo">
               <label htmlFor="fecha">Fecha de Actualización</label>
-              <CampoFecha clase="campo-fecha-activo-input" valor={fecha} onCambiar={setFecha} />
+              <CampoFecha clase="campo-fecha-activo-input" valor={fecha} onCambiar={setFecha} max={diaISO()} />
               <small>Fecha en la que se verificó o estimó este valor</small>
             </section>
           </div>

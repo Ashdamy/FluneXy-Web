@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { actualizarActivo, categoriaActivo, obtenerActivo, participacionActivo } from '../../datos/activos.js'
+import { actualizarActivo, categoriaActivo, listarActivos, obtenerActivo, participacionActivo } from '../../datos/activos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
-import { formatoFecha } from '../../utilidades/fecha.js'
+import { diaISO, formatoFecha } from '../../utilidades/fecha.js'
 import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import CampoFecha from '../../componentes/CampoFecha.jsx'
 import { SelectorCategoriaActivo } from './CamposActivo.jsx'
 
@@ -19,13 +20,16 @@ export default function EditarActivo() {
   const [fecha, setFecha] = useState(activo?.fechaActualizacion)
 
   if (!activo) return <Navigate to="/activos" replace />
+  if (!activo.activo) return <Navigate to={`/activos/${activo.id}`} replace />
   const icono = categoriaActivo(activo.categoria).icono
 
   function enviar(evento) {
     evento.preventDefault()
     const formulario = evento.target
     const campoValor = formulario.elements.valor
+    const campoNombre = formulario.elements.nombre
     campoValor.setCustomValidity(leerPesos(campoValor.value) > 0 ? '' : 'El valor debe ser mayor a cero')
+    campoNombre.setCustomValidity(nombreRepetido(listarActivos(), campoNombre.value, activo.id) ? 'Ya tienes un activo con este nombre' : '')
     if (!formulario.reportValidity()) return
     actualizarActivo(activo.id, {
       nombre: formulario.elements.nombre.value.trim(),
@@ -39,7 +43,8 @@ export default function EditarActivo() {
   return (
     <>
       <EncabezadoPagina titulo="Editar Activo" subtitulo="Actualiza la información de tu bien" />
-      <form onSubmit={enviar}>
+      {/* noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <section className="activo-form-layout">
           <div className="activo-form-col">
             <section className="franja-edicion">
@@ -81,7 +86,7 @@ export default function EditarActivo() {
             </section>
             <section className="grupo-campo campo-fecha-activo">
               <label htmlFor="fecha">FECHA DE ACTUALIZACIÓN</label>
-              <CampoFecha clase="campo-fecha-activo-input" valor={fecha} onCambiar={setFecha} />
+              <CampoFecha clase="campo-fecha-activo-input" valor={fecha} onCambiar={setFecha} max={diaISO()} />
             </section>
           </div>
           <aside className="activo-panel-previa">
