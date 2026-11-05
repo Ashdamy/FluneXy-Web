@@ -32,6 +32,11 @@ export function diaISO(fecha = new Date()) {
   return `${fecha.getFullYear()}-${dosDigitos(fecha.getMonth() + 1)}-${dosDigitos(fecha.getDate())}`
 }
 
+// Dias que faltan para un dia "YYYY-MM-DD" (negativo si ya paso).
+export function diasHasta(dia) {
+  return Math.round((new Date(`${dia}T00:00`) - new Date(`${diaISO()}T00:00`)) / 86400000)
+}
+
 // Suma (o resta) meses a un dia "YYYY-MM-DD". Si el mes destino es mas corto
 // se usa su ultimo dia: 31 Ene + 1 mes = 28 Feb.
 export function sumarMeses(dia, meses) {

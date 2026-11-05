@@ -92,7 +92,7 @@ export default function DetallePasivo() {
         <span className="c-icono"><i className="ph ph-table"></i></span>
         <div className="c-info">
           <strong>Ver Tabla de Amortización</strong>
-          <span>{cuotas.length} cuotas · {proxima ? `Próxima: ${formatoPesos(Math.round(proxima.valorCuota))}` : 'Pagado por completo'}</span>
+          <span>{cuotas.length} cuotas · {proxima ? `Próxima: ${formatoPesos(proxima.valorCuota)}` : 'Pagado por completo'}</span>
         </div>
         <span className="c-arr"><i className="ph ph-arrow-right"></i></span>
       </Link>

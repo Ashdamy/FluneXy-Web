@@ -12,6 +12,9 @@ import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
 import RecuperarContrasena from './paginas/autenticacion/RecuperarContrasena.jsx'
 import Registro from './paginas/autenticacion/Registro.jsx'
 import VerificacionContrasena from './paginas/autenticacion/VerificacionContrasena.jsx'
+import DetalleCuota from './paginas/cuotas/DetalleCuota.jsx'
+import PasivosConCuotas from './paginas/cuotas/PasivosConCuotas.jsx'
+import TablaCuotas from './paginas/cuotas/TablaCuotas.jsx'
 import CrearFondo from './paginas/fondos/CrearFondo.jsx'
 import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
 import EditarFondo from './paginas/fondos/EditarFondo.jsx'
@@ -50,7 +53,7 @@ export default function App() {
         <Route path="nueva-contrasena" element={<NuevaContrasena />} />
         <Route path="cierre-sesion" element={<CierreSesion />} />
       </Route>
-
+      
       <Route element={<LayoutApp />}>
         <Route path="/home" element={<Placeholder titulo="Inicio" claseBody="mod-home" />} />
 
@@ -83,9 +86,9 @@ export default function App() {
         <Route path="/pasivos/:id" element={<DetallePasivo />} />
         <Route path="/pasivos/:id/editar" element={<EditarPasivo />} />
 
-        <Route path="/cuotas" element={<Placeholder titulo="Pasivos con Cuotas Disponibles" subtitulo="Consulta la tabla de amortización de tus pasivos activos" claseBody="mod-lista-pasivos mod-pasivos-cuotas" />} />
-        <Route path="/cuotas/:pasivoId" element={<Placeholder titulo="Tabla de Cuotas" subtitulo="Amortización del pasivo" claseBody="mod-cuotas" />} />
-        <Route path="/cuotas/:pasivoId/:cuotaId" element={<Placeholder titulo="Detalle de Cuota" subtitulo="Información completa de la cuota" claseBody="mod-cuotas" />} />
+        <Route path="/cuotas" element={<PasivosConCuotas />} />
+        <Route path="/cuotas/:pasivoId" element={<TablaCuotas />} />
+        <Route path="/cuotas/:pasivoId/:cuotaId" element={<DetalleCuota />} />
 
         <Route path="/pagos" element={<Placeholder titulo="Registrar Pago o Aporte" subtitulo="Elige qué deseas registrar" claseBody="mod-pago-selector" />} />
         <Route path="/pagos/registrar-pago" element={<Placeholder titulo="Registrar Pago" subtitulo="Pago de una cuota" claseBody="mod-pagos" />} />

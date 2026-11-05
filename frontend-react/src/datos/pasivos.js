@@ -40,16 +40,6 @@ export const PATRON_TASA = '\\d{1,3}([.,]\\d{1,2})?'
 export const PATRON_PLAZO = '[1-9]\\d{0,2}'
 export const leerTasa = (texto) => Number(String(texto).replace(',', '.'))
 
-// Fechas relativas a hoy para que las cuotas pagadas coincidan con el tiempo transcurrido.
-const haceMeses = (meses, dia) => sumarMeses(`${diaISO().slice(0, 8)}${String(dia).padStart(2, '0')}`, -meses)
-
-let pasivos = [
-  { id: 1, nombre: 'Tarjeta Bancolombia', categoria: 'Tarjeta de Crédito', valorInicial: 5000000, saldoActual: 3500000, tasaMensual: 2.5, plazoMeses: 12, amortizacion: 'FRANCESA', fechaInicio: haceMeses(4, 1), cuotasPagadas: 4, activo: true },
-  { id: 2, nombre: 'Crédito Moto NKD', categoria: 'Crédito de vehículo', valorInicial: 10000000, saldoActual: 8200000, tasaMensual: 1.8, plazoMeses: 36, amortizacion: 'FRANCESA', fechaInicio: haceMeses(7, 15), cuotasPagadas: 7, activo: true },
-  { id: 3, nombre: 'Crédito Educativo', categoria: 'Crédito educativo', valorInicial: 3800000, saldoActual: 2100000, tasaMensual: 1, plazoMeses: 24, amortizacion: 'FRANCESA', fechaInicio: haceMeses(11, 10), cuotasPagadas: 11, activo: true },
-  { id: 4, nombre: 'Préstamo Personal', categoria: 'Préstamo personal', valorInicial: 6000000, saldoActual: 0, tasaMensual: 2, plazoMeses: 12, amortizacion: 'ALEMANA', fechaInicio: haceMeses(14, 5), cuotasPagadas: 12, activo: false },
-]
-
 const redondear = (valor) => Math.round(valor * 100) / 100
 
 // Cuotas del pasivo, con la misma forma que la tabla cuotas de la BD:
@@ -82,6 +72,24 @@ export function tablaAmortizacion({ valorInicial, tasaMensual, plazoMeses, amort
   }
   return cuotas
 }
+
+// Fechas relativas a hoy: las cuotas pagadas ya vencieron y la siguiente vence este mes.
+const haceMeses = (meses, dia) => sumarMeses(`${diaISO().slice(0, 8)}${String(dia).padStart(2, '0')}`, -meses)
+
+// Los datos de prueba no tienen abonos extraordinarios: su saldo es el que
+// deja la ultima cuota pagada. saldoActual sigue siendo un dato guardado (como
+// saldo_actual en la BD), que en Editar Pasivo puede incluir esos abonos.
+const conSaldoDeTabla = (pasivo) => ({
+  ...pasivo,
+  saldoActual: tablaAmortizacion(pasivo)[pasivo.cuotasPagadas - 1]?.saldoRestante ?? pasivo.valorInicial,
+})
+
+let pasivos = [
+  { id: 1, nombre: 'Tarjeta Bancolombia', categoria: 'Tarjeta de Crédito', valorInicial: 5000000, tasaMensual: 2.5, plazoMeses: 30, amortizacion: 'FRANCESA', fechaInicio: haceMeses(10, 20), cuotasPagadas: 9, activo: true },
+  { id: 2, nombre: 'Crédito Moto NKD', categoria: 'Crédito de vehículo', valorInicial: 10000000, tasaMensual: 1.8, plazoMeses: 36, amortizacion: 'FRANCESA', fechaInicio: haceMeses(7, 15), cuotasPagadas: 6, activo: true },
+  { id: 3, nombre: 'Crédito Educativo', categoria: 'Crédito educativo', valorInicial: 3800000, tasaMensual: 1, plazoMeses: 20, amortizacion: 'FRANCESA', fechaInicio: haceMeses(10, 25), cuotasPagadas: 9, activo: true },
+  { id: 4, nombre: 'Préstamo Personal', categoria: 'Préstamo personal', valorInicial: 6000000, tasaMensual: 2, plazoMeses: 12, amortizacion: 'ALEMANA', fechaInicio: haceMeses(14, 5), cuotasPagadas: 12, activo: false },
+].map(conSaldoDeTabla)
 
 // Al registrar un pasivo que ya tiene abonos, las cuotas pagadas se estiman
 // como las que dejan el saldo por encima o igual al saldo actual.

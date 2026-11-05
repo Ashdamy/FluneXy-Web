@@ -32,3 +32,16 @@ body.mod-pasivo-form .campo-fecha-pasivo-input input[type="date"] {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* Tabla de cuotas. global.css colorea el numero por posicion (primera fila
+   ambar, las demas verde) porque el prototipo mostraba solo una pendiente
+   arriba. Con la tabla completa el color depende del estado de la cuota. */
+.tabla-cuotas tbody tr .numero-cuota.pendiente {
+  background-color: rgba(251, 191, 36, 0.14);
+  color: var(--amber);
+}
+
+.tabla-cuotas tbody tr .numero-cuota.pagada {
+  background-color: rgba(52, 211, 153, 0.14);
+  color: var(--green);
+}

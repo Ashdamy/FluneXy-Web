@@ -157,7 +157,7 @@ export default function RegistrarPasivo() {
               <span className="pasivo-previa-label">Saldo pendiente</span>
               <strong className="pasivo-previa-monto">{formatoPesos(saldoPrevia)}</strong>
               <span className="pasivo-previa-label">Cuota estimada ({valido(PATRON_PLAZO, plazo) ? plazo : '—'} meses)</span>
-              <span className="pasivo-previa-cuota">{cuotaEstimada === null ? '—' : `${formatoPesos(Math.round(cuotaEstimada))} / mes`}</span>
+              <span className="pasivo-previa-cuota">{cuotaEstimada === null ? '—' : `${formatoPesos(cuotaEstimada)} / mes`}</span>
             </div>
             <div className="pasivo-previa-pie">
               <p>Este pasivo se sumará al Total de Pasivos y afectará tu Índice de Endeudamiento.</p>

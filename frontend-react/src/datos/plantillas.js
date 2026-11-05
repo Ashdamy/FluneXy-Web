@@ -3,7 +3,7 @@
 // tiene "nombre"; el texto que se muestra es la descripcion o la categoria.
 // Las categorias son las mismas de movimientos (misma tabla en la BD).
 
-import { diaISO } from '../utilidades/fecha.js'
+import { diaISO, diasHasta } from '../utilidades/fecha.js'
 
 // "frecuencia" completa la frase "Día 5 · de cada mes".
 export const RECURRENCIAS = {
@@ -68,7 +68,7 @@ export function resumenPlantilla(plantilla) {
     completadas: fechas.filter((fecha) => fecha < hoy).length,
     ultima: fechas.findLast((fecha) => fecha < hoy),
     proxima,
-    diasParaProxima: proxima ? Math.round((new Date(`${proxima}T00:00`) - new Date(`${hoy}T00:00`)) / 86400000) : null,
+    diasParaProxima: proxima ? diasHasta(proxima) : null,
     vencida: plantilla.fin < hoy,
     meses: (anioFin - anioInicio) * 12 + mesFin - mesInicio + 1,
   }
