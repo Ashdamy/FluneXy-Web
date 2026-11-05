@@ -24,7 +24,7 @@ export default function DetallePlantilla() {
   const resumen = resumenPlantilla(plantilla)
   const recurrencia = RECURRENCIAS[plantilla.recurrencia]
   const esIngreso = plantilla.tipo === 'ingreso'
-  const estado = !plantilla.activo ? 'Inactiva' : resumen.vencida ? 'Vencida' : 'Activa'
+  const estado = resumen.vencida ? 'Vencida' : plantilla.activo ? 'Activa' : 'Inactiva'
 
   function confirmarDesactivar() {
     desactivarPlantilla(plantilla.id)
@@ -104,14 +104,17 @@ export default function DetallePlantilla() {
         </div>
         <small>{resumen.total} ejecuciones × {formatoPesos(plantilla.monto)}</small>
       </section>
-      <div className="acciones-detalle">
-        <button type="button" className="btn-editar-plantilla" onClick={() => navigate(`/plantillas/${plantilla.id}/editar`)}>
-          <i className="ph ph-pencil-simple"></i>Editar Plantilla
-        </button>
-        <button type="button" className="btn-desactivar-plantilla" onClick={() => setConfirmando(true)}>
-          <i className="ph ph-warning"></i>Desactivar Plantilla
-        </button>
-      </div>
+      {/* RN06.2.2 y RN06.3.2: una plantilla inactiva no se edita ni se vuelve a desactivar. */}
+      {plantilla.activo && (
+        <div className="acciones-detalle">
+          <button type="button" className="btn-editar-plantilla" onClick={() => navigate(`/plantillas/${plantilla.id}/editar`)}>
+            <i className="ph ph-pencil-simple"></i>Editar Plantilla
+          </button>
+          <button type="button" className="btn-desactivar-plantilla" onClick={() => setConfirmando(true)}>
+            <i className="ph ph-warning"></i>Desactivar Plantilla
+          </button>
+        </div>
+      )}
       {confirmando && (
         <ModalDesactivarPlantilla plantilla={plantilla} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />
       )}

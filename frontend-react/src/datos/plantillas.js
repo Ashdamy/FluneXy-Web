@@ -78,12 +78,17 @@ export function tituloPlantilla(plantilla) {
   return plantilla.descripcion || plantilla.categoria
 }
 
+// RN06.0.6: al pasar la fecha fin, la plantilla queda inactiva. En pantalla se
+// muestra "Vencida", como el prototipo (conflicto 07).
+const conVigencia = (plantilla) => (plantilla.fin < diaISO() ? { ...plantilla, activo: false } : plantilla)
+
 export function listarPlantillas() {
-  return plantillas
+  return plantillas.map(conVigencia)
 }
 
 export function obtenerPlantilla(id) {
-  return plantillas.find((plantilla) => plantilla.id === Number(id))
+  const plantilla = plantillas.find((item) => item.id === Number(id))
+  return plantilla && conVigencia(plantilla)
 }
 
 export function crearPlantilla(datos) {

@@ -9,10 +9,10 @@ import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { formatoPesos } from '../../utilidades/moneda.js'
 import ModalDesactivarPlantilla from './ModalDesactivarPlantilla.jsx'
 
-// Estado que se muestra en la tarjeta: desactivada, vencida o activa.
+// Estado que se muestra en la tarjeta: vencida, desactivada o activa.
 function estadoPlantilla(plantilla, resumen) {
-  if (!plantilla.activo) return { texto: 'Inactiva', clase: '', barra: 'vencida-color', subtitulo: 'DESACTIVADA', tag: 'Desactivada' }
   if (resumen.vencida) return { texto: 'Vencida', clase: 'vencida', barra: 'vencida-color', subtitulo: 'VIGENCIA VENCIDA', tag: 'Vigencia vencida' }
+  if (!plantilla.activo) return { texto: 'Inactiva', clase: '', barra: 'vencida-color', subtitulo: 'DESACTIVADA', tag: 'Desactivada' }
   return { texto: 'Activa', clase: 'activa', barra: `${plantilla.tipo}-color`, subtitulo: null, tag: null }
 }
 
@@ -51,8 +51,12 @@ function TarjetaPlantilla({ plantilla, onVer, onEditar, onDesactivar }) {
         </div>
         <div className="acciones-card-plantilla">
           <button type="button" title="Ver detalle" onClick={onVer}><i className="ph ph-eye"></i></button>
-          <button type="button" title="Editar" onClick={onEditar}><i className="ph ph-pencil-simple"></i></button>
-          <button type="button" title="Desactivar" onClick={onDesactivar}><i className="ph ph-warning"></i></button>
+          {plantilla.activo && (
+            <>
+              <button type="button" title="Editar" onClick={onEditar}><i className="ph ph-pencil-simple"></i></button>
+              <button type="button" title="Desactivar" onClick={onDesactivar}><i className="ph ph-warning"></i></button>
+            </>
+          )}
         </div>
         <span className={`status-plantilla ${estado.clase}`.trim()}>{estado.texto}</span>
       </div>
@@ -94,9 +98,9 @@ export default function MisPlantillas() {
     )
   }
 
-  // "Activas" = no desactivadas y con vigencia. El gasto mensual pasa cada
-  // plantilla a su equivalente por mes (quincenal x2, semanal x4).
-  const vigentes = plantillas.filter((plantilla) => plantilla.activo && !resumenPlantilla(plantilla).vencida)
+  // El gasto mensual pasa cada plantilla activa a su equivalente por mes
+  // (quincenal x2, semanal x4).
+  const vigentes = plantillas.filter((plantilla) => plantilla.activo)
   const gastoMensual = vigentes
     .filter((plantilla) => plantilla.tipo === 'gasto')
     .reduce((total, plantilla) => total + plantilla.monto * RECURRENCIAS[plantilla.recurrencia].vecesPorMes, 0)

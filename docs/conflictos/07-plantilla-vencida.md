@@ -10,7 +10,7 @@
 - **BD:** `plantillas.estado` es un booleano, así que solo distingue activa e inactiva.
 
 ## Qué hace hoy la aplicación
-Muestra "Vencida", como el prototipo, y deja la plantilla con estado activo. La regla dice otra cosa.
+Sigue la opción 2 por indicación del equipo: al pasar la fecha fin, la plantilla cuenta como inactiva (sin Editar ni Desactivar) y se muestra con el aspecto "Vencida" del prototipo.
 
 ## Opciones
 1. **Mostrar "Inactiva"** al vencer, como dice RN06.0.6. Se pierde la distinción entre vencida y desactivada por el usuario.

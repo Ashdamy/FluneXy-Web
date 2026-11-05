@@ -22,6 +22,7 @@ export default function EditarPlantilla() {
   const [fin, setFin] = useState(plantilla?.fin)
 
   if (!plantilla) return <Navigate to="/plantillas" replace />
+  if (!plantilla.activo) return <Navigate to={`/plantillas/${plantilla.id}`} replace />
   const esIngreso = plantilla.tipo === 'ingreso'
 
   function enviar(evento) {
