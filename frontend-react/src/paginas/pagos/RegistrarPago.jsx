@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { listarFondos } from '../../datos/fondos.js'
-import { registrarPago } from '../../datos/pagos.js'
-import { categoriaPasivo, obtenerPasivo, proximaCuota, saldoTrasPago } from '../../datos/pasivos.js'
+import { listarFondos, obtenerFondo } from '../../datos/fondos.js'
+import { abonadoACuota, errorPago, registrarPago } from '../../datos/pagos.js'
+import { categoriaPasivo, maximoAPagar, obtenerPasivo, proximaCuota, saldoTrasPago } from '../../datos/pasivos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { formatoFecha } from '../../utilidades/fecha.js'
-import { formatoPesos, leerPesos, pesosValidos } from '../../utilidades/moneda.js'
+import { formatoPesos, leerPesos, pesosValidos, redondear } from '../../utilidades/moneda.js'
 import { CampoMonto, ListaFondosPago } from './CamposPago.jsx'
 
 export default function RegistrarPago() {
@@ -34,8 +34,14 @@ function FormularioPago({ pasivo, cuota, fondos }) {
   const navigate = useNavigate()
   const [fondoId, setFondoId] = useState(fondos[0].id)
   const [anticipado, setAnticipado] = useState(false)
-  // Trae el valor exacto de la cuota para que el saldo coincida con la tabla.
-  const [monto, setMonto] = useState(cuota.valorCuota.toLocaleString('es-CO'))
+  // Lo que falta de la cuota, sin pasar de lo que falta de la deuda. El campo lo
+  // muestra en pesos enteros (IEEE: COP sin decimales); si se deja asi, se paga
+  // el valor exacto para que el saldo coincida con la tabla.
+  const abonado = abonadoACuota(pasivo.id, cuota.numero)
+  const sugerido = Math.min(redondear(cuota.valorCuota - abonado), maximoAPagar(pasivo, abonado))
+  const [monto, setMonto] = useState(Math.round(sugerido).toLocaleString('es-CO'))
+  const escrito = pesosValidos(monto)
+  const valor = escrito === Math.round(sugerido) ? sugerido : escrito
 
   const textoCuota = `Cuota ${cuota.numero} de ${pasivo.plazoMeses}`
   const vencimiento = formatoFecha(cuota.fechaVencimiento)
@@ -43,10 +49,18 @@ function FormularioPago({ pasivo, cuota, fondos }) {
   function enviar(evento) {
     evento.preventDefault()
     // noValidate en el form: la validacion se hace solo aqui, al enviar.
-    evento.target.elements.monto.setCustomValidity(leerPesos(monto) > 0 ? '' : 'El monto debe ser mayor a cero')
+    const error = leerPesos(monto) > 0 ? errorPago({ pasivo, fondoId, monto: valor, esAnticipado: anticipado }) : 'El monto debe ser mayor a cero'
+    evento.target.elements.monto.setCustomValidity(error)
     if (!evento.target.reportValidity()) return
-    registrarPago({ pasivoId: pasivo.id, fondoId, monto: pesosValidos(monto), esAnticipado: anticipado })
-    navigate('/pagos/historial')
+    registrarPago({ pasivoId: pasivo.id, fondoId, monto: valor, esAnticipado: anticipado })
+
+    // Confirmacion con el impacto del pago (HU11.1, HU11.3 y HU11.6). "pasivo" aun tiene los valores de antes.
+    const despues = obtenerPasivo(pasivo.id)
+    const estado = despues.cuotasPagadas > pasivo.cuotasPagadas
+      ? `${textoCuota} pagada`
+      : `${textoCuota}: faltan ${formatoPesos(redondear(cuota.valorCuota - abonado - valor))}`
+    const aviso = `${anticipado ? 'Pago anticipado' : 'Pago'} registrado. ${estado}. Saldo del pasivo: ${formatoPesos(despues.saldoActual)}. Se descontó de ${obtenerFondo(fondoId).nombre}.`
+    navigate('/pagos/historial', { state: { aviso } })
   }
 
   return (
@@ -93,7 +107,7 @@ function FormularioPago({ pasivo, cuota, fondos }) {
           </div>
           <div className="resumen-fila">
             <span>Saldo después de este pago</span>
-            <strong className="verde">{formatoPesos(saldoTrasPago(pasivo, pesosValidos(monto)))}</strong>
+            <strong className="verde">{formatoPesos(saldoTrasPago(pasivo, valor, abonado))}</strong>
           </div>
           <p className="resumen-nota">Al confirmar, se actualizará el saldo de tu pasivo y el progreso de tus cuotas.</p>
         </aside>

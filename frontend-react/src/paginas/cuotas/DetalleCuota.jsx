@@ -1,5 +1,6 @@
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
+import { abonadoACuota } from '../../datos/pagos.js'
 import { obtenerPasivo, tablaAmortizacion } from '../../datos/pasivos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
@@ -66,7 +67,8 @@ export default function DetalleCuota() {
       </section>
       <section className="total-card">
         <span className="etiqueta-total">Total a Pagar</span>
-        <strong className="valor-total">{formatoPesos(cuota.valorCuota)}</strong>
+        {/* Una cuota puede tener abonos parciales: a pagar queda lo que falta. */}
+        <strong className="valor-total">{formatoPesos(cuota.pagada ? cuota.valorCuota : cuota.valorCuota - abonadoACuota(pasivo.id, cuota.numero))}</strong>
       </section>
       <span className="etiqueta-seccion-contenido">INFORMACIÓN DE LA CUOTA</span>
       <section className="tiles-info-cuota row">

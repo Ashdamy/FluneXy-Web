@@ -3,7 +3,7 @@ import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
 import { listarFondos, obtenerFondo } from '../../datos/fondos.js'
 import { obtenerMeta, progresoMeta } from '../../datos/metas.js'
-import { registrarAporte } from '../../datos/pagos.js'
+import { errorAporte, registrarAporte } from '../../datos/pagos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { formatoPesos, leerPesos, pesosValidos } from '../../utilidades/moneda.js'
@@ -37,15 +37,16 @@ function FormularioAporte({ meta, fondos }) {
 
   function enviar(evento) {
     evento.preventDefault()
-    // ck_saldo_no_negativo de la BD: un fondo no puede quedar en negativo.
-    const error = leerPesos(monto) <= 0 ? 'El monto debe ser mayor a cero'
-      : valor > fondo.saldo ? `Saldo insuficiente en ${fondo.nombre}. Disponible: ${formatoPesos(fondo.saldo)}`
-        : ''
     // noValidate en el form: la validacion se hace solo aqui, al enviar.
+    const error = leerPesos(monto) > 0 ? errorAporte({ fondoId, monto: valor }) : 'El monto debe ser mayor a cero'
     evento.target.elements.monto.setCustomValidity(error)
     if (!evento.target.reportValidity()) return
     registrarAporte({ metaId: meta.id, fondoId, monto: valor })
-    navigate('/pagos/historial')
+
+    // Confirmacion con el impacto del aporte (HU11.2 y HU11.6).
+    const despues = obtenerMeta(meta.id)
+    const aviso = `Aporte registrado. ${meta.nombre}: ${progresoMeta(despues)}% · ${formatoPesos(despues.montoAhorrado)} de ${formatoPesos(despues.montoObjetivo)}. Se descontó de ${fondo.nombre}.`
+    navigate('/pagos/historial', { state: { aviso } })
   }
 
   return (

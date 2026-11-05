@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
 import { metasEnProgreso } from '../../datos/metas.js'
 import { listarPasivos, proximaCuota } from '../../datos/pasivos.js'
@@ -54,6 +54,8 @@ export default function RegistrarPagoOAporte() {
           onAccion={() => navigate('/metas')}
           nota={`${metas} ${metas === 1 ? 'meta activa esperando' : 'metas activas esperando'} tu próximo aporte`}
         />
+        {/* HU11.5: opcion para consultar el historial. El prototipo no traia enlace. */}
+        <Link to="/pagos/historial" className="enlace-ver-cuotas enlace-historial-pagos">Ver historial de pagos y aportes <i className="ph ph-arrow-right"></i></Link>
       </section>
     </>
   )

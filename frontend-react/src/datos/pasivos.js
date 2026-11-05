@@ -143,16 +143,28 @@ export function proximaCuota(pasivo) {
   return tablaAmortizacion(pasivo)[pasivo.cuotasPagadas]
 }
 
-// El pago cubre primero el interes de la cuota y lo demas abona a capital. El
-// saldo no baja de 0. Con el valor exacto de la cuota, el resultado es el saldo
-// que muestra la tabla de amortizacion.
-export function saldoTrasPago(pasivo, monto) {
-  const abono = Math.max(0, monto - proximaCuota(pasivo).interes)
+// Una cuota puede tener varios pagos (abonos parciales): "abonado" es lo que ya
+// se pago de la proxima cuota. Lo pagado cubre primero el interes de la cuota y
+// lo demas abona a capital. Con el valor exacto de la cuota, el resultado es el
+// saldo que muestra la tabla de amortizacion.
+export function saldoTrasPago(pasivo, monto, abonado = 0) {
+  const { interes } = proximaCuota(pasivo)
+  const abono = Math.max(0, abonado + monto - interes) - Math.max(0, abonado - interes)
   return Math.max(0, redondear(pasivo.saldoActual - abono))
 }
 
-// Lo unico que Pagos cambia en un pasivo: sube cuotasPagadas y baja saldoActual.
-export function pagarProximaCuota(id, monto) {
+// Lo maximo que se puede pagar: el saldo mas el interes que falta de la cuota.
+// Con un monto mayor, el saldo seguiria en 0 y el dinero saldria del fondo sin destino.
+export function maximoAPagar(pasivo, abonado = 0) {
+  return redondear(pasivo.saldoActual + Math.max(0, proximaCuota(pasivo).interes - abonado))
+}
+
+// La cuota queda pagada cuando lo abonado cubre su valor. Si el saldo llega a 0
+// con abonos a capital, no queda ninguna cuota por pagar.
+export function pagarProximaCuota(id, monto, abonado = 0) {
   const pasivo = obtenerPasivo(id)
-  actualizarPasivo(id, { cuotasPagadas: pasivo.cuotasPagadas + 1, saldoActual: saldoTrasPago(pasivo, monto) })
+  const saldoActual = saldoTrasPago(pasivo, monto, abonado)
+  const cubierta = redondear(abonado + monto) >= proximaCuota(pasivo).valorCuota
+  const cuotasPagadas = saldoActual === 0 ? pasivo.plazoMeses : pasivo.cuotasPagadas + (cubierta ? 1 : 0)
+  actualizarPasivo(id, { cuotasPagadas, saldoActual })
 }

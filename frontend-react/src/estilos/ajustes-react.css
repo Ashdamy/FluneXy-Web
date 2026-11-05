@@ -45,6 +45,47 @@ body.mod-pasivo-form .campo-fecha-pasivo-input input[type="date"] {
   background: transparent;
 }
 
+/* Periodo del historial. En el prototipo era decorativo; ahora es un select que
+   ocupa todo el recuadro, para que funcione al hacer clic en cualquier parte. */
+.filter-periodo {
+  position: relative;
+}
+
+.filter-periodo select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 0 16px 0 46px;
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filter-periodo select:focus-visible {
+  outline: 2px solid var(--indigo);
+  border-radius: 10px;
+}
+
+.filter-periodo option {
+  background-color: #14143f;
+}
+
+.filter-periodo .flecha-periodo {
+  margin-left: auto;
+  pointer-events: none;
+}
+
+/* Enlace al historial en el selector de Pagos. El prototipo no lo traia. */
+.enlace-historial-pagos {
+  grid-column: 1 / -1;
+  justify-self: end;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 /* Tabla de cuotas. global.css colorea el numero por posicion (primera fila
    ambar, las demas verde) porque el prototipo mostraba solo una pendiente
    arriba. Con la tabla completa el color depende del estado de la cuota. */
