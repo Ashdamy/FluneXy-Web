@@ -20,3 +20,11 @@ export function leerPesos(texto) {
 
 // Patron para <input pattern>: digitos, con o sin puntos de miles, y hasta 2 decimales con coma.
 export const PATRON_PESOS = '(\\d+|\\d{1,3}(\\.\\d{3})+)(,\\d{1,2})?'
+
+// Valor de lo escrito si ya es un monto valido; 0 mientras no lo sea.
+export function pesosValidos(texto) {
+  return new RegExp(`^(${PATRON_PESOS})$`).test(texto) ? leerPesos(texto) : 0
+}
+
+// Redondeo a centavos, como DECIMAL(12,2) en la BD.
+export const redondear = (valor) => Math.round(valor * 100) / 100

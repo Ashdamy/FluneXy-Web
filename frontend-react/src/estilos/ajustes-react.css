@@ -33,6 +33,18 @@ body.mod-pasivo-form .campo-fecha-pasivo-input input[type="date"] {
   cursor: not-allowed;
 }
 
+/* Monto de Registrar Pago y Registrar Aporte. En el prototipo era texto fijo
+   (span.valor-monto); ahora se escribe, asi que el input toma la letra de esa
+   clase y se le quita el recuadro propio del navegador. */
+.input-monto input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 /* Tabla de cuotas. global.css colorea el numero por posicion (primera fila
    ambar, las demas verde) porque el prototipo mostraba solo una pendiente
    arriba. Con la tabla completa el color depende del estado de la cuota. */

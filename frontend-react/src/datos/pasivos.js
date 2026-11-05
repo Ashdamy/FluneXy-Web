@@ -9,6 +9,7 @@
 
 import { valorTotalActivos } from './activos.js'
 import { diaISO, sumarMeses } from '../utilidades/fecha.js'
+import { redondear } from '../utilidades/moneda.js'
 
 // Categorias de aplica_a = 'PASIVO' en bd/02_insert_data.sql, en el orden del
 // prototipo. "color" es la clase de la tarjeta; el prototipo solo trae
@@ -39,8 +40,6 @@ export const AMORTIZACIONES = {
 export const PATRON_TASA = '\\d{1,3}([.,]\\d{1,2})?'
 export const PATRON_PLAZO = '[1-9]\\d{0,2}'
 export const leerTasa = (texto) => Number(String(texto).replace(',', '.'))
-
-const redondear = (valor) => Math.round(valor * 100) / 100
 
 // Cuotas del pasivo, con la misma forma que la tabla cuotas de la BD:
 // valorCuota = abonoCapital + interes (ck_composicion_cuota). Se redondea a
@@ -136,4 +135,24 @@ export function actualizarPasivo(id, cambios) {
 
 export function desactivarPasivo(id) {
   actualizarPasivo(id, { activo: false })
+}
+
+// Las cuotas se pagan en orden: la proxima es la siguiente al contador.
+// undefined si ya estan todas pagadas.
+export function proximaCuota(pasivo) {
+  return tablaAmortizacion(pasivo)[pasivo.cuotasPagadas]
+}
+
+// El pago cubre primero el interes de la cuota y lo demas abona a capital. El
+// saldo no baja de 0. Con el valor exacto de la cuota, el resultado es el saldo
+// que muestra la tabla de amortizacion.
+export function saldoTrasPago(pasivo, monto) {
+  const abono = Math.max(0, monto - proximaCuota(pasivo).interes)
+  return Math.max(0, redondear(pasivo.saldoActual - abono))
+}
+
+// Lo unico que Pagos cambia en un pasivo: sube cuotasPagadas y baja saldoActual.
+export function pagarProximaCuota(id, monto) {
+  const pasivo = obtenerPasivo(id)
+  actualizarPasivo(id, { cuotasPagadas: pasivo.cuotasPagadas + 1, saldoActual: saldoTrasPago(pasivo, monto) })
 }

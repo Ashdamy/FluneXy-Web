@@ -23,6 +23,10 @@ import DetalleMovimiento from './paginas/movimientos/DetalleMovimiento.jsx'
 import EditarMovimiento from './paginas/movimientos/EditarMovimiento.jsx'
 import MisMovimientos from './paginas/movimientos/MisMovimientos.jsx'
 import NuevoMovimiento from './paginas/movimientos/NuevoMovimiento.jsx'
+import HistorialPagos from './paginas/pagos/HistorialPagos.jsx'
+import RegistrarAporte from './paginas/pagos/RegistrarAporte.jsx'
+import RegistrarPago from './paginas/pagos/RegistrarPago.jsx'
+import RegistrarPagoOAporte from './paginas/pagos/RegistrarPagoOAporte.jsx'
 import DetallePasivo from './paginas/pasivos/DetallePasivo.jsx'
 import EditarPasivo from './paginas/pasivos/EditarPasivo.jsx'
 import MisPasivos from './paginas/pasivos/MisPasivos.jsx'
@@ -92,10 +96,10 @@ export default function App() {
         <Route path="/cuotas/:pasivoId" element={<TablaCuotas />} />
         <Route path="/cuotas/:pasivoId/:cuotaId" element={<DetalleCuota />} />
 
-        <Route path="/pagos" element={<Placeholder titulo="Registrar Pago o Aporte" subtitulo="Elige qué deseas registrar" claseBody="mod-pago-selector" />} />
-        <Route path="/pagos/registrar-pago" element={<Placeholder titulo="Registrar Pago" subtitulo="Pago de una cuota" claseBody="mod-pagos" />} />
-        <Route path="/pagos/registrar-aporte" element={<Placeholder titulo="Registrar Aporte" subtitulo="Aporte a una meta" claseBody="mod-pagos" />} />
-        <Route path="/pagos/historial" element={<Placeholder titulo="Historial de Pagos" subtitulo="Pagos y aportes registrados" claseBody="mod-pagos" />} />
+        <Route path="/pagos" element={<RegistrarPagoOAporte />} />
+        <Route path="/pagos/registrar-pago" element={<RegistrarPago />} />
+        <Route path="/pagos/registrar-aporte" element={<RegistrarAporte />} />
+        <Route path="/pagos/historial" element={<HistorialPagos />} />
 
         <Route path="/metas" element={<Placeholder titulo="Mis Metas" subtitulo="Construye tus objetivos financieros" claseBody="mod-lista-metas" />} />
         <Route path="/metas/nueva" element={<Placeholder titulo="Nueva Meta" subtitulo="Define un nuevo objetivo financiero" claseBody="mod-meta-form mod-meta-crear" />} />
