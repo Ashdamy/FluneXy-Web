@@ -84,6 +84,17 @@ export function crearMovimiento(datos) {
   return nuevo
 }
 
+// RN04.1.4 y RN04.3.4: movimiento automatico de saldo inicial o de ajuste. El
+// fondo ya tiene el saldo nuevo, asi que aqui no se mueve. La BD exige monto
+// mayor a cero y no tiene categorias propias para estos casos (conflicto 04).
+export function registrarMovimientoDeFondo(fondoId, diferencia, descripcion) {
+  if (diferencia === 0) return
+  const tipo = diferencia > 0 ? 'ingreso' : 'gasto'
+  const categoria = tipo === 'ingreso' ? 'Otros ingresos' : 'Otros gastos'
+  const fecha = haceDias(0, new Date().toTimeString().slice(0, 5))
+  movimientos = [...movimientos, { id: Math.max(0, ...movimientos.map((m) => m.id)) + 1, tipo, categoria, fondoId, monto: Math.abs(diferencia), fecha, descripcion, activo: true }]
+}
+
 export function actualizarMovimiento(id, cambios) {
   const anterior = obtenerMovimiento(id)
   const actualizado = { ...anterior, ...cambios }

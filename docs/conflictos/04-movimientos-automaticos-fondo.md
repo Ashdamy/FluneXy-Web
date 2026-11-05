@@ -14,7 +14,7 @@
 Por eso un fondo con saldo cero no puede tener su movimiento inicial, y los demás no tienen una categoría propia.
 
 ## Qué hace hoy la aplicación
-Crear un fondo no genera ningún movimiento, y editar su saldo tampoco. La corrección de la auditoría es pendiente de aplicar.
+Aplica la opción 1 mientras el equipo decide: crear un fondo con saldo genera "Saldo inicial", y cambiar el saldo a mano genera "Ajuste de saldo" como ingreso o gasto según la diferencia. Usan las categorías "Otros ingresos" y "Otros gastos". Un fondo con saldo cero no genera movimiento.
 
 ## Opciones
 1. **Generar el movimiento solo si el monto es mayor a cero,** con las categorías "Otros ingresos" y "Otros gastos". No cambia la BD, pero el saldo cero queda sin movimiento y estos movimientos se mezclan con los otros.

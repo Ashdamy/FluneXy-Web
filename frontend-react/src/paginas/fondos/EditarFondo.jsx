@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { actualizarFondo, obtenerFondo, TIPOS_FONDO } from '../../datos/fondos.js'
+import { actualizarFondo, listarFondos, obtenerFondo, TIPOS_FONDO } from '../../datos/fondos.js'
+import { registrarMovimientoDeFondo } from '../../datos/movimientos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
-import { formatoPesos, leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { formatoPesos, leerPesos, PATRON_PESOS, redondear } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import SelectorTipoFondo from './SelectorTipoFondo.jsx'
 
 export default function EditarFondo() {
@@ -17,15 +19,21 @@ export default function EditarFondo() {
   const [tipo, setTipo] = useState(fondo?.tipo)
 
   if (!fondo) return <Navigate to="/fondos" replace />
+  if (!fondo.activo) return <Navigate to={`/fondos/${fondo.id}`} replace />
 
   function enviar(evento) {
     evento.preventDefault()
+    const campoNombre = evento.target.elements.nombre
+    campoNombre.setCustomValidity(nombreRepetido(listarFondos(), campoNombre.value, fondo.id) ? 'Ya tienes un fondo con este nombre' : '')
+    if (!evento.target.reportValidity()) return
     const datos = new FormData(evento.target)
+    const saldo = leerPesos(datos.get('saldo'))
     actualizarFondo(fondo.id, {
       nombre: datos.get('nombre').trim(),
       tipo,
-      saldo: leerPesos(datos.get('saldo')),
+      saldo,
     })
+    registrarMovimientoDeFondo(fondo.id, redondear(saldo - fondo.saldo), 'Ajuste de saldo')
     navigate('/fondos')
   }
 
@@ -43,8 +51,9 @@ export default function EditarFondo() {
           <strong className="monto-saldo-franja">{formatoPesos(fondo.saldo)}</strong>
         </div>
       </section>
-      {/* defaultValue: el campo arranca con el dato actual y el usuario lo cambia libremente. */}
-      <form onSubmit={enviar}>
+      {/* defaultValue: el campo arranca con el dato actual y el usuario lo cambia libremente.
+          noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <p className="seccion-label">INFORMACIÓN DEL FONDO</p>
         <section className="fila-campos">
           <div className="grupo-campo">

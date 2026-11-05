@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
-import { crearFondo } from '../../datos/fondos.js'
+import { crearFondo, listarFondos } from '../../datos/fondos.js'
+import { registrarMovimientoDeFondo } from '../../datos/movimientos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { leerPesos, PATRON_PESOS } from '../../utilidades/moneda.js'
+import { nombreRepetido } from '../../utilidades/validacion.js'
 import SelectorTipoFondo from './SelectorTipoFondo.jsx'
 
 export default function CrearFondo() {
@@ -16,20 +18,25 @@ export default function CrearFondo() {
 
   function enviar(evento) {
     evento.preventDefault()
+    const campoNombre = evento.target.elements.nombre
+    campoNombre.setCustomValidity(nombreRepetido(listarFondos(), campoNombre.value) ? 'Ya tienes un fondo con este nombre' : '')
+    if (!evento.target.reportValidity()) return
     const datos = new FormData(evento.target)
-    crearFondo({
+    const fondo = crearFondo({
       nombre: datos.get('nombre').trim(),
       tipo,
       saldo: leerPesos(datos.get('saldo')),
     })
+    registrarMovimientoDeFondo(fondo.id, fondo.saldo, 'Saldo inicial')
     navigate('/fondos')
   }
 
   return (
     <>
       <EncabezadoPagina titulo="Nuevo Fondo" subtitulo="Registra una nueva cuenta o billetera" />
-      {/* El prototipo no tenia <form>; se agrega para tener validacion nativa y Enter para enviar. */}
-      <form onSubmit={enviar}>
+      {/* El prototipo no tenia <form>; se agrega para tener validacion nativa y Enter para enviar.
+          noValidate: la validacion se hace solo en enviar(). */}
+      <form noValidate onSubmit={enviar}>
         <p className="seccion-label">INFORMACIÓN BÁSICA</p>
         <section className="fila-campos">
           <div className="grupo-campo col-nombre">
