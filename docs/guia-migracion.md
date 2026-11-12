@@ -62,3 +62,12 @@ Para el estado vacío se reutiliza `EstadoVacio`, porque `metas-vacio.html` tien
 - Editar: 135 de 137. Cambian los íconos y se agrega el `<form>`.
 - Modal: el HTML del modal coincide completo; la diferencia está en el listado de fondo, porque el prototipo dibuja ahí una sola tarjeta y otro encabezado.
 - También se compararon capturas de Nueva Meta a 1440 px contra el prototipo, y la disposición es la misma.
+
+## Balance financiero
+**Archivos:** `paginas/balance/BalanceFinanciero.jsx` (nuevo), `componentes/EncabezadoPagina.jsx` (nueva propiedad `extra`) y `App.jsx`.
+
+**Por qué:** el balance no es una tabla de la BD; se calcula cada vez con los activos y pasivos vigentes. Total de activos (RN13.2.1), total de pasivos activos (RN13.3.1 y RN13.3.2), patrimonio = activos − pasivos (RN13.1.3 y RN13.4.1) y endeudamiento = pasivos ÷ activos (RN13.6.1, con la misma función que Mis Pasivos). La liquidez queda fija en "1.6x" porque la documentación no da su fórmula (conflicto 21). El selector de fecha de corte es decorativo porque la BD no guarda historial (conflicto 22).
+
+**Concepto de React:** *pasar JSX como propiedad*. `EncabezadoPagina` recibe `extra={selector}`, un pedazo de JSX armado en la página. Si llega, el encabezado lo dibuja junto a los botones dentro de `acciones-derecha-pagina`, como en el prototipo; si no llega, el encabezado queda igual que en las demás páginas.
+
+**Comparado con el HTML viejo:** 144 de 145 elementos. Solo falta un `<span>` dentro del botón de perfil, que el prototipo pone en algunas páginas y en otras no, y que ningún CSS usa.

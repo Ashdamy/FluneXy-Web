@@ -41,3 +41,5 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Metas | El prototipo redondea el ahorro mensual a miles (.805.000, 33.000); la aplicación muestra el valor exacto redondeado hacia arriba al peso (.805.556, 33.334) | diseño | no |
 | Metas | En Nueva y Editar Meta el subtítulo del encabezado queda pegado a la primera etiqueta y los campos de monto y fecha muestran una caja dentro de otra. Así está el prototipo | diseño | no |
 | Todos | Mensajes de confirmación de crear, editar y desactivar (por ejemplo HU09.1 paso 14, HU09.3 paso 13, HU09.4 paso 12): el prototipo no los tiene, así que se vuelve al listado sin mensaje | diseño | no |
+| Balance, Indicadores | [21](conflictos/21-formula-liquidez.md): la documentación no da la fórmula de la liquidez; se muestra "1.6x" fijo del prototipo | conflicto | no |
+| Balance | [22](conflictos/22-fecha-de-corte-balance.md): la BD no guarda historial para calcular el balance de una fecha pasada; el selector de fecha es decorativo y muestra hoy | conflicto | no |

@@ -6,6 +6,7 @@ import DetalleActivo from './paginas/activos/DetalleActivo.jsx'
 import EditarActivo from './paginas/activos/EditarActivo.jsx'
 import MisActivos from './paginas/activos/MisActivos.jsx'
 import RegistrarActivo from './paginas/activos/RegistrarActivo.jsx'
+import BalanceFinanciero from './paginas/balance/BalanceFinanciero.jsx'
 import CierreSesion from './paginas/autenticacion/CierreSesion.jsx'
 import IniciarSesion from './paginas/autenticacion/IniciarSesion.jsx'
 import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
@@ -110,7 +111,7 @@ export default function App() {
         <Route path="/metas/:id" element={<DetalleMeta />} />
         <Route path="/metas/:id/editar" element={<EditarMeta />} />
 
-        <Route path="/balance-financiero" element={<Placeholder titulo="Balance Financiero" subtitulo="Patrimonio Neto" claseBody="mod-balance" />} />
+        <Route path="/balance-financiero" element={<BalanceFinanciero />} />
         <Route path="/indicadores" element={<Placeholder titulo="Indicadores Financieros" subtitulo="Evalúa tu salud financiera de un vistazo" claseBody="mod-indicadores" />} />
         <Route path="/flujo-caja" element={<Placeholder titulo="Flujo de Caja" subtitulo="Proyección de ingresos y egresos" claseBody="mod-flujo-caja" />} />
 
