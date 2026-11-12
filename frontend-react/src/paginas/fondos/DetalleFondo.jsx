@@ -88,17 +88,18 @@ export default function DetalleFondo() {
           ))}
         </div>
       </section>
-      {/* RN04.4.2: un fondo inactivo no se edita ni se vuelve a desactivar. */}
-      {fondo.activo && (
-        <div className="acciones-detalle">
-          <button type="button" className="btn-secundario" onClick={() => navigate(`/fondos/${fondo.id}/editar`)}>
-            <i className="ph ph-pencil-simple"></i> Editar Fondo
-          </button>
+      {/* HU04.3 permite editar cualquier fondo del usuario, activo o no.
+          RN04.4.2: solo un fondo activo se puede desactivar. */}
+      <div className="acciones-detalle">
+        <button type="button" className="btn-secundario" onClick={() => navigate(`/fondos/${fondo.id}/editar`)}>
+          <i className="ph ph-pencil-simple"></i> Editar Fondo
+        </button>
+        {fondo.activo && (
           <button type="button" className="btn-peligro" onClick={() => setConfirmando(true)}>
             <i className="ph ph-warning"></i> Desactivar Fondo
           </button>
-        </div>
-      )}
+        )}
+      </div>
       {confirmando && (
         <ModalDesactivarFondo fondo={fondo} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />
       )}

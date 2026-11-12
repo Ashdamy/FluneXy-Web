@@ -24,3 +24,4 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [16](16-editar-fondo-meta.md) | Cambiar el fondo al editar una meta | RN09.3.7, HU09.3 | Metas | Abierto |
 | [17](17-categoria-meta.md) | Categoría de una meta | RN03.1.1, RN03.2.2, `categorias.aplica_a` | Metas | Abierto |
 | [18](18-ahorrado-al-desactivar-meta.md) | Dónde queda lo ahorrado al desactivar una meta | RN05.0.1, RN09.4.6 | Metas, Pagos | Abierto |
+| [19](19-ajuste-fondo-inactivo.md) | Ajuste de saldo en un fondo inactivo | RN04.3.4, RN04.4.4 | Fondos | Abierto |

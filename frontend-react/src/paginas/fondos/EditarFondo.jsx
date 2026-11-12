@@ -18,8 +18,8 @@ export default function EditarFondo() {
   // El valor inicial del estado sale del fondo que se esta editando.
   const [tipo, setTipo] = useState(fondo?.tipo)
 
+  // Un fondo inactivo tambien se puede editar (HU04.3 no pide que este activo).
   if (!fondo) return <Navigate to="/fondos" replace />
-  if (!fondo.activo) return <Navigate to={`/fondos/${fondo.id}`} replace />
 
   function enviar(evento) {
     evento.preventDefault()
