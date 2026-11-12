@@ -12,6 +12,12 @@ Decisiones tomadas en la migración a React donde la documentación no da una re
 | Próxima cuota | Regla "RN11.1.2" de HU11.3, RN11.3.3 | "Cuota del siguiente mes" se interpreta como la próxima cuota pendiente; un pago anticipado no puede superar lo que falta de ella | Ver [conflicto 14](conflictos/14-numeracion-rn11-1-2.md) |
 | Aporte consistente con el ahorro mensual | RN11.2.2, RN09.1.5 | No se bloquea ningún aporte por este motivo | La regla no define cómo medir "consistente", y el prototipo muestra un aporte de $500.000 en una meta de $1.000.000 al mes |
 
+## Fondos
+
+| Decisión | Regla relacionada | Qué hace la aplicación | Por qué |
+|---|---|---|---|
+| Actividad y transacciones del fondo | RN04.2.1, RN04.2.3, RN04.1.4, RN04.3.4, RN05.4.5 | "Transacciones" cuenta los movimientos activos del fondo, incluidos "Saldo inicial" y "Ajuste de saldo"; "Actividad reciente" muestra los 3 más recientes, como el prototipo | RN05.4.5: los movimientos inactivos no participan en los cálculos financieros |
+
 ## Otros módulos
 
 | Decisión | Regla relacionada | Qué hace la aplicación | Por qué |

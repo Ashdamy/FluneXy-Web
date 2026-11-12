@@ -73,6 +73,13 @@ export function listarMovimientos() {
   return [...movimientos].sort((a, b) => b.fecha.localeCompare(a.fecha))
 }
 
+// Movimientos vigentes de un fondo, mas recientes primero. Incluye los
+// automaticos ("Saldo inicial" y "Ajuste de saldo"). Los inactivos no
+// cuentan porque ya no afectan el saldo.
+export function movimientosDeFondo(fondoId) {
+  return listarMovimientos().filter((movimiento) => movimiento.fondoId === Number(fondoId) && movimiento.activo)
+}
+
 export function obtenerMovimiento(id) {
   return movimientos.find((movimiento) => movimiento.id === Number(id))
 }

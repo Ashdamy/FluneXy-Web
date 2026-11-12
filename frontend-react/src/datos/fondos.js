@@ -18,12 +18,6 @@ let fondos = [
     activo: true,
     creado: '12 Ene 2025',
     actualizacion: 'Hace 2 días',
-    transacciones: 47,
-    actividad: [
-      { id: 1, concepto: 'Nómina Enero', monto: 3200000 },
-      { id: 2, concepto: 'Supermercado', monto: -180000 },
-      { id: 3, concepto: 'Servicios públicos', monto: -220000 },
-    ],
   },
   {
     id: 2,
@@ -33,11 +27,6 @@ let fondos = [
     activo: true,
     creado: '3 Feb 2025',
     actualizacion: 'Hoy',
-    transacciones: 23,
-    actividad: [
-      { id: 1, concepto: 'Netflix', monto: -45000 },
-      { id: 2, concepto: 'Transporte', monto: -8400 },
-    ],
   },
   {
     id: 3,
@@ -47,8 +36,6 @@ let fondos = [
     activo: true,
     creado: '12 Ene 2025',
     actualizacion: 'Ayer',
-    transacciones: 12,
-    actividad: [{ id: 1, concepto: 'Mercado Éxito', monto: -180000 }],
   },
   {
     id: 4,
@@ -58,8 +45,6 @@ let fondos = [
     activo: false,
     creado: '20 Mar 2025',
     actualizacion: 'Hace 1 mes',
-    transacciones: 5,
-    actividad: [],
   },
 ]
 
@@ -80,8 +65,6 @@ export function crearFondo({ nombre, tipo, saldo }) {
     activo: true,
     creado: 'Hoy',
     actualizacion: 'Hoy',
-    transacciones: 0,
-    actividad: [],
   }
   fondos = [...fondos, nuevo]
   return nuevo

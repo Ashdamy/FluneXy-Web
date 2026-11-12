@@ -29,4 +29,5 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Movimientos | El filtro de Mis Movimientos (RN05.5.3) es decorativo, como en el prototipo: falta el diseño del menú de filtros | diseño | no |
 | Fondos, Activos, Pasivos, Metas | El botón "Todos" o "Todas" de los listados es decorativo, como en el prototipo: falta el diseño del menú | diseño | no |
 | Fondos | El chip "Inactivo" del detalle del fondo se ve en verde, igual que "Activo": el prototipo no trae un estilo para el detalle inactivo | diseño | no |
+| Fondos | Los fondos de prueba no traen su movimiento de "Saldo inicial", así que su saldo no se puede reconstruir desde Movimientos (ver conflicto 05). Los fondos nuevos sí lo generan | error | no |
 | Plantillas | Las ejecuciones automáticas (RN06.0.9) necesitan un proceso del backend; hoy los contadores son datos fijos | diseño | no |

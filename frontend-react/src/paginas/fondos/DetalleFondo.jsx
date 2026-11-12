@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import EncabezadoPagina from '../../componentes/EncabezadoPagina.jsx'
 import { desactivarFondo, obtenerFondo, TIPOS_FONDO } from '../../datos/fondos.js'
+import { movimientosDeFondo, tituloMovimiento } from '../../datos/movimientos.js'
 import useClaseBody from '../../hooks/useClaseBody.js'
 import useTituloPagina from '../../hooks/useTituloPagina.js'
 import { formatoPesos } from '../../utilidades/moneda.js'
@@ -18,6 +19,8 @@ export default function DetalleFondo() {
   const fondo = obtenerFondo(id)
   if (!fondo) return <Navigate to="/fondos" replace />
   const tipo = TIPOS_FONDO[fondo.tipo]
+  // Salen de Movimientos: lo que se registra alli se ve aqui. El prototipo muestra los 3 ultimos.
+  const movimientos = movimientosDeFondo(fondo.id)
 
   function confirmarDesactivar() {
     desactivarFondo(fondo.id)
@@ -65,7 +68,7 @@ export default function DetalleFondo() {
               <i className="ph ph-chart-bar"></i>
               <span className="tile-label">TRANSACCIONES</span>
             </div>
-            <strong>{fondo.transacciones}</strong>
+            <strong>{movimientos.length}</strong>
           </div>
           <div className="tile-info">
             <div className="fila-tile">
@@ -79,11 +82,11 @@ export default function DetalleFondo() {
       <section className="actividad-reciente">
         <span className="seccion-label">ACTIVIDAD RECIENTE</span>
         <div className="lista-transacciones">
-          {fondo.actividad.map((item) => (
-            <div key={item.id} className={`item-transaccion ${item.monto > 0 ? 'ingreso' : 'gasto'}`}>
+          {movimientos.slice(0, 3).map((movimiento) => (
+            <div key={movimiento.id} className={`item-transaccion ${movimiento.tipo}`}>
               <span className="punto"></span>
-              <p>{item.concepto}</p>
-              <strong>{item.monto > 0 ? '+' : ''}{formatoPesos(item.monto)}</strong>
+              <p>{tituloMovimiento(movimiento)}</p>
+              <strong>{movimiento.tipo === 'ingreso' ? '+' : '-'}{formatoPesos(movimiento.monto)}</strong>
             </div>
           ))}
         </div>
