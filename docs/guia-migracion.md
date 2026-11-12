@@ -179,3 +179,23 @@ Las variaciones y los gráficos quedan fijos, porque no hay historial para calcu
 - *Clase según la ruta.* `LayoutApp` usa `useLocation()` para saber la ruta y le pone `pagina-home` al `<main>` solo en `/home`, como el HTML viejo.
 
 **Comparado con el HTML viejo:** 206 de 215 elementos. Las 9 diferencias son los tres movimientos de ejemplo del prototipo; ahora se muestran los reales, con el ícono de su categoría.
+
+## Usuario
+**Archivos:** `paginas/usuario/MiPerfil.jsx`, `EditarPerfil.jsx`, `CambiarContrasena.jsx` y `DesactivarCuenta.jsx` (nuevos), y `App.jsx` (incluida la ruta nueva `/usuario/desactivar-cuenta`). Usan `datos/usuario.js`, creado con Inicio.
+
+**Por qué:**
+- El perfil muestra los datos de la tabla `usuarios` (RN02.4).
+- Editar exige todos los campos y un correo con formato válido (RN02.5.3); los largos máximos son los de la BD (75 y 150).
+- Cambiar Contraseña valida la regla de seguridad (RN02.3), que la nueva no sea igual a la actual (RN02.6.4) y que la confirmación coincida (RN02.6.3).
+- Desactivar pide la contraseña (RN02.7.1 y RN02.7.2), cambia solo el estado (RN02.7.3 y RN02.7.4) y lleva a Cierre de Sesión (RN02.7.5).
+- Lo que necesita el servidor (comprobar la contraseña actual y que el correo no se repita) quedó en pendientes.
+
+Las 4 páginas marcan "Mi perfil" en la barra lateral, como decidió Santiago: `NavLink` marca `/usuario` también en `/usuario/editar` y demás.
+
+**Conceptos de React**
+- *Componente con "el resto" de propiedades.* `CampoClave({ id, etiqueta, ...props })` toma `id` y `etiqueta`, y todo lo demás (`pattern`, `onInput`, `autoComplete`) se lo pasa al `<input>` con `{...props}`. Así los 3 campos de contraseña comparten el mismo HTML.
+- *Validación propia con `setCustomValidity`.* "Las contraseñas no coinciden" no se puede expresar con `required` ni `pattern`. Se marca el campo con `setCustomValidity('mensaje')` y `reportValidity()` muestra el aviso nativo del navegador; con `''` el campo vuelve a ser válido.
+
+**Comparado con el HTML viejo**
+- Mi Perfil: 143 de 143.
+- Editar, Cambiar Contraseña y Desactivar: solo cambian el `<form>` agregado (en Desactivar, `section.dc-modal` pasa a `form.dc-modal`) y el enlace "Mi perfil" marcado en la barra.

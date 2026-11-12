@@ -52,6 +52,10 @@ import DetalleReporte from './paginas/reportes/DetalleReporte.jsx'
 import GenerarReporte from './paginas/reportes/GenerarReporte.jsx'
 import HistorialReportes from './paginas/reportes/HistorialReportes.jsx'
 import VistaPreviaReporte from './paginas/reportes/VistaPreviaReporte.jsx'
+import CambiarContrasena from './paginas/usuario/CambiarContrasena.jsx'
+import DesactivarCuenta from './paginas/usuario/DesactivarCuenta.jsx'
+import EditarPerfil from './paginas/usuario/EditarPerfil.jsx'
+import MiPerfil from './paginas/usuario/MiPerfil.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -80,9 +84,10 @@ export default function App() {
       <Route element={<LayoutApp />}>
         <Route path="/home" element={<Inicio />} />
 
-        <Route path="/usuario" element={<Placeholder titulo="Mi Perfil" subtitulo="Consulta y administra tu información" claseBody="mod-usuario" />} />
-        <Route path="/usuario/editar" element={<Placeholder titulo="Editar Perfil" subtitulo="Actualiza tu información personal" claseBody="mod-usuario" />} />
-        <Route path="/usuario/cambiar-contrasena" element={<Placeholder titulo="Cambiar Contraseña" subtitulo="Protege el acceso a tu cuenta" claseBody="mod-usuario" />} />
+        <Route path="/usuario" element={<MiPerfil />} />
+        <Route path="/usuario/editar" element={<EditarPerfil />} />
+        <Route path="/usuario/cambiar-contrasena" element={<CambiarContrasena />} />
+        <Route path="/usuario/desactivar-cuenta" element={<DesactivarCuenta />} />
 
         <Route path="/fondos" element={<MisFondos />} />
         <Route path="/fondos/nuevo" element={<CrearFondo />} />
