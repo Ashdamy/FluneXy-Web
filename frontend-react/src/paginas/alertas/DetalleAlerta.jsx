@@ -92,13 +92,14 @@ export default function DetalleAlerta() {
         <span className="a-arr"><i className="ph ph-arrow-right"></i></span>
       </Link>
       <div className="detalle-divider"></div>
-      {/* RN15.5.3: solo se desactiva una activa. Inactiva: sin Editar ni Desactivar (conflicto 26). */}
-      {alerta.activo && (
-        <section className="acciones-alerta">
-          <button type="button" className="btn-editar" onClick={() => navigate(`/alertas/${alerta.id}/editar`)}>Editar Alerta</button>
+      {/* Conflicto 26 (decidido): Editar tambien en una inactiva, para reactivarla (HU15.4).
+          RN15.5.3: solo se desactiva una activa. */}
+      <section className="acciones-alerta">
+        <button type="button" className="btn-editar" onClick={() => navigate(`/alertas/${alerta.id}/editar`)}>Editar Alerta</button>
+        {alerta.activo && (
           <button type="button" className="btn-desactivar" onClick={() => setConfirmando(true)}>Desactivar Alerta</button>
-        </section>
-      )}
+        )}
+      </section>
       {confirmando && <ModalDesactivarAlerta alerta={alerta} onCancelar={() => setConfirmando(false)} onConfirmar={confirmarDesactivar} />}
     </>
   )

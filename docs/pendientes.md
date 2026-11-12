@@ -49,7 +49,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Flujo de caja | [25](conflictos/25-que-se-proyecta-en-el-flujo.md): "información proyectada" y "aportes programados" no están definidos y la BD no tiene aportes programados | conflicto | no |
 | Flujo de caja | El selector de periodo es decorativo, como en el prototipo: siempre muestra el mes actual (RN12.1.1 pide elegir el periodo). Falta el diseño del menú | diseño | no |
 | Flujo de caja | Saldo proyectado negativo: la etiqueta dice "Negativo" pero el CSS solo tiene el estilo de "Positivo" (`pill-saldo.positivo`) | diseño | no |
-| Alertas | [26](conflictos/26-activar-alerta.md): con la regla de no mostrar Editar en inactivos, una alerta desactivada no se puede reactivar (HU15.4), aunque el modal dice que sí. Hay que decidirlo | conflicto | no |
+| Alertas | [26](conflictos/26-activar-alerta.md): reactivar una alerta inactiva. Decidido por Santiago: ninguna RN15.x prohíbe editarla, así que la inactiva muestra Editar (sin Desactivar) y se reactiva con el interruptor | conflicto | no |
 | Alertas | [27](conflictos/27-tipos-de-alerta.md): los 3 tipos del prototipo no son los 5 de los datos de ejemplo de la BD, y la documentación no da la lista ni el rango del umbral | conflicto | no |
 | Alertas | Antes se había acordado que Alertas lo haría un compañero en otra rama. Se migró aquí por la nueva instrucción; hay que revisarlo antes de unir esa rama para no duplicar el trabajo | conflicto | no |
 | Alertas | La generación automática de alertas (RN15.6) y su notificación son del backend; el historial de prueba es fijo. El contador "3" de Alertas en la barra lateral también es fijo | diseño | no |
@@ -74,3 +74,46 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Todos | [12](conflictos/12-decimales-en-pesos.md): pesos con o sin decimales (IEEE 3.13.2, RN04.1.3) | conflicto | no |
 | Todos | Mensajes de confirmación de crear, editar y desactivar (por ejemplo HU09.1 paso 14, HU09.3 paso 13, HU09.4 paso 12): el prototipo no los tiene, así que se vuelve al listado sin mensaje | diseño | no |
 | Todos | La ruta de página no encontrada ("*") sigue con el texto temporal "Página en construcción": el prototipo no tiene diseño de error 404 | diseño | no |
+
+## Números en pantalla que no son calculados
+
+Para que el equipo sepa qué cifras no salen de los datos. **Fijo:** el valor está escrito en el código, copiado del prototipo. **Provisional:** se calcula, pero con una regla que la documentación no define.
+
+### Fijos
+
+| Pantalla | Número | Por qué |
+|---|---|---|
+| Balance | Liquidez "1.6x" | No hay fórmula ([conflicto 21](conflictos/21-formula-liquidez.md)) |
+| Balance | Fecha de corte (siempre hoy) | La BD no guarda historial ([conflicto 22](conflictos/22-fecha-de-corte-balance.md)) |
+| Indicadores | Liquidez "1.6x" y su estado "Saludable" | Conflictos 21 y 24 |
+| Indicadores | Ahorro Mensual "33 %" y "Saludable" | Indicador sin definir ([conflicto 24](conflictos/24-indicadores-sin-definir.md)) |
+| Indicadores | Cobertura de Deuda "N/A" y "Sin datos" | Conflicto 24 |
+| Indicadores | Índice de Salud Financiera "82 / 100" y su barra | Conflicto 24 |
+| Indicadores | "Indicadores · 4 activos" | Texto del prototipo |
+| Alertas | Valor actual de la alerta de Liquidez ("1.6x") | Usa la liquidez fija del conflicto 21 |
+| Alertas | Historial de alertas generadas (valores, fechas y cantidades) | Datos de prueba; generarlas es del backend (RN15.6) |
+| Alertas | "Últimos 30 días" del historial | Texto del prototipo; el número cuenta el mes calendario |
+| Barra lateral | Contador "3" de Alertas | Vendrá de la API de alertas |
+| Inicio | "▲ +2.4 % hoy" del patrimonio | La BD no guarda historial del patrimonio |
+| Inicio | Gráfico de barras del patrimonio | Decorativo, sin datos |
+| Inicio | Variaciones "+12 %", "+5 %" y "+8 %" del resumen | No hay mes anterior con qué comparar |
+| Inicio | Largo de las barras del resumen | Copiado del prototipo |
+| Reportes | En la vista previa de Indicadores: liquidez, ahorro mensual, cobertura e índice de salud | Mismos valores fijos de Indicadores |
+| Reportes | Periodo del reporte (siempre el mes actual) | El selector es decorativo |
+| Flujo de caja | Periodo (siempre el mes actual) | El selector es decorativo |
+| Plantillas | Motivo de "última falla" | Lo registrará el backend al ejecutar |
+| Autenticación | Contador de reenvío del código de verificación | Hasta que exista la API |
+| Landing | Cifras de la maqueta ("$ 2,540,000", "+12.4 %", tabla de movimientos) | Ilustración del prototipo |
+
+### Provisionales
+
+| Pantalla | Número | Regla usada hoy |
+|---|---|---|
+| Metas | Estado (En progreso, Requiere esfuerzo, ¡Casi lista!, Completada) | Límites que reproducen los ejemplos del prototipo; "Completada" la decidió Santiago (ahorrado ≥ objetivo) |
+| Metas | Chip "Alcanzable" | Siempre visible, como el prototipo |
+| Metas | Ahorro mensual requerido | Lo que falta ÷ meses completos restantes (decidido por Santiago, conflicto 15), redondeado hacia arriba |
+| Pasivos, Balance, Indicadores, Inicio | Nivel de endeudamiento (bajo, moderado, alto) | Menos de 20 %, menos de 40 % y 40 % o más; el "Alerta si supera 40 %" de Mis Pasivos es fijo |
+| Flujo de caja (y Reportes de Flujo) | Ingresos y gastos estimados, ahorro de metas y saldo proyectado | Movimientos del mes + ejecuciones pendientes de plantillas; ahorro mensual de las metas ([conflicto 25](conflictos/25-que-se-proyecta-en-el-flujo.md)) |
+| Inicio | Ingresos, gastos y ahorro del mes | Solo movimientos registrados en el mes (sin las proyecciones del Flujo) |
+| Plantillas | Ejecuciones completadas | Se cuentan las fechas de ejecución que ya pasaron, no ejecuciones reales (RN06.0.9 depende del backend) |
+| Alertas | Umbral permitido | Mayor que cero y, en porcentajes, hasta 100 (RN15.3.2 no da el rango) |

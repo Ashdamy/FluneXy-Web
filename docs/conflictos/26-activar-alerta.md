@@ -12,8 +12,11 @@
 
 Con la instrucción aplicada tal cual, una alerta desactivada no se puede volver a activar, aunque el modal dice que sí.
 
+## Qué dicen las reglas de MOD15 sobre editar una inactiva
+Ninguna lo prohíbe. HU15.4 (precondición "la configuración de alertas debe existir"; paso 7, "valida que la configuración de la alerta exista y se encuentre inactiva") justamente se aplica a una alerta inactiva. La única restricción por estado es RN15.5.3 (y la precondición de HU15.5): solo se desactiva una alerta activa. HU15.2 y HU15.3 no piden un estado.
+
 ## Qué hace hoy la aplicación
-Sigue la instrucción de Santiago: la alerta inactiva solo muestra "Ver detalle", y `/alertas/:id/editar` vuelve al detalle. El interruptor del formulario sirve al crear (nace activa o inactiva) y al editar una activa.
+La alerta inactiva muestra "Ver detalle" y "Editar", sin "Desactivar", igual que los fondos inactivos. `/alertas/:id/editar` abre el formulario, y el interruptor ON/OFF la reactiva.
 
 ## Opciones
 1. **Excepción para Alertas:** la inactiva muestra Editar (no Desactivar), como el prototipo, y se reactiva con el interruptor.
@@ -23,4 +26,4 @@ Sigue la instrucción de Santiago: la alerta inactiva solo muestra "Ver detalle"
 **Recomendación (no es una decisión):** opción 1, igual que se hizo con los fondos inactivos.
 
 ## Estado
-Abierto hasta que Santiago decida.
+Decidido por Santiago el 2026-11-12: opción 1, porque ninguna regla RN15.x prohíbe editar una alerta inactiva.

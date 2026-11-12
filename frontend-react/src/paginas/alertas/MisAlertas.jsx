@@ -28,12 +28,11 @@ function TarjetaAlerta({ alerta, onVer, onEditar, onDesactivar }) {
         </div>
         <div className="alerta-acciones">
           <button type="button" className="alerta-accion" title="Ver detalle" onClick={accion(onVer)}><i className="ph ph-eye"></i></button>
-          {/* Como en los demas modulos, una inactiva no muestra Editar ni Desactivar (conflicto 26). */}
+          {/* Conflicto 26 (decidido): Editar tambien en una inactiva, para reactivarla con el
+              interruptor (HU15.4). RN15.5.3: solo una activa se desactiva. */}
+          <button type="button" className="alerta-accion" title="Editar" onClick={accion(onEditar)}><i className="ph ph-pencil-simple"></i></button>
           {alerta.activo && (
-            <>
-              <button type="button" className="alerta-accion" title="Editar" onClick={accion(onEditar)}><i className="ph ph-pencil-simple"></i></button>
-              <button type="button" className="alerta-accion alerta-accion-peligro" title="Desactivar" onClick={accion(onDesactivar)}><i className="ph ph-warning"></i></button>
-            </>
+            <button type="button" className="alerta-accion alerta-accion-peligro" title="Desactivar" onClick={accion(onDesactivar)}><i className="ph ph-warning"></i></button>
           )}
         </div>
         <span className={alerta.activo ? 'alerta-estado' : 'alerta-estado alerta-estado-inactiva'}>

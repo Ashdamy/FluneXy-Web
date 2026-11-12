@@ -19,9 +19,8 @@ export function EditarAlerta() {
   useClaseBody('mod-alertas mod-alertas-configurar')
   useTituloPagina('Editar Alerta')
   const alerta = obtenerAlerta(useParams().id)
+  // Una inactiva tambien se edita: asi se reactiva con el interruptor (HU15.4, conflicto 26).
   if (!alerta) return <Navigate to="/alertas" replace />
-  // Como en los demas modulos, una inactiva no se edita (conflicto 26).
-  if (!alerta.activo) return <Navigate to={`/alertas/${alerta.id}`} replace />
   return <Formulario alerta={alerta} />
 }
 
