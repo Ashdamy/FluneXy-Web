@@ -43,3 +43,5 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Todos | Mensajes de confirmación de crear, editar y desactivar (por ejemplo HU09.1 paso 14, HU09.3 paso 13, HU09.4 paso 12): el prototipo no los tiene, así que se vuelve al listado sin mensaje | diseño | no |
 | Balance, Indicadores | [21](conflictos/21-formula-liquidez.md): la documentación no da la fórmula de la liquidez; se muestra "1.6x" fijo del prototipo | conflicto | no |
 | Balance | [22](conflictos/22-fecha-de-corte-balance.md): la BD no guarda historial para calcular el balance de una fecha pasada; el selector de fecha es decorativo y muestra hoy | conflicto | no |
+| Indicadores | [23](conflictos/23-indicadores-almacenados.md): la documentación dice que los indicadores se almacenan, pero la BD no tiene tabla; se calculan cada vez | conflicto | no |
+| Indicadores | [24](conflictos/24-indicadores-sin-definir.md): solo el endeudamiento tiene fórmula; liquidez, ahorro mensual, cobertura de deuda y el índice de salud muestran los valores fijos del prototipo | conflicto | no |

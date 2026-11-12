@@ -28,3 +28,5 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [20](20-fecha-al-editar-meta.md) | Editar una meta vencida obliga a cambiar su fecha | RN09.3.5, RN09.3.2 | Metas | Abierto |
 | [21](21-formula-liquidez.md) | Fórmula de la liquidez | RN13.5.1, HU13.5 | Balance, Indicadores | Abierto |
 | [22](22-fecha-de-corte-balance.md) | Balance a una fecha de corte | RN13.1.1, RN13.1.2, RN13.2.1 | Balance | Abierto |
+| [23](23-indicadores-almacenados.md) | Indicadores calculados o almacenados | RN14.2.2, RN14.3.2 | Indicadores | Abierto |
+| [24](24-indicadores-sin-definir.md) | Indicadores sin definición | RN14.1.1, RN13.6.1 | Indicadores | Abierto |

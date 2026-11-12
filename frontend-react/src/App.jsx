@@ -18,6 +18,7 @@ import PasivosConCuotas from './paginas/cuotas/PasivosConCuotas.jsx'
 import TablaCuotas from './paginas/cuotas/TablaCuotas.jsx'
 import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
 import EditarMeta from './paginas/metas/EditarMeta.jsx'
+import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
 import MisMetas from './paginas/metas/MisMetas.jsx'
 import NuevaMeta from './paginas/metas/NuevaMeta.jsx'
 import CrearFondo from './paginas/fondos/CrearFondo.jsx'
@@ -112,7 +113,7 @@ export default function App() {
         <Route path="/metas/:id/editar" element={<EditarMeta />} />
 
         <Route path="/balance-financiero" element={<BalanceFinanciero />} />
-        <Route path="/indicadores" element={<Placeholder titulo="Indicadores Financieros" subtitulo="Evalúa tu salud financiera de un vistazo" claseBody="mod-indicadores" />} />
+        <Route path="/indicadores" element={<IndicadoresFinancieros />} />
         <Route path="/flujo-caja" element={<Placeholder titulo="Flujo de Caja" subtitulo="Proyección de ingresos y egresos" claseBody="mod-flujo-caja" />} />
 
         <Route path="/alertas" element={<Placeholder titulo="Mis Alertas" subtitulo="Configura avisos para riesgos financieros" claseBody="mod-alertas mod-alertas-lista" />} />

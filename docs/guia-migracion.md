@@ -71,3 +71,12 @@ Para el estado vacío se reutiliza `EstadoVacio`, porque `metas-vacio.html` tien
 **Concepto de React:** *pasar JSX como propiedad*. `EncabezadoPagina` recibe `extra={selector}`, un pedazo de JSX armado en la página. Si llega, el encabezado lo dibuja junto a los botones dentro de `acciones-derecha-pagina`, como en el prototipo; si no llega, el encabezado queda igual que en las demás páginas.
 
 **Comparado con el HTML viejo:** 144 de 145 elementos. Solo falta un `<span>` dentro del botón de perfil, que el prototipo pone en algunas páginas y en otras no, y que ningún CSS usa.
+
+## Indicadores financieros
+**Archivos:** `paginas/indicadores/IndicadoresFinancieros.jsx` (nuevo) y `App.jsx`.
+
+**Por qué:** la documentación (MOD14) no dice qué indicadores hay ni cómo se calculan (conflicto 24), y habla de indicadores "almacenados" que la BD no tiene (conflicto 23). Se calcula solo el endeudamiento, el único con fórmula (RN13.6.1); su estado usa los niveles de Mis Pasivos. Liquidez, Ahorro Mensual, Cobertura de Deuda y el Índice de Salud Financiera muestran los valores del prototipo.
+
+**Concepto de React:** *un componente que se repite*. Las 4 tarjetas tienen el mismo HTML, así que se escribió `TarjetaIndicador` una vez y se usa 4 veces con distintas propiedades. `claseEstado` tiene un valor por defecto (`'ind-estado'`), y solo la tarjeta "Sin datos" pasa otro.
+
+**Comparado con el HTML viejo:** 138 de 140 elementos. En la tarjeta de Liquidez el prototipo usa `<i class="ind-punto">` y en las otras `<span class="ind-punto">`; React usa `<span>` en las 4. Además falta el `<span>` del botón de perfil, igual que en Balance.
