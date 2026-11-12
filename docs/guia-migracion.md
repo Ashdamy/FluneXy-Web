@@ -80,3 +80,17 @@ Para el estado vacío se reutiliza `EstadoVacio`, porque `metas-vacio.html` tien
 **Concepto de React:** *un componente que se repite*. Las 4 tarjetas tienen el mismo HTML, así que se escribió `TarjetaIndicador` una vez y se usa 4 veces con distintas propiedades. `claseEstado` tiene un valor por defecto (`'ind-estado'`), y solo la tarjeta "Sin datos" pasa otro.
 
 **Comparado con el HTML viejo:** 138 de 140 elementos. En la tarjeta de Liquidez el prototipo usa `<i class="ind-punto">` y en las otras `<span class="ind-punto">`; React usa `<span>` en las 4. Además falta el `<span>` del botón de perfil, igual que en Balance.
+
+## Flujo de caja
+**Archivos:** `datos/flujoCaja.js` (nuevo: el cálculo), `paginas/flujoCaja/FlujoCaja.jsx` (nuevo: la pantalla y su estado vacío) y `App.jsx`.
+
+**Por qué:** el flujo no es una tabla de la BD; se calcula con los datos de otros módulos (RN12.1.2, RN12.1.4). Para el mes actual suma:
+- ingresos y gastos: movimientos activos del mes, más las ejecuciones de plantillas activas que todavía no llegan (RN12.2 y RN12.3);
+- cuotas de deuda: las de pasivos activos que vencen en el mes, cada una una sola vez (RN12.4.1 y RN12.4.3);
+- ahorro de metas: el ahorro mensual de las metas en progreso (RN12.5.1).
+
+El saldo es ingresos − gastos − cuotas − metas (RN12.6.1 y RN12.6.2). Sin ningún registro del periodo se muestra el estado vacío (RN12.6.5). Qué cuenta como "estimado" y "programado" quedó en el conflicto 25.
+
+**Concepto de React:** *separar el cálculo de la pantalla*. `flujoDelMes()` vive en `datos/`, no en el componente. La pantalla solo dibuja lo que esa función devuelve, y la misma función la podrán usar Home y Reportes sin copiar la lógica.
+
+**Comparado con el HTML viejo:** flujo, 123 de 123 elementos; vacío, 92 de 92. El estado vacío no usa `EstadoVacio`, porque `flujo-vacio.html` tiene otro HTML (`estado-vacio flujo-vacio`, `ilustracion-estado-vacio`...).

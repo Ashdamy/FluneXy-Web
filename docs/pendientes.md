@@ -45,3 +45,7 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Balance | [22](conflictos/22-fecha-de-corte-balance.md): la BD no guarda historial para calcular el balance de una fecha pasada; el selector de fecha es decorativo y muestra hoy | conflicto | no |
 | Indicadores | [23](conflictos/23-indicadores-almacenados.md): la documentación dice que los indicadores se almacenan, pero la BD no tiene tabla; se calculan cada vez | conflicto | no |
 | Indicadores | [24](conflictos/24-indicadores-sin-definir.md): solo el endeudamiento tiene fórmula; liquidez, ahorro mensual, cobertura de deuda y el índice de salud muestran los valores fijos del prototipo | conflicto | no |
+| Flujo de caja | [25](conflictos/25-que-se-proyecta-en-el-flujo.md): "información proyectada" y "aportes programados" no están definidos y la BD no tiene aportes programados | conflicto | no |
+| Flujo de caja | El selector de periodo es decorativo, como en el prototipo: siempre muestra el mes actual (RN12.1.1 pide elegir el periodo). Falta el diseño del menú | diseño | no |
+| Flujo de caja | Saldo proyectado negativo: la etiqueta dice "Negativo" pero el CSS solo tiene el estilo de "Positivo" (`pill-saldo.positivo`) | diseño | no |
+| Balance | El banner "Ver Indicadores Financieros" del Balance no lleva a ningún lado, como en el prototipo | diseño | no |

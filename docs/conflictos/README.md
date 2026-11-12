@@ -30,3 +30,4 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [22](22-fecha-de-corte-balance.md) | Balance a una fecha de corte | RN13.1.1, RN13.1.2, RN13.2.1 | Balance | Abierto |
 | [23](23-indicadores-almacenados.md) | Indicadores calculados o almacenados | RN14.2.2, RN14.3.2 | Indicadores | Abierto |
 | [24](24-indicadores-sin-definir.md) | Indicadores sin definición | RN14.1.1, RN13.6.1 | Indicadores | Abierto |
+| [25](25-que-se-proyecta-en-el-flujo.md) | Qué se proyecta en el flujo de caja | RN12.2.1, RN12.3.1, RN12.5.1 | Flujo de caja | Abierto |

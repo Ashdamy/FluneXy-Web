@@ -16,6 +16,7 @@ import VerificacionContrasena from './paginas/autenticacion/VerificacionContrase
 import DetalleCuota from './paginas/cuotas/DetalleCuota.jsx'
 import PasivosConCuotas from './paginas/cuotas/PasivosConCuotas.jsx'
 import TablaCuotas from './paginas/cuotas/TablaCuotas.jsx'
+import FlujoCaja from './paginas/flujoCaja/FlujoCaja.jsx'
 import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
 import EditarMeta from './paginas/metas/EditarMeta.jsx'
 import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
@@ -114,7 +115,7 @@ export default function App() {
 
         <Route path="/balance-financiero" element={<BalanceFinanciero />} />
         <Route path="/indicadores" element={<IndicadoresFinancieros />} />
-        <Route path="/flujo-caja" element={<Placeholder titulo="Flujo de Caja" subtitulo="Proyección de ingresos y egresos" claseBody="mod-flujo-caja" />} />
+        <Route path="/flujo-caja" element={<FlujoCaja />} />
 
         <Route path="/alertas" element={<Placeholder titulo="Mis Alertas" subtitulo="Configura avisos para riesgos financieros" claseBody="mod-alertas mod-alertas-lista" />} />
         <Route path="/alertas/nueva" element={<Placeholder titulo="Nueva Alerta" subtitulo="Define cuándo quieres recibir un aviso" claseBody="mod-alertas mod-alertas-configurar" />} />
