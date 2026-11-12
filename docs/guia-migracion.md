@@ -145,3 +145,19 @@ La generación automática (RN15.6) es del backend. Reactivar una alerta quedó 
 **Comparado con el HTML viejo**
 - Vista previa: 117 de 117.
 - Historial, Generar y Detalle: un elemento menos cada uno (el `<span>` del botón de perfil).
+
+## Asistente inteligente
+**Archivos:** `datos/preguntasFrecuentes.js` (nuevo: las 10 preguntas de la tabla `preguntas_frecuentes` y la búsqueda), `paginas/asistente/Asistente.jsx` (nuevo) y `App.jsx`.
+
+**Por qué:**
+- Las sugerencias son las preguntas frecuentes vigentes (RN17.4.1 y RN17.4.3).
+- Cada consulta se responde con la pregunta frecuente que más palabras comparte con ella (RN17.3.4); si ninguna coincide, se avisa sin inventar (RN17.2.2).
+- Una consulta vacía no se envía (RN17.1.1).
+- El IEEE pide inteligencia artificial, y eso queda en el conflicto 28.
+
+**Conceptos de React**
+- *Estado que es una lista.* `mensajes` empieza con el saludo. Cada pregunta crea una lista nueva con dos mensajes más (`[...anteriores, pregunta, respuesta]`) en vez de modificar la anterior; así React se entera del cambio y vuelve a dibujar.
+- *`useRef` y `useEffect`.* `useRef` guarda una referencia al `<div>` de los mensajes. `useEffect(..., [mensajes])` se ejecuta después de cada cambio de `mensajes` y baja el scroll hasta el último mensaje.
+- *`<form onSubmit>`.* La barra de abajo pasó de `<section>` a `<form>` con la misma clase, así Enter también envía la pregunta.
+
+**Comparado con el HTML viejo:** 98 de 99 elementos, comparado después de hacer una pregunta, para que la conversación tenga la misma forma que el ejemplo del prototipo. La diferencia es `section.entrada-chat`, que ahora es `form.entrada-chat`; el CSS usa la clase, así que se ve igual.

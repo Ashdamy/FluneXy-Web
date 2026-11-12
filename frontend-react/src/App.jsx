@@ -9,6 +9,7 @@ import DetalleAlerta from './paginas/alertas/DetalleAlerta.jsx'
 import { EditarAlerta, NuevaAlerta } from './paginas/alertas/FormularioAlerta.jsx'
 import HistorialAlertas from './paginas/alertas/HistorialAlertas.jsx'
 import MisAlertas from './paginas/alertas/MisAlertas.jsx'
+import Asistente from './paginas/asistente/Asistente.jsx'
 import CierreSesion from './paginas/autenticacion/CierreSesion.jsx'
 import IniciarSesion from './paginas/autenticacion/IniciarSesion.jsx'
 import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
@@ -136,7 +137,7 @@ export default function App() {
         <Route path="/reportes/vista-previa" element={<VistaPreviaReporte />} />
         <Route path="/reportes/:id" element={<DetalleReporte />} />
 
-        <Route path="/asistente" element={<Placeholder titulo="Asistente Inteligente" subtitulo="Pregunta lo que necesites sobre FluneXy" claseBody="mod-asistente" />} />
+        <Route path="/asistente" element={<Asistente />} />
 
         <Route path="*" element={<Placeholder titulo="Página no encontrada" subtitulo="La dirección no existe" claseBody="" />} />
       </Route>

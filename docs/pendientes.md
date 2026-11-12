@@ -61,3 +61,5 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Reportes | El periodo del reporte es decorativo, como en el prototipo: siempre el mes actual (RN16.3.1). Los valores son los de hoy aunque el periodo sea otro (ver conflictos 22 y 25) | diseño | no |
 | Reportes | Solo la vista previa del Balance está diseñada; la de Flujo de Caja e Indicadores usa las mismas piezas (resumen y filas) | diseño | no |
 | Reportes | El selector "Tipo de Reporte" no despliega nada; se elige con "Otros Tipos Disponibles". El estilo de formato elegido se llama `rep-chip-pdf` y se usa también para Excel. El historial no tiene estado vacío diseñado | diseño | no |
+| Asistente | [28](conflictos/28-asistente-ia-o-preguntas.md): el IEEE pide IA y las reglas piden responder solo con lo registrado; hoy responde con las preguntas frecuentes de la BD | conflicto | no |
+| Asistente | La conversación empieza solo con el saludo; el ejemplo de pregunta y respuesta del prototipo no se muestra. El texto de "no tengo respuesta" (RN17.2.2) no tiene diseño. Las consultas no se guardan (RN17.1.4 dice "podrá"; la BD no tiene tabla para ellas) | diseño | no |
