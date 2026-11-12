@@ -27,6 +27,7 @@ import EditarFondo from './paginas/fondos/EditarFondo.jsx'
 import MisFondos from './paginas/fondos/MisFondos.jsx'
 import Inicio from './paginas/home/Inicio.jsx'
 import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
+import Landing from './paginas/landing/Landing.jsx'
 import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
 import EditarMeta from './paginas/metas/EditarMeta.jsx'
 import MisMetas from './paginas/metas/MisMetas.jsx'
@@ -43,7 +44,7 @@ import DetallePasivo from './paginas/pasivos/DetallePasivo.jsx'
 import EditarPasivo from './paginas/pasivos/EditarPasivo.jsx'
 import MisPasivos from './paginas/pasivos/MisPasivos.jsx'
 import RegistrarPasivo from './paginas/pasivos/RegistrarPasivo.jsx'
-import Placeholder, { PlaceholderPublico } from './paginas/Placeholder.jsx'
+import Placeholder from './paginas/Placeholder.jsx'
 import DetallePlantilla from './paginas/plantillas/DetallePlantilla.jsx'
 import EditarPlantilla from './paginas/plantillas/EditarPlantilla.jsx'
 import MisPlantillas from './paginas/plantillas/MisPlantillas.jsx'
@@ -68,7 +69,7 @@ import MiPerfil from './paginas/usuario/MiPerfil.jsx'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<PlaceholderPublico titulo="Landing FluneXy" claseBody="landing" />} />
+      <Route path="/" element={<Landing />} />
 
       {/* LayoutPublico ya que es el inicio de seccion */}
       <Route path="/autenticacion" element={<LayoutPublico />}>

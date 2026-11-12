@@ -199,3 +199,18 @@ Las 4 páginas marcan "Mi perfil" en la barra lateral, como decidió Santiago: `
 **Comparado con el HTML viejo**
 - Mi Perfil: 143 de 143.
 - Editar, Cambiar Contraseña y Desactivar: solo cambian el `<form>` agregado (en Desactivar, `section.dc-modal` pasa a `form.dc-modal`) y el enlace "Mi perfil" marcado en la barra.
+
+## Páginas estáticas: landing, política de datos y soporte
+**Archivos**
+- `paginas/landing/Landing.jsx` (nuevo): la página de presentación en `/`.
+- `frontend-react/public/legal/politicas.html` y `public/soporte/preguntas-frecuentes.html`: copias del prototipo.
+- `public/assets/css/legal.css`, `soporte.css`, `responsive.css` y `public/media/img/logo-fluenxy.png`: los archivos que esas dos páginas necesitan.
+- `paginas/Placeholder.jsx`: se quita `PlaceholderPublico`, que ya no se usa.
+
+**Por qué:** Santiago decidió que legal y soporte queden como HTML estático, sin tocar su CSS. En `public/` Vite los sirve tal cual, en `/legal/politicas.html` y `/soporte/preguntas-frecuentes.html`. Solo se cambiaron las rutas de sus CSS y del logo (de `../../assets/` a `../assets/`, por la carpeta nueva), y se quitaron de preguntas frecuentes los dos enlaces rotos (`css/style.css` y `js/scritp.js`, que no existían). El landing no puede ser estático porque la raíz `/` es de la aplicación, así que es una página de React.
+
+**Conceptos de React**
+- *La carpeta `public/`.* Lo que va ahí no pasa por React ni por Vite: se copia igual al compilar y se pide con su ruta (`/legal/politicas.html`). Por eso el landing los enlaza con `<a href>` normal y no con `<Link>`.
+- *Variables CSS en `style`.* Las barras de la maqueta del landing usaban `style="--h: 55%"`. En JSX se escribe `style={{ '--h': '55%' }}`, con el nombre entre comillas porque lleva guiones.
+
+**Comparado con el HTML viejo:** landing, 264 de 264 elementos; preguntas frecuentes, 26 de 26; política, 36 de 36. Además se revisó que las dos páginas estáticas carguen su CSS y su logo sin archivos rotos.

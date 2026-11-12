@@ -1,10 +1,10 @@
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import EncabezadoPagina from '../componentes/EncabezadoPagina.jsx'
 import useClaseBody from '../hooks/useClaseBody.js'
 import useTituloPagina from '../hooks/useTituloPagina.js'
 
-// Paginas temporales de la Fase 1. Cada una se reemplaza por la pagina real
-// cuando se migre su modulo en la Fase 2.
+// Pagina temporal de la Fase 1. Ya solo la usa la ruta "*" (pagina no
+// encontrada), que no tiene diseño en el prototipo.
 
 // Muestra los datos de la URL (:id, ?tipo=...) para comprobar que la ruta los recibe.
 function DatosRuta() {
@@ -29,14 +29,3 @@ export default function Placeholder({ titulo, subtitulo, claseBody }) {
   )
 }
 
-export function PlaceholderPublico({ titulo, claseBody }) {
-  useClaseBody(claseBody)
-  useTituloPagina(titulo)
-  return (
-    <section style={{ padding: 32 }}>
-      <h1>{titulo}</h1>
-      <p>Página en construcción: se migra en la Fase 2.</p>
-      <p><Link to="/home">Ir al inicio de la app</Link></p>
-    </section>
-  )
-}
