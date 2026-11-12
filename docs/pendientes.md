@@ -49,3 +49,11 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 | Flujo de caja | El selector de periodo es decorativo, como en el prototipo: siempre muestra el mes actual (RN12.1.1 pide elegir el periodo). Falta el diseño del menú | diseño | no |
 | Flujo de caja | Saldo proyectado negativo: la etiqueta dice "Negativo" pero el CSS solo tiene el estilo de "Positivo" (`pill-saldo.positivo`) | diseño | no |
 | Balance | El banner "Ver Indicadores Financieros" del Balance no lleva a ningún lado, como en el prototipo | diseño | no |
+| Alertas | [26](conflictos/26-activar-alerta.md): con la regla de no mostrar Editar en inactivos, una alerta desactivada no se puede reactivar (HU15.4), aunque el modal dice que sí. Hay que decidirlo | conflicto | no |
+| Alertas | [27](conflictos/27-tipos-de-alerta.md): los 3 tipos del prototipo no son los 5 de los datos de ejemplo de la BD, y la documentación no da la lista ni el rango del umbral | conflicto | no |
+| Alertas | La generación automática de alertas (RN15.6) y su notificación son del backend; el historial de prueba es fijo. El contador "3" de Alertas en la barra lateral también es fijo | diseño | no |
+| Alertas | El historial no tiene filtro por rango de fechas (RN15.7.3): el prototipo no lo diseña | diseño | no |
+| Alertas | En el formulario, "TIPO DE ALERTA" (desplegable sin menú) y "TIPO DE INDICADOR A MONITOREAR" (tarjetas) eligen lo mismo; se elige con las tarjetas y el desplegable solo muestra la elección. El estado OFF del interruptor no tiene estilo propio, y los chips "Riesgo alto" y "Tiempo real" son fijos | diseño | no |
+| Alertas | El detalle muestra "Meta Financiera" y "En Progreso", textos que el prototipo copió de Metas. Tampoco tiene el recuadro "Fecha creación", que no existe en la BD (5 recuadros en vez de 6) | diseño | no |
+| Alertas | Historial: una alerta sin notificar (`notificado = false`) dice "Sin notificar"; el prototipo solo tiene "Notificado". "Últimos 30 días" es fijo, mientras el número cuenta el mes calendario | diseño | no |
+| Alertas | Antes se había acordado que Alertas lo haría un compañero en otra rama. Se migró aquí por la nueva instrucción; hay que revisarlo antes de unir esa rama para no duplicar el trabajo | conflicto | no |

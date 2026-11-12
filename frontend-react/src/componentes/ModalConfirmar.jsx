@@ -19,6 +19,11 @@ export default function ModalConfirmar({
   textoConfirmar,
   // Pasivos y Metas usan btn-eliminar-...; Fondos y Activos, btn-desactivar-...
   claseConfirmar = `btn-desactivar-${sufijo}`,
+  // Alertas cambia tres clases de la vista previa (preview-icono-alerta,
+  // preview-info-alerta y preview-estado-alerta); los demas usan estas.
+  clasePreviewIcono = 'preview-icono',
+  clasePreviewInfo = 'preview-info',
+  clasePreviewMonto = 'preview-saldo',
   onCancelar,
   onConfirmar,
 }) {
@@ -30,12 +35,12 @@ export default function ModalConfirmar({
     >
       <article className={`modal-desactivar-${sufijo}`} role="alertdialog" aria-modal="true" aria-label={titulo}>
         <div className={`preview-${sufijo}`}>
-          <span className="preview-icono"><i className={`ph ${icono}`}></i></span>
-          <div className="preview-info">
+          <span className={clasePreviewIcono}><i className={`ph ${icono}`}></i></span>
+          <div className={clasePreviewInfo}>
             <h3>{nombre}</h3>
             <p>{detalle}</p>
           </div>
-          <span className="preview-saldo">{monto}</span>
+          <span className={clasePreviewMonto}>{monto}</span>
         </div>
         <div className={`icono-advertencia-${sufijo}`}>
           <i className="ph ph-warning"></i>

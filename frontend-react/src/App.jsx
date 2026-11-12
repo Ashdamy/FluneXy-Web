@@ -1,31 +1,34 @@
 import { Route, Routes } from 'react-router-dom'
 import LayoutApp from './componentes/LayoutApp.jsx'
 import LayoutPublico from './componentes/LayoutPublico.jsx'
-import Placeholder, { PlaceholderPublico } from './paginas/Placeholder.jsx'
 import DetalleActivo from './paginas/activos/DetalleActivo.jsx'
 import EditarActivo from './paginas/activos/EditarActivo.jsx'
 import MisActivos from './paginas/activos/MisActivos.jsx'
 import RegistrarActivo from './paginas/activos/RegistrarActivo.jsx'
-import BalanceFinanciero from './paginas/balance/BalanceFinanciero.jsx'
+import DetalleAlerta from './paginas/alertas/DetalleAlerta.jsx'
+import { EditarAlerta, NuevaAlerta } from './paginas/alertas/FormularioAlerta.jsx'
+import HistorialAlertas from './paginas/alertas/HistorialAlertas.jsx'
+import MisAlertas from './paginas/alertas/MisAlertas.jsx'
 import CierreSesion from './paginas/autenticacion/CierreSesion.jsx'
 import IniciarSesion from './paginas/autenticacion/IniciarSesion.jsx'
 import NuevaContrasena from './paginas/autenticacion/NuevaContrasena.jsx'
 import RecuperarContrasena from './paginas/autenticacion/RecuperarContrasena.jsx'
 import Registro from './paginas/autenticacion/Registro.jsx'
 import VerificacionContrasena from './paginas/autenticacion/VerificacionContrasena.jsx'
+import BalanceFinanciero from './paginas/balance/BalanceFinanciero.jsx'
 import DetalleCuota from './paginas/cuotas/DetalleCuota.jsx'
 import PasivosConCuotas from './paginas/cuotas/PasivosConCuotas.jsx'
 import TablaCuotas from './paginas/cuotas/TablaCuotas.jsx'
 import FlujoCaja from './paginas/flujoCaja/FlujoCaja.jsx'
-import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
-import EditarMeta from './paginas/metas/EditarMeta.jsx'
-import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
-import MisMetas from './paginas/metas/MisMetas.jsx'
-import NuevaMeta from './paginas/metas/NuevaMeta.jsx'
 import CrearFondo from './paginas/fondos/CrearFondo.jsx'
 import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
 import EditarFondo from './paginas/fondos/EditarFondo.jsx'
 import MisFondos from './paginas/fondos/MisFondos.jsx'
+import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
+import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
+import EditarMeta from './paginas/metas/EditarMeta.jsx'
+import MisMetas from './paginas/metas/MisMetas.jsx'
+import NuevaMeta from './paginas/metas/NuevaMeta.jsx'
 import DetalleMovimiento from './paginas/movimientos/DetalleMovimiento.jsx'
 import EditarMovimiento from './paginas/movimientos/EditarMovimiento.jsx'
 import MisMovimientos from './paginas/movimientos/MisMovimientos.jsx'
@@ -38,6 +41,7 @@ import DetallePasivo from './paginas/pasivos/DetallePasivo.jsx'
 import EditarPasivo from './paginas/pasivos/EditarPasivo.jsx'
 import MisPasivos from './paginas/pasivos/MisPasivos.jsx'
 import RegistrarPasivo from './paginas/pasivos/RegistrarPasivo.jsx'
+import Placeholder, { PlaceholderPublico } from './paginas/Placeholder.jsx'
 import DetallePlantilla from './paginas/plantillas/DetallePlantilla.jsx'
 import EditarPlantilla from './paginas/plantillas/EditarPlantilla.jsx'
 import MisPlantillas from './paginas/plantillas/MisPlantillas.jsx'
@@ -117,11 +121,11 @@ export default function App() {
         <Route path="/indicadores" element={<IndicadoresFinancieros />} />
         <Route path="/flujo-caja" element={<FlujoCaja />} />
 
-        <Route path="/alertas" element={<Placeholder titulo="Mis Alertas" subtitulo="Configura avisos para riesgos financieros" claseBody="mod-alertas mod-alertas-lista" />} />
-        <Route path="/alertas/nueva" element={<Placeholder titulo="Nueva Alerta" subtitulo="Define cuándo quieres recibir un aviso" claseBody="mod-alertas mod-alertas-configurar" />} />
-        <Route path="/alertas/historial" element={<Placeholder titulo="Historial de Alertas" subtitulo="Consulta las notificaciones generadas" claseBody="mod-alertas mod-alertas-historial" />} />
-        <Route path="/alertas/:id" element={<Placeholder titulo="Detalle de Alerta" subtitulo="Información de la alerta" claseBody="mod-alertas mod-alertas-detalle" />} />
-        <Route path="/alertas/:id/editar" element={<Placeholder titulo="Editar Alerta" subtitulo="Actualiza la configuración de esta alerta" claseBody="mod-alertas mod-alertas-configurar" />} />
+        <Route path="/alertas" element={<MisAlertas />} />
+        <Route path="/alertas/nueva" element={<NuevaAlerta />} />
+        <Route path="/alertas/historial" element={<HistorialAlertas />} />
+        <Route path="/alertas/:id" element={<DetalleAlerta />} />
+        <Route path="/alertas/:id/editar" element={<EditarAlerta />} />
 
         <Route path="/reportes" element={<Placeholder titulo="Historial de Reportes" subtitulo="Consulta los reportes generados anteriormente" claseBody="mod-reportes" />} />
         <Route path="/reportes/generar" element={<Placeholder titulo="Generar Reporte" subtitulo="Selecciona el tipo y periodo del reporte" claseBody="mod-reportes" />} />

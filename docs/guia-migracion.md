@@ -94,3 +94,35 @@ El saldo es ingresos − gastos − cuotas − metas (RN12.6.1 y RN12.6.2). Sin 
 **Concepto de React:** *separar el cálculo de la pantalla*. `flujoDelMes()` vive en `datos/`, no en el componente. La pantalla solo dibuja lo que esa función devuelve, y la misma función la podrán usar Home y Reportes sin copiar la lógica.
 
 **Comparado con el HTML viejo:** flujo, 123 de 123 elementos; vacío, 92 de 92. El estado vacío no usa `EstadoVacio`, porque `flujo-vacio.html` tiene otro HTML (`estado-vacio flujo-vacio`, `ilustracion-estado-vacio`...).
+
+## Alertas
+**Archivos creados**
+- `datos/alertas.js`: configuraciones e historial, con la forma de `alertas_configuracion` y `alertas_historial`, más los tres tipos del prototipo (conflicto 27).
+- `paginas/alertas/MisAlertas.jsx`: listado, modal y estado vacío.
+- `paginas/alertas/FormularioAlerta.jsx`: exporta `NuevaAlerta` y `EditarAlerta`, que comparten un solo formulario.
+- `paginas/alertas/DetalleAlerta.jsx`.
+- `paginas/alertas/HistorialAlertas.jsx`.
+- `paginas/alertas/ModalDesactivarAlerta.jsx`.
+
+**Archivos cambiados**
+- `componentes/ModalConfirmar.jsx`: tres clases opcionales de la vista previa.
+- `ajustes-react.css`: el campo del umbral y el cursor de los controles.
+
+**Reglas aplicadas:** RN15.2.1 y RN15.2.2 (un tipo de los definidos), RN15.3.1 (umbral numérico mayor que cero), RN15.4.3 (activa o inactiva, con el interruptor), RN15.5.1 a RN15.5.4 (desactivar conserva la configuración y el historial), RN15.7.1 (historial de la más reciente a la más antigua) y RN15.8.2 (valor, fecha y motivo).
+
+La generación automática (RN15.6) es del backend. Reactivar una alerta quedó en el conflicto 26, porque choca con tu regla de no mostrar Editar en los inactivos.
+
+**Conceptos de React**
+- *Un archivo que exporta dos componentes.* `NuevaAlerta` y `EditarAlerta` son casi iguales, así que las dos dibujan el mismo `<Formulario>`. La edición le pasa `alerta={...}` y la creación no; adentro, `alerta ? ... : ...` decide el título y los botones.
+- *Controles que no son `<input>`.* El interruptor ON/OFF y las tarjetas de tipo eran `<div>` en el prototipo. Siguen siendo `<div>`, para que el CSS aplique igual, pero con `role="switch"` o `role="button"`, `tabIndex={0}` (se pueden alcanzar con Tab) y `onKeyDown` (funcionan con Enter o Espacio).
+- *Valores por defecto en las propiedades.* `ModalConfirmar` recibió `clasePreviewIcono = 'preview-icono'`; los demás módulos no lo pasan y siguen igual.
+
+**Modal y estado vacío:** el modal de Alertas usa `ModalConfirmar` con tres clases distintas; las demás coinciden, así que no se duplicó. El estado vacío no usa `EstadoVacio`, porque `alertas-vacio.html` tiene otro HTML (`estado-vacio` con `vacio-orb`, sin halo ni círculo).
+
+**Comparado con el HTML viejo**
+- Listado: 151 de 156. Faltan los botones Editar y Desactivar de la tarjeta inactiva (conflicto 26).
+- Modal: 170 de 175, por la misma razón.
+- Nueva y Editar: 128 de 129 y 130 de 131, más el `<form>` y el `<input>` del umbral.
+- Detalle: 129 de 133. Falta el recuadro "Fecha creación".
+- Historial: 142 de 147. Los colores salen del tipo de alerta (en el prototipo la Liquidez era violeta en el listado y verde en el historial).
+- En todas las pantallas falta además el `<span>` del botón de perfil.

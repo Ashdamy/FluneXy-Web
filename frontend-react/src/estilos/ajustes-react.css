@@ -100,3 +100,26 @@ body.mod-meta-form .campo-fecha-meta-input input[type="date"] {
   background-color: rgba(52, 211, 153, 0.14);
   color: var(--green);
 }
+
+/* Umbral de Alertas. En el prototipo era texto fijo (span.valor); ahora se
+   escribe, asi que el input va dentro del span y toma su letra. */
+.alerta-input-monto .valor {
+  flex: 1;
+  min-width: 0;
+}
+
+.alerta-input-monto .valor input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+/* Interruptor de estado y tarjetas de tipo de Alertas: eran div sin accion. */
+.alerta-input-toggle[role="switch"],
+.fund-card[role="button"] {
+  cursor: pointer;
+}

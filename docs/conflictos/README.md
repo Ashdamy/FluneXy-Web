@@ -31,3 +31,5 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [23](23-indicadores-almacenados.md) | Indicadores calculados o almacenados | RN14.2.2, RN14.3.2 | Indicadores | Abierto |
 | [24](24-indicadores-sin-definir.md) | Indicadores sin definición | RN14.1.1, RN13.6.1 | Indicadores | Abierto |
 | [25](25-que-se-proyecta-en-el-flujo.md) | Qué se proyecta en el flujo de caja | RN12.2.1, RN12.3.1, RN12.5.1 | Flujo de caja | Abierto |
+| [26](26-activar-alerta.md) | Activar una alerta inactiva | HU15.4, RN15.4.3 | Alertas | Abierto |
+| [27](27-tipos-de-alerta.md) | Tipos de alerta | RN15.2.1, RN15.3.2, `tipo_alerta` | Alertas | Abierto |
