@@ -21,7 +21,8 @@ export default function LayoutApp() {
       </label>
       <label htmlFor="menu-toggle" className="menu-overlay" aria-hidden="true"></label>
       <BarraLateral />
-      <main className="contenido-principal">
+      {/* En el prototipo solo Inicio tiene una clase extra en el <main> (pagina-home). */}
+      <main className={pathname === '/home' ? 'contenido-principal pagina-home' : 'contenido-principal'}>
         <Outlet />
       </main>
     </>

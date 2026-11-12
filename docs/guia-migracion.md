@@ -161,3 +161,21 @@ La generación automática (RN15.6) es del backend. Reactivar una alerta quedó 
 - *`<form onSubmit>`.* La barra de abajo pasó de `<section>` a `<form>` con la misma clase, así Enter también envía la pregunta.
 
 **Comparado con el HTML viejo:** 98 de 99 elementos, comparado después de hacer una pregunta, para que la conversación tenga la misma forma que el ejemplo del prototipo. La diferencia es `section.entrada-chat`, que ahora es `form.entrada-chat`; el CSS usa la clase, así que se ve igual.
+
+## Inicio (Home)
+**Archivos:** `paginas/home/Inicio.jsx` (nuevo), `datos/usuario.js` (nuevo: el usuario 1 de la BD), `componentes/LayoutApp.jsx` (clase `pagina-home` en el `<main>` de `/home`) y `App.jsx`.
+
+**Por qué:** Inicio no tiene datos propios; junta lo que ya calculan los otros módulos.
+- Patrimonio: activos − pasivos, como el Balance (RN13.4.1).
+- Ingresos, gastos y ahorro: los movimientos activos del mes (RN05.4.5).
+- Movimientos recientes: los 3 últimos activos.
+- Aviso de endeudamiento: solo si la alerta de endeudamiento está activa, con su umbral.
+
+Las variaciones y los gráficos quedan fijos, porque no hay historial para calcularlos (pendientes).
+
+**Conceptos de React**
+- *Reutilizar cálculos.* La página no repite fórmulas: importa `valorTotalActivos`, `totalPasivos`, `indiceEndeudamiento`, `listarMovimientos` y `listarAlertas` de `datos/`. Si cambia una regla en un módulo, Inicio la sigue sin tocarla.
+- *Listas desde un arreglo.* Los 4 accesos rápidos y las 4 tarjetas del resumen salen de arreglos con `map`, en vez de copiar el mismo HTML cuatro veces.
+- *Clase según la ruta.* `LayoutApp` usa `useLocation()` para saber la ruta y le pone `pagina-home` al `<main>` solo en `/home`, como el HTML viejo.
+
+**Comparado con el HTML viejo:** 206 de 215 elementos. Las 9 diferencias son los tres movimientos de ejemplo del prototipo; ahora se muestran los reales, con el ícono de su categoría.

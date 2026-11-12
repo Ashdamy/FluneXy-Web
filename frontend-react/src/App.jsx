@@ -25,6 +25,7 @@ import CrearFondo from './paginas/fondos/CrearFondo.jsx'
 import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
 import EditarFondo from './paginas/fondos/EditarFondo.jsx'
 import MisFondos from './paginas/fondos/MisFondos.jsx'
+import Inicio from './paginas/home/Inicio.jsx'
 import IndicadoresFinancieros from './paginas/indicadores/IndicadoresFinancieros.jsx'
 import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
 import EditarMeta from './paginas/metas/EditarMeta.jsx'
@@ -77,7 +78,7 @@ export default function App() {
       
       {/* LayoutApp ya que es la pagina una vez se inicia sesion con todas sun funcionalidades */}
       <Route element={<LayoutApp />}>
-        <Route path="/home" element={<Placeholder titulo="Inicio" claseBody="mod-home" />} />
+        <Route path="/home" element={<Inicio />} />
 
         <Route path="/usuario" element={<Placeholder titulo="Mi Perfil" subtitulo="Consulta y administra tu información" claseBody="mod-usuario" />} />
         <Route path="/usuario/editar" element={<Placeholder titulo="Editar Perfil" subtitulo="Actualiza tu información personal" claseBody="mod-usuario" />} />
