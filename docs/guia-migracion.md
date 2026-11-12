@@ -126,3 +126,22 @@ La generación automática (RN15.6) es del backend. Reactivar una alerta quedó 
 - Detalle: 129 de 133. Falta el recuadro "Fecha creación".
 - Historial: 142 de 147. Los colores salen del tipo de alerta (en el prototipo la Liquidez era violeta en el listado y verde en el historial).
 - En todas las pantallas falta además el `<span>` del botón de perfil.
+
+## Reportes
+**Archivos creados**
+- `datos/reportes.js`: historial con la forma de `reportes_generados` (tipo, periodo, formato, fecha de generación), con los tipos `BALANCE`, `FLUJOCAJA` e `INDICADORES` de la BD.
+- `paginas/reportes/HistorialReportes.jsx`.
+- `paginas/reportes/GenerarReporte.jsx`.
+- `paginas/reportes/VistaPreviaReporte.jsx`.
+- `paginas/reportes/DetalleReporte.jsx`.
+
+**Por qué:** como dice el propio prototipo, solo se guarda el tipo, el periodo y la fecha, no el archivo. Generar un reporte agrega el registro con la fecha y hora del momento (RN16.1.3, RN16.6.1 y RN16.6.2) y abre la vista previa. La vista previa calcula el contenido con las mismas funciones de Balance, Flujo de Caja e Indicadores, así que muestra lo mismo que esas pantallas (RN16.7.1 y RN16.7.4). Exportar el archivo (RN16.4 y RN16.5) queda pendiente: los botones son decorativos, como en el prototipo.
+
+**Conceptos de React**
+- *JSX dentro de otro JSX.* La vista previa arma `contenido(tipo)`, que devuelve listas de filas, y un pequeño componente `Fila` las dibuja. Cambiar de tipo de reporte solo cambia esos datos, no el HTML.
+- *Leer la URL para precargar el formulario.* "Generar este reporte de nuevo" lleva a `/reportes/generar?tipo=INDICADORES&formato=EXCEL`. `useSearchParams` lee esos valores y los usa como valor inicial del `useState`.
+- *Una página que no usa el componente común.* La vista previa escribe su propio `<header>`, porque el del prototipo cambia los botones de notificaciones y perfil por "Exportar Excel" y "Descargar PDF".
+
+**Comparado con el HTML viejo**
+- Vista previa: 117 de 117.
+- Historial, Generar y Detalle: un elemento menos cada uno (el `<span>` del botón de perfil).

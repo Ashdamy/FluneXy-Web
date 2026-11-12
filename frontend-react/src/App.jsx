@@ -46,6 +46,10 @@ import DetallePlantilla from './paginas/plantillas/DetallePlantilla.jsx'
 import EditarPlantilla from './paginas/plantillas/EditarPlantilla.jsx'
 import MisPlantillas from './paginas/plantillas/MisPlantillas.jsx'
 import NuevaPlantilla from './paginas/plantillas/NuevaPlantilla.jsx'
+import DetalleReporte from './paginas/reportes/DetalleReporte.jsx'
+import GenerarReporte from './paginas/reportes/GenerarReporte.jsx'
+import HistorialReportes from './paginas/reportes/HistorialReportes.jsx'
+import VistaPreviaReporte from './paginas/reportes/VistaPreviaReporte.jsx'
 
 // Tabla de rutas. "claseBody" es la clase que tenia el <body> del HTML original.
 // No son rutas (por decision del plan):
@@ -127,10 +131,10 @@ export default function App() {
         <Route path="/alertas/:id" element={<DetalleAlerta />} />
         <Route path="/alertas/:id/editar" element={<EditarAlerta />} />
 
-        <Route path="/reportes" element={<Placeholder titulo="Historial de Reportes" subtitulo="Consulta los reportes generados anteriormente" claseBody="mod-reportes" />} />
-        <Route path="/reportes/generar" element={<Placeholder titulo="Generar Reporte" subtitulo="Selecciona el tipo y periodo del reporte" claseBody="mod-reportes" />} />
-        <Route path="/reportes/vista-previa" element={<Placeholder titulo="Vista Previa del Reporte" subtitulo="Revisa el reporte antes de descargarlo" claseBody="mod-reportes" />} />
-        <Route path="/reportes/:id" element={<Placeholder titulo="Detalle de Reporte" subtitulo="Consulta la información de un reporte generado anteriormente" claseBody="mod-reportes" />} />
+        <Route path="/reportes" element={<HistorialReportes />} />
+        <Route path="/reportes/generar" element={<GenerarReporte />} />
+        <Route path="/reportes/vista-previa" element={<VistaPreviaReporte />} />
+        <Route path="/reportes/:id" element={<DetalleReporte />} />
 
         <Route path="/asistente" element={<Placeholder titulo="Asistente Inteligente" subtitulo="Pregunta lo que necesites sobre FluneXy" claseBody="mod-asistente" />} />
 
