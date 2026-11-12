@@ -1,9 +1,10 @@
 // Campo de fecha con icono a la izquierda, como en los formularios de
-// Activos y Pasivos. "clase" es la del contenedor en el prototipo
+// Activos, Pasivos y Metas. "clase" es la del contenedor en el prototipo
 // (campo-fecha-activo-input, campo-fecha-pasivo-input...). El input es
 // type="date" y al hacer clic abre el calendario nativo; su aspecto se
-// iguala al prototipo en ajustes-react.css.
-export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name = 'fecha', max }) {
+// iguala al prototipo en ajustes-react.css. "min" y "max" limitan las
+// fechas que se pueden elegir.
+export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name = 'fecha', min, max }) {
   return (
     <div className={clase}>
       <i className="ph ph-calendar"></i>
@@ -12,6 +13,7 @@ export default function CampoFecha({ clase, valor, onCambiar, id = 'fecha', name
         id={id}
         name={name}
         required
+        min={min}
         max={max}
         value={valor}
         onChange={(evento) => onCambiar(evento.target.value)}

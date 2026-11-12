@@ -16,7 +16,7 @@
 Al crear una meta las dos fórmulas dan lo mismo, porque empieza en $0 (RN09.1.7). La diferencia aparece después del primer aporte. RN09.3.6 pide recalcular el ahorro mensual, pero no dice con qué fórmula.
 
 ## Qué hace hoy la aplicación
-El módulo Metas aún no está migrado. Registrar Aporte no usa el ahorro mensual (ver "Aporte consistente con el ahorro mensual" en [decisiones-implementacion.md](../decisiones-implementacion.md)).
+Calcula lo que falta por ahorrar dividido entre los meses completos restantes (opción 1). Con 0 meses pide todo lo que falta (RN09.1.6).
 
 ## Opciones
 1. **Lo que falta ÷ meses restantes,** como el prototipo y RN09.1.6. Al aportar baja la cuota mensual, y una meta completa pide $0.
@@ -25,4 +25,4 @@ El módulo Metas aún no está migrado. Registrar Aporte no usa el ahorro mensua
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Santiago el 2026-11-12: opción 1.

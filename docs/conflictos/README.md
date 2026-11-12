@@ -20,8 +20,9 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [12](12-decimales-en-pesos.md) | Pesos con o sin decimales | IEEE 3.13.2, RN04.1.3, `DECIMAL(12,2)` | Todos | Abierto |
 | [13](13-fondo-del-aporte.md) | Fondo de un aporte | RN09.3.7, `aportes.id_fondo` | Pagos, Metas | Abierto |
 | [14](14-numeracion-rn11-1-2.md) | Código RN11.1.2 repetido | RN11.1.2 | Pagos | Abierto |
-| [15](15-ahorro-mensual-meta.md) | Cálculo del ahorro mensual de una meta | RN09.1.5, RN09.1.6, RN09.3.6 | Metas | Abierto |
+| [15](15-ahorro-mensual-meta.md) | Cálculo del ahorro mensual de una meta | RN09.1.5, RN09.1.6, RN09.3.6 | Metas | Decidido (opción 1) |
 | [16](16-editar-fondo-meta.md) | Cambiar el fondo al editar una meta | RN09.3.7, HU09.3 | Metas | Abierto |
 | [17](17-categoria-meta.md) | Categoría de una meta | RN03.1.1, RN03.2.2, `categorias.aplica_a` | Metas | Abierto |
 | [18](18-ahorrado-al-desactivar-meta.md) | Dónde queda lo ahorrado al desactivar una meta | RN05.0.1, RN09.4.6 | Metas, Pagos | Abierto |
 | [19](19-ajuste-fondo-inactivo.md) | Ajuste de saldo en un fondo inactivo | RN04.3.4, RN04.4.4 | Fondos | Abierto |
+| [20](20-fecha-al-editar-meta.md) | Editar una meta vencida obliga a cambiar su fecha | RN09.3.5, RN09.3.2 | Metas | Abierto |

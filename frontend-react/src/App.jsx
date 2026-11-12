@@ -15,6 +15,10 @@ import VerificacionContrasena from './paginas/autenticacion/VerificacionContrase
 import DetalleCuota from './paginas/cuotas/DetalleCuota.jsx'
 import PasivosConCuotas from './paginas/cuotas/PasivosConCuotas.jsx'
 import TablaCuotas from './paginas/cuotas/TablaCuotas.jsx'
+import DetalleMeta from './paginas/metas/DetalleMeta.jsx'
+import EditarMeta from './paginas/metas/EditarMeta.jsx'
+import MisMetas from './paginas/metas/MisMetas.jsx'
+import NuevaMeta from './paginas/metas/NuevaMeta.jsx'
 import CrearFondo from './paginas/fondos/CrearFondo.jsx'
 import DetalleFondo from './paginas/fondos/DetalleFondo.jsx'
 import EditarFondo from './paginas/fondos/EditarFondo.jsx'
@@ -101,10 +105,10 @@ export default function App() {
         <Route path="/pagos/registrar-aporte" element={<RegistrarAporte />} />
         <Route path="/pagos/historial" element={<HistorialPagos />} />
 
-        <Route path="/metas" element={<Placeholder titulo="Mis Metas" subtitulo="Construye tus objetivos financieros" claseBody="mod-lista-metas" />} />
-        <Route path="/metas/nueva" element={<Placeholder titulo="Nueva Meta" subtitulo="Define un nuevo objetivo financiero" claseBody="mod-meta-form mod-meta-crear" />} />
-        <Route path="/metas/:id" element={<Placeholder titulo="Detalle de Meta" subtitulo="Información completa del objetivo" claseBody="mod-meta-detalle" />} />
-        <Route path="/metas/:id/editar" element={<Placeholder titulo="Editar Meta" subtitulo="Actualiza los datos de tu objetivo" claseBody="mod-meta-form mod-meta-editar" />} />
+        <Route path="/metas" element={<MisMetas />} />
+        <Route path="/metas/nueva" element={<NuevaMeta />} />
+        <Route path="/metas/:id" element={<DetalleMeta />} />
+        <Route path="/metas/:id/editar" element={<EditarMeta />} />
 
         <Route path="/balance-financiero" element={<Placeholder titulo="Balance Financiero" subtitulo="Patrimonio Neto" claseBody="mod-balance" />} />
         <Route path="/indicadores" element={<Placeholder titulo="Indicadores Financieros" subtitulo="Evalúa tu salud financiera de un vistazo" claseBody="mod-indicadores" />} />

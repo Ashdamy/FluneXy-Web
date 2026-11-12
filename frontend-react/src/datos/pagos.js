@@ -65,6 +65,11 @@ export function registrarAporte({ metaId, fondoId, monto }) {
   aportes = [{ id: Math.max(0, ...aportes.map((a) => a.id)) + 1, metaId, fondoId, monto, fecha: diaISO() }, ...aportes]
 }
 
+// Aportes de una meta, del mas reciente al mas antiguo (RN09.4.5: tambien los de antes de desactivarla).
+export function aportesDeMeta(metaId) {
+  return aportes.filter((aporte) => aporte.metaId === Number(metaId)).sort((a, b) => b.fecha.localeCompare(a.fecha))
+}
+
 // Pagos y aportes juntos, del mas reciente al mas antiguo.
 export function listarHistorial() {
   const filas = [

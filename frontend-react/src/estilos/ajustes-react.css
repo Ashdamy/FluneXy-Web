@@ -8,7 +8,8 @@
 .campo-fecha input::-webkit-calendar-picker-indicator,
 .date-box input::-webkit-calendar-picker-indicator,
 .campo-fecha-activo-input input::-webkit-calendar-picker-indicator,
-.campo-fecha-pasivo-input input::-webkit-calendar-picker-indicator {
+.campo-fecha-pasivo-input input::-webkit-calendar-picker-indicator,
+.campo-fecha-meta-input input::-webkit-calendar-picker-indicator {
   display: none;
 }
 
@@ -19,7 +20,8 @@
    solo las propiedades que cambiaban, comparando los estilos calculados
    de ambas versiones. */
 body.mod-activo-form .campo-fecha-activo-input input[type="date"],
-body.mod-pasivo-form .campo-fecha-pasivo-input input[type="date"] {
+body.mod-pasivo-form .campo-fecha-pasivo-input input[type="date"],
+body.mod-meta-form .campo-fecha-meta-input input[type="date"] {
   padding: 0 17px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.07);

@@ -27,3 +27,38 @@ Los módulos anteriores (Autenticación a Pagos) se migraron antes de crear esta
 **Concepto de React:** *datos derivados*. La lista no se guarda en el estado de la página: se calcula en cada render a partir de la fuente (`movimientosDeFondo(fondo.id)`). Así no hay dos copias del mismo dato que puedan quedar distintas.
 
 **Comparado con el HTML viejo:** mismas clases (`item-transaccion ingreso|gasto`, `punto`, `p`, `strong`) y el mismo máximo de 3 filas; solo cambian los textos y montos, que ahora son los reales.
+
+## Metas
+**Archivos creados**
+- `paginas/metas/MisMetas.jsx`: listado con resumen, buscador, tarjetas, modal de desactivar y estado vacío.
+- `paginas/metas/NuevaMeta.jsx`: formulario con vista previa que se recalcula mientras se escribe.
+- `paginas/metas/DetalleMeta.jsx`: progreso, ahorro mensual, días restantes, información y "Registrar Aporte".
+- `paginas/metas/EditarMeta.jsx`: edición de nombre, monto y fecha con el "nuevo cálculo automático".
+- `paginas/metas/ModalDesactivarMeta.jsx`: los textos del modal; el HTML lo pone `ModalConfirmar`, porque el de Metas es igual al de Fondos, Activos y Pasivos.
+- `paginas/metas/CamposMeta.jsx`: la lista de fondos para elegir.
+
+**Archivos cambiados**
+- `datos/metas.js`: ahora tiene todos los campos de la tabla `metas` y los cálculos (progreso, meses restantes, ahorro mensual, estado).
+- `datos/pagos.js`: nueva función `aportesDeMeta`.
+- `componentes/CampoFecha.jsx`: nueva propiedad `min`.
+- `ajustes-react.css`: el campo de fecha de Metas usa el mismo ajuste que el de Activos y Pasivos.
+- `App.jsx`: las 4 rutas de Metas dejan de ser placeholder.
+
+Para el estado vacío se reutiliza `EstadoVacio`, porque `metas-vacio.html` tiene el mismo HTML que los demás.
+
+**Reglas aplicadas:** RN09.1.1 (solo fondos activos), RN09.1.2 y RN09.3.3 (nombre único entre metas activas), RN09.1.3 y RN09.3.4 (monto mayor que cero), RN09.1.4 y RN09.3.5 (fecha hoy o posterior), RN09.1.5 y RN09.1.6 (ahorro mensual, con la decisión del conflicto 15), RN09.1.7 (empieza en 0 % y En progreso), RN09.1.8 (crear no toca el fondo), RN09.2.2 (datos del detalle), RN09.2.3 (progreso calculado), RN09.2.4 (estado calculado, con límites provisionales), RN09.2.5 (Registrar Aporte va a Pagos), RN09.3.2 y RN09.4.2 (solo activas), RN09.3.6 (recalcula), RN09.3.8 (editar no cambia lo ahorrado), RN09.4.3 a RN09.4.6 (desactivar conserva todo y bloquea aportes).
+
+**Conceptos de React que aparecen por primera vez en esta guía**
+- *Una página en dos componentes.* React exige que los hooks (`useState`, `useNavigate`...) se llamen siempre, en el mismo orden y antes de cualquier `return`. `NuevaMeta` primero revisa si hay fondos activos y, si no hay, redirige con `<Navigate>`. Solo si los hay dibuja `<FormularioMeta>`, que es donde viven los `useState` del formulario. Así nunca queda un hook después de un `return`.
+- *`<Link>` en vez de `<a href>`.* El banner "Registrar Aporte" es un `<Link to="...">`. En el HTML final sigue siendo un `<a>` con la misma clase, pero al hacer clic React Router cambia de página sin recargar, y los datos en memoria se conservan.
+- *Propiedades opcionales.* `CampoFecha` recibió `min`. Si una página no lo pasa, vale `undefined` y React no pone el atributo, así que Activos y Pasivos siguen igual.
+- *Clic que no "sube".* La tarjeta completa abre el detalle; los botones de adentro llaman `evento.stopPropagation()` para que su clic no llegue también a la tarjeta.
+
+**Comparado con el HTML viejo** (estructura de etiquetas y clases en el mismo orden)
+- Mis Metas: 216 de 220 elementos. Solo cambian los 4 íconos de cada meta (moto, casa, avión, libros), que no tienen dato en la BD (conflicto 17).
+- Estado vacío: 87 de 87.
+- Nueva Meta: 141 de 143. Se agrega el `<form>`, como en los demás módulos, y el ícono de Nequi es el de "Billetera Digital" que usa toda la aplicación.
+- Detalle: 139 de 145. Falta el recuadro "Fecha creación", que no existe en la BD.
+- Editar: 135 de 137. Cambian los íconos y se agrega el `<form>`.
+- Modal: el HTML del modal coincide completo; la diferencia está en el listado de fondo, porque el prototipo dibuja ahí una sola tarjeta y otro encabezado.
+- También se compararon capturas de Nueva Meta a 1440 px contra el prototipo, y la disposición es la misma.
