@@ -12,7 +12,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Autenticación | [03](conflictos/03-registro-verificacion-codigo.md): registro con verificación de código (HU02.1, RN02.1.4). Decidido por Santiago: sin código al registrarse, solo se valida que el correo no exista; falta aplicarlo | conflicto | no |
 | Autenticación | [06](conflictos/06-texto-requisitos-contrasena.md): texto de requisitos de la contraseña (RN01.3.5, RN02.1.2) | conflicto | no |
 | Fondos, Movimientos | [04](conflictos/04-movimientos-automaticos-fondo.md): movimientos de saldo inicial y ajuste frente a `ck_monto_movimiento` | conflicto | no |
-| Fondos, Pagos | [05](conflictos/05-saldo-fondo-calculado.md): saldo del fondo calculado o almacenado (RN04.2.1) | conflicto | no |
+| Fondos, Pagos | [05](conflictos/05-saldo-fondo-calculado.md): saldo del fondo calculado o almacenado (RN04.2.1). Decidido por Santiago: saldo guardado (opción 1), con transacción en el backend, consulta de control y datos de ejemplo corregidos; falta aplicarlo | conflicto | no |
 | Fondos | [19](conflictos/19-ajuste-fondo-inactivo.md): ajuste de saldo en un fondo inactivo (RN04.3.4 frente a RN04.4.4) | conflicto | no |
 | Fondos | Los fondos de prueba no traen su movimiento de "Saldo inicial", así que su saldo no se puede reconstruir desde Movimientos (ver conflicto 05). Los fondos nuevos sí lo generan | error | no |
 | Fondos, Activos, Pasivos, Metas | El botón "Todos" o "Todas" de los listados es decorativo, como en el prototipo: falta el diseño del menú | diseño | no |

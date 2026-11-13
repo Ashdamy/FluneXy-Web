@@ -10,7 +10,7 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [02](02-fecha-al-editar-pasivo.md) | Editar un pasivo antiguo obliga a cambiar su fecha | RN08.3.7, RN08.3.3 | Pasivos | Abierto |
 | [03](03-registro-verificacion-codigo.md) | Registro con verificación de código | HU02.1, RN02.1.4 | Autenticación | Decidido (opción 1), por aplicar |
 | [04](04-movimientos-automaticos-fondo.md) | Movimientos de saldo inicial y de ajuste frente a la BD | RN04.1.4, RN04.3.4, `ck_monto_movimiento` | Fondos, Movimientos | Abierto |
-| [05](05-saldo-fondo-calculado.md) | Saldo del fondo calculado o almacenado | RN04.2.1, RN05.0.1, `fondos.saldo_actual` | Fondos, Pagos | Abierto |
+| [05](05-saldo-fondo-calculado.md) | Saldo del fondo calculado o almacenado | RN04.2.1, RN05.0.1, `fondos.saldo_actual` | Fondos, Pagos | Decidido (opción 1), por aplicar |
 | [06](06-texto-requisitos-contrasena.md) | Texto de requisitos de la contraseña | RN01.3.5, RN02.1.2 | Autenticación | Abierto |
 | [07](07-plantilla-vencida.md) | Plantilla vencida o inactiva | RN06.0.6 | Plantillas | Abierto |
 | [08](08-tipo-al-editar.md) | Cambiar el tipo al editar un movimiento o una plantilla | RN05.3.2, RN06.2.7 | Movimientos, Plantillas | Abierto |
