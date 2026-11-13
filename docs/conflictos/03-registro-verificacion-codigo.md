@@ -20,4 +20,17 @@ Sigue el prototipo: Crear cuenta lleva a la pantalla de verificación, y de ahí
 **Recomendación (no es una decisión):** opción 1, porque es lo que está documentado y no depende de enviar correos.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Santiago el 2026-11-13: opción 1. Falta aplicarlo en la aplicación.
+
+## Solución decidida
+- **El código de verificación es solo para recuperar la contraseña** (HU01.3: Recuperar contraseña → código → Nueva contraseña).
+- **Al crear la cuenta no se envía ningún código.** La BD revisa si el correo ya está registrado (RN02.1.1):
+  - si **no** está registrado, se crea la cuenta y la persona va a Iniciar sesión (HU02.1, RN02.1.4);
+  - si **ya** está registrado, no se crea la cuenta y se informa el motivo, por ejemplo "Ya existe una cuenta con este correo" (RN02.1.5).
+
+## Cambios por aplicar
+1. `paginas/autenticacion/Registro.jsx`: "Crear cuenta gratis" deja de ir a `/autenticacion/verificacion-contrasena` y lleva a `/autenticacion/iniciar-sesion`.
+2. Mismo archivo: con el correo ya registrado, el formulario no sigue y muestra el aviso. Mientras no exista el backend se compara con el usuario de prueba de `datos/usuario.js`; la revisión real contra la BD la hará la API.
+3. Mismo archivo: cambiar el texto de ayuda del correo, "Usaremos este correo para verificar tu cuenta.", porque ya no habrá verificación al registrarse. El texto nuevo está por definir.
+4. El mensaje de confirmación del registro (HU02.1) no tiene diseño en el prototipo. Mientras tanto se va a Iniciar sesión sin mensaje (pendiente de diseño).
+5. Agregar a la regresión (`scripts/regresion/casos/01-autenticacion.mjs`) los casos de correo nuevo y de correo repetido.

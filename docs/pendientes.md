@@ -9,7 +9,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 
 | Módulo | Qué pasó | Tipo | Bloquea |
 |---|---|---|---|
-| Autenticación | [03](conflictos/03-registro-verificacion-codigo.md): registro con verificación de código (HU02.1, RN02.1.4) | conflicto | no |
+| Autenticación | [03](conflictos/03-registro-verificacion-codigo.md): registro con verificación de código (HU02.1, RN02.1.4). Decidido por Santiago: sin código al registrarse, solo se valida que el correo no exista; falta aplicarlo | conflicto | no |
 | Autenticación | [06](conflictos/06-texto-requisitos-contrasena.md): texto de requisitos de la contraseña (RN01.3.5, RN02.1.2) | conflicto | no |
 | Fondos, Movimientos | [04](conflictos/04-movimientos-automaticos-fondo.md): movimientos de saldo inicial y ajuste frente a `ck_monto_movimiento` | conflicto | no |
 | Fondos, Pagos | [05](conflictos/05-saldo-fondo-calculado.md): saldo del fondo calculado o almacenado (RN04.2.1) | conflicto | no |
