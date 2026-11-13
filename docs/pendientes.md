@@ -5,7 +5,7 @@ Todo lo que quedó abierto durante la migración a React, para resolverlo al fin
 - **Tipo:** *error* (dato o lógica incorrectos), *diseño* (falta una pantalla, un estado o un criterio visual) o *conflicto* (las fuentes se contradicen; el detalle está en [conflictos/](conflictos/README.md)).
 - **Bloquea:** *sí* si impide construir o usar una pantalla; *no* si la aplicación funciona con el comportamiento por defecto.
 
-Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
+Total: 66 pendientes (30 conflictos, 1 error, 35 de diseño). Bloquean: 0.
 
 | Módulo | Qué pasó | Tipo | Bloquea |
 |---|---|---|---|
@@ -72,6 +72,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Soporte | El formulario de Preguntas / Soporte envía a `formsubmit.co` con un correo de ejemplo (`TU_CORREO@dominio.com`): falta el correo real o un endpoint del backend. Se dejó sin tocar porque la página queda como HTML estático | diseño | no |
 | Soporte, Legal | Las páginas estáticas no tienen enlace de vuelta a la aplicación (el logo de Política apunta a "#"), como en el prototipo. La página de soporte no lista las preguntas frecuentes de la BD; es solo un formulario de contacto | diseño | no |
 | Todos | [12](conflictos/12-decimales-en-pesos.md): pesos con o sin decimales (IEEE 3.13.2, RN04.1.3). Decidido por Claude (derivado de 15), por revisar: se guardan centavos y se muestran pesos enteros | conflicto | no |
+| Todos | **Reactivar registros inactivos:** ningún módulo tiene un botón para volver a activar. Alertas ya se reactiva con Editar y el interruptor (conflicto 26, HU15.4). Fondos lo menciona en RN04.4.5 ("posible reactivación") y el modal de Plantillas promete "Podrás reactivar la plantilla en cualquier momento". Propuesta: un botón "Reactivar" en el detalle del inactivo, con confirmación (ModalConfirmar), primero en Fondos y Plantillas. Con el conflicto 19, un fondo se reactiva antes de editarlo; una plantilla vencida necesita una fecha fin nueva | diseño | no |
 | Todos | Mensajes de confirmación de crear, editar y desactivar (por ejemplo HU09.1 paso 14, HU09.3 paso 13, HU09.4 paso 12): el prototipo no los tiene, así que se vuelve al listado sin mensaje | diseño | no |
 | Todos | La ruta de página no encontrada ("*") sigue con el texto temporal "Página en construcción": el prototipo no tiene diseño de error 404 | diseño | no |
 
