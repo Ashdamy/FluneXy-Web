@@ -27,4 +27,13 @@ Guarda centavos y muestra pesos enteros en todas las pantallas.
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 15 (ahorro mensual redondeado al peso) y 05 (saldo guardado en DECIMAL(12,2)).
+
+## Solución decidida
+Se **guardan centavos** (`DECIMAL(12,2)`, RN04.1.3) y se **muestran pesos enteros** en todas las pantallas. El IEEE ("COP sin decimales") se entiende como la forma de mostrar.
+
+Por qué: el [conflicto 05](05-saldo-fondo-calculado.md) dejó el saldo guardado en la columna `DECIMAL(12,2)`, la tabla de amortización necesita centavos para que la suma de cuotas cuadre, y el [conflicto 15](15-ahorro-mensual-meta.md) ya muestra el ahorro mensual redondeado al peso.
+
+## Cambios por aplicar
+1. **Aplicación y BD:** ninguno; ya funcionan así.
+2. **Documentación (equipo):** en el IEEE 3.13.2, aclarar que los valores se **muestran** sin decimales y se guardan con dos.

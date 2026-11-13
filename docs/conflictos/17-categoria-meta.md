@@ -22,4 +22,13 @@ El módulo Metas aún no está migrado. Registrar Aporte usa el ícono `ph-targe
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 10 (error de la documentación en Metas; manda la BD para los datos).
+
+## Solución decidida
+Las metas **no tienen categoría**, como la BD (`metas` sin `id_categoria`; `aplica_a` sin META), el Diccionario y el formulario del prototipo. Todas usan el ícono `ph-target`.
+
+Por qué: es el mismo tipo de caso que el [conflicto 10](10-cuotas-para-metas.md): la documentación de MOD03 nombra "Meta" como si tuviera algo que la BD no tiene, y para la estructura de datos manda la BD.
+
+## Cambios por aplicar
+1. **Aplicación y BD:** ninguno.
+2. **Documentación (equipo):** quitar "Meta" de los tipos de registro con categoría en RN03.1.1, RN03.1.4, RN03.2.2, RN03.2.5, HU03.1 y en los requerimientos de MOD03.

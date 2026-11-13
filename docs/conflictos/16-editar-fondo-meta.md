@@ -36,4 +36,16 @@ Si se elige la opción 1, conviene decidir al mismo tiempo el conflicto 13, porq
 **Recomendación (no es una decisión):** opción 1, porque la regla es explícita y el diseño del selector ya existe en Nueva Meta.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de la decisión de Fondos (editar inactivos) y RN04.4.4, y el criterio de seguir la documentación.
+
+## Solución decidida
+Al editar una meta **se puede cambiar su fondo asociado**, eligiendo entre los fondos activos (RN09.3.7, RN09.1.1). Los aportes futuros usan el fondo nuevo y los anteriores conservan el suyo (cada aporte guarda su `id_fondo`).
+
+Por qué: RN09.3.7 lo pide de forma explícita y el criterio acordado es seguir la documentación. Además resuelve el caso del fondo desactivado: hoy una meta queda asociada a un fondo inactivo sin poder cambiarlo, y RN04.4.4 dice que un fondo inactivo no se usa para metas.
+
+## Cambios por aplicar
+1. `paginas/metas/EditarMeta.jsx`: agregar la lista "Fondo de ahorro" de Nueva Meta (`ListaFondosMeta` de `CamposMeta.jsx`) con los fondos activos. Si el fondo actual está inactivo, no aparece y hay que elegir otro.
+2. `datos/metas.js`: `actualizarMeta` también guarda `fondoId`.
+3. RN09.3.8: cambiar el fondo no mueve el monto ahorrado ni los saldos.
+4. Regresión: casos de cambiar el fondo en `scripts/regresion/casos/09-metas.mjs`.
+5. **BD:** ninguno (`metas.id_fondo` ya existe).

@@ -20,4 +20,13 @@ Calcula los indicadores cada vez que se abre la pantalla; no guarda nada.
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 05 y 22 (lo que no se guarda en la BD se calcula).
+
+## Solución decidida
+Los indicadores (y el balance) **se calculan cada vez** con los datos registrados; no se guardan en una tabla.
+
+Por qué: como el balance del [conflicto 22](22-fecha-de-corte-balance.md), son resultados del momento y la BD no tiene tabla para ellos. Guardarlos crearía una segunda copia que podría descuadrarse con los datos, que es justo el riesgo que el [conflicto 05](05-saldo-fondo-calculado.md) pide controlar.
+
+## Cambios por aplicar
+1. **Aplicación y BD:** ninguno.
+2. **Documentación (equipo):** en RN14.2.2 y RN14.3.2 cambiar "generados y almacenados" por "calculados". En el diagrama de clases, `IndicadoresFinancieros` y `BalanceFinanciero` son cálculos, no tablas.

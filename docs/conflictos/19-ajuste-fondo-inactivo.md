@@ -23,4 +23,14 @@ Editar Fondo se abre también para fondos inactivos, con el mismo formulario del
 **Recomendación (no es una decisión):** opción 2.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 2, derivada de 05 (el ajuste es el registro de cada cambio del saldo guardado), la decisión de Fondos (editar inactivos) y RN04.4.4.
+
+## Solución decidida
+Un fondo inactivo **se puede editar, pero solo su nombre y su tipo**; el saldo queda bloqueado.
+
+Por qué: con el [conflicto 05](05-saldo-fondo-calculado.md) el saldo queda guardado y cada cambio manual debe dejar su "Ajuste de saldo" (RN04.3.4); la opción 3 queda descartada. Ese ajuste sería un movimiento nuevo en un fondo inactivo, lo que prohíbe RN04.4.4. Bloquear el saldo cumple las dos reglas y mantiene la decisión de Santiago de poder editar fondos inactivos.
+
+## Cambios por aplicar
+1. `paginas/fondos/EditarFondo.jsx`: si el fondo está inactivo, el campo "Saldo Actualizado" se muestra deshabilitado y no se genera ningún ajuste.
+2. Regresión: caso en `scripts/regresion/casos/02-fondos.mjs`.
+3. **Pendiente de diseño:** cómo se ve el campo bloqueado y un texto que explique por qué.

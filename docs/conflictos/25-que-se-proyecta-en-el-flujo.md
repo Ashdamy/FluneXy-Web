@@ -24,4 +24,13 @@
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 10 (las metas tienen aportes, no cuotas) y 05.
+
+## Solución decidida
+- **Ahorro de metas:** la suma del ahorro mensual requerido de las metas activas sin cumplir. No hay "cuotas de metas" ([conflicto 10](10-cuotas-para-metas.md)), y lo único "programado" de una meta es su ahorro mensual (RN09.1.5).
+- **Ingresos y gastos estimados:** movimientos activos del mes más las ejecuciones de plantillas activas que todavía no llegan dentro del mes, como hoy.
+- **Una parte queda abierta:** si los movimientos automáticos "Saldo inicial" y "Ajuste de saldo" cuentan como ingresos o gastos depende del [conflicto 04](04-movimientos-automaticos-fondo.md), que es crítico y lo decide Santiago.
+
+## Cambios por aplicar
+1. **Aplicación:** ninguno por ahora; cuando se decida el 04, puede tocar excluir los movimientos automáticos de los totales.
+2. **Documentación (equipo):** RN12.5.1 y RN12.5.3 (ya anotado en el 10); aclarar en RN12.2.1 y RN12.3.1 qué es "información proyectada".

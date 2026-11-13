@@ -22,4 +22,14 @@ Calcula el balance de hoy con los valores actuales. El selector muestra la fecha
 **Recomendación (no es una decisión):** opción 2 hasta que exista el backend.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 05 (la BD solo guarda el valor actual).
+
+## Solución decidida
+El balance se calcula **solo a la fecha de hoy**, con los valores actuales. El selector de fecha muestra la de hoy y no despliega opciones.
+
+Por qué: con el [conflicto 05](05-saldo-fondo-calculado.md) la BD guarda solo el saldo y el valor actuales, sin historial. Un balance a una fecha pasada (opción 2) mezclaría registros filtrados por fecha con valores de hoy, y daría cifras que nunca existieron. Por eso se cambia la recomendación anterior (opción 2) por la opción 1.
+
+## Cambios por aplicar
+1. **Aplicación y BD:** ninguno; ya funciona así.
+2. **Documentación (equipo):** RN13.1.1, RN13.1.2 y RN13.2.1 hablan de una fecha de corte elegida; dejarlas como "a la fecha actual".
+3. **Pendiente de diseño:** el selector de fecha del prototipo podría quitarse o cambiarse por un texto ("Al 13 Nov 2026").

@@ -22,4 +22,13 @@ Metas ya está migrado y sigue la BD y el prototipo: Nueva Meta y Editar Meta ti
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de 10 (los datos de las metas siguen la BD).
+
+## Solución decidida
+La meta **no lleva descripción**; se identifica por su nombre, como HU09.1, la BD y el prototipo. La "descripción" que menciona el IEEE se entiende como el nombre de la meta.
+
+Por qué: igual que en el [conflicto 10](10-cuotas-para-metas.md), los datos de una meta son los de la tabla `metas`, y para la estructura de datos manda la BD.
+
+## Cambios por aplicar
+1. **Aplicación y BD:** ninguno.
+2. **Documentación (equipo):** en el IEEE, alcance "Gestión de Metas Financieras", cambiar "una descripción asociada" por "un nombre".

@@ -25,4 +25,16 @@ Registrar Aporte empieza en el fondo de la meta y deja elegir otro fondo activo,
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 2, derivada de 16 (ahora el fondo de la meta se puede cambiar).
+
+## Solución decidida
+El aporte **sale siempre del fondo asociado a la meta**, como dicen RN09.3.7 y el Diccionario de datos. Para aportar desde otro fondo, se cambia primero el fondo de la meta en Editar Meta ([conflicto 16](16-editar-fondo-meta.md)).
+
+Por qué: antes, elegir otro fondo al aportar era la única salida porque el fondo de la meta no se podía cambiar. Con el 16 decidido, ya no hace falta, y así se cumple la regla al pie de la letra. La columna `aportes.id_fondo` sigue siendo necesaria: guarda el fondo que se usó en cada aporte, para que los aportes anteriores conserven el suyo cuando la meta cambie de fondo (RN09.3.7).
+
+## Cambios por aplicar
+1. `paginas/pagos/RegistrarAporte.jsx`: mostrar solo el fondo de la meta, sin poder elegir otro (en el prototipo es una lista de fondos).
+2. Si el fondo de la meta está inactivo, no se registra el aporte y se avisa que hay que cambiar el fondo en Editar Meta. Si no tiene saldo suficiente, se rechaza como hoy (RN05.0.1).
+3. Regresión: ajustar `scripts/regresion/casos/08-pagos.mjs` y `09-metas.mjs`.
+4. **BD:** ninguno.
+5. **Pendiente de diseño:** cómo se ve el fondo fijo y el aviso de fondo inactivo.
