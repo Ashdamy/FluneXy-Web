@@ -36,7 +36,7 @@ Si se elige la opción 1, conviene decidir al mismo tiempo el conflicto 13, porq
 **Recomendación (no es una decisión):** opción 1, porque la regla es explícita y el diseño del selector ya existe en Nueva Meta.
 
 ## Estado
-Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de la decisión de Fondos (editar inactivos) y RN04.4.4, y el criterio de seguir la documentación.
+Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 1, derivada de RN09.3.7, RN04.4.4 y el criterio de seguir la documentación.
 
 ## Solución decidida
 Al editar una meta **se puede cambiar su fondo asociado**, eligiendo entre los fondos activos (RN09.3.7, RN09.1.1). Los aportes futuros usan el fondo nuevo y los anteriores conservan el suyo (cada aporte guarda su `id_fondo`).

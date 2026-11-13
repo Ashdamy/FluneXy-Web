@@ -29,7 +29,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Pagos | [14](conflictos/14-numeracion-rn11-1-2.md): código RN11.1.2 repetido | conflicto | no |
 | Metas | [11](conflictos/11-descripcion-meta.md): descripción de una meta (IEEE frente a HU09.1 y la BD). Decidido por Claude (derivado de 10), por revisar: sin descripción; la "descripción" del IEEE es el nombre | conflicto | no |
 | Metas | [15](conflictos/15-ahorro-mensual-meta.md): cálculo del ahorro mensual (RN09.1.5 frente a RN09.1.6). Decidido por Santiago: lo que falta ÷ meses restantes | conflicto | no |
-| Metas | [16](conflictos/16-editar-fondo-meta.md): cambiar el fondo al editar una meta (RN09.3.7 frente a HU09.3). Decidido por Claude (derivado de la decisión de Fondos), por revisar: el fondo de la meta se puede cambiar al editarla | conflicto | no |
+| Metas | [16](conflictos/16-editar-fondo-meta.md): cambiar el fondo al editar una meta (RN09.3.7 frente a HU09.3). Decidido por Claude (derivado de RN09.3.7 y RN04.4.4), por revisar: el fondo de la meta se puede cambiar al editarla | conflicto | no |
 | Metas | [17](conflictos/17-categoria-meta.md): categoría de una meta (RN03.1.1 frente a la BD). Decidido por Claude (derivado de 10), por revisar: las metas no tienen categoría | conflicto | no |
 | Metas, Pagos | [18](conflictos/18-ahorrado-al-desactivar-meta.md): dónde queda lo ahorrado al desactivar (modal frente a RN05.0.1) | conflicto | no |
 | Metas | [20](conflictos/20-fecha-al-editar-meta.md): editar una meta vencida obliga a cambiar su fecha (RN09.3.5) | conflicto | no |
