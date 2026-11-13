@@ -17,7 +17,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Fondos | Los fondos de prueba no traen su movimiento de "Saldo inicial", así que su saldo no se puede reconstruir desde Movimientos (ver conflicto 05). Los fondos nuevos sí lo generan | error | no |
 | Fondos, Activos, Pasivos, Metas | El botón "Todos" o "Todas" de los listados es decorativo, como en el prototipo: falta el diseño del menú | diseño | no |
 | Fondos | El chip "Inactivo" del detalle del fondo se ve en verde, igual que "Activo": el prototipo no trae un estilo para el detalle inactivo | diseño | no |
-| Movimientos, Plantillas | [08](conflictos/08-tipo-al-editar.md): cambiar el tipo al editar (RN05.3.2, RN06.2.7) | conflicto | no |
+| Movimientos, Plantillas | [08](conflictos/08-tipo-al-editar.md): cambiar el tipo al editar (RN05.3.2, RN06.2.7). Decidido por Santiago: el tipo no se cambia (opción 2); la aplicación ya funciona así, falta actualizar RN05.3.2, RN05.3.4 y RN06.2.7 en la documentación | conflicto | no |
 | Movimientos | El filtro de Mis Movimientos (RN05.5.3) es decorativo, como en el prototipo: falta el diseño del menú de filtros | diseño | no |
 | Plantillas | [07](conflictos/07-plantilla-vencida.md): plantilla vencida o inactiva (RN06.0.6) | conflicto | no |
 | Plantillas | [09](conflictos/09-descripcion-plantilla.md): descripción de plantillas sin campo en el prototipo (RN06.1.7) | conflicto | no |

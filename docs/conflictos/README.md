@@ -13,7 +13,7 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [05](05-saldo-fondo-calculado.md) | Saldo del fondo calculado o almacenado | RN04.2.1, RN05.0.1, `fondos.saldo_actual` | Fondos, Pagos | Decidido (opción 1), por aplicar |
 | [06](06-texto-requisitos-contrasena.md) | Texto de requisitos de la contraseña | RN01.3.5, RN02.1.2 | Autenticación | Abierto |
 | [07](07-plantilla-vencida.md) | Plantilla vencida o inactiva | RN06.0.6 | Plantillas | Abierto |
-| [08](08-tipo-al-editar.md) | Cambiar el tipo al editar un movimiento o una plantilla | RN05.3.2, RN06.2.7 | Movimientos, Plantillas | Abierto |
+| [08](08-tipo-al-editar.md) | Cambiar el tipo al editar un movimiento o una plantilla | RN05.3.2, RN06.2.7 | Movimientos, Plantillas | Decidido (opción 2), falta actualizar la documentación |
 | [09](09-descripcion-plantilla.md) | Descripción de plantillas sin campo en el prototipo | RN06.1.7, `plantillas.descripcion` | Plantillas | Abierto |
 | [10](10-cuotas-para-metas.md) | Cuotas para metas | CU10.2, HU10.1, HU10.3, `cuotas.id_pasivo` | Cuotas, Metas | Abierto |
 | [11](11-descripcion-meta.md) | Descripción de una meta | IEEE, HU09.1, tabla `metas` | Metas | Abierto |

@@ -20,4 +20,17 @@ Sigue los prototipos: el tipo no se puede cambiar al editar. El equipo indicó e
 **Recomendación (no es una decisión):** opción 1.
 
 ## Estado
-Abierto hasta que el equipo decida.
+Decidido por Santiago el 2026-11-13: opción 2. La aplicación no cambia; falta actualizar la documentación.
+
+## Solución decidida
+El tipo (ingreso o gasto) **no se puede cambiar** al editar un movimiento ni una plantilla. Se fija al crear el registro.
+
+Por qué: un registro creado como ingreso no se convierte en gasto; si el tipo quedó mal, se corrige desactivando el registro (RN05.4, que lo conserva en el historial) y creando uno nuevo con el tipo correcto. Además evita cambios grandes de saldo por accidente: pasar de ingreso a gasto mueve el saldo el doble del monto.
+
+## Cambios por aplicar
+1. **Aplicación:** ninguno. Editar Movimiento y Editar Plantilla ya muestran el tipo como etiqueta fija, como el prototipo.
+2. **Documentación (la actualiza el equipo; los originales no se modifican desde la migración):**
+   - RN05.3.2: quitar "el tipo" de los datos que se pueden modificar.
+   - RN05.3.4: quitar "el tipo" de los cambios que recalculan el saldo.
+   - RN06.2.7: quitarla o reescribirla, porque supone que el tipo de una plantilla se puede cambiar.
+   - Opcional: agregar a HU05.3 y HU06.2 que, para cambiar el tipo, se desactiva el registro y se crea uno nuevo.
