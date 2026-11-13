@@ -24,7 +24,7 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [16](16-editar-fondo-meta.md) | Cambiar el fondo al editar una meta | RN09.3.7, HU09.3 | Metas | Decidido (opción 1, derivado), por aplicar |
 | [17](17-categoria-meta.md) | Categoría de una meta | RN03.1.1, RN03.2.2, `categorias.aplica_a` | Metas | Decidido (opción 1, derivado), solo documentación |
 | [18](18-ahorrado-al-desactivar-meta.md) | Dónde queda lo ahorrado al desactivar una meta | RN05.0.1, RN09.4.6 | Metas, Pagos | Abierto |
-| [19](19-ajuste-fondo-inactivo.md) | Ajuste de saldo en un fondo inactivo | RN04.3.4, RN04.4.4 | Fondos | Decidido (opción 2, derivado), por aplicar |
+| [19](19-ajuste-fondo-inactivo.md) | Ajuste de saldo en un fondo inactivo | RN04.3.4, RN04.4.4 | Fondos | Decidido (un fondo inactivo no se edita), por aplicar |
 | [20](20-fecha-al-editar-meta.md) | Editar una meta vencida obliga a cambiar su fecha | RN09.3.5, RN09.3.2 | Metas | Abierto |
 | [21](21-formula-liquidez.md) | Fórmula de la liquidez | RN13.5.1, HU13.5 | Balance, Indicadores | Abierto |
 | [22](22-fecha-de-corte-balance.md) | Balance a una fecha de corte | RN13.1.1, RN13.1.2, RN13.2.1 | Balance | Decidido (opción 1, derivado), solo documentación |

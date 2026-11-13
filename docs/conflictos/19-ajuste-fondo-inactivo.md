@@ -23,14 +23,19 @@ Editar Fondo se abre también para fondos inactivos, con el mismo formulario del
 **Recomendación (no es una decisión):** opción 2.
 
 ## Estado
-Decidido por Claude el 2026-11-13, por encargo de Santiago ("en base a las decisiones ya tomadas"). Revisar. Opción 2, derivada de 05 (el ajuste es el registro de cada cambio del saldo guardado), la decisión de Fondos (editar inactivos) y RN04.4.4.
+Decidido por Santiago el 2026-11-13: **un fondo inactivo no se puede editar**. Reemplaza la opción 2 que había anotado Claude ese mismo día. Falta aplicarlo.
 
 ## Solución decidida
-Un fondo inactivo **se puede editar, pero solo su nombre y su tipo**; el saldo queda bloqueado.
+Un fondo inactivo **no muestra Editar** ni se puede abrir su formulario de edición, igual que los registros inactivos de Activos, Pasivos, Movimientos, Plantillas y Metas. Como no se edita, tampoco se le puede cambiar el saldo ni generar un "Ajuste de saldo", y el choque entre RN04.3.4 y RN04.4.4 desaparece.
 
-Por qué: con el [conflicto 05](05-saldo-fondo-calculado.md) el saldo queda guardado y cada cambio manual debe dejar su "Ajuste de saldo" (RN04.3.4); la opción 3 queda descartada. Ese ajuste sería un movimiento nuevo en un fondo inactivo, lo que prohíbe RN04.4.4. Bloquear el saldo cumple las dos reglas y mantiene la decisión de Santiago de poder editar fondos inactivos.
+Por qué: los fondos no tienen opción de reactivarse (decisión anterior de Santiago: "no hay reactivar para activos ni fondos hasta que haya diseño"), así que editar el nombre o los datos de un fondo inactivo no tiene sentido.
+
+**Esto revierte un cambio anterior:** en el commit `3c52f3f` (2026-11-12) se le devolvió el botón Editar a los fondos inactivos, por indicación de Santiago y porque HU04.3 no exige que el fondo esté activo. La excepción sigue siendo solo Alertas ([conflicto 26](26-activar-alerta.md)), porque una alerta sí se reactiva desde Editar (HU15.4).
 
 ## Cambios por aplicar
-1. `paginas/fondos/EditarFondo.jsx`: si el fondo está inactivo, el campo "Saldo Actualizado" se muestra deshabilitado y no se genera ningún ajuste.
-2. Regresión: caso en `scripts/regresion/casos/02-fondos.mjs`.
-3. **Pendiente de diseño:** cómo se ve el campo bloqueado y un texto que explique por qué.
+1. `paginas/fondos/MisFondos.jsx`: la tarjeta de un fondo inactivo muestra solo "Ver detalle" (sin Editar ni Desactivar).
+2. `paginas/fondos/DetalleFondo.jsx`: un fondo inactivo no muestra los botones Editar Fondo ni Desactivar Fondo.
+3. `paginas/fondos/EditarFondo.jsx`: `/fondos/:id/editar` de un fondo inactivo vuelve al detalle, como en los demás módulos.
+4. Regresión: en `scripts/regresion/casos/02-fondos.mjs`, cambiar los casos "Fondo inactivo con Editar" y "Detalle fondo inactivo" por los de sin Editar, y agregar la redirección.
+5. `docs/guia-migracion.md`: anotar en la sección "Fondos: Editar en fondos inactivos" que se revirtió.
+6. **Documentación (equipo):** agregar a las precondiciones de HU04.3 que el fondo debe estar activo, como en HU05.3, HU07.3, HU08.3 o HU09.3.
