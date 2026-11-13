@@ -10,7 +10,15 @@
 - **RN04.1.3 y BD:** los montos pueden guardarse con hasta dos decimales. Las cuotas de amortización los necesitan para que su suma cuadre.
 
 ## Qué hace hoy la aplicación
-Guarda centavos y muestra pesos enteros. Los campos aceptan centavos si se escriben ("150.000,50"). En Registrar Pago, el monto sugerido se muestra entero y, si no se cambia, se paga el valor exacto de la cuota.
+Guarda centavos y muestra pesos enteros en todas las pantallas.
+- Los campos de monto aceptan centavos si se escriben ("150.000,50").
+- En Registrar Pago, el monto sugerido se muestra entero y, si no se cambia, se paga el valor exacto de la cuota.
+- En los módulos migrados después:
+  - Balance, Flujo de Caja, Inicio y Reportes calculan con centavos y muestran enteros;
+  - el ahorro mensual de una meta se redondea hacia arriba al peso (decisión del [conflicto 15](15-ahorro-mensual-meta.md));
+  - el umbral de una alerta acepta decimales ("1,2" veces).
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Guardar con centavos y mostrar enteros,** como hoy. "Representar" se entiende como mostrar.

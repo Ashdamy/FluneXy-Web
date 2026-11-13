@@ -14,7 +14,23 @@
 Por eso un fondo con saldo cero no puede tener su movimiento inicial, y los demás no tienen una categoría propia.
 
 ## Qué hace hoy la aplicación
-Aplica la opción 1 mientras el equipo decide: crear un fondo con saldo genera "Saldo inicial", y cambiar el saldo a mano genera "Ajuste de saldo" como ingreso o gasto según la diferencia. Usan las categorías "Otros ingresos" y "Otros gastos". Un fondo con saldo cero no genera movimiento.
+Aplica la opción 1 mientras el equipo decide:
+- crear un fondo con saldo genera "Saldo inicial";
+- cambiar el saldo a mano genera "Ajuste de saldo", como ingreso o gasto según la diferencia;
+- los dos usan las categorías "Otros ingresos" y "Otros gastos";
+- un fondo con saldo cero no genera movimiento.
+
+**Consecuencias que aparecieron al migrar el resto de módulos:**
+- Estos movimientos se ven en la "Actividad reciente" y en "Transacciones" del detalle del fondo, lo cual es correcto.
+- También se suman como ingresos o gastos reales en **Flujo de Caja** (Ingresos y Gastos Estimados), en **Inicio** (Ingresos, Gastos y Ahorro del mes) y en la vista previa del reporte de Flujo de Caja. Por ejemplo, crear un fondo con $100.000 sube en $100.000 los "Ingresos del mes", aunque no entró dinero nuevo.
+- Con categorías propias (opción 2) se podrían excluir de esos totales.
+
+**Relación con lo ya decidido:**
+- [Conflicto 05](05-saldo-fondo-calculado.md) (decidido, saldo guardado): el "Ajuste de saldo" sigue siendo necesario, porque es el registro de por qué cambió el saldo guardado.
+- Los fondos de ejemplo de la BD no traen su movimiento "Saldo inicial"; se tiene en cuenta al corregir esos datos (punto 3 del 05).
+- El [19](19-ajuste-fondo-inactivo.md) trata el ajuste en un fondo inactivo.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Generar el movimiento solo si el monto es mayor a cero,** con las categorías "Otros ingresos" y "Otros gastos". No cambia la BD, pero el saldo cero queda sin movimiento y estos movimientos se mezclan con los otros.

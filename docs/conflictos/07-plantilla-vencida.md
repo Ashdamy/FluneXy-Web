@@ -10,7 +10,9 @@
 - **BD:** `plantillas.estado` es un booleano, así que solo distingue activa e inactiva.
 
 ## Qué hace hoy la aplicación
-Sigue la opción 2 por indicación del equipo: al pasar la fecha fin, la plantilla cuenta como inactiva (sin Editar ni Desactivar) y se muestra con el aspecto "Vencida" del prototipo.
+Sigue la opción 2 por indicación del equipo: al pasar la fecha fin, la plantilla cuenta como inactiva (sin Editar ni Desactivar) y se muestra con el aspecto "Vencida" del prototipo. Al pasar la fecha fin, la tarjeta y el detalle muestran "Vencida" y no se calculan más ejecuciones.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Mostrar "Inactiva"** al vencer, como dice RN06.0.6. Se pierde la distinción entre vencida y desactivada por el usuario.

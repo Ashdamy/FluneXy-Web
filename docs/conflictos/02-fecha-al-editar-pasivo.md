@@ -11,7 +11,11 @@
 Un pasivo que empezó hace meses tiene una fecha pasada. Si la regla se aplica tal cual, no se puede corregir ni el nombre sin mover también la fecha, y al moverla cambian todos los vencimientos de la tabla.
 
 ## Qué hace hoy la aplicación
-Editar Pasivo acepta la fecha que ya tiene el pasivo y cualquier otra. Se mantiene así para no alterar los vencimientos al editar otro dato.
+Editar Pasivo acepta la fecha que ya tiene el pasivo y cualquier otra, también pasadas. Se mantiene así para no alterar los vencimientos al editar otro dato.
+
+**Hoy Pasivos y Metas no se comportan igual:** Editar Meta sí aplica su regla equivalente (RN09.3.5) y no acepta fechas anteriores a hoy ([conflicto 20](20-fecha-al-editar-meta.md)). Conviene decidir el 01, el 02 y el 20 juntos.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Validar la fecha solo si el usuario la cambia,** y permitir conservar la que ya tenía. Es lo mínimo para que RN08.3.7 no bloquee la edición.

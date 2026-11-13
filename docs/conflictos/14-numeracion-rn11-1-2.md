@@ -13,6 +13,8 @@ Dos reglas distintas comparten código, y por la secuencia de HU11.3 la segunda 
 ## Qué hace hoy la aplicación
 Cumple las dos. Interpreta la segunda como la próxima cuota pendiente, la única que se puede pagar. Esa interpretación está en `docs/decisiones-implementacion.md`.
 
+*Revisado el 2026-11-13, con todos los módulos migrados.*
+
 ## Opciones
 1. **Tratar la segunda como RN11.3.2** y leerla como "la próxima cuota pendiente".
 2. **Leerla como el mes calendario siguiente.** Impediría pagar por anticipado una cuota que vence este mes.

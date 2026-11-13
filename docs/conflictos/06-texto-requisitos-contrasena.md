@@ -10,7 +10,16 @@
 - **Prototipo:** muestra "Mínimo 8 caracteres, una mayúscula y un número", sin minúscula ni carácter especial.
 
 ## Qué hace hoy la aplicación
-Registro y Nueva Contraseña validan la regla completa con el aviso nativo del navegador. Nueva Contraseña conserva el texto del prototipo, porque el equipo indicó no cambiar el diseño, así que la pantalla pide menos de lo que se valida.
+Las tres pantallas que piden una contraseña nueva validan la regla completa (8 caracteres, mayúscula, minúscula, número y carácter especial) con el aviso nativo del navegador:
+- **Registro:** no muestra el texto de requisitos, solo la barra de fortaleza fija del prototipo.
+- **Nueva Contraseña** (recuperación): muestra el texto del prototipo, "Mínimo 8 caracteres, una mayúscula y un número."
+- **Cambiar Contraseña** (Usuario): muestra el mismo texto incompleto.
+
+En las dos últimas la pantalla pide menos de lo que se valida.
+
+**Relación con lo ya decidido:** el [conflicto 03](03-registro-verificacion-codigo.md) (decidido) cambia el texto de ayuda del correo en Registro; si se elige aquí la opción 1, se pueden corregir los textos de las tres pantallas en el mismo cambio.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Validar la regla completa y actualizar el texto visible.** La pantalla dice lo mismo que se valida.

@@ -10,7 +10,11 @@
 - **Prototipo:** los formularios no tienen ese campo.
 
 ## Qué hace hoy la aplicación
-No tiene el campo. Se pospuso por decisión del equipo hasta que exista el diseño.
+Nueva Plantilla y Editar Plantilla no tienen el campo, como el prototipo; la plantilla se muestra con su categoría. Se pospuso por decisión del equipo hasta que exista el diseño.
+
+**Relación con lo ya decidido:** el [conflicto 08](08-tipo-al-editar.md) (decidido) agrega el selector de tipo a Editar Plantilla. Si se elige la opción 1, conviene agregar la descripción en el mismo cambio.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Agregar el campo** con un diseño nuevo, tomando como referencia el de Nuevo Movimiento.

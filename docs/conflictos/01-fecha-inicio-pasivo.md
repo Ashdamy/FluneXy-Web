@@ -12,7 +12,11 @@
 Una deuda que ya se viene pagando empezó antes de hoy, así que no se puede registrar con su fecha real si se cumple RN08.1.7.
 
 ## Qué hace hoy la aplicación
-Registrar Pasivo acepta cualquier fecha, también pasadas. Se mantiene así porque rechazarlas impediría registrar deudas antiguas con su fecha real, y la tabla de amortización saldría con vencimientos equivocados.
+Registrar Pasivo acepta cualquier fecha de inicio, también pasadas (el campo no tiene mínimo). Se mantiene así porque rechazarlas impediría registrar deudas antiguas con su fecha real, y la tabla de amortización saldría con vencimientos equivocados.
+
+**Relación con otros conflictos:** se decide junto con el [02](02-fecha-al-editar-pasivo.md) (la fecha al editar un pasivo). El [20](20-fecha-al-editar-meta.md) es el mismo caso en Metas.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Permitir fechas pasadas** al registrar. Cumple RN08.1.11 y conserva la fecha real, pero se aparta de RN08.1.7.

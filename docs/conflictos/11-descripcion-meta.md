@@ -11,7 +11,9 @@
 - **BD:** tiene nombre, pero no descripción.
 
 ## Qué hace hoy la aplicación
-`datos/metas.js` sigue la BD: nombre sin descripción. El módulo Metas aún no está migrado.
+Metas ya está migrado y sigue la BD y el prototipo: Nueva Meta y Editar Meta tienen nombre, monto objetivo y fecha objetivo (y fondo, solo en Nueva Meta), sin descripción. En el listado y el detalle la meta se identifica por su nombre.
+
+*Revisado el 2026-11-13, con todos los módulos migrados.*
 
 ## Opciones
 1. **Seguir HU09.1 y la BD,** y entender la "descripción" del IEEE como el nombre.
