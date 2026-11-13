@@ -24,7 +24,7 @@ Total: 65 pendientes (30 conflictos, 1 error, 34 de diseño). Bloquean: 0.
 | Plantillas | Las ejecuciones automáticas (RN06.0.9) necesitan un proceso del backend; hoy los contadores son datos fijos | diseño | no |
 | Pasivos | [01](conflictos/01-fecha-inicio-pasivo.md): fecha de inicio de un pasivo ya amortizado (RN08.1.7, RN08.1.11) | conflicto | no |
 | Pasivos | [02](conflictos/02-fecha-al-editar-pasivo.md): editar un pasivo antiguo obliga a cambiar su fecha (RN08.3.7) | conflicto | no |
-| Cuotas, Metas | [10](conflictos/10-cuotas-para-metas.md): cuotas para metas (CU10.2) | conflicto | no |
+| Cuotas, Metas | [10](conflictos/10-cuotas-para-metas.md): cuotas para metas (CU10.2). Decidido por Santiago: error de la documentación; las metas tienen aportes, no cuotas. La aplicación no cambia; falta corregir CU10.2, HU10.1-10.3, HU11.6 y RN12.5.1/12.5.3 | conflicto | no |
 | Pagos, Metas | [13](conflictos/13-fondo-del-aporte.md): fondo de un aporte (RN09.3.7, `aportes.id_fondo`) | conflicto | no |
 | Pagos | [14](conflictos/14-numeracion-rn11-1-2.md): código RN11.1.2 repetido | conflicto | no |
 | Metas | [11](conflictos/11-descripcion-meta.md): descripción de una meta (IEEE frente a HU09.1 y la BD) | conflicto | no |

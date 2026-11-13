@@ -15,7 +15,7 @@ No se registra aquí el trabajo pendiente, es decir, lo que la documentación pi
 | [07](07-plantilla-vencida.md) | Plantilla vencida o inactiva | RN06.0.6 | Plantillas | Abierto |
 | [08](08-tipo-al-editar.md) | Cambiar el tipo al editar un movimiento o una plantilla | RN05.3.2, RN06.2.7 | Movimientos, Plantillas | Decidido (opción 1), por aplicar |
 | [09](09-descripcion-plantilla.md) | Descripción de plantillas sin campo en el prototipo | RN06.1.7, `plantillas.descripcion` | Plantillas | Abierto |
-| [10](10-cuotas-para-metas.md) | Cuotas para metas | CU10.2, HU10.1, HU10.3, `cuotas.id_pasivo` | Cuotas, Metas | Abierto |
+| [10](10-cuotas-para-metas.md) | Cuotas para metas | CU10.2, HU10.1, HU10.3, `cuotas.id_pasivo` | Cuotas, Metas | Decidido (opción 1), falta corregir la documentación |
 | [11](11-descripcion-meta.md) | Descripción de una meta | IEEE, HU09.1, tabla `metas` | Metas | Abierto |
 | [12](12-decimales-en-pesos.md) | Pesos con o sin decimales | IEEE 3.13.2, RN04.1.3, `DECIMAL(12,2)` | Todos | Abierto |
 | [13](13-fondo-del-aporte.md) | Fondo de un aporte | RN09.3.7, `aportes.id_fondo` | Pagos, Metas | Abierto |
