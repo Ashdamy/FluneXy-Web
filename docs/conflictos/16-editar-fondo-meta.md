@@ -11,11 +11,27 @@
 - **Prototipo:** Editar Meta solo tiene nombre, monto objetivo y fecha objetivo. La lista de fondos solo aparece en Nueva Meta.
 
 ## Qué hace hoy la aplicación
-El módulo Metas aún no está migrado. Registrar Aporte empieza en el fondo de la meta y deja elegir otro (conflicto 13).
+Metas ya está migrado y sigue el prototipo, como pidió Santiago para este conflicto.
+- **Nueva Meta:** el fondo se elige en la lista "Fondo de ahorro", con los fondos activos (RN09.1.1).
+- **Editar Meta:** solo cambia nombre, monto objetivo y fecha objetivo. No hay campo de fondo, así que el fondo de una meta no se puede cambiar después de crearla.
+- **Detalle de la meta:** muestra el fondo en el recuadro "FONDO ASOCIADO".
+- **Registrar Aporte:** empieza en el fondo de la meta y deja elegir otro fondo activo ([conflicto 13](13-fondo-del-aporte.md)). Si el fondo de la meta está inactivo, empieza en el primer fondo activo.
+- **Modal de desactivar:** nombra el fondo de la meta en su nota ([conflicto 18](18-ahorrado-al-desactivar-meta.md)).
+
+**Consecuencia hoy:** si el fondo de una meta se desactiva, la meta queda asociada a un fondo inactivo para siempre. El usuario no puede cambiarlo, aunque RN04.4.4 dice que un fondo inactivo no se usa para metas. Los aportes igual se pueden hacer desde otro fondo, porque Registrar Aporte deja elegirlo.
 
 ## Opciones
-1. **Agregar el selector de fondo en Editar Meta,** reutilizando el bloque "Fondo de ahorro" de Nueva Meta. Cumple RN09.3.7 y agrega un campo que el diseño de Editar no tiene.
-2. **No permitir cambiar el fondo,** como HU09.3 y el prototipo. RN09.3.7 queda sin efecto.
+1. **Agregar el selector de fondo en Editar Meta,** reutilizando la lista "Fondo de ahorro" de Nueva Meta, solo con fondos activos.
+   - Cumple RN09.3.7: los aportes futuros usan el fondo nuevo y los anteriores conservan el suyo, porque cada aporte guarda su `id_fondo`.
+   - Resuelve el caso del fondo desactivado.
+   - Cambia la pantalla de Editar Meta, que en el prototipo no tiene ese campo.
+   - No cambia la BD (`metas.id_fondo` ya existe).
+2. **No permitir cambiar el fondo,** como hoy, como HU09.3 y como el prototipo.
+   - No cambia nada en la aplicación.
+   - RN09.3.7 queda sin efecto y el equipo tendría que quitarla de la documentación.
+   - El fondo de la meta solo sirve como punto de partida en Registrar Aporte. Si se desactiva, la meta queda con un fondo inactivo.
+
+Si se elige la opción 1, conviene decidir al mismo tiempo el conflicto 13, porque los dos tratan de qué fondo usa la meta.
 
 **Recomendación (no es una decisión):** opción 1, porque la regla es explícita y el diseño del selector ya existe en Nueva Meta.
 
